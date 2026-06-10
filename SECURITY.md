@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+</p>
+
 # Security Policy
 
 We take the security and privacy of GovEligify and its users seriously. Thank you for helping

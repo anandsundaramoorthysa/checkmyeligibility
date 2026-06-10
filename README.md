@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/brand/favicon.svg" alt="GovEligify logo" width="96" height="96" />
+
 # GovEligify
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)

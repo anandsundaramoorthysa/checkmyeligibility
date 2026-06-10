@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+</p>
+
 # Code of Conduct
 
 GovEligify is built to help people, and our community should reflect that. This Code of

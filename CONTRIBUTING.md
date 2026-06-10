@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+</p>
+
 # Contributing to GovEligify
 
 Thanks for your interest in improving GovEligify! This is an open-source effort to make

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+</p>
+
 # Architecture
 
 This document explains how GovEligify is put together and, most importantly, the two **swap
