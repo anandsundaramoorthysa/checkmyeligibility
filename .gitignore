@@ -1,36 +1,72 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# ─────────────────────────────────────────────────────────────
+# Dependencies
+# ─────────────────────────────────────────────────────────────
 /node_modules
 /.pnp
-.pnp.js
+.pnp.*
 .yarn/install-state.gz
 
-# testing
-/coverage
-
-# next.js
+# ─────────────────────────────────────────────────────────────
+# Next.js / build output
+# ─────────────────────────────────────────────────────────────
 /.next/
 /out/
-
-# production
 /build
+/dist
 
-# misc
-.DS_Store
-*.pem
+# ─────────────────────────────────────────────────────────────
+# Testing & coverage
+# ─────────────────────────────────────────────────────────────
+/coverage
+/test-results
+/playwright-report
+/playwright/.cache
+/.playwright-mcp
 
-# debug
+# Local scratch / screenshots (not part of the project)
+/.verify
+/.shots
+
+# ─────────────────────────────────────────────────────────────
+# Environment variables (never commit secrets)
+# ─────────────────────────────────────────────────────────────
+.env
+.env*.local
+
+# ─────────────────────────────────────────────────────────────
+# Deployment
+# ─────────────────────────────────────────────────────────────
+.vercel
+.wrangler
+
+# ─────────────────────────────────────────────────────────────
+# TypeScript
+# ─────────────────────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ─────────────────────────────────────────────────────────────
+# Logs
+# ─────────────────────────────────────────────────────────────
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
-# local env files
-.env*.local
+# ─────────────────────────────────────────────────────────────
+# Editors & OS
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.pem
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# ─────────────────────────────────────────────────────────────
+# Brand source + image backups
+# Stock-licensed source art and local backups — keep out of public repos.
+# ─────────────────────────────────────────────────────────────
+/brand/source
+/brand/brand-guidelines.html

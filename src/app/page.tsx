@@ -1,101 +1,206 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  MessagesSquare,
+  Sparkles,
+  ExternalLink,
+  ArrowRight,
+} from "lucide-react";
+import { Container } from "@/components/layout/Container";
+import { buttonClasses } from "@/components/ui/Button";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { HeroCta } from "@/components/marketing/HeroCta";
+import { TrustStrip } from "@/components/marketing/TrustStrip";
+import { StepCard } from "@/components/marketing/StepCard";
+import { CategoryGrid } from "@/components/marketing/CategoryGrid";
+import { SituationDemo } from "@/components/marketing/SituationDemo";
+import { StatBand } from "@/components/marketing/StatBand";
+import { Testimonials } from "@/components/marketing/Testimonials";
+import { Faq } from "@/components/marketing/Faq";
+import { CitizensBand } from "@/components/marketing/CitizensBand";
+import { HeroArt } from "@/components/illustrations/HeroArt";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { organizationLd, websiteLd, faqPageLd } from "@/lib/seo/jsonld";
+import { FAQS } from "@/data/faq";
 
-export default function Home() {
+export const metadata: Metadata = buildMetadata({ path: "/" });
+
+const HOME_FAQS = FAQS.slice(0, 4);
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <JsonLd data={[organizationLd(), websiteLd(), faqPageLd(HOME_FAQS)]} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-hero-glow">
+        <Container className="grid items-center gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
+          <div className="text-center lg:text-left">
+            <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron-deep">
+              Government schemes, made simple
+            </p>
+            <h1 className="mt-5 text-balance font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+              Find what you&rsquo;re <span className="text-navy">entitled</span> to.
+            </h1>
+            <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-ink-muted lg:mx-0">
+              Describe your situation in plain language and discover the schemes,
+              subsidies, and certificates you qualify for — with the documents you
+              need and exactly where to apply, on official portals.
+            </p>
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+              <HeroCta label="Check my eligibility" size="lg" />
+              <Link
+                href="/how-it-works"
+                className={buttonClasses({ variant: "outline", size: "lg" })}
+              >
+                See how it works
+              </Link>
+            </div>
+            <p className="mt-6 text-sm text-ink-faint">
+              Free to use &middot; No login &middot; We never submit applications for you.
+            </p>
+          </div>
+
+          <div className="mx-auto w-full max-w-md lg:max-w-none">
+            <HeroArt />
+          </div>
+        </Container>
+      </section>
+
+      {/* Trust strip */}
+      <section className="py-12 sm:py-16">
+        <Container>
+          <TrustStrip />
+        </Container>
+      </section>
+
+      {/* How it works */}
+      <section className="py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="How it works"
+            title="Three simple steps to your benefits"
+            lead="No paperwork to start. Just tell us about your situation and we point you the right way."
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <StepCard step={1} icon={MessagesSquare} tone="navy" title="Tell us about you">
+              Describe your situation in plain language — your work, age, state, or
+              what you&rsquo;re looking for. No forms, no jargon.
+            </StepCard>
+            <StepCard step={2} icon={Sparkles} tone="saffron" title="We match the schemes">
+              We compare your details against scheme eligibility and surface the ones
+              most likely to fit, with the documents you&rsquo;ll need.
+            </StepCard>
+            <StepCard step={3} icon={ExternalLink} tone="green" title="You apply, officially">
+              We hand you a direct link to the genuine government portal. You apply
+              there yourself — we never submit anything for you.
+            </StepCard>
+          </div>
+        </Container>
+      </section>
+
+      {/* Category grid */}
+      <section className="bg-surface-subtle py-20 sm:py-28">
+        <div className="tricolor-rule mb-16 mx-auto max-w-6xl" aria-hidden="true" />
+        <Container>
+          <SectionHeading
+            eyebrow="Explore by need"
+            title="Browse schemes by category"
+            lead="From farming to housing to education — find the area that fits your life."
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <div className="mt-14">
+            <CategoryGrid />
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/explore"
+              className="inline-flex items-center gap-1 font-semibold text-navy hover:text-navy-light"
+            >
+              See all schemes
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* Situation demo — tinted full-bleed band */}
+      <section className="bg-saffron-soft/50 py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Try it"
+            title="Describe your situation"
+            lead="Type a sentence about yourself, or pick a starting point. We&rsquo;ll take it from there."
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <div className="mt-12">
+            <SituationDemo />
+          </div>
+        </Container>
+      </section>
+
+      {/* Stats band */}
+      <section className="py-20 sm:py-28">
+        <Container>
+          <StatBand />
+        </Container>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Why people use us"
+            title="Benefits, finally within reach"
+          />
+          <div className="mt-14">
+            <Testimonials />
+          </div>
+        </Container>
+      </section>
+
+      {/* FAQ teaser */}
+      <section className="bg-surface-subtle py-20 sm:py-28">
+        <Container className="max-w-3xl">
+          <SectionHeading eyebrow="Questions" title="The basics, answered" />
+          <div className="mt-12">
+            <Faq items={HOME_FAQS} />
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-1 font-semibold text-navy hover:text-navy-light"
+            >
+              See all FAQs
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* Citizens celebratory band */}
+      <CitizensBand
+        eyebrow="For every Indian"
+        title="Benefits that belong to you"
+        lead="From farmers and students to seniors and entrepreneurs — government support is your right. We help you claim it."
+      />
+
+      {/* Footer CTA band */}
+      <section className="py-20 sm:py-28">
+        <Container>
+          <div className="overflow-hidden rounded-[2rem] bg-navy-gradient px-6 py-16 text-center text-white sm:px-12 sm:py-20">
+            <h2 className="mx-auto max-w-2xl text-balance font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+              Stop leaving benefits on the table.
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-pretty text-lg text-white/80">
+              Thousands of schemes go unclaimed every year. Find out what&rsquo;s
+              yours in a few minutes — for free.
+            </p>
+            <div className="mt-9 flex justify-center">
+              <HeroCta label="Check my eligibility" variant="saffron" size="lg" />
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }

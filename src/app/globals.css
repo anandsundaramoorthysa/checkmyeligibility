@@ -2,26 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+    background-image: theme("backgroundImage.page-light");
+    background-attachment: fixed;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* Keyboard focus ring — saffron, brand-consistent, high visibility. */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid theme("colors.saffron.DEFAULT");
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: theme("colors.saffron.soft");
+    color: theme("colors.navy.deep");
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Skip link — visually hidden until focused (a11y). */
+  .skip-link {
+    @apply sr-only;
+  }
+  .skip-link:focus {
+    @apply not-sr-only fixed left-4 top-4 z-[100] rounded-md bg-navy px-4 py-2 text-sm font-semibold text-white shadow-card-lg;
+  }
+
+  /* Thin tricolor rule used as a brand divider. */
+  .tricolor-rule {
+    height: 3px;
+    background-image: theme("backgroundImage.tricolor");
+    border-radius: 999px;
+  }
+
+  /* Markdown answer styling inside chat bubbles. */
+  .md-content {
+    @apply text-[15px] leading-relaxed;
+  }
+  .md-content p {
+    @apply my-2 first:mt-0 last:mb-0;
+  }
+  .md-content ul {
+    @apply my-2 list-disc space-y-1 pl-5;
+  }
+  .md-content ol {
+    @apply my-2 list-decimal space-y-1 pl-5;
+  }
+  .md-content a {
+    @apply font-medium text-navy underline underline-offset-2 hover:text-navy-light;
+  }
+  .md-content strong {
+    @apply font-semibold text-ink;
+  }
+  .md-content code {
+    @apply rounded bg-surface-muted px-1.5 py-0.5 font-mono text-[13px];
+  }
 }
 
 @layer utilities {
+  /* Gentle vertical float for the welcome bot mark. Disabled under
+     prefers-reduced-motion by the global rule in @layer base. */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Thin branded scrollbar for scroll regions. */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.navy.softer") transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme("colors.navy.softer");
+    border-radius: 999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
   }
 }
