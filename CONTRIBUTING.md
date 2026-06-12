@@ -4,7 +4,7 @@
 
 # Contributing to GovEligify
 
-Thanks for your interest in improving GovEligify! This is an open-source effort to make
+Thanks for your interest in improving GovEligify! This is a community effort to make
 Indian government schemes and certificates easier to find and claim — every contribution
 helps, whether it's a bug fix, better sample data, an accessibility tweak, a new feature, or
 documentation.
@@ -73,5 +73,18 @@ pnpm test:e2e     # Playwright (run `pnpm exec playwright install chromium` once
 
 Please **do not** file security vulnerabilities as public issues — see [SECURITY.md](SECURITY.md).
 
-By contributing, you agree that your contributions will be licensed under the project's
-[MIT License](LICENSE), and that you will follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+## Contribution licensing
+
+GovEligify is **dual-licensed** — free for noncommercial use under the
+[PolyForm Noncommercial License 1.0.0](LICENSE), with a separate
+[commercial license](COMMERCIAL-LICENSE.md) for commercial use.
+
+By submitting a contribution, you agree that:
+
+- your contribution is provided under the project's [PolyForm Noncommercial License](LICENSE); **and**
+- you grant the maintainer (Anand Sundaramoorthy) a perpetual, irrevocable, worldwide right to
+  also include and license your contribution as part of GovEligify under the project's
+  **commercial license** — this is required for the dual-licensing model to work; **and**
+- you have the right to make the contribution (it's your own work, or you have permission).
+
+You also agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md).

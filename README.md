@@ -7,7 +7,8 @@
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![License: PolyForm Noncommercial](https://img.shields.io/badge/license-PolyForm%20Noncommercial-blue?style=flat-square)](LICENSE)
+[![Commercial license available](https://img.shields.io/badge/commercial-license%20available-success?style=flat-square)](COMMERCIAL-LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![Status: Phase 1](https://img.shields.io/badge/status-phase%201%20(sample%20data)-orange?style=flat-square)](#project-status)
 
@@ -24,7 +25,7 @@ certificates you may qualify for, the documents you'll need, and a **direct link
 official portal** — so you can apply yourself.
 
 > [!IMPORTANT]
-> GovEligify is an **independent, open-source guide**. It is **not affiliated with, endorsed
+> GovEligify is an **independent guide**. It is **not affiliated with, endorsed
 > by, or operated by any government body**, and it **never submits applications on your
 > behalf** — it points you to the official portal and you apply there. This is kept
 > deliberately transparent for consent, trust, and legal safety.
@@ -274,8 +275,16 @@ for how to report it privately.
 
 ## License
 
-Released under the **MIT License**. You are free to use, modify, and distribute it under the
-terms of the license. See [LICENSE](LICENSE) for the full text.
+GovEligify uses a **dual license**:
+
+- **Noncommercial use is free** under the [PolyForm Noncommercial License 1.0.0](LICENSE) —
+  use, modify, and share it for personal, research, educational, charitable, or government
+  purposes at no cost.
+- **Commercial use requires a paid commercial license.** See
+  [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md) or [contact the author](#contact).
+
+> Because it restricts commercial use, GovEligify is **source-available**, not OSI-approved
+> "open source." See the [LICENSE](LICENSE) file for the full terms.
 
 ## Contact
 
