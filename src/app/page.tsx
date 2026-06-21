@@ -49,7 +49,11 @@ export default function HomePage() {
               need and exactly where to apply, on official portals.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-              <HeroCta label="Check my eligibility" size="lg" />
+              <HeroCta
+                label="Check my eligibility"
+                size="lg"
+                className="bg-red-600 text-white hover:bg-red-700"
+              />
               <Link
                 href="/how-it-works"
                 className={buttonClasses({ variant: "outline", size: "lg" })}
