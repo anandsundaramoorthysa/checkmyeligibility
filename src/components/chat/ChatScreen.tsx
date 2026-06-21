@@ -22,7 +22,6 @@ import {
 } from "@/lib/chat/preferences";
 import { playChime } from "@/lib/chat/sound";
 import { downloadTranscript } from "@/lib/chat/transcript";
-import { cn } from "@/lib/utils";
 import { ScreenHeader } from "./screen/ScreenHeader";
 import { WelcomeState } from "./screen/WelcomeState";
 import { ScreenBubble, ScreenTyping } from "./screen/ScreenBubble";
