@@ -16,15 +16,15 @@ export function SchemeResultCard({ scheme }: { scheme: Scheme }) {
   const documents = scheme.requiredDocuments.slice(0, 4);
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-navy/10 border-l-[3px] border-l-green bg-surface-card shadow-card">
+    <article className="overflow-hidden rounded-2xl border border-navy/10 border-l-[3px] border-l-green bg-surface-card shadow-card dark:border-white/10 dark:border-l-green dark:bg-navy-dark">
       <div className="flex flex-col gap-3 p-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="text-sm font-bold leading-tight text-navy-deep">
+            <h3 className="text-sm font-bold leading-tight text-navy-deep dark:text-white">
               {scheme.shortName ?? scheme.name}
             </h3>
             {scheme.shortName && (
-              <p className="mt-0.5 text-xs text-ink-muted">{scheme.name}</p>
+              <p className="mt-0.5 text-xs text-ink-muted dark:text-white/60">{scheme.name}</p>
             )}
           </div>
           <Badge tone="navy" className="shrink-0">
@@ -32,13 +32,13 @@ export function SchemeResultCard({ scheme }: { scheme: Scheme }) {
           </Badge>
         </div>
 
-        <p className="text-xs leading-relaxed text-ink-muted">{scheme.summary}</p>
+        <p className="text-xs leading-relaxed text-ink-muted dark:text-white/70">{scheme.summary}</p>
 
         {eligibility.length > 0 && (
           <Section icon={<CheckCircle2 size={14} className="text-green-deep" />} title="Eligibility">
             {eligibility.map((c, i) => (
               <li key={i}>
-                <span className="font-medium text-ink">{c.label}:</span> {c.value}
+                <span className="font-medium text-ink dark:text-white">{c.label}:</span> {c.value}
               </li>
             ))}
           </Section>
@@ -70,7 +70,7 @@ export function SchemeResultCard({ scheme }: { scheme: Scheme }) {
           <ExternalLink size={14} aria-hidden="true" />
         </a>
 
-        <p className="text-[11px] leading-snug text-ink-faint">
+        <p className="text-[11px] leading-snug text-ink-faint dark:text-white/40">
           GovEligify guides you; the application happens on the official site.
         </p>
       </div>
@@ -89,11 +89,11 @@ function Section({
 }) {
   return (
     <div>
-      <p className="mb-1 flex items-center gap-1.5 text-xs font-semibold text-ink">
+      <p className="mb-1 flex items-center gap-1.5 text-xs font-semibold text-ink dark:text-white">
         <span aria-hidden="true">{icon}</span>
         {title}
       </p>
-      <ul className="ml-1 list-inside list-disc space-y-0.5 text-xs leading-relaxed text-ink-muted">
+      <ul className="ml-1 list-inside list-disc space-y-0.5 text-xs leading-relaxed text-ink-muted dark:text-white/60">
         {children}
       </ul>
     </div>

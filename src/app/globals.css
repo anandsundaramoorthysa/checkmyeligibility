@@ -83,6 +83,18 @@
   .md-content code {
     @apply rounded bg-surface-muted px-1.5 py-0.5 font-mono text-[13px];
   }
+
+  /* Dark mode (scoped to the chat assistant's .dark subtree) needs its own
+     link/code colors — the light-theme navy is unreadable on a navy bg. */
+  .dark .md-content a {
+    @apply text-saffron-soft hover:text-white;
+  }
+  .dark .md-content strong {
+    @apply text-white;
+  }
+  .dark .md-content code {
+    @apply bg-white/10 text-white/90;
+  }
 }
 
 @layer utilities {

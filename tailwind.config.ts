@@ -11,6 +11,9 @@ const config: Config = {
   content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xs: "420px",
+      },
       colors: {
         navy: {
           DEFAULT: "#0A3D91", // chakra blue — primary brand, text accents, buttons

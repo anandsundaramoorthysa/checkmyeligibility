@@ -12,6 +12,19 @@ import { ChevronDown } from "lucide-react";
 import type { BotTurn, Message, QuickReply } from "@/lib/types";
 import { mockEngine } from "@/lib/chat/mockEngine";
 import { sendToBot } from "@/lib/chat/client";
+import {
+  DEFAULT_FONT_STEP_INDEX,
+  FONT_SCALE_STEPS,
+  getStoredDarkTheme,
+  getStoredFontStepIndex,
+  getStoredSoundOn,
+  storeDarkTheme,
+  storeFontStepIndex,
+  storeSoundOn,
+} from "@/lib/chat/preferences";
+import { playChime } from "@/lib/chat/sound";
+import { downloadTranscript } from "@/lib/chat/transcript";
+import { cn } from "@/lib/utils";
 import { ScreenHeader } from "./screen/ScreenHeader";
 import { WelcomeState } from "./screen/WelcomeState";
 import { ScreenBubble, ScreenTyping } from "./screen/ScreenBubble";
@@ -52,6 +65,9 @@ export function ChatScreen({ initialQuery }: Props) {
   const [quickReplies, setQuickReplies] = useState<QuickReply[]>([]);
   const [typing, setTyping] = useState(false);
   const [showJump, setShowJump] = useState(false);
+  const [fontStepIndex, setFontStepIndex] = useState(DEFAULT_FONT_STEP_INDEX);
+  const [soundOn, setSoundOn] = useState(false);
+  const [dark, setDark] = useState(false);
 
   const messagesRef = useRef<Message[]>(messages);
   messagesRef.current = messages;
@@ -61,9 +77,12 @@ export function ChatScreen({ initialQuery }: Props) {
   const atBottomRef = useRef(true);
   const typingRef = useRef(false);
   typingRef.current = typing;
+  const soundOnRef = useRef(soundOn);
+  soundOnRef.current = soundOn;
   const sendRef = useRef<(t: string) => void>(() => {});
   const seededRef = useRef(false);
   const restoredRef = useRef(false);
+  const prefsRestoredRef = useRef(false);
   const cancelledRef = useRef<{ cancelled: boolean } | null>(null);
 
   const hasMessages = messages.length > 0;
@@ -82,6 +101,24 @@ export function ChatScreen({ initialQuery }: Props) {
       /* ignore corrupt storage */
     }
   }, []);
+
+  // Restore text size / sound / theme preferences on mount.
+  useEffect(() => {
+    if (prefsRestoredRef.current) return;
+    prefsRestoredRef.current = true;
+    setFontStepIndex(getStoredFontStepIndex());
+    setSoundOn(getStoredSoundOn());
+    setDark(getStoredDarkTheme());
+  }, []);
+
+  // Apply the text-size preference to the page while the assistant is open;
+  // restore the default size when leaving so other routes are unaffected.
+  useEffect(() => {
+    document.documentElement.style.fontSize = `${FONT_SCALE_STEPS[fontStepIndex]}%`;
+    return () => {
+      document.documentElement.style.fontSize = "";
+    };
+  }, [fontStepIndex]);
 
   // Persist the transcript (only when settled, capped).
   useEffect(() => {
@@ -140,6 +177,7 @@ export function ChatScreen({ initialQuery }: Props) {
     setTyping(false);
     setMessages([...messagesRef.current, ...botMsgs]);
     setQuickReplies(qr);
+    if (soundOnRef.current) playChime();
   }, []);
 
   sendRef.current = send;
@@ -159,6 +197,42 @@ export function ChatScreen({ initialQuery }: Props) {
       /* ignore */
     }
   }, [stop]);
+
+  const increaseFont = useCallback(() => {
+    setFontStepIndex((i) => {
+      const next = Math.min(i + 1, FONT_SCALE_STEPS.length - 1);
+      storeFontStepIndex(next);
+      return next;
+    });
+  }, []);
+
+  const decreaseFont = useCallback(() => {
+    setFontStepIndex((i) => {
+      const next = Math.max(i - 1, 0);
+      storeFontStepIndex(next);
+      return next;
+    });
+  }, []);
+
+  const toggleSound = useCallback(() => {
+    setSoundOn((v) => {
+      const next = !v;
+      storeSoundOn(next);
+      return next;
+    });
+  }, []);
+
+  const toggleDark = useCallback(() => {
+    setDark((v) => {
+      const next = !v;
+      storeDarkTheme(next);
+      return next;
+    });
+  }, []);
+
+  const handleDownload = useCallback(() => {
+    downloadTranscript(messagesRef.current);
+  }, []);
 
   // ?q= deep-link: auto-send once on mount, then leave the URL clean.
   // Guarded by seededRef so it fires exactly once (incl. under dev StrictMode's
@@ -218,7 +292,12 @@ export function ChatScreen({ initialQuery }: Props) {
       : [];
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden bg-surface">
+    <div
+      className={cn(
+        "relative flex h-full flex-col overflow-hidden bg-surface dark:bg-navy-deeper",
+        dark && "dark",
+      )}
+    >
       {/* Ambient tricolor background */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-saffron/15 blur-3xl" />
@@ -226,7 +305,19 @@ export function ChatScreen({ initialQuery }: Props) {
       </div>
 
       <div className="relative z-10 flex h-full flex-col">
-        <ScreenHeader hasMessages={hasMessages} onReset={reset} />
+        <ScreenHeader
+          hasMessages={hasMessages}
+          onReset={reset}
+          onDownload={handleDownload}
+          fontStepIndex={fontStepIndex}
+          maxFontStepIndex={FONT_SCALE_STEPS.length - 1}
+          onIncreaseFont={increaseFont}
+          onDecreaseFont={decreaseFont}
+          soundOn={soundOn}
+          onToggleSound={toggleSound}
+          dark={dark}
+          onToggleDark={toggleDark}
+        />
 
         <div
           ref={scrollRef}
@@ -259,7 +350,7 @@ export function ChatScreen({ initialQuery }: Props) {
             type="button"
             onClick={jumpDown}
             aria-label="Scroll to latest"
-            className="absolute bottom-32 left-1/2 z-20 grid h-10 w-10 -translate-x-1/2 animate-fade-in place-items-center rounded-full border border-navy/10 bg-surface-card text-navy shadow-card-lg transition-colors hover:bg-surface-subtle"
+            className="absolute bottom-32 left-1/2 z-20 grid h-10 w-10 -translate-x-1/2 animate-fade-in place-items-center rounded-full border border-navy/10 bg-surface-card text-navy shadow-card-lg transition-colors hover:bg-surface-subtle dark:border-white/10 dark:bg-navy-dark dark:text-white dark:hover:bg-white/10"
           >
             <ChevronDown size={20} aria-hidden="true" />
           </button>
