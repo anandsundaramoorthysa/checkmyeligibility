@@ -58,7 +58,7 @@ export function Header() {
             href={chatHref()}
             className={cn(
               buttonClasses({ variant: "saffron", size: "sm" }),
-              "hidden text-red-600 sm:inline-flex",
+              "hidden sm:inline-flex",
             )}
           >
             <MessageSquareText className="h-4 w-4" aria-hidden />

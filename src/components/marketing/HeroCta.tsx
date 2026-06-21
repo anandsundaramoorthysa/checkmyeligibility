@@ -13,7 +13,7 @@ export function HeroCta({
 }: {
   label?: string;
   seed?: string;
-  variant?: "primary" | "saffron" | "outline" | "ghost";
+  variant?: "primary" | "saffron" | "outline" | "ghost" | "white";
   size?: "sm" | "md" | "lg";
   className?: string;
 }) {

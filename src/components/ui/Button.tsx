@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "saffron" | "outline" | "ghost";
+type Variant = "primary" | "saffron" | "outline" | "ghost" | "white";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60 touch:min-h-[44px]";
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60 touch:min-h-[44px]";
 
 const variants: Record<Variant, string> = {
   // navy = primary action (AA-safe on white)
@@ -13,6 +13,7 @@ const variants: Record<Variant, string> = {
   saffron: "bg-saffron text-navy-deep hover:bg-saffron-deep hover:text-white",
   outline: "border border-navy/25 text-navy hover:bg-surface-subtle",
   ghost: "text-navy hover:bg-surface-subtle",
+  white: "bg-white text-navy-deep hover:bg-gray-50 hover:shadow-md active:bg-gray-100",
 };
 
 const sizes: Record<Size, string> = {
