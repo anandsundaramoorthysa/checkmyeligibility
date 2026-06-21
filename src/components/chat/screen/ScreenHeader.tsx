@@ -6,9 +6,7 @@ import {
   Download,
   HelpCircle,
   Keyboard,
-  Moon,
   Plus,
-  Sun,
   Volume2,
   VolumeX,
   X,
@@ -26,12 +24,10 @@ interface Props {
   onDecreaseFont: () => void;
   soundOn: boolean;
   onToggleSound: () => void;
-  dark: boolean;
-  onToggleDark: () => void;
 }
 
 const iconButton =
-  "grid h-9 w-9 shrink-0 place-items-center rounded-full text-ink-muted transition-colors hover:bg-surface-subtle hover:text-navy disabled:opacity-30 disabled:hover:bg-transparent dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white";
+  "grid h-9 w-9 shrink-0 place-items-center rounded-full text-ink-muted transition-colors hover:bg-surface-subtle hover:text-navy disabled:opacity-30 disabled:hover:bg-transparent";
 
 const SHORTCUTS: { keys: string; label: string }[] = [
   { keys: "/", label: "Focus the message box" },
@@ -56,19 +52,17 @@ export function ScreenHeader({
   onDecreaseFont,
   soundOn,
   onToggleSound,
-  dark,
-  onToggleDark,
 }: Props) {
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
   return (
-    <header className="flex h-14 flex-shrink-0 items-center gap-2.5 border-b border-navy/10 bg-surface-card/90 px-3 backdrop-blur sm:px-4 dark:border-white/10 dark:bg-navy-dark/90">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-navy/15 bg-surface-card dark:border-white/15 dark:bg-navy-dark">
+    <header className="flex h-14 flex-shrink-0 items-center gap-2.5 border-b border-navy/10 bg-surface-card/90 px-3 backdrop-blur sm:px-4">
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-navy/15 bg-surface-card">
         <LogoMark className="h-6 w-6" title="" />
       </span>
 
       <div className="min-w-0 flex-1">
-        <p className="flex items-center gap-1.5 text-sm font-semibold leading-tight text-ink dark:text-white">
+        <p className="flex items-center gap-1.5 text-sm font-semibold leading-tight text-ink">
           <span className="truncate">GovEligify Assistant</span>
           <span
             className="inline-block h-2 w-2 shrink-0 rounded-full bg-green ring-2 ring-green-soft"
@@ -76,7 +70,7 @@ export function ScreenHeader({
             title="Online"
           />
         </p>
-        <p className="truncate text-[11px] leading-tight text-ink-faint dark:text-white/50">
+        <p className="truncate text-[11px] leading-tight text-ink-faint">
           Not affiliated with any government
         </p>
       </div>
@@ -110,7 +104,7 @@ export function ScreenHeader({
           </button>
           <span
             aria-hidden="true"
-            className="mx-0.5 h-5 w-px bg-navy/15 dark:bg-white/15"
+            className="mx-0.5 h-5 w-px bg-navy/15"
           />
         </div>
 
@@ -154,16 +148,16 @@ export function ScreenHeader({
                 onClick={() => setShortcutsOpen(false)}
                 aria-hidden="true"
               />
-              <div className="absolute right-0 top-11 z-40 w-64 animate-fade-in rounded-2xl border border-navy/10 bg-surface-card p-3 text-left shadow-card-lg dark:border-white/10 dark:bg-navy-dark">
+              <div className="absolute right-0 top-11 z-40 w-64 animate-fade-in rounded-2xl border border-navy/10 bg-surface-card p-3 text-left shadow-card-lg">
                 <div className="flex items-center justify-between gap-2">
-                  <h2 className="font-display text-sm font-bold text-navy-deep dark:text-white">
+                  <h2 className="font-display text-sm font-bold text-navy-deep">
                     Keyboard shortcuts
                   </h2>
                   <button
                     type="button"
                     onClick={() => setShortcutsOpen(false)}
                     aria-label="Close"
-                    className="text-ink-muted transition-colors hover:text-navy dark:text-white/60 dark:hover:text-white"
+                    className="text-ink-muted transition-colors hover:text-navy"
                   >
                     <X size={16} aria-hidden="true" />
                   </button>
@@ -172,10 +166,10 @@ export function ScreenHeader({
                   {SHORTCUTS.map((s) => (
                     <li
                       key={s.keys}
-                      className="flex items-center justify-between gap-3 text-xs text-ink-muted dark:text-white/70"
+                      className="flex items-center justify-between gap-3 text-xs text-ink-muted"
                     >
                       <span>{s.label}</span>
-                      <kbd className="rounded-md border border-navy/15 bg-surface-subtle px-1.5 py-0.5 font-mono text-[11px] text-navy dark:border-white/15 dark:bg-white/10 dark:text-white">
+                      <kbd className="rounded-md border border-navy/15 bg-surface-subtle px-1.5 py-0.5 font-mono text-[11px] text-navy">
                         {s.keys}
                       </kbd>
                     </li>
@@ -198,16 +192,6 @@ export function ScreenHeader({
           ) : (
             <VolumeX size={17} aria-hidden="true" />
           )}
-        </button>
-
-        <button
-          type="button"
-          onClick={onToggleDark}
-          aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-          title={dark ? "Switch to light mode" : "Switch to dark mode"}
-          className={iconButton}
-        >
-          {dark ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}
         </button>
 
         <Link

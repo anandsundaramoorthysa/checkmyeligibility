@@ -18,7 +18,7 @@ export function FollowUpChips({ replies, onPick }: Props) {
           key={r.label}
           type="button"
           onClick={() => onPick(r.send)}
-          className="touch:min-h-[44px] inline-flex items-center gap-1.5 rounded-full border border-navy/15 bg-surface-card px-3.5 py-1.5 text-xs font-medium text-ink-muted shadow-card transition-all hover:-translate-y-0.5 hover:border-navy/30 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron dark:border-white/15 dark:bg-navy-dark dark:text-white/70 dark:hover:border-white/30 dark:hover:text-white"
+          className="touch:min-h-[44px] inline-flex items-center gap-1.5 rounded-full border border-navy/15 bg-surface-card px-3.5 py-1.5 text-xs font-medium text-ink-muted shadow-card transition-all hover:-translate-y-0.5 hover:border-navy/30 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron"
         >
           <Sparkles size={13} aria-hidden="true" className="shrink-0 text-saffron-deep" />
           {r.label}

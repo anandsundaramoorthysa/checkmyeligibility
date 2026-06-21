@@ -15,10 +15,8 @@ import { sendToBot } from "@/lib/chat/client";
 import {
   DEFAULT_FONT_STEP_INDEX,
   FONT_SCALE_STEPS,
-  getStoredDarkTheme,
   getStoredFontStepIndex,
   getStoredSoundOn,
-  storeDarkTheme,
   storeFontStepIndex,
   storeSoundOn,
 } from "@/lib/chat/preferences";
@@ -67,7 +65,6 @@ export function ChatScreen({ initialQuery }: Props) {
   const [showJump, setShowJump] = useState(false);
   const [fontStepIndex, setFontStepIndex] = useState(DEFAULT_FONT_STEP_INDEX);
   const [soundOn, setSoundOn] = useState(false);
-  const [dark, setDark] = useState(false);
 
   const messagesRef = useRef<Message[]>(messages);
   messagesRef.current = messages;
@@ -108,7 +105,6 @@ export function ChatScreen({ initialQuery }: Props) {
     prefsRestoredRef.current = true;
     setFontStepIndex(getStoredFontStepIndex());
     setSoundOn(getStoredSoundOn());
-    setDark(getStoredDarkTheme());
   }, []);
 
   // Apply the text-size preference to the page while the assistant is open;
@@ -222,14 +218,6 @@ export function ChatScreen({ initialQuery }: Props) {
     });
   }, []);
 
-  const toggleDark = useCallback(() => {
-    setDark((v) => {
-      const next = !v;
-      storeDarkTheme(next);
-      return next;
-    });
-  }, []);
-
   const handleDownload = useCallback(() => {
     downloadTranscript(messagesRef.current);
   }, []);
@@ -293,10 +281,7 @@ export function ChatScreen({ initialQuery }: Props) {
 
   return (
     <div
-      className={cn(
-        "relative flex h-full flex-col overflow-hidden bg-surface dark:bg-navy-deeper",
-        dark && "dark",
-      )}
+      className="relative flex h-full flex-col overflow-hidden bg-surface"
     >
       {/* Ambient tricolor background */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
@@ -315,8 +300,6 @@ export function ChatScreen({ initialQuery }: Props) {
           onDecreaseFont={decreaseFont}
           soundOn={soundOn}
           onToggleSound={toggleSound}
-          dark={dark}
-          onToggleDark={toggleDark}
         />
 
         <div
@@ -350,7 +333,7 @@ export function ChatScreen({ initialQuery }: Props) {
             type="button"
             onClick={jumpDown}
             aria-label="Scroll to latest"
-            className="absolute bottom-32 left-1/2 z-20 grid h-10 w-10 -translate-x-1/2 animate-fade-in place-items-center rounded-full border border-navy/10 bg-surface-card text-navy shadow-card-lg transition-colors hover:bg-surface-subtle dark:border-white/10 dark:bg-navy-dark dark:text-white dark:hover:bg-white/10"
+            className="absolute bottom-32 left-1/2 z-20 grid h-10 w-10 -translate-x-1/2 animate-fade-in place-items-center rounded-full border border-navy/10 bg-surface-card text-navy shadow-card-lg transition-colors hover:bg-surface-subtle"
           >
             <ChevronDown size={20} aria-hidden="true" />
           </button>

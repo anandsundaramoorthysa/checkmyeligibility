@@ -68,7 +68,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
     <div className="mx-auto w-full max-w-3xl">
       <form
         onSubmit={submit}
-        className="flex items-end gap-2 rounded-2xl border border-navy/15 bg-surface-card px-3 py-2 shadow-card-lg transition-shadow focus-within:border-navy/30 dark:border-white/15 dark:bg-navy-dark dark:focus-within:border-white/30"
+        className="flex items-end gap-2 rounded-2xl border border-navy/15 bg-surface-card px-3 py-2 shadow-card-lg transition-shadow focus-within:border-navy/30"
       >
         <label htmlFor="screen-composer" className="sr-only">
           Describe your situation
@@ -83,7 +83,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           onKeyDown={onKeyDown}
           placeholder="Describe your situation…"
           aria-label="Message"
-          className="block w-full resize-none border-0 bg-transparent px-2 py-1.5 text-sm leading-relaxed text-ink outline-none placeholder:text-ink-faint scrollbar-thin dark:text-white dark:placeholder:text-white/40"
+          className="block w-full resize-none border-0 bg-transparent px-2 py-1.5 text-sm leading-relaxed text-ink outline-none placeholder:text-ink-faint scrollbar-thin"
           style={{ maxHeight: MAX_HEIGHT_PX }}
         />
 
@@ -92,7 +92,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
             type="button"
             onClick={onStop}
             aria-label="Stop"
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-navy/15 text-ink-muted transition-transform active:scale-90 dark:border-white/15 dark:text-white/70"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-navy/15 text-ink-muted transition-transform active:scale-90"
           >
             <Square size={16} fill="currentColor" aria-hidden="true" />
           </button>
@@ -114,7 +114,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
 
       {/* Trust line + how-it-works popover */}
       <div className="relative mt-2 flex items-center justify-center gap-1.5 px-2">
-        <p className="text-center text-[11px] leading-snug text-ink-faint dark:text-white/40">
+        <p className="text-center text-[11px] leading-snug text-ink-faint">
           Sample guidance — always verify on the official portal. We never submit
           applications for you.
         </p>
@@ -123,7 +123,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           onClick={() => setShowHelp((v) => !v)}
           aria-label="How this works"
           aria-expanded={showHelp}
-          className="grid h-5 w-5 shrink-0 place-items-center rounded-full text-ink-faint transition-colors hover:text-navy dark:text-white/40 dark:hover:text-white"
+          className="grid h-5 w-5 shrink-0 place-items-center rounded-full text-ink-faint transition-colors hover:text-navy"
         >
           <Info size={14} aria-hidden="true" />
         </button>
@@ -135,21 +135,21 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
               onClick={() => setShowHelp(false)}
               aria-hidden="true"
             />
-            <div className="absolute bottom-8 left-1/2 z-40 w-[min(92vw,22rem)] -translate-x-1/2 animate-fade-in rounded-2xl border border-navy/10 bg-surface-card p-4 text-left shadow-card-lg dark:border-white/10 dark:bg-navy-dark">
+            <div className="absolute bottom-8 left-1/2 z-40 w-[min(92vw,22rem)] -translate-x-1/2 animate-fade-in rounded-2xl border border-navy/10 bg-surface-card p-4 text-left shadow-card-lg">
               <div className="flex items-start justify-between gap-3">
-                <h2 className="font-display text-sm font-bold text-navy-deep dark:text-white">
+                <h2 className="font-display text-sm font-bold text-navy-deep">
                   How this works
                 </h2>
                 <button
                   type="button"
                   onClick={() => setShowHelp(false)}
                   aria-label="Close"
-                  className="text-ink-muted transition-colors hover:text-navy dark:text-white/60 dark:hover:text-white"
+                  className="text-ink-muted transition-colors hover:text-navy"
                 >
                   <X size={16} aria-hidden="true" />
                 </button>
               </div>
-              <p className="mt-2 text-xs leading-relaxed text-ink-muted dark:text-white/70">
+              <p className="mt-2 text-xs leading-relaxed text-ink-muted">
                 Describe your situation and GovEligify matches you to sample
                 government schemes and certificates, with the documents you&apos;ll
                 need and a link to the official portal. This is a sample

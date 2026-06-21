@@ -8,7 +8,6 @@
 
 const FONT_STEP_KEY = "goveligify-chat-font-step";
 const SOUND_KEY = "goveligify-chat-sound";
-const THEME_KEY = "goveligify-chat-theme";
 
 /** Root font-size percentages selectable via the header's A−/A+ controls. */
 export const FONT_SCALE_STEPS = [87.5, 100, 112.5, 125, 137.5] as const;
@@ -44,22 +43,6 @@ export function getStoredSoundOn(): boolean {
 export function storeSoundOn(on: boolean): void {
   try {
     localStorage.setItem(SOUND_KEY, on ? "on" : "off");
-  } catch {
-    /* ignore */
-  }
-}
-
-export function getStoredDarkTheme(): boolean {
-  try {
-    return localStorage.getItem(THEME_KEY) === "dark";
-  } catch {
-    return false;
-  }
-}
-
-export function storeDarkTheme(dark: boolean): void {
-  try {
-    localStorage.setItem(THEME_KEY, dark ? "dark" : "light");
   } catch {
     /* ignore */
   }
