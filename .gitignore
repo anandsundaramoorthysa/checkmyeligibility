@@ -27,6 +27,10 @@
 /.verify
 /.shots
 
+# Local work-in-progress files (kept locally, not part of the tracked project)
+src/components/marketing/Pagination.tsx
+src/lib/states.ts
+
 # ─────────────────────────────────────────────────────────────
 # Environment variables (never commit secrets)
 # ─────────────────────────────────────────────────────────────
