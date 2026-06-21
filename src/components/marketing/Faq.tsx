@@ -12,7 +12,7 @@ export function Faq({
   items: { q: string; a: string }[];
   className?: string;
 }) {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <div className={cn("divide-y divide-navy/10 overflow-hidden rounded-3xl border border-navy/10 bg-surface-card shadow-card", className)}>
