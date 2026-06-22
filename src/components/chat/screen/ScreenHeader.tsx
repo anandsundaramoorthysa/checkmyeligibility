@@ -1,18 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Download,
   HelpCircle,
   Keyboard,
   Plus,
+  Search,
   Volume2,
   VolumeX,
   X,
 } from "lucide-react";
 import { LogoMark } from "@/components/brand/Logo";
 import { cn } from "@/lib/utils";
+import type { Message } from "@/lib/types";
 
 interface Props {
   hasMessages: boolean;
@@ -24,6 +26,8 @@ interface Props {
   onDecreaseFont: () => void;
   soundOn: boolean;
   onToggleSound: () => void;
+  messages: Message[];
+  onJumpToMessage: (id: string) => void;
 }
 
 const iconButton =
@@ -37,10 +41,10 @@ const SHORTCUTS: { keys: string; label: string }[] = [
 ];
 
 /**
- * Slim sticky header for the full-screen assistant: back arrow, bot avatar +
- * title with an "online" dot, and a Botinigo-style action toolbar — text
- * size, new chat, download transcript, keyboard shortcuts, sound, dark mode,
- * and help.
+ * Slim sticky header for the full-screen assistant: bot avatar + title with
+ * an "online" dot, and a Botinigo-style action toolbar — text size, new
+ * chat, download transcript, keyboard shortcuts, sound, and conversation
+ * search.
  */
 export function ScreenHeader({
   hasMessages,
@@ -52,8 +56,23 @@ export function ScreenHeader({
   onDecreaseFont,
   soundOn,
   onToggleSound,
+  messages,
+  onJumpToMessage,
 }: Props) {
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+
+  const results = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return messages.filter((m) => m.content.toLowerCase().includes(q)).slice(0, 8);
+  }, [messages, query]);
+
+  function closeSearch() {
+    setSearchOpen(false);
+    setQuery("");
+  }
 
   return (
     <header className="flex h-14 flex-shrink-0 items-center gap-2.5 border-b border-navy/10 bg-surface-card/90 px-3 backdrop-blur sm:px-4">
@@ -193,6 +212,84 @@ export function ScreenHeader({
             <VolumeX size={17} aria-hidden="true" />
           )}
         </button>
+
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setSearchOpen((v) => !v)}
+            aria-label="Search this conversation"
+            title="Search this conversation"
+            aria-haspopup="menu"
+            aria-expanded={searchOpen}
+            className={iconButton}
+          >
+            <Search size={17} aria-hidden="true" />
+          </button>
+
+          {searchOpen && (
+            <>
+              <div
+                className="fixed inset-0 z-30"
+                onClick={closeSearch}
+                aria-hidden="true"
+              />
+              <div className="absolute right-0 top-11 z-40 w-72 animate-fade-in rounded-2xl border border-navy/10 bg-surface-card p-3 text-left shadow-card-lg">
+                <div className="flex items-center gap-2">
+                  <Search
+                    size={14}
+                    aria-hidden="true"
+                    className="shrink-0 text-ink-faint"
+                  />
+                  <input
+                    type="text"
+                    autoFocus
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search this conversation…"
+                    aria-label="Search this conversation"
+                    className="w-full border-0 bg-transparent text-sm text-ink outline-none placeholder:text-ink-faint"
+                  />
+                  <button
+                    type="button"
+                    onClick={closeSearch}
+                    aria-label="Close"
+                    className="shrink-0 text-ink-muted transition-colors hover:text-navy"
+                  >
+                    <X size={16} aria-hidden="true" />
+                  </button>
+                </div>
+
+                {query.trim() && (
+                  <ul className="mt-2 max-h-64 space-y-1 overflow-y-auto scrollbar-thin">
+                    {results.length === 0 ? (
+                      <li className="px-1 py-2 text-xs text-ink-faint">
+                        No matches yet.
+                      </li>
+                    ) : (
+                      results.map((m) => (
+                        <li key={m.id}>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              onJumpToMessage(m.id);
+                              closeSearch();
+                            }}
+                            className="block w-full truncate rounded-lg px-2 py-1.5 text-left text-xs text-ink-muted transition-colors hover:bg-surface-subtle hover:text-navy"
+                          >
+                            <span className="font-semibold">
+                              {m.role === "user" ? "You: " : "Bot: "}
+                            </span>
+                            {m.content}
+                          </button>
+                        </li>
+                      ))
+                    )}
+                  </ul>
+                )}
+              </div>
+            </>
+          )}
+        </div>
 
         <Link
           href="/how-it-works"

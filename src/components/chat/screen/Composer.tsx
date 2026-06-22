@@ -2,36 +2,170 @@
 
 import {
   forwardRef,
+  useEffect,
   useLayoutEffect,
   useRef,
   useState,
   type FormEvent,
   type KeyboardEvent,
 } from "react";
-import { ArrowUp, Info, Square, X } from "lucide-react";
+import {
+  ArrowUp,
+  ChevronDown,
+  Info,
+  Languages,
+  Mic,
+  MicOff,
+  Square,
+  X,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { LangCode } from "@/lib/types";
+import { LANGUAGES, SPEECH_LOCALE, STRINGS } from "@/lib/chat/translations";
 
 interface Props {
   onSend: (text: string) => void;
   onStop: () => void;
   pending: boolean;
+  lang: LangCode;
+  onLangChange: (lang: LangCode) => void;
 }
 
 const MAX_HEIGHT_PX = 140;
 const MAX_LEN = 1000;
+/** Safety net so a stalled permission prompt / silent driver can't leave the
+ * mic stuck showing "listening" forever with no feedback. */
+const MIC_TIMEOUT_MS = 8000;
+
+interface SpeechRecognitionResultLike {
+  results: { [index: number]: { [index: number]: { transcript: string } } } & {
+    length: number;
+  };
+}
+
+interface SpeechRecognitionErrorLike {
+  error: string;
+}
+
+interface SpeechRecognitionLike {
+  lang: string;
+  interimResults: boolean;
+  continuous: boolean;
+  onresult: ((e: SpeechRecognitionResultLike) => void) | null;
+  onend: (() => void) | null;
+  onerror: ((e: SpeechRecognitionErrorLike) => void) | null;
+  start: () => void;
+  stop: () => void;
+}
+
+function getSpeechRecognition(): (new () => SpeechRecognitionLike) | null {
+  if (typeof window === "undefined") return null;
+  const w = window as unknown as {
+    SpeechRecognition?: new () => SpeechRecognitionLike;
+    webkitSpeechRecognition?: new () => SpeechRecognitionLike;
+  };
+  return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
+}
 
 /**
- * Bottom composer: auto-grow textarea + circular send/stop button, plus a
- * centered trust line with a "How this works" popover. Forwards a ref to the
- * textarea so the parent can implement the "/" focus shortcut.
+ * Bottom composer: language selector + mic dictation + auto-grow textarea +
+ * circular send/stop button, plus a centered trust line with a "How this
+ * works" popover. Forwards a ref to the textarea so the parent can
+ * implement the "/" focus shortcut.
  */
 export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer(
-  { onSend, onStop, pending },
+  { onSend, onStop, pending, lang, onLangChange },
   ref,
 ) {
   const [value, setValue] = useState("");
   const [showHelp, setShowHelp] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [micSupported, setMicSupported] = useState(false);
+  const [micError, setMicError] = useState<string | null>(null);
   const innerRef = useRef<HTMLTextAreaElement | null>(null);
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const micTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const t = STRINGS[lang];
+
+  useEffect(() => {
+    setMicSupported(getSpeechRecognition() !== null);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      recognitionRef.current?.stop();
+      if (micTimeoutRef.current) clearTimeout(micTimeoutRef.current);
+    };
+  }, []);
+
+  // Auto-dismiss the mic error toast.
+  useEffect(() => {
+    if (!micError) return;
+    const id = setTimeout(() => setMicError(null), 4000);
+    return () => clearTimeout(id);
+  }, [micError]);
+
+  function clearMicTimeout() {
+    if (micTimeoutRef.current) {
+      clearTimeout(micTimeoutRef.current);
+      micTimeoutRef.current = null;
+    }
+  }
+
+  function stopListening(error?: string) {
+    clearMicTimeout();
+    setListening(false);
+    if (error) setMicError(error);
+  }
+
+  function toggleMic() {
+    if (listening) {
+      recognitionRef.current?.stop();
+      stopListening();
+      return;
+    }
+    const SpeechRecognitionCtor = getSpeechRecognition();
+    if (!SpeechRecognitionCtor) {
+      setMicError("Voice input isn't supported in this browser.");
+      return;
+    }
+
+    setMicError(null);
+    const recognition = new SpeechRecognitionCtor();
+    recognition.lang = SPEECH_LOCALE[lang];
+    recognition.interimResults = false;
+    recognition.continuous = false;
+    recognition.onresult = (e) => {
+      const transcript = e.results[e.results.length - 1]?.[0]?.transcript ?? "";
+      if (transcript) {
+        setValue((prev) => (prev ? `${prev} ${transcript}` : transcript));
+      }
+    };
+    recognition.onend = () => stopListening();
+    recognition.onerror = (e) => {
+      const blocked = e?.error === "not-allowed" || e?.error === "service-not-allowed";
+      stopListening(
+        blocked
+          ? "Microphone access is blocked — allow it in your browser settings."
+          : "Didn't catch that — please try again.",
+      );
+    };
+
+    recognitionRef.current = recognition;
+    try {
+      recognition.start();
+      setListening(true);
+      clearMicTimeout();
+      micTimeoutRef.current = setTimeout(() => {
+        recognitionRef.current?.stop();
+        stopListening("Didn't catch that — please try again.");
+      }, MIC_TIMEOUT_MS);
+    } catch {
+      setListening(false);
+      setMicError("Couldn't start voice input — please try again.");
+    }
+  }
 
   const setRefs = (el: HTMLTextAreaElement | null) => {
     innerRef.current = el;
@@ -68,7 +202,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
     <div className="mx-auto w-full max-w-3xl">
       <form
         onSubmit={submit}
-        className="flex items-end gap-2 rounded-2xl border border-navy/15 bg-surface-card px-3 py-2 shadow-card-lg transition-shadow focus-within:border-navy/30"
+        className="flex flex-col gap-2 rounded-2xl border border-navy/15 bg-surface-card px-3 py-2 shadow-card-lg transition-shadow focus-within:border-navy/30"
       >
         <label htmlFor="screen-composer" className="sr-only">
           Describe your situation
@@ -81,42 +215,128 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           maxLength={MAX_LEN}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Describe your situation…"
+          placeholder={t.composerPlaceholder}
           aria-label="Message"
-          className="block w-full resize-none border-0 bg-transparent px-2 py-1.5 text-sm leading-relaxed text-ink outline-none placeholder:text-ink-faint scrollbar-thin"
+          className="block w-full resize-none border-0 bg-transparent px-1 py-1 text-sm leading-relaxed text-ink outline-none placeholder:text-ink-faint scrollbar-thin"
           style={{ maxHeight: MAX_HEIGHT_PX }}
         />
 
-        {pending ? (
-          <button
-            type="button"
-            onClick={onStop}
-            aria-label="Stop"
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-navy/15 text-ink-muted transition-transform active:scale-90"
-          >
-            <Square size={16} fill="currentColor" aria-hidden="true" />
-          </button>
-        ) : (
-          <button
-            type="submit"
-            disabled={!hasText}
-            aria-label="Send message"
-            className={cn(
-              "grid h-10 w-10 shrink-0 place-items-center rounded-full bg-navy text-white transition-all active:scale-90 disabled:opacity-40",
-              hasText &&
-                "shadow-[0_0_0_3px_rgba(255,153,51,0.25),0_4px_14px_rgba(255,153,51,0.35)] hover:bg-navy-light",
+        {/* Language + mic sit below the message box, matching the reference layout */}
+        <div className="flex items-center gap-1">
+          <div className="relative shrink-0">
+            <button
+              type="button"
+              onClick={() => setLangOpen((v) => !v)}
+              aria-label="Choose language"
+              title="Choose language"
+              aria-haspopup="menu"
+              aria-expanded={langOpen}
+              className="flex h-9 items-center gap-1 rounded-full border border-navy/15 px-2 text-ink-muted transition-colors hover:bg-surface-subtle hover:text-navy"
+            >
+              <Languages size={16} aria-hidden="true" />
+              <span className="text-[11px] font-bold uppercase">{lang}</span>
+              <ChevronDown
+                size={12}
+                aria-hidden="true"
+                className={cn("transition-transform", langOpen && "rotate-180")}
+              />
+            </button>
+
+            {langOpen && (
+              <>
+                <div
+                  className="fixed inset-0 z-30"
+                  onClick={() => setLangOpen(false)}
+                  aria-hidden="true"
+                />
+                <div className="absolute bottom-11 left-0 z-40 w-36 animate-fade-in rounded-2xl border border-navy/10 bg-surface-card p-1.5 shadow-card-lg">
+                  {LANGUAGES.map((l) => (
+                    <button
+                      key={l.code}
+                      type="button"
+                      onClick={() => {
+                        onLangChange(l.code);
+                        setLangOpen(false);
+                      }}
+                      className={cn(
+                        "block w-full rounded-lg px-2.5 py-1.5 text-left text-sm transition-colors hover:bg-surface-subtle",
+                        l.code === lang
+                          ? "font-semibold text-navy"
+                          : "text-ink-muted",
+                      )}
+                    >
+                      {l.label}
+                    </button>
+                  ))}
+                </div>
+              </>
             )}
-          >
-            <ArrowUp size={18} aria-hidden="true" />
-          </button>
-        )}
+          </div>
+
+          {micSupported && (
+            <div className="relative shrink-0">
+              <button
+                type="button"
+                onClick={toggleMic}
+                aria-label={listening ? t.micStop : t.micStart}
+                title={listening ? t.micStop : t.micStart}
+                className={cn(
+                  "grid h-9 w-9 shrink-0 place-items-center rounded-full transition-colors",
+                  listening
+                    ? "animate-pulse bg-saffron/20 text-saffron-deep"
+                    : "text-ink-muted hover:bg-surface-subtle hover:text-navy",
+                )}
+              >
+                {listening ? (
+                  <MicOff size={17} aria-hidden="true" />
+                ) : (
+                  <Mic size={17} aria-hidden="true" />
+                )}
+              </button>
+
+              {micError && (
+                <div
+                  role="status"
+                  className="absolute bottom-11 left-1/2 z-40 w-52 -translate-x-1/2 animate-fade-in rounded-xl bg-navy-deep px-3 py-2 text-center text-xs leading-snug text-white shadow-card-lg"
+                >
+                  {micError}
+                </div>
+              )}
+            </div>
+          )}
+
+          <div className="flex-1" />
+
+          {pending ? (
+            <button
+              type="button"
+              onClick={onStop}
+              aria-label="Stop"
+              className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-navy/15 text-ink-muted transition-transform active:scale-90"
+            >
+              <Square size={16} fill="currentColor" aria-hidden="true" />
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled={!hasText}
+              aria-label="Send message"
+              className={cn(
+                "grid h-9 w-9 shrink-0 place-items-center rounded-full bg-navy text-white transition-all active:scale-90 disabled:opacity-40",
+                hasText &&
+                  "shadow-[0_0_0_3px_rgba(255,153,51,0.25),0_4px_14px_rgba(255,153,51,0.35)] hover:bg-navy-light",
+              )}
+            >
+              <ArrowUp size={18} aria-hidden="true" />
+            </button>
+          )}
+        </div>
       </form>
 
       {/* Trust line + how-it-works popover */}
       <div className="relative mt-2 flex items-center justify-center gap-1.5 px-2">
         <p className="text-center text-[11px] leading-snug text-ink-faint">
-          Sample guidance — always verify on the official portal. We never submit
-          applications for you.
+          {t.trustLine}
         </p>
         <button
           type="button"

@@ -1,17 +1,60 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Message } from "@/lib/types";
 import { LogoMark } from "@/components/brand/Logo";
 import { SchemeResultCard } from "@/components/chat/SchemeResultCard";
 
+/** Strips common markdown syntax so read-aloud doesn't speak raw symbols. */
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/`{1,3}[^`]*`{1,3}/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[*_#>~-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 /**
  * One conversation turn in the full-screen layout. User bubbles sit right
  * (navy), assistant bubbles left (surface-card) with a LogoMark avatar; scheme
- * result cards render beneath the assistant text.
+ * result cards render beneath the assistant text. Assistant turns also get a
+ * read-aloud button backed by the browser's speech-synthesis API.
  */
 export function ScreenBubble({ message }: { message: Message }) {
   const isUser = message.role === "user";
+  const [speaking, setSpeaking] = useState(false);
+  const [ttsSupported, setTtsSupported] = useState(false);
+
+  useEffect(() => {
+    setTtsSupported(typeof window !== "undefined" && "speechSynthesis" in window);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (speaking) window.speechSynthesis.cancel();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function toggleSpeak() {
+    if (speaking) {
+      window.speechSynthesis.cancel();
+      setSpeaking(false);
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(stripMarkdown(message.content));
+    utterance.onend = () => setSpeaking(false);
+    utterance.onerror = () => setSpeaking(false);
+    window.speechSynthesis.speak(utterance);
+    setSpeaking(true);
+  }
 
   if (isUser) {
     return (
@@ -54,6 +97,25 @@ export function ScreenBubble({ message }: { message: Message }) {
           >
             {message.content}
           </ReactMarkdown>
+
+          {ttsSupported && (
+            <button
+              type="button"
+              onClick={toggleSpeak}
+              aria-label={speaking ? "Stop reading aloud" : "Read message aloud"}
+              title={speaking ? "Stop reading aloud" : "Read message aloud"}
+              className={cn(
+                "mt-2 grid h-7 w-7 place-items-center rounded-full text-ink-faint transition-colors hover:bg-surface-subtle hover:text-navy",
+                speaking && "text-saffron-deep",
+              )}
+            >
+              {speaking ? (
+                <VolumeX size={14} aria-hidden="true" />
+              ) : (
+                <Volume2 size={14} aria-hidden="true" />
+              )}
+            </button>
+          )}
         </div>
 
         {message.schemeResults && message.schemeResults.length > 0 && (
