@@ -9,15 +9,17 @@ import {
 } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ChevronDown } from "lucide-react";
-import type { BotTurn, Message, QuickReply } from "@/lib/types";
+import type { BotTurn, LangCode, Message, QuickReply } from "@/lib/types";
 import { mockEngine } from "@/lib/chat/mockEngine";
 import { sendToBot } from "@/lib/chat/client";
 import {
   DEFAULT_FONT_STEP_INDEX,
   FONT_SCALE_STEPS,
   getStoredFontStepIndex,
+  getStoredLang,
   getStoredSoundOn,
   storeFontStepIndex,
+  storeLang,
   storeSoundOn,
 } from "@/lib/chat/preferences";
 import { playChime } from "@/lib/chat/sound";
@@ -64,6 +66,7 @@ export function ChatScreen({ initialQuery }: Props) {
   const [showJump, setShowJump] = useState(false);
   const [fontStepIndex, setFontStepIndex] = useState(DEFAULT_FONT_STEP_INDEX);
   const [soundOn, setSoundOn] = useState(false);
+  const [lang, setLang] = useState<LangCode>("en");
 
   const messagesRef = useRef<Message[]>(messages);
   messagesRef.current = messages;
@@ -98,12 +101,13 @@ export function ChatScreen({ initialQuery }: Props) {
     }
   }, []);
 
-  // Restore text size / sound / theme preferences on mount.
+  // Restore text size / sound / language preferences on mount.
   useEffect(() => {
     if (prefsRestoredRef.current) return;
     prefsRestoredRef.current = true;
     setFontStepIndex(getStoredFontStepIndex());
     setSoundOn(getStoredSoundOn());
+    setLang(getStoredLang());
   }, []);
 
   // Apply the text-size preference to the page while the assistant is open;
@@ -221,6 +225,16 @@ export function ChatScreen({ initialQuery }: Props) {
     downloadTranscript(messagesRef.current);
   }, []);
 
+  const onLangChange = useCallback((next: LangCode) => {
+    setLang(next);
+    storeLang(next);
+  }, []);
+
+  const jumpToMessage = useCallback((id: string) => {
+    atBottomRef.current = false;
+    document.getElementById(`msg-${id}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, []);
+
   // ?q= deep-link: auto-send once on mount, then leave the URL clean.
   // Guarded by seededRef so it fires exactly once (incl. under dev StrictMode's
   // double-invoked effects); calling send directly avoids a timeout/cleanup race.
@@ -279,9 +293,7 @@ export function ChatScreen({ initialQuery }: Props) {
       : [];
 
   return (
-    <div
-      className="relative flex h-full flex-col overflow-hidden bg-surface"
-    >
+    <div className="relative flex h-full flex-col overflow-hidden bg-surface">
       {/* Ambient tricolor background */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-saffron/15 blur-3xl" />
@@ -299,6 +311,8 @@ export function ChatScreen({ initialQuery }: Props) {
           onDecreaseFont={decreaseFont}
           soundOn={soundOn}
           onToggleSound={toggleSound}
+          messages={messages}
+          onJumpToMessage={jumpToMessage}
         />
 
         <div
@@ -307,7 +321,7 @@ export function ChatScreen({ initialQuery }: Props) {
           className="scrollbar-thin flex-1 overflow-y-auto"
         >
           {!hasMessages ? (
-            <WelcomeState onPick={send} />
+            <WelcomeState onPick={send} lang={lang} />
           ) : (
             <div
               role="log"
@@ -315,7 +329,9 @@ export function ChatScreen({ initialQuery }: Props) {
               className="mx-auto max-w-3xl space-y-5 px-4 py-6"
             >
               {messages.map((m) => (
-                <ScreenBubble key={m.id} message={m} />
+                <div key={m.id} id={`msg-${m.id}`}>
+                  <ScreenBubble message={m} />
+                </div>
               ))}
               {typing && <ScreenTyping />}
               {activeFollowUps.length > 0 && (
@@ -344,6 +360,8 @@ export function ChatScreen({ initialQuery }: Props) {
             onSend={send}
             onStop={stop}
             pending={typing}
+            lang={lang}
+            onLangChange={onLangChange}
           />
         </div>
       </div>
