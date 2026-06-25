@@ -7,6 +7,7 @@ import {
   Check,
   X,
   ShieldCheck,
+  BadgeCheck,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -31,6 +32,7 @@ const WE_DO = [
   "Match your situation to schemes you may qualify for",
   "List the documents you'll need before you apply",
   "Link you directly to the official government portal",
+  "Show only human-verified scheme data",
 ];
 
 const WE_DONT = [
@@ -71,7 +73,7 @@ export default function HowItWorksPage() {
       {/* Steps */}
       <section className="py-12 sm:py-16">
         <Container>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <StepCard step={1} icon={MessagesSquare} tone="navy" title="Tell us about you">
               Describe your situation in plain language — your occupation, age,
               state, income, or simply what you&rsquo;re hoping to find. There are no
@@ -86,6 +88,11 @@ export default function HowItWorksPage() {
               We give you a direct link to the genuine government portal. You apply
               there yourself. We never ask for your login and never submit anything
               for you.
+            </StepCard>
+            <StepCard step={4} icon={BadgeCheck} tone="navy" title="Verified by humans">
+              Every scheme on GovEligify is manually reviewed by a trained team
+              against the official government portal before it appears here — so
+              you get accurate, up-to-date information.
             </StepCard>
           </div>
         </Container>

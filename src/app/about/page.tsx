@@ -5,6 +5,8 @@ import {
   ShieldCheck,
   Sparkles,
   AlertTriangle,
+  BadgeCheck,
+  Code2,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -47,6 +49,11 @@ const VALUES = [
     icon: Sparkles,
     title: "Honest and accurate",
     body: "We work to keep details correct and always ask you to confirm on the official portal.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Human-verified data",
+    body: "Every scheme is manually reviewed by a trained team against the official government portal before it appears here.",
   },
 ];
 
@@ -157,6 +164,35 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      {/* Open source + institutional */}
+      <section className="py-16 sm:py-20">
+        <Container className="max-w-3xl">
+          <SectionHeading eyebrow="The project" title="Open source, student-built" />
+          <p className="mt-6 text-pretty text-lg leading-relaxed text-ink-muted">
+            GovEligify is funded and supported by the{" "}
+            <span className="font-semibold text-ink">
+              Dept. of Data Science, Loyola College, Chennai
+            </span>
+            . A team of 18 students — validators and developers — built the platform
+            and manually reviewed every scheme against official government portals to
+            ensure accuracy.
+          </p>
+          <p className="mt-4 text-pretty leading-relaxed text-ink-muted">
+            The source code is open to the public under the MIT License. Anyone can
+            read it, audit it, or contribute.
+          </p>
+          <a
+            href={SITE.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-navy/20 bg-surface-card px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-navy/40 hover:text-navy"
+          >
+            <Code2 className="h-4 w-4" aria-hidden="true" />
+            View source on GitHub · MIT License
+          </a>
         </Container>
       </section>
 

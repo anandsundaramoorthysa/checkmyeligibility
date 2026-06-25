@@ -33,6 +33,10 @@ const GROUPS: { title: string; match: (q: string) => boolean }[] = [
     title: "How it works",
     match: (q) => /matching|languages|accurate|can't find/i.test(q),
   },
+  {
+    title: "About the project",
+    match: (q) => /who built|open source|validated|validation/i.test(q),
+  },
 ];
 
 const slugify = (title: string) =>

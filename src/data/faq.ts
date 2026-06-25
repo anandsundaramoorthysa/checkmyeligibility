@@ -43,4 +43,16 @@ export const FAQS: { q: string; a: string }[] = [
     q: "What if I can't find a scheme for my situation?",
     a: "New schemes and certificates are being added over time. If nothing matches today, describe your situation to the assistant — it can point you toward the closest options and the certificates you may need to qualify later.",
   },
+  {
+    q: "Who built GovEligify?",
+    a: "GovEligify is a student-led project from the Dept. of Data Science, Loyola College, Chennai, funded by the department. A team of 18 students — validators and developers — built the platform and manually review every scheme against official government portals.",
+  },
+  {
+    q: "Is GovEligify open source?",
+    a: "Yes. GovEligify is open source under the MIT License. The source code is publicly available on GitHub.",
+  },
+  {
+    q: "How is the scheme data validated?",
+    a: "Every scheme is manually reviewed by a trained team of students against its official government portal. They verify availability, structured eligibility, and application links before a scheme appears on GovEligify — so you get accurate, up-to-date information.",
+  },
 ];

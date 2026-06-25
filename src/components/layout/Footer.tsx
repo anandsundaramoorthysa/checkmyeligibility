@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Code2 } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/layout/Container";
 import { SITE, FOOTER_NAV } from "@/lib/site";
@@ -15,6 +16,18 @@ export function Footer() {
           <p className="mt-4 max-w-sm text-xs leading-relaxed text-ink-faint">
             {SITE.disclaimer}
           </p>
+          <div className="mt-5 space-y-1.5 text-xs text-ink-faint">
+            <p>Supported by {SITE.institution}.</p>
+            <a
+              href={SITE.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-navy"
+            >
+              <Code2 className="h-3.5 w-3.5" aria-hidden="true" />
+              Open source · MIT License
+            </a>
+          </div>
         </div>
 
         {FOOTER_NAV.map((col) => (

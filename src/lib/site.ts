@@ -43,10 +43,11 @@ export const FOOTER_NAV: { title: string; items: NavItem[] }[] = [
     ],
   },
   {
-    title: "Company",
+    title: "Project",
     items: [
       { label: "About", href: "/about" },
       { label: "FAQ", href: "/faq" },
+      { label: "GitHub", href: "https://github.com/anandsundaramoorthysa/goveligify" },
     ],
   },
   {
