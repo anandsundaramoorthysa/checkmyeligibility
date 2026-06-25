@@ -9,6 +9,9 @@ export const SITE = {
     "GovEligify is a free AI guide to Indian government schemes, subsidies, and certificates. Describe your situation in plain language and discover what you qualify for, the documents you need, and exactly where to apply — on official portals.",
   locale: "en-IN",
   email: "hello@goveligify.in",
+  github: "https://github.com/anandsundaramoorthysa/goveligify",
+  license: "MIT",
+  institution: "Dept. of Data Science, Loyola College, Chennai",
   // Independence disclaimer shown in footer + chat (legal/trust safety).
   disclaimer:
     "GovEligify is an independent guide and is not affiliated with, endorsed by, or operated by any government body. We help you find schemes and direct you to official portals — we never submit applications on your behalf.",

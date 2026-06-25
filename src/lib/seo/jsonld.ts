@@ -12,6 +12,12 @@ export function organizationLd() {
     description: SITE.description,
     email: SITE.email,
     logo: `${SITE.url}/brand/goveligify-mark.svg`,
+    sameAs: [SITE.github],
+    license: "https://opensource.org/licenses/MIT",
+    funder: {
+      "@type": "EducationalOrganization",
+      name: SITE.institution,
+    },
   };
 }
 
