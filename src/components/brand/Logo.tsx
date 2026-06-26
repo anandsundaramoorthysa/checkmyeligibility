@@ -1,9 +1,9 @@
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
 
-/** The GovEligify "Seal Check" mark — tricolor seal ring + navy disc + tick. */
+/** The CheckMyEligibility "Seal Check" mark — tricolor seal ring + navy disc + tick. */
 export function LogoMark({
   className,
-  title = "GovEligify",
+  title = "CheckMyEligibility",
 }: {
   className?: string;
   title?: string;
@@ -36,7 +36,7 @@ export function LogoMark({
   );
 }
 
-/** Full lockup: mark + "GovEligify" wordmark (navy "Gov" + green "Eligify"). */
+/** Full lockup: mark + "CheckMyEligibility" wordmark (navy "Gov" + green "Eligify"). */
 export function Logo({
   className,
   markClassName,

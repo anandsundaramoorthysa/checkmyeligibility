@@ -1,4 +1,4 @@
-import { Sprout, GraduationCap, Home } from "lucide-react";
+﻿import { Sprout, GraduationCap, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ROWS = [130, 186, 242];
@@ -11,7 +11,7 @@ export function HeroArt({ className }: { className?: string }) {
   return (
     <div
       role="img"
-      aria-label="GovEligify matching a citizen to the government schemes they qualify for"
+      aria-label="CheckMyEligibility matching a citizen to the government schemes they qualify for"
       className={cn("relative w-full", className)}
     >
       <svg

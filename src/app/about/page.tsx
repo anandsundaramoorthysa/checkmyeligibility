@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import {
   Compass,
   HeartHandshake,
@@ -23,7 +23,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "Why GovEligify exists: to make Indian government schemes and certificates simple, trustworthy, and within reach for everyone. An independent guide, not a government body.",
+    "Why CheckMyEligibility exists: to make Indian government schemes and certificates simple, trustworthy, and within reach for everyone. An independent guide, not a government body.",
   path: "/about",
 });
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
         title={<>Helping every Indian claim what&rsquo;s theirs</>}
         lead={
           <>
-            {SITE.tagline} GovEligify is a free guide to Indian government schemes,
+            {SITE.tagline} CheckMyEligibility is a free guide to Indian government schemes,
             subsidies, and certificates — built to be simple, warm, and trustworthy.
           </>
         }
@@ -123,7 +123,7 @@ export default function AboutPage() {
               scattered, written in jargon, and hard to navigate.
             </p>
             <p>
-              We built GovEligify to close that gap. Describe your situation in plain
+              We built CheckMyEligibility to close that gap. Describe your situation in plain
               words, and we help you understand which schemes may fit, what documents
               you&rsquo;ll need, and exactly where to apply on the official government
               portal.
@@ -172,7 +172,7 @@ export default function AboutPage() {
         <Container className="max-w-3xl">
           <SectionHeading eyebrow="The project" title="Open source, student-built" />
           <p className="mt-6 text-pretty text-lg leading-relaxed text-ink-muted">
-            GovEligify is funded and supported by the{" "}
+            CheckMyEligibility is funded and supported by the{" "}
             <span className="font-semibold text-ink">
               Dept. of Data Science, Loyola College, Chennai
             </span>

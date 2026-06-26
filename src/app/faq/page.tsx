@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { MessageCircleQuestion } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -15,7 +15,7 @@ import { FAQS } from "@/data/faq";
 export const metadata: Metadata = buildMetadata({
   title: "FAQ",
   description:
-    "Answers to common questions about GovEligify: cost, privacy, whether we apply for you, how scheme matching works, and our independence from the government.",
+    "Answers to common questions about CheckMyEligibility: cost, privacy, whether we apply for you, how scheme matching works, and our independence from the government.",
   path: "/faq",
 });
 
@@ -75,7 +75,7 @@ export default function FaqPage() {
         title="Questions, answered honestly"
         lead={
           <>
-            Everything you might want to know about how GovEligify works, what it
+            Everything you might want to know about how CheckMyEligibility works, what it
             costs, and how we handle your information.
           </>
         }
@@ -83,7 +83,7 @@ export default function FaqPage() {
           <SpotIllustration
             icon={MessageCircleQuestion}
             tone="navy"
-            label="Common questions about GovEligify"
+            label="Common questions about CheckMyEligibility"
           />
         }
       />

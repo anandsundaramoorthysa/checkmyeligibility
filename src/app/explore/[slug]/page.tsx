@@ -256,7 +256,7 @@ export default async function SchemeDetailPage({
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <p className="mt-3 text-xs text-ink-faint">
-                  You apply directly on the government portal. GovEligify never
+                  You apply directly on the government portal. CheckMyEligibility never
                   submits applications for you.
                 </p>
               </div>

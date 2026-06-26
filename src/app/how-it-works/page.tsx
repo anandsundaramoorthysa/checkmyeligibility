@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   MessagesSquare,
@@ -23,7 +23,7 @@ import { chatHref } from "@/lib/chat/openChat";
 export const metadata: Metadata = buildMetadata({
   title: "How it works",
   description:
-    "How GovEligify helps you find Indian government schemes: describe your situation, get matched, and apply on official portals yourself. We never submit applications for you.",
+    "How CheckMyEligibility helps you find Indian government schemes: describe your situation, get matched, and apply on official portals yourself. We never submit applications for you.",
   path: "/how-it-works",
 });
 
@@ -90,7 +90,7 @@ export default function HowItWorksPage() {
               for you.
             </StepCard>
             <StepCard step={4} icon={BadgeCheck} tone="navy" title="Verified by humans">
-              Every scheme on GovEligify is manually reviewed by a trained team
+              Every scheme on CheckMyEligibility is manually reviewed by a trained team
               against the official government portal before it appears here — so
               you get accurate, up-to-date information.
             </StepCard>

@@ -1,10 +1,10 @@
-<p align="center">
-  <img src="public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+﻿<p align="center">
+  <img src="public/brand/favicon.svg" alt="CheckMyEligibility logo" width="72" height="72" />
 </p>
 
 # Code of Conduct
 
-GovEligify is built to help people, and our community should reflect that. This Code of
+CheckMyEligibility is built to help people, and our community should reflect that. This Code of
 Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org/),
 version 2.1.
 
@@ -49,7 +49,7 @@ and any official channels) and also when an individual is representing the proje
 
 If you experience or witness unacceptable behaviour, please report it privately to:
 
-**Anand Sundaramoorthy — [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com?subject=GovEligify%20Code%20of%20Conduct)**
+**Anand Sundaramoorthy — [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com?subject=CheckMyEligibility%20Code%20of%20Conduct)**
 
 All reports will be reviewed and investigated promptly and fairly, and the privacy and safety
 of the reporter will be respected.

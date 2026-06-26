@@ -1,4 +1,4 @@
-import type { BotTurn, QuickReply, Scheme } from "@/lib/types";
+﻿import type { BotTurn, QuickReply, Scheme } from "@/lib/types";
 import { searchSchemes } from "@/lib/data";
 import { SITE } from "@/lib/site";
 import type { ChatEngine } from "./engine";
@@ -210,7 +210,7 @@ export const mockEngine: ChatEngine = {
         {
           content:
             `Hello, I'm the **${SITE.name} Assistant**. Tell me about yourself — your work, age, or what you need — and I'll help you discover government schemes you may be entitled to, the documents you'll need, and where to apply.\n\n` +
-            "A quick note: GovEligify is an independent guide, **not affiliated with any government**, and **we never submit applications for you** — we point you to the official portal.\n\n" +
+            "A quick note: CheckMyEligibility is an independent guide, **not affiliated with any government**, and **we never submit applications for you** — we point you to the official portal.\n\n" +
             "Who are you, or what do you need help with today?",
         },
       ],

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Scale } from "lucide-react";
 import { Container } from "@/components/layout/Container";
@@ -14,7 +14,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Terms",
   description:
-    "Terms of use for GovEligify: an informational guide only, with no guarantee of eligibility and links to third-party official government portals.",
+    "Terms of use for CheckMyEligibility: an informational guide only, with no guarantee of eligibility and links to third-party official government portals.",
   path: "/terms",
 });
 
@@ -55,7 +55,7 @@ export default function TermsPage() {
         title="Terms of use"
         lead={
           <>
-            GovEligify is a free, independent guide to Indian government schemes.
+            CheckMyEligibility is a free, independent guide to Indian government schemes.
             These terms explain what we offer, what we don&rsquo;t, and the limits
             of the help we provide.
           </>
@@ -100,7 +100,7 @@ export default function TermsPage() {
                   {SECTIONS[0].title}
                 </h2>
                 <p>
-                  By using GovEligify, you agree to these terms. This is a
+                  By using CheckMyEligibility, you agree to these terms. This is a
                   plain-language summary written for clarity, not legal advice. In
                   short: we help you understand government schemes and point you to
                   the official portals, but the government — not us — decides any
@@ -114,7 +114,7 @@ export default function TermsPage() {
                   {SECTIONS[1].title}
                 </h2>
                 <p>
-                  GovEligify provides general information about Indian government
+                  CheckMyEligibility provides general information about Indian government
                   schemes, subsidies, and certificates to help you understand what
                   may be relevant to you. Suggestions are based on the details you
                   share and publicly available scheme information. We do not
@@ -130,7 +130,7 @@ export default function TermsPage() {
                   {SECTIONS[2].title}
                 </h2>
                 <p>
-                  Nothing on GovEligify is legal, financial, tax, or professional
+                  Nothing on CheckMyEligibility is legal, financial, tax, or professional
                   advice. Scheme rules, income limits, fees, and deadlines change
                   often and vary by state. For decisions that matter to you,
                   consult the official portal or a qualified professional.
@@ -154,9 +154,9 @@ export default function TermsPage() {
                   {SECTIONS[4].title}
                 </h2>
                 <p>
-                  GovEligify is free to use. We do not charge any fee, ask for
+                  CheckMyEligibility is free to use. We do not charge any fee, ask for
                   payment, or take a commission for the guidance we provide. If
-                  anyone asks you to pay GovEligify for a scheme, treat it as
+                  anyone asks you to pay CheckMyEligibility for a scheme, treat it as
                   fraudulent.
                 </p>
               </section>
@@ -178,7 +178,7 @@ export default function TermsPage() {
                   {SECTIONS[6].title}
                 </h2>
                 <p>
-                  Please use GovEligify lawfully and as intended. Do not misuse the
+                  Please use CheckMyEligibility lawfully and as intended. Do not misuse the
                   service — for example, by attempting to disrupt it, scrape it at
                   scale, reverse-engineer it, or use it to mislead others. We may
                   limit or suspend access where use is harmful or abusive.
@@ -190,7 +190,7 @@ export default function TermsPage() {
                   {SECTIONS[7].title}
                 </h2>
                 <p>
-                  To the extent permitted by law, GovEligify is not liable for any
+                  To the extent permitted by law, CheckMyEligibility is not liable for any
                   loss arising from reliance on information provided here or on
                   linked third-party portals. The service is provided on an
                   &ldquo;as is&rdquo; basis, and you use it at your own discretion.

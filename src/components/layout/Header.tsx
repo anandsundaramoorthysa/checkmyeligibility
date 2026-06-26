@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-surface-muted bg-surface-card/85 backdrop-blur shadow-header">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" aria-label="GovEligify home" className="shrink-0">
+        <Link href="/" aria-label="CheckMyEligibility home" className="shrink-0">
           <Logo />
         </Link>
 

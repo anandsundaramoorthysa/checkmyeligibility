@@ -9,9 +9,9 @@ import type { LangCode } from "@/lib/types";
  * over quota.
  */
 
-const FONT_STEP_KEY = "goveligify-chat-font-step";
-const SOUND_KEY = "goveligify-chat-sound";
-const LANG_KEY = "goveligify-chat-lang";
+const FONT_STEP_KEY = "checkmyeligibility-chat-font-step";
+const SOUND_KEY = "checkmyeligibility-chat-sound";
+const LANG_KEY = "checkmyeligibility-chat-lang";
 
 /** Root font-size percentages selectable via the header's A−/A+ controls. */
 export const FONT_SCALE_STEPS = [87.5, 100, 112.5, 125, 137.5] as const;

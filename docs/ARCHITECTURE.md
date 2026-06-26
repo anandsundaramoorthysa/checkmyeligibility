@@ -1,16 +1,16 @@
-<p align="center">
-  <img src="../public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+﻿<p align="center">
+  <img src="../public/brand/favicon.svg" alt="CheckMyEligibility logo" width="72" height="72" />
 </p>
 
 # Architecture
 
-This document explains how GovEligify is put together and, most importantly, the two **swap
+This document explains how CheckMyEligibility is put together and, most importantly, the two **swap
 seams** that let Phase 1 (sample data + mock bot) become Phase 2 (real data + real AI) without
 rewriting the UI.
 
 ## High-level overview
 
-GovEligify is a single [Next.js 14](https://nextjs.org/) App Router application:
+CheckMyEligibility is a single [Next.js 14](https://nextjs.org/) App Router application:
 
 - **Marketing pages** (`/`, `/explore`, `/certificates`, `/how-it-works`, `/about`, `/faq`,
   `/privacy`, `/terms`, scheme & certificate detail pages) are server components, rendered

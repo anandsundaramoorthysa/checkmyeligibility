@@ -1,4 +1,4 @@
-# GovEligify — Development Roadmap
+﻿# CheckMyEligibility — Development Roadmap
 
 Open-source project funded by the Dept. of Data Science, Loyola College, Chennai.
 MIT License · [github.com/anandsundaramoorthysa/checkmyeligibility](https://github.com/anandsundaramoorthysa/checkmyeligibility)
@@ -109,4 +109,4 @@ MIT License · [github.com/anandsundaramoorthysa/checkmyeligibility](https://git
 
 ## Data Source
 
-Scheme data comes from the [GovEligify Console](https://github.com/anandsundaramoorthysa/goveligify-console) — an internal validation tool where a trained team of 18 manually reviews each of the 3,237 schemes against official government portals before it appears on this site.
+Scheme data comes from the [CheckMyEligibility Console](https://github.com/anandsundaramoorthysa/goveligify-console) — an internal validation tool where a trained team of 18 manually reviews each of the 3,237 schemes against official government portals before it appears on this site.

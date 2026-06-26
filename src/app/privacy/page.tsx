@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { Container } from "@/components/layout/Container";
@@ -14,7 +14,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Privacy",
   description:
-    "How GovEligify handles your data: minimal collection, no application submission, no Aadhaar or bank details stored, written in plain language and DPDP-aware.",
+    "How CheckMyEligibility handles your data: minimal collection, no application submission, no Aadhaar or bank details stored, written in plain language and DPDP-aware.",
   path: "/privacy",
 });
 
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
         title="Your privacy, in plain language"
         lead={
           <>
-            GovEligify is built to be private by design. No login, no Aadhaar, no
+            CheckMyEligibility is built to be private by design. No login, no Aadhaar, no
             bank details, no documents — this page explains exactly how we handle
             your information.
           </>
@@ -150,7 +150,7 @@ export default function PrivacyPage() {
                   {SECTIONS[3].title}
                 </h2>
                 <p>
-                  GovEligify links out to official government portals so you can
+                  CheckMyEligibility links out to official government portals so you can
                   apply yourself. Those portals are operated by third parties and
                   their own privacy policies and terms apply once you leave our
                   site. We don&rsquo;t control them and aren&rsquo;t responsible

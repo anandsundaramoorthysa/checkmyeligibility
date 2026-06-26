@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   forwardRef,
@@ -476,7 +476,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
                 </button>
               </div>
               <p className="mt-2 text-xs leading-relaxed text-ink-muted">
-                Describe your situation and GovEligify matches you to sample
+                Describe your situation and CheckMyEligibility matches you to sample
                 government schemes and certificates, with the documents you&apos;ll
                 need and a link to the official portal. This is a sample
                 experience — replies are illustrative, so always confirm details

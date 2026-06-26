@@ -1,4 +1,4 @@
-import { CheckCircle2, ExternalLink, FileText, Gift } from "lucide-react";
+﻿import { CheckCircle2, ExternalLink, FileText, Gift } from "lucide-react";
 import type { Scheme } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
@@ -71,7 +71,7 @@ export function SchemeResultCard({ scheme }: { scheme: Scheme }) {
         </a>
 
         <p className="text-[11px] leading-snug text-ink-faint">
-          GovEligify guides you; the application happens on the official site.
+          CheckMyEligibility guides you; the application happens on the official site.
         </p>
       </div>
     </article>

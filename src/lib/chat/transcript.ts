@@ -1,14 +1,14 @@
-import type { Message } from "@/lib/types";
+﻿import type { Message } from "@/lib/types";
 
 /** Render a conversation as plain text, oldest turn first. */
 export function formatTranscript(messages: Message[]): string {
   const lines = messages.map((m) => {
-    const who = m.role === "user" ? "You" : "GovEligify Assistant";
+    const who = m.role === "user" ? "You" : "CheckMyEligibility Assistant";
     const when = new Date(m.createdAt).toLocaleString();
     return `${who} (${when}):\n${m.content}\n`;
   });
   return [
-    "GovEligify Assistant — chat transcript",
+    "CheckMyEligibility Assistant — chat transcript",
     "Sample guidance — always verify on the official portal.",
     "",
     ...lines,
@@ -25,7 +25,7 @@ export function downloadTranscript(messages: Message[]): void {
 
   const a = document.createElement("a");
   a.href = url;
-  a.download = `goveligify-chat-${stamp}.txt`;
+  a.download = `CheckMyEligibility-chat-${stamp}.txt`;
   document.body.appendChild(a);
   a.click();
   a.remove();

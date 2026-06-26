@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Canonical FAQ list. Used by the homepage teaser, the /faq page, and the
  * FAQPage JSON-LD on both. Kept plain so it can move to a CMS/pipeline later.
  */
 export const FAQS: { q: string; a: string }[] = [
   {
-    q: "Is GovEligify free to use?",
+    q: "Is CheckMyEligibility free to use?",
     a: "Yes, completely free. There is no subscription, no login, and no fee of any kind. Government schemes and certificates are your right — we never charge you to find what you're entitled to.",
   },
   {
@@ -13,7 +13,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Are you the government, or affiliated with it?",
-    a: "No. GovEligify is an independent guide. We are not affiliated with, endorsed by, or operated by any government body. We simply make official information easier to understand and link you to the genuine government portals.",
+    a: "No. CheckMyEligibility is an independent guide. We are not affiliated with, endorsed by, or operated by any government body. We simply make official information easier to understand and link you to the genuine government portals.",
   },
   {
     q: "Is my data safe?",
@@ -44,15 +44,15 @@ export const FAQS: { q: string; a: string }[] = [
     a: "New schemes and certificates are being added over time. If nothing matches today, describe your situation to the assistant — it can point you toward the closest options and the certificates you may need to qualify later.",
   },
   {
-    q: "Who built GovEligify?",
-    a: "GovEligify is a student-led project from the Dept. of Data Science, Loyola College, Chennai, funded by the department. A team of 18 students — validators and developers — built the platform and manually review every scheme against official government portals.",
+    q: "Who built CheckMyEligibility?",
+    a: "CheckMyEligibility is a student-led project from the Dept. of Data Science, Loyola College, Chennai, funded by the department. A team of 18 students — validators and developers — built the platform and manually review every scheme against official government portals.",
   },
   {
-    q: "Is GovEligify open source?",
-    a: "Yes. GovEligify is open source under the MIT License. The source code is publicly available on GitHub.",
+    q: "Is CheckMyEligibility open source?",
+    a: "Yes. CheckMyEligibility is open source under the MIT License. The source code is publicly available on GitHub.",
   },
   {
     q: "How is the scheme data validated?",
-    a: "Every scheme is manually reviewed by a trained team of students against its official government portal. They verify availability, structured eligibility, and application links before a scheme appears on GovEligify — so you get accurate, up-to-date information.",
+    a: "Every scheme is manually reviewed by a trained team of students against its official government portal. They verify availability, structured eligibility, and application links before a scheme appears on CheckMyEligibility — so you get accurate, up-to-date information.",
   },
 ];
