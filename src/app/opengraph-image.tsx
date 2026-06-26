@@ -54,14 +54,15 @@ export default function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: 132,
+              fontSize: 80,
               fontWeight: 800,
               letterSpacing: "-0.03em",
               lineHeight: 1,
             }}
           >
-            <span style={{ color: NAVY }}>Gov</span>
-            <span style={{ color: GREEN }}>Eligify</span>
+            <span style={{ color: NAVY }}>Check</span>
+            <span style={{ color: SAFFRON }}>My</span>
+            <span style={{ color: GREEN }}>Eligibility</span>
           </div>
 
           <div
