@@ -11,7 +11,7 @@ documentation.
 
 ## Ways to contribute
 
-- **Report a bug** — open an [issue](https://github.com/anandsundaramoorthysa/goveligify/issues)
+- **Report a bug** — open an [issue](https://github.com/anandsundaramoorthysa/checkmyeligibility/issues)
   with steps to reproduce, what you expected, and what happened (screenshots help).
 - **Suggest a feature** — open an issue describing the problem it solves before writing code.
 - **Improve sample data** — the schemes/certificates in `src/data/` are sample data. Fixes to
@@ -26,7 +26,7 @@ documentation.
 **Prerequisites:** Node.js 18.17+ (Node 20 recommended) and pnpm.
 
 ```bash
-git clone https://github.com/anandsundaramoorthysa/goveligify.git
+git clone https://github.com/anandsundaramoorthysa/checkmyeligibility.git
 cd goveligify
 pnpm install
 pnpm dev          # http://localhost:3000

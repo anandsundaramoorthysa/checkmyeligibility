@@ -134,7 +134,7 @@ files anything for you.
 
 ```bash
 # 1. Clone
-git clone https://github.com/anandsundaramoorthysa/goveligify.git
+git clone https://github.com/anandsundaramoorthysa/checkmyeligibility.git
 cd goveligify
 
 # 2. Install dependencies

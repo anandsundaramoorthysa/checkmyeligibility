@@ -1,7 +1,7 @@
 # GovEligify — Development Roadmap
 
 Open-source project funded by the Dept. of Data Science, Loyola College, Chennai.
-MIT License · [github.com/anandsundaramoorthysa/goveligify](https://github.com/anandsundaramoorthysa/goveligify)
+MIT License · [github.com/anandsundaramoorthysa/checkmyeligibility](https://github.com/anandsundaramoorthysa/checkmyeligibility)
 
 ---
 
@@ -99,8 +99,8 @@ MIT License · [github.com/anandsundaramoorthysa/goveligify](https://github.com/
 
 ## Phase 7 — Infra & Legal
 
-- [ ] Buy `goveligify.in` domain (Spaceship purchase failed — buy elsewhere)
-- [ ] Attach domain to Vercel
+- [x] Domain `checkmyeligibility.in` purchased via Spaceship (26-Jun-2026)
+- [x] Attach domain to Vercel
 - [ ] Real rate limiting (Upstash/Vercel WAF) once LLM is live
 - [ ] Legal/compliance review before monetising (GODL/MyScheme terms, DPDP, GST)
 - [ ] Data-refresh pipeline (re-validate changed schemes periodically)

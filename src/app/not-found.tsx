@@ -19,7 +19,7 @@ export const metadata: Metadata = buildMetadata({
 // Deadpan mock "government eligibility report" that rejects the missing page.
 const REPORT_ROWS: { label: string; value: React.ReactNode }[] = [
   { label: "Applicant", value: "This Page" },
-  { label: "Scheme applied for", value: "Existence on goveligify.in" },
+  { label: "Scheme applied for", value: "Existence on checkmyeligibility.in" },
   {
     label: "Status",
     value: (

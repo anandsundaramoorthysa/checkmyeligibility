@@ -3,13 +3,13 @@
 export const SITE = {
   name: "GovEligify",
   shortName: "GovEligify",
-  url: "https://goveligify.in",
+  url: "https://checkmyeligibility.in",
   tagline: "Find what you're entitled to.",
   description:
     "GovEligify is a free AI guide to Indian government schemes, subsidies, and certificates. Describe your situation in plain language and discover what you qualify for, the documents you need, and exactly where to apply — on official portals.",
   locale: "en-IN",
-  email: "hello@goveligify.in",
-  github: "https://github.com/anandsundaramoorthysa/goveligify",
+  email: "hello@checkmyeligibility.in",
+  github: "https://github.com/anandsundaramoorthysa/checkmyeligibility",
   license: "MIT",
   institution: "Dept. of Data Science, Loyola College, Chennai",
   // Independence disclaimer shown in footer + chat (legal/trust safety).
@@ -47,7 +47,7 @@ export const FOOTER_NAV: { title: string; items: NavItem[] }[] = [
     items: [
       { label: "About", href: "/about" },
       { label: "FAQ", href: "/faq" },
-      { label: "GitHub", href: "https://github.com/anandsundaramoorthysa/goveligify" },
+      { label: "GitHub", href: "https://github.com/anandsundaramoorthysa/checkmyeligibility" },
     ],
   },
   {

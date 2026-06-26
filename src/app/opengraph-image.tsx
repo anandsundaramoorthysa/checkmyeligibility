@@ -86,7 +86,7 @@ export default function Image() {
             color: "#5B6B7B",
           }}
         >
-          goveligify.in · an independent guide to government schemes
+          checkmyeligibility.in · an independent guide to government schemes
         </div>
       </div>
     ),
