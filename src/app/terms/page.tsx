@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Scale } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { TableOfContents } from "@/components/layout/TableOfContents";
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaBand } from "@/components/marketing/CtaBand";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
@@ -75,25 +76,7 @@ export default function TermsPage() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-14">
-            <nav aria-label="Terms sections" className="hidden lg:block">
-              <div className="sticky top-24">
-                <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron-deep">
-                  On this page
-                </p>
-                <ul className="mt-4 space-y-1">
-                  {SECTIONS.map((section) => (
-                    <li key={section.id}>
-                      <a
-                        href={`#${section.id}`}
-                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink-muted transition-colors hover:bg-surface-subtle hover:text-ink"
-                      >
-                        {section.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
+            <TableOfContents sections={SECTIONS} />
 
             <div className="max-w-none space-y-12 text-pretty leading-relaxed text-ink-muted">
               <section id={SECTIONS[0].id} className="scroll-mt-24 space-y-3">

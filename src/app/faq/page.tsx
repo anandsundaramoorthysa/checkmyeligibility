@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { MessageCircleQuestion } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { TableOfContents } from "@/components/layout/TableOfContents";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Faq } from "@/components/marketing/Faq";
 import { PageHero } from "@/components/layout/PageHero";
@@ -95,28 +96,9 @@ export default function FaqPage() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-14">
-            <nav
-              aria-label="FAQ categories"
-              className="hidden lg:block"
-            >
-              <div className="sticky top-24">
-                <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron-deep">
-                  On this page
-                </p>
-                <ul className="mt-4 space-y-1">
-                  {sections.map((section) => (
-                    <li key={section.id}>
-                      <a
-                        href={`#${section.id}`}
-                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink-muted transition-colors hover:bg-surface-subtle hover:text-ink"
-                      >
-                        {section.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
+            <TableOfContents
+              sections={sections.map((s) => ({ id: s.id, title: s.title }))}
+            />
 
             <div className="space-y-12 sm:space-y-14">
               {sections.map((section) => (
