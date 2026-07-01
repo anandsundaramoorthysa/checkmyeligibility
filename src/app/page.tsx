@@ -17,7 +17,6 @@ import { SituationDemo } from "@/components/marketing/SituationDemo";
 import { StatBand } from "@/components/marketing/StatBand";
 import { Testimonials } from "@/components/marketing/Testimonials";
 import { Faq } from "@/components/marketing/Faq";
-import { CitizensBand } from "@/components/marketing/CitizensBand";
 import { HeroArt } from "@/components/illustrations/HeroArt";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -181,13 +180,6 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-
-      {/* Citizens celebratory band */}
-      <CitizensBand
-        eyebrow="For every student"
-        title="Scholarships that belong to you"
-        lead="From merit scholarships and SC/ST fellowships to education loans and research grants — government support for students is your right. We help you find it."
-      />
 
       {/* Footer CTA band */}
       <section className="py-20 sm:py-28">

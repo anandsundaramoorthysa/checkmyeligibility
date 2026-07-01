@@ -12,7 +12,6 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaBand } from "@/components/marketing/CtaBand";
-import { CitizensBand } from "@/components/marketing/CitizensBand";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -215,13 +214,6 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
-
-      {/* Citizens band */}
-      <CitizensBand
-        eyebrow="Who it's for"
-        title="Made for every Indian student"
-        lead="Whether you're in UG, PG, PhD, or a diploma programme — there is education support meant for you."
-      />
 
       <CtaBand
         title="Find the scholarships you're entitled to."
