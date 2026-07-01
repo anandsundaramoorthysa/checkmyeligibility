@@ -21,7 +21,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How does the scheme matching work?",
-    a: "You describe your situation in plain language — for example, \"I'm a farmer in Bihar\" or \"I'm a student looking for a scholarship.\" We match that against the eligibility details of government schemes and surface the ones most likely to fit, so you can verify and apply on the official portal.",
+    a: "You describe your situation in plain language — for example, \"I'm an SC/ST student in Tamil Nadu\" or \"I'm a girl student in an engineering college.\" We match that against the eligibility details of scholarships and education schemes and surface the ones most likely to fit, so you can verify and apply on the official portal.",
   },
   {
     q: "Which languages do you support?",
@@ -54,5 +54,21 @@ export const FAQS: { q: string; a: string }[] = [
   {
     q: "How is the scheme data validated?",
     a: "Every scheme is manually reviewed by a trained team of students against its official government portal. They verify availability, structured eligibility, and application links before a scheme appears on CheckMyEligibility — so you get accurate, up-to-date information.",
+  },
+  {
+    q: "Can I apply for scholarships if I study in a private college?",
+    a: "Yes — most central government scholarships (NSP-based schemes, AICTE Pragati, AICTE Saksham) are available to students in private colleges as long as the institution is recognised by the respective regulatory body (UGC, AICTE, or a state university). Always verify on the official portal before applying.",
+  },
+  {
+    q: "Can I hold more than one scholarship at the same time?",
+    a: "Most government scholarship portals — especially the National Scholarship Portal (NSP) — allow only one scholarship per student at a time. Some schemes explicitly prohibit combining benefits. We note restrictions where known, but always confirm on the official portal.",
+  },
+  {
+    q: "What is the National Scholarship Portal (NSP)?",
+    a: "The National Scholarship Portal (scholarships.gov.in) is the central government's single-window portal for most central scholarship schemes — including CSS, PMS-SC, PMS-ST, AICTE Pragati, AICTE Saksham, and Ishan Uday. You register once and can apply for multiple eligible schemes through the same account.",
+  },
+  {
+    q: "Do I need to reapply for a scholarship every year?",
+    a: "Yes — most government scholarships require annual renewal. You must re-apply each academic year, submit fresh income and enrolment documents, and maintain the required academic performance or attendance. Deadlines typically open August–October on the NSP portal.",
   },
 ];

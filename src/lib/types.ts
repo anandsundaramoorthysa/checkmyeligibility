@@ -7,8 +7,11 @@
 /* ----------------------------- taxonomy ----------------------------------- */
 
 export type SchemeCategory =
-  | "agriculture"
+  | "scholarship"
+  | "fellowship"
+  | "education-loan"
   | "education"
+  | "agriculture"
   | "health"
   | "employment"
   | "housing"

@@ -17,7 +17,7 @@ export const SCHEMES: Scheme[] = [
       "Merit scholarship of ₹10,000–₹20,000 per year for top 20% students of Class 12 board exams pursuing higher education.",
     description:
       "The Central Sector Scheme of Scholarships targets students from families with annual income below ₹8 lakh who score in the top 20 percentile in their Class 12 board examination. The scholarship supports students pursuing regular courses at degree and postgraduate level and is disbursed through the National Scholarship Portal.",
-    category: "education",
+    category: "scholarship",
     level: "central",
     states: ["all-india"],
     eligibility: [
@@ -64,7 +64,7 @@ export const SCHEMES: Scheme[] = [
       "Scholarship covering tuition, maintenance allowance, and other charges for SC students studying at post-matriculation level.",
     description:
       "PMS-SC is a central government scheme administered by the Ministry of Social Justice and Empowerment. It covers course fees, maintenance allowance, book allowance, and other study charges for SC students pursuing post-matric courses (Class 11 onwards up to PhD).",
-    category: "education",
+    category: "scholarship",
     level: "central-state",
     states: ["all-india"],
     eligibility: [
@@ -114,7 +114,7 @@ export const SCHEMES: Scheme[] = [
       "Full scholarship covering fees and maintenance for ST students in post-matriculation courses, funded by the Ministry of Tribal Affairs.",
     description:
       "PMS-ST is the central scheme for Scheduled Tribe students pursuing any post-matric level course (Class 11 onwards). It reimburses tuition fees and provides a maintenance allowance. The scheme is funded by the Ministry of Tribal Affairs and implemented through state governments.",
-    category: "education",
+    category: "scholarship",
     level: "central-state",
     states: ["all-india"],
     eligibility: [
@@ -158,7 +158,7 @@ export const SCHEMES: Scheme[] = [
       "₹50,000 per year scholarship for girl students admitted to AICTE-approved degree or diploma technical courses.",
     description:
       "AICTE Pragati is a scholarship for girl students pursuing degree or diploma courses in AICTE-approved technical institutions. Up to 4,000 scholarships are awarded each year. The scheme aims to promote technical education among women and reduce the dropout rate due to financial constraints.",
-    category: "education",
+    category: "scholarship",
     level: "central",
     states: ["all-india"],
     eligibility: [
@@ -205,7 +205,7 @@ export const SCHEMES: Scheme[] = [
       "₹50,000 per year scholarship for students with disabilities (≥40% disability) enrolled in AICTE-approved technical programmes.",
     description:
       "AICTE Saksham provides financial support to differently-abled students in AICTE-approved technical institutions. A student must have at least 40% disability certified by a government-recognised medical authority. The scholarship covers tuition fees, books, equipment, and other education-related costs.",
-    category: "education",
+    category: "scholarship",
     level: "central",
     states: ["all-india"],
     eligibility: [
@@ -247,7 +247,7 @@ export const SCHEMES: Scheme[] = [
       "UGC fellowship of ₹31,000–₹35,000 per month for SC students pursuing MPhil and PhD programmes.",
     description:
       "The National Fellowship for SC Students is administered by the University Grants Commission (UGC) on behalf of the Ministry of Social Justice and Empowerment. It provides financial support to SC students pursuing full-time MPhil and PhD programmes at universities and institutions recognised by UGC. Up to 2,000 fellowships are awarded each year.",
-    category: "education",
+    category: "fellowship",
     level: "central",
     states: ["all-india"],
     eligibility: [
@@ -296,7 +296,7 @@ export const SCHEMES: Scheme[] = [
       "Scholarship of ₹5,000–₹6,000 per year for meritorious girl students from minority communities in Class 9–12.",
     description:
       "The Begum Hazrat Mahal National Scholarship is for meritorious girl students from minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Parsi/Zoroastrian) studying in Class 9 to 12. The scheme is run by the Maulana Azad Education Foundation under the Ministry of Minority Affairs.",
-    category: "education",
+    category: "scholarship",
     level: "central",
     states: ["all-india"],
     eligibility: [
@@ -346,7 +346,7 @@ export const SCHEMES: Scheme[] = [
       "Single-window portal to apply for education loans and scholarship from multiple banks and government schemes, with interest subsidy for economically weaker section students.",
     description:
       "The Pradhan Mantri Vidya Lakshmi Karyakram is a single-window portal where students can apply for education loans from 38+ banks and government scholarship schemes. Students from the Economically Weaker Section (EWS) get full interest subsidy during the moratorium period. The Central Scheme of Interest Subsidy (CSIS) waives interest during the study period + 12 months or 6 months after getting a job, whichever is earlier.",
-    category: "education",
+    category: "education-loan",
     level: "central",
     states: ["all-india"],
     eligibility: [
@@ -395,7 +395,7 @@ export const SCHEMES: Scheme[] = [
       "₹5,400–₹7,800 per month scholarship for students from North-East states pursuing undergraduate and professional courses outside their home state.",
     description:
       "Ishan Uday provides scholarships to students from the 8 North-Eastern states (Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Tripura, Sikkim) who pursue general and professional degree courses at recognised institutions outside the NE region. The scheme is implemented through the University Grants Commission (UGC).",
-    category: "education",
+    category: "scholarship",
     level: "central",
     states: ["assam"],
     eligibility: [

@@ -19,7 +19,7 @@ import type { Scheme, SchemeCategory } from "@/lib/types";
 export const metadata: Metadata = buildMetadata({
   title: "Explore schemes",
   description:
-    "Browse Indian government schemes by category — agriculture, education, health, employment, housing, and more. Plain-language summaries with direct links to official portals.",
+    "Browse Indian government education schemes by category — scholarships, fellowships, education loans, and research grants for students. Plain-language summaries with direct links to official portals.",
   path: "/explore",
 });
 
@@ -62,8 +62,8 @@ export default async function ExplorePage() {
 
       <PageHero
         eyebrow="Explore"
-        title="Government schemes, grouped by need"
-        lead={`Browse all ${schemes.length} schemes across ${groups.length} categories. Each links to the official portal where you verify details and apply yourself.`}
+        title="Education schemes for students, grouped by type"
+        lead={`Browse all ${schemes.length} education schemes across ${groups.length} categories. Each links to the official portal where you verify details and apply yourself.`}
         art={
           <SpotIllustration
             icon={Sprout}

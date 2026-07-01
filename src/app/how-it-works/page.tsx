@@ -28,8 +28,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const WE_DO = [
-  "Guide you through schemes and certificates in plain language",
-  "Match your situation to schemes you may qualify for",
+  "Guide you through scholarships, fellowships, and education loans in plain language",
+  "Match your situation to education schemes you may qualify for",
   "List the documents you'll need before you apply",
   "Link you directly to the official government portal",
   "Show only human-verified scheme data",
@@ -75,14 +75,14 @@ export default function HowItWorksPage() {
         <Container>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <StepCard step={1} icon={MessagesSquare} tone="navy" title="Tell us about you">
-              Describe your situation in plain language — your occupation, age,
-              state, income, or simply what you&rsquo;re hoping to find. There are no
-              forms to fill and no login to create.
+              Describe your situation in plain language — your course, year of
+              study, state, social category, or simply what you&rsquo;re hoping
+              to find. There are no forms to fill and no login to create.
             </StepCard>
             <StepCard step={2} icon={Sparkles} tone="saffron" title="We match the schemes">
               We compare what you&rsquo;ve told us against the eligibility details of
-              government schemes and certificates, and surface the ones most likely
-              to fit — along with the documents you&rsquo;ll need.
+              scholarships, fellowships, and education loans, and surface the ones
+              most likely to fit — along with the documents you&rsquo;ll need.
             </StepCard>
             <StepCard step={3} icon={ExternalLink} tone="green" title="You apply, officially">
               We give you a direct link to the genuine government portal. You apply

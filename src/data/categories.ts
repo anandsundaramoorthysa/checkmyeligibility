@@ -1,11 +1,5 @@
 import type { SchemeCategory } from "@/lib/types";
 
-/**
- * The 11 SchemeCategory enum values are grouped into 8 user-facing display
- * cards for the homepage grid. `key` is the canonical category a card maps to;
- * `members` lists every enum value that should surface under this card so
- * filtering can fan a display card out to its constituent categories.
- */
 export interface CategoryCard {
   key: SchemeCategory;
   title: string;
@@ -18,67 +12,52 @@ export interface CategoryCard {
 
 export const CATEGORIES: CategoryCard[] = [
   {
-    key: "agriculture",
-    title: "Agriculture & Farmers",
+    key: "scholarship",
+    title: "Scholarships",
     blurb:
-      "Income support, crop insurance, and subsidies for farmers and cultivators.",
-    icon: "Sprout",
-    members: ["agriculture"],
+      "Merit, need-based, and category-specific scholarships from NSP, UGC, AICTE, and state scholarship portals.",
+    icon: "Award",
+    members: ["scholarship"],
+  },
+  {
+    key: "fellowship",
+    title: "Fellowships & Research Grants",
+    blurb:
+      "JRF, SRF, and fellowship support for MPhil and PhD scholars from UGC, CSIR, and DST.",
+    icon: "FlaskConical",
+    members: ["fellowship"],
+  },
+  {
+    key: "education-loan",
+    title: "Education Loans",
+    blurb:
+      "Government-backed education loans and interest subsidy for students pursuing higher and professional courses.",
+    icon: "Banknote",
+    members: ["education-loan"],
   },
   {
     key: "education",
-    title: "Education & Scholarships",
+    title: "Technical Education",
     blurb:
-      "Scholarships, fee support, and savings schemes for students and learners.",
+      "AICTE-approved grants and support for students in engineering, management, pharmacy, and diploma programmes.",
     icon: "GraduationCap",
-    members: ["education"],
+    members: ["education", "skill-development"],
   },
   {
-    key: "health",
-    title: "Health & Insurance",
+    key: "social-welfare",
+    title: "SC / ST & Reserved Category",
     blurb:
-      "Cashless treatment, health cover, and medical assistance for families.",
-    icon: "Stethoscope",
-    members: ["health"],
-  },
-  {
-    key: "employment",
-    title: "Employment & Skills",
-    blurb:
-      "Skilling, apprenticeships, and livelihood programmes to help you earn.",
-    icon: "Briefcase",
-    members: ["employment", "skill-development"],
-  },
-  {
-    key: "housing",
-    title: "Housing",
-    blurb: "Subsidised housing and home-loan support for pucca homes.",
-    icon: "Home",
-    members: ["housing"],
+      "Post-matric scholarships and fellowships for students from Scheduled Castes, Scheduled Tribes, and OBC categories.",
+    icon: "Shield",
+    members: ["social-welfare"],
   },
   {
     key: "women-child",
-    title: "Women & Child",
+    title: "Minority & Girl Students",
     blurb:
-      "Maternity benefits, girl-child savings, and welfare for women and children.",
-    icon: "HeartHandshake",
+      "Dedicated scholarships for girl students and students from minority communities — Muslim, Sikh, Christian, and Buddhist.",
+    icon: "Heart",
     members: ["women-child"],
-  },
-  {
-    key: "senior-citizen",
-    title: "Seniors & Social Welfare",
-    blurb:
-      "Pensions and social-security support for the elderly and vulnerable.",
-    icon: "Users",
-    members: ["senior-citizen", "social-welfare", "disability"],
-  },
-  {
-    key: "finance-credit",
-    title: "Finance & Credit",
-    blurb:
-      "Collateral-free loans, banking access, and pension savings for entrepreneurs.",
-    icon: "Landmark",
-    members: ["finance-credit"],
   },
 ];
 
@@ -86,7 +65,6 @@ const BY_KEY = new Map<SchemeCategory, CategoryCard>(
   CATEGORIES.map((c) => [c.key, c]),
 );
 
-/** Reverse lookup: any enum value -> the display card that surfaces it. */
 const BY_MEMBER = new Map<SchemeCategory, CategoryCard>(
   CATEGORIES.flatMap((c) => c.members.map((m) => [m, c] as const)),
 );

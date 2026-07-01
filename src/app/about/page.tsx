@@ -23,7 +23,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "Why CheckMyEligibility exists: to make Indian government schemes and certificates simple, trustworthy, and within reach for everyone. An independent guide, not a government body.",
+    "Why CheckMyEligibility exists: to make Indian government scholarships, fellowships, and education loans simple and within reach for every student. An independent guide, not a government body.",
   path: "/about",
 });
 
@@ -81,11 +81,12 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="About us"
-        title={<>Helping every Indian claim what&rsquo;s theirs</>}
+        title={<>Helping every student discover education support</>}
         lead={
           <>
-            {SITE.tagline} CheckMyEligibility is a free guide to Indian government schemes,
-            subsidies, and certificates — built to be simple, warm, and trustworthy.
+            {SITE.tagline} CheckMyEligibility is a free guide to Indian government
+            scholarships, fellowships, education loans, and grants — built to be
+            simple, warm, and trustworthy.
           </>
         }
         art={
@@ -117,16 +118,16 @@ export default function AboutPage() {
               Why we exist
             </h2>
             <p>
-              India runs hundreds of welfare schemes, scholarships, pensions, and
-              subsidies. Yet every year, billions in benefits go unclaimed — not
-              because people aren&rsquo;t eligible, but because the information is
-              scattered, written in jargon, and hard to navigate.
+              India offers hundreds of scholarships, fellowships, education loans,
+              and research grants for students. Yet every year, a large share goes
+              unclaimed — not because students aren&rsquo;t eligible, but because
+              the information is scattered, written in jargon, and hard to navigate.
             </p>
             <p>
               We built CheckMyEligibility to close that gap. Describe your situation in plain
-              words, and we help you understand which schemes may fit, what documents
-              you&rsquo;ll need, and exactly where to apply on the official government
-              portal.
+              words, and we help you understand which scholarships, fellowships, or
+              loans may fit, what documents you&rsquo;ll need, and exactly where to
+              apply on the official government portal.
             </p>
             <p>
               We don&rsquo;t replace the government. We make it easier to reach — so the
@@ -218,8 +219,8 @@ export default function AboutPage() {
       {/* Citizens band */}
       <CitizensBand
         eyebrow="Who it's for"
-        title="Made for every Indian"
-        lead="Whoever you are and wherever you live, there may be support meant for you."
+        title="Made for every Indian student"
+        lead="Whether you're in UG, PG, PhD, or a diploma programme — there is education support meant for you."
       />
 
       <CtaBand
