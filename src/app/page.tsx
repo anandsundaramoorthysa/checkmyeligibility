@@ -155,7 +155,7 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="Why people use us"
-            title="Benefits, finally within reach"
+            title="Scholarships, finally within reach"
           />
           <div className="mt-14">
             <Testimonials />

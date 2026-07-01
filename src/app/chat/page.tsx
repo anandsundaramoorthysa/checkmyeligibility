@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: "Ask CheckMyEligibility",
     description:
-      "Chat with CheckMyEligibility to discover the government schemes and certificates you may qualify for. Sample experience; live matching coming soon.",
+      "Chat with CheckMyEligibility to discover the scholarships, fellowships, and education loans you may qualify for. Sample experience; live matching coming soon.",
     path: "/chat",
   }),
   // Mock/sample experience — keep it out of search until live matching ships.

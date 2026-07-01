@@ -44,7 +44,7 @@ export default async function CertificatesPage() {
 
       <PageHero
         eyebrow="Certificates"
-        title="The documents that unlock your benefits"
+        title="The certificates that unlock your scholarships"
         lead={
           <>
             Many schemes ask for the same core certificates. Here&rsquo;s what each
@@ -66,9 +66,9 @@ export default async function CertificatesPage() {
           <div className="flex items-start gap-3 rounded-2xl border border-navy/10 bg-surface-subtle p-6">
             <FileCheck className="mt-0.5 h-5 w-5 shrink-0 text-green-deep" aria-hidden="true" />
             <p className="text-sm leading-relaxed text-ink-muted">
-              Tip: keep digital copies of your Aadhaar, address proof, and a recent
-              income proof handy — they cover the document checklist for most of these
-              certificates.
+              Tip: keep digital copies of your Aadhaar, income certificate, and caste
+              or EWS certificate ready — most NSP scholarship applications require
+              these as a minimum before you begin.
             </p>
           </div>
 

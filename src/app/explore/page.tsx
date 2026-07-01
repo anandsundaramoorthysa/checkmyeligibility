@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sprout } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SchemeCard } from "@/components/marketing/SchemeCard";
 import { PageHero } from "@/components/layout/PageHero";
@@ -66,9 +66,9 @@ export default async function ExplorePage() {
         lead={`Browse all ${schemes.length} education schemes across ${groups.length} categories. Each links to the official portal where you verify details and apply yourself.`}
         art={
           <SpotIllustration
-            icon={Sprout}
+            icon={GraduationCap}
             tone="navy"
-            label="Government schemes grouped by category"
+            label="Education schemes grouped by type"
           />
         }
       >

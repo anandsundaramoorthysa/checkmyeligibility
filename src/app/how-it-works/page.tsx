@@ -57,8 +57,9 @@ export default function HowItWorksPage() {
         title="From confused to confident, in three steps"
         lead={
           <>
-            Government schemes can be hard to navigate. We make the path simple —
-            understand what you qualify for, then apply officially, yourself.
+            Scholarships and education schemes can be hard to navigate. We make
+            the path simple — understand what you qualify for, then apply
+            officially, yourself.
           </>
         }
         art={

@@ -224,7 +224,7 @@ export default function AboutPage() {
       />
 
       <CtaBand
-        title="Find what you're entitled to."
+        title="Find the scholarships you're entitled to."
         primary={{ label: "Check my eligibility", href: chatHref() }}
         secondary={{ label: "See how it works", href: "/how-it-works" }}
       />

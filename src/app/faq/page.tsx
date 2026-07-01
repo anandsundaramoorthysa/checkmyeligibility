@@ -34,6 +34,10 @@ const GROUPS: { title: string; match: (q: string) => boolean }[] = [
     match: (q) => /matching|languages|accurate|can't find/i.test(q),
   },
   {
+    title: "Scholarships & applications",
+    match: (q) => /scholarship|private college|NSP|reapply|multiple/i.test(q),
+  },
+  {
     title: "About the project",
     match: (q) => /who built|open source|validated|validation/i.test(q),
   },

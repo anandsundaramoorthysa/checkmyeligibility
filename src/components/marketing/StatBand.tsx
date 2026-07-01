@@ -17,7 +17,7 @@ export function StatBand() {
         {/* Phone: centered to match the centered illustration. Desktop (lg): left. */}
         <div className="text-center lg:text-left">
           <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron">
-            The scale of support
+            For Indian students
           </p>
           <h2 className="mx-auto mt-3 max-w-xl text-balance font-display text-3xl font-extrabold tracking-tight sm:text-4xl lg:mx-0">
             Support built for every Indian student.
