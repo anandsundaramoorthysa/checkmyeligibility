@@ -87,7 +87,7 @@ export default function TermsPage() {
                   By using CheckMyEligibility, you agree to these terms. This is a
                   plain-language summary written for clarity, not legal advice. In
                   short: we help you understand government schemes and point you to
-                  the official portals, but the government — not us — decides any
+                  the official portals, but the government - not us - decides any
                   eligibility or approval, and we never charge you or act on your
                   behalf.
                 </p>
@@ -103,7 +103,7 @@ export default function TermsPage() {
                   understand what may be relevant to you. Suggestions are based on the details you
                   share and publicly available scheme information. We do not
                   guarantee that you will qualify for, or receive, any scheme or
-                  benefit — final decisions rest entirely with the concerned
+                  benefit - final decisions rest entirely with the concerned
                   government authority. Always verify the latest rules and
                   eligibility on the official portal before acting.
                 </p>
@@ -163,7 +163,7 @@ export default function TermsPage() {
                 </h2>
                 <p>
                   Please use CheckMyEligibility lawfully and as intended. Do not misuse the
-                  service — for example, by attempting to disrupt it, scrape it at
+                  service - for example, by attempting to disrupt it, scrape it at
                   scale, reverse-engineer it, or use it to mislead others. We may
                   limit or suspend access where use is harmful or abusive.
                 </p>
@@ -232,7 +232,7 @@ export default function TermsPage() {
 
       <CtaBand
         title="Ready to find what's yours?"
-        lead="Ask the assistant directly, or read the FAQ — both are free."
+        lead="Ask the assistant directly, or read the FAQ - both are free."
         primary={{ label: "Ask the assistant", href: chatHref() }}
         secondary={{ label: "Read the FAQ", href: "/faq" }}
       />

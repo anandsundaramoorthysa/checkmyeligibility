@@ -1,4 +1,4 @@
-import type { BotTurn, QuickReply, Scheme } from "@/lib/types";
+﻿import type { BotTurn, QuickReply, Scheme } from "@/lib/types";
 import { searchSchemes } from "@/lib/data";
 import { SITE } from "@/lib/site";
 import type { ChatEngine } from "./engine";
@@ -37,7 +37,7 @@ const INTENTS: Intent[] = [
     query: "student scholarship merit income education",
     quickReplies: [
       { label: "I'm SC/ST category", send: "I'm an SC/ST student looking for a scholarship" },
-      { label: "I'm a girl student", send: "I'm a girl student — are there scholarships for me?" },
+      { label: "I'm a girl student", send: "I'm a girl student - are there scholarships for me?" },
       { label: "I need an education loan", send: "I need an education loan to pay my fees" },
     ],
   },
@@ -48,7 +48,7 @@ const INTENTS: Intent[] = [
     query: "SC ST OBC scholarship post matric fellowship reserved",
     quickReplies: [
       { label: "Post-matric scholarship", send: "Tell me about post matric scholarship for SC students" },
-      { label: "PhD fellowship", send: "I'm an SC student doing a PhD — what fellowship can I get?" },
+      { label: "PhD fellowship", send: "I'm an SC student doing a PhD - what fellowship can I get?" },
       { label: "Other scholarships", send: "What other scholarships exist for SC ST students?" },
     ],
   },
@@ -156,7 +156,7 @@ function fallbackTurn(): BotTurn {
     messages: [
       {
         content:
-          "I'm here to help you find scholarships, fellowships, education loans, and grants. Tell me a bit about yourself — your course level, state, social category, or what kind of support you're looking for — and I'll find what you may be eligible for.\n\n" +
+          "I'm here to help you find scholarships, fellowships, education loans, and grants. Tell me a bit about yourself - your course level, state, social category, or what kind of support you're looking for - and I'll find what you may be eligible for.\n\n" +
           "You can also tap one of the options below to get started. " +
           OFFER,
       },
@@ -172,8 +172,8 @@ export const mockEngine: ChatEngine = {
         {
           content:
             `Hello, I'm the **${SITE.name} Assistant**. I help Indian students discover government scholarships, fellowships, education loans, and grants they are eligible for.\n\n` +
-            "Tell me about yourself — your course, year, state, social category, or what kind of support you need — and I'll help you find what you may be entitled to, the documents required, and where to apply.\n\n" +
-            "A quick note: CheckMyEligibility is an independent guide, **not affiliated with any government**, and **we never submit applications for you** — we point you to the official portal.\n\n" +
+            "Tell me about yourself - your course, year, state, social category, or what kind of support you need - and I'll help you find what you may be entitled to, the documents required, and where to apply.\n\n" +
+            "A quick note: CheckMyEligibility is an independent guide, **not affiliated with any government**, and **we never submit applications for you** - we point you to the official portal.\n\n" +
             "Who are you, or what support are you looking for today?",
         },
       ],

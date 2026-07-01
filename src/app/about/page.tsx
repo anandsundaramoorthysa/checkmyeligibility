@@ -84,7 +84,7 @@ export default function AboutPage() {
         lead={
           <>
             {SITE.tagline} CheckMyEligibility is a free guide to Indian government
-            scholarships, fellowships, education loans, and grants — built to be
+            scholarships, fellowships, education loans, and grants - built to be
             simple, warm, and trustworthy.
           </>
         }
@@ -119,7 +119,7 @@ export default function AboutPage() {
             <p>
               India offers hundreds of scholarships, fellowships, education loans,
               and research grants for students. Yet every year, a large share goes
-              unclaimed — not because students aren&rsquo;t eligible, but because
+              unclaimed - not because students aren&rsquo;t eligible, but because
               the information is scattered, written in jargon, and hard to navigate.
             </p>
             <p>
@@ -129,7 +129,7 @@ export default function AboutPage() {
               apply on the official government portal.
             </p>
             <p>
-              We don&rsquo;t replace the government. We make it easier to reach — so the
+              We don&rsquo;t replace the government. We make it easier to reach - so the
               support that&rsquo;s meant for you actually reaches you.
             </p>
           </div>
@@ -176,13 +176,13 @@ export default function AboutPage() {
             <span className="font-semibold text-ink">
               Dept. of Data Science, Loyola College, Chennai
             </span>
-            . A team of 18 students — validators and developers — built the platform
+            . A team of 18 students - validators and developers - built the platform
             and manually reviewed every scheme against official government portals to
             ensure accuracy.
           </p>
           <p className="mt-4 text-pretty leading-relaxed text-ink-muted">
             The source code is open to the public under the PolyForm Noncommercial
-            License 1.0 — free for personal, educational, and research use. Anyone
+            License 1.0 - free for personal, educational, and research use. Anyone
             can read it, audit it, or contribute.
           </p>
           <div className="mt-6 flex justify-center">

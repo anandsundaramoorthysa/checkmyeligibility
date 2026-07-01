@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -8,14 +8,14 @@ import { chatHref } from "@/lib/chat/openChat";
 
 const PLACEHOLDERS = [
   "I'm an SC student in Tamil Nadu looking for a scholarship…",
-  "I'm a girl student in engineering — are there scholarships for me?…",
+  "I'm a girl student in engineering - are there scholarships for me?…",
   "I need an education loan for my postgraduate studies…",
   "I'm a PhD student looking for a UGC fellowship…",
 ];
 
 const CHIPS: { label: string; seed: string }[] = [
   { label: "I need a scholarship", seed: "I'm a student looking for a scholarship to pay my college fees." },
-  { label: "SC / ST student", seed: "I'm an SC/ST student — what scholarships and fellowships am I eligible for?" },
+  { label: "SC / ST student", seed: "I'm an SC/ST student - what scholarships and fellowships am I eligible for?" },
   { label: "Education loan", seed: "I need an education loan to pay my course fees." },
   { label: "PhD fellowship", seed: "I'm a PhD student looking for a fellowship or research grant." },
 ];

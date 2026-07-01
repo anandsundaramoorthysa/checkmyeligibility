@@ -22,7 +22,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-surface-muted bg-surface-card/85 backdrop-blur shadow-header">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" aria-label="CheckMyEligibility home" className="shrink-0">
+        <Link href="/" aria-label="CheckMyEligibility home" className="shrink-0 flex items-center">
           <Logo />
         </Link>
 
@@ -67,7 +67,7 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-navy md:hidden touch:h-11 touch:w-11"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-navy md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}

@@ -40,7 +40,7 @@ export function Faq({
               </button>
             </h3>
             {isOpen && (
-              <div className="px-6 pb-6 text-pretty leading-relaxed text-ink-muted">
+              <div className="px-6 pt-2 pb-5 text-pretty leading-relaxed text-ink-muted">
                 {item.a}
               </div>
             )}

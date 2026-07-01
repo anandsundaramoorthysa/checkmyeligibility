@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   MessagesSquare,
@@ -45,7 +45,7 @@ export default function HomePage() {
             <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-ink-muted lg:mx-0">
               Describe your situation in plain language and discover the
               scholarships, fellowships, education loans, and grants you qualify
-              for — with the documents you need and exactly where to apply, on
+              for - with the documents you need and exactly where to apply, on
               official portals.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
@@ -89,7 +89,7 @@ export default function HomePage() {
           />
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             <StepCard step={1} icon={MessagesSquare} tone="navy" title="Tell us about you">
-              Describe your situation in plain language — your course, year, state,
+              Describe your situation in plain language - your course, year, state,
               or what you&rsquo;re looking for. No forms, no jargon.
             </StepCard>
             <StepCard step={2} icon={Sparkles} tone="saffron" title="We match the schemes">
@@ -98,7 +98,7 @@ export default function HomePage() {
             </StepCard>
             <StepCard step={3} icon={ExternalLink} tone="green" title="You apply, officially">
               We hand you a direct link to the genuine government portal. You apply
-              there yourself — we never submit anything for you.
+              there yourself - we never submit anything for you.
             </StepCard>
           </div>
         </Container>
@@ -111,7 +111,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Explore by type"
             title="Browse education schemes by category"
-            lead="From merit scholarships and SC/ST fellowships to education loans and research grants — find the support that fits your situation."
+            lead="From merit scholarships and SC/ST fellowships to education loans and research grants - find the support that fits your situation."
           />
           <div className="mt-14">
             <CategoryGrid />
@@ -128,7 +128,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Situation demo — tinted full-bleed band */}
+      {/* Situation demo - tinted full-bleed band */}
       <section className="bg-saffron-soft/50 py-20 sm:py-28">
         <Container>
           <SectionHeading
@@ -190,7 +190,7 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-pretty text-lg text-white/80">
               Thousands of scholarships and grants go unclaimed every year. Find
-              out what&rsquo;s yours in a few minutes — for free.
+              out what&rsquo;s yours in a few minutes - for free.
             </p>
             <div className="mt-9 flex justify-center">
               <HeroCta label="Check my eligibility" variant="saffron" size="lg" />

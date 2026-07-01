@@ -53,7 +53,7 @@ export default function PrivacyPage() {
         lead={
           <>
             CheckMyEligibility is built to be private by design. No login, no Aadhaar, no
-            bank details, no documents — this page explains exactly how we handle
+            bank details, no documents - this page explains exactly how we handle
             your information.
           </>
         }
@@ -85,7 +85,7 @@ export default function PrivacyPage() {
                   {SECTIONS[0].title}
                 </h2>
                 <p>
-                  As little as possible — in most cases, nothing that identifies
+                  As little as possible - in most cases, nothing that identifies
                   you. You don&rsquo;t create an account, and we never ask for the
                   sensitive details a scheme application might need. Specifically,
                   we do not collect:
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
                 </ul>
                 <p>
                   If a scheme requires any of these, you provide them yourself,
-                  directly on the official government portal — never to us.
+                  directly on the official government portal - never to us.
                 </p>
               </section>
 
@@ -203,7 +203,7 @@ export default function PrivacyPage() {
 
       <CtaBand
         title="Questions about your data?"
-        lead="Ask the assistant directly, or read the FAQ — both are free."
+        lead="Ask the assistant directly, or read the FAQ - both are free."
         primary={{ label: "Ask the assistant", href: chatHref() }}
         secondary={{ label: "Read the FAQ", href: "/faq" }}
       />

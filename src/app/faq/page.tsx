@@ -120,7 +120,7 @@ export default function FaqPage() {
 
       <CtaBand
         title="Still have a question?"
-        lead="Ask the assistant directly — it's free."
+        lead="Ask the assistant directly - it's free."
         primary={{ label: "Check my eligibility", href: chatHref() }}
         secondary={{ label: "Browse schemes", href: "/explore" }}
       />

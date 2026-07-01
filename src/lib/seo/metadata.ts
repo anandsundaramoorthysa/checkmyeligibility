@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { SITE } from "@/lib/site";
 
 interface BuildMetaArgs {
   title?: string;
   description?: string;
-  path?: string; // e.g. "/explore" — used for canonical + OG url
+  path?: string; // e.g. "/explore" - used for canonical + OG url
   noindex?: boolean;
 }
 
@@ -19,7 +19,7 @@ export function buildMetadata({
   noindex = false,
 }: BuildMetaArgs = {}): Metadata {
   const url = new URL(path, SITE.url).toString();
-  const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
+  const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} - ${SITE.tagline}`;
 
   return {
     title: fullTitle,

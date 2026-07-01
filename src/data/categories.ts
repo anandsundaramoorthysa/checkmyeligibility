@@ -1,4 +1,4 @@
-import type { SchemeCategory } from "@/lib/types";
+﻿import type { SchemeCategory } from "@/lib/types";
 
 export interface CategoryCard {
   key: SchemeCategory;
@@ -55,7 +55,7 @@ export const CATEGORIES: CategoryCard[] = [
     key: "women-child",
     title: "Minority & Girl Students",
     blurb:
-      "Dedicated scholarships for girl students and students from minority communities — Muslim, Sikh, Christian, and Buddhist.",
+      "Dedicated scholarships for girl students and students from minority communities - Muslim, Sikh, Christian, and Buddhist.",
     icon: "Heart",
     members: ["women-child"],
   },

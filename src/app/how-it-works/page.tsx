@@ -39,7 +39,7 @@ const WE_DONT = [
   "Submit applications on your behalf",
   "Charge any fee or ask for payment",
   "Store your Aadhaar, bank details, or scanned documents",
-  "Decide your approval — that's the government's call",
+  "Decide your approval - that's the government's call",
 ];
 
 export default function HowItWorksPage() {
@@ -58,7 +58,7 @@ export default function HowItWorksPage() {
         lead={
           <>
             Scholarships and education schemes can be hard to navigate. We make
-            the path simple — understand what you qualify for, then apply
+            the path simple - understand what you qualify for, then apply
             officially, yourself.
           </>
         }
@@ -76,14 +76,14 @@ export default function HowItWorksPage() {
         <Container>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <StepCard step={1} icon={MessagesSquare} tone="navy" title="Tell us about you">
-              Describe your situation in plain language — your course, year of
+              Describe your situation in plain language - your course, year of
               study, state, social category, or simply what you&rsquo;re hoping
               to find. There are no forms to fill and no login to create.
             </StepCard>
             <StepCard step={2} icon={Sparkles} tone="saffron" title="We match the schemes">
               We compare what you&rsquo;ve told us against the eligibility details of
               scholarships, fellowships, and education loans, and surface the ones
-              most likely to fit — along with the documents you&rsquo;ll need.
+              most likely to fit - along with the documents you&rsquo;ll need.
             </StepCard>
             <StepCard step={3} icon={ExternalLink} tone="green" title="You apply, officially">
               We give you a direct link to the genuine government portal. You apply
@@ -92,7 +92,7 @@ export default function HowItWorksPage() {
             </StepCard>
             <StepCard step={4} icon={BadgeCheck} tone="navy" title="Verified by humans">
               Every scheme on CheckMyEligibility is manually reviewed by a trained team
-              against the official government portal before it appears here — so
+              against the official government portal before it appears here - so
               you get accurate, up-to-date information.
             </StepCard>
           </div>

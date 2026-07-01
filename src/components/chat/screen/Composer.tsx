@@ -98,7 +98,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
 
   // Watch the browser's stored mic permission so that once the user fixes a
   // block from outside the page (browser site settings), our "blocked" UI
-  // clears itself without needing a reload. This is observational only — it
+  // clears itself without needing a reload. This is observational only - it
   // never gates the mic button, since some browsers (notably Edge) can
   // report "denied" here even when the real, user-gesture-triggered request
   // would succeed or correctly show the native permission prompt.
@@ -186,7 +186,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
         setShowBlockedHelp(true);
         stopListening();
       } else {
-        stopListening("Didn't catch that — please try again.");
+        stopListening("Didn't catch that - please try again.");
       }
     };
 
@@ -197,11 +197,11 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
       clearMicTimeout();
       micTimeoutRef.current = setTimeout(() => {
         recognitionRef.current?.stop();
-        stopListening("Didn't catch that — please try again.");
+        stopListening("Didn't catch that - please try again.");
       }, MIC_TIMEOUT_MS);
     } catch {
       setListening(false);
-      setMicError("Couldn't start voice input — please try again.");
+      setMicError("Couldn't start voice input - please try again.");
     }
   }
 
@@ -318,14 +318,14 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
                 onClick={toggleMic}
                 aria-label={
                   micPermission === "denied"
-                    ? "Microphone blocked — tap for help"
+                    ? "Microphone blocked - tap for help"
                     : listening
                       ? t.micStop
                       : t.micStart
                 }
                 title={
                   micPermission === "denied"
-                    ? "Microphone blocked — tap for help"
+                    ? "Microphone blocked - tap for help"
                     : listening
                       ? t.micStop
                       : t.micStart
@@ -479,7 +479,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
                 Describe your situation and CheckMyEligibility matches you to sample
                 government schemes and certificates, with the documents you&apos;ll
                 need and a link to the official portal. This is a sample
-                experience — replies are illustrative, so always confirm details
+                experience - replies are illustrative, so always confirm details
                 on the official site. We never submit applications for you.
               </p>
             </div>

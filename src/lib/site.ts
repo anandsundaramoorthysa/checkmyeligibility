@@ -6,7 +6,7 @@ export const SITE = {
   url: "https://checkmyeligibility.in",
   tagline: "Find what you're entitled to.",
   description:
-    "CheckMyEligibility is a free AI assistant that helps Indian students discover scholarships, fellowships, education loans, and grants they are eligible for. Describe your situation in plain language and find out what you qualify for, the documents you need, and exactly where to apply — on official portals.",
+    "CheckMyEligibility is a free AI assistant that helps Indian students discover scholarships, fellowships, education loans, and grants they are eligible for. Describe your situation in plain language and find out what you qualify for, the documents you need, and exactly where to apply - on official portals.",
   locale: "en-IN",
   email: "hello@checkmyeligibility.in",
   github: "https://github.com/anandsundaramoorthysa/checkmyeligibility",
@@ -14,7 +14,7 @@ export const SITE = {
   institution: "Dept. of Data Science, Loyola College, Chennai",
   // Independence disclaimer shown in footer + chat (legal/trust safety).
   disclaimer:
-    "CheckMyEligibility is an independent guide and is not affiliated with, endorsed by, or operated by any government body. We help you find schemes and direct you to official portals — we never submit applications on your behalf.",
+    "CheckMyEligibility is an independent guide and is not affiliated with, endorsed by, or operated by any government body. We help you find schemes and direct you to official portals - we never submit applications on your behalf.",
 } as const;
 
 export interface NavItem {

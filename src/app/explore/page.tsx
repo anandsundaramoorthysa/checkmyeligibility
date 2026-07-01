@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import { Container } from "@/components/layout/Container";
@@ -19,7 +19,7 @@ import type { Scheme, SchemeCategory } from "@/lib/types";
 export const metadata: Metadata = buildMetadata({
   title: "Explore schemes",
   description:
-    "Browse Indian government education schemes by category — scholarships, fellowships, education loans, and research grants for students. Plain-language summaries with direct links to official portals.",
+    "Browse Indian government education schemes by category - scholarships, fellowships, education loans, and research grants for students. Plain-language summaries with direct links to official portals.",
   path: "/explore",
 });
 

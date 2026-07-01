@@ -1,4 +1,4 @@
-import type { Scheme } from "@/lib/types";
+﻿import type { Scheme } from "@/lib/types";
 
 /**
  * Phase-1 sample catalogue of Indian government education schemes
@@ -23,7 +23,7 @@ export const SCHEMES: Scheme[] = [
     eligibility: [
       { label: "Academic score", value: "Top 20 percentile in Class 12 board exam", type: "education" },
       { label: "Annual family income", value: "Below ₹8,00,000", type: "income" },
-      { label: "Course", value: "Regular degree / postgraduate course — not correspondence or distance", type: "education" },
+      { label: "Course", value: "Regular degree / postgraduate course - not correspondence or distance", type: "education" },
     ],
     benefits: [
       "₹10,000 per year for undergraduate students",
@@ -48,7 +48,7 @@ export const SCHEMES: Scheme[] = [
       },
       {
         q: "Can I apply if I scored in the top 20 percentile in my state but not nationally?",
-        a: "Yes — eligibility is determined by the top 20 percentile of your respective state board, not a national rank.",
+        a: "Yes - eligibility is determined by the top 20 percentile of your respective state board, not a national rank.",
       },
     ],
     source: "sample",
@@ -70,7 +70,7 @@ export const SCHEMES: Scheme[] = [
     eligibility: [
       { label: "Social category", value: "Scheduled Caste (SC)", type: "caste-category" },
       { label: "Annual family income", value: "Below ₹2,50,000", type: "income" },
-      { label: "Course level", value: "Class 11 and above — including graduation, PG, and PhD", type: "education" },
+      { label: "Course level", value: "Class 11 and above - including graduation, PG, and PhD", type: "education" },
       { label: "Institution", value: "Must be a government-recognised institution", type: "other" },
     ],
     benefits: [
@@ -94,11 +94,11 @@ export const SCHEMES: Scheme[] = [
     faqs: [
       {
         q: "Does this cover engineering and medical courses?",
-        a: "Yes — the scheme covers professional courses including engineering, medical, law, and management, often with higher benefit amounts.",
+        a: "Yes - the scheme covers professional courses including engineering, medical, law, and management, often with higher benefit amounts.",
       },
       {
         q: "Is there an income limit?",
-        a: "The parental income ceiling is ₹2,50,000 per year for most states. Some states have higher limits — check your state scholarship portal.",
+        a: "The parental income ceiling is ₹2,50,000 per year for most states. Some states have higher limits - check your state scholarship portal.",
       },
     ],
     source: "sample",
@@ -120,7 +120,7 @@ export const SCHEMES: Scheme[] = [
     eligibility: [
       { label: "Social category", value: "Scheduled Tribe (ST)", type: "caste-category" },
       { label: "Annual family income", value: "Below ₹2,50,000", type: "income" },
-      { label: "Course level", value: "Class 11 and above — all post-matric courses", type: "education" },
+      { label: "Course level", value: "Class 11 and above - all post-matric courses", type: "education" },
     ],
     benefits: [
       "Full tuition fee reimbursement",
@@ -185,7 +185,7 @@ export const SCHEMES: Scheme[] = [
     faqs: [
       {
         q: "Does Pragati cover MBA and MCA courses?",
-        a: "Yes — MBA and MCA at AICTE-approved institutions are covered under Pragati.",
+        a: "Yes - MBA and MCA at AICTE-approved institutions are covered under Pragati.",
       },
       {
         q: "Can a family apply for both Pragati and Saksham?",
@@ -276,11 +276,11 @@ export const SCHEMES: Scheme[] = [
     faqs: [
       {
         q: "Do I need to qualify NET or GATE to apply?",
-        a: "No — NET/GATE qualification is not mandatory for NFSC. Admission to an MPhil/PhD programme at a UGC-recognised institution is sufficient.",
+        a: "No - NET/GATE qualification is not mandatory for NFSC. Admission to an MPhil/PhD programme at a UGC-recognised institution is sufficient.",
       },
       {
         q: "Can I hold this fellowship and another fellowship at the same time?",
-        a: "No — a student cannot hold NFSC along with any other UGC fellowship or scholarship simultaneously.",
+        a: "No - a student cannot hold NFSC along with any other UGC fellowship or scholarship simultaneously.",
       },
     ],
     source: "sample",
@@ -326,11 +326,11 @@ export const SCHEMES: Scheme[] = [
     faqs: [
       {
         q: "Can a student apply from a private school?",
-        a: "Yes — the school must be recognised by the State / Union Territory government. Private recognised schools are eligible.",
+        a: "Yes - the school must be recognised by the State / Union Territory government. Private recognised schools are eligible.",
       },
       {
         q: "Is there a renewal process?",
-        a: "Yes — students must re-apply each year and maintain a minimum attendance and academic performance as specified.",
+        a: "Yes - students must re-apply each year and maintain a minimum attendance and academic performance as specified.",
       },
     ],
     source: "sample",
@@ -389,7 +389,7 @@ export const SCHEMES: Scheme[] = [
   {
     id: "ishan-uday",
     slug: "ishan-uday-special-scholarship-northeast",
-    name: "Ishan Uday — Special Scholarship Scheme for North Eastern Region",
+    name: "Ishan Uday - Special Scholarship Scheme for North Eastern Region",
     shortName: "Ishan Uday",
     summary:
       "₹5,400–₹7,800 per month scholarship for students from North-East states pursuing undergraduate and professional courses outside their home state.",

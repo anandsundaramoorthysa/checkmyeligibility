@@ -8,8 +8,8 @@ export function formatTranscript(messages: Message[]): string {
     return `${who} (${when}):\n${m.content}\n`;
   });
   return [
-    "CheckMyEligibility Assistant — chat transcript",
-    "Sample guidance — always verify on the official portal.",
+    "CheckMyEligibility Assistant - chat transcript",
+    "Sample guidance - always verify on the official portal.",
     "",
     ...lines,
   ].join("\n");

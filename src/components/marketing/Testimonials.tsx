@@ -1,4 +1,4 @@
-import { Quote } from "lucide-react";
+﻿import { Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type AvatarTone = "saffron" | "green" | "navy";
@@ -20,7 +20,7 @@ const TESTIMONIALS: {
     role: "B.Tech student, Tamil Nadu",
     tone: "green",
     quote:
-      "I didn't know AICTE Pragati existed. In a few minutes I understood what I qualified for and where to apply — no agent, no fees.",
+      "I didn't know AICTE Pragati existed. In a few minutes I understood what I qualified for and where to apply - no agent, no fees.",
   },
   {
     name: "Arjun S.",
