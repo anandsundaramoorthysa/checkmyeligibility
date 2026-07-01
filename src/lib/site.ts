@@ -11,7 +11,7 @@ export const SITE = {
   email: "hello@checkmyeligibility.in",
   github: "https://github.com/anandsundaramoorthysa/checkmyeligibility",
   license: "PolyForm Noncommercial 1.0",
-  institution: "Dept. of Data Science, Loyola College, Chennai",
+  institution: "Department of Data Science, Loyola College, Chennai",
   // Independence disclaimer shown in footer + chat (legal/trust safety).
   disclaimer:
     "CheckMyEligibility is an independent guide and is not affiliated with, endorsed by, or operated by any government body. We help you find schemes and direct you to official portals - we never submit applications on your behalf.",

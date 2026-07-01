@@ -45,7 +45,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Who built CheckMyEligibility?",
-    a: "CheckMyEligibility is a student-led project from the Dept. of Data Science, Loyola College, Chennai, funded by the department. A team of 18 students - validators and developers - built the platform and manually review every scheme against official government portals.",
+    a: "CheckMyEligibility is a student-led project from the Department of Data Science, Loyola College, Chennai, funded by the department. A team of 18 students - validators and developers - built the platform and manually review every scheme against official government portals.",
   },
   {
     q: "Is CheckMyEligibility open source?",

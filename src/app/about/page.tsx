@@ -174,7 +174,7 @@ export default function AboutPage() {
           <p className="mt-6 text-pretty text-lg leading-relaxed text-ink-muted">
             CheckMyEligibility is funded and supported by the{" "}
             <span className="font-semibold text-ink">
-              Dept. of Data Science, Loyola College, Chennai
+              Department of Data Science, Loyola College, Chennai
             </span>
             . A team of 18 students - validators and developers - built the platform
             and manually reviewed every scheme against official government portals to
