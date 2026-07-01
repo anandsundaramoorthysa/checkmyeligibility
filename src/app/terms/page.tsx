@@ -55,7 +55,8 @@ export default function TermsPage() {
         title="Terms of use"
         lead={
           <>
-            CheckMyEligibility is a free, independent guide to Indian government schemes.
+            CheckMyEligibility is a free, independent guide to Indian government
+            scholarships, fellowships, and education loans.
             These terms explain what we offer, what we don&rsquo;t, and the limits
             of the help we provide.
           </>
@@ -115,8 +116,8 @@ export default function TermsPage() {
                 </h2>
                 <p>
                   CheckMyEligibility provides general information about Indian government
-                  schemes, subsidies, and certificates to help you understand what
-                  may be relevant to you. Suggestions are based on the details you
+                  scholarships, fellowships, education loans, and grants to help you
+                  understand what may be relevant to you. Suggestions are based on the details you
                   share and publicly available scheme information. We do not
                   guarantee that you will qualify for, or receive, any scheme or
                   benefit — final decisions rest entirely with the concerned

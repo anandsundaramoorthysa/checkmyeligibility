@@ -4,7 +4,7 @@ import { HeroCta } from "@/components/marketing/HeroCta";
 /** Reusable "not sure? ask the bot" panel used across hub/detail pages. */
 export function AskBotCta({
   title = "Not sure where you fit?",
-  body = "Describe your situation and let the assistant point you to the schemes most likely to match.",
+  body = "Describe your situation and let the assistant point you to the scholarships and education schemes most likely to match.",
   label = "Ask the assistant",
   seed,
 }: {
