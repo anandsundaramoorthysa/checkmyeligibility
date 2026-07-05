@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import {
@@ -80,7 +80,7 @@ export function ScreenHeader({
 
       <div className="min-w-0 flex-1">
         <p className="flex items-center gap-1.5 text-sm font-semibold leading-tight text-ink">
-          <span className="truncate">GovEligify Assistant</span>
+          <span className="truncate">CheckMyEligibility Assistant</span>
           <span
             className="inline-block h-2 w-2 shrink-0 rounded-full bg-green ring-2 ring-green-soft"
             aria-label="Online"

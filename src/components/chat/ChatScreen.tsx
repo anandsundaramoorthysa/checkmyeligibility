@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   useCallback,
@@ -31,7 +31,7 @@ import { FollowUpChips } from "./screen/FollowUpChips";
 import { Composer } from "./screen/Composer";
 
 const TYPING_MS = 650;
-const STORAGE_KEY = "goveligify-chat";
+const STORAGE_KEY = "CheckMyEligibility-chat";
 const MAX_PERSISTED = 20;
 
 interface Props {
@@ -55,7 +55,7 @@ function turnToMessages(turn: BotTurn): {
 }
 
 /**
- * The full-screen GovEligify assistant: ambient background, slim header, a
+ * The full-screen CheckMyEligibility assistant: ambient background, slim header, a
  * scrollable centered conversation (welcome overlay when empty), follow-up
  * chips, a fixed bottom composer, and a scroll-to-bottom pill.
  */

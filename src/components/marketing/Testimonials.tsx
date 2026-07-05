@@ -1,4 +1,4 @@
-import { Quote } from "lucide-react";
+﻿import { Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type AvatarTone = "saffron" | "green" | "navy";
@@ -16,11 +16,11 @@ const TESTIMONIALS: {
   tone: AvatarTone;
 }[] = [
   {
-    name: "Lakshmi R.",
-    role: "Farmer, Tamil Nadu",
+    name: "Meera P.",
+    role: "B.Tech student, Tamil Nadu",
     tone: "green",
     quote:
-      "I didn't know PM-KISAN even existed. In a few minutes I understood what I needed and where to apply — no agent, no fees.",
+      "I didn't know AICTE Pragati existed. In a few minutes I understood what I qualified for and where to apply - no agent, no fees.",
   },
   {
     name: "Arjun S.",
@@ -30,11 +30,11 @@ const TESTIMONIALS: {
       "It pointed me to the right scholarship and listed every document. I applied on the official portal the same evening.",
   },
   {
-    name: "Fatima B.",
-    role: "Small business owner, Delhi",
+    name: "Fatima A.",
+    role: "PG student, Uttar Pradesh",
     tone: "saffron",
     quote:
-      "Plain language, no jargon. I finally understood which loan scheme actually fit my tailoring business.",
+      "Plain language, no jargon. I finally understood which scholarship I could apply for as a minority girl student.",
   },
 ];
 

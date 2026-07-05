@@ -4,7 +4,7 @@ import { SCHEMES } from "@/data/schemes";
 import { CERTIFICATES } from "@/data/certificates";
 
 const STATS = [
-  { value: `${SCHEMES.length}+`, label: "Government schemes explained" },
+  { value: `${SCHEMES.length}+`, label: "Education schemes explained" },
   { value: `${CERTIFICATES.length}`, label: "Essential certificates covered" },
   { value: "100%", label: "Linked to official government portals" },
 ];
@@ -17,10 +17,10 @@ export function StatBand() {
         {/* Phone: centered to match the centered illustration. Desktop (lg): left. */}
         <div className="text-center lg:text-left">
           <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron">
-            The scale of support
+            For Indian students
           </p>
           <h2 className="mx-auto mt-3 max-w-xl text-balance font-display text-3xl font-extrabold tracking-tight sm:text-4xl lg:mx-0">
-            Benefits built for a billion lives.
+            Support built for every Indian student.
           </h2>
           <dl className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
             {STATS.map((stat) => (
@@ -43,7 +43,7 @@ export function StatBand() {
         <SpotIllustration
           icon={Users}
           tone="saffron"
-          label="Citizens supported by government schemes"
+          label="Students guided to their education benefits"
           className="mx-auto w-40 sm:w-48 lg:w-56"
         />
       </div>

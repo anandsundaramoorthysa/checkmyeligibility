@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import {
   Compass,
   HeartHandshake,
   ShieldCheck,
   Sparkles,
   AlertTriangle,
+  BadgeCheck,
+  Code2,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaBand } from "@/components/marketing/CtaBand";
-import { CitizensBand } from "@/components/marketing/CitizensBand";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -21,7 +22,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "Why GovEligify exists: to make Indian government schemes and certificates simple, trustworthy, and within reach for everyone. An independent guide, not a government body.",
+    "Why CheckMyEligibility exists: to make Indian government scholarships, fellowships, and education loans simple and within reach for every student. An independent guide, not a government body.",
   path: "/about",
 });
 
@@ -47,6 +48,11 @@ const VALUES = [
     icon: Sparkles,
     title: "Honest and accurate",
     body: "We work to keep details correct and always ask you to confirm on the official portal.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Human-verified data",
+    body: "Every scheme is manually reviewed by a trained team against the official government portal before it appears here.",
   },
 ];
 
@@ -74,11 +80,12 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="About us"
-        title={<>Helping every Indian claim what&rsquo;s theirs</>}
+        title={<>Helping every student discover education support</>}
         lead={
           <>
-            {SITE.tagline} GovEligify is a free guide to Indian government schemes,
-            subsidies, and certificates — built to be simple, warm, and trustworthy.
+            {SITE.tagline} CheckMyEligibility is a free guide to Indian government
+            scholarships, fellowships, education loans, and grants - built to be
+            simple, warm, and trustworthy.
           </>
         }
         art={
@@ -110,19 +117,19 @@ export default function AboutPage() {
               Why we exist
             </h2>
             <p>
-              India runs hundreds of welfare schemes, scholarships, pensions, and
-              subsidies. Yet every year, billions in benefits go unclaimed — not
-              because people aren&rsquo;t eligible, but because the information is
-              scattered, written in jargon, and hard to navigate.
+              India offers hundreds of scholarships, fellowships, education loans,
+              and research grants for students. Yet every year, a large share goes
+              unclaimed - not because students aren&rsquo;t eligible, but because
+              the information is scattered, written in jargon, and hard to navigate.
             </p>
             <p>
-              We built GovEligify to close that gap. Describe your situation in plain
-              words, and we help you understand which schemes may fit, what documents
-              you&rsquo;ll need, and exactly where to apply on the official government
-              portal.
+              We built CheckMyEligibility to close that gap. Describe your situation in plain
+              words, and we help you understand which scholarships, fellowships, or
+              loans may fit, what documents you&rsquo;ll need, and exactly where to
+              apply on the official government portal.
             </p>
             <p>
-              We don&rsquo;t replace the government. We make it easier to reach — so the
+              We don&rsquo;t replace the government. We make it easier to reach - so the
               support that&rsquo;s meant for you actually reaches you.
             </p>
           </div>
@@ -160,6 +167,38 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* Open source + institutional */}
+      <section className="py-16 sm:py-20">
+        <Container className="max-w-3xl">
+          <SectionHeading eyebrow="The project" title="Open source, student-built" />
+          <p className="mt-6 text-pretty text-lg leading-relaxed text-ink-muted">
+            CheckMyEligibility is funded and supported by the{" "}
+            <span className="font-semibold text-ink">
+              Department of Data Science, Loyola College, Chennai
+            </span>
+            . A team of 18 students - validators and developers - built the platform
+            and manually reviewed every scheme against official government portals to
+            ensure accuracy.
+          </p>
+          <p className="mt-4 text-pretty leading-relaxed text-ink-muted">
+            The source code is open to the public under the PolyForm Noncommercial
+            License 1.0 - free for personal, educational, and research use. Anyone
+            can read it, audit it, or contribute.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <a
+              href={SITE.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-navy/20 bg-surface-card px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-navy/40 hover:text-navy"
+            >
+              <Code2 className="h-4 w-4" aria-hidden="true" />
+              View source on GitHub
+            </a>
+          </div>
+        </Container>
+      </section>
+
       {/* Non-affiliation disclaimer */}
       <section className="py-16 sm:py-20">
         <Container className="max-w-3xl">
@@ -179,15 +218,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Citizens band */}
-      <CitizensBand
-        eyebrow="Who it's for"
-        title="Made for every Indian"
-        lead="Whoever you are and wherever you live, there may be support meant for you."
-      />
-
       <CtaBand
-        title="Find what you're entitled to."
+        title="Find the scholarships you're entitled to."
         primary={{ label: "Check my eligibility", href: chatHref() }}
         secondary={{ label: "See how it works", href: "/how-it-works" }}
       />

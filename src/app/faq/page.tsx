@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { MessageCircleQuestion } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { TableOfContents } from "@/components/layout/TableOfContents";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Faq } from "@/components/marketing/Faq";
 import { PageHero } from "@/components/layout/PageHero";
@@ -15,7 +16,7 @@ import { FAQS } from "@/data/faq";
 export const metadata: Metadata = buildMetadata({
   title: "FAQ",
   description:
-    "Answers to common questions about GovEligify: cost, privacy, whether we apply for you, how scheme matching works, and our independence from the government.",
+    "Answers to common questions about CheckMyEligibility: cost, privacy, whether we apply for you, how scheme matching works, and our independence from the government.",
   path: "/faq",
 });
 
@@ -32,6 +33,14 @@ const GROUPS: { title: string; match: (q: string) => boolean }[] = [
   {
     title: "How it works",
     match: (q) => /matching|languages|accurate|can't find/i.test(q),
+  },
+  {
+    title: "Scholarships & applications",
+    match: (q) => /scholarship|private college|NSP|reapply|multiple/i.test(q),
+  },
+  {
+    title: "About the project",
+    match: (q) => /who built|open source|validated|validation/i.test(q),
   },
 ];
 
@@ -71,7 +80,7 @@ export default function FaqPage() {
         title="Questions, answered honestly"
         lead={
           <>
-            Everything you might want to know about how GovEligify works, what it
+            Everything you might want to know about how CheckMyEligibility works, what it
             costs, and how we handle your information.
           </>
         }
@@ -79,7 +88,7 @@ export default function FaqPage() {
           <SpotIllustration
             icon={MessageCircleQuestion}
             tone="navy"
-            label="Common questions about GovEligify"
+            label="Common questions about CheckMyEligibility"
           />
         }
       />
@@ -87,28 +96,9 @@ export default function FaqPage() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-14">
-            <nav
-              aria-label="FAQ categories"
-              className="hidden lg:block"
-            >
-              <div className="sticky top-24">
-                <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron-deep">
-                  On this page
-                </p>
-                <ul className="mt-4 space-y-1">
-                  {sections.map((section) => (
-                    <li key={section.id}>
-                      <a
-                        href={`#${section.id}`}
-                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink-muted transition-colors hover:bg-surface-subtle hover:text-ink"
-                      >
-                        {section.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
+            <TableOfContents
+              sections={sections.map((s) => ({ id: s.id, title: s.title }))}
+            />
 
             <div className="space-y-12 sm:space-y-14">
               {sections.map((section) => (
@@ -130,7 +120,7 @@ export default function FaqPage() {
 
       <CtaBand
         title="Still have a question?"
-        lead="Ask the assistant directly — it's free."
+        lead="Ask the assistant directly - it's free."
         primary={{ label: "Check my eligibility", href: chatHref() }}
         secondary={{ label: "Browse schemes", href: "/explore" }}
       />

@@ -1,17 +1,20 @@
-/** Single source of truth for site-wide constants (brand, nav, links). */
+﻿/** Single source of truth for site-wide constants (brand, nav, links). */
 
 export const SITE = {
-  name: "GovEligify",
-  shortName: "GovEligify",
-  url: "https://goveligify.in",
+  name: "CheckMyEligibility",
+  shortName: "CheckMyEligibility",
+  url: "https://checkmyeligibility.in",
   tagline: "Find what you're entitled to.",
   description:
-    "GovEligify is a free AI guide to Indian government schemes, subsidies, and certificates. Describe your situation in plain language and discover what you qualify for, the documents you need, and exactly where to apply — on official portals.",
+    "CheckMyEligibility is a free AI assistant that helps Indian students discover scholarships, fellowships, education loans, and grants they are eligible for. Describe your situation in plain language and find out what you qualify for, the documents you need, and exactly where to apply - on official portals.",
   locale: "en-IN",
-  email: "hello@goveligify.in",
+  email: "hello@checkmyeligibility.in",
+  github: "https://github.com/anandsundaramoorthysa/checkmyeligibility",
+  license: "PolyForm Noncommercial 1.0",
+  institution: "Department of Data Science, Loyola College, Chennai",
   // Independence disclaimer shown in footer + chat (legal/trust safety).
   disclaimer:
-    "GovEligify is an independent guide and is not affiliated with, endorsed by, or operated by any government body. We help you find schemes and direct you to official portals — we never submit applications on your behalf.",
+    "CheckMyEligibility is an independent guide and is not affiliated with, endorsed by, or operated by any government body. We help you find schemes and direct you to official portals - we never submit applications on your behalf.",
 } as const;
 
 export interface NavItem {
@@ -40,10 +43,11 @@ export const FOOTER_NAV: { title: string; items: NavItem[] }[] = [
     ],
   },
   {
-    title: "Company",
+    title: "Project",
     items: [
       { label: "About", href: "/about" },
       { label: "FAQ", href: "/faq" },
+      { label: "GitHub", href: "https://github.com/anandsundaramoorthysa/checkmyeligibility" },
     ],
   },
   {

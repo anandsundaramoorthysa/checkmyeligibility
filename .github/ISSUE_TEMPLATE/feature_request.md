@@ -1,6 +1,6 @@
----
+﻿---
 name: Feature request
-about: Suggest an idea or improvement for GovEligify
+about: Suggest an idea or improvement for CheckMyEligibility
 title: "[Feature]: "
 labels: ["enhancement"]
 ---

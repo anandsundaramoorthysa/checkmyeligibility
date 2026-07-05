@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { TableOfContents } from "@/components/layout/TableOfContents";
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaBand } from "@/components/marketing/CtaBand";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
@@ -14,7 +15,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Privacy",
   description:
-    "How GovEligify handles your data: minimal collection, no application submission, no Aadhaar or bank details stored, written in plain language and DPDP-aware.",
+    "How CheckMyEligibility handles your data: minimal collection, no application submission, no Aadhaar or bank details stored, written in plain language and DPDP-aware.",
   path: "/privacy",
 });
 
@@ -51,8 +52,8 @@ export default function PrivacyPage() {
         title="Your privacy, in plain language"
         lead={
           <>
-            GovEligify is built to be private by design. No login, no Aadhaar, no
-            bank details, no documents — this page explains exactly how we handle
+            CheckMyEligibility is built to be private by design. No login, no Aadhaar, no
+            bank details, no documents - this page explains exactly how we handle
             your information.
           </>
         }
@@ -70,25 +71,7 @@ export default function PrivacyPage() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-14">
-            <nav aria-label="Privacy sections" className="hidden lg:block">
-              <div className="sticky top-24">
-                <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron-deep">
-                  On this page
-                </p>
-                <ul className="mt-4 space-y-1">
-                  {SECTIONS.map((section) => (
-                    <li key={section.id}>
-                      <a
-                        href={`#${section.id}`}
-                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink-muted transition-colors hover:bg-surface-subtle hover:text-ink"
-                      >
-                        {section.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
+            <TableOfContents sections={SECTIONS} />
 
             <div className="max-w-none space-y-12 text-pretty leading-relaxed text-ink-muted">
               <p className="rounded-2xl border border-navy/10 bg-surface-subtle p-5 text-sm">
@@ -102,7 +85,7 @@ export default function PrivacyPage() {
                   {SECTIONS[0].title}
                 </h2>
                 <p>
-                  As little as possible — in most cases, nothing that identifies
+                  As little as possible - in most cases, nothing that identifies
                   you. You don&rsquo;t create an account, and we never ask for the
                   sensitive details a scheme application might need. Specifically,
                   we do not collect:
@@ -115,7 +98,7 @@ export default function PrivacyPage() {
                 </ul>
                 <p>
                   If a scheme requires any of these, you provide them yourself,
-                  directly on the official government portal — never to us.
+                  directly on the official government portal - never to us.
                 </p>
               </section>
 
@@ -150,7 +133,7 @@ export default function PrivacyPage() {
                   {SECTIONS[3].title}
                 </h2>
                 <p>
-                  GovEligify links out to official government portals so you can
+                  CheckMyEligibility links out to official government portals so you can
                   apply yourself. Those portals are operated by third parties and
                   their own privacy policies and terms apply once you leave our
                   site. We don&rsquo;t control them and aren&rsquo;t responsible
@@ -220,7 +203,7 @@ export default function PrivacyPage() {
 
       <CtaBand
         title="Questions about your data?"
-        lead="Ask the assistant directly, or read the FAQ — both are free."
+        lead="Ask the assistant directly, or read the FAQ - both are free."
         primary={{ label: "Ask the assistant", href: chatHref() }}
         secondary={{ label: "Read the FAQ", href: "/faq" }}
       />

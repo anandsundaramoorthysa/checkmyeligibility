@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Scale } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { TableOfContents } from "@/components/layout/TableOfContents";
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaBand } from "@/components/marketing/CtaBand";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
@@ -14,7 +15,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Terms",
   description:
-    "Terms of use for GovEligify: an informational guide only, with no guarantee of eligibility and links to third-party official government portals.",
+    "Terms of use for CheckMyEligibility: an informational guide only, with no guarantee of eligibility and links to third-party official government portals.",
   path: "/terms",
 });
 
@@ -55,7 +56,8 @@ export default function TermsPage() {
         title="Terms of use"
         lead={
           <>
-            GovEligify is a free, independent guide to Indian government schemes.
+            CheckMyEligibility is a free, independent guide to Indian government
+            scholarships, fellowships, and education loans.
             These terms explain what we offer, what we don&rsquo;t, and the limits
             of the help we provide.
           </>
@@ -74,25 +76,7 @@ export default function TermsPage() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-14">
-            <nav aria-label="Terms sections" className="hidden lg:block">
-              <div className="sticky top-24">
-                <p className="font-mono text-xs font-bold uppercase tracking-widest text-saffron-deep">
-                  On this page
-                </p>
-                <ul className="mt-4 space-y-1">
-                  {SECTIONS.map((section) => (
-                    <li key={section.id}>
-                      <a
-                        href={`#${section.id}`}
-                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink-muted transition-colors hover:bg-surface-subtle hover:text-ink"
-                      >
-                        {section.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
+            <TableOfContents sections={SECTIONS} />
 
             <div className="max-w-none space-y-12 text-pretty leading-relaxed text-ink-muted">
               <section id={SECTIONS[0].id} className="scroll-mt-24 space-y-3">
@@ -100,10 +84,10 @@ export default function TermsPage() {
                   {SECTIONS[0].title}
                 </h2>
                 <p>
-                  By using GovEligify, you agree to these terms. This is a
+                  By using CheckMyEligibility, you agree to these terms. This is a
                   plain-language summary written for clarity, not legal advice. In
                   short: we help you understand government schemes and point you to
-                  the official portals, but the government — not us — decides any
+                  the official portals, but the government - not us - decides any
                   eligibility or approval, and we never charge you or act on your
                   behalf.
                 </p>
@@ -114,12 +98,12 @@ export default function TermsPage() {
                   {SECTIONS[1].title}
                 </h2>
                 <p>
-                  GovEligify provides general information about Indian government
-                  schemes, subsidies, and certificates to help you understand what
-                  may be relevant to you. Suggestions are based on the details you
+                  CheckMyEligibility provides general information about Indian government
+                  scholarships, fellowships, education loans, and grants to help you
+                  understand what may be relevant to you. Suggestions are based on the details you
                   share and publicly available scheme information. We do not
                   guarantee that you will qualify for, or receive, any scheme or
-                  benefit — final decisions rest entirely with the concerned
+                  benefit - final decisions rest entirely with the concerned
                   government authority. Always verify the latest rules and
                   eligibility on the official portal before acting.
                 </p>
@@ -130,7 +114,7 @@ export default function TermsPage() {
                   {SECTIONS[2].title}
                 </h2>
                 <p>
-                  Nothing on GovEligify is legal, financial, tax, or professional
+                  Nothing on CheckMyEligibility is legal, financial, tax, or professional
                   advice. Scheme rules, income limits, fees, and deadlines change
                   often and vary by state. For decisions that matter to you,
                   consult the official portal or a qualified professional.
@@ -154,9 +138,9 @@ export default function TermsPage() {
                   {SECTIONS[4].title}
                 </h2>
                 <p>
-                  GovEligify is free to use. We do not charge any fee, ask for
+                  CheckMyEligibility is free to use. We do not charge any fee, ask for
                   payment, or take a commission for the guidance we provide. If
-                  anyone asks you to pay GovEligify for a scheme, treat it as
+                  anyone asks you to pay CheckMyEligibility for a scheme, treat it as
                   fraudulent.
                 </p>
               </section>
@@ -178,8 +162,8 @@ export default function TermsPage() {
                   {SECTIONS[6].title}
                 </h2>
                 <p>
-                  Please use GovEligify lawfully and as intended. Do not misuse the
-                  service — for example, by attempting to disrupt it, scrape it at
+                  Please use CheckMyEligibility lawfully and as intended. Do not misuse the
+                  service - for example, by attempting to disrupt it, scrape it at
                   scale, reverse-engineer it, or use it to mislead others. We may
                   limit or suspend access where use is harmful or abusive.
                 </p>
@@ -190,7 +174,7 @@ export default function TermsPage() {
                   {SECTIONS[7].title}
                 </h2>
                 <p>
-                  To the extent permitted by law, GovEligify is not liable for any
+                  To the extent permitted by law, CheckMyEligibility is not liable for any
                   loss arising from reliance on information provided here or on
                   linked third-party portals. The service is provided on an
                   &ldquo;as is&rdquo; basis, and you use it at your own discretion.
@@ -248,7 +232,7 @@ export default function TermsPage() {
 
       <CtaBand
         title="Ready to find what's yours?"
-        lead="Ask the assistant directly, or read the FAQ — both are free."
+        lead="Ask the assistant directly, or read the FAQ - both are free."
         primary={{ label: "Ask the assistant", href: chatHref() }}
         secondary={{ label: "Read the FAQ", href: "/faq" }}
       />

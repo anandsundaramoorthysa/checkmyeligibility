@@ -1,16 +1,16 @@
-<p align="center">
-  <img src="public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+﻿<p align="center">
+  <img src="public/brand/favicon.svg" alt="CheckMyEligibility logo" width="72" height="72" />
 </p>
 
 # Commercial License
 
-GovEligify is **free for noncommercial use** under the
+CheckMyEligibility is **free for noncommercial use** under the
 [PolyForm Noncommercial License 1.0.0](LICENSE). **Any commercial use requires a separate,
 paid commercial license** from the copyright holder.
 
 ## What counts as commercial use?
 
-Commercial use means using GovEligify (in whole or in part, modified or unmodified) for
+Commercial use means using CheckMyEligibility (in whole or in part, modified or unmodified) for
 **commercial advantage or monetary compensation**. For example:
 
 - Using it in, or as part of, a **for-profit** product or service.
@@ -31,7 +31,7 @@ needed):
 
 Contact the author to discuss scope, terms, and pricing:
 
-- **Anand Sundaramoorthy** — [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com?subject=GovEligify%20Commercial%20License)
+- **Anand Sundaramoorthy** — [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com?subject=CheckMyEligibility%20Commercial%20License)
 - **GitHub:** [@anandsundaramoorthysa](https://github.com/anandsundaramoorthysa)
 
 Please include your **organization**, **intended use**, and **expected scale** so we can

@@ -7,7 +7,7 @@ import { getCategoryArt } from "@/components/illustrations/registry";
 /** 8-card editorial grid linking each category to its anchor on /explore. */
 export function CategoryGrid() {
   return (
-    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {CATEGORIES.map((category) => {
         const art = getCategoryArt(category.key);
         return (

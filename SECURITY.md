@@ -1,15 +1,15 @@
-<p align="center">
-  <img src="public/brand/favicon.svg" alt="GovEligify logo" width="72" height="72" />
+﻿<p align="center">
+  <img src="public/brand/favicon.svg" alt="CheckMyEligibility logo" width="72" height="72" />
 </p>
 
 # Security Policy
 
-We take the security and privacy of GovEligify and its users seriously. Thank you for helping
+We take the security and privacy of CheckMyEligibility and its users seriously. Thank you for helping
 keep the project and its community safe.
 
 ## Supported versions
 
-GovEligify is in active early development (Phase 1). Security fixes are applied to the latest
+CheckMyEligibility is in active early development (Phase 1). Security fixes are applied to the latest
 `main` branch.
 
 | Version | Supported |
@@ -26,7 +26,7 @@ Instead, report them privately using one of these channels:
 
 - **GitHub Security Advisories** — open a private report via the repository's
   **Security → Report a vulnerability** tab (preferred), or
-- **Email** — [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com?subject=GovEligify%20Security%20Report)
+- **Email** — [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com?subject=CheckMyEligibility%20Security%20Report)
 
 Please include, where possible:
 
@@ -45,7 +45,7 @@ Please include, where possible:
 
 ## Scope notes
 
-- GovEligify is an **independent** project and is **not affiliated with any government body**.
+- CheckMyEligibility is an **independent** project and is **not affiliated with any government body**.
   Vulnerabilities in third-party official government portals that we link to are **out of
   scope** — please report those to the respective portal operator.
 - In Phase 1 the app uses **no database, no authentication, and no user accounts**, and the

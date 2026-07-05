@@ -2,11 +2,11 @@
 
 import {
   ArrowUpRight,
+  Award,
+  BookOpen,
   FileBadge,
+  FlaskConical,
   GraduationCap,
-  Sprout,
-  Store,
-  Users,
   type LucideIcon,
 } from "lucide-react";
 import { LogoMark } from "@/components/brand/Logo";
@@ -25,19 +25,19 @@ interface PersonaChip {
 
 /** Persona entry points — mirror the mock engine's starter quick replies. */
 const PERSONAS: PersonaChip[] = [
-  { icon: Sprout, key: "farmer", send: "I'm a farmer looking for schemes" },
   { icon: GraduationCap, key: "student", send: "I'm a student looking for a scholarship" },
-  { icon: Users, key: "senior", send: "I'm a senior citizen looking for a pension" },
-  { icon: Store, key: "business", send: "I run a small business and need a loan" },
-  { icon: FileBadge, key: "certificate", send: "I need help getting a certificate" },
+  { icon: Award, key: "sc_st", send: "I'm an SC/ST student looking for a scholarship" },
+  { icon: BookOpen, key: "girl_student", send: "I'm a girl student in engineering looking for a scholarship" },
+  { icon: FlaskConical, key: "phd", send: "I'm a PhD student looking for a fellowship" },
+  { icon: FileBadge, key: "certificate", send: "I need help getting a certificate for my scholarship application" },
 ];
 
 /** English queries dispatched to the mock engine, in the same order as the
  * translated `examples` strings shown to the user. */
 const EXAMPLE_SENDS = [
-  "What schemes help small farmers?",
+  "What scholarships am I eligible for?",
   "Scholarships for college students",
-  "Pension for senior citizens",
+  "I'm a PhD student looking for a fellowship",
 ];
 
 interface Props {

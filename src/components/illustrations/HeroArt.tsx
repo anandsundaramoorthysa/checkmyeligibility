@@ -1,4 +1,4 @@
-import { Sprout, GraduationCap, Home } from "lucide-react";
+﻿import { Award, GraduationCap, Banknote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ROWS = [130, 186, 242];
@@ -11,7 +11,7 @@ export function HeroArt({ className }: { className?: string }) {
   return (
     <div
       role="img"
-      aria-label="GovEligify matching a citizen to the government schemes they qualify for"
+      aria-label="CheckMyEligibility matching a student to the education schemes they qualify for"
       className={cn("relative w-full", className)}
     >
       <svg
@@ -69,13 +69,13 @@ export function HeroArt({ className }: { className?: string }) {
 
       {/* floating category chips */}
       <Chip className="left-[2%] top-[18%]" tone="#138808">
-        <Sprout className="h-1/2 w-1/2" strokeWidth={1.9} aria-hidden="true" />
+        <Award className="h-1/2 w-1/2" strokeWidth={1.9} aria-hidden="true" />
       </Chip>
       <Chip className="right-[1%] top-[44%]" tone="#0A3D91">
         <GraduationCap className="h-1/2 w-1/2" strokeWidth={1.9} aria-hidden="true" />
       </Chip>
       <Chip className="bottom-[8%] left-[10%]" tone="#C25E12">
-        <Home className="h-1/2 w-1/2" strokeWidth={1.9} aria-hidden="true" />
+        <Banknote className="h-1/2 w-1/2" strokeWidth={1.9} aria-hidden="true" />
       </Chip>
     </div>
   );

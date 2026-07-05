@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   FileX2,
@@ -19,7 +19,7 @@ export const metadata: Metadata = buildMetadata({
 // Deadpan mock "government eligibility report" that rejects the missing page.
 const REPORT_ROWS: { label: string; value: React.ReactNode }[] = [
   { label: "Applicant", value: "This Page" },
-  { label: "Scheme applied for", value: "Existence on goveligify.in" },
+  { label: "Scheme applied for", value: "Existence on checkmyeligibility.in" },
   {
     label: "Status",
     value: (
@@ -39,7 +39,7 @@ const REPORT_ROWS: { label: string; value: React.ReactNode }[] = [
   {
     label: "Officer's remarks",
     value:
-      "Unlike most government benefits, this page is genuinely unavailable — and that's not bureaucracy, it's just a 404.",
+      "Unlike most government benefits, this page is genuinely unavailable - and that's not bureaucracy, it's just a 404.",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function NotFound() {
               ))}
             </dl>
 
-            {/* Closing line — warm pivot back to value. */}
+            {/* Closing line - warm pivot back to value. */}
             <p className="mt-7 text-pretty font-display text-xl font-extrabold tracking-tight text-navy sm:text-2xl">
               But you are almost certainly entitled to something. Let&rsquo;s find it.
             </p>

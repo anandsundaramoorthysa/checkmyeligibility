@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FileCheck, FileText } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { CertificateCard } from "@/components/marketing/CertificateCard";
@@ -14,7 +14,7 @@ import { getAllCertificates } from "@/lib/data";
 export const metadata: Metadata = buildMetadata({
   title: "Certificates",
   description:
-    "Essential Indian government certificates — income, caste, domicile, birth, death, EWS, disability (UDID), and ration card. Documents needed and how to apply officially.",
+    "Essential Indian government certificates - income, caste, domicile, birth, death, EWS, disability (UDID), and ration card. Documents needed and how to apply officially.",
   path: "/certificates",
 });
 
@@ -44,7 +44,7 @@ export default async function CertificatesPage() {
 
       <PageHero
         eyebrow="Certificates"
-        title="The documents that unlock your benefits"
+        title="The certificates that unlock your scholarships"
         lead={
           <>
             Many schemes ask for the same core certificates. Here&rsquo;s what each
@@ -66,9 +66,9 @@ export default async function CertificatesPage() {
           <div className="flex items-start gap-3 rounded-2xl border border-navy/10 bg-surface-subtle p-6">
             <FileCheck className="mt-0.5 h-5 w-5 shrink-0 text-green-deep" aria-hidden="true" />
             <p className="text-sm leading-relaxed text-ink-muted">
-              Tip: keep digital copies of your Aadhaar, address proof, and a recent
-              income proof handy — they cover the document checklist for most of these
-              certificates.
+              Tip: keep digital copies of your Aadhaar, income certificate, and caste
+              or EWS certificate ready - most NSP scholarship applications require
+              these as a minimum before you begin.
             </p>
           </div>
 
@@ -84,6 +84,7 @@ export default async function CertificatesPage() {
             <AskBotCta
               title="Not sure which certificate you need?"
               body="Tell the assistant what you're applying for and it will point you to the right documents."
+              seed="I need help finding which certificates are required for my scholarship application"
             />
           </div>
         </Container>

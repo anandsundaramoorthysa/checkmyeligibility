@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   MessagesSquare,
@@ -7,6 +7,7 @@ import {
   Check,
   X,
   ShieldCheck,
+  BadgeCheck,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -22,22 +23,23 @@ import { chatHref } from "@/lib/chat/openChat";
 export const metadata: Metadata = buildMetadata({
   title: "How it works",
   description:
-    "How GovEligify helps you find Indian government schemes: describe your situation, get matched, and apply on official portals yourself. We never submit applications for you.",
+    "How CheckMyEligibility helps you find Indian government schemes: describe your situation, get matched, and apply on official portals yourself. We never submit applications for you.",
   path: "/how-it-works",
 });
 
 const WE_DO = [
-  "Guide you through schemes and certificates in plain language",
-  "Match your situation to schemes you may qualify for",
+  "Guide you through scholarships, fellowships, and education loans in plain language",
+  "Match your situation to education schemes you may qualify for",
   "List the documents you'll need before you apply",
   "Link you directly to the official government portal",
+  "Show only human-verified scheme data",
 ];
 
 const WE_DONT = [
   "Submit applications on your behalf",
   "Charge any fee or ask for payment",
   "Store your Aadhaar, bank details, or scanned documents",
-  "Decide your approval — that's the government's call",
+  "Decide your approval - that's the government's call",
 ];
 
 export default function HowItWorksPage() {
@@ -55,8 +57,9 @@ export default function HowItWorksPage() {
         title="From confused to confident, in three steps"
         lead={
           <>
-            Government schemes can be hard to navigate. We make the path simple —
-            understand what you qualify for, then apply officially, yourself.
+            Scholarships and education schemes can be hard to navigate. We make
+            the path simple - understand what you qualify for, then apply
+            officially, yourself.
           </>
         }
         art={
@@ -71,21 +74,26 @@ export default function HowItWorksPage() {
       {/* Steps */}
       <section className="py-12 sm:py-16">
         <Container>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <StepCard step={1} icon={MessagesSquare} tone="navy" title="Tell us about you">
-              Describe your situation in plain language — your occupation, age,
-              state, income, or simply what you&rsquo;re hoping to find. There are no
-              forms to fill and no login to create.
+              Describe your situation in plain language - your course, year of
+              study, state, social category, or simply what you&rsquo;re hoping
+              to find. There are no forms to fill and no login to create.
             </StepCard>
             <StepCard step={2} icon={Sparkles} tone="saffron" title="We match the schemes">
               We compare what you&rsquo;ve told us against the eligibility details of
-              government schemes and certificates, and surface the ones most likely
-              to fit — along with the documents you&rsquo;ll need.
+              scholarships, fellowships, and education loans, and surface the ones
+              most likely to fit - along with the documents you&rsquo;ll need.
             </StepCard>
             <StepCard step={3} icon={ExternalLink} tone="green" title="You apply, officially">
               We give you a direct link to the genuine government portal. You apply
               there yourself. We never ask for your login and never submit anything
               for you.
+            </StepCard>
+            <StepCard step={4} icon={BadgeCheck} tone="navy" title="Verified by humans">
+              Every scheme on CheckMyEligibility is manually reviewed by a trained team
+              against the official government portal before it appears here - so
+              you get accurate, up-to-date information.
             </StepCard>
           </div>
         </Container>
