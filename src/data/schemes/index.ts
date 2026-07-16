@@ -4,8 +4,10 @@ import type { Scheme } from "@/lib/types";
 // One file per scheme = no merge conflicts when multiple people work in parallel.
 import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteIdeaLab } from "./aicte-idea-lab";
+import { aictePragatiScholarship } from "./aicte-pragati-scholarship";
 
 export const SCHEMES: Scheme[] = [
   aicteSakshamDegree,
   aicteIdeaLab,
+  aictePragatiScholarship,
 ];
