@@ -72,24 +72,24 @@ export default async function SchemeDetailPage({
     <>
       <JsonLd data={ld} />
 
-      <article>
+      <article className="overflow-x-hidden">
         <header className="bg-hero-glow">
-          <Container className="py-12 sm:py-16">
+          <Container className="py-8 sm:py-16">
             <nav aria-label="Breadcrumb">
-              <ol className="flex flex-wrap items-center gap-1 text-sm text-ink-muted">
+              <ol className="flex flex-wrap items-center gap-1 text-xs text-ink-muted sm:text-sm">
                 <li>
                   <Link href="/" className="hover:text-navy">
                     Home
                   </Link>
                 </li>
-                <ChevronRight className="h-4 w-4 text-ink-faint" aria-hidden="true" />
+                <ChevronRight className="h-4 w-4 shrink-0 text-ink-faint" aria-hidden="true" />
                 <li>
                   <Link href="/explore" className="hover:text-navy">
                     Explore
                   </Link>
                 </li>
-                <ChevronRight className="h-4 w-4 text-ink-faint" aria-hidden="true" />
-                <li className="font-medium text-ink" aria-current="page">
+                <ChevronRight className="h-4 w-4 shrink-0 text-ink-faint" aria-hidden="true" />
+                <li className="min-w-0 truncate font-medium text-ink" aria-current="page">
                   {scheme.shortName ?? scheme.name}
                 </li>
               </ol>
@@ -103,7 +103,7 @@ export default async function SchemeDetailPage({
                   {scheme.shortName && <Badge tone="neutral">{scheme.shortName}</Badge>}
                 </div>
 
-                <h1 className="mt-4 max-w-2xl text-balance font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl">
+                <h1 className="mt-4 max-w-2xl text-balance font-display text-3xl font-extrabold leading-[1.08] tracking-tight text-ink xs:text-4xl sm:text-5xl">
                   {scheme.name}
                 </h1>
                 <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-ink-muted">
@@ -139,7 +139,7 @@ export default async function SchemeDetailPage({
               <h2 className="font-display text-2xl font-bold text-ink">
                 About this scheme
               </h2>
-              <p className="mt-3 text-pretty text-ink-muted">{scheme.description}</p>
+              <p className="mt-3 break-words text-pretty text-ink-muted">{scheme.description}</p>
             </section>
 
             <section>
@@ -151,7 +151,7 @@ export default async function SchemeDetailPage({
                       className="mt-0.5 h-5 w-5 shrink-0 text-green-deep"
                       aria-hidden="true"
                     />
-                    <span className="text-ink">
+                    <span className="min-w-0 text-ink">
                       <span className="font-semibold">{c.label}:</span> {c.value}
                     </span>
                   </li>
@@ -185,7 +185,7 @@ export default async function SchemeDetailPage({
                       className="mt-0.5 h-5 w-5 shrink-0 text-navy"
                       aria-hidden="true"
                     />
-                    <span className="text-ink">
+                    <span className="min-w-0 text-ink">
                       {d.name}
                       {!d.mandatory && (
                         <span className="ml-2 text-sm text-ink-faint">(optional)</span>
@@ -225,7 +225,7 @@ export default async function SchemeDetailPage({
                       />
                       <div>
                         <dt className="text-ink-faint">Ministry</dt>
-                        <dd className="font-medium text-ink">{scheme.ministry}</dd>
+                        <dd className="min-w-0 break-words font-medium text-ink">{scheme.ministry}</dd>
                       </div>
                     </div>
                   )}
@@ -264,7 +264,7 @@ export default async function SchemeDetailPage({
           </aside>
         </Container>
 
-        <Container className="pb-16">
+        <Container className="pb-12 sm:pb-16">
           <AskBotCta
             title="Looking for more schemes like this?"
             body="Tell the assistant about your situation and discover everything else you may qualify for."

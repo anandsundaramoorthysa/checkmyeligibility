@@ -5,9 +5,13 @@ import type { Scheme } from "@/lib/types";
 import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteIdeaLab } from "./aicte-idea-lab";
 import { aictePragatiScholarship } from "./aicte-pragati-scholarship";
+import { aicteDoctoralFellowshipAdf } from "./aicte-doctoral-fellowship-adf";
+import { aicteDistinguishedChairProfessorFellowship } from "./aicte-distinguished-chair-professor-fellowship";
 
 export const SCHEMES: Scheme[] = [
   aicteSakshamDegree,
   aicteIdeaLab,
   aictePragatiScholarship,
+  aicteDoctoralFellowshipAdf,
+  aicteDistinguishedChairProfessorFellowship,
 ];
