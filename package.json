@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "collect-schemes": "tsx scripts/collect-schemes.ts",
+    "predev": "tsx scripts/collect-schemes.ts",
+    "prebuild": "tsx scripts/collect-schemes.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

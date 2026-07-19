@@ -1,21 +1,20 @@
+// AUTO-GENERATED — do not edit. Run `pnpm collect-schemes` to rebuild.
 import type { Scheme } from "@/lib/types";
 
-// Each contributor adds their scheme in its own file and imports it here.
-// One file per scheme = no merge conflicts when multiple people work in parallel.
-import { aicteSakshamDegree } from "./aicte-saksham-degree";
+import { aicteDistinguishedChairProfessorFellowship } from "./aicte-distinguished-chair-professor-fellowship";
+import { aicteDoctoralFellowshipAdf } from "./aicte-doctoral-fellowship-adf";
 import { aicteIdeaLab } from "./aicte-idea-lab";
 import { aictePragatiScholarship } from "./aicte-pragati-scholarship";
-import { aicteDoctoralFellowshipAdf } from "./aicte-doctoral-fellowship-adf";
-import { aicteDistinguishedChairProfessorFellowship } from "./aicte-distinguished-chair-professor-fellowship";
+import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-scheme";
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
 
 export const SCHEMES: Scheme[] = [
-  aicteSakshamDegree,
+  aicteDistinguishedChairProfessorFellowship,
+  aicteDoctoralFellowshipAdf,
   aicteIdeaLab,
   aictePragatiScholarship,
-  aicteDoctoralFellowshipAdf,
-  aicteDistinguishedChairProfessorFellowship,
+  aicteSakshamDegree,
   aicteSakshamScholarshipScheme,
   aicteYashasviScholarship,
 ];
