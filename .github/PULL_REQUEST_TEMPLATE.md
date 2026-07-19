@@ -22,6 +22,10 @@ Closes #<!-- issue number, if any -->
 - [ ] The assistant still never submits applications / collects credentials
 - [ ] I've added/updated tests or docs where it makes sense
 
+**If this is a `[Scheme Page]` PR:**
+- [ ] Only one new file added: `src/data/schemes/<slug>.ts`
+- [ ] `src/data/schemes/index.ts` was NOT manually edited (it is auto-generated)
+
 ## Screenshots / notes
 
 If this is a UI change, add before/after screenshots (desktop + mobile where relevant).

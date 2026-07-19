@@ -9,6 +9,45 @@ Indian government schemes and certificates easier to find and claim — every cont
 helps, whether it's a bug fix, better sample data, an accessibility tweak, a new feature, or
 documentation.
 
+## Building a scheme page (assigned contributors)
+
+Each `[Scheme Page]` GitHub issue asks you to build one `/explore/<slug>` page. The workflow is
+intentionally **one file per scheme** â€” this means multiple contributors can work in parallel with
+zero merge conflicts.
+
+### Steps
+
+1. **Create your scheme file** â€” one TypeScript file in `src/data/schemes/`:
+
+   ```
+   src/data/schemes/your-scheme-slug.ts
+   ```
+
+2. **Export a named const** whose name is the camelCase of the filename:
+
+   ```ts
+   // src/data/schemes/pm-yasasvi-post-matric.ts
+   import type { Scheme } from "@/lib/types";
+
+   export const pmYasasviPostMatric: Scheme = {
+     id: "pm-yasasvi-post-matric",
+     slug: "pm-yasasvi-post-matric-xxxxxxxx",   // copy the exact slug from your issue
+     // â€¦ all other fields
+   };
+   ```
+
+3. **Run `pnpm dev`** and verify your page appears at `http://localhost:3000/explore/<slug>`.
+
+4. **Open a PR** â€” your PR should contain exactly **one new file**. Nothing else.
+
+### Do NOT edit `src/data/schemes/index.ts`
+
+`index.ts` is **auto-generated** at build time by `pnpm collect-schemes`. It scans the folder and
+rebuilds itself automatically. If you edit it manually, your changes will be overwritten on the
+next build, and if two people edit it simultaneously you get a merge conflict. Leave it alone.
+
+---
+
 ## Ways to contribute
 
 - **Report a bug** — open an [issue](https://github.com/anandsundaramoorthysa/checkmyeligibility/issues)
@@ -16,6 +55,7 @@ documentation.
 - **Suggest a feature** — open an issue describing the problem it solves before writing code.
 - **Improve sample data** — the schemes/certificates in `src/data/` are sample data. Fixes to
   eligibility, documents, or official-portal links are very welcome (cite a source).
+- **Build a scheme page** â€” if youâ€™ve been assigned a `[Scheme Page]` issue, see the section above.
 - **Pick up an issue** — anything labelled `good first issue` or `help wanted` is a great start.
 
 > For anything non-trivial, please **open an issue first** so we can agree on the approach
