@@ -59,6 +59,14 @@ export const CATEGORIES: CategoryCard[] = [
     icon: "Heart",
     members: ["women-child"],
   },
+  {
+    key: "disability",
+    title: "Differently Abled / Divyang",
+    blurb:
+      "Scholarships, fellowships, and overseas opportunities for students with disabilities under RPwD Act, 2016.",
+    icon: "HeartHandshake",
+    members: ["disability"],
+  },
 ];
 
 const BY_KEY = new Map<SchemeCategory, CategoryCard>(
