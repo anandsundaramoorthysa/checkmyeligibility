@@ -5,12 +5,12 @@ import { Container } from "@/components/layout/Container";
 import { SITE, FOOTER_NAV } from "@/lib/site";
 
 export function Footer() {
-  const year = new Date().getFullYear(); // server component — resolved at build/render
+  const year = new Date().getFullYear();
   return (
-    <footer className="mt-24 border-t border-surface-muted bg-surface-card">
+    <footer className="mt-16 border-t border-surface-muted bg-surface-card sm:mt-24">
       <div className="tricolor-rule" aria-hidden />
-      <Container className="grid grid-cols-2 gap-8 py-12 sm:grid-cols-3 lg:grid-cols-5">
-        <div className="col-span-2 lg:col-span-2">
+      <Container className="grid grid-cols-1 gap-8 py-10 sm:grid-cols-2 sm:py-12 lg:grid-cols-5">
+        <div className="col-span-1 sm:col-span-2 lg:col-span-2">
           <Logo />
           <p className="mt-3 max-w-xs text-sm text-ink-muted">{SITE.tagline}</p>
           <p className="mt-4 max-w-sm text-xs leading-relaxed text-ink-faint">
@@ -22,7 +22,7 @@ export function Footer() {
               href={SITE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 transition-colors hover:text-navy"
+              className="inline-flex min-h-[44px] items-center gap-1.5 transition-colors hover:text-navy"
             >
               <Code2 className="h-3.5 w-3.5" aria-hidden="true" />
               Open source · PolyForm Noncommercial
@@ -38,7 +38,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-ink-muted transition-colors hover:text-navy"
+                    className="inline-flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-navy"
                   >
                     {item.label}
                   </Link>

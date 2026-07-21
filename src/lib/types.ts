@@ -43,7 +43,8 @@ export type IndianState =
   | "telangana"
   | "uttar-pradesh"
   | "west-bengal"
-  | "chhattisgarh";
+  | "chhattisgarh"
+  | "meghalaya";
 
 /* ----------------------------- schemes ------------------------------------ */
 
