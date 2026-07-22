@@ -15,8 +15,8 @@
   body {
     @apply bg-surface text-ink antialiased;
     background-image: theme("backgroundImage.page-light");
-    background-attachment: fixed;
     font-feature-settings: "cv11", "ss01";
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   @media (prefers-reduced-motion: reduce) {
