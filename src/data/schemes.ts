@@ -213,6 +213,89 @@ export const SCHEMES: Scheme[] = [
     ],
     source: "sample",
   },
+  {
+    id: "pg-scholarships-sc-st",
+    slug: "post-graduate-scholarships-for-professional-courses-for-sc-st-candidates",
+    name: "Post Graduate Scholarships for Professional Courses for SC/ST Candidates",
+    shortName: "PG Scholarships SC/ST",
+    summary:
+      "Financial assistance of ₹4,500 per month for 1,000 SC/ST candidates pursuing postgraduate studies in professional courses.",
+    description:
+      "The scheme \u201CPost Graduate Scholarships for Professional Courses for SC/ST Candidates\u201D has been initiated to provide opportunities to the deprived sections of the society, viz. the Scheduled Caste (SC) and Scheduled Tribe (ST) for undertaking postgraduate level studies in Professional subjects like Engineering & Technology, Management, Pharmacy etc. in recognized Indian Universities/Institutions/Colleges. The objective of the scheme is to provide financial assistance to 1000 SC/ST candidates to pursue postgraduate level studies in Professional courses.",
+    category: "education",
+    level: "central",
+    states: ["all-india"],
+    eligibility: [
+      {
+        label: "Category",
+        value: "Must belong to SC/ST category",
+        type: "caste-category",
+      },
+      {
+        label: "Education",
+        value:
+          "Graduate degree in the relevant subject with admission to first year of a postgraduate professional course",
+        type: "education",
+      },
+      {
+        label: "Course level",
+        value:
+          "First year of a regular full-time postgraduate course in Professional subjects (Engineering & Technology, Management, Pharmacy, etc.)",
+        type: "education",
+      },
+      {
+        label: "Institution",
+        value:
+          "Recognized University/Institution/College (UGC listed under sections 2(f) & 12(B), Deemed Universities under Section 3, Central/State funded institutions, or Institutes of National Importance)",
+        type: "other",
+      },
+    ],
+    benefits: [
+      "Monthly scholarship of ₹4,500",
+      "Financial assistance for 1,000 SC/ST candidates per year",
+      "Scholarship paid for the complete duration of the postgraduate course via DBT",
+      "Covers professional courses including Engineering & Technology, Management, Pharmacy, etc.",
+    ],
+    requiredDocuments: [
+      { name: "Copy of Aadhaar Card", mandatory: true },
+      { name: "Passport-size Photograph", mandatory: true },
+      { name: "Proof of age", mandatory: true },
+      { name: "Mark Sheets/Grade Cards & Degrees", mandatory: true },
+      { name: "Caste certificate", mandatory: true },
+      { name: "Disability certificate", mandatory: false },
+    ],
+    officialPortalUrl: "https://scholarships.gov.in",
+    ministry: "University Grants Commission (UGC)",
+    applicationMode: ["online"],
+    tags: [
+      "scholarship",
+      "postgraduate",
+      "sc",
+      "st",
+      "professional",
+      "education",
+      "ugc",
+      "nsp",
+      "engineering",
+      "management",
+      "pharmacy",
+    ],
+    faqs: [
+      {
+        q: "What is the monthly scholarship amount?",
+        a: "Selected candidates receive ₹4,500 per month for the complete duration of the postgraduate course.",
+      },
+      {
+        q: "Which professional courses are covered?",
+        a: "The scheme covers postgraduate professional courses including Engineering & Technology, Management, Pharmacy, and similar subjects at recognized institutions.",
+      },
+      {
+        q: "How is the scholarship paid?",
+        a: "After selection, the scholarship is paid via Direct Benefit Transfer (DBT) through the Public Financial Management System (PFMS).",
+      },
+    ],
+    source: "sample",
+  },
 
   /* ------------------------------ health ---------------------------------- */
   {
@@ -826,6 +909,202 @@ export const SCHEMES: Scheme[] = [
       {
         q: "Is a minimum balance required?",
         a: "No, PMJDY accounts are zero-balance accounts with no minimum balance requirement.",
+      },
+    ],
+    source: "sample",
+  },
+  {
+    id: "tn-cmrf",
+    slug: "tamil-nadu-chief-minister-s-research-fellowship",
+    name: "Tamil Nadu Chief Minister\u2019s Research Fellowship",
+    shortName: "TN CMRF",
+    summary:
+      "Monthly fellowship of ₹25,000 for meritorious Ph.D. scholars in recognized Tamil Nadu state universities and government colleges.",
+    description:
+      "The Tamil Nadu Chief Minister\u2019s Research Fellowship (CMRF) is a state-sponsored scheme designed to cultivate a robust academic research ecosystem by financially supporting meritorious students pursuing full-time Ph.D. programs in recognized state universities and government colleges. Running under a structured three-year tenure framework, the initiative enables scholars to focus on advanced academic research across diverse fields, including Science, Arts, Humanities, and Social Sciences. Selected research fellows go through a phased progression overseen by the Tamil Nadu Directorate of Collegiate Education (TNDCE), including a performance review at the end of the first year (Phase I), an evaluation at the end of the second year (Phase II) to transition to senior fellowship status, and a final thesis and report submission along with a formal Utilization Certificate at the completion of the third year (Phase III).",
+    category: "education",
+    level: "state",
+    states: ["tamil-nadu"],
+    eligibility: [
+      {
+        label: "Residency",
+        value: "Must be a native resident of Tamil Nadu",
+        type: "residence",
+      },
+      {
+        label: "Education",
+        value:
+          "Postgraduate degree from a UGC-recognized institution in Tamil Nadu",
+        type: "education",
+      },
+      {
+        label: "Minimum marks",
+        value:
+          "60% in postgraduate studies (5% relaxation for SC, ST, differently-abled, and women applicants)",
+        type: "other",
+      },
+      {
+        label: "Enrollment",
+        value:
+          "Admitted to a full-time Ph.D. program in a recognized state university or government college",
+        type: "education",
+      },
+    ],
+    benefits: [
+      "Monthly fellowship of ₹25,000",
+      "Structured three-year tenure with phased progression",
+      "Performance-based advancement to senior fellowship status",
+      "Support across Science, Arts, Humanities, and Social Sciences",
+    ],
+    requiredDocuments: [
+      { name: "Aadhaar Card", mandatory: true },
+      {
+        name: "Nativity / Domicile Certificate (Tamil Nadu)",
+        mandatory: true,
+      },
+      { name: "Community Certificate", mandatory: true },
+      {
+        name: "Original degree certificates and mark sheets (Class 10, 12, Graduation, Postgraduation)",
+        mandatory: true,
+      },
+      { name: "Ph.D. admission / registration letter", mandatory: true },
+      {
+        name:
+          "Certificate of confirmation from research supervisor or head of department",
+        mandatory: true,
+      },
+    ],
+    officialPortalUrl: "https://www.tn.gov.in",
+    ministry: "Tamil Nadu Directorate of Collegiate Education (TNDCE)",
+    applicationMode: ["online"],
+    tags: [
+      "fellowship",
+      "research",
+      "phd",
+      "tamil nadu",
+      "education",
+      "sc",
+      "st",
+      "bc",
+      "mbc",
+      "merit",
+      "cmrf",
+    ],
+    faqs: [
+      {
+        q: "What is the monthly fellowship amount?",
+        a: "Selected fellows receive ₹25,000 per month for the three-year tenure.",
+      },
+      {
+        q: "Is there a marks relaxation for reserved categories?",
+        a: "Yes, a 5% relaxation in the minimum 60% postgraduate marks requirement is given to SC, ST, differently-abled, and women applicants.",
+      },
+      {
+        q: "How is the selection done?",
+        a: "Selection is purely merit-based, determined by performance in the CMRF Eligibility Test conducted by the state.",
+      },
+    ],
+    source: "sample",
+  },
+
+  /* -------------------------- women & child – education --------------------- */
+  {
+    id: "aicte-pragati-scholarship",
+    slug: "aicte-pragati-scholarship-for-girls-mri0dysb",
+    name: "AICTE Pragati Scholarship for Girl Students",
+    shortName: "Pragati Scholarship",
+    summary:
+      "₹50,000 per year for girl students in AICTE-approved technical courses — up to 4 years for first-year entries and 3 years for lateral entry.",
+    description:
+      "A scholarship scheme by AICTE, Ministry of Education, for girl students admitted in the 1st or 2nd year of a technical degree course in an AICTE-approved institution. A maximum of two girl children per family are eligible. The benefits are provided for a maximum of 4 years for first-year admitted students and a maximum of 3 years for second-year admitted students through lateral entry. This scheme is an attempt to give young women the opportunity to further their education and prepare for a successful future by empowering women through knowledge, skill, and self-confidence.",
+    category: "women-child",
+    level: "central",
+    states: ["all-india"],
+    eligibility: [
+      {
+        label: "Applicant",
+        value: "Girl student pursuing a technical degree course",
+        type: "gender",
+      },
+      {
+        label: "Course year",
+        value:
+          "First year of the degree course OR second year through lateral entry",
+        type: "education",
+      },
+      {
+        label: "Annual family income",
+        value: "Not more than ₹8,00,000 per annum",
+        type: "income",
+      },
+      {
+        label: "Institution",
+        value: "AICTE-approved institution",
+        type: "other",
+      },
+      {
+        label: "Family limit",
+        value: "Maximum of two girl children per family",
+        type: "other",
+      },
+    ],
+    benefits: [
+      "₹50,000 per annum as a lump sum for every year of study",
+      "Maximum of 4 years for first-year admitted students",
+      "Maximum of 3 years for second-year admitted students (lateral entry)",
+      "Covers college fees, computer, stationeries, books, equipment, and software",
+    ],
+    requiredDocuments: [
+      { name: "Copy of SSC/10th certificate", mandatory: true },
+      {
+        name: "Copy of HSC/12th certificate (for degree level)",
+        mandatory: true,
+      },
+      {
+        name: "Copy of ITI certificate (for lateral entry at diploma level)",
+        mandatory: false,
+      },
+      {
+        name: "Copy of Diploma certificate (for lateral entry at degree level)",
+        mandatory: false,
+      },
+      { name: "Bank passbook", mandatory: true },
+      { name: "Category certificate", mandatory: true },
+      { name: "Aadhaar Card", mandatory: true },
+      { name: "Study Certificate (Appendix-I)", mandatory: true },
+      {
+        name: "Annual Family Income Certificate (Appendix-II)",
+        mandatory: true,
+      },
+      { name: "Parent's Declaration (Appendix-III)", mandatory: true },
+      { name: "Bank Mandate Form (Appendix-IV)", mandatory: true },
+    ],
+    officialPortalUrl: "https://scholarships.gov.in",
+    ministry: "Ministry of Education (AICTE)",
+    applicationMode: ["online"],
+    tags: [
+      "scholarship",
+      "girl",
+      "women",
+      "aicte",
+      "pragati",
+      "technical education",
+      "degree",
+      "polytechnic",
+      "education",
+    ],
+    faqs: [
+      {
+        q: "Who is eligible for the Pragati Scholarship?",
+        a: "Girl students admitted to the 1st or 2nd year (lateral entry) of a technical degree course in an AICTE-approved institution, with annual family income up to ₹8 lakh.",
+      },
+      {
+        q: "How much is the scholarship amount?",
+        a: "₹50,000 per annum as a lump sum, paid for up to 4 years (first-year entry) or 3 years (lateral entry).",
+      },
+      {
+        q: "How many girl children per family can avail the benefit?",
+        a: "A maximum of two girl children per family are eligible.",
       },
     ],
     source: "sample",
