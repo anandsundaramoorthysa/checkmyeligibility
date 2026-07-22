@@ -28,6 +28,7 @@ export type LevelOfGovernment = "central" | "state" | "central-state";
 export type IndianState =
   | "all-india"
   | "andhra-pradesh"
+  | "arunachal-pradesh"
   | "assam"
   | "bihar"
   | "delhi"
@@ -36,11 +37,17 @@ export type IndianState =
   | "kerala"
   | "madhya-pradesh"
   | "maharashtra"
+  | "manipur"
+  | "meghalaya"
+  | "mizoram"
+  | "nagaland"
   | "odisha"
   | "punjab"
   | "rajasthan"
+  | "sikkim"
   | "tamil-nadu"
   | "telangana"
+  | "tripura"
   | "uttar-pradesh"
   | "west-bengal";
 

@@ -8,6 +8,7 @@ import { aictePragatiScholarship } from "./aicte-pragati-scholarship";
 import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-scheme";
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
+import { ishanUdayScholarship } from "./ishan-uday-scholarship";
 
 export const SCHEMES: Scheme[] = [
   aicteDistinguishedChairProfessorFellowship,
@@ -17,4 +18,5 @@ export const SCHEMES: Scheme[] = [
   aicteSakshamDegree,
   aicteSakshamScholarshipScheme,
   aicteYashasviScholarship,
+  ishanUdayScholarship,
 ];
