@@ -82,7 +82,7 @@ export async function POST(req: Request): Promise<Response> {
   // Guardrail check — block prompt injections, off-topic, PII solicitation
   const guard = checkInput(message);
   if (guard.blocked) {
-    logChat({ ipHash, message, schemeCount: 0, isFallback: false, isComparison: false, isGrievance: false, isBlocked: true, blockReason: guard.reason, latencyMs: Date.now() - t0 });
+    await logChat({ ipHash, message, schemeCount: 0, isFallback: false, isComparison: false, isGrievance: false, isBlocked: true, blockReason: guard.reason, latencyMs: Date.now() - t0 });
     return fallbackJson(guard.response);
   }
 
@@ -110,8 +110,8 @@ export async function POST(req: Request): Promise<Response> {
   const comparisonMode = isComparisonIntent(message);
   const grievanceMode = isGrievanceIntent(message);
 
-  // Log the request (fire-and-forget — does not delay the stream)
-  logChat({
+  // Log the request before streaming starts — guaranteed to insert before response headers go out
+  await logChat({
     ipHash,
     message,
     schemeCount: schemes.length,
