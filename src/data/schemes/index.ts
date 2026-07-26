@@ -17,6 +17,7 @@ import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
 import { mukhyamantriYuvaSwavalambanYojanaGujarat } from "./mukhyamantri-yuva-swavalamban-yojana-gujarat";
 import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./national-overseas-scholarship-for-persons-with-disabilities";
+import { necMeritScholarship } from "./nec-merit-scholarship";
 import { pmUspCentralSectorSchemeOfScholarship } from "./pm-usp-central-sector-scheme-of-scholarship";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
 import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hostel-scheme-bjrcy";
@@ -39,6 +40,7 @@ export const SCHEMES: Scheme[] = [
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
   mukhyamantriYuvaSwavalambanYojanaGujarat,
   nationalOverseasScholarshipForPersonsWithDisabilities,
+  necMeritScholarship,
   pmUspCentralSectorSchemeOfScholarship,
   punjabBocwBoardStipendScholarshipScheme,
   theBabuJagjivanRamHostelSchemeBjrcy,
