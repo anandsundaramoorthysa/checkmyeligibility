@@ -2,12 +2,6 @@ import { NextResponse } from "next/server";
 import type { BotTurn, Message } from "@/lib/types";
 import { mockEngine } from "@/lib/chat/mockEngine";
 
-/**
- * UI → /api/chat → engine seam.
- * When FASTAPI_URL is set, proxies to the FastAPI backend (Phase 2).
- * Falls back to the local mock engine when FASTAPI_URL is absent (Phase 1 / local dev).
- * The BotTurn contract is identical in both paths — no UI changes needed.
- */
 export const runtime = "nodejs";
 
 interface ChatRequestBody {
@@ -15,10 +9,10 @@ interface ChatRequestBody {
   history?: Message[];
 }
 
-const MAX_BODY_BYTES = 64 * 1024; // 64 KB
+const MAX_BODY_BYTES = 64 * 1024;
 const MAX_MESSAGE_CHARS = 2000;
 const MAX_HISTORY_ITEMS = 30;
-const FASTAPI_TIMEOUT_MS = 30_000;
+const BACKEND_TIMEOUT_MS = 30_000;
 
 const FALLBACK: BotTurn = {
   messages: [{ content: "Sorry, something went wrong on my side. Please try again in a moment." }],
@@ -49,13 +43,13 @@ export async function POST(req: Request): Promise<NextResponse> {
     .filter((m): m is Message => !!m && typeof (m as Message).content === "string")
     .slice(-MAX_HISTORY_ITEMS);
 
-  // Phase 2: proxy to FastAPI backend when FASTAPI_URL is configured.
-  const fastapiUrl = process.env.FASTAPI_URL;
-  if (fastapiUrl) {
+  const backendUrl = process.env.FASTAPI_URL;
+
+  if (backendUrl) {
     try {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), FASTAPI_TIMEOUT_MS);
-      const res = await fetch(`${fastapiUrl}/chat`, {
+      const timer = setTimeout(() => controller.abort(), BACKEND_TIMEOUT_MS);
+      const res = await fetch(`${backendUrl}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message, history }),
@@ -63,22 +57,27 @@ export async function POST(req: Request): Promise<NextResponse> {
       });
       clearTimeout(timer);
       if (!res.ok) {
-        console.error(`FastAPI responded ${res.status}`);
+        console.error(`[chat] backend responded ${res.status}`);
         return NextResponse.json(FALLBACK);
       }
       const turn = (await res.json()) as BotTurn;
       return NextResponse.json(turn);
     } catch (err) {
-      console.error("FastAPI proxy error:", err);
+      console.error("[chat] backend error:", err);
       return NextResponse.json(FALLBACK);
     }
   }
 
-  // Phase 1 fallback: local mock engine.
-  try {
-    const turn: BotTurn = await mockEngine.send(message, history);
-    return NextResponse.json(turn);
-  } catch {
-    return NextResponse.json(FALLBACK);
+  // Local dev fallback — mock engine. Not used in production (FASTAPI_URL must be set).
+  if (process.env.NODE_ENV !== "production") {
+    try {
+      const turn: BotTurn = await mockEngine.send(message, history);
+      return NextResponse.json(turn);
+    } catch {
+      return NextResponse.json(FALLBACK);
+    }
   }
+
+  console.error("[chat] FASTAPI_URL is not set — chatbot is unavailable");
+  return NextResponse.json(FALLBACK, { status: 503 });
 }
