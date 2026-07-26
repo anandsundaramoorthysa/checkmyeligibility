@@ -11,11 +11,14 @@ export function getQdrant(): QdrantClient {
 
 export async function ensureCollection(): Promise<void> {
   const client = getQdrant();
-  const exists = await client.collectionExists(COLLECTION);
-  if (!exists) {
+  try {
     await client.createCollection(COLLECTION, {
       vectors: { size: VECTOR_SIZE, distance: "Cosine" },
     });
+  } catch (err) {
+    // Ignore "already exists" — any other error is re-thrown
+    const msg = err instanceof Error ? err.message : String(err);
+    if (!msg.includes("already exists") && !msg.includes("409")) throw err;
   }
 }
 
