@@ -14,6 +14,7 @@ import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarshi
 import { haryanaBocwScholarshipProfessionalTechnicalCourses } from "./haryana-bocw-scholarship-professional-technical-courses";
 import { higherEducationAssistanceSchemeGujarat } from "./higher-education-assistance-scheme-gujarat";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
+import { isiStipendSchemeUgPgDiploma } from "./isi-stipend-scheme-ug-pg-diploma";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
 import { mukhyamantriYuvaSwavalambanYojanaGujarat } from "./mukhyamantri-yuva-swavalamban-yojana-gujarat";
@@ -38,6 +39,7 @@ export const SCHEMES: Scheme[] = [
   haryanaBocwScholarshipProfessionalTechnicalCourses,
   higherEducationAssistanceSchemeGujarat,
   inspireScholarshipForHigherEducation,
+  isiStipendSchemeUgPgDiploma,
   jaganannaVidyaDeevenaFeeReimbursement,
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
   mukhyamantriYuvaSwavalambanYojanaGujarat,
