@@ -27,8 +27,17 @@ export async function POST(req: Request): Promise<NextResponse> {
   for (const row of rows) {
     try {
       const chunk = buildChunk(row);
-      const vector = await embedText(chunk);
-      await upsertEmbedding(String(row.id), chunk, vector);
+      let vector: number[];
+      try {
+        vector = await embedText(chunk);
+      } catch (err) {
+        throw new Error(`embed step: ${err instanceof Error ? err.message : String(err)}`);
+      }
+      try {
+        await upsertEmbedding(String(row.id), chunk, vector);
+      } catch (err) {
+        throw new Error(`upsert step (id=${row.id}): ${err instanceof Error ? err.message : String(err)}`);
+      }
       embedded++;
     } catch (err) {
       console.error(`[embed/all] failed for scheme ${row.id}:`, err);
