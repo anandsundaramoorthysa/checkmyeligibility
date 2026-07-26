@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
-// GovEligify brand palette — the Indian national flag.
+// CheckMyEligibility brand palette — the Indian national flag.
 //   Saffron #FF9933 · White · India-green #138808 · Chakra-navy #000080 / #0A3D91
 // Accessibility rule: saffron and green FAIL AA as small text on white, so body
 // text + primary buttons use navy/ink; saffron is for headings/icons/accents and

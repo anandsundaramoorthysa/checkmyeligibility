@@ -3,14 +3,10 @@ import { fetchAllApprovedSchemes } from "@/lib/chat/db";
 import { buildChunk } from "@/lib/chat/buildChunk";
 import { embedText } from "@/lib/chat/embedder";
 import { upsertEmbedding, ensureCollection } from "@/lib/chat/qdrant";
+import { isAuthorized } from "@/lib/chat/adminAuth";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
-
-function isAuthorized(req: Request): boolean {
-  const key = req.headers.get("x-admin-key");
-  return !!process.env.CHATBOT_ADMIN_KEY && key === process.env.CHATBOT_ADMIN_KEY;
-}
 
 export async function POST(req: Request): Promise<NextResponse> {
   if (!isAuthorized(req)) {
@@ -38,8 +34,9 @@ export async function POST(req: Request): Promise<NextResponse> {
 
     return NextResponse.json({ embedded, failed, total: rows.length });
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
+    // Log the detail server-side; the response stays generic so connection
+    // strings and upstream error bodies are not echoed back to the caller.
     console.error("[embed/all] fatal:", err);
-    return NextResponse.json({ error: msg }, { status: 500 });
+    return NextResponse.json({ error: "Embedding run failed" }, { status: 500 });
   }
 }

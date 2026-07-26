@@ -11,7 +11,12 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "eval:guardrail": "tsx scripts/eval-guardrail.ts",
+    "eval:retrieval": "tsx scripts/eval-retrieval.ts"
+  },
+  "engines": {
+    "node": ">=18.18 <23"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.101",

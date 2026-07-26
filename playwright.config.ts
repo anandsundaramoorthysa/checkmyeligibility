@@ -18,9 +18,16 @@ export default defineConfig({
     { name: "mobile", use: { ...devices["Pixel 5"] } },
   ],
   webServer: {
-    command: `next dev -p ${PORT}`,
+    // Test a production build, not `next dev`. Dev compiles each route on first
+    // request, which blew the per-test timeout on any spec that visits several
+    // pages and made results depend on compile order rather than on the app.
+    // NEXT_DIST_DIR also keeps this off the main .next directory, so an e2e run
+    // cannot corrupt a production build that is already serving.
+    command: `next build && next start -p ${PORT}`,
+    env: { NEXT_DIST_DIR: ".next-e2e" },
     url: baseURL,
-    timeout: 120_000,
-    reuseExistingServer: true,
+    // Generous: this covers a cold production build, not just server startup.
+    timeout: 600_000,
+    reuseExistingServer: !process.env.CI,
   },
 });

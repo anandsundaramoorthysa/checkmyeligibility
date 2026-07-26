@@ -7,7 +7,10 @@ const INJECTION_PATTERNS: RegExp[] = [
   /disregard\s+(your|all|the\s+previous|prior)\s+(instructions?|rules?|guidelines?)/i,
   /you\s+are\s+now\s+(a|an|the)\s+/i,
   /pretend\s+(you\s+are|to\s+be)\s+/i,
-  /act\s+as\s+(a|an|if\s+you\s+are)\s+/i,
+  // "act as" only counts when aimed at the assistant — students legitimately
+  // ask about a parent acting as guardian or co-applicant.
+  /\b(you|u)\s+(should\s+|must\s+|will\s+|can\s+)?act\s+as\s+(a|an|if)\b/i,
+  /^\s*act\s+as\s+(a|an|if\s+you\s+are)\s+/i,
   /roleplay\s+as\s+/i,
   /\bDAN\b/,
   /jailbreak/i,
@@ -17,8 +20,11 @@ const INJECTION_PATTERNS: RegExp[] = [
   /<\s*system\s*>/i,
   /system\s*:\s*(you|ignore|forget|disregard)/i,
   /reveal\s+(your\s+)?(system\s+)?prompt/i,
-  /show\s+(me\s+)?(your\s+)?(system\s+)?instructions?/i,
-  /what\s+(are\s+)?(your|the)\s+(system\s+)?(instructions?|prompt|rules?)/i,
+  /show\s+(me\s+)?your\s+(system\s+)?(instructions?|prompt)/i,
+  // Scoped to "your"/"the system" so "what are the rules for the SC
+  // scholarship" — a core student question — is not treated as an attack.
+  /what\s+(are\s+|is\s+)?your\s+(system\s+)?(instructions?|prompt|rules?)/i,
+  /what\s+(are\s+|is\s+)?the\s+system\s+(instructions?|prompt|rules?)/i,
   /repeat\s+(your\s+)?(system\s+)?prompt/i,
   /print\s+(your\s+)?(system\s+)?(prompt|instructions?)/i,
   /you\s+are\s+not\s+an?\s+ai/i,
@@ -59,9 +65,19 @@ const PII_SOLICITATION: RegExp[] = [
   /send\s+(me|us)\s+(your\s+)?(aadhaar|bank\s+details|password)/i,
 ];
 
-// ─── Structural heuristic: imperative verbs at start of sentence ──────────────
-// Catches constructions like "Ignore the above. Write me a story."
-const IMPERATIVE_SENTENCES = /(?:^|[.!?]\s+)(ignore|forget|disregard|override|reset|stop|start|begin|always|never|from now on)\s+/i;
+// ─── Structural heuristic: imperative aimed at the assistant's configuration ──
+// Catches "Ignore the above. Write me a story." while leaving ordinary
+// conversational imperatives alone — students routinely open with "Start with
+// state schemes", "Stop showing loans", "Forget the loans", "Never applied
+// before", none of which are attacks. The imperative only counts when its
+// object refers to the assistant's own instructions or context.
+const CONFIG_OBJECT =
+  "(all\\s+)?(the\\s+|your\\s+|any\\s+)?(previous|prior|above|earlier|preceding|foregoing|initial|original)?\\s*" +
+  "(instruction|rule|prompt|directive|guideline|constraint|restriction|guardrail|context|persona|role|system)s?\\b";
+const IMPERATIVE_SENTENCES = new RegExp(
+  `(?:^|[.!?]\\s+)(ignore|forget|disregard|override|bypass|discard|drop|reset|erase|clear)\\s+${CONFIG_OBJECT}`,
+  "i",
+);
 
 function blocked(
   content: string,
@@ -140,21 +156,67 @@ export function checkInput(message: string): GuardrailResult {
   return { blocked: false };
 }
 
-/** Layer 4: scan LLM output for suspicious patterns before sending to client. */
-export function validateOutput(text: string): string {
-  // Strip any non-.gov.in URLs that look suspicious (keep plain text, no links)
-  // Allow .gov.in, scholarships.gov.in, nsp.gov.in, etc.
-  const cleaned = text.replace(
-    /https?:\/\/(?![\w.-]*\.gov\.in)[\w./-]+/gi,
-    "[link removed]",
-  );
+/**
+ * Government suffixes that are always safe to link to. This list alone is not
+ * enough: 28% of the official portals in the scheme data live on domains like
+ * pmrf.in, serbonline.in, aicte-india.org and buddy4study.com. Filtering on
+ * suffix only would delete the very link the student needs, so callers pass
+ * the URLs of the schemes actually retrieved for the turn (see
+ * `allowedHostsFor`) and those are trusted too.
+ */
+const ALLOWED_HOST_SUFFIXES = [".gov.in", ".nic.in", ".edu.in", ".ac.in", ".res.in"];
 
-  // Block if Aadhaar / bank account number patterns appear in the response
-  const aadhaarPattern = /\b\d{4}\s?\d{4}\s?\d{4}\b/;
-  const bankPattern = /\b\d{9,18}\b/;
-  if (aadhaarPattern.test(cleaned) || bankPattern.test(cleaned)) {
-    return "I found some relevant schemes for you. Please visit the official portal links provided to check your eligibility and apply.";
+function normalizeHost(host: string): string {
+  return host.toLowerCase().replace(/:\d+$/, "").replace(/^www\./, "");
+}
+
+/** Host allowlist for a turn, built from the schemes we are about to cite. */
+export function allowedHostsFor(urls: (string | undefined)[]): Set<string> {
+  const hosts = new Set<string>();
+  for (const u of urls) {
+    if (!u) continue;
+    try {
+      hosts.add(normalizeHost(new URL(u).hostname));
+    } catch {
+      // not a usable URL — nothing to trust
+    }
   }
+  return hosts;
+}
+
+function isAllowedHost(host: string, extra?: Set<string>): boolean {
+  const h = normalizeHost(host);
+  // Suffix match on a label boundary, so "scholarships.gov.in.phish.example"
+  // is rejected while "scholarships.gov.in" is kept.
+  if (ALLOWED_HOST_SUFFIXES.some((s) => h === s.slice(1) || h.endsWith(s))) return true;
+  return extra?.has(h) ?? false;
+}
+
+/**
+ * Layer 4: scan LLM output before sending to client.
+ * `allowedHosts` should carry the hosts of the schemes in this turn's context,
+ * so a portal we vetted survives while a domain the model invented does not.
+ */
+export function validateOutput(text: string, allowedHosts?: Set<string>): string {
+  // Strip links to anything outside the allowlist. The host is parsed rather
+  // than pattern-matched so lookalike domains cannot slip past.
+  let cleaned = text.replace(/https?:\/\/[^\s<>"')\]]+/gi, (url) => {
+    try {
+      return isAllowedHost(new URL(url).hostname, allowedHosts) ? url : "[link removed]";
+    } catch {
+      return "[link removed]";
+    }
+  });
+
+  // Redact identifiers that must never appear in a reply. These are targeted
+  // rewrites — a bare run of digits is far more likely to be a helpline or an
+  // award amount than an account number, so it must not blank the whole answer.
+  cleaned = cleaned
+    // Aadhaar: 12 digits, usually spaced or hyphenated in groups of four.
+    .replace(/\b\d{4}[\s-]?\d{4}[\s-]?\d{4}\b/g, "[redacted]")
+    // Account/card-like runs of 13+ digits, but not when introduced as a
+    // helpline or toll-free number.
+    .replace(/(?<!(?:helpline|toll[\s-]?free|call|dial|phone|contact)\D{0,12})\b\d{13,19}\b/gi, "[redacted]");
 
   return cleaned;
 }

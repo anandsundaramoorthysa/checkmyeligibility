@@ -1,6 +1,6 @@
 import type { Scheme, EligibilityCriterion, RequiredDocument, SchemeCategory, LevelOfGovernment, IndianState } from "@/lib/types";
 import type { SchemeRow } from "./db";
-import { joinArray, firstOfArray } from "./utils";
+import { joinArray, joinLabels, tokenLabel, firstOfArray } from "./utils";
 
 const BENEFIT_TO_CATEGORY: Record<string, SchemeCategory> = {
   scholarship: "scholarship",
@@ -24,14 +24,14 @@ function toEligibility(row: SchemeRow): EligibilityCriterion[] {
     criteria.push({ label: "Eligibility", value: String(row.eligibility), type: "other" });
   }
 
-  const edu = joinArray(row.education_level);
-  if (edu && edu !== "all") {
-    criteria.push({ label: "Education level", value: edu, type: "education" });
+  const eduRaw = joinArray(row.education_level);
+  if (eduRaw && eduRaw !== "all") {
+    criteria.push({ label: "Education level", value: joinLabels(row.education_level), type: "education" });
   }
 
   const gender = row.beneficiary_gender as string | undefined;
   if (gender && gender !== "all") {
-    criteria.push({ label: "Gender", value: gender, type: "gender" });
+    criteria.push({ label: "Gender", value: tokenLabel(gender), type: "gender" });
   }
 
   return criteria;
@@ -54,7 +54,7 @@ function toSummary(description: string): string {
 
 export function rowToScheme(row: SchemeRow): Scheme {
   const description = String(row.description ?? "");
-  const benefitStr = joinArray(row.benefit_type);
+  const benefitStr = joinLabels(row.benefit_type);
   const benefits: string[] = [];
   if (benefitStr) {
     const withAmount = row.amount ? `${benefitStr} — ${row.amount}` : benefitStr;

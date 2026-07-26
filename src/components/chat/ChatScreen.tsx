@@ -345,7 +345,11 @@ export function ChatScreen({ initialQuery }: Props) {
           ) : (
             <div
               role="log"
+              // Additions only, and not atomic — otherwise a screen reader
+              // re-reads the whole transcript on every streamed token.
               aria-live="polite"
+              aria-relevant="additions"
+              aria-atomic="false"
               className="mx-auto max-w-3xl space-y-5 px-4 py-6"
             >
               {messages.map((m) => (

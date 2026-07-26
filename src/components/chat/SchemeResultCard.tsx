@@ -38,7 +38,11 @@ export function SchemeResultCard({ scheme }: { scheme: Scheme }) {
           <Section icon={<CheckCircle2 size={14} className="text-green-deep" />} title="Eligibility">
             {eligibility.map((c, i) => (
               <li key={i}>
-                <span className="font-medium text-ink">{c.label}:</span> {c.value}
+                <span className="font-medium text-ink">{c.label}:</span>{" "}
+                {/* Source eligibility text can run to a full paragraph; clamp it
+                    so one scheme cannot push the rest of the results offscreen.
+                    The official portal link carries the full criteria. */}
+                <span className="line-clamp-4">{c.value}</span>
               </li>
             ))}
           </Section>

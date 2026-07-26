@@ -36,13 +36,20 @@ export async function sendToBot(
       signal,
     });
 
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-    // Handle non-streaming JSON fallback (rate limit, guardrail blocks, etc.)
+    // Handle non-streaming JSON fallback (rate limit, guardrail blocks, etc.).
+    // Checked before res.ok so the 429 body's own wording reaches the user
+    // instead of the generic "couldn't reach the server" fallback.
     const ct = res.headers.get("content-type") ?? "";
     if (ct.includes("application/json")) {
-      return (await res.json()) as BotTurn;
+      const data = (await res.json()) as Partial<BotTurn> & { error?: string };
+      if (Array.isArray(data.messages) && data.messages.length) return data as BotTurn;
+      if (data.error) {
+        return { messages: [{ content: `Eli couldn't handle that request: ${data.error}` }] };
+      }
+      throw new Error(`HTTP ${res.status}`);
     }
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     // SSE stream
     const reader = res.body?.getReader();

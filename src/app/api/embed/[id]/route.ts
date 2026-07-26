@@ -1,14 +1,18 @@
 import { NextResponse } from "next/server";
-import { Pool } from "@neondatabase/serverless";
+import { neon } from "@neondatabase/serverless";
 import { buildChunk } from "@/lib/chat/buildChunk";
 import { embedText } from "@/lib/chat/embedder";
 import { upsertEmbedding, ensureCollection } from "@/lib/chat/qdrant";
+import { isAuthorized } from "@/lib/chat/adminAuth";
 
 export const runtime = "nodejs";
 
-function isAuthorized(req: Request): boolean {
-  const key = req.headers.get("x-admin-key");
-  return !!process.env.CHATBOT_ADMIN_KEY && key === process.env.CHATBOT_ADMIN_KEY;
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+let sql: ReturnType<typeof neon> | null = null;
+function getSql() {
+  if (!sql) sql = neon(process.env.DATABASE_URL!);
+  return sql;
 }
 
 export async function POST(
@@ -20,31 +24,35 @@ export async function POST(
   }
 
   const { id } = params;
-  if (!id) return NextResponse.json({ error: "Missing scheme id" }, { status: 400 });
+  // `id` goes straight into a uuid column; reject bad shapes up front so the
+  // driver does not surface a raw type-cast error.
+  if (!id || !UUID_RE.test(id)) {
+    return NextResponse.json({ error: "Invalid scheme id" }, { status: 400 });
+  }
 
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-  let rows;
   try {
-    const result = await pool.query(
+    const rows = (await getSql().query(
       `SELECT id, slug, name, category, education_level, beneficiary_gender,
               benefit_type, amount, description, eligibility, documents,
               application_process, official_url, reviewed_at
        FROM schemes WHERE id = $1 AND status = 'approved'`,
       [id],
-    );
-    rows = result.rows;
-  } finally {
-    await pool.end();
+    )) as Record<string, unknown>[];
+
+    if (!rows.length) {
+      return NextResponse.json({ error: "Scheme not found or not approved" }, { status: 404 });
+    }
+
+    // These were previously outside the try block, so a Qdrant or Gemini
+    // outage surfaced as an unhandled rejection instead of a 500.
+    await ensureCollection();
+    const chunk = buildChunk(rows[0]);
+    const vector = await embedText(chunk);
+    await upsertEmbedding(id, chunk, vector);
+
+    return NextResponse.json({ embedded: true, id });
+  } catch (err) {
+    console.error(`[embed/${id}] failed:`, err);
+    return NextResponse.json({ error: "Embedding failed" }, { status: 500 });
   }
-
-  if (!rows.length) {
-    return NextResponse.json({ error: "Scheme not found or not approved" }, { status: 404 });
-  }
-
-  await ensureCollection();
-  const chunk = buildChunk(rows[0] as Record<string, unknown>);
-  const vector = await embedText(chunk);
-  await upsertEmbedding(id, chunk, vector);
-
-  return NextResponse.json({ embedded: true, id });
 }

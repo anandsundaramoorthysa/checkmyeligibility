@@ -1,71 +1,163 @@
+/**
+ * Turns a free-text student message into structured filters that match the
+ * vocabulary actually stored in the `schemes` table.
+ *
+ * The DB stores these columns as JSON-array text, e.g. '["ug","pg"]':
+ *   benefit_type    scholarship | stipend | grant | loan | fee_waiver | hostel
+ *   category        fellowship | scholarship | sc_st | obc | bc_mbc | ews |
+ *                   minority | girl_women | differently_abled | general_merit
+ *   education_level primary | upper_primary | secondary | higher_secondary |
+ *                   diploma | ug | pg | phd | professional | all
+ *   states          all-india | tamil-nadu | kerala | ...
+ * Keep these lists in sync with the data — a token that does not exist in the
+ * DB silently narrows results to nothing.
+ */
+
 export interface Intent {
-  category?: string;
+  /** Kind of help asked for — matched against benefit_type. */
+  benefitType?: string;
+  /** Social/beneficiary group or scheme family — matched against category. */
+  socialCategory?: string;
+  /** Study stage — matched against education_level. */
   educationLevel?: string;
+  /** Matched against beneficiary_gender. */
   gender?: string;
+  /** Matched against states. */
+  state?: string;
 }
 
-const CATEGORY_KEYWORDS: Record<string, string[]> = {
+const BENEFIT_KEYWORDS: Record<string, string[]> = {
+  loan: [
+    "loan", "education loan", "study loan", "vidya lakshmi", "bank loan",
+    "borrow", "repay", "emi", "interest subsidy",
+  ],
+  fee_waiver: [
+    "fee waiver", "fee reimbursement", "fee concession", "tuition waiver",
+    "free education", "fee exemption",
+  ],
+  hostel: ["hostel", "accommodation", "boarding", "residential"],
+  stipend: ["stipend", "monthly allowance", "contingency"],
+  grant: ["grant", "research grant", "seed money", "project funding"],
   scholarship: [
-    "scholarship", "stipend", "merit", "sc/st", "obc", "minority",
-    "tribal", "post-matric", "pre-matric", "national means", "financial aid",
-    "financial support", "award", "bursary",
+    "scholarship", "scholarships", "merit", "financial aid", "financial support",
+    "bursary", "award", "post-matric", "pre-matric", "national means",
   ],
+};
+
+const CATEGORY_KEYWORDS: Record<string, string[]> = {
   fellowship: [
-    "fellowship", "jrf", "srf", "research", "phd funding", "doctoral",
-    "ugc fellowship", "dst", "csir", "icmr", "research grant",
+    "fellowship", "jrf", "srf", "doctoral", "post-doc", "postdoc",
+    "research scholar", "research fellow", "ugc net", "csir", "icmr",
   ],
-  "education-loan": [
-    "loan", "education loan", "vidya lakshmi", "bank loan", "credit",
-    "borrow", "repay", "pay fees", "study loan",
+  sc_st: [
+    "sc", "st", "sc/st", "scheduled caste", "scheduled tribe", "dalit",
+    "tribal", "adivasi",
   ],
-  education: [
-    "school", "coaching", "hostel", "transport subsidy", "fee waiver",
-    "tuition", "midday meal",
+  obc: ["obc", "other backward", "backward class"],
+  bc_mbc: ["bc", "mbc", "most backward"],
+  ews: ["ews", "economically weaker", "low income", "bpl", "below poverty"],
+  minority: [
+    "minority", "muslim", "christian", "sikh", "jain", "buddhist", "parsi",
   ],
+  girl_women: [
+    "girl", "girls", "female", "woman", "women", "lady", "ladies", "daughter",
+  ],
+  differently_abled: [
+    "disabled", "disability", "differently abled", "divyang", "handicapped",
+    "blind", "deaf", "pwd",
+  ],
+  general_merit: ["general category", "merit based", "topper", "rank holder"],
 };
 
 const LEVEL_KEYWORDS: Record<string, string[]> = {
-  ug: ["ug", "undergraduate", "b.tech", "btech", "bsc", "ba", "bcom", "degree", "graduation", "college"],
-  pg: ["pg", "postgraduate", "m.tech", "mtech", "msc", "ma", "mcom", "masters", "post-graduation"],
-  phd: ["phd", "doctoral", "research scholar", "d.phil"],
-  diploma: ["diploma", "polytechnic", "iti", "vocational"],
-  school: ["school", "10th", "12th", "sslc", "hsc", "secondary", "inter", "class 11", "class 12"],
+  phd: ["phd", "ph.d", "doctoral", "doctorate", "research scholar", "d.phil"],
+  pg: [
+    "pg", "postgraduate", "post graduate", "post-graduation", "m.tech", "mtech",
+    "msc", "m.sc", "ma", "mcom", "mba", "masters", "master's", "mca",
+  ],
+  ug: [
+    "ug", "undergraduate", "under graduate", "b.tech", "btech", "bsc", "b.sc",
+    "ba", "bcom", "bba", "bca", "degree", "graduation", "college", "bachelor",
+  ],
+  professional: [
+    "mbbs", "medical", "engineering", "law", "llb", "architecture", "nursing",
+    "b.ed", "professional course",
+  ],
+  diploma: ["diploma", "polytechnic", "iti", "vocational", "certificate course"],
+  higher_secondary: [
+    "higher secondary", "11th", "12th", "class 11", "class 12", "hsc",
+    "intermediate", "plus two", "+2", "puc",
+  ],
+  secondary: ["secondary", "9th", "10th", "class 9", "class 10", "sslc", "matric"],
+  upper_primary: ["upper primary", "6th", "7th", "8th", "middle school"],
+  primary: ["primary school", "1st standard", "class 1", "class 2", "class 3"],
 };
 
 const GENDER_KEYWORDS: Record<string, string[]> = {
-  female: ["girl", "female", "woman", "women", "lady", "ladies"],
-  male: ["boy", "male", "man", "men"],
+  female: ["girl", "girls", "female", "woman", "women", "lady", "ladies", "daughter", "she", "her"],
+  male: ["boy", "boys", "male", "man", "men", "son", "he", "his"],
 };
 
-function wordBoundary(text: string, keyword: string): boolean {
+/** DB slug -> spellings a student might type. */
+const STATE_KEYWORDS: Record<string, string[]> = {
+  "tamil-nadu": ["tamil nadu", "tamilnadu", "chennai", "madras", "coimbatore"],
+  kerala: ["kerala", "kochi", "trivandrum", "thiruvananthapuram", "malayalam"],
+  karnataka: ["karnataka", "bangalore", "bengaluru", "mysore"],
+  "andhra-pradesh": ["andhra pradesh", "andhra", "vijayawada", "visakhapatnam"],
+  telangana: ["telangana", "hyderabad"],
+  maharashtra: ["maharashtra", "mumbai", "pune", "nagpur"],
+  gujarat: ["gujarat", "ahmedabad", "surat", "vadodara"],
+  "madhya-pradesh": ["madhya pradesh", "bhopal", "indore"],
+  "west-bengal": ["west bengal", "kolkata", "calcutta"],
+  bihar: ["bihar", "patna"],
+  odisha: ["odisha", "orissa", "bhubaneswar"],
+  punjab: ["punjab", "amritsar", "ludhiana"],
+  rajasthan: ["rajasthan", "jaipur", "jodhpur"],
+  delhi: ["delhi", "new delhi"],
+  chhattisgarh: ["chhattisgarh", "raipur"],
+  meghalaya: ["meghalaya", "shillong"],
+  assam: ["assam", "guwahati"],
+  "uttar-pradesh": ["uttar pradesh", "lucknow", "kanpur", "varanasi"],
+};
+
+/** Multi-word keywords are matched as substrings; single words need boundaries
+ * so that "st" does not fire inside "student" and "ba" not inside "bank". */
+function matches(text: string, keyword: string): boolean {
+  if (keyword.includes(" ")) return text.includes(keyword);
   const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`\\b${escaped}\\b`, "i").test(text);
+  return new RegExp(`(?<![\\w.])${escaped}(?![\\w.])`, "i").test(text);
+}
+
+function firstMatch(text: string, table: Record<string, string[]>): string | undefined {
+  for (const [key, keywords] of Object.entries(table)) {
+    if (keywords.some((kw) => matches(text, kw))) return key;
+  }
+  return undefined;
 }
 
 export function extractIntent(message: string): Intent {
   const text = message.toLowerCase();
   const intent: Intent = {};
 
-  for (const [category, keywords] of Object.entries(CATEGORY_KEYWORDS)) {
-    if (keywords.some((kw) => text.includes(kw))) {
-      intent.category = category;
-      break;
-    }
-  }
+  const benefitType = firstMatch(text, BENEFIT_KEYWORDS);
+  if (benefitType) intent.benefitType = benefitType;
 
-  for (const [level, keywords] of Object.entries(LEVEL_KEYWORDS)) {
-    if (keywords.some((kw) => wordBoundary(text, kw))) {
-      intent.educationLevel = level;
-      break;
-    }
-  }
+  const socialCategory = firstMatch(text, CATEGORY_KEYWORDS);
+  if (socialCategory) intent.socialCategory = socialCategory;
 
-  for (const [gender, keywords] of Object.entries(GENDER_KEYWORDS)) {
-    if (keywords.some((kw) => wordBoundary(text, kw))) {
-      intent.gender = gender;
-      break;
-    }
-  }
+  const educationLevel = firstMatch(text, LEVEL_KEYWORDS);
+  if (educationLevel) intent.educationLevel = educationLevel;
+
+  const gender = firstMatch(text, GENDER_KEYWORDS);
+  if (gender) intent.gender = gender;
+
+  const state = firstMatch(text, STATE_KEYWORDS);
+  if (state) intent.state = state;
 
   return intent;
+}
+
+/** True when nothing useful was extracted, so retrieval should not filter. */
+export function isEmptyIntent(intent: Intent): boolean {
+  return Object.keys(intent).length === 0;
 }

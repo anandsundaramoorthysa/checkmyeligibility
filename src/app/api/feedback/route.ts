@@ -1,13 +1,23 @@
 import { NextResponse } from "next/server";
-import { Pool } from "@neondatabase/serverless";
+import { neon } from "@neondatabase/serverless";
+import { isRateLimited } from "@/lib/chat/rateLimiter";
 
 export const runtime = "nodejs";
 
-let tableReady = false;
+const MAX_BODY_BYTES = 8 * 1024;
 
-async function ensureTable(pool: Pool): Promise<void> {
+// Module-level HTTP client — the previous code built a new Pool per request
+// and tore down a connection on every thumbs-up.
+let sql: ReturnType<typeof neon> | null = null;
+function getSql() {
+  if (!sql) sql = neon(process.env.DATABASE_URL!);
+  return sql;
+}
+
+let tableReady = false;
+async function ensureTable(): Promise<void> {
   if (tableReady) return;
-  await pool.query(`
+  await getSql().query(`
     CREATE TABLE IF NOT EXISTS chat_feedback (
       id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
       vote TEXT NOT NULL CHECK (vote IN ('up', 'down')),
@@ -21,6 +31,18 @@ async function ensureTable(pool: Pool): Promise<void> {
 }
 
 export async function POST(req: Request): Promise<NextResponse> {
+  // This endpoint is unauthenticated by design, so it needs the same per-IP
+  // ceiling as /api/chat — otherwise anyone can write to the table in a loop.
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (await isRateLimited(`feedback:${ip}`)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429, headers: { "Retry-After": "60" } });
+  }
+
+  const declared = Number(req.headers.get("content-length") ?? 0);
+  if (Number.isFinite(declared) && declared > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Payload too large" }, { status: 413 });
+  }
+
   let body: { vote?: string; userMessage?: string; botSnippet?: string; hasSchemes?: boolean };
   try {
     body = await req.json();
@@ -33,10 +55,9 @@ export async function POST(req: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "vote must be 'up' or 'down'" }, { status: 400 });
   }
 
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL });
   try {
-    await ensureTable(pool);
-    await pool.query(
+    await ensureTable();
+    await getSql().query(
       `INSERT INTO chat_feedback (vote, user_message, bot_response_snippet, has_schemes)
        VALUES ($1, $2, $3, $4)`,
       [
@@ -50,7 +71,5 @@ export async function POST(req: Request): Promise<NextResponse> {
   } catch (err) {
     console.error("[feedback] insert failed:", err);
     return NextResponse.json({ error: "Failed to save feedback" }, { status: 500 });
-  } finally {
-    await pool.end();
   }
 }

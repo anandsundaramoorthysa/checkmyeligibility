@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Questions & ideas (Discussions)
-    url: https://github.com/anandsundaramoorthysa/goveligify/discussions
+  - name: Questions & ideas
+    url: https://github.com/anandsundaramoorthysa/checkmyeligibility/issues
     about: Ask questions, share ideas, and discuss the project here.
   - name: Report a security vulnerability
-    url: https://github.com/anandsundaramoorthysa/goveligify/security/advisories/new
+    url: https://github.com/anandsundaramoorthysa/checkmyeligibility/security/advisories/new
     about: Please report security issues privately — see SECURITY.md.

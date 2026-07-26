@@ -3,8 +3,14 @@ import { createGroq } from "@ai-sdk/groq";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import type { BotTurn, Message, QuickReply, Scheme } from "@/lib/types";
 import { retrieve } from "@/lib/chat/retrieval";
-import { buildMessages, MAX_HISTORY, isComparisonIntent, isGrievanceIntent } from "@/lib/chat/systemPrompt";
-import { sanitizeInput, checkInput, validateOutput } from "@/lib/chat/guardrail";
+import {
+  buildMessages,
+  MAX_HISTORY,
+  isComparisonIntent,
+  isGrievanceIntent,
+  type Prompt,
+} from "@/lib/chat/systemPrompt";
+import { sanitizeInput, checkInput, validateOutput, allowedHostsFor } from "@/lib/chat/guardrail";
 import { isRateLimited } from "@/lib/chat/rateLimiter";
 import { logChat, hashIp } from "@/lib/chat/chatLogger";
 
@@ -40,10 +46,45 @@ function isRateLimit(err: unknown): boolean {
   return msg.includes("429") || msg.toLowerCase().includes("rate limit");
 }
 
-function fallbackJson(turn: BotTurn): Response {
+function fallbackJson(turn: BotTurn, init?: ResponseInit): Response {
   return new Response(JSON.stringify(turn), {
-    headers: { "Content-Type": "application/json" },
+    ...init,
+    headers: { "Content-Type": "application/json", ...init?.headers },
   });
+}
+
+/**
+ * Read the body with a hard byte ceiling. The Content-Length header alone is
+ * not enough — a chunked request omits it entirely, which let a multi-megabyte
+ * payload through and forced the server to buffer and parse all of it.
+ */
+async function readBodyCapped(req: Request, maxBytes: number): Promise<string | null> {
+  const declared = Number(req.headers.get("content-length") ?? 0);
+  if (Number.isFinite(declared) && declared > maxBytes) return null;
+
+  const reader = req.body?.getReader();
+  if (!reader) return "";
+
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > maxBytes) {
+      await reader.cancel().catch(() => {});
+      return null;
+    }
+    chunks.push(value);
+  }
+
+  const buf = new Uint8Array(total);
+  let offset = 0;
+  for (const c of chunks) {
+    buf.set(c, offset);
+    offset += c.byteLength;
+  }
+  return new TextDecoder().decode(buf);
 }
 
 export async function POST(req: Request): Promise<Response> {
@@ -54,22 +95,31 @@ export async function POST(req: Request): Promise<Response> {
   // Cross-instance rate limiting via Neon DB
   const limited = await isRateLimited(ip);
   if (limited) {
-    return fallbackJson({
-      messages: [{ content: "Too many requests. Please wait a moment before trying again." }],
-      quickReplies: [{ label: "Try again", send: "What scholarships am I eligible for?" }],
-    });
+    return fallbackJson(
+      {
+        messages: [{ content: "Too many requests. Please wait a moment before trying again." }],
+        quickReplies: [{ label: "Try again", send: "What scholarships am I eligible for?" }],
+      },
+      { status: 429, headers: { "Retry-After": "60" } },
+    );
   }
 
-  const declaredLen = Number(req.headers.get("content-length") ?? 0);
-  if (declaredLen > MAX_BODY_BYTES) {
-    return new Response(JSON.stringify({ error: "Payload too large" }), { status: 413 });
+  const raw = await readBodyCapped(req, MAX_BODY_BYTES);
+  if (raw === null) {
+    return new Response(JSON.stringify({ error: "Payload too large" }), {
+      status: 413,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   let body: { message?: string; history?: Message[]; lang?: string };
   try {
-    body = await req.json();
+    body = JSON.parse(raw) as typeof body;
   } catch {
-    return new Response(JSON.stringify({ error: "Invalid JSON body" }), { status: 400 });
+    return new Response(JSON.stringify({ error: "Invalid JSON body" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   const rawMessage = typeof body.message === "string" ? body.message : "";
@@ -86,10 +136,16 @@ export async function POST(req: Request): Promise<Response> {
     return fallbackJson(guard.response);
   }
 
-  const lang = typeof body.lang === "string" ? body.lang : undefined;
-  const history = (Array.isArray(body.history) ? body.history : [])
-    .filter((m): m is Message => !!m && typeof m.content === "string")
-    .slice(-MAX_HISTORY);
+  const lang = typeof body.lang === "string" ? body.lang.slice(0, 8) : undefined;
+  // History is client-supplied, so validate the role and cap each turn's length
+  // rather than trusting whatever arrives.
+  const history: Message[] = (Array.isArray(body.history) ? body.history : [])
+    .filter(
+      (m): m is Message =>
+        !!m && typeof m.content === "string" && (m.role === "user" || m.role === "assistant"),
+    )
+    .slice(-MAX_HISTORY)
+    .map((m) => ({ ...m, content: sanitizeInput(m.content).slice(0, MAX_MESSAGE_CHARS) }));
 
   const hasBackend = process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY;
   if (!hasBackend && process.env.NODE_ENV !== "production") {
@@ -123,8 +179,11 @@ export async function POST(req: Request): Promise<Response> {
     latencyMs: Date.now() - t0,
   });
 
-  const llmMessages = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode });
+  const prompt = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode });
   const quickReplies = buildQuickReplies(schemes, schemes.length > 0);
+  // Portals we are actively citing this turn are trusted for link validation;
+  // many legitimate scheme portals sit outside the .gov.in suffix list.
+  const allowedHosts = allowedHostsFor(schemes.map((s) => s.officialPortalUrl));
 
   const encoder = new TextEncoder();
 
@@ -142,7 +201,7 @@ export async function POST(req: Request): Promise<Response> {
       });
 
       try {
-        await streamLLM(llmMessages, send);
+        await streamLLM(prompt, send, allowedHosts);
       } catch {
         send({ type: "token", text: BUSY_MESSAGE });
       }
@@ -162,9 +221,12 @@ export async function POST(req: Request): Promise<Response> {
 }
 
 async function streamLLM(
-  messages: { role: "system" | "user" | "assistant"; content: string }[],
+  prompt: Prompt,
   send: (obj: unknown) => void,
+  allowedHosts: Set<string>,
 ): Promise<void> {
+  const { system, messages } = prompt;
+
   // Try Groq with one retry on rate limit
   if (process.env.GROQ_API_KEY) {
     for (let attempt = 0; attempt < 2; attempt++) {
@@ -172,6 +234,7 @@ async function streamLLM(
         const groq = createGroq({ apiKey: process.env.GROQ_API_KEY });
         const { textStream } = streamText({
           model: groq("llama-3.3-70b-versatile"),
+          system,
           messages,
         });
         let fullText = "";
@@ -180,7 +243,7 @@ async function streamLLM(
           send({ type: "token", text: chunk });
         }
         // Validate output before marking done (strip non-.gov.in URLs etc.)
-        const validated = validateOutput(fullText);
+        const validated = validateOutput(fullText, allowedHosts);
         if (validated !== fullText) {
           // Output was modified — tell client to replace content
           send({ type: "replace", text: validated });
@@ -202,6 +265,7 @@ async function streamLLM(
       const google = createGoogleGenerativeAI({ apiKey: process.env.GEMINI_API_KEY });
       const { textStream } = streamText({
         model: google("gemini-2.5-flash"),
+        system,
         messages,
       });
       let fullText = "";
@@ -209,7 +273,7 @@ async function streamLLM(
         fullText += chunk;
         send({ type: "token", text: chunk });
       }
-      const validated = validateOutput(fullText);
+      const validated = validateOutput(fullText, allowedHosts);
       if (validated !== fullText) send({ type: "replace", text: validated });
       return;
     } catch {

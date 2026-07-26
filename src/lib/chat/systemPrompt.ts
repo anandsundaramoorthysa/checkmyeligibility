@@ -1,6 +1,7 @@
 import type { Scheme } from "@/lib/types";
 import type { Message } from "@/lib/types";
 import { buildGrievanceContext } from "./grievancePortals";
+import { levelLabel, stateLabel } from "@/lib/labels";
 
 export const MAX_HISTORY = 10;
 // Rough token estimate: 4 chars ≈ 1 token. Hard-cap at 5 000 tokens to stay
@@ -86,10 +87,11 @@ export function buildContextBlock(schemes: Scheme[]): string {
     const s = schemes[i];
     lines.push(`\n[${i + 1}] ${s.name}`);
     if (s.level && s.level !== "central") {
-      lines.push(`    Level: ${s.level}`);
+      lines.push(`    Level: ${levelLabel(s.level)}`);
     }
     if (s.states && !s.states.includes("all-india" as never)) {
-      lines.push(`    States: ${s.states.join(", ")}`);
+      // Readable names, not the kebab slugs — the model echoes what it is given.
+      lines.push(`    States: ${s.states.map(stateLabel).join(", ")}`);
     }
     if (s.eligibility.length) {
       const criteria = s.eligibility.map((e) => `${e.label}: ${e.value}`).join("; ");
@@ -115,7 +117,15 @@ COMPARISON REQUEST: The user wants to compare schemes. Please respond with:
 Keep the table concise — one row per scheme, no more than 4 columns.`;
 }
 
-type CoreMessage = { role: "system" | "user" | "assistant"; content: string };
+type CoreMessage = { role: "user" | "assistant"; content: string };
+
+/** System instructions kept separate from the conversation. Passing them as a
+ * message inside `messages` is what the AI SDK warns about: a crafted turn can
+ * sit alongside them and read as an instruction of equal weight. */
+export interface Prompt {
+  system: string;
+  messages: CoreMessage[];
+}
 
 export function buildMessages(
   userMessage: string,
@@ -123,7 +133,7 @@ export function buildMessages(
   schemes: Scheme[],
   lang?: string,
   options?: { comparisonMode?: boolean; grievanceMode?: boolean },
-): CoreMessage[] {
+): Prompt {
   const contextBlock = buildContextBlock(schemes);
   let addon = "";
 
@@ -137,12 +147,10 @@ export function buildMessages(
     if (grievanceBlock) addon += `\n\n${grievanceBlock}`;
   }
 
-  // Single system message: persona + context block + optional addons
-  const systemContent = `${buildSystemPrompt(lang)}\n\n${contextBlock}${addon}`;
+  // Persona + context block + optional addons, delivered as system input.
+  const system = `${buildSystemPrompt(lang)}\n\n${contextBlock}${addon}`;
 
-  const messages: CoreMessage[] = [
-    { role: "system", content: systemContent },
-  ];
+  const messages: CoreMessage[] = [];
 
   // Add history, then truncate if total estimated tokens exceed the cap
   const historySlice = history.slice(-MAX_HISTORY);
@@ -153,13 +161,14 @@ export function buildMessages(
   }
   messages.push({ role: "user", content: userMessage });
 
-  // Token guard: drop oldest history turns until under the cap
-  let total = messages.reduce((sum, m) => sum + estimateTokens(m.content), 0);
-  while (total > MAX_PROMPT_TOKENS && messages.length > 2) {
-    // messages[0] = system, messages[1] = oldest history — remove it
-    const removed = messages.splice(1, 1)[0];
+  // Token guard: drop oldest history turns until under the cap. The system
+  // text and the current question are counted but never dropped.
+  let total =
+    estimateTokens(system) + messages.reduce((sum, m) => sum + estimateTokens(m.content), 0);
+  while (total > MAX_PROMPT_TOKENS && messages.length > 1) {
+    const removed = messages.splice(0, 1)[0];
     total -= estimateTokens(removed.content);
   }
 
-  return messages;
+  return { system, messages };
 }
