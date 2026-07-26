@@ -2,6 +2,7 @@ import { QdrantClient } from "@qdrant/js-client-rest";
 
 const COLLECTION = process.env.QDRANT_COLLECTION ?? "scheme_embeddings";
 const VECTOR_SIZE = 768;
+const SCORE_THRESHOLD = 0.65;
 
 export function getQdrant(): QdrantClient {
   const url = process.env.QDRANT_URL;
@@ -16,7 +17,6 @@ export async function ensureCollection(): Promise<void> {
       vectors: { size: VECTOR_SIZE, distance: "Cosine" },
     });
   } catch (err) {
-    // Ignore "already exists" — any other error is re-thrown
     const msg = err instanceof Error ? err.message : String(err);
     if (!msg.includes("already exists") && !msg.includes("409")) throw err;
   }
@@ -39,6 +39,7 @@ export async function searchByVector(vector: number[], limit: number): Promise<s
   const results = await client.search(COLLECTION, {
     vector,
     limit,
+    score_threshold: SCORE_THRESHOLD,
     with_payload: false,
   });
   return results.map((r) => String(r.id));

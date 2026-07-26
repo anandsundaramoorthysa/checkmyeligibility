@@ -9,14 +9,17 @@ const SELECT_COLS = `
   application_process, official_url, reviewed_at
 `;
 
+// Module-level singleton — Vercel serverless reuses module state within an
+// instance lifetime, so this cuts connection setup overhead per request.
+let pool: Pool | null = null;
+function getPool(): Pool {
+  if (!pool) pool = new Pool({ connectionString: process.env.DATABASE_URL });
+  return pool;
+}
+
 async function query<T = SchemeRow>(sql: string, params: unknown[] = []): Promise<T[]> {
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-  try {
-    const result = await pool.query(sql, params);
-    return result.rows as T[];
-  } finally {
-    await pool.end();
-  }
+  const result = await getPool().query(sql, params);
+  return result.rows as T[];
 }
 
 export async function fetchApprovedSchemes(intent: Intent, limit = 20): Promise<SchemeRow[]> {

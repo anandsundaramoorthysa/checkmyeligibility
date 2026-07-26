@@ -1,15 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Volume2, VolumeX } from "lucide-react";
+import { ThumbsDown, ThumbsUp, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Message } from "@/lib/types";
 import { LogoMark } from "@/components/brand/Logo";
 import { SchemeResultCard } from "@/components/chat/SchemeResultCard";
 
-/** Strips common markdown syntax so read-aloud doesn't speak raw symbols. */
 function stripMarkdown(text: string): string {
   return text
     .replace(/`{1,3}[^`]*`{1,3}/g, " ")
@@ -20,16 +19,19 @@ function stripMarkdown(text: string): string {
     .trim();
 }
 
-/**
- * One conversation turn in the full-screen layout. User bubbles sit right
- * (navy), assistant bubbles left (surface-card) with a LogoMark avatar; scheme
- * result cards render beneath the assistant text. Assistant turns also get a
- * read-aloud button backed by the browser's speech-synthesis API.
- */
-export function ScreenBubble({ message }: { message: Message }) {
+interface Props {
+  message: Message;
+  /** Last user message before this turn — enables feedback buttons on assistant turns. */
+  feedbackContext?: string;
+  /** Whether this message is currently being streamed (disables feedback until done). */
+  streaming?: boolean;
+}
+
+export function ScreenBubble({ message, feedbackContext, streaming }: Props) {
   const isUser = message.role === "user";
   const [speaking, setSpeaking] = useState(false);
   const [ttsSupported, setTtsSupported] = useState(false);
+  const [feedbackVote, setFeedbackVote] = useState<"up" | "down" | null>(null);
 
   useEffect(() => {
     setTtsSupported(typeof window !== "undefined" && "speechSynthesis" in window);
@@ -54,6 +56,25 @@ export function ScreenBubble({ message }: { message: Message }) {
     utterance.onerror = () => setSpeaking(false);
     window.speechSynthesis.speak(utterance);
     setSpeaking(true);
+  }
+
+  async function submitFeedback(vote: "up" | "down") {
+    if (feedbackVote) return;
+    setFeedbackVote(vote);
+    try {
+      await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          vote,
+          userMessage: feedbackContext ?? "",
+          botSnippet: message.content.slice(0, 300),
+          hasSchemes: (message.schemeResults?.length ?? 0) > 0,
+        }),
+      });
+    } catch {
+      // fire-and-forget — failure is silent
+    }
   }
 
   if (isUser) {
@@ -98,23 +119,54 @@ export function ScreenBubble({ message }: { message: Message }) {
             {message.content}
           </ReactMarkdown>
 
-          {ttsSupported && (
-            <button
-              type="button"
-              onClick={toggleSpeak}
-              aria-label={speaking ? "Stop reading aloud" : "Read message aloud"}
-              title={speaking ? "Stop reading aloud" : "Read message aloud"}
-              className={cn(
-                "mt-2 grid h-7 w-7 place-items-center rounded-full text-ink-faint transition-colors hover:bg-surface-subtle hover:text-navy",
-                speaking && "text-saffron-deep",
+          {/* Action bar: read-aloud + feedback */}
+          {!streaming && (
+            <div className="mt-2 flex items-center gap-1">
+              {ttsSupported && (
+                <button
+                  type="button"
+                  onClick={toggleSpeak}
+                  aria-label={speaking ? "Stop reading aloud" : "Read message aloud"}
+                  className={cn(
+                    "grid h-7 w-7 place-items-center rounded-full text-ink-faint transition-colors hover:bg-surface-subtle hover:text-navy",
+                    speaking && "text-saffron-deep",
+                  )}
+                >
+                  {speaking ? <VolumeX size={14} aria-hidden="true" /> : <Volume2 size={14} aria-hidden="true" />}
+                </button>
               )}
-            >
-              {speaking ? (
-                <VolumeX size={14} aria-hidden="true" />
-              ) : (
-                <Volume2 size={14} aria-hidden="true" />
+
+              {feedbackContext !== undefined && (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => submitFeedback("up")}
+                    disabled={!!feedbackVote}
+                    aria-label="Helpful"
+                    title="Helpful"
+                    className={cn(
+                      "grid h-7 w-7 place-items-center rounded-full text-ink-faint transition-colors hover:bg-surface-subtle hover:text-green-600",
+                      feedbackVote === "up" && "text-green-600",
+                    )}
+                  >
+                    <ThumbsUp size={13} aria-hidden="true" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => submitFeedback("down")}
+                    disabled={!!feedbackVote}
+                    aria-label="Not helpful"
+                    title="Not helpful"
+                    className={cn(
+                      "grid h-7 w-7 place-items-center rounded-full text-ink-faint transition-colors hover:bg-surface-subtle hover:text-red-500",
+                      feedbackVote === "down" && "text-red-500",
+                    )}
+                  >
+                    <ThumbsDown size={13} aria-hidden="true" />
+                  </button>
+                </>
               )}
-            </button>
+            </div>
           )}
         </div>
 
@@ -130,7 +182,6 @@ export function ScreenBubble({ message }: { message: Message }) {
   );
 }
 
-/** Assistant "thinking" indicator: avatar + three staggered dots. */
 export function ScreenTyping() {
   return (
     <div className="flex animate-fade-in items-end gap-2.5" aria-hidden="true">

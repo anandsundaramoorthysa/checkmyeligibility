@@ -1,5 +1,6 @@
 import type { Scheme, EligibilityCriterion, RequiredDocument, SchemeCategory } from "@/lib/types";
 import type { SchemeRow } from "./db";
+import { joinArray, firstOfArray } from "./utils";
 
 const BENEFIT_TO_CATEGORY: Record<string, SchemeCategory> = {
   scholarship: "scholarship",
@@ -11,32 +12,8 @@ const BENEFIT_TO_CATEGORY: Record<string, SchemeCategory> = {
   stipend: "fellowship",
 };
 
-function joinArray(val: unknown): string {
-  if (Array.isArray(val)) return val.filter(Boolean).join(", ");
-  if (typeof val === "string") {
-    try {
-      const parsed: unknown = JSON.parse(val);
-      if (Array.isArray(parsed)) return parsed.filter(Boolean).join(", ");
-    } catch { /* not JSON */ }
-    return val;
-  }
-  return val ? String(val) : "";
-}
-
-function firstArray(val: unknown): string {
-  if (Array.isArray(val)) return String(val[0] ?? "");
-  if (typeof val === "string") {
-    try {
-      const parsed: unknown = JSON.parse(val);
-      if (Array.isArray(parsed)) return String(parsed[0] ?? "");
-    } catch { /* not JSON */ }
-    return val;
-  }
-  return val ? String(val) : "";
-}
-
 function toCategory(row: SchemeRow): SchemeCategory {
-  const bt = firstArray(row.benefit_type).toLowerCase().replace(/\s+/g, "_");
+  const bt = firstOfArray(row.benefit_type).toLowerCase().replace(/\s+/g, "_");
   return BENEFIT_TO_CATEGORY[bt] ?? "scholarship";
 }
 
@@ -84,6 +61,8 @@ export function rowToScheme(row: SchemeRow): Scheme {
     benefits.push(withAmount);
   }
 
+  // The DB schema does not have level/states columns yet — all current schemes
+  // are central government schemes. Add DB columns when state schemes are ingested.
   return {
     id: String(row.id),
     slug: String(row.slug ?? row.id),
@@ -100,6 +79,6 @@ export function rowToScheme(row: SchemeRow): Scheme {
     lastVerified: row.reviewed_at
       ? new Date(row.reviewed_at as string).toISOString()
       : undefined,
-    source: "state-portal",
+    source: "myscheme",
   };
 }

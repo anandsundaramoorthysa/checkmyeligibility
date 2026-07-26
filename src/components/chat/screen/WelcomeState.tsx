@@ -65,7 +65,14 @@ export function WelcomeState({ onPick, lang }: Props) {
         </span>
       </div>
 
-      <h1 className="mt-6 text-balance font-display text-3xl font-extrabold tracking-tight text-navy-deep motion-safe:animate-welcome-rise sm:text-4xl">
+      <p
+        aria-label="Eli AI"
+        className="mt-4 text-sm font-semibold tracking-widest text-saffron-deep uppercase motion-safe:animate-welcome-rise"
+      >
+        Eli AI
+      </p>
+
+      <h1 className="mt-2 text-balance font-display text-3xl font-extrabold tracking-tight text-navy-deep motion-safe:animate-welcome-rise sm:text-4xl">
         {t.welcomeTitle}
       </h1>
 

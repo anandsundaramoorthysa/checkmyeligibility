@@ -1,42 +1,34 @@
-import { NextResponse } from "next/server";
-import { generateText } from "ai";
+import { streamText } from "ai";
 import { createGroq } from "@ai-sdk/groq";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import type { BotTurn, Message, QuickReply, Scheme } from "@/lib/types";
 import { retrieve } from "@/lib/chat/retrieval";
-import { buildMessages } from "@/lib/chat/systemPrompt";
-import { mockEngine } from "@/lib/chat/mockEngine";
+import { buildMessages, MAX_HISTORY } from "@/lib/chat/systemPrompt";
+import { sanitizeInput, checkInput, validateOutput } from "@/lib/chat/guardrail";
 
 export const runtime = "nodejs";
 
 const MAX_BODY_BYTES = 64 * 1024;
 const MAX_MESSAGE_CHARS = 2000;
-const MAX_HISTORY_ITEMS = 30;
 
-// Simple in-memory rate limit — resets per serverless instance cold start.
-// Protects against burst spam within a single instance lifetime.
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 20;
 const ipHits = new Map<string, { count: number; resetAt: number }>();
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
+  // Prune expired entries to prevent unbounded Map growth
+  Array.from(ipHits.entries()).forEach(([key, entry]) => {
+    if (now > entry.resetAt) ipHits.delete(key);
+  });
   const entry = ipHits.get(ip);
-  if (!entry || now > entry.resetAt) {
+  if (!entry) {
     ipHits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
     return false;
   }
   entry.count++;
   return entry.count > RATE_LIMIT_MAX;
 }
-
-const FALLBACK: BotTurn = {
-  messages: [{ content: "Sorry, something went wrong. Please try again in a moment." }],
-  quickReplies: [
-    { label: "Try again", send: "What scholarships am I eligible for?" },
-    { label: "Education loan", send: "I need an education loan for my studies" },
-  ],
-};
 
 const BUSY_MESSAGE =
   "I'm handling a lot of requests right now. Please try again in a moment, or visit scholarships.gov.in directly.";
@@ -60,93 +52,161 @@ function buildQuickReplies(schemes: Scheme[], hasResults: boolean): QuickReply[]
   ];
 }
 
-async function callLLM(
-  messages: { role: "system" | "user" | "assistant"; content: string }[],
-): Promise<string> {
-  if (process.env.GROQ_API_KEY) {
-    try {
-      const groq = createGroq({ apiKey: process.env.GROQ_API_KEY });
-      const { text } = await generateText({
-        model: groq("llama-3.3-70b-versatile"),
-        messages,
+function isRateLimit(err: unknown): boolean {
+  const msg = err instanceof Error ? err.message : String(err);
+  return msg.includes("429") || msg.toLowerCase().includes("rate limit");
+}
+
+function fallbackJson(turn: BotTurn): Response {
+  return new Response(JSON.stringify(turn), {
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
+export async function POST(req: Request): Promise<Response> {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (isRateLimited(ip)) {
+    return fallbackJson({
+      messages: [{ content: "Too many requests. Please wait a moment before trying again." }],
+      quickReplies: [{ label: "Try again", send: "What scholarships am I eligible for?" }],
+    });
+  }
+
+  const declaredLen = Number(req.headers.get("content-length") ?? 0);
+  if (declaredLen > MAX_BODY_BYTES) {
+    return new Response(JSON.stringify({ error: "Payload too large" }), { status: 413 });
+  }
+
+  let body: { message?: string; history?: Message[]; lang?: string };
+  try {
+    body = await req.json();
+  } catch {
+    return new Response(JSON.stringify({ error: "Invalid JSON body" }), { status: 400 });
+  }
+
+  const rawMessage = typeof body.message === "string" ? body.message : "";
+  const message = sanitizeInput(rawMessage);
+  if (!message) return new Response(JSON.stringify({ error: "Missing 'message'" }), { status: 400 });
+  if (message.length > MAX_MESSAGE_CHARS) {
+    return new Response(JSON.stringify({ error: "Message too long" }), { status: 413 });
+  }
+
+  // Guardrail check — block prompt injections, off-topic, PII solicitation
+  const guard = checkInput(message);
+  if (guard.blocked) return fallbackJson(guard.response);
+
+  const lang = typeof body.lang === "string" ? body.lang : undefined;
+  const history = (Array.isArray(body.history) ? body.history : [])
+    .filter((m): m is Message => !!m && typeof m.content === "string")
+    .slice(-MAX_HISTORY);
+
+  const hasBackend = process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY;
+  if (!hasBackend && process.env.NODE_ENV !== "production") {
+    const { mockEngine } = await import("@/lib/chat/mockEngine");
+    return fallbackJson(await mockEngine.send(message, history).catch(() => ({
+      messages: [{ content: "Sorry, something went wrong." }],
+    })));
+  }
+
+  let schemes: Scheme[] = [];
+  try {
+    schemes = await retrieve(message, history);
+  } catch {
+    // continue with empty schemes — LLM will say no matches
+  }
+
+  const llmMessages = buildMessages(message, history, schemes, lang);
+  const quickReplies = buildQuickReplies(schemes, schemes.length > 0);
+
+  const encoder = new TextEncoder();
+
+  const stream = new ReadableStream({
+    async start(controller) {
+      const send = (obj: unknown) =>
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify(obj)}\n\n`));
+
+      // Send scheme metadata immediately so UI can render cards while text streams
+      send({
+        type: "meta",
+        schemeResults: schemes.length ? schemes : undefined,
+        quickReplies,
       });
-      return text;
-    } catch {
-      // fall through to Gemini
+
+      try {
+        await streamLLM(llmMessages, send);
+      } catch {
+        send({ type: "token", text: BUSY_MESSAGE });
+      }
+
+      send({ type: "done" });
+      controller.close();
+    },
+  });
+
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache, no-transform",
+      "X-Accel-Buffering": "no",
+    },
+  });
+}
+
+async function streamLLM(
+  messages: { role: "system" | "user" | "assistant"; content: string }[],
+  send: (obj: unknown) => void,
+): Promise<void> {
+  // Try Groq with one retry on rate limit
+  if (process.env.GROQ_API_KEY) {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const groq = createGroq({ apiKey: process.env.GROQ_API_KEY });
+        const { textStream } = streamText({
+          model: groq("llama-3.3-70b-versatile"),
+          messages,
+        });
+        let fullText = "";
+        for await (const chunk of textStream) {
+          fullText += chunk;
+          send({ type: "token", text: chunk });
+        }
+        // Validate output before marking done (strip non-.gov.in URLs etc.)
+        const validated = validateOutput(fullText);
+        if (validated !== fullText) {
+          // Output was modified — tell client to replace content
+          send({ type: "replace", text: validated });
+        }
+        return;
+      } catch (err) {
+        if (attempt === 0 && isRateLimit(err)) {
+          await new Promise((r) => setTimeout(r, 1200));
+          continue;
+        }
+        break;
+      }
     }
   }
 
+  // Gemini fallback
   if (process.env.GEMINI_API_KEY) {
     try {
       const google = createGoogleGenerativeAI({ apiKey: process.env.GEMINI_API_KEY });
-      const { text } = await generateText({
+      const { textStream } = streamText({
         model: google("gemini-2.5-flash"),
         messages,
       });
-      return text;
+      let fullText = "";
+      for await (const chunk of textStream) {
+        fullText += chunk;
+        send({ type: "token", text: chunk });
+      }
+      const validated = validateOutput(fullText);
+      if (validated !== fullText) send({ type: "replace", text: validated });
+      return;
     } catch {
       // fall through
     }
   }
 
-  return BUSY_MESSAGE;
-}
-
-export async function POST(req: Request): Promise<NextResponse> {
-  // Rate limiting
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  if (isRateLimited(ip)) {
-    return NextResponse.json(
-      { messages: [{ content: "Too many requests. Please wait a moment before trying again." }] },
-      { status: 429 },
-    );
-  }
-
-  const declaredLen = Number(req.headers.get("content-length") ?? 0);
-  if (declaredLen > MAX_BODY_BYTES) {
-    return NextResponse.json({ error: "Payload too large" }, { status: 413 });
-  }
-
-  let body: { message?: string; history?: Message[] };
-  try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
-  }
-
-  const message = (typeof body.message === "string" ? body.message : "").trim();
-  if (!message) return NextResponse.json({ error: "Missing 'message'" }, { status: 400 });
-  if (message.length > MAX_MESSAGE_CHARS) {
-    return NextResponse.json({ error: "Message too long" }, { status: 413 });
-  }
-
-  const history = (Array.isArray(body.history) ? body.history : [])
-    .filter((m): m is Message => !!m && typeof m.content === "string")
-    .slice(-MAX_HISTORY_ITEMS);
-
-  // Dev fallback — mock engine when no API keys are configured
-  const hasBackend = process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY;
-  if (!hasBackend && process.env.NODE_ENV !== "production") {
-    try {
-      return NextResponse.json(await mockEngine.send(message, history));
-    } catch {
-      return NextResponse.json(FALLBACK);
-    }
-  }
-
-  try {
-    const schemes = await retrieve(message);
-    const llmMessages = buildMessages(message, history, schemes);
-    const text = await callLLM(llmMessages);
-
-    const turn: BotTurn = {
-      messages: [{ content: text }],
-      schemeResults: schemes.length ? schemes : undefined,
-      quickReplies: buildQuickReplies(schemes, schemes.length > 0),
-    };
-    return NextResponse.json(turn);
-  } catch (err) {
-    console.error("[chat] error:", err);
-    return NextResponse.json(FALLBACK);
-  }
+  send({ type: "token", text: BUSY_MESSAGE });
 }

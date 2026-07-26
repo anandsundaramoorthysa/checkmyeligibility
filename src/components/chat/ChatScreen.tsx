@@ -1,15 +1,16 @@
-﻿"use client";
+"use client";
 
 import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type UIEvent,
 } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ChevronDown } from "lucide-react";
-import type { BotTurn, LangCode, Message, QuickReply } from "@/lib/types";
+import type { BotTurn, LangCode, Message, QuickReply, Scheme } from "@/lib/types";
 import { sendToBot } from "@/lib/chat/client";
 import {
   DEFAULT_FONT_STEP_INDEX,
@@ -29,16 +30,13 @@ import { ScreenBubble, ScreenTyping } from "./screen/ScreenBubble";
 import { FollowUpChips } from "./screen/FollowUpChips";
 import { Composer } from "./screen/Composer";
 
-const TYPING_MS = 650;
 const STORAGE_KEY = "CheckMyEligibility-chat";
 const MAX_PERSISTED = 20;
 
 interface Props {
-  /** Optional seed query (from /chat?q=…) auto-sent once on mount. */
   initialQuery: string;
 }
 
-/** Build the assistant Message(s) for one BotTurn (mirrors ChatPanel). */
 function turnToMessages(turn: BotTurn): {
   messages: Message[];
   quickReplies: QuickReply[];
@@ -53,15 +51,11 @@ function turnToMessages(turn: BotTurn): {
   return { messages, quickReplies: turn.quickReplies ?? [] };
 }
 
-/**
- * The full-screen CheckMyEligibility assistant: ambient background, slim header, a
- * scrollable centered conversation (welcome overlay when empty), follow-up
- * chips, a fixed bottom composer, and a scroll-to-bottom pill.
- */
 export function ChatScreen({ initialQuery }: Props) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [quickReplies, setQuickReplies] = useState<QuickReply[]>([]);
   const [typing, setTyping] = useState(false);
+  const [streamingMsgId, setStreamingMsgId] = useState<string | null>(null);
   const [showJump, setShowJump] = useState(false);
   const [fontStepIndex, setFontStepIndex] = useState(DEFAULT_FONT_STEP_INDEX);
   const [soundOn, setSoundOn] = useState(false);
@@ -74,21 +68,21 @@ export function ChatScreen({ initialQuery }: Props) {
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const atBottomRef = useRef(true);
   const typingRef = useRef(false);
-  typingRef.current = typing;
+  typingRef.current = typing || streamingMsgId !== null;
   const soundOnRef = useRef(soundOn);
   soundOnRef.current = soundOn;
+  const langRef = useRef(lang);
+  langRef.current = lang;
   const sendRef = useRef<(t: string) => void>(() => {});
-  const seededRef = useRef(false);
-  const restoredRef = useRef(false);
-  const prefsRestoredRef = useRef(false);
   const cancelledRef = useRef<{ cancelled: boolean } | null>(null);
+  const prefsRestoredRef = useRef(false);
 
   const hasMessages = messages.length > 0;
 
-  // Restore a persisted transcript on mount (settled snapshot only).
+  // Restore transcript + fire ?q= seed in one effect so seed always has history.
+  // A9 fix: seed fires AFTER transcript is restored (same effect, sequential).
   useEffect(() => {
-    if (restoredRef.current) return;
-    restoredRef.current = true;
+    // Restore transcript
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
@@ -98,9 +92,17 @@ export function ChatScreen({ initialQuery }: Props) {
     } catch {
       /* ignore corrupt storage */
     }
+
+    // Auto-send ?q= after restoration is scheduled (defer by one task)
+    const q = initialQuery.trim();
+    if (q) {
+      try { window.history.replaceState({}, "", window.location.pathname); } catch { /* ignore */ }
+      setTimeout(() => sendRef.current(q.slice(0, 1000)), 0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Restore text size / sound / language preferences on mount.
+  // Restore preferences on mount
   useEffect(() => {
     if (prefsRestoredRef.current) return;
     prefsRestoredRef.current = true;
@@ -109,38 +111,31 @@ export function ChatScreen({ initialQuery }: Props) {
     setLang(getStoredLang());
   }, []);
 
-  // Apply the text-size preference to the page while the assistant is open;
-  // restore the default size when leaving so other routes are unaffected.
   useEffect(() => {
     document.documentElement.style.fontSize = `${FONT_SCALE_STEPS[fontStepIndex]}%`;
-    return () => {
-      document.documentElement.style.fontSize = "";
-    };
+    return () => { document.documentElement.style.fontSize = ""; };
   }, [fontStepIndex]);
 
-  // Persist the transcript (only when settled, capped).
+  // Persist transcript when not streaming
   useEffect(() => {
-    if (typing) return;
+    if (typing || streamingMsgId) return;
     try {
       if (messages.length) {
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify(messages.slice(-MAX_PERSISTED)),
-        );
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(messages.slice(-MAX_PERSISTED)));
       } else {
         localStorage.removeItem(STORAGE_KEY);
       }
     } catch {
-      /* ignore quota / disabled storage */
+      /* ignore quota */
     }
-  }, [messages, typing]);
+  }, [messages, typing, streamingMsgId]);
 
-  // Auto-scroll to the latest message unless the user has scrolled up.
+  // Auto-scroll
   useEffect(() => {
     if (atBottomRef.current) {
       endRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }, [messages, typing]);
+  }, [messages, typing, streamingMsgId]);
 
   const send = useCallback(async (text: string) => {
     const trimmed = text.trim();
@@ -161,15 +156,56 @@ export function ChatScreen({ initialQuery }: Props) {
     setQuickReplies([]);
     setTyping(true);
 
-    const turn = await new Promise<BotTurn>((resolve) => {
-      setTimeout(async () => resolve(await sendToBot(trimmed, history)), TYPING_MS);
-    });
+    const botMsgId = uuidv4();
+    let metaFired = false;
+
+    const onMeta = (schemes: Scheme[] | undefined, qr: QuickReply[]) => {
+      if (token.cancelled) return;
+      metaFired = true;
+      setTyping(false);
+      setStreamingMsgId(botMsgId);
+      setQuickReplies(qr);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: botMsgId,
+          role: "assistant" as const,
+          content: "",
+          createdAt: Date.now(),
+          schemeResults: schemes,
+        },
+      ]);
+    };
+
+    const onToken = (t: string) => {
+      if (token.cancelled) return;
+      setMessages((prev) =>
+        prev.map((m) => m.id === botMsgId ? { ...m, content: m.content + t } : m),
+      );
+    };
+
+    const turn = await sendToBot(trimmed, history, langRef.current, onToken, onMeta);
     if (token.cancelled) return;
 
-    const { messages: botMsgs, quickReplies: qr } = turnToMessages(turn);
-    setTyping(false);
-    setMessages([...messagesRef.current, ...botMsgs]);
-    setQuickReplies(qr);
+    setStreamingMsgId(null);
+
+    if (!metaFired) {
+      // Error/fallback path — meta never arrived, add complete message now
+      setTyping(false);
+      const { messages: botMsgs, quickReplies: qr } = turnToMessages(turn);
+      setMessages((prev) => [...prev, ...botMsgs]);
+      setQuickReplies(qr);
+    } else {
+      // Finalize: update content + schemeResults from the resolved turn
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === botMsgId
+            ? { ...m, content: turn.messages[0]?.content ?? m.content, schemeResults: turn.schemeResults ?? m.schemeResults }
+            : m,
+        ),
+      );
+    }
+
     if (soundOnRef.current) playChime();
   }, []);
 
@@ -178,17 +214,14 @@ export function ChatScreen({ initialQuery }: Props) {
   const stop = useCallback(() => {
     if (cancelledRef.current) cancelledRef.current.cancelled = true;
     setTyping(false);
+    setStreamingMsgId(null);
   }, []);
 
   const reset = useCallback(() => {
     stop();
     setMessages([]);
     setQuickReplies([]);
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      /* ignore */
-    }
+    try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
   }, [stop]);
 
   const increaseFont = useCallback(() => {
@@ -229,28 +262,21 @@ export function ChatScreen({ initialQuery }: Props) {
     document.getElementById(`msg-${id}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, []);
 
-  // ?q= deep-link: auto-send once on mount, then leave the URL clean.
-  // Guarded by seededRef so it fires exactly once (incl. under dev StrictMode's
-  // double-invoked effects); calling send directly avoids a timeout/cleanup race.
-  useEffect(() => {
-    if (seededRef.current) return;
-    const q = initialQuery.trim();
-    if (!q) return;
-    seededRef.current = true;
-    try {
-      window.history.replaceState({}, "", window.location.pathname);
-    } catch {
-      /* ignore */
+  // Build feedbackContext map: for each assistant message, store the preceding user message
+  const feedbackContextMap = useMemo(() => {
+    const map = new Map<string, string>();
+    let lastUser = "";
+    for (const m of messages) {
+      if (m.role === "user") lastUser = m.content;
+      else if (m.role === "assistant") map.set(m.id, lastUser);
     }
-    sendRef.current(q.slice(0, 1000));
-  }, [initialQuery]);
+    return map;
+  }, [messages]);
 
-  // Keyboard: "/" focuses the composer, "Esc" stops a pending turn.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const el = document.activeElement;
-      const isTyping =
-        el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement;
+      const isTyping = el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement;
       if (e.key === "/" && !isTyping) {
         e.preventDefault();
         composerRef.current?.focus();
@@ -274,21 +300,17 @@ export function ChatScreen({ initialQuery }: Props) {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }
 
-  // Follow-ups: latest settled assistant turn's chips, minus already-asked.
   const last = messages[messages.length - 1];
   const asked = new Set(
-    messages
-      .filter((m) => m.role === "user")
-      .map((m) => m.content.trim().toLowerCase()),
+    messages.filter((m) => m.role === "user").map((m) => m.content.trim().toLowerCase()),
   );
   const activeFollowUps =
-    !typing && last && last.role === "assistant"
+    !typing && !streamingMsgId && last && last.role === "assistant"
       ? quickReplies.filter((r) => !asked.has(r.send.trim().toLowerCase()))
       : [];
 
   return (
     <div className="relative flex h-full flex-col overflow-hidden bg-surface">
-      {/* Ambient tricolor background */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-saffron/15 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-green/10 blur-3xl" />
@@ -324,7 +346,11 @@ export function ChatScreen({ initialQuery }: Props) {
             >
               {messages.map((m) => (
                 <div key={m.id} id={`msg-${m.id}`}>
-                  <ScreenBubble message={m} />
+                  <ScreenBubble
+                    message={m}
+                    feedbackContext={m.role === "assistant" ? feedbackContextMap.get(m.id) : undefined}
+                    streaming={m.id === streamingMsgId}
+                  />
                 </div>
               ))}
               {typing && <ScreenTyping />}
@@ -336,7 +362,6 @@ export function ChatScreen({ initialQuery }: Props) {
           )}
         </div>
 
-        {/* Scroll-to-bottom pill */}
         {showJump && (
           <button
             type="button"
@@ -353,7 +378,7 @@ export function ChatScreen({ initialQuery }: Props) {
             ref={composerRef}
             onSend={send}
             onStop={stop}
-            pending={typing}
+            pending={typing || streamingMsgId !== null}
             lang={lang}
             onLangChange={onLangChange}
           />

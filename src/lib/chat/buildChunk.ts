@@ -1,19 +1,9 @@
-function joinArray(val: unknown): string {
-  if (Array.isArray(val)) return val.filter(Boolean).join(", ");
-  if (typeof val === "string") {
-    try {
-      const parsed: unknown = JSON.parse(val);
-      if (Array.isArray(parsed)) return parsed.filter(Boolean).join(", ");
-    } catch {
-      // not JSON — return as-is
-    }
-    return val;
-  }
-  return val ? String(val) : "";
-}
+import { joinArray } from "./utils";
 
 export function buildChunk(scheme: Record<string, unknown>): string {
   const parts: string[] = [`Scheme: ${scheme.name ?? ""}`];
+
+  if (scheme.description) parts.push(`Description: ${scheme.description}`);
 
   const category = joinArray(scheme.category);
   if (category) parts.push(`Category: ${category}`);
