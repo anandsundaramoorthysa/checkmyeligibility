@@ -22,6 +22,7 @@ export async function POST(req: Request): Promise<NextResponse> {
   const rows = await fetchAllApprovedSchemes();
   let embedded = 0;
   let failed = 0;
+  let firstError: string | null = null;
 
   for (const row of rows) {
     try {
@@ -31,9 +32,10 @@ export async function POST(req: Request): Promise<NextResponse> {
       embedded++;
     } catch (err) {
       console.error(`[embed/all] failed for scheme ${row.id}:`, err);
+      if (!firstError) firstError = err instanceof Error ? err.message : String(err);
       failed++;
     }
   }
 
-  return NextResponse.json({ embedded, failed, total: rows.length });
+  return NextResponse.json({ embedded, failed, total: rows.length, firstError });
 }
