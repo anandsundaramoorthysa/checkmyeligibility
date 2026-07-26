@@ -44,6 +44,8 @@ const VALID_STATES = new Set([
 ]);
 
 const STATE_NAME_MAP = {
+  "all india": "all-india",
+  "all-india": "all-india",
   "andhra pradesh": "andhra-pradesh",
   "assam": "assam",
   "bihar": "bihar",
@@ -118,7 +120,8 @@ JSON format: {"level": "...", "states": ["..."]}`;
   if (!jsonMatch) throw new Error(`No JSON in response: ${text.slice(0, 100)}`);
 
   const parsed = JSON.parse(jsonMatch[0]);
-  const level = ["central", "state", "central-state"].includes(parsed.level) ? parsed.level : "central";
+  const rawLevel = (parsed.level ?? "central").toLowerCase().replace(/\s+/g, "-");
+  const level = ["central", "state", "central-state"].includes(rawLevel) ? rawLevel : "central";
   const rawStates = Array.isArray(parsed.states) ? parsed.states : ["all-india"];
   const states = rawStates
     .map((s) => (typeof s === "string" ? normalizeState(s) : null))

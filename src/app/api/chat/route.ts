@@ -6,6 +6,7 @@ import { retrieve } from "@/lib/chat/retrieval";
 import { buildMessages, MAX_HISTORY, isComparisonIntent, isGrievanceIntent } from "@/lib/chat/systemPrompt";
 import { sanitizeInput, checkInput, validateOutput } from "@/lib/chat/guardrail";
 import { isRateLimited } from "@/lib/chat/rateLimiter";
+import { logChat, hashIp } from "@/lib/chat/chatLogger";
 
 export const runtime = "nodejs";
 
@@ -46,7 +47,9 @@ function fallbackJson(turn: BotTurn): Response {
 }
 
 export async function POST(req: Request): Promise<Response> {
+  const t0 = Date.now();
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const ipHash = hashIp(ip);
 
   // Cross-instance rate limiting via Neon DB
   const limited = await isRateLimited(ip);
@@ -78,7 +81,10 @@ export async function POST(req: Request): Promise<Response> {
 
   // Guardrail check — block prompt injections, off-topic, PII solicitation
   const guard = checkInput(message);
-  if (guard.blocked) return fallbackJson(guard.response);
+  if (guard.blocked) {
+    logChat({ ipHash, message, schemeCount: 0, isFallback: false, isComparison: false, isGrievance: false, isBlocked: true, blockReason: guard.reason, latencyMs: Date.now() - t0 });
+    return fallbackJson(guard.response);
+  }
 
   const lang = typeof body.lang === "string" ? body.lang : undefined;
   const history = (Array.isArray(body.history) ? body.history : [])
@@ -103,6 +109,19 @@ export async function POST(req: Request): Promise<Response> {
   // Detect intent modes
   const comparisonMode = isComparisonIntent(message);
   const grievanceMode = isGrievanceIntent(message);
+
+  // Log the request (fire-and-forget — does not delay the stream)
+  logChat({
+    ipHash,
+    message,
+    schemeCount: schemes.length,
+    schemeSlugs: schemes.map((s) => s.slug).filter(Boolean),
+    isFallback: schemes.length === 0,
+    isComparison: comparisonMode,
+    isGrievance: grievanceMode,
+    isBlocked: false,
+    latencyMs: Date.now() - t0,
+  });
 
   const llmMessages = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode });
   const quickReplies = buildQuickReplies(schemes, schemes.length > 0);
