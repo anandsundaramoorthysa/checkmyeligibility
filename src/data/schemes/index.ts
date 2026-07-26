@@ -13,6 +13,7 @@ import { centralVigilanceCommissionInternshipScheme } from "./central-vigilance-
 import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarship-programme";
 import { haryanaBocwScholarshipProfessionalTechnicalCourses } from "./haryana-bocw-scholarship-professional-technical-courses";
 import { higherEducationAssistanceSchemeGujarat } from "./higher-education-assistance-scheme-gujarat";
+import { indianOilAcademicScholarshipScheme } from "./indian-oil-academic-scholarship-scheme";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
 import { isiStipendSchemeUgPgDiploma } from "./isi-stipend-scheme-ug-pg-diploma";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
@@ -40,6 +41,7 @@ export const SCHEMES: Scheme[] = [
   deepikaStudentScholarshipProgramme,
   haryanaBocwScholarshipProfessionalTechnicalCourses,
   higherEducationAssistanceSchemeGujarat,
+  indianOilAcademicScholarshipScheme,
   inspireScholarshipForHigherEducation,
   isiStipendSchemeUgPgDiploma,
   jaganannaVidyaDeevenaFeeReimbursement,
