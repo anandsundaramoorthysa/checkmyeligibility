@@ -6,7 +6,7 @@ export type SchemeRow = Record<string, unknown>;
 const SELECT_COLS = `
   id, slug, name, category, education_level, beneficiary_gender,
   benefit_type, amount, description, eligibility, documents,
-  application_process, official_url, reviewed_at
+  application_process, official_url, level, states, reviewed_at
 `;
 
 // Module-level singleton — Vercel serverless reuses module state within an

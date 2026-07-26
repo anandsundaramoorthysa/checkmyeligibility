@@ -67,6 +67,16 @@ function buildChunk(row) {
   if (row.documents) parts.push(`Documents required: ${row.documents}`);
   if (row.application_process) parts.push(`How to apply: ${row.application_process}`);
   if (row.official_url) parts.push(`Official URL: ${row.official_url}`);
+
+  const lvl = row.level;
+  if (lvl && lvl !== "central") parts.push(`Government level: ${lvl}`);
+
+  const statesRaw = row.states;
+  let statesArr = [];
+  try { statesArr = typeof statesRaw === "string" ? JSON.parse(statesRaw) : (statesRaw ?? []); } catch { /* ignore */ }
+  const statesList = Array.isArray(statesArr) ? statesArr.filter((s) => s !== "all-india").join(", ") : "";
+  if (statesList) parts.push(`Applicable states: ${statesList}`);
+
   return parts.join("\n");
 }
 
@@ -132,7 +142,7 @@ const sql = neon(DB_URL);
 const rows = await sql`
   SELECT id, slug, name, category, education_level, beneficiary_gender,
          benefit_type, amount, description, eligibility, documents,
-         application_process, official_url, reviewed_at
+         application_process, official_url, level, states, reviewed_at
   FROM schemes
   WHERE status = 'approved'
   ORDER BY reviewed_at DESC NULLS LAST

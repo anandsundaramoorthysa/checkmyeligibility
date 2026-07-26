@@ -18,19 +18,22 @@ const FALLBACK_TURN: BotTurn = {
  * Streams a chat turn from /api/chat via SSE.
  * Calls onToken for each text chunk so the UI can render progressively.
  * Returns the complete BotTurn when the stream ends.
+ * Pass an AbortSignal to cancel mid-stream when the user clicks Stop.
  */
 export async function sendToBot(
   message: string,
   history: Message[],
   lang: LangCode,
   onToken: TokenCallback,
-  onMeta: (schemes: Scheme[] | undefined, quickReplies: QuickReply[]) => void,
+  onMeta: (schemes: Scheme[] | undefined, quickReplies: QuickReply[], comparisonMode?: boolean) => void,
+  signal?: AbortSignal,
 ): Promise<BotTurn> {
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ message, history, lang }),
+      signal,
     });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -50,6 +53,7 @@ export async function sendToBot(
     let schemeResults: Scheme[] | undefined;
     let quickReplies: QuickReply[] = [];
     let fullText = "";
+    let comparisonMode = false;
 
     while (true) {
       const { done, value } = await reader.read();
@@ -65,7 +69,7 @@ export async function sendToBot(
         const data = line.slice(6).trim();
         if (!data || data === "[DONE]") continue;
 
-        let obj: { type: string; schemeResults?: Scheme[]; quickReplies?: QuickReply[]; text?: string };
+        let obj: { type: string; schemeResults?: Scheme[]; quickReplies?: QuickReply[]; text?: string; comparisonMode?: boolean };
         try {
           obj = JSON.parse(data);
         } catch {
@@ -75,7 +79,8 @@ export async function sendToBot(
         if (obj.type === "meta") {
           schemeResults = obj.schemeResults;
           quickReplies = obj.quickReplies ?? [];
-          onMeta(schemeResults, quickReplies);
+          comparisonMode = obj.comparisonMode ?? false;
+          onMeta(schemeResults, quickReplies, comparisonMode);
         } else if (obj.type === "token" && obj.text) {
           fullText += obj.text;
           onToken(obj.text);
@@ -91,7 +96,11 @@ export async function sendToBot(
       schemeResults,
       quickReplies: quickReplies.length ? quickReplies : undefined,
     };
-  } catch {
+  } catch (err) {
+    // AbortError is expected when the user clicks Stop — return empty turn
+    if (err instanceof Error && err.name === "AbortError") {
+      return { messages: [{ content: "" }] };
+    }
     return FALLBACK_TURN;
   }
 }

@@ -1,4 +1,4 @@
-import type { Scheme, EligibilityCriterion, RequiredDocument, SchemeCategory } from "@/lib/types";
+import type { Scheme, EligibilityCriterion, RequiredDocument, SchemeCategory, LevelOfGovernment, IndianState } from "@/lib/types";
 import type { SchemeRow } from "./db";
 import { joinArray, firstOfArray } from "./utils";
 
@@ -61,8 +61,16 @@ export function rowToScheme(row: SchemeRow): Scheme {
     benefits.push(withAmount);
   }
 
-  // The DB schema does not have level/states columns yet — all current schemes
-  // are central government schemes. Add DB columns when state schemes are ingested.
+  const VALID_LEVELS = new Set<string>(["central", "state", "central-state"]);
+  const rawLevel = String(row.level ?? "central");
+  const level: LevelOfGovernment = VALID_LEVELS.has(rawLevel) ? (rawLevel as LevelOfGovernment) : "central";
+
+  let states: IndianState[] = ["all-india"];
+  try {
+    const parsed = typeof row.states === "string" ? JSON.parse(row.states) : row.states;
+    if (Array.isArray(parsed) && parsed.length) states = parsed as IndianState[];
+  } catch { /* keep default */ }
+
   return {
     id: String(row.id),
     slug: String(row.slug ?? row.id),
@@ -70,8 +78,8 @@ export function rowToScheme(row: SchemeRow): Scheme {
     summary: toSummary(description),
     description,
     category: toCategory(row),
-    level: "central",
-    states: ["all-india"],
+    level,
+    states,
     eligibility: toEligibility(row),
     benefits,
     requiredDocuments: toDocuments(row),

@@ -75,6 +75,7 @@ export function ChatScreen({ initialQuery }: Props) {
   langRef.current = lang;
   const sendRef = useRef<(t: string) => void>(() => {});
   const cancelledRef = useRef<{ cancelled: boolean } | null>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
   const prefsRestoredRef = useRef(false);
 
   const hasMessages = messages.length > 0;
@@ -143,6 +144,8 @@ export function ChatScreen({ initialQuery }: Props) {
 
     const token = { cancelled: false };
     cancelledRef.current = token;
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
 
     const userMsg: Message = {
       id: uuidv4(),
@@ -184,7 +187,7 @@ export function ChatScreen({ initialQuery }: Props) {
       );
     };
 
-    const turn = await sendToBot(trimmed, history, langRef.current, onToken, onMeta);
+    const turn = await sendToBot(trimmed, history, langRef.current, onToken, onMeta, controller.signal);
     if (token.cancelled) return;
 
     setStreamingMsgId(null);
@@ -213,6 +216,7 @@ export function ChatScreen({ initialQuery }: Props) {
 
   const stop = useCallback(() => {
     if (cancelledRef.current) cancelledRef.current.cancelled = true;
+    abortControllerRef.current?.abort();
     setTyping(false);
     setStreamingMsgId(null);
   }, []);

@@ -3,32 +3,14 @@ import { createGroq } from "@ai-sdk/groq";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import type { BotTurn, Message, QuickReply, Scheme } from "@/lib/types";
 import { retrieve } from "@/lib/chat/retrieval";
-import { buildMessages, MAX_HISTORY } from "@/lib/chat/systemPrompt";
+import { buildMessages, MAX_HISTORY, isComparisonIntent, isGrievanceIntent } from "@/lib/chat/systemPrompt";
 import { sanitizeInput, checkInput, validateOutput } from "@/lib/chat/guardrail";
+import { isRateLimited } from "@/lib/chat/rateLimiter";
 
 export const runtime = "nodejs";
 
 const MAX_BODY_BYTES = 64 * 1024;
 const MAX_MESSAGE_CHARS = 2000;
-
-const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_MAX = 20;
-const ipHits = new Map<string, { count: number; resetAt: number }>();
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  // Prune expired entries to prevent unbounded Map growth
-  Array.from(ipHits.entries()).forEach(([key, entry]) => {
-    if (now > entry.resetAt) ipHits.delete(key);
-  });
-  const entry = ipHits.get(ip);
-  if (!entry) {
-    ipHits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return false;
-  }
-  entry.count++;
-  return entry.count > RATE_LIMIT_MAX;
-}
 
 const BUSY_MESSAGE =
   "I'm handling a lot of requests right now. Please try again in a moment, or visit scholarships.gov.in directly.";
@@ -65,7 +47,10 @@ function fallbackJson(turn: BotTurn): Response {
 
 export async function POST(req: Request): Promise<Response> {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  if (isRateLimited(ip)) {
+
+  // Cross-instance rate limiting via Neon DB
+  const limited = await isRateLimited(ip);
+  if (limited) {
     return fallbackJson({
       messages: [{ content: "Too many requests. Please wait a moment before trying again." }],
       quickReplies: [{ label: "Try again", send: "What scholarships am I eligible for?" }],
@@ -115,7 +100,11 @@ export async function POST(req: Request): Promise<Response> {
     // continue with empty schemes — LLM will say no matches
   }
 
-  const llmMessages = buildMessages(message, history, schemes, lang);
+  // Detect intent modes
+  const comparisonMode = isComparisonIntent(message);
+  const grievanceMode = isGrievanceIntent(message);
+
+  const llmMessages = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode });
   const quickReplies = buildQuickReplies(schemes, schemes.length > 0);
 
   const encoder = new TextEncoder();
@@ -130,6 +119,7 @@ export async function POST(req: Request): Promise<Response> {
         type: "meta",
         schemeResults: schemes.length ? schemes : undefined,
         quickReplies,
+        comparisonMode: comparisonMode || undefined,
       });
 
       try {
