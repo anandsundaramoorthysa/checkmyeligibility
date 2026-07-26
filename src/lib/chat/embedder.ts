@@ -1,14 +1,11 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { embed } from "ai";
+import { google } from "@ai-sdk/google";
 
-const EMBEDDING_MODEL = "text-embedding-004"; // 768-dim, matches Qdrant collection size
-
-function getModel() {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error("GEMINI_API_KEY is not set");
-  return new GoogleGenerativeAI(apiKey).getGenerativeModel({ model: EMBEDDING_MODEL });
-}
+// 768-dim multilingual embeddings — size must match Qdrant collection vector size
+const EMBEDDING_MODEL = google.textEmbeddingModel("text-embedding-004");
 
 export async function embedText(text: string): Promise<number[]> {
-  const result = await getModel().embedContent(text);
-  return result.embedding.values;
+  if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not set");
+  const { embedding } = await embed({ model: EMBEDDING_MODEL, value: text });
+  return embedding;
 }
