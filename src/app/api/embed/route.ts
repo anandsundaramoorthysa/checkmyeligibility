@@ -17,6 +17,17 @@ export async function POST(req: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  // Env diagnostic: surface missing vars before doing any async work
+  const envCheck = {
+    hasChatbotKey: !!process.env.CHATBOT_ADMIN_KEY,
+    hasQdrantUrl: !!process.env.QDRANT_URL,
+    hasGeminiKey: !!process.env.GEMINI_API_KEY,
+    hasDbUrl: !!process.env.DATABASE_URL,
+  };
+  if (!envCheck.hasQdrantUrl || !envCheck.hasGeminiKey || !envCheck.hasDbUrl) {
+    return NextResponse.json({ error: "Missing env vars", envCheck }, { status: 500 });
+  }
+
   try {
     await ensureCollection();
 
