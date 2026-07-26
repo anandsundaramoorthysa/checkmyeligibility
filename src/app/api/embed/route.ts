@@ -17,23 +17,29 @@ export async function POST(req: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await ensureCollection();
+  try {
+    await ensureCollection();
 
-  const rows = await fetchAllApprovedSchemes();
-  let embedded = 0;
-  let failed = 0;
+    const rows = await fetchAllApprovedSchemes();
+    let embedded = 0;
+    let failed = 0;
 
-  for (const row of rows) {
-    try {
-      const chunk = buildChunk(row);
-      const vector = await embedText(chunk);
-      await upsertEmbedding(String(row.id), chunk, vector);
-      embedded++;
-    } catch (err) {
-      console.error(`[embed/all] failed for scheme ${row.id}:`, err);
-      failed++;
+    for (const row of rows) {
+      try {
+        const chunk = buildChunk(row);
+        const vector = await embedText(chunk);
+        await upsertEmbedding(String(row.id), chunk, vector);
+        embedded++;
+      } catch (err) {
+        console.error(`[embed/all] failed for scheme ${row.id}:`, err);
+        failed++;
+      }
     }
-  }
 
-  return NextResponse.json({ embedded, failed, total: rows.length });
+    return NextResponse.json({ embedded, failed, total: rows.length });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[embed/all] fatal:", err);
+    return NextResponse.json({ error: msg }, { status: 500 });
+  }
 }
