@@ -81,6 +81,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
   const [showHelp, setShowHelp] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [listening, setListening] = useState(false);
+  const [queued, setQueued] = useState<string | null>(null);
   const [micSupported, setMicSupported] = useState(false);
   const [micError, setMicError] = useState<string | null>(null);
   const [micPermission, setMicPermission] = useState<
@@ -175,6 +176,14 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
     return () => clearTimeout(id);
   }, [micError]);
 
+  // Fire a queued message as soon as the current stream ends.
+  useEffect(() => {
+    if (!pending && queued) {
+      onSend(queued);
+      setQueued(null);
+    }
+  }, [pending, queued, onSend]);
+
   function clearMicTimeout() {
     if (micTimeoutRef.current) {
       clearTimeout(micTimeoutRef.current);
@@ -256,7 +265,12 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
   function submit(e?: FormEvent) {
     e?.preventDefault();
     const text = value.trim();
-    if (!text || pending) return;
+    if (!text) return;
+    if (pending) {
+      setQueued(text);
+      setValue("");
+      return;
+    }
     onSend(text);
     setValue("");
   }
@@ -292,6 +306,22 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           className="block w-full resize-none border-0 bg-transparent px-1 py-1 text-sm leading-relaxed text-ink outline-none placeholder:text-ink-faint scrollbar-thin"
           style={{ maxHeight: MAX_HEIGHT_PX }}
         />
+
+        {queued && (
+          <div className="flex items-center gap-1.5 rounded-lg bg-surface-subtle px-2 py-1 text-xs text-ink-muted">
+            <span className="flex-1 truncate">
+              Sending after reply: &ldquo;{queued.length > 40 ? queued.slice(0, 40) + "…" : queued}&rdquo;
+            </span>
+            <button
+              type="button"
+              onClick={() => setQueued(null)}
+              aria-label="Cancel queued message"
+              className="shrink-0 text-ink-faint transition-colors hover:text-ink"
+            >
+              <X size={12} aria-hidden="true" />
+            </button>
+          </div>
+        )}
 
         {/* Language + mic sit below the message box, matching the reference layout */}
         <div className="flex items-center gap-1">
