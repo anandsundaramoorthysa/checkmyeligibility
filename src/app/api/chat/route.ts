@@ -92,17 +92,11 @@ export async function POST(req: Request): Promise<Response> {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   const ipHash = hashIp(ip);
 
-  // Cross-instance rate limiting via Neon DB
-  const limited = await isRateLimited(ip);
-  if (limited) {
-    return fallbackJson(
-      {
-        messages: [{ content: "Too many requests. Please wait a moment before trying again." }],
-        quickReplies: [{ label: "Try again", send: "What scholarships am I eligible for?" }],
-      },
-      { status: 429, headers: { "Retry-After": "60" } },
-    );
-  }
+  // Cross-instance rate limiting via Neon DB. Kicked off immediately and only
+  // awaited once we actually need the answer — it only needs the IP, so it
+  // can run concurrently with reading/parsing the body instead of adding its
+  // full round-trip to the front of every request.
+  const limitedPromise = isRateLimited(ip);
 
   const raw = await readBodyCapped(req, MAX_BODY_BYTES);
   if (raw === null) {
@@ -132,8 +126,18 @@ export async function POST(req: Request): Promise<Response> {
   // Guardrail check — block prompt injections, off-topic, PII solicitation
   const guard = checkInput(message);
   if (guard.blocked) {
-    await logChat({ ipHash, message, schemeCount: 0, isFallback: false, isComparison: false, isGrievance: false, isBlocked: true, blockReason: guard.reason, latencyMs: Date.now() - t0 });
+    void logChat({ ipHash, message, schemeCount: 0, isFallback: false, isComparison: false, isGrievance: false, isBlocked: true, blockReason: guard.reason, latencyMs: Date.now() - t0 });
     return fallbackJson(guard.response);
+  }
+
+  if (await limitedPromise) {
+    return fallbackJson(
+      {
+        messages: [{ content: "Too many requests. Please wait a moment before trying again." }],
+        quickReplies: [{ label: "Try again", send: "What scholarships am I eligible for?" }],
+      },
+      { status: 429, headers: { "Retry-After": "60" } },
+    );
   }
 
   const lang = typeof body.lang === "string" ? body.lang.slice(0, 8) : undefined;
@@ -183,7 +187,11 @@ export async function POST(req: Request): Promise<Response> {
   });
 
   const prompt = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode, matched });
-  const quickReplies = buildQuickReplies(schemes, schemes.length > 0);
+  // Only surface scheme cards when the message actually matched something —
+  // an empty intent + no semantic hit means `schemes` is just a "most recently
+  // reviewed" filler list for the LLM's context, not a real answer to show.
+  const displaySchemes = matched ? schemes : [];
+  const quickReplies = buildQuickReplies(displaySchemes, displaySchemes.length > 0);
   // Portals we are actively citing this turn are trusted for link validation;
   // many legitimate scheme portals sit outside the .gov.in suffix list.
   const allowedHosts = allowedHostsFor(schemes.map((s) => s.officialPortalUrl));
@@ -198,7 +206,7 @@ export async function POST(req: Request): Promise<Response> {
       // Send scheme metadata immediately so UI can render cards while text streams
       send({
         type: "meta",
-        schemeResults: schemes.length ? schemes : undefined,
+        schemeResults: displaySchemes.length ? displaySchemes : undefined,
         quickReplies,
         comparisonMode: comparisonMode || undefined,
       });

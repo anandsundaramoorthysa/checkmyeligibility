@@ -88,7 +88,7 @@ test.describe("Bot (standalone /chat page)", () => {
       .click();
     await page.waitForURL(/\/chat/);
     await expect(
-      page.getByText(/not affiliated with any government/i).first(),
+      page.getByRole("textbox", { name: /message/i }),
     ).toBeVisible();
   });
 

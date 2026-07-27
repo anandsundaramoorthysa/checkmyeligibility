@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import {
   Download,
   Keyboard,
@@ -39,10 +40,12 @@ const SHORTCUTS: { keys: string; label: string }[] = [
 ];
 
 /**
- * Slim sticky header for the full-screen assistant: bot avatar + title with
- * an "online" dot, and a Botinigo-style action toolbar — text size, new
- * chat, download transcript, keyboard shortcuts, sound, and conversation
- * search.
+ * Slim sticky header for the full-screen assistant. Doubles as the page's
+ * only header (the site nav is not rendered on /chat — see SiteShell), so
+ * the logo on the left is a real link back to the marketing site, not just
+ * decoration. The "Eli AI" assistant name sits to the right of it, followed
+ * by a Botinigo-style action toolbar — text size, new chat, download
+ * transcript, keyboard shortcuts, sound, and conversation search.
  */
 export function ScreenHeader({
   hasMessages,
@@ -74,23 +77,20 @@ export function ScreenHeader({
 
   return (
     <header className="flex h-14 flex-shrink-0 items-center gap-2.5 border-b border-navy/10 bg-surface-card/90 px-3 backdrop-blur sm:px-4">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-navy/15 bg-surface-card">
-        <LogoMark className="h-6 w-6" title="" />
-      </span>
-
-      <div className="min-w-0 flex-1">
-        <p className="flex items-center gap-1.5 text-sm font-semibold leading-tight text-ink">
-          <span className="truncate">CheckMyEligibility Assistant</span>
-          <span
-            className="inline-block h-2 w-2 shrink-0 rounded-full bg-green ring-2 ring-green-soft"
-            aria-label="Online"
-            title="Online"
-          />
-        </p>
-        <p className="truncate text-[11px] leading-tight text-ink-faint">
-          Not affiliated with any government
-        </p>
-      </div>
+      <Link
+        href="/"
+        aria-label="Back to CheckMyEligibility home"
+        title="Back to CheckMyEligibility home"
+        className="flex shrink-0 items-center gap-2 rounded-full transition-opacity hover:opacity-80"
+      >
+        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-navy/15 bg-surface-card">
+          <LogoMark className="h-6 w-6" title="" />
+        </span>
+        <span className="hidden font-display text-base font-extrabold tracking-tight sm:inline">
+          <span className="text-navy-deep">Eli</span>{" "}
+          <span className="text-saffron">AI</span>
+        </span>
+      </Link>
 
       <div className="ml-auto flex shrink-0 items-center gap-0.5">
         {/* Text size — hidden on the smallest screens to keep the title readable */}

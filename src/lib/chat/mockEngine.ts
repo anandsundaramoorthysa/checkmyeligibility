@@ -1,6 +1,8 @@
 ﻿import type { BotTurn, QuickReply, Scheme } from "@/lib/types";
 import { searchSchemes } from "@/lib/data";
+import { SCHEMES } from "@/data/schemes";
 import { SITE } from "@/lib/site";
+import { extractNameTerms } from "./intentExtractor";
 import type { ChatEngine } from "./engine";
 
 /**
@@ -139,6 +141,18 @@ function lookup(query: string): Scheme[] {
   return searchSchemes(query).slice(0, MAX_RESULTS);
 }
 
+/** Matches distinctive terms against a scheme's name/shortName only — used for
+ * the no-intent-matched fallback so a word that merely appears somewhere in a
+ * scheme's summary or tags (e.g. "work" inside "construction workers") cannot
+ * surface a card for a message that never asked about schemes at all. */
+function nameOnlyLookup(terms: string[]): Scheme[] {
+  const lower = terms.map((t) => t.toLowerCase());
+  return SCHEMES.filter((s) => {
+    const haystack = `${s.name} ${s.shortName ?? ""}`.toLowerCase();
+    return lower.some((t) => haystack.includes(t));
+  }).slice(0, MAX_RESULTS);
+}
+
 function intentTurn(intent: Intent): BotTurn {
   const schemes = lookup(intent.query);
   const lead = schemes.length
@@ -156,7 +170,8 @@ function fallbackTurn(): BotTurn {
     messages: [
       {
         content:
-          "I'm here to help you find scholarships, fellowships, education loans, and grants. Tell me a bit about yourself - your course level, state, social category, or what kind of support you're looking for - and I'll find what you may be eligible for.\n\n" +
+          "I can't help with general knowledge questions - I'm only able to answer questions about student educational schemes, scholarships, fellowships, and education loans.\n\n" +
+          "Tell me a bit about yourself - your course level, state, social category, or what kind of support you're looking for - and I'll find what you may be eligible for.\n\n" +
           "You can also tap one of the options below to get started. " +
           OFFER,
       },
@@ -190,7 +205,14 @@ export const mockEngine: ChatEngine = {
     );
     if (matched) return intentTurn(matched);
 
-    const loose = lookup(text);
+    // No curated intent fired — only fall back to a raw scheme-name lookup
+    // when the message contains a genuinely distinctive word (e.g. the
+    // student typed a scheme's name directly, like "INSPIRE" or "Pragati").
+    // Matching on the full raw text here previously let common filler words
+    // ("year", "student", "money", ...) that appear in many scheme summaries
+    // trigger a scheme card on completely unrelated questions.
+    const nameTerms = extractNameTerms(input);
+    const loose = nameTerms.length ? nameOnlyLookup(nameTerms) : [];
     if (loose.length) {
       return {
         messages: [{ content: `Here's what I found based on what you said.\n\n${OFFER}` }],
