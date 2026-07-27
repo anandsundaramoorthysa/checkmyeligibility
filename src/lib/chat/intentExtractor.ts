@@ -54,7 +54,7 @@ const NAME_STOPWORDS = new Set([
 const MAX_NAME_TERMS = 6;
 
 /** Distinctive tokens worth matching against a scheme's name. */
-function extractNameTerms(message: string): string[] {
+export function extractNameTerms(message: string): string[] {
   const seen = new Set<string>();
   const terms: string[] = [];
   for (const raw of message.split(/[^A-Za-z0-9.'-]+/)) {
