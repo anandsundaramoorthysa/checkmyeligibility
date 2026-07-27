@@ -24,8 +24,12 @@ const config: Config = {
           softer: "#2C5FB0", // borders on navy
         },
         saffron: {
-          DEFAULT: "#FF9933", // flag saffron — highlights, icon accents, CTAs
-          deep: "#E97A1A", // hover/active
+          DEFAULT: "#FF9933", // flag saffron — large display, icon accents, CTAs
+          // Small-text saffron. The old #E97A1A measured 2.6-2.9:1 on the light
+          // surfaces, so every eyebrow label and "Step 1" caption using it failed
+          // AA. Darkened to clear 4.5:1 on white and on the warm tint, which is
+          // what the palette rule above already intended.
+          deep: "#A8480B", // hover/active + small text on light surfaces
           soft: "#FFE9D2", // tint backgrounds
         },
         green: {
@@ -42,7 +46,12 @@ const config: Config = {
         ink: {
           DEFAULT: "#0B1020", // body text
           muted: "#5B6577",
-          faint: "#8A93A6", // placeholders / tertiary
+          // Was #8A93A6, which measured 2.8-3.1:1 and failed AA on the trust
+          // lines and disclaimers that use it. These carry real information
+          // ("we never submit applications for you"), so they must be readable.
+          // Measured at 5.0:1 or better on white, on the page surface, and on
+          // the warm tint, which are the three backgrounds it sits on.
+          faint: "#5F6880", // placeholders / tertiary
         },
       },
       fontFamily: {

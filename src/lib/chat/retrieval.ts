@@ -71,8 +71,24 @@ async function vectorLeg(retrievalQuery: string): Promise<string[]> {
   }
 }
 
-export async function retrieve(message: string, history: Message[] = []): Promise<Scheme[]> {
+export interface RetrievalResult {
+  schemes: Scheme[];
+  /**
+   * False when nothing in the message actually matched: no usable intent and
+   * no semantic hit, so the rows are just the most recently reviewed schemes.
+   * They are still worth showing as a starting point, but the assistant must
+   * not present them as schemes the student qualifies for.
+   */
+  matched: boolean;
+}
+
+export async function retrieveWithMeta(
+  message: string,
+  history: Message[] = [],
+): Promise<RetrievalResult> {
   const retrievalQuery = buildRetrievalQuery(message, history);
+  const intent = extractIntent(message);
+  const hasIntent = Object.keys(intent).length > 0;
 
   // Settled, not all — one leg failing must not discard the other's results.
   const [structuredRows, vectorIds] = await Promise.all([
@@ -106,5 +122,13 @@ export async function retrieve(message: string, history: Message[] = []): Promis
     }
   }
 
-  return merged.slice(0, MAX_RESULTS).map(rowToScheme);
+  return {
+    schemes: merged.slice(0, MAX_RESULTS).map(rowToScheme),
+    matched: hasIntent || vectorIds.length > 0,
+  };
+}
+
+/** Convenience wrapper for callers that only need the schemes. */
+export async function retrieve(message: string, history: Message[] = []): Promise<Scheme[]> {
+  return (await retrieveWithMeta(message, history)).schemes;
 }

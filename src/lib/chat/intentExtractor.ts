@@ -24,6 +24,48 @@ export interface Intent {
   gender?: string;
   /** Matched against states. */
   state?: string;
+  /** Distinctive words to match against the scheme name, so a student who
+   * names a scheme gets that scheme. Without this, "compare AICTE Pragati and
+   * INSPIRE" retrieved neither, because the token filters alone cannot tell
+   * one scholarship from another. */
+  nameTerms?: string[];
+}
+
+/** Words that carry no signal when matching against a scheme name. Scheme
+ * names are full of "scholarship"/"scheme", so those would match everything. */
+const NAME_STOPWORDS = new Set([
+  "about", "after", "again", "against", "annual", "apply", "available", "before",
+  "being", "below", "benefit", "benefits", "between", "both", "called", "check",
+  "compare", "comparison", "could", "course", "difference", "different", "does",
+  "eligible", "eligibility", "family", "fellowship", "from", "getting", "give",
+  "grant", "have", "help", "here", "income", "india", "indian", "into", "know",
+  "level", "loan", "look", "looking", "many", "more", "most", "much", "need",
+  "other", "over", "please", "programme", "program", "scheme",
+  "schemes", "scholarship", "scholarships", "should", "some", "student",
+  "students", "study", "studying", "such", "support", "tell", "than", "that",
+  "their", "them", "then", "there", "these", "they", "this", "those", "through",
+  "under", "versus", "very", "want", "were", "what", "when", "where", "which",
+  "while", "will", "with", "would", "your", "yojana", "national", "central",
+  "state", "government", "govt", "amount", "money", "year", "years", "date",
+  "last", "documents", "document", "required", "process", "portal", "online",
+  "form", "status", "details", "detail", "information", "info",
+]);
+
+const MAX_NAME_TERMS = 6;
+
+/** Distinctive tokens worth matching against a scheme's name. */
+function extractNameTerms(message: string): string[] {
+  const seen = new Set<string>();
+  const terms: string[] = [];
+  for (const raw of message.split(/[^A-Za-z0-9.'-]+/)) {
+    const t = raw.replace(/^[.'-]+|[.'-]+$/g, "").toLowerCase();
+    if (t.length < 4 || NAME_STOPWORDS.has(t) || seen.has(t)) continue;
+    if (/^\d+$/.test(t)) continue;
+    seen.add(t);
+    terms.push(t);
+    if (terms.length >= MAX_NAME_TERMS) break;
+  }
+  return terms;
 }
 
 const BENEFIT_KEYWORDS: Record<string, string[]> = {
@@ -153,6 +195,9 @@ export function extractIntent(message: string): Intent {
 
   const state = firstMatch(text, STATE_KEYWORDS);
   if (state) intent.state = state;
+
+  const nameTerms = extractNameTerms(message);
+  if (nameTerms.length) intent.nameTerms = nameTerms;
 
   return intent;
 }

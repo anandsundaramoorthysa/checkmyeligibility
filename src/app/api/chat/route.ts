@@ -2,7 +2,7 @@ import { streamText } from "ai";
 import { createGroq } from "@ai-sdk/groq";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import type { BotTurn, Message, QuickReply, Scheme } from "@/lib/types";
-import { retrieve } from "@/lib/chat/retrieval";
+import { retrieveWithMeta } from "@/lib/chat/retrieval";
 import {
   buildMessages,
   MAX_HISTORY,
@@ -156,8 +156,11 @@ export async function POST(req: Request): Promise<Response> {
   }
 
   let schemes: Scheme[] = [];
+  let matched = true;
   try {
-    schemes = await retrieve(message, history);
+    const r = await retrieveWithMeta(message, history);
+    schemes = r.schemes;
+    matched = r.matched;
   } catch {
     // continue with empty schemes — LLM will say no matches
   }
@@ -179,7 +182,7 @@ export async function POST(req: Request): Promise<Response> {
     latencyMs: Date.now() - t0,
   });
 
-  const prompt = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode });
+  const prompt = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode, matched });
   const quickReplies = buildQuickReplies(schemes, schemes.length > 0);
   // Portals we are actively citing this turn are trusted for link validation;
   // many legitimate scheme portals sit outside the .gov.in suffix list.

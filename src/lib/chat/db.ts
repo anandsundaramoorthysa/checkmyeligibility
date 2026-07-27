@@ -80,6 +80,13 @@ export async function fetchApprovedSchemes(intent: Intent, limit = 20): Promise<
     params.push("all-india");
   }
 
+  // Name matches score highest: if a student names a scheme, that scheme is
+  // what they want, and no combination of category tokens can express it.
+  for (const term of intent.nameTerms ?? []) {
+    params.push(`%${term}%`);
+    scoreParts.push(`(CASE WHEN name ILIKE $${idx++} THEN 4 ELSE 0 END)`);
+  }
+
   // No usable signal — fall back to the most recently reviewed schemes.
   if (!scoreParts.length) {
     params.push(limit);

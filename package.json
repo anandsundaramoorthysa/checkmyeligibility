@@ -13,7 +13,11 @@
     "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test",
     "eval:guardrail": "tsx scripts/eval-guardrail.ts",
-    "eval:retrieval": "tsx scripts/eval-retrieval.ts"
+    "eval:retrieval": "tsx scripts/eval-retrieval.ts",
+    "eval:groundedness": "tsx scripts/eval-groundedness.ts",
+    "eval:multilingual": "tsx scripts/eval-multilingual.ts",
+    "check:urls": "tsx scripts/check-scheme-urls.ts",
+    "clean:urls": "tsx scripts/clean-scheme-urls.ts"
   },
   "engines": {
     "node": ">=18.18 <23"
