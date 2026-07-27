@@ -21,6 +21,7 @@ import { meritCumMeansScholarshipForMinorityStudents } from "./merit-cum-means-s
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
 import { mukhyamantriYuvaSwavalambanYojanaGujarat } from "./mukhyamantri-yuva-swavalamban-yojana-gujarat";
 import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./national-overseas-scholarship-for-persons-with-disabilities";
+import { nbfcdEducationLoan } from "./nbfcd-education-loan";
 import { necMeritScholarship } from "./nec-merit-scholarship";
 import { padhoPardeshScheme } from "./padho-pardesh-scheme";
 import { pmUspCentralSectorSchemeOfScholarship } from "./pm-usp-central-sector-scheme-of-scholarship";
@@ -49,6 +50,7 @@ export const SCHEMES: Scheme[] = [
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
   mukhyamantriYuvaSwavalambanYojanaGujarat,
   nationalOverseasScholarshipForPersonsWithDisabilities,
+  nbfcdEducationLoan,
   necMeritScholarship,
   padhoPardeshScheme,
   pmUspCentralSectorSchemeOfScholarship,
