@@ -37,9 +37,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const scheme = await getSchemeBySlug(params.slug);
+  const { slug } = await params;
+  const scheme = await getSchemeBySlug(slug);
   if (!scheme) return buildMetadata({ title: "Scheme not found", noindex: true });
   return buildMetadata({
     title: scheme.name,
@@ -51,9 +52,10 @@ export async function generateMetadata({
 export default async function SchemeDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const scheme = await getSchemeBySlug(params.slug);
+  const { slug } = await params;
+  const scheme = await getSchemeBySlug(slug);
   if (!scheme) notFound();
 
   const category = getCategory(scheme.category);

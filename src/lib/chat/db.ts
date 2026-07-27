@@ -30,9 +30,18 @@ async function query<T = SchemeRow>(text: string, params: unknown[] = []): Promi
  * works on the JSON-array form and still tolerates a bare scalar value.
  */
 function jsonContains(col: string, paramIdx: number): string {
+  // Everything goes through ::text first so this works whether the column is
+  // still TEXT holding JSON ('["ug","pg"]') or has been migrated to a real
+  // text[] ('{ug,pg}'). That keeps migration 001 safe to run at any point
+  // without a coordinated code deploy, rather than requiring the two to land
+  // together.
   return `(${col} IS NOT NULL AND EXISTS (
-    SELECT 1 FROM jsonb_array_elements_text(
-      CASE WHEN ${col} ~ '^\\s*\\[' THEN ${col}::jsonb ELSE jsonb_build_array(${col}) END
+    SELECT 1 FROM unnest(
+      CASE
+        WHEN ${col}::text ~ '^\\s*\\[' THEN ARRAY(SELECT jsonb_array_elements_text(${col}::text::jsonb))
+        WHEN ${col}::text ~ '^\\s*\\{' THEN (${col}::text)::text[]
+        ELSE ARRAY[${col}::text]
+      END
     ) AS tok WHERE tok = $${paramIdx}
   ))`;
 }

@@ -17,13 +17,13 @@ function getSql() {
 
 export async function POST(
   req: Request,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ): Promise<NextResponse> {
   if (!isAuthorized(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id } = params;
+  const { id } = await params;
   // `id` goes straight into a uuid column; reject bad shapes up front so the
   // driver does not surface a raw type-cast error.
   if (!id || !UUID_RE.test(id)) {

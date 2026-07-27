@@ -9,8 +9,12 @@ const base =
 const variants: Record<Variant, string> = {
   // navy = primary action (AA-safe on white)
   primary: "bg-navy text-white hover:bg-navy-light",
-  // saffron accent CTA — white text, darker bg on hover/active
-  saffron: "bg-saffron text-white hover:bg-saffron-deep hover:shadow-sm active:scale-[0.97] active:bg-saffron-deep",
+  // saffron accent CTA. White on flag saffron measures 2.13:1, so the primary
+  // "Check my eligibility" button failed AA. Navy on saffron is 7.5:1 and is
+  // already the pairing used elsewhere in the design (about page, testimonials),
+  // so the flag colour is kept and only the text darkens.
+  saffron:
+    "bg-saffron text-navy-deep hover:bg-saffron-hover hover:shadow-sm active:scale-[0.97] active:bg-saffron-hover",
   outline: "border border-navy/25 text-navy hover:bg-surface-subtle",
   ghost: "text-navy hover:bg-surface-subtle",
   white: "bg-white text-navy-deep hover:bg-gray-50 hover:shadow-md active:bg-gray-100",

@@ -16,6 +16,12 @@ export default defineConfig({
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile", use: { ...devices["Pixel 5"] } },
+    // Firefox and WebKit are opt-in locally (they add two browser downloads)
+    // but run in CI, where Safari coverage matters for an Indian mobile
+    // audience. Select with `--project=firefox` / `--project=webkit`.
+    { name: "firefox", use: { ...devices["Desktop Firefox"] } },
+    { name: "webkit", use: { ...devices["Desktop Safari"] } },
+    { name: "mobile-safari", use: { ...devices["iPhone 13"] } },
   ],
   webServer: {
     // Test a production build, not `next dev`. Dev compiles each route on first

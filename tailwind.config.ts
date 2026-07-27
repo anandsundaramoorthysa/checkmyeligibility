@@ -30,6 +30,9 @@ const config: Config = {
           // AA. Darkened to clear 4.5:1 on white and on the warm tint, which is
           // what the palette rule above already intended.
           deep: "#A8480B", // hover/active + small text on light surfaces
+          // Hover fill for the saffron CTA. Dark enough to read as a hover,
+          // light enough that navy text on it still clears AA (5.5:1).
+          hover: "#E97A1A",
           soft: "#FFE9D2", // tint backgrounds
         },
         green: {

@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-export default function ChatPage({
-  searchParams,
-}: {
-  searchParams: { q?: string };
-}) {
-  const q = typeof searchParams.q === "string" ? searchParams.q : "";
-  return <ChatScreen initialQuery={q} />;
+/**
+ * Statically prerendered. Reading `?q=` through searchParams forced a server
+ * render on every visit, and under concurrency /chat measured roughly four
+ * times slower than the static pages for no benefit: the seed query is only
+ * ever consumed by a client component, which can read it from the URL itself.
+ */
+export default function ChatPage() {
+  return <ChatScreen />;
 }
