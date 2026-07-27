@@ -12,6 +12,7 @@ import { bsrFellowshipSchemeForScienceStudentsUgc } from "./bsr-fellowship-schem
 import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarship-programme";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
+import { jkTyreShikshaSarthiScholarship } from "./jk-tyre-shiksha-sarthi-scholarship";
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
 import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./national-overseas-scholarship-for-persons-with-disabilities";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
@@ -30,6 +31,7 @@ export const SCHEMES: Scheme[] = [
   deepikaStudentScholarshipProgramme,
   inspireScholarshipForHigherEducation,
   jaganannaVidyaDeevenaFeeReimbursement,
+  jkTyreShikshaSarthiScholarship,
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
   nationalOverseasScholarshipForPersonsWithDisabilities,
   punjabBocwBoardStipendScholarshipScheme,
