@@ -164,7 +164,8 @@ export function ChatScreen({ initialQuery }: Props = {}) {
       content: trimmed,
       createdAt: Date.now(),
     };
-    const history = messagesRef.current;
+    // Strip schemeResults before sending — they're large and the server ignores them
+    const history = messagesRef.current.map(({ id, role, content, createdAt }) => ({ id, role, content, createdAt }));
     atBottomRef.current = true;
     setMessages([...history, userMsg]);
     setQuickReplies([]);

@@ -503,7 +503,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           {pending ? (
             <button
               type="button"
-              onClick={onStop}
+              onClick={() => { setQueued(null); onStop(); }}
               aria-label="Stop"
               className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-navy/15 text-ink-muted transition-transform active:scale-90"
             >

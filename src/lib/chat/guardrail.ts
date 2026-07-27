@@ -202,7 +202,7 @@ export function validateOutput(text: string, allowedHosts?: Set<string>): string
   // than pattern-matched so lookalike domains cannot slip past.
   let cleaned = text.replace(/https?:\/\/[^\s<>"')\]]+/gi, (url) => {
     try {
-      return isAllowedHost(new URL(url).hostname, allowedHosts) ? url : "[link removed]";
+      return isAllowedHost(new URL(url).hostname, allowedHosts) ? url : "";
     } catch {
       return "[link removed]";
     }

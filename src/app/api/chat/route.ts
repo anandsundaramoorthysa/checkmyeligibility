@@ -169,8 +169,8 @@ export async function POST(req: Request): Promise<Response> {
   const comparisonMode = isComparisonIntent(message);
   const grievanceMode = isGrievanceIntent(message);
 
-  // Log the request before streaming starts — guaranteed to insert before response headers go out
-  await logChat({
+  // Fire-and-forget — the function stays alive for the duration of the stream
+  void logChat({
     ipHash,
     message,
     schemeCount: schemes.length,
@@ -245,6 +245,8 @@ async function streamLLM(
           fullText += chunk;
           send({ type: "token", text: chunk });
         }
+        // Empty completion (content filter, transient issue) — fall through to Gemini
+        if (!fullText) break;
         // Validate output before marking done (strip non-.gov.in URLs etc.)
         const validated = validateOutput(fullText, allowedHosts);
         if (validated !== fullText) {
@@ -276,6 +278,8 @@ async function streamLLM(
         fullText += chunk;
         send({ type: "token", text: chunk });
       }
+      // Empty completion — fall through to BUSY_MESSAGE
+      if (!fullText) throw new Error("empty completion");
       const validated = validateOutput(fullText, allowedHosts);
       if (validated !== fullText) send({ type: "replace", text: validated });
       return;
