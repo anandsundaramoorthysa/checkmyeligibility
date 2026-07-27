@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
-// GovEligify brand palette — the Indian national flag.
+// CheckMyEligibility brand palette — the Indian national flag.
 //   Saffron #FF9933 · White · India-green #138808 · Chakra-navy #000080 / #0A3D91
 // Accessibility rule: saffron and green FAIL AA as small text on white, so body
 // text + primary buttons use navy/ink; saffron is for headings/icons/accents and
@@ -24,8 +24,15 @@ const config: Config = {
           softer: "#2C5FB0", // borders on navy
         },
         saffron: {
-          DEFAULT: "#FF9933", // flag saffron — highlights, icon accents, CTAs
-          deep: "#E97A1A", // hover/active
+          DEFAULT: "#FF9933", // flag saffron — large display, icon accents, CTAs
+          // Small-text saffron. The old #E97A1A measured 2.6-2.9:1 on the light
+          // surfaces, so every eyebrow label and "Step 1" caption using it failed
+          // AA. Darkened to clear 4.5:1 on white and on the warm tint, which is
+          // what the palette rule above already intended.
+          deep: "#A8480B", // hover/active + small text on light surfaces
+          // Hover fill for the saffron CTA. Dark enough to read as a hover,
+          // light enough that navy text on it still clears AA (5.5:1).
+          hover: "#E97A1A",
           soft: "#FFE9D2", // tint backgrounds
         },
         green: {
@@ -42,7 +49,12 @@ const config: Config = {
         ink: {
           DEFAULT: "#0B1020", // body text
           muted: "#5B6577",
-          faint: "#8A93A6", // placeholders / tertiary
+          // Was #8A93A6, which measured 2.8-3.1:1 and failed AA on the trust
+          // lines and disclaimers that use it. These carry real information
+          // ("we never submit applications for you"), so they must be readable.
+          // Measured at 5.0:1 or better on white, on the page surface, and on
+          // the warm tint, which are the three backgrounds it sits on.
+          faint: "#5F6880", // placeholders / tertiary
         },
       },
       fontFamily: {

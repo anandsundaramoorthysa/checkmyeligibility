@@ -90,7 +90,41 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
   const innerRef = useRef<HTMLTextAreaElement | null>(null);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const micTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const langMenuRef = useRef<HTMLDivElement | null>(null);
+  const langButtonRef = useRef<HTMLButtonElement | null>(null);
   const t = STRINGS[lang];
+
+  // Move focus into the language menu when it opens so keyboard users are not
+  // stranded on the trigger, and close it on Escape.
+  useEffect(() => {
+    if (!langOpen) return;
+    langMenuRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+  }, [langOpen]);
+
+  function onLangMenuKeyDown(e: KeyboardEvent<HTMLDivElement>) {
+    const items = Array.from(
+      langMenuRef.current?.querySelectorAll<HTMLButtonElement>("button") ?? [],
+    );
+    const current = items.indexOf(document.activeElement as HTMLButtonElement);
+
+    if (e.key === "Escape") {
+      e.preventDefault();
+      setLangOpen(false);
+      langButtonRef.current?.focus();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      items[(current + 1) % items.length]?.focus();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      items[(current - 1 + items.length) % items.length]?.focus();
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      items[0]?.focus();
+    } else if (e.key === "End") {
+      e.preventDefault();
+      items[items.length - 1]?.focus();
+    }
+  }
 
   useEffect(() => {
     setMicSupported(getSpeechRecognition() !== null);
@@ -264,6 +298,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           <div className="relative shrink-0">
             <button
               type="button"
+              ref={langButtonRef}
               onClick={() => setLangOpen((v) => !v)}
               aria-label="Choose language"
               title="Choose language"
@@ -287,14 +322,23 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
                   onClick={() => setLangOpen(false)}
                   aria-hidden="true"
                 />
-                <div className="absolute bottom-11 left-0 z-40 max-h-64 w-36 animate-fade-in overflow-y-auto rounded-2xl border border-navy/10 bg-surface-card p-1.5 shadow-card-lg scrollbar-thin">
+                <div
+                  role="menu"
+                  aria-label="Choose language"
+                  ref={langMenuRef}
+                  onKeyDown={onLangMenuKeyDown}
+                  className="absolute bottom-11 left-0 z-40 max-h-64 w-36 animate-fade-in overflow-y-auto rounded-2xl border border-navy/10 bg-surface-card p-1.5 shadow-card-lg scrollbar-thin"
+                >
                   {LANGUAGES.map((l) => (
                     <button
                       key={l.code}
                       type="button"
+                      role="menuitemradio"
+                      aria-checked={l.code === lang}
                       onClick={() => {
                         onLangChange(l.code);
                         setLangOpen(false);
+                        langButtonRef.current?.focus();
                       }}
                       className={cn(
                         "block w-full rounded-lg px-2.5 py-1.5 text-left text-sm transition-colors hover:bg-surface-subtle",
@@ -412,6 +456,19 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           )}
 
           <div className="flex-1" />
+
+          {/* Only appears near the ceiling so the limit is never hit silently. */}
+          {value.length >= MAX_LEN * 0.8 && (
+            <span
+              aria-live="polite"
+              className={cn(
+                "shrink-0 text-[11px] tabular-nums",
+                value.length >= MAX_LEN ? "font-semibold text-red-500" : "text-ink-faint",
+              )}
+            >
+              {value.length}/{MAX_LEN}
+            </span>
+          )}
 
           {pending ? (
             <button

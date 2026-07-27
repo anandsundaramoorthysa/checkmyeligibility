@@ -35,8 +35,20 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // Lets the e2e run use its own build directory so starting the test server
+  // does not overwrite the .next of an already-running production build.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
+  // Don't advertise the framework in every response.
+  poweredByHeader: false,
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // API responses are per-user and must never be cached by a CDN or proxy.
+      {
+        source: "/api/:path*",
+        headers: [{ key: "Cache-Control", value: "no-store, max-age=0" }],
+      },
+    ];
   },
 };
 

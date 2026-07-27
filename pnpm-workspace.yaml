@@ -1,3 +1,20 @@
 allowBuilds:
   esbuild: true
+  # sharp powers next/image optimisation. Next pulls it in from 15 onward, and
+  # leaving it undecided makes `pnpm install` exit non-zero, which breaks CI.
+  sharp: true
   unrs-resolver: true
+
+# Transitive packages with open advisories that their parents have not rolled
+# forward yet. Pinned per major line so anything expecting an older API still
+# resolves. Re-check with `pnpm audit` and drop entries once upstream catches up.
+overrides:
+  postcss: ">=8.5.18"
+  esbuild: ">=0.28.1"
+  js-yaml@^4: ">=4.3.0"
+  brace-expansion@^1: ">=1.1.16"
+  brace-expansion@^2: ">=2.1.2"
+  # eslint 8 pulls an older line in through minimatch; the API is unchanged
+  # across these majors, so a floor is safe and clears the last advisory.
+  brace-expansion: ">=5.0.8"
+  sharp: ">=0.35.0"

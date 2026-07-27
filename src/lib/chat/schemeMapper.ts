@@ -1,6 +1,6 @@
 import type { Scheme, EligibilityCriterion, RequiredDocument, SchemeCategory, LevelOfGovernment, IndianState } from "@/lib/types";
 import type { SchemeRow } from "./db";
-import { joinArray, firstOfArray } from "./utils";
+import { joinArray, joinLabels, tokenLabel, firstOfArray } from "./utils";
 
 const BENEFIT_TO_CATEGORY: Record<string, SchemeCategory> = {
   scholarship: "scholarship",
@@ -17,21 +17,46 @@ function toCategory(row: SchemeRow): SchemeCategory {
   return BENEFIT_TO_CATEGORY[bt] ?? "scholarship";
 }
 
+/** Social/beneficiary tokens from the DB `category` column. The rest of that
+ * column holds scheme-family words that are not eligibility groups. */
+const BENEFICIARY_TOKENS = new Set([
+  "sc_st", "obc", "bc_mbc", "ews", "minority", "girl_women",
+  "differently_abled", "general_merit",
+]);
+
+function toBeneficiaryGroups(row: SchemeRow): string {
+  const raw = joinArray(row.category);
+  if (!raw) return "";
+  const groups = raw
+    .split(",")
+    .map((t) => t.trim().toLowerCase())
+    .filter((t) => BENEFICIARY_TOKENS.has(t))
+    .map((t) => tokenLabel(t));
+  return groups.join(", ");
+}
+
 function toEligibility(row: SchemeRow): EligibilityCriterion[] {
   const criteria: EligibilityCriterion[] = [];
+
+  // Surfaced explicitly: without it the model cannot tell an SC/ST-only scheme
+  // from an OBC one, and was presenting ST schemes to SC students.
+  const groups = toBeneficiaryGroups(row);
+  if (groups) {
+    criteria.push({ label: "For", value: groups, type: "other" });
+  }
 
   if (row.eligibility) {
     criteria.push({ label: "Eligibility", value: String(row.eligibility), type: "other" });
   }
 
-  const edu = joinArray(row.education_level);
-  if (edu && edu !== "all") {
-    criteria.push({ label: "Education level", value: edu, type: "education" });
+  const eduRaw = joinArray(row.education_level);
+  if (eduRaw && eduRaw !== "all") {
+    criteria.push({ label: "Education level", value: joinLabels(row.education_level), type: "education" });
   }
 
   const gender = row.beneficiary_gender as string | undefined;
   if (gender && gender !== "all") {
-    criteria.push({ label: "Gender", value: gender, type: "gender" });
+    criteria.push({ label: "Gender", value: tokenLabel(gender), type: "gender" });
   }
 
   return criteria;
@@ -54,7 +79,7 @@ function toSummary(description: string): string {
 
 export function rowToScheme(row: SchemeRow): Scheme {
   const description = String(row.description ?? "");
-  const benefitStr = joinArray(row.benefit_type);
+  const benefitStr = joinLabels(row.benefit_type);
   const benefits: string[] = [];
   if (benefitStr) {
     const withAmount = row.amount ? `${benefitStr} — ${row.amount}` : benefitStr;

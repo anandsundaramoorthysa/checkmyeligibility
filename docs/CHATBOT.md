@@ -157,26 +157,51 @@ GET /schemes/{id}
 
 ### Database schema (PostgreSQL)
 
+This is the schema as it actually exists in the Neon database. Read the column
+types carefully before writing a query against them.
+
 ```sql
 CREATE TABLE schemes (
-  id            TEXT PRIMARY KEY,
-  name          TEXT NOT NULL,
-  ministry      TEXT,
-  category      TEXT,            -- 'scholarship', 'fellowship', 'loan', 'grant'
-  course_level  TEXT[],          -- ['UG', 'PG', 'PhD', 'Diploma', 'any']
-  gender        TEXT,            -- 'female', 'male', 'any'
-  social_category TEXT[],        -- ['SC', 'ST', 'OBC', 'Minority', 'General']
-  max_income    INTEGER,         -- annual family income ceiling in ₹
-  state         TEXT[],          -- ['all-india', 'tamil-nadu', …]
-  benefits      TEXT,
-  documents     JSONB,
-  official_url  TEXT NOT NULL,
-  open_date     DATE,
-  close_date    DATE,
-  last_verified DATE NOT NULL,
-  embedding     vector(1536)     -- pgvector for RAG
+  id                  UUID PRIMARY KEY,
+  slug                TEXT,
+  name                TEXT NOT NULL,
+  category            TEXT,   -- JSON array as TEXT, e.g. '["sc_st","obc"]'
+  education_level     TEXT,   -- JSON array as TEXT, e.g. '["ug","pg"]'
+  benefit_type        TEXT,   -- JSON array as TEXT, e.g. '["scholarship"]'
+  states              TEXT,   -- JSON array as TEXT, e.g. '["tamil-nadu"]'
+  beneficiary_gender  TEXT,   -- plain scalar: 'all' | 'female' | 'male'
+  level               TEXT,   -- plain scalar: 'central' | 'state' | 'central-state'
+  amount              TEXT,
+  description         TEXT,
+  eligibility         TEXT,
+  documents           TEXT,   -- newline-separated list
+  application_process TEXT,
+  official_url        TEXT,
+  status              TEXT,   -- only 'approved' rows are ever served
+  reviewed_at         TIMESTAMP
 );
 ```
+
+> **`category`, `education_level`, `benefit_type` and `states` are TEXT, not
+> `TEXT[]`.** They hold a JSON array serialised into a string. Postgres array
+> operators do not work on them — `'ug' = ANY(education_level)` raises
+> `op ANY/ALL (array) requires array on right side`, and because that error
+> propagates out of the retrieval call the assistant silently answers "no
+> matching schemes". Use the `jsonContains()` helper in `src/lib/chat/db.ts`,
+> which expands the JSON array with `jsonb_array_elements_text` and still
+> tolerates a bare scalar.
+
+Vocabulary actually present in the data (keep `intentExtractor.ts` in sync):
+
+| Column | Tokens |
+| --- | --- |
+| `benefit_type` | `scholarship`, `stipend`, `grant`, `loan`, `fee_waiver`, `hostel` |
+| `category` | `fellowship`, `scholarship`, `sc_st`, `obc`, `bc_mbc`, `ews`, `minority`, `girl_women`, `differently_abled`, `general_merit` |
+| `education_level` | `primary`, `upper_primary`, `secondary`, `higher_secondary`, `diploma`, `ug`, `pg`, `phd`, `professional`, `all` |
+| `states` | `all-india`, `tamil-nadu`, `kerala`, … |
+
+Embeddings live in Qdrant (`scheme_embeddings`, 768-dim, cosine), not in a
+pgvector column — the vector search is a separate service, see `qdrant.ts`.
 
 ### LiteLLM + OpenRouter
 

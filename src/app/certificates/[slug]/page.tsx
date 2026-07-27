@@ -32,9 +32,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const certificate = await getCertificateBySlug(params.slug);
+  const { slug } = await params;
+  const certificate = await getCertificateBySlug(slug);
   if (!certificate)
     return buildMetadata({ title: "Certificate not found", noindex: true });
   return buildMetadata({
@@ -47,9 +48,10 @@ export async function generateMetadata({
 export default async function CertificateDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const certificate = await getCertificateBySlug(params.slug);
+  const { slug } = await params;
+  const certificate = await getCertificateBySlug(slug);
   if (!certificate) notFound();
 
   const ld: object[] = [

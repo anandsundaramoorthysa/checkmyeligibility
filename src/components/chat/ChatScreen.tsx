@@ -34,7 +34,9 @@ const STORAGE_KEY = "CheckMyEligibility-chat";
 const MAX_PERSISTED = 20;
 
 interface Props {
-  initialQuery: string;
+  /** Optional seed query. Normally read from `?q=` on mount so the page can
+   * stay statically prerendered rather than server-rendering per visit. */
+  initialQuery?: string;
 }
 
 function turnToMessages(turn: BotTurn): {
@@ -51,7 +53,7 @@ function turnToMessages(turn: BotTurn): {
   return { messages, quickReplies: turn.quickReplies ?? [] };
 }
 
-export function ChatScreen({ initialQuery }: Props) {
+export function ChatScreen({ initialQuery }: Props = {}) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [quickReplies, setQuickReplies] = useState<QuickReply[]>([]);
   const [typing, setTyping] = useState(false);
@@ -94,8 +96,17 @@ export function ChatScreen({ initialQuery }: Props) {
       /* ignore corrupt storage */
     }
 
-    // Auto-send ?q= after restoration is scheduled (defer by one task)
-    const q = initialQuery.trim();
+    // Auto-send ?q= after restoration is scheduled (defer by one task).
+    // Read from the URL when no prop was supplied, which is the normal path.
+    let seed = initialQuery ?? "";
+    if (!seed) {
+      try {
+        seed = new URLSearchParams(window.location.search).get("q") ?? "";
+      } catch {
+        /* malformed query string — ignore */
+      }
+    }
+    const q = seed.trim();
     if (q) {
       try { window.history.replaceState({}, "", window.location.pathname); } catch { /* ignore */ }
       setTimeout(() => sendRef.current(q.slice(0, 1000)), 0);
@@ -345,7 +356,11 @@ export function ChatScreen({ initialQuery }: Props) {
           ) : (
             <div
               role="log"
+              // Additions only, and not atomic — otherwise a screen reader
+              // re-reads the whole transcript on every streamed token.
               aria-live="polite"
+              aria-relevant="additions"
+              aria-atomic="false"
               className="mx-auto max-w-3xl space-y-5 px-4 py-6"
             >
               {messages.map((m) => (

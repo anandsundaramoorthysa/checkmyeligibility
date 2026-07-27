@@ -13,6 +13,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = (
     [
       { path: "/", changeFrequency: "daily", priority: 1.0 },
+      // The assistant is the product's main entry point — it belongs in the
+      // sitemap alongside the marketing pages.
+      { path: "/chat", changeFrequency: "weekly", priority: 0.9 },
       { path: "/explore", changeFrequency: "daily", priority: 0.9 },
       { path: "/certificates", changeFrequency: "weekly", priority: 0.8 },
       { path: "/how-it-works", changeFrequency: "monthly", priority: 0.7 },

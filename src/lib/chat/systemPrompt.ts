@@ -1,6 +1,7 @@
 import type { Scheme } from "@/lib/types";
 import type { Message } from "@/lib/types";
 import { buildGrievanceContext } from "./grievancePortals";
+import { levelLabel, stateLabel } from "@/lib/labels";
 
 export const MAX_HISTORY = 10;
 // Rough token estimate: 4 chars ≈ 1 token. Hard-cap at 5 000 tokens to stay
@@ -54,10 +55,23 @@ function extractState(message: string): string | undefined {
   return STATE_NAMES.find((s) => lower.includes(s));
 }
 
+const LANGUAGE_NAMES: Record<string, string> = {
+  hi: "Hindi", ta: "Tamil", ml: "Malayalam", kn: "Kannada", te: "Telugu",
+  mr: "Marathi", ur: "Urdu", sa: "Sanskrit", bn: "Bengali", en: "English",
+};
+
 function buildSystemPrompt(lang?: string): string {
-  const langInstruction = lang && lang !== "en"
-    ? `\n- The user's UI language is set to "${lang}". Respond in that language unless the user writes in a different language — then match the language they used.`
-    : "";
+  // Stated up front and unconditionally. The previous wording ("respond in that
+  // language unless the user writes in a different language, then match them")
+  // contradicted itself for the most common case in India: the student picks a
+  // language in the UI and still types the question in English. The model then
+  // correctly read that as "reply in English" and the setting silently did
+  // nothing.
+  const langName = lang ? LANGUAGE_NAMES[lang] ?? lang : undefined;
+  const langInstruction =
+    langName && lang !== "en"
+      ? `\n\nLANGUAGE: Write your entire reply in ${langName}. The student has chosen ${langName} in the interface. They may type in English, or mix English and ${langName}; reply in ${langName} regardless. Keep scheme names and URLs in their official form. Only use a different language if the student explicitly asks you to.`
+      : "";
 
   return `You are Eli AI, a friendly and knowledgeable assistant helping Indian students discover government education schemes they may qualify for.
 
@@ -65,31 +79,51 @@ Your job: help students find scholarships, fellowships, education loans, and gra
 
 Rules:
 - Only recommend schemes from the CONTEXT block below. Never invent or hallucinate schemes.
+- Never name a scheme that is not in the CONTEXT, not even as a suggestion or an example.
+- The CONTEXT is a list of candidates, not a list of matches. Some will not fit
+  this student. Read each scheme's "For" line: if it names a group (SC / ST,
+  OBC, EWS, minority, girls and women, differently abled) then only that group
+  qualifies. Never tell a student a scheme is for them when its "For" line says
+  a different group, and never widen or merge those groups.
+- If a scheme is only a partial fit, say so plainly rather than implying it fits.
+- Never state an amount, deadline, income limit or criterion that is not written
+  in the CONTEXT. If the student asks for something not there, say you do not
+  have it and point them to the official URL.
 - Always include the official URL so the student can verify eligibility and apply.
 - Be concise: 2–4 sentences per scheme, plain language, no jargon.
 - If no schemes match, say so honestly and suggest the student rephrase or visit scholarships.gov.in.
 - Never ask for Aadhaar numbers, bank details, passwords, or any personal credentials.
 - Never guarantee eligibility — always say "you may qualify" or "check the eligibility criteria".
 - Never submit applications on behalf of the student.
-- If asked about anything outside education schemes (general knowledge, other topics), politely say you only help with education schemes and redirect.${langInstruction}
+- If asked about anything outside education schemes (general knowledge, other topics), politely say you only help with education schemes and redirect.
 
 Tone: warm, encouraging, clear. You are talking to students who may be navigating government systems for the first time.
 
-Format: plain conversational text. Use a numbered list when presenting multiple schemes.`;
+Format: plain conversational text. Use a numbered list when presenting multiple schemes.${langInstruction}`;
 }
 
-export function buildContextBlock(schemes: Scheme[]): string {
+export function buildContextBlock(schemes: Scheme[], matched = true): string {
   if (!schemes.length) return "CONTEXT: No matching schemes found in the database.";
 
-  const lines = ["CONTEXT — matched schemes:"];
+  const lines = matched
+    ? ["CONTEXT — matched schemes:"]
+    : [
+        "CONTEXT — NOT matched to this student. Nothing in their message narrowed",
+        "the search, so these are simply recently reviewed schemes. Offer them as",
+        "a starting point, say plainly that you could not match yet, and ask what",
+        "they are studying, their state, and their category so you can narrow it.",
+        "",
+        "Schemes:",
+      ];
   for (let i = 0; i < schemes.length; i++) {
     const s = schemes[i];
     lines.push(`\n[${i + 1}] ${s.name}`);
     if (s.level && s.level !== "central") {
-      lines.push(`    Level: ${s.level}`);
+      lines.push(`    Level: ${levelLabel(s.level)}`);
     }
     if (s.states && !s.states.includes("all-india" as never)) {
-      lines.push(`    States: ${s.states.join(", ")}`);
+      // Readable names, not the kebab slugs — the model echoes what it is given.
+      lines.push(`    States: ${s.states.map(stateLabel).join(", ")}`);
     }
     if (s.eligibility.length) {
       const criteria = s.eligibility.map((e) => `${e.label}: ${e.value}`).join("; ");
@@ -115,16 +149,24 @@ COMPARISON REQUEST: The user wants to compare schemes. Please respond with:
 Keep the table concise — one row per scheme, no more than 4 columns.`;
 }
 
-type CoreMessage = { role: "system" | "user" | "assistant"; content: string };
+type CoreMessage = { role: "user" | "assistant"; content: string };
+
+/** System instructions kept separate from the conversation. Passing them as a
+ * message inside `messages` is what the AI SDK warns about: a crafted turn can
+ * sit alongside them and read as an instruction of equal weight. */
+export interface Prompt {
+  system: string;
+  messages: CoreMessage[];
+}
 
 export function buildMessages(
   userMessage: string,
   history: Message[],
   schemes: Scheme[],
   lang?: string,
-  options?: { comparisonMode?: boolean; grievanceMode?: boolean },
-): CoreMessage[] {
-  const contextBlock = buildContextBlock(schemes);
+  options?: { comparisonMode?: boolean; grievanceMode?: boolean; matched?: boolean },
+): Prompt {
+  const contextBlock = buildContextBlock(schemes, options?.matched ?? true);
   let addon = "";
 
   if (options?.comparisonMode) {
@@ -137,12 +179,10 @@ export function buildMessages(
     if (grievanceBlock) addon += `\n\n${grievanceBlock}`;
   }
 
-  // Single system message: persona + context block + optional addons
-  const systemContent = `${buildSystemPrompt(lang)}\n\n${contextBlock}${addon}`;
+  // Persona + context block + optional addons, delivered as system input.
+  const system = `${buildSystemPrompt(lang)}\n\n${contextBlock}${addon}`;
 
-  const messages: CoreMessage[] = [
-    { role: "system", content: systemContent },
-  ];
+  const messages: CoreMessage[] = [];
 
   // Add history, then truncate if total estimated tokens exceed the cap
   const historySlice = history.slice(-MAX_HISTORY);
@@ -153,13 +193,14 @@ export function buildMessages(
   }
   messages.push({ role: "user", content: userMessage });
 
-  // Token guard: drop oldest history turns until under the cap
-  let total = messages.reduce((sum, m) => sum + estimateTokens(m.content), 0);
-  while (total > MAX_PROMPT_TOKENS && messages.length > 2) {
-    // messages[0] = system, messages[1] = oldest history — remove it
-    const removed = messages.splice(1, 1)[0];
+  // Token guard: drop oldest history turns until under the cap. The system
+  // text and the current question are counted but never dropped.
+  let total =
+    estimateTokens(system) + messages.reduce((sum, m) => sum + estimateTokens(m.content), 0);
+  while (total > MAX_PROMPT_TOKENS && messages.length > 1) {
+    const removed = messages.splice(0, 1)[0];
     total -= estimateTokens(removed.content);
   }
 
-  return messages;
+  return { system, messages };
 }
