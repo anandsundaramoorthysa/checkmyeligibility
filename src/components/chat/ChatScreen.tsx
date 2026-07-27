@@ -10,7 +10,6 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { ChevronDown } from "lucide-react";
 import type { BotTurn, LangCode, Message, QuickReply } from "@/lib/types";
-import { mockEngine } from "@/lib/chat/mockEngine";
 import { sendToBot } from "@/lib/chat/client";
 import {
   DEFAULT_FONT_STEP_INDEX,
@@ -157,13 +156,8 @@ export function ChatScreen({ initialQuery }: Props) {
       createdAt: Date.now(),
     };
     const history = messagesRef.current;
-    // Seed the greeting as the first assistant turn before the first answer.
-    const greeting =
-      history.length === 0
-        ? turnToMessages(mockEngine.greeting()).messages
-        : [];
     atBottomRef.current = true;
-    setMessages([...history, ...greeting, userMsg]);
+    setMessages([...history, userMsg]);
     setQuickReplies([]);
     setTyping(true);
 

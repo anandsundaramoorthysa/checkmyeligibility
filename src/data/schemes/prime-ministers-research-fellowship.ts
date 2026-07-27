@@ -48,58 +48,19 @@ export const primeMinistersResearchFellowship: Scheme = {
     },
   ],
   benefits: [
-    {
-      label: "Monthly Research Fellowship",
-      value: "₹25,000-45,000 for BTech/BSc entry; ₹35,000-60,000 for MTech/MSc entry; ₹50,000-80,000 for exceptional researchers; disbursed monthly to fellow's account",
-    },
-    {
-      label: "Annual Research Grant",
-      value: "₹3,00,000-5,00,000 per annum for research expenses, equipment, travel, and conference participation; utilized flexibly for research advancement",
-    },
-    {
-      label: "International Travel Support",
-      value: "₹2,00,000-4,00,000 per annum for international conference presentations, collaborative research visits, and international internships at premier research institutions",
-    },
-    {
-      label: "Access to Research Infrastructure",
-      value: "Unrestricted access to national research facilities, high-performance computing centers, advanced laboratories, and specialized equipment; network of premier institutions available",
-    },
-    {
-      label: "Mentorship and Collaboration",
-      value: "Mentorship from leading researchers and faculty members; facilitation of collaboration with national and international research groups; research guidance and career counseling",
-    },
-    {
-      label: "Publication Support",
-      value: "Funding for publishing research in top-tier international journals; open-access fees (typically ₹50,000-1,50,000 per paper) covered; presentation at international conferences funded",
-    },
-    {
-      label: "Health Insurance and Benefits",
-      value: "Comprehensive health insurance coverage (₹5,00,000-10,00,000 per annum); medical and accident coverage; disability benefits; optional dependent coverage",
-    },
-    {
-      label: "Research Discretionary Fund",
-      value: "Additional discretionary fund of ₹1,00,000-2,00,000 annually for unforeseen research expenses, emergency travel, or specialized research requirements",
-    },
-    {
-      label: "Academic Leave and Flexibility",
-      value: "Flexibility to pursue specialized training, short-term internships, or research sabbaticals (up to 3-6 months) without fellowship interruption",
-    },
-    {
-      label: "Doctoral Program Sponsorship",
-      value: "If accepted, fellowship can support candidate through entire doctoral program (3-5 years); tuition and hostel support available at affiliated institutions",
-    },
-    {
-      label: "Relocation Support",
-      value: "One-time relocation grant of ₹50,000-1,00,000 for shifting to research institution; institutional hostel accommodation assistance or rent assistance",
-    },
-    {
-      label: "Career Development and Placement",
-      value: "Facilitation for faculty positions at IITs, Central Universities, CSIR labs; assistance in securing research grants (SERB, DST, DBT); alumni mentoring network",
-    },
-    {
-      label: "Post-Fellowship Opportunities",
-      value: "Preference for faculty positions at premier institutions; eligibility for independent research grants; pathways to leadership roles in Indian research ecosystem",
-    },
+    "Monthly Research Fellowship — ₹25,000-45,000 for BTech/BSc entry; ₹35,000-60,000 for MTech/MSc entry; ₹50,000-80,000 for exceptional researchers; disbursed monthly to fellow's account",
+    "Annual Research Grant — ₹3,00,000-5,00,000 per annum for research expenses, equipment, travel, and conference participation; utilized flexibly for research advancement",
+    "International Travel Support — ₹2,00,000-4,00,000 per annum for international conference presentations, collaborative research visits, and international internships at premier research institutions",
+    "Access to Research Infrastructure — Unrestricted access to national research facilities, high-performance computing centers, advanced laboratories, and specialized equipment; network of premier institutions available",
+    "Mentorship and Collaboration — Mentorship from leading researchers and faculty members; facilitation of collaboration with national and international research groups; research guidance and career counseling",
+    "Publication Support — Funding for publishing research in top-tier international journals; open-access fees (typically ₹50,000-1,50,000 per paper) covered; presentation at international conferences funded",
+    "Health Insurance and Benefits — Comprehensive health insurance coverage (₹5,00,000-10,00,000 per annum); medical and accident coverage; disability benefits; optional dependent coverage",
+    "Research Discretionary Fund — Additional discretionary fund of ₹1,00,000-2,00,000 annually for unforeseen research expenses, emergency travel, or specialized research requirements",
+    "Academic Leave and Flexibility — Flexibility to pursue specialized training, short-term internships, or research sabbaticals (up to 3-6 months) without fellowship interruption",
+    "Doctoral Program Sponsorship — If accepted, fellowship can support candidate through entire doctoral program (3-5 years); tuition and hostel support available at affiliated institutions",
+    "Relocation Support — One-time relocation grant of ₹50,000-1,00,000 for shifting to research institution; institutional hostel accommodation assistance or rent assistance",
+    "Career Development and Placement — Facilitation for faculty positions at IITs, Central Universities, CSIR labs; assistance in securing research grants (SERB, DST, DBT); alumni mentoring network",
+    "Post-Fellowship Opportunities — Preference for faculty positions at premier institutions; eligibility for independent research grants; pathways to leadership roles in Indian research ecosystem",
   ],
   requiredDocuments: [
     {
@@ -190,76 +151,76 @@ export const primeMinistersResearchFellowship: Scheme = {
   ],
   faqs: [
     {
-      question: "What is the Prime Minister's Research Fellowship (PMRF)?",
-      answer: "PMRF is a prestigious central government fellowship scheme supporting exceptional researchers and PhD scholars in STEM disciplines. It provides monthly fellowships, research grants, access to national infrastructure, international collaboration opportunities, and mentorship to develop world-class research talent and strengthen India's research ecosystem.",
+      q: "What is the Prime Minister's Research Fellowship (PMRF)?",
+      a: "PMRF is a prestigious central government fellowship scheme supporting exceptional researchers and PhD scholars in STEM disciplines. It provides monthly fellowships, research grants, access to national infrastructure, international collaboration opportunities, and mentorship to develop world-class research talent and strengthen India's research ecosystem.",
     },
     {
-      question: "Who is eligible to apply for PMRF?",
-      answer: "Candidates with Bachelor's degree (80%+ marks) or Master's degree (75%+ marks) in STEM disciplines pursuing or seeking to pursue PhD at recognized Indian research institutions (IITs, IMSC, IISER, TIFR, CSIR labs, central universities) are eligible.",
+      q: "Who is eligible to apply for PMRF?",
+      a: "Candidates with Bachelor's degree (80%+ marks) or Master's degree (75%+ marks) in STEM disciplines pursuing or seeking to pursue PhD at recognized Indian research institutions (IITs, IMSC, IISER, TIFR, CSIR labs, central universities) are eligible.",
     },
     {
-      question: "What is the monthly fellowship amount?",
-      answer: "Monthly fellowship ranges from ₹25,000-45,000 for BTech/BSc entry-level scholars, ₹35,000-60,000 for MTech/MSc graduates, and ₹50,000-80,000 for exceptional researchers with proven publications and research track record.",
+      q: "What is the monthly fellowship amount?",
+      a: "Monthly fellowship ranges from ₹25,000-45,000 for BTech/BSc entry-level scholars, ₹35,000-60,000 for MTech/MSc graduates, and ₹50,000-80,000 for exceptional researchers with proven publications and research track record.",
     },
     {
-      question: "What is the annual research grant amount?",
-      answer: "Annual research grant ranges from ₹3,00,000 to ₹5,00,000 per annum, utilized flexibly for research expenses including equipment, chemicals, travel, conference participation, and research materials.",
+      q: "What is the annual research grant amount?",
+      a: "Annual research grant ranges from ₹3,00,000 to ₹5,00,000 per annum, utilized flexibly for research expenses including equipment, chemicals, travel, conference participation, and research materials.",
     },
     {
-      question: "Can I get international travel support?",
-      answer: "Yes, PMRF provides ₹2,00,000-4,00,000 annually for international travel including conference presentations, collaborative research visits to premier institutions, and research internships abroad.",
+      q: "Can I get international travel support?",
+      a: "Yes, PMRF provides ₹2,00,000-4,00,000 annually for international travel including conference presentations, collaborative research visits to premier institutions, and research internships abroad.",
     },
     {
-      question: "What are the eligible research areas?",
-      answer: "Priority research areas include Artificial Intelligence/Machine Learning, Quantum Computing, Biotechnology, Advanced Materials, Renewable Energy, Space Technology, Climate Science, Nanotechnology, Semiconductors, and other frontier STEM domains.",
+      q: "What are the eligible research areas?",
+      a: "Priority research areas include Artificial Intelligence/Machine Learning, Quantum Computing, Biotechnology, Advanced Materials, Renewable Energy, Space Technology, Climate Science, Nanotechnology, Semiconductors, and other frontier STEM domains.",
     },
     {
-      question: "Which institutions' PhD programs are eligible?",
-      answer: "PhD programs at IITs, Central Universities, IMSC, IISER, NCCS, TIFR, CSIR laboratories, and other nationally important research institutions recognized by MHRD/Ministry of Education are eligible.",
+      q: "Which institutions' PhD programs are eligible?",
+      a: "PhD programs at IITs, Central Universities, IMSC, IISER, NCCS, TIFR, CSIR laboratories, and other nationally important research institutions recognized by MHRD/Ministry of Education are eligible.",
     },
     {
-      question: "Can I apply if I'm not yet pursuing a PhD?",
-      answer: "Yes, fresh graduates with strong academic credentials (80%+ marks) can apply with admission letters from eligible institutions. PMRF fellowship can support the entire doctoral program once admitted.",
+      q: "Can I apply if I'm not yet pursuing a PhD?",
+      a: "Yes, fresh graduates with strong academic credentials (80%+ marks) can apply with admission letters from eligible institutions. PMRF fellowship can support the entire doctoral program once admitted.",
     },
     {
-      question: "What is the duration of the fellowship?",
-      answer: "Fellowship duration typically covers the entire PhD program period (3-5 years) or 5 years whichever is shorter. Extension may be possible based on performance review and research progress.",
+      q: "What is the duration of the fellowship?",
+      a: "Fellowship duration typically covers the entire PhD program period (3-5 years) or 5 years whichever is shorter. Extension may be possible based on performance review and research progress.",
     },
     {
-      question: "Is NRI/diaspora participation allowed?",
-      answer: "Yes, NRI and diaspora researchers with exceptional credentials are considered. However, preference is given to Indian citizens. NRI candidates must demonstrate commitment to pursue research in India for minimum 5 years post-fellowship.",
+      q: "Is NRI/diaspora participation allowed?",
+      a: "Yes, NRI and diaspora researchers with exceptional credentials are considered. However, preference is given to Indian citizens. NRI candidates must demonstrate commitment to pursue research in India for minimum 5 years post-fellowship.",
     },
     {
-      question: "What is the selection process?",
-      answer: "Selection is through rigorous evaluation of academic credentials (marks, qualifications), research proposal quality, publications, reference letters from advisors, and interview by expert committee assessing research potential and commitment.",
+      q: "What is the selection process?",
+      a: "Selection is through rigorous evaluation of academic credentials (marks, qualifications), research proposal quality, publications, reference letters from advisors, and interview by expert committee assessing research potential and commitment.",
     },
     {
-      question: "How is the annual research grant utilized?",
-      answer: "The ₹3,00,000-5,00,000 annual research grant can be used for research expenses, equipment procurement, conference travel, publication fees, research materials, and other research-related costs. Flexibility in utilization per research requirements.",
+      q: "How is the annual research grant utilized?",
+      a: "The ₹3,00,000-5,00,000 annual research grant can be used for research expenses, equipment procurement, conference travel, publication fees, research materials, and other research-related costs. Flexibility in utilization per research requirements.",
     },
     {
-      question: "What publication support is provided?",
-      answer: "PMRF covers publication costs in top-tier international journals including open-access fees (₹50,000-1,50,000 per paper), conference presentation travel and registration, and assistance in identifying suitable journals.",
+      q: "What publication support is provided?",
+      a: "PMRF covers publication costs in top-tier international journals including open-access fees (₹50,000-1,50,000 per paper), conference presentation travel and registration, and assistance in identifying suitable journals.",
     },
     {
-      question: "Is there health insurance coverage?",
-      answer: "Yes, comprehensive health insurance coverage of ₹5,00,000-10,00,000 per annum is provided, including medical care, accident coverage, disability benefits, and optional dependent coverage.",
+      q: "Is there health insurance coverage?",
+      a: "Yes, comprehensive health insurance coverage of ₹5,00,000-10,00,000 per annum is provided, including medical care, accident coverage, disability benefits, and optional dependent coverage.",
     },
     {
-      question: "What happens after the fellowship period ends?",
-      answer: "PMRF fellows are facilitated for faculty positions at premier institutions (IITs, central universities, CSIR labs), eligible for independent research grants (SERB, DST, DBT), and integrated into alumni network for continued mentorship and collaboration.",
+      q: "What happens after the fellowship period ends?",
+      a: "PMRF fellows are facilitated for faculty positions at premier institutions (IITs, central universities, CSIR labs), eligible for independent research grants (SERB, DST, DBT), and integrated into alumni network for continued mentorship and collaboration.",
     },
     {
-      question: "Is there a commitment to work in India?",
-      answer: "Yes, PMRF fellows commit to pursue research and work in India for minimum 5 years post-fellowship completion. This commitment ensures research talent benefits Indian institutions and research ecosystem.",
+      q: "Is there a commitment to work in India?",
+      a: "Yes, PMRF fellows commit to pursue research and work in India for minimum 5 years post-fellowship completion. This commitment ensures research talent benefits Indian institutions and research ecosystem.",
     },
     {
-      question: "What documents are mandatory for application?",
-      answer: "Mandatory documents include: (1) Application form, (2) Academic transcripts (80%+ marks), (3) PhD enrollment/admission letter, (4) Research proposal (5-10 pages), (5) Proof of citizenship, (6) 3-4 reference letters, (7) Comprehensive CV, (8) Publication list.",
+      q: "What documents are mandatory for application?",
+      a: "Mandatory documents include: (1) Application form, (2) Academic transcripts (80%+ marks), (3) PhD enrollment/admission letter, (4) Research proposal (5-10 pages), (5) Proof of citizenship, (6) 3-4 reference letters, (7) Comprehensive CV, (8) Publication list.",
     },
     {
-      question: "How can I apply for PMRF?",
-      answer: "Visit the PMRF portal (https://pmrf.niti.gov.in/), register with email and mobile number, complete the application form, upload all required documents, submit research proposal, and track application status online.",
+      q: "How can I apply for PMRF?",
+      a: "Visit the PMRF portal (https://pmrf.niti.gov.in/), register with email and mobile number, complete the application form, upload all required documents, submit research proposal, and track application status online.",
     },
   ],
   source: "sample",
