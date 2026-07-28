@@ -186,15 +186,23 @@ export async function POST(req: Request): Promise<Response> {
     latencyMs: Date.now() - t0,
   });
 
-  const prompt = buildMessages(message, history, schemes, lang, { comparisonMode, grievanceMode, matched });
   // Only surface scheme cards when the message actually matched something —
   // an empty intent + no semantic hit means `schemes` is just a "most recently
-  // reviewed" filler list for the LLM's context, not a real answer to show.
+  // reviewed" filler list, not a real answer to show.
   const displaySchemes = matched ? schemes : [];
+
+  // The model sees exactly what the user sees. Feeding it the filler list while
+  // the UI rendered nothing made it name schemes with no card, no link and no
+  // way to act on them, which measured 3 times in 6 on plain greetings.
+  const prompt = buildMessages(message, history, displaySchemes, lang, {
+    comparisonMode,
+    grievanceMode,
+    matched,
+  });
   const quickReplies = buildQuickReplies(displaySchemes, displaySchemes.length > 0);
   // Portals we are actively citing this turn are trusted for link validation;
   // many legitimate scheme portals sit outside the .gov.in suffix list.
-  const allowedHosts = allowedHostsFor(schemes.map((s) => s.officialPortalUrl));
+  const allowedHosts = allowedHostsFor(displaySchemes.map((s) => s.officialPortalUrl));
 
   const encoder = new TextEncoder();
 

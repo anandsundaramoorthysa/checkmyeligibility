@@ -103,7 +103,18 @@ Format: plain conversational text. Use a numbered list when presenting multiple 
 }
 
 export function buildContextBlock(schemes: Scheme[], matched = true): string {
-  if (!schemes.length) return "CONTEXT: No matching schemes found in the database.";
+  if (!schemes.length) {
+    // Deliberately not "no schemes found in the database": the database holds
+    // hundreds, and a greeting simply carries nothing to search on. Telling a
+    // student there is nothing for them is both wrong and discouraging.
+    return [
+      "CONTEXT: This message did not contain enough detail to search on, so no",
+      "schemes were looked up for it. Do NOT say the database is empty or that",
+      "there are no schemes for this student, because neither is true. Say you",
+      "need a little more to go on, then ask what they are studying, which",
+      "state they are in, and their category.",
+    ].join("\n");
+  }
 
   const lines = matched
     ? ["CONTEXT — matched schemes:"]
