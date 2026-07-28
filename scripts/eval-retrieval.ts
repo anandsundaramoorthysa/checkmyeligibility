@@ -89,7 +89,9 @@ async function main() {
   for (const [q, expected] of NAMED) {
     let names = cache.get(q);
     if (!names) {
-      names = (await retrieve(q)).map((s) => s.name);
+      // Comparisons legitimately need a wider set, same as the route allows.
+      const cap = /\bcompare\b|\bvs\.?\b|difference between/i.test(q) ? 6 : undefined;
+      names = (await retrieve(q, [], cap)).map((s) => s.name);
       cache.set(q, names);
     }
     const hit = names.some((n) => n.toLowerCase().includes(expected.toLowerCase()));

@@ -21,6 +21,11 @@ import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { retrieveWithMeta } from "../src/lib/chat/retrieval";
 import { buildMessages } from "../src/lib/chat/systemPrompt";
 
+/** Word ceiling for a reply. A chat on a phone, not a letter. */
+const MAX_WORDS = 110;
+/** Cards shown at once. More than this buries the reply on a phone. */
+const MAX_CARDS = 3;
+
 /** Messages a student might open with that carry nothing to search on. */
 const QUERIES = [
   "hello",
@@ -61,9 +66,21 @@ function distinctive(name: string): string[] {
 const CLAIMS_EMPTY_DB =
   /(don't|do not|dont)\s+have\s+any\s+(matching\s+)?schemes|no\s+(matching\s+)?schemes\s+in\s+(my|the)\s+database/i;
 
+/** Real questions, checked for brevity and for eligibility-appropriate cards. */
+const ANSWERED: { q: string; mustNotShow?: RegExp }[] = [
+  // "his" makes this student male, so women-only schemes are not merely a
+  // weaker match, they are closed to him.
+  { q: "I'm a passed-out who finished his masters in data science", mustNotShow: /women|girl|mahila|kanya/i },
+  { q: "I am a girl student in class 12 from Kerala" },
+  { q: "I need an education loan for my masters" },
+];
+
 async function main() {
   let mismatches = 0;
   let misleading = 0;
+  let tooLong = 0;
+  let tooMany = 0;
+  let ineligible = 0;
   const rows: string[] = [];
 
   for (const q of QUERIES) {
@@ -91,14 +108,44 @@ async function main() {
     );
   }
 
+  // ─── Brevity and eligibility on real questions ──────────────────────────
+  const answeredRows: string[] = [];
+  for (const { q, mustNotShow } of ANSWERED) {
+    await new Promise((r) => setTimeout(r, PACE_MS));
+    const { schemes, matched } = await retrieveWithMeta(q);
+    const displaySchemes = matched ? schemes : [];
+    const prompt = buildMessages(q, [], displaySchemes, undefined, { matched });
+    const text = await gen(prompt.system, prompt.messages);
+
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+    const longReply = words > MAX_WORDS;
+    const manyCards = displaySchemes.length > MAX_CARDS;
+    const wrong = mustNotShow ? displaySchemes.filter((s) => mustNotShow.test(s.name)) : [];
+    if (longReply) tooLong++;
+    if (manyCards) tooMany++;
+    if (wrong.length) ineligible++;
+
+    const bad = longReply || manyCards || wrong.length > 0;
+    answeredRows.push(
+      `${bad ? "FAIL" : " ok "}  ${q.slice(0, 44).padEnd(44)} words=${String(words).padStart(3)} cards=${displaySchemes.length}` +
+        (wrong.length ? `\n        ineligible for this student: ${wrong.map((s) => s.name).join(", ").slice(0, 90)}` : ""),
+    );
+  }
+
   console.log("\n─── Reply/UI coherence ─────────────────────────────────────");
   console.log(rows.join("\n"));
   console.log("────────────────────────────────────────────────────────────");
   console.log(`Prompts: ${QUERIES.length}`);
   console.log(`  naming a scheme with no card : ${mismatches}`);
-  console.log(`  claiming the database is empty: ${misleading}\n`);
+  console.log(`  claiming the database is empty: ${misleading}`);
+  console.log("\n─── Brevity and eligibility ────────────────────────────────");
+  console.log(answeredRows.join("\n"));
+  console.log("────────────────────────────────────────────────────────────");
+  console.log(`  replies over ${MAX_WORDS} words   : ${tooLong}`);
+  console.log(`  turns over ${MAX_CARDS} cards      : ${tooMany}`);
+  console.log(`  ineligible cards shown : ${ineligible}\n`);
 
-  process.exit(mismatches > 0 || misleading > 0 ? 1 : 0);
+  process.exit(mismatches > 0 || misleading > 0 || tooLong > 0 || tooMany > 0 || ineligible > 0 ? 1 : 0);
 }
 
 main();

@@ -74,11 +74,19 @@ export async function fetchApprovedSchemes(intent: Intent, limit = 20): Promise<
     );
     params.push("all");
   }
-  if (intent.gender && intent.gender !== "all") {
+  // Gender is the one signal that is genuinely disqualifying rather than just
+  // less relevant: a women-only scholarship is not a weaker match for a male
+  // student, it is closed to him. Scoring it softly surfaced women-only cards
+  // to someone who had said "his", so the opposite gender is excluded outright.
+  const excludeClauses: string[] = [];
+  if (intent.gender === "male" || intent.gender === "female") {
+    const opposite = intent.gender === "male" ? "female" : "male";
     params.push(intent.gender);
     scoreParts.push(
       `(CASE WHEN beneficiary_gender = $${idx++} THEN 2 WHEN beneficiary_gender = 'all' THEN 1 ELSE 0 END)`,
     );
+    params.push(opposite);
+    excludeClauses.push(`(beneficiary_gender IS DISTINCT FROM $${idx++})`);
   }
   if (intent.state) {
     params.push(intent.state);
@@ -109,11 +117,12 @@ export async function fetchApprovedSchemes(intent: Intent, limit = 20): Promise<
   }
 
   const score = scoreParts.join(" + ");
+  const exclusions = excludeClauses.length ? ` AND ${excludeClauses.join(" AND ")}` : "";
   params.push(limit);
   return query(
     `SELECT ${SELECT_COLS}, (${score}) AS relevance
      FROM schemes
-     WHERE status = 'approved' AND (${score}) > 0
+     WHERE status = 'approved' AND (${score}) > 0${exclusions}
      ORDER BY relevance DESC, reviewed_at DESC NULLS LAST
      LIMIT $${idx}`,
     params,

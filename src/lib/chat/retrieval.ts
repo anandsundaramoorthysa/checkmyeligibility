@@ -5,7 +5,12 @@ import { searchByVector } from "./qdrant";
 import { fetchApprovedSchemes, fetchSchemesByIds } from "./db";
 import { rowToScheme } from "./schemeMapper";
 
-const MAX_RESULTS = 5;
+// Three, not five. On a phone each scheme card is most of a screen, so five at
+// once buries the reply and reads as a wall rather than an answer. The student
+// can always ask for more, and the follow-up chips offer exactly that.
+const MAX_RESULTS = 3;
+/** A comparison explicitly names several schemes, so it needs room for them. */
+export const COMPARISON_MAX_RESULTS = 6;
 const STRUCTURED_LIMIT = 20;
 const VECTOR_LIMIT = 10;
 /** Assistant turns can run long; cap how much of them seeds the embedding so
@@ -85,6 +90,7 @@ export interface RetrievalResult {
 export async function retrieveWithMeta(
   message: string,
   history: Message[] = [],
+  maxResults: number = MAX_RESULTS,
 ): Promise<RetrievalResult> {
   const retrievalQuery = buildRetrievalQuery(message, history);
   const intent = extractIntent(message);
@@ -123,12 +129,16 @@ export async function retrieveWithMeta(
   }
 
   return {
-    schemes: merged.slice(0, MAX_RESULTS).map(rowToScheme),
+    schemes: merged.slice(0, maxResults).map(rowToScheme),
     matched: hasIntent || vectorIds.length > 0,
   };
 }
 
 /** Convenience wrapper for callers that only need the schemes. */
-export async function retrieve(message: string, history: Message[] = []): Promise<Scheme[]> {
-  return (await retrieveWithMeta(message, history)).schemes;
+export async function retrieve(
+  message: string,
+  history: Message[] = [],
+  maxResults: number = MAX_RESULTS,
+): Promise<Scheme[]> {
+  return (await retrieveWithMeta(message, history, maxResults)).schemes;
 }

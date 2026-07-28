@@ -2,7 +2,7 @@ import { streamText } from "ai";
 import { createGroq } from "@ai-sdk/groq";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import type { BotTurn, Message, QuickReply, Scheme } from "@/lib/types";
-import { retrieveWithMeta } from "@/lib/chat/retrieval";
+import { retrieveWithMeta, COMPARISON_MAX_RESULTS } from "@/lib/chat/retrieval";
 import {
   buildMessages,
   MAX_HISTORY,
@@ -159,19 +159,24 @@ export async function POST(req: Request): Promise<Response> {
     })));
   }
 
+  // Detect intent modes first: a comparison names several schemes, so it needs
+  // a wider result set than the deliberately small default.
+  const comparisonMode = isComparisonIntent(message);
+  const grievanceMode = isGrievanceIntent(message);
+
   let schemes: Scheme[] = [];
   let matched = true;
   try {
-    const r = await retrieveWithMeta(message, history);
+    const r = await retrieveWithMeta(
+      message,
+      history,
+      comparisonMode ? COMPARISON_MAX_RESULTS : undefined,
+    );
     schemes = r.schemes;
     matched = r.matched;
   } catch {
     // continue with empty schemes — LLM will say no matches
   }
-
-  // Detect intent modes
-  const comparisonMode = isComparisonIntent(message);
-  const grievanceMode = isGrievanceIntent(message);
 
   // Fire-and-forget — the function stays alive for the duration of the stream
   void logChat({
