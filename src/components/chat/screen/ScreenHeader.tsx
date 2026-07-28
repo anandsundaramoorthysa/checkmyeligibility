@@ -43,7 +43,7 @@ const SHORTCUTS: { keys: string; label: string }[] = [
  * Slim sticky header for the full-screen assistant. Doubles as the page's
  * only header (the site nav is not rendered on /chat — see SiteShell), so
  * the logo on the left is a real link back to the marketing site, not just
- * decoration. The "Eli AI" assistant name sits to the right of it, followed
+ * decoration. The "CheckMyEligibility" name sits to the right of it, followed
  * by a Botinigo-style action toolbar — text size, new chat, download
  * transcript, keyboard shortcuts, sound, and conversation search.
  */
@@ -87,8 +87,7 @@ export function ScreenHeader({
           <LogoMark className="h-6 w-6" title="" />
         </span>
         <span className="hidden font-display text-base font-extrabold tracking-tight sm:inline">
-          <span className="text-navy-deep">Eli</span>{" "}
-          <span className="text-saffron">AI</span>
+          <span className="text-navy-deep">CheckMy</span><span className="text-saffron">Eligibility</span>
         </span>
       </Link>
 

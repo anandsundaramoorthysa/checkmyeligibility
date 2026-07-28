@@ -73,7 +73,7 @@ function buildSystemPrompt(lang?: string): string {
       ? `\n\nLANGUAGE: Write your entire reply in ${langName}. The student has chosen ${langName} in the interface. They may type in English, or mix English and ${langName}; reply in ${langName} regardless. Keep scheme names and URLs in their official form. Only use a different language if the student explicitly asks you to.`
       : "";
 
-  return `You are Eli AI, a friendly and knowledgeable assistant helping Indian students discover government education schemes they may qualify for.
+  return `You are CheckMyEligibility, a friendly and knowledgeable assistant helping Indian students discover government education schemes they may qualify for.
 
 Your job: help students find scholarships, fellowships, education loans, and grants from Indian government portals.
 

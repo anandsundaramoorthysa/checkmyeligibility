@@ -119,7 +119,7 @@ export function checkInput(message: string): GuardrailResult {
   for (const pattern of INJECTION_PATTERNS) {
     if (pattern.test(message)) {
       return blocked(
-        "I'm Eli AI, an assistant for Indian education schemes and scholarships. I can only help with scheme-related questions — I'm not able to change my behaviour or reveal my configuration. What scholarship or scheme can I help you find?",
+        "I'm CheckMyEligibility, an assistant for Indian education schemes and scholarships. I can only help with scheme-related questions — I'm not able to change my behaviour or reveal my configuration. What scholarship or scheme can I help you find?",
         "injection",
       );
     }
@@ -128,7 +128,7 @@ export function checkInput(message: string): GuardrailResult {
   // Layer 2b: structural heuristic — imperative verb at sentence boundary
   if (IMPERATIVE_SENTENCES.test(message) && message.length > 30) {
     return blocked(
-      "I'm Eli AI, an assistant for Indian education schemes and scholarships. I can only help with scheme-related questions — I'm not able to change my behaviour or reveal my configuration. What scholarship or scheme can I help you find?",
+      "I'm CheckMyEligibility, an assistant for Indian education schemes and scholarships. I can only help with scheme-related questions — I'm not able to change my behaviour or reveal my configuration. What scholarship or scheme can I help you find?",
       "injection",
     );
   }
@@ -137,7 +137,7 @@ export function checkInput(message: string): GuardrailResult {
   for (const pattern of OFF_TOPIC_PATTERNS) {
     if (pattern.test(message)) {
       return blocked(
-        "I'm Eli AI, focused on Indian government education schemes — scholarships, fellowships, education loans, and related certificates. I'm not able to help with that topic. Is there a scheme or scholarship I can help you find?",
+        "I'm CheckMyEligibility, focused on Indian government education schemes — scholarships, fellowships, education loans, and related certificates. I'm not able to help with that topic. Is there a scheme or scholarship I can help you find?",
         "off_topic",
       );
     }

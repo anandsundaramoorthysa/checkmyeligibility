@@ -66,10 +66,10 @@ export function WelcomeState({ onPick, lang }: Props) {
       </div>
 
       <p
-        aria-label="Eli AI"
+        aria-label="CheckMyEligibility"
         className="mt-4 text-sm font-semibold tracking-widest text-saffron-deep uppercase motion-safe:animate-welcome-rise"
       >
-        Eli AI
+        CheckMyEligibility
       </p>
 
       <h1 className="mt-2 text-balance font-display text-3xl font-extrabold tracking-tight text-navy-deep motion-safe:animate-welcome-rise sm:text-4xl">

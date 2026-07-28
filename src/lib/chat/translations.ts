@@ -60,7 +60,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   en: {
     welcomeTitle: "What are you entitled to?",
     welcomeSubtitle:
-      "Ask Eli AI. Describe your situation in plain words and Eli will find the scholarships, fellowships, and education loans you may qualify for.",
+      "Ask CheckMyEligibility. Describe your situation in plain words and CheckMyEligibility will find the scholarships, fellowships, and education loans you may qualify for.",
     personas: {
       student: "I'm a student",
       sc_st: "SC / ST student",
@@ -88,7 +88,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   hi: {
     welcomeTitle: "आप किसके लिए पात्र हैं?",
     welcomeSubtitle:
-      "Eli AI से पूछें। अपनी स्थिति सरल शब्दों में बताएं और Eli उन छात्रवृत्तियों, फेलोशिप और शिक्षा ऋणों को खोजेगा जिनके लिए आप पात्र हो सकते हैं।",
+      "CheckMyEligibility से पूछें। अपनी स्थिति सरल शब्दों में बताएं और CheckMyEligibility उन छात्रवृत्तियों, फेलोशिप और शिक्षा ऋणों को खोजेगा जिनके लिए आप पात्र हो सकते हैं।",
     personas: {
       student: "मैं एक छात्र हूं",
       sc_st: "SC/ST छात्र",
@@ -116,7 +116,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   ta: {
     welcomeTitle: "நீங்கள் எதற்கு தகுதியானவர்?",
     welcomeSubtitle:
-      "Eli AI-யிடம் கேளுங்கள். உங்கள் சூழ்நிலையை எளிய வார்த்தைகளில் விவரிக்கவும், நீங்கள் தகுதியுள்ள உதவித்தொகைகள், ஆராய்ச்சி உதவித்தொகைகள் மற்றும் கல்வி கடன்களை Eli கண்டறிவார்.",
+      "CheckMyEligibility-யிடம் கேளுங்கள். உங்கள் சூழ்நிலையை எளிய வார்த்தைகளில் விவரிக்கவும், நீங்கள் தகுதியுள்ள உதவித்தொகைகள், ஆராய்ச்சி உதவித்தொகைகள் மற்றும் கல்வி கடன்களை CheckMyEligibility கண்டறிவார்.",
     personas: {
       student: "நான் ஒரு மாணவன்",
       sc_st: "SC/ST மாணவர்",
@@ -144,7 +144,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   ml: {
     welcomeTitle: "നിങ്ങൾക്ക് എന്തിനൊക്കെ അർഹതയുണ്ട്?",
     welcomeSubtitle:
-      "Eli AI-നോട് ചോദിക്കൂ. നിങ്ങളുടെ സാഹചര്യം ലളിതമായ വാക്കുകളിൽ വിവരിക്കുക, നിങ്ങൾക്ക് അർഹതയുള്ള സ്കോളർഷിപ്പുകൾ, ഫെല്ലോഷിപ്പുകൾ, വിദ്യാഭ്യാസ വായ്പകൾ എന്നിവ Eli കണ്ടെത്തും.",
+      "CheckMyEligibility-നോട് ചോദിക്കൂ. നിങ്ങളുടെ സാഹചര്യം ലളിതമായ വാക്കുകളിൽ വിവരിക്കുക, നിങ്ങൾക്ക് അർഹതയുള്ള സ്കോളർഷിപ്പുകൾ, ഫെല്ലോഷിപ്പുകൾ, വിദ്യാഭ്യാസ വായ്പകൾ എന്നിവ CheckMyEligibility കണ്ടെത്തും.",
     personas: {
       student: "ഞാൻ ഒരു വിദ്യാർത്ഥിയാണ്",
       sc_st: "SC/ST വിദ്യാർത്ഥി",
@@ -172,7 +172,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   kn: {
     welcomeTitle: "ನೀವು ಯಾವುದಕ್ಕೆ ಅರ್ಹರಾಗಿದ್ದೀರಿ?",
     welcomeSubtitle:
-      "Eli AI ಅನ್ನು ಕೇಳಿ. ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಯನ್ನು ಸರಳ ಪದಗಳಲ್ಲಿ ವಿವರಿಸಿ, ನೀವು ಅರ್ಹರಾಗಿರಬಹುದಾದ ವಿದ್ಯಾರ್ಥಿ ವೇತನ, ಫೆಲೋಶಿಪ್ ಮತ್ತು ಶಿಕ್ಷಣ ಸಾಲಗಳನ್ನು Eli ಕಂಡುಹಿಡಿಯುತ್ತದೆ.",
+      "CheckMyEligibility ಅನ್ನು ಕೇಳಿ. ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಯನ್ನು ಸರಳ ಪದಗಳಲ್ಲಿ ವಿವರಿಸಿ, ನೀವು ಅರ್ಹರಾಗಿರಬಹುದಾದ ವಿದ್ಯಾರ್ಥಿ ವೇತನ, ಫೆಲೋಶಿಪ್ ಮತ್ತು ಶಿಕ್ಷಣ ಸಾಲಗಳನ್ನು CheckMyEligibility ಕಂಡುಹಿಡಿಯುತ್ತದೆ.",
     personas: {
       student: "ನಾನು ಒಬ್ಬ ವಿದ್ಯಾರ್ಥಿ",
       sc_st: "SC/ST ವಿದ್ಯಾರ್ಥಿ",
@@ -200,7 +200,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   te: {
     welcomeTitle: "మీరు దేనికి అర్హులు?",
     welcomeSubtitle:
-      "Eli AI ని అడగండి. మీ పరిస్థితిని సాధారణ పదాలలో వివరించండి, మీరు అర్హత పొందగల స్కాలర్‌షిప్‌లు, ఫెల్లోషిప్‌లు మరియు విద్యా రుణాలను Eli కనుగొంటుంది.",
+      "CheckMyEligibility ని అడగండి. మీ పరిస్థితిని సాధారణ పదాలలో వివరించండి, మీరు అర్హత పొందగల స్కాలర్‌షిప్‌లు, ఫెల్లోషిప్‌లు మరియు విద్యా రుణాలను CheckMyEligibility కనుగొంటుంది.",
     personas: {
       student: "నేను ఒక విద్యార్థిని",
       sc_st: "SC/ST విద్యార్థి",
@@ -228,7 +228,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   mr: {
     welcomeTitle: "तुम्ही कशासाठी पात्र आहात?",
     welcomeSubtitle:
-      "Eli AI ला विचारा. तुमची परिस्थिती सोप्या शब्दांत सांगा आणि तुम्ही पात्र असलेल्या शिष्यवृत्त्या, फेलोशिप आणि शैक्षणिक कर्जे Eli शोधून काढेल.",
+      "CheckMyEligibility ला विचारा. तुमची परिस्थिती सोप्या शब्दांत सांगा आणि तुम्ही पात्र असलेल्या शिष्यवृत्त्या, फेलोशिप आणि शैक्षणिक कर्जे CheckMyEligibility शोधून काढेल.",
     personas: {
       student: "मी एक विद्यार्थी आहे",
       sc_st: "SC/ST विद्यार्थी",
@@ -256,7 +256,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   ur: {
     welcomeTitle: "آپ کس چیز کے اہل ہیں؟",
     welcomeSubtitle:
-      "Eli AI سے پوچھیں۔ اپنی صورتحال آسان الفاظ میں بیان کریں اور Eli وہ وظائف، فیلوشپ اور تعلیمی قرضے تلاش کرے گا جن کے آپ اہل ہو سکتے ہیں۔",
+      "CheckMyEligibility سے پوچھیں۔ اپنی صورتحال آسان الفاظ میں بیان کریں اور CheckMyEligibility وہ وظائف، فیلوشپ اور تعلیمی قرضے تلاش کرے گا جن کے آپ اہل ہو سکتے ہیں۔",
     personas: {
       student: "میں ایک طالب علم ہوں",
       sc_st: "SC/ST طالب علم",
@@ -284,7 +284,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   sa: {
     welcomeTitle: "भवान् कस्मै पात्रः अस्ति?",
     welcomeSubtitle:
-      "Eli AI इत्यस्मात् पृच्छन्तु। स्वस्थितिं सरलशब्दैः वर्णयन्तु, Eli भवद्योग्यानि शिष्यवृत्तीनि, अनुसंधानवृत्तीनि, शिक्षणऋणानि च अन्वेषयिष्यति।",
+      "CheckMyEligibility इत्यस्मात् पृच्छन्तु। स्वस्थितिं सरलशब्दैः वर्णयन्तु, CheckMyEligibility भवद्योग्यानि शिष्यवृत्तीनि, अनुसंधानवृत्तीनि, शिक्षणऋणानि च अन्वेषयिष्यति।",
     personas: {
       student: "अहं छात्रः अस्मि",
       sc_st: "SC/ST छात्रः",
@@ -312,7 +312,7 @@ export const STRINGS: Record<LangCode, Strings> = {
   bn: {
     welcomeTitle: "আপনি কী কী সুবিধার জন্য যোগ্য?",
     welcomeSubtitle:
-      "Eli AI-কে জিজ্ঞাসা করুন। আপনার পরিস্থিতি সহজ ভাষায় বর্ণনা করুন, Eli আপনার জন্য উপযুক্ত বৃত্তি, ফেলোশিপ এবং শিক্ষা ঋণ খুঁজে দেবে।",
+      "CheckMyEligibility-কে জিজ্ঞাসা করুন। আপনার পরিস্থিতি সহজ ভাষায় বর্ণনা করুন, CheckMyEligibility আপনার জন্য উপযুক্ত বৃত্তি, ফেলোশিপ এবং শিক্ষা ঋণ খুঁজে দেবে।",
     personas: {
       student: "আমি একজন ছাত্র",
       sc_st: "SC/ST ছাত্র/ছাত্রী",
