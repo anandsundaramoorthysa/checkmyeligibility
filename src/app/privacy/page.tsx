@@ -108,11 +108,33 @@ export default function PrivacyPage() {
                 </h2>
                 <p>
                   When you describe your situation to the assistant, that text is
-                  used only to suggest relevant schemes during your visit. In this
-                  phase of the product we do not store your conversation on our
-                  servers and we do not build a personal profile of you. We never
-                  submit applications on your behalf or transmit your details to
-                  any government department.
+                  used to suggest relevant schemes. We never submit applications
+                  on your behalf, and we never transmit your details to any
+                  government department.
+                </p>
+                <p>
+                  So that you can close the tab and pick the conversation back up,
+                  your messages and the assistant&apos;s replies are saved on our
+                  servers against a random identifier held in a cookie on your
+                  device. That identifier is not linked to your name, your email
+                  or any account, because there is no account to link it to. It is
+                  the only way we can find your conversation, so anyone without
+                  that cookie, including us going looking by name, cannot.
+                </p>
+                <p>
+                  Conversations are deleted automatically after 30 days of
+                  inactivity. You can delete yours at any time by starting a new
+                  chat with the <span className="font-semibold">+</span> button in
+                  the assistant, which clears both the copy in your browser and
+                  the copy on our servers.
+                </p>
+                <p>
+                  Separately, we keep an operational log of the questions asked so
+                  we can see what students are looking for and where the assistant
+                  is failing them. Those entries are stored against a one-way hash
+                  of your IP address, never the address itself, and are not joined
+                  to your saved conversation. We do not build a personal profile of
+                  you and we do not sell or share any of this.
                 </p>
               </section>
 
@@ -121,10 +143,16 @@ export default function PrivacyPage() {
                   {SECTIONS[2].title}
                 </h2>
                 <p>
-                  We may use essential cookies to make the site work and limited,
-                  privacy-respecting analytics to understand which pages are
-                  useful. These do not identify you personally. We do not sell
-                  your data or use it for advertising.
+                  We set one essential cookie. It holds a random identifier for
+                  your saved conversation, nothing else: no name, no email, no
+                  tracking across other sites. It cannot be read by JavaScript,
+                  it is not shared with anyone, and it expires after 30 days.
+                  Clearing your cookies, or starting a new chat, ends it.
+                </p>
+                <p>
+                  We may also use limited, privacy-respecting analytics to
+                  understand which pages are useful. These do not identify you
+                  personally. We do not sell your data or use it for advertising.
                 </p>
               </section>
 

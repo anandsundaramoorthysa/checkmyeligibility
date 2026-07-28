@@ -13,6 +13,15 @@ import {
 import { sanitizeInput, checkInput, validateOutput, allowedHostsFor } from "@/lib/chat/guardrail";
 import { isRateLimited } from "@/lib/chat/rateLimiter";
 import { logChat, hashIp } from "@/lib/chat/chatLogger";
+import {
+  THREAD_COOKIE,
+  appendTurn,
+  issueThreadToken,
+  readThreadToken,
+  threadCookie,
+  threadPersistenceEnabled,
+  touchThread,
+} from "@/lib/chat/threadStore";
 
 export const runtime = "nodejs";
 
@@ -44,6 +53,16 @@ function buildQuickReplies(schemes: Scheme[], hasResults: boolean): QuickReply[]
 function isRateLimit(err: unknown): boolean {
   const msg = err instanceof Error ? err.message : String(err);
   return msg.includes("429") || msg.toLowerCase().includes("rate limit");
+}
+
+function cookieValue(req: Request, name: string): string | undefined {
+  const header = req.headers.get("cookie");
+  if (!header) return undefined;
+  for (const part of header.split(";")) {
+    const [k, ...rest] = part.trim().split("=");
+    if (k === name) return rest.join("=");
+  }
+  return undefined;
 }
 
 function fallbackJson(turn: BotTurn, init?: ResponseInit): Response {
@@ -159,6 +178,23 @@ export async function POST(req: Request): Promise<Response> {
     })));
   }
 
+  // Resolve the caller's thread, minting one on first contact. Purely a
+  // convenience layer: if anything here fails the reply still goes out and the
+  // browser keeps its own copy.
+  let threadId: string | null = null;
+  let setCookie: string | undefined;
+  if (threadPersistenceEnabled()) {
+    threadId = readThreadToken(cookieValue(req, THREAD_COOKIE));
+    if (!threadId) {
+      const issued = issueThreadToken();
+      if (issued) {
+        threadId = issued.id;
+        setCookie = threadCookie(issued.token);
+      }
+    }
+    if (threadId) void touchThread(threadId);
+  }
+
   // Detect intent modes first: a comparison names several schemes, so it needs
   // a wider result set than the deliberately small default.
   const comparisonMode = isComparisonIntent(message);
@@ -224,31 +260,44 @@ export async function POST(req: Request): Promise<Response> {
         comparisonMode: comparisonMode || undefined,
       });
 
+      let reply = "";
       try {
-        await streamLLM(prompt, send, allowedHosts);
+        reply = await streamLLM(prompt, send, allowedHosts);
       } catch {
         send({ type: "token", text: BUSY_MESSAGE });
+        reply = BUSY_MESSAGE;
       }
 
+      // The client has everything it needs at this point, so the save costs it
+      // nothing. It happens before the stream closes rather than after: on a
+      // serverless runtime the invocation can be torn down the moment the
+      // response ends, and work queued after close is not guaranteed to run.
       send({ type: "done" });
+      if (threadId) {
+        await appendTurn(threadId, [
+          { role: "user", content: message },
+          { role: "assistant", content: reply },
+        ]);
+      }
       controller.close();
     },
   });
 
-  return new Response(stream, {
-    headers: {
-      "Content-Type": "text/event-stream",
-      "Cache-Control": "no-cache, no-transform",
-      "X-Accel-Buffering": "no",
-    },
-  });
+  const headers: Record<string, string> = {
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache, no-transform",
+    "X-Accel-Buffering": "no",
+  };
+  if (setCookie) headers["Set-Cookie"] = setCookie;
+
+  return new Response(stream, { headers });
 }
 
 async function streamLLM(
   prompt: Prompt,
   send: (obj: unknown) => void,
   allowedHosts: Set<string>,
-): Promise<void> {
+): Promise<string> {
   const { system, messages } = prompt;
 
   // Try Groq with one retry on rate limit
@@ -274,7 +323,7 @@ async function streamLLM(
           // Output was modified — tell client to replace content
           send({ type: "replace", text: validated });
         }
-        return;
+        return validated;
       } catch (err) {
         if (attempt === 0 && isRateLimit(err)) {
           await new Promise((r) => setTimeout(r, 1200));
@@ -303,11 +352,12 @@ async function streamLLM(
       if (!fullText) throw new Error("empty completion");
       const validated = validateOutput(fullText, allowedHosts);
       if (validated !== fullText) send({ type: "replace", text: validated });
-      return;
+      return validated;
     } catch {
       // fall through
     }
   }
 
   send({ type: "token", text: BUSY_MESSAGE });
+  return BUSY_MESSAGE;
 }

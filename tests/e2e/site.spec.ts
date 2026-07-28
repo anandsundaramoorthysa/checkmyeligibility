@@ -109,10 +109,80 @@ test.describe("Bot (standalone /chat page)", () => {
     );
     test.setTimeout(90_000);
     await page.goto("/chat?q=" + encodeURIComponent("I need a scholarship for B.Tech"));
-    // The reply streams in; a scheme card carries the official-portal link.
+
+    // Results arrive as a collapsed list so they cannot bury the reply.
+    const summary = page.getByText(/possible match/i).first();
+    await expect(summary).toBeVisible({ timeout: 60_000 });
+
+    // Each row opens into the full card, which carries the official-portal link.
+    // Scoped to the results list: the header and composer also have collapsed
+    // toggles, and an unscoped .first() picked one of those instead.
+    const row = page.locator("li > button[aria-expanded='false']").first();
+    await expect(row).toBeVisible({ timeout: 15_000 });
+    await row.click();
     await expect(
       page.getByRole("link", { name: /official portal/i }).first(),
-    ).toBeVisible({ timeout: 60_000 });
+    ).toBeVisible({ timeout: 15_000 });
+  });
+});
+
+test.describe("Editing a sent message", () => {
+  test("re-asks with the new wording and drops the stale reply", async ({ page }) => {
+    test.skip(
+      !process.env.DATABASE_URL || !(process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY),
+      "needs DATABASE_URL and an LLM key",
+    );
+    test.setTimeout(120_000);
+
+    await page.goto("/chat?q=" + encodeURIComponent("I need a scholarship for B.Tech"));
+    await expect(page.getByText(/possible match/i).first()).toBeVisible({ timeout: 60_000 });
+
+    // The pencil only appears once the reply has finished streaming.
+    const edit = page.getByRole("button", { name: /edit this message/i }).first();
+    await edit.click({ force: true });
+
+    const box = page.getByRole("textbox", { name: /edit your message/i });
+    await expect(box).toBeVisible();
+    await box.fill("I need an education loan for my masters");
+    await page.getByRole("button", { name: /send again/i }).click();
+
+    // The edited question replaces the original, and the old one is gone.
+    await expect(page.getByText("I need an education loan for my masters")).toBeVisible({
+      timeout: 60_000,
+    });
+    await expect(page.getByText("I need a scholarship for B.Tech")).toHaveCount(0);
+  });
+});
+
+test.describe("Conversation history", () => {
+  test("a turn mints an httpOnly thread cookie and is readable back", async ({ request }) => {
+    test.skip(
+      !process.env.DATABASE_URL || !(process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY),
+      "needs DATABASE_URL and an LLM key",
+    );
+    test.setTimeout(90_000);
+
+    const res = await request.post("/api/chat", { data: { message: "I need a scholarship for B.Tech" } });
+    expect(res.status()).toBe(200);
+    await res.body();
+
+    const history = await request.get("/api/history");
+    const body = await history.json();
+    expect(body.messages.length).toBeGreaterThanOrEqual(2);
+    expect(body.messages[0].role).toBe("user");
+
+    // Clearing the chat must clear the stored copy too.
+    await request.delete("/api/history");
+    const after = await (await request.get("/api/history")).json();
+    expect(after.messages).toHaveLength(0);
+  });
+
+  test("history is not readable without a valid signed cookie", async ({ request }) => {
+    // A forged id must not resolve to anyone's conversation.
+    const res = await request.get("/api/history", {
+      headers: { cookie: "cme_thread=aaaaaaaaaaaaaaaaaaaa.deadbeefdeadbeef" },
+    });
+    expect((await res.json()).messages).toHaveLength(0);
   });
 });
 
