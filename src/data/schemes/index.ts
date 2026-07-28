@@ -22,6 +22,7 @@ import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-sti
 import { sitaramJindalScholarship } from "./sitaram-jindal-scholarship";
 import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hostel-scheme-bjrcy";
 import { vikramadityaScholarshipSchemeMadhyaPradesh } from "./vikramaditya-scholarship-scheme-madhya-pradesh";
+import { wiseKiranScheme } from "./wise-kiran-scheme";
 
 export const SCHEMES: Scheme[] = [
   aictMitacsGlobalinkResearchInternship,
@@ -45,4 +46,5 @@ export const SCHEMES: Scheme[] = [
   sitaramJindalScholarship,
   theBabuJagjivanRamHostelSchemeBjrcy,
   vikramadityaScholarshipSchemeMadhyaPradesh,
+  wiseKiranScheme,
 ];
