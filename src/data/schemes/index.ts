@@ -13,10 +13,8 @@ import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarshi
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
-import { nationalFellowshipForStudentsWithDisabilities } from "./national-fellowship-for-students-with-disabilities";
 import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./national-overseas-scholarship-for-persons-with-disabilities";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
-import { shreyasUmbrellaScheme } from "./shreyas-umbrella-scheme";
 import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hostel-scheme-bjrcy";
 import { vikramadityaScholarshipSchemeMadhyaPradesh } from "./vikramaditya-scholarship-scheme-madhya-pradesh";
 
@@ -33,10 +31,8 @@ export const SCHEMES: Scheme[] = [
   inspireScholarshipForHigherEducation,
   jaganannaVidyaDeevenaFeeReimbursement,
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
-  nationalFellowshipForStudentsWithDisabilities,
   nationalOverseasScholarshipForPersonsWithDisabilities,
   punjabBocwBoardStipendScholarshipScheme,
-  shreyasUmbrellaScheme,
   theBabuJagjivanRamHostelSchemeBjrcy,
   vikramadityaScholarshipSchemeMadhyaPradesh,
 ];
