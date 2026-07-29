@@ -1,6 +1,6 @@
 import type { Scheme } from "@/lib/types";
 
-export const nationalSchemeOfIncentiveToGirlsForSecondaryEducation: Scheme = {
+export const nationalSchemeOfIncentiveToGirlsForSecondaryEducationNsigse: Scheme = {
   id: "national-scheme-of-incentive-to-girls-for-secondary-education-nsigse",
   slug: "national-scheme-of-incentive-to-girls-for-secondary-education-356",
   name: "National Scheme of Incentive to Girls for Secondary Education (NSIGSE)",
