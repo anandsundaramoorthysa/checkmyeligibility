@@ -43,6 +43,7 @@ import { indianOilAcademicScholarshipScheme } from "./indian-oil-academic-schola
 import { inspireFacultyFellowship } from "./inspire-faculty-fellowship";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
 import { instrumentalAssistanceMedicalEngineeringDiplomaStudentsSebcGujarat } from "./instrumental-assistance-medical-engineering-diploma-students-sebc-gujarat";
+import { ishanUdayScholarship } from "./ishan-uday-scholarship";
 import { isiStipendSchemeUgPgDiploma } from "./isi-stipend-scheme-ug-pg-diploma";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
 import { jkTyreShikshaSarthiScholarship } from "./jk-tyre-shiksha-sarthi-scholarship";
@@ -91,6 +92,7 @@ import { preMatricScholarshipSchemeForObcStudents } from "./pre-matric-scholarsh
 import { preMatricScholarshipUncleanOccupation } from "./pre-matric-scholarship-unclean-occupation";
 import { primeMinisterSScholarshipSchemePmssForWardsOfRpfRpsfPersonnel } from "./prime-minister-s-scholarship-scheme-pmss-for-wards-of-rpf-rpsf-personnel";
 import { primeMinistersFellowshipDoctoralResearch } from "./prime-ministers-fellowship-doctoral-research";
+import { primeMinistersResearchFellowship } from "./prime-ministers-research-fellowship";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
 import { rajarshiShahuMaharajShikshanShulkShishyavruttiYojnaEbc } from "./rajarshi-shahu-maharaj-shikshan-shulk-shishyavrutti-yojna-ebc";
 import { rajivGandhiNationalFellowshipSc } from "./rajiv-gandhi-national-fellowship-sc";
@@ -98,6 +100,7 @@ import { rblBankShikshaScholarship } from "./rbl-bank-shiksha-scholarship";
 import { reimbursementOfCollegeFeesForScStudentsInProfessionalColleges } from "./reimbursement-of-college-fees-for-sc-students-in-professional-colleges";
 import { ruralGirlsIncentiveScheme } from "./rural-girls-incentive-scheme";
 import { scholarshipsHigherEducationAbroadOpenCategory } from "./scholarships-higher-education-abroad-open-category";
+import { sebcPostMatricScholarshipSchemeGujarat } from "./sebc-post-matric-scholarship-scheme-gujarat";
 import { shreyasUmbrellaScheme } from "./shreyas-umbrella-scheme";
 import { siemensScholarshipProgram } from "./siemens-scholarship-program";
 import { sitaramJindalScholarship } from "./sitaram-jindal-scholarship";
@@ -159,6 +162,7 @@ export const SCHEMES: Scheme[] = [
   inspireFacultyFellowship,
   inspireScholarshipForHigherEducation,
   instrumentalAssistanceMedicalEngineeringDiplomaStudentsSebcGujarat,
+  ishanUdayScholarship,
   isiStipendSchemeUgPgDiploma,
   jaganannaVidyaDeevenaFeeReimbursement,
   jkTyreShikshaSarthiScholarship,
@@ -207,6 +211,7 @@ export const SCHEMES: Scheme[] = [
   preMatricScholarshipUncleanOccupation,
   primeMinisterSScholarshipSchemePmssForWardsOfRpfRpsfPersonnel,
   primeMinistersFellowshipDoctoralResearch,
+  primeMinistersResearchFellowship,
   punjabBocwBoardStipendScholarshipScheme,
   rajarshiShahuMaharajShikshanShulkShishyavruttiYojnaEbc,
   rajivGandhiNationalFellowshipSc,
@@ -214,6 +219,7 @@ export const SCHEMES: Scheme[] = [
   reimbursementOfCollegeFeesForScStudentsInProfessionalColleges,
   ruralGirlsIncentiveScheme,
   scholarshipsHigherEducationAbroadOpenCategory,
+  sebcPostMatricScholarshipSchemeGujarat,
   shreyasUmbrellaScheme,
   siemensScholarshipProgram,
   sitaramJindalScholarship,
