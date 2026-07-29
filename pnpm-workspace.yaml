@@ -1,3 +1,6 @@
+packages:
+  - "."
+
 allowBuilds:
   esbuild: true
   # sharp powers next/image optimisation. Next pulls it in from 15 onward, and
