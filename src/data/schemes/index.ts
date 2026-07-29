@@ -9,22 +9,11 @@ import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-scheme";
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
 import { bsrFellowshipSchemeForScienceStudentsUgc } from "./bsr-fellowship-scheme-for-science-students-ugc";
-import { centralVigilanceCommissionInternshipScheme } from "./central-vigilance-commission-internship-scheme";
 import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarship-programme";
-import { haryanaBocwScholarshipProfessionalTechnicalCourses } from "./haryana-bocw-scholarship-professional-technical-courses";
-import { higherEducationAssistanceSchemeGujarat } from "./higher-education-assistance-scheme-gujarat";
-import { indianOilAcademicScholarshipScheme } from "./indian-oil-academic-scholarship-scheme";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
-import { isiStipendSchemeUgPgDiploma } from "./isi-stipend-scheme-ug-pg-diploma";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
-import { meritCumMeansScholarshipForMinorityStudents } from "./merit-cum-means-scholarship-for-minority-students";
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
-import { mukhyamantriYuvaSwavalambanYojanaGujarat } from "./mukhyamantri-yuva-swavalamban-yojana-gujarat";
 import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./national-overseas-scholarship-for-persons-with-disabilities";
-import { nbfcdEducationLoan } from "./nbfcd-education-loan";
-import { necMeritScholarship } from "./nec-merit-scholarship";
-import { padhoPardeshScheme } from "./padho-pardesh-scheme";
-import { pmUspCentralSectorSchemeOfScholarship } from "./pm-usp-central-sector-scheme-of-scholarship";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
 import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hostel-scheme-bjrcy";
 import { vikramadityaScholarshipSchemeMadhyaPradesh } from "./vikramaditya-scholarship-scheme-madhya-pradesh";
@@ -38,22 +27,11 @@ export const SCHEMES: Scheme[] = [
   aicteSakshamScholarshipScheme,
   aicteYashasviScholarship,
   bsrFellowshipSchemeForScienceStudentsUgc,
-  centralVigilanceCommissionInternshipScheme,
   deepikaStudentScholarshipProgramme,
-  haryanaBocwScholarshipProfessionalTechnicalCourses,
-  higherEducationAssistanceSchemeGujarat,
-  indianOilAcademicScholarshipScheme,
   inspireScholarshipForHigherEducation,
-  isiStipendSchemeUgPgDiploma,
   jaganannaVidyaDeevenaFeeReimbursement,
-  meritCumMeansScholarshipForMinorityStudents,
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
-  mukhyamantriYuvaSwavalambanYojanaGujarat,
   nationalOverseasScholarshipForPersonsWithDisabilities,
-  nbfcdEducationLoan,
-  necMeritScholarship,
-  padhoPardeshScheme,
-  pmUspCentralSectorSchemeOfScholarship,
   punjabBocwBoardStipendScholarshipScheme,
   theBabuJagjivanRamHostelSchemeBjrcy,
   vikramadityaScholarshipSchemeMadhyaPradesh,
