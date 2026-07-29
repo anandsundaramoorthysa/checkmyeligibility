@@ -8,7 +8,6 @@ import { aictePragatiScholarship } from "./aicte-pragati-scholarship";
 import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-scheme";
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
-import { biharStudentCreditCardScheme } from "./bihar-student-credit-card-scheme";
 import { bsrFellowshipSchemeForScienceStudentsUgc } from "./bsr-fellowship-scheme-for-science-students-ugc";
 import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarship-programme";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
@@ -27,7 +26,6 @@ export const SCHEMES: Scheme[] = [
   aicteSakshamDegree,
   aicteSakshamScholarshipScheme,
   aicteYashasviScholarship,
-  biharStudentCreditCardScheme,
   bsrFellowshipSchemeForScienceStudentsUgc,
   deepikaStudentScholarshipProgramme,
   inspireScholarshipForHigherEducation,
