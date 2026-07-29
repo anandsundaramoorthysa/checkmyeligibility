@@ -10,17 +10,12 @@ import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-schem
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
 import { bsrFellowshipSchemeForScienceStudentsUgc } from "./bsr-fellowship-scheme-for-science-students-ugc";
 import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarship-programme";
-import { idfcFirstBankEngineeringScholarshipProgram } from "./idfc-first-bank-engineering-scholarship-program";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
-import { mukhyamantriGyanSadhanaMeritScholarshipScheme } from "./mukhyamantri-gyan-sadhana-merit-scholarship-scheme";
-import { nationalFellowshipForObcStudents } from "./national-fellowship-for-obc-students";
 import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./national-overseas-scholarship-for-persons-with-disabilities";
-import { preMatricScholarshipSchemeForObcStudents } from "./pre-matric-scholarship-scheme-for-obc-students";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
 import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hostel-scheme-bjrcy";
-import { topClassEducationSchemeForScStudents } from "./top-class-education-scheme-for-sc-students";
 import { vikramadityaScholarshipSchemeMadhyaPradesh } from "./vikramaditya-scholarship-scheme-madhya-pradesh";
 
 export const SCHEMES: Scheme[] = [
@@ -33,16 +28,11 @@ export const SCHEMES: Scheme[] = [
   aicteYashasviScholarship,
   bsrFellowshipSchemeForScienceStudentsUgc,
   deepikaStudentScholarshipProgramme,
-  idfcFirstBankEngineeringScholarshipProgram,
   inspireScholarshipForHigherEducation,
   jaganannaVidyaDeevenaFeeReimbursement,
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
-  mukhyamantriGyanSadhanaMeritScholarshipScheme,
-  nationalFellowshipForObcStudents,
   nationalOverseasScholarshipForPersonsWithDisabilities,
-  preMatricScholarshipSchemeForObcStudents,
   punjabBocwBoardStipendScholarshipScheme,
   theBabuJagjivanRamHostelSchemeBjrcy,
-  topClassEducationSchemeForScStudents,
   vikramadityaScholarshipSchemeMadhyaPradesh,
 ];
