@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const pmUspCentralSectorSchemeOfScholarship: Scheme = {
   id: "pm-usp-central-sector-scheme-of-scholarship",
-  slug: "pradhan-mantri-uchchatar-shiksha-protsahan-pm-usp-csss-247",
+  slug: "pradhan-mantri-uchchatar-shiksha-protsahan-pm-usp-csss",
   name: "Pradhan Mantri Uchchatar Shiksha Protsahan (PM-USP) Central Sector Scheme of Scholarship for College and University Students",
   shortName: "PM-USP CSSS",
   summary:
