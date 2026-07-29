@@ -8,7 +8,6 @@ import { aictePragatiScholarship } from "./aicte-pragati-scholarship";
 import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-scheme";
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
-import { biharStudentCreditCardScheme } from "./bihar-student-credit-card-scheme";
 import { bsrFellowshipSchemeForScienceStudentsUgc } from "./bsr-fellowship-scheme-for-science-students-ugc";
 import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarship-programme";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
@@ -16,7 +15,6 @@ import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
 import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./national-overseas-scholarship-for-persons-with-disabilities";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
-import { rblBankShikshaScholarship } from "./rbl-bank-shiksha-scholarship";
 import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hostel-scheme-bjrcy";
 import { vikramadityaScholarshipSchemeMadhyaPradesh } from "./vikramaditya-scholarship-scheme-madhya-pradesh";
 
@@ -28,7 +26,6 @@ export const SCHEMES: Scheme[] = [
   aicteSakshamDegree,
   aicteSakshamScholarshipScheme,
   aicteYashasviScholarship,
-  biharStudentCreditCardScheme,
   bsrFellowshipSchemeForScienceStudentsUgc,
   deepikaStudentScholarshipProgramme,
   inspireScholarshipForHigherEducation,
@@ -36,7 +33,6 @@ export const SCHEMES: Scheme[] = [
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
   nationalOverseasScholarshipForPersonsWithDisabilities,
   punjabBocwBoardStipendScholarshipScheme,
-  rblBankShikshaScholarship,
   theBabuJagjivanRamHostelSchemeBjrcy,
   vikramadityaScholarshipSchemeMadhyaPradesh,
 ];
