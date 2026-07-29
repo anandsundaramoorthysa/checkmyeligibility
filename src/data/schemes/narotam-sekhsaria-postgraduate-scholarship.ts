@@ -14,6 +14,11 @@ export const narotamSekhsariaPostgraduateScholarship: Scheme = {
   states: ["all-india"],
   eligibility: [
     {
+      label: "Category",
+      value: "Open to General/Merit, SC/ST, OBC, EWS, Minority, Girl/Women, and BC/MBC categories",
+      type: "caste-category",
+    },
+    {
       label: "Citizenship",
       value: "Must be an Indian citizen residing in India",
       type: "residence",
@@ -30,7 +35,7 @@ export const narotamSekhsariaPostgraduateScholarship: Scheme = {
     },
     {
       label: "Course",
-      value: "Must be planning to pursue postgraduate studies at a reputed institution in India or abroad",
+      value: "Must be planning to pursue postgraduate (PG) or PhD/Research studies at a reputed institution in India or abroad",
       type: "education",
     },
     {
@@ -75,6 +80,13 @@ export const narotamSekhsariaPostgraduateScholarship: Scheme = {
     "foundation",
     "all-india",
     "abroad",
+    "general-merit",
+    "sc-st",
+    "obc",
+    "ews",
+    "minority",
+    "girl-women",
+    "bc-mbc",
   ],
   faqs: [
     {
@@ -88,6 +100,10 @@ export const narotamSekhsariaPostgraduateScholarship: Scheme = {
     {
       q: "Can final-year students apply?",
       a: "Yes, students in the final year of their degree or awaiting results can also apply. Candidates awaiting admission decisions are also eligible to apply, subject to securing admission.",
+    },
+    {
+      q: "What is the application process?",
+      a: "Visit the scholarship portal at pg.nsfoundation.co.in, register with your email ID, pay the application fee of ₹500 (non-refundable), complete the online application form, and upload required documents when requested. Shortlisted candidates will attend online interviews. Final selection is based on academic merit, profile strength, and interview performance. Selected scholars must attend a mandatory orientation programme.",
     },
     {
       q: "What is the application fee?",
