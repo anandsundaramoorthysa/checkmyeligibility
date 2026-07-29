@@ -1,7 +1,6 @@
 // AUTO-GENERATED — do not edit. Run `pnpm collect-schemes` to rebuild.
 import type { Scheme } from "@/lib/types";
 
-import { aictMitacsGlobalinkResearchInternship } from "./aict-mitacs-globalink-research-internship";
 import { aicteDistinguishedChairProfessorFellowship } from "./aicte-distinguished-chair-professor-fellowship";
 import { aicteDoctoralFellowshipAdf } from "./aicte-doctoral-fellowship-adf";
 import { aicteIdeaLab } from "./aicte-idea-lab";
@@ -20,7 +19,6 @@ import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hos
 import { vikramadityaScholarshipSchemeMadhyaPradesh } from "./vikramaditya-scholarship-scheme-madhya-pradesh";
 
 export const SCHEMES: Scheme[] = [
-  aictMitacsGlobalinkResearchInternship,
   aicteDistinguishedChairProfessorFellowship,
   aicteDoctoralFellowshipAdf,
   aicteIdeaLab,
