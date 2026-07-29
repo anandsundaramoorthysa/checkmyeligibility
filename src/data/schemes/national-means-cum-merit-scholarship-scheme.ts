@@ -48,58 +48,19 @@ export const nationalMeansCumMeritScholarshipScheme: Scheme = {
     },
   ],
   benefits: [
-    {
-      label: "Annual Scholarship Amount",
-      value: "₹12,000 per annum (₹1,000 per month for 12 months) disbursed in monthly installments or half-yearly installments",
-    },
-    {
-      label: "Direct Benefit Transfer (DBT)",
-      value: "Scholarship amount transferred directly to student's or parent's bank account via DBT system; no paper-based payments",
-    },
-    {
-      label: "No Collateral or Guarantee",
-      value: "Pure scholarship grant with no repayment requirement; no collateral, guarantor, or employment bond needed",
-    },
-    {
-      label: "Academic Support",
-      value: "Access to government school educational resources; free textbooks and educational materials as per state norms; counseling support available",
-    },
-    {
-      label: "Continuity through Secondary Level",
-      value: "Scholarship available for both Class IX and Class X (2-year support); students maintain scholarship if marks criteria met annually",
-    },
-    {
-      label: "Priority for Backward Areas",
-      value: "Special consideration for students from Schedule Tribe (ST) areas, Schedule Caste (SC) habitations, and geographically backward districts",
-    },
-    {
-      label: "Girl Child Priority",
-      value: "Preference given to girl students in merit-selection process; girls' scholarship retention often has relaxed continuation criteria",
-    },
-    {
-      label: "SC/ST/OBC Concession",
-      value: "Relaxed merit criterion (50% instead of 55% marks) for SC/ST candidates; reserved quota for SC/ST/OBC categories in scholarship distribution",
-    },
-    {
-      label: "Rural Student Representation",
-      value: "Priority allocation to students from rural and semi-urban areas; state ensures geographical balance in scholarship distribution",
-    },
-    {
-      label: "Entrance Exam Preparation Support",
-      value: "Practice test materials, sample question papers, and exam guidance provided; preparation resources available through government websites",
-    },
-    {
-      label: "Career Counseling",
-      value: "Career guidance and counseling services provided through schools; information about post-secondary education pathways and skill development",
-    },
-    {
-      label: "Educational Continuation Support",
-      value: "Facilitation for higher education admission; career fairs and vocational guidance organized to ensure educational continuation",
-    },
-    {
-      label: "Official Recognition and Prestige",
-      value: "NMMS scholarship provides official recognition as meritorious student; credential enhances college admission prospects and employment opportunities",
-    },
+    "Annual Scholarship Amount — ₹12,000 per annum (₹1,000 per month for 12 months) disbursed in monthly or half-yearly installments",
+    "Direct Benefit Transfer (DBT) — Scholarship amount transferred directly to student's or parent's bank account via DBT; no paper-based payments",
+    "No Collateral or Guarantee — Pure scholarship grant with no repayment requirement; no collateral, guarantor, or employment bond needed",
+    "Academic Support — Access to government school educational resources; free textbooks and educational materials as per state norms",
+    "Continuity through Secondary Level — Scholarship available for both Class IX and Class X (2-year support); students maintain scholarship if marks criteria met annually",
+    "Priority for Backward Areas — Special consideration for students from ST areas, SC habitations, and geographically backward districts",
+    "Girl Child Priority — Preference given to girl students in merit-selection; girls' scholarship retention often has relaxed continuation criteria",
+    "SC/ST/OBC Concession — Relaxed merit criterion (50% instead of 55% marks) for SC/ST candidates; reserved quota in scholarship distribution",
+    "Rural Student Representation — Priority allocation to students from rural and semi-urban areas; state ensures geographical balance",
+    "Entrance Exam Preparation Support — Practice test materials, sample question papers, and exam guidance provided through government websites",
+    "Career Counseling — Career guidance and counseling services provided through schools; information about post-secondary education pathways",
+    "Educational Continuation Support — Facilitation for higher education admission; career fairs and vocational guidance organised",
+    "Official Recognition and Prestige — NMMS scholarship provides official recognition as meritorious student; enhances college admission prospects",
   ],
   requiredDocuments: [
     {
@@ -190,76 +151,76 @@ export const nationalMeansCumMeritScholarshipScheme: Scheme = {
   ],
   faqs: [
     {
-      question: "What is the National Means-cum-Merit Scholarship Scheme (NMMS)?",
-      answer: "NMMS is a central government scholarship program providing annual grants of ₹12,000 to talented students from economically weaker sections studying in Classes IX and X. It combines merit-based selection (through entrance examination) with financial need (income limit of ₹3,50,000) to support secondary education continuation and reduce school dropout rates.",
+      q: "What is the National Means-cum-Merit Scholarship Scheme (NMMS)?",
+      a: "NMMS is a central government scholarship program providing annual grants of ₹12,000 to talented students from economically weaker sections studying in Classes IX and X. It combines merit-based selection (through entrance examination) with financial need (income limit of ₹3,50,000) to support secondary education continuation and reduce school dropout rates.",
     },
     {
-      question: "Who is eligible to apply for NMMS?",
-      answer: "Students studying in Class IX or X in government/government-aided schools with minimum 55% marks (50% for SC/ST) in previous exam, annual family income below ₹3,50,000, state residency for 3-5 years, and who cleared the NMMS entrance exam are eligible.",
+      q: "Who is eligible to apply for NMMS?",
+      a: "Students studying in Class IX or X in government/government-aided schools with minimum 55% marks (50% for SC/ST) in previous exam, annual family income below ₹3,50,000, state residency for 3-5 years, and who cleared the NMMS entrance exam are eligible.",
     },
     {
-      question: "What is the scholarship amount?",
-      answer: "Annual scholarship amount is ₹12,000 (₹1,000 per month for 12 months) disbursed monthly or half-yearly through Direct Benefit Transfer (DBT) to student's/parent's bank account.",
+      q: "What is the scholarship amount?",
+      a: "Annual scholarship amount is ₹12,000 (₹1,000 per month for 12 months) disbursed monthly or half-yearly through Direct Benefit Transfer (DBT) to student's/parent's bank account.",
     },
     {
-      question: "How many years can I receive this scholarship?",
-      answer: "NMMS scholarship is available for both Class IX and Class X (2-year support maximum). Students must reapply each year to continue, meeting merit criteria (minimum marks) and means criteria (income limit) annually.",
+      q: "How many years can I receive this scholarship?",
+      a: "NMMS scholarship is available for both Class IX and Class X (2-year support maximum). Students must reapply each year to continue, meeting merit criteria (minimum marks) and means criteria (income limit) annually.",
     },
     {
-      question: "What is the income limit?",
-      answer: "Annual family income ceiling is ₹3,50,000 from all sources. This includes salary income, self-employment income, agricultural income, rental income, and any other family earnings. Income certificate must be issued by revenue office.",
+      q: "What is the income limit?",
+      a: "Annual family income ceiling is ₹3,50,000 from all sources. This includes salary income, self-employment income, agricultural income, rental income, and any other family earnings. Income certificate must be issued by revenue office.",
     },
     {
-      question: "What is the minimum marks requirement?",
-      answer: "General category students require minimum 55% marks in previous annual examination. SC/ST category students are eligible with minimum 50% marks. Performance must also rank in top merit positions in state/district level entrance exam.",
+      q: "What is the minimum marks requirement?",
+      a: "General category students require minimum 55% marks in previous annual examination. SC/ST category students are eligible with minimum 50% marks. Performance must also rank in top merit positions in state/district level entrance exam.",
     },
     {
-      question: "Which schools are eligible?",
-      answer: "Only government schools and government-aided schools recognized by state education boards are eligible. Private schools are not covered. Schools must be affiliated with CBSE, ICSE, or state board.",
+      q: "Which schools are eligible?",
+      a: "Only government schools and government-aided schools recognized by state education boards are eligible. Private schools are not covered. Schools must be affiliated with CBSE, ICSE, or state board.",
     },
     {
-      question: "How is selection done?",
-      answer: "Selection is through two-stage process: (1) Academic qualification (55% marks), (2) Merit-cum-means entrance examination (SAT) conducted at state/UT level. Top scorers in entrance exam with family income below ₹3,50,000 are selected.",
+      q: "How is selection done?",
+      a: "Selection is through two-stage process: (1) Academic qualification (55% marks), (2) Merit-cum-means entrance examination (SAT) conducted at state/UT level. Top scorers in entrance exam with family income below ₹3,50,000 are selected.",
     },
     {
-      question: "Is there relaxation for SC/ST/OBC students?",
-      answer: "Yes, SC/ST students get relaxation in marks criterion (50% instead of 55%) and may have reserved quota positions. OBC students may also get some priority consideration depending on state policies.",
+      q: "Is there relaxation for SC/ST/OBC students?",
+      a: "Yes, SC/ST students get relaxation in marks criterion (50% instead of 55%) and may have reserved quota positions. OBC students may also get some priority consideration depending on state policies.",
     },
     {
-      question: "Are girls given priority?",
-      answer: "Yes, girl students are given priority in merit-based selection process, and their scholarship is often retained with relatively relaxed continuation criteria. Many states ensure gender balance in scholarship distribution.",
+      q: "Are girls given priority?",
+      a: "Yes, girl students are given priority in merit-based selection process, and their scholarship is often retained with relatively relaxed continuation criteria. Many states ensure gender balance in scholarship distribution.",
     },
     {
-      question: "Can I apply if I'm studying in a private school?",
-      answer: "No, NMMS is only for government and government-aided schools. Students in private schools are not eligible, even if they meet other criteria.",
+      q: "Can I apply if I'm studying in a private school?",
+      a: "No, NMMS is only for government and government-aided schools. Students in private schools are not eligible, even if they meet other criteria.",
     },
     {
-      question: "What is the application process?",
-      answer: "Students apply through their school after it announces NMMS selection. Application forms are filled online via state portal or offline through school. After submission, students appear in state-level SAT (Scholastic Aptitude Test). Merit lists are prepared and scholarships awarded.",
+      q: "What is the application process?",
+      a: "Students apply through their school after it announces NMMS selection. Application forms are filled online via state portal or offline through school. After submission, students appear in state-level SAT (Scholastic Aptitude Test). Merit lists are prepared and scholarships awarded.",
     },
     {
-      question: "When is the scholarship disbursed?",
-      answer: "Scholarship is disbursed monthly (₹1,000 per month) or half-yearly through Direct Benefit Transfer (DBT) to linked bank account. First disbursement typically starts within 2-3 months of approval.",
+      q: "When is the scholarship disbursed?",
+      a: "Scholarship is disbursed monthly (₹1,000 per month) or half-yearly through Direct Benefit Transfer (DBT) to linked bank account. First disbursement typically starts within 2-3 months of approval.",
     },
     {
-      question: "Can I receive NMMS along with other scholarships?",
-      answer: "NMMS cannot be received simultaneously with other national-level scholarships. However, state-level scholarships may be combined depending on scheme guidelines. State scholarships and NMMS can often be received together.",
+      q: "Can I receive NMMS along with other scholarships?",
+      a: "NMMS cannot be received simultaneously with other national-level scholarships. However, state-level scholarships may be combined depending on scheme guidelines. State scholarships and NMMS can often be received together.",
     },
     {
-      question: "What happens if my family income increases during the year?",
-      answer: "If income exceeds ₹3,50,000 during the scholarship year, the student remains eligible for that year. However, income increase affects renewal for the next year. Fresh income certificate is required during annual renewal process.",
+      q: "What happens if my family income increases during the year?",
+      a: "If income exceeds ₹3,50,000 during the scholarship year, the student remains eligible for that year. However, income increase affects renewal for the next year. Fresh income certificate is required during annual renewal process.",
     },
     {
-      question: "What documents are mandatory for application?",
-      answer: "Mandatory documents include: (1) Application form, (2) Income certificate <₹3,50,000, (3) Birth certificate/age proof, (4) School enrollment certificate, (5) Previous mark sheet, (6) Residency proof, (7) Caste certificate (if applicable), (8) Bank account details.",
+      q: "What documents are mandatory for application?",
+      a: "Mandatory documents include: (1) Application form, (2) Income certificate <₹3,50,000, (3) Birth certificate/age proof, (4) School enrollment certificate, (5) Previous mark sheet, (6) Residency proof, (7) Caste certificate (if applicable), (8) Bank account details.",
     },
     {
-      question: "How do I get my income certificate?",
-      answer: "Income certificate is issued by gram panchayat in rural areas or municipal corporation in urban areas. Apply at local revenue office with supporting documents like salary slips, tax returns, or employment letter. Certificate is typically issued within 7-10 days.",
+      q: "How do I get my income certificate?",
+      a: "Income certificate is issued by gram panchayat in rural areas or municipal corporation in urban areas. Apply at local revenue office with supporting documents like salary slips, tax returns, or employment letter. Certificate is typically issued within 7-10 days.",
     },
     {
-      question: "Can I appeal if my scholarship application is rejected?",
-      answer: "Yes, rejected applications can be appealed within specified time period (typically 30 days) to district education office with supporting evidence. Common rejection reasons include income exceeding limit or marks below minimum threshold.",
+      q: "Can I appeal if my scholarship application is rejected?",
+      a: "Yes, rejected applications can be appealed within specified time period (typically 30 days) to district education office with supporting evidence. Common rejection reasons include income exceeding limit or marks below minimum threshold.",
     },
   ],
   source: "sample",

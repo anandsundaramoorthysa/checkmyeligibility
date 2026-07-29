@@ -9,7 +9,7 @@ export const nationalFellowshipForObcStudents: Scheme = {
     "JRF at ₹31,000/month for 2 years and SRF at ₹35,000/month for 3 years for OBC students pursuing M.Phil. or Ph.D. at UGC-recognised universities, with 1,000 slots annually.",
   description:
     "The National Fellowship for OBC Students (NF-OBC) is a Central Sector Scheme launched by the Ministry of Social Justice and Empowerment and implemented by the University Grants Commission (UGC). It was introduced in 2014-15 to increase opportunities for Other Backward Classes (OBC) students to pursue higher education leading to M.Phil. and Ph.D. degrees. The scheme provides 1,000 Junior Research Fellowships (JRF) per year — 750 for Humanities/Social Sciences (UGC-NET-JRF) and 250 for Sciences (UGC-CSIR NET-JRF). Fellows receive a JRF for the first two years and an SRF for the remaining tenure, along with contingency grants, HRA, and medical benefits. The fellowship is awarded for up to 5 years (2 years JRF + 3 years SRF) subject to satisfactory research progress.",
-  category: "social-welfare",
+  category: "fellowship",
   level: "central",
   states: ["all-india"],
   eligibility: [
@@ -74,7 +74,7 @@ export const nationalFellowshipForObcStudents: Scheme = {
       mandatory: false,
     },
   ],
-  officialPortalUrl: "https://nfobc.ucanapply.com/",
+  officialPortalUrl: "https://www.ugc.gov.in/",
   ministry:
     "Ministry of Social Justice and Empowerment / University Grants Commission (UGC)",
   applicationMode: ["online"],

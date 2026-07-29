@@ -48,58 +48,19 @@ export const collaborativeResearchScheme: Scheme = {
     },
   ],
   benefits: [
-    {
-      label: "Research Grant",
-      value: "₹10,00,000 - ₹3,00,00,000 based on project scope (typically ₹25,00,000 for 3-year projects)",
-    },
-    {
-      label: "Consumables and Materials",
-      value: "₹15,00,000 - ₹60,00,000 for research materials, chemicals, and consumable supplies over project period",
-    },
-    {
-      label: "Equipment Procurement",
-      value: "Up to 40% of project cost for major equipment (₹40,00,000 - ₹1,20,00,000) with approval; equipment becomes institutional asset",
-    },
-    {
-      label: "Travel and Conference Support",
-      value: "₹1,50,000 - ₹4,00,000 annually for national and international conference participation and collaborative visits",
-    },
-    {
-      label: "Personnel Support",
-      value: "₹10,00,000 - ₹25,00,000 annually for 2-3 research fellows, JRF, or SRF salary support as per DST norms",
-    },
-    {
-      label: "Contingency Fund",
-      value: "5% of project cost (₹50,00,000 - ₹15,00,000) for unforeseen research expenses and administrative costs",
-    },
-    {
-      label: "Publication and Dissemination",
-      value: "₹10,00,000 - ₹30,00,000 for research publication, open-access fees, seminar organization, and knowledge dissemination",
-    },
-    {
-      label: "Mentorship and Training",
-      value: "Support for organizing workshops, training programs, and capacity-building activities for junior researchers and students",
-    },
-    {
-      label: "Infrastructure Access",
-      value: "Access to national research facilities, high-performance computing centers, and laboratory infrastructure at partner institutions",
-    },
-    {
-      label: "International Collaboration Support",
-      value: "₹5,00,000 - ₹15,00,000 for international researcher visits, collaborative field studies, and research exchange programs",
-    },
-    {
-      label: "Patent and IP Protection",
-      value: "Institutional support for patent filing, intellectual property protection, and technology commercialization assistance",
-    },
-    {
-      label: "Extension Opportunity",
-      value: "Possibility of project extension for 1-2 years based on performance and pending milestones",
-    },
-    {
-      label: "Networking and Collaboration Platform",
-      value: "Access to national collaborative research network, research data repository, and inter-institutional knowledge-sharing platform",
-    },
+    "Research Grant — ₹10,00,000 - ₹3,00,00,000 based on project scope (typically ₹25,00,000 for 3-year projects)",
+    "Consumables and Materials — ₹15,00,000 - ₹60,00,000 for research materials, chemicals, and consumable supplies over project period",
+    "Equipment Procurement — Up to 40% of project cost for major equipment (₹40,00,000 - ₹1,20,00,000) with approval; equipment becomes institutional asset",
+    "Travel and Conference Support — ₹1,50,000 - ₹4,00,000 annually for national and international conference participation and collaborative visits",
+    "Personnel Support — ₹10,00,000 - ₹25,00,000 annually for 2-3 research fellows, JRF, or SRF salary support as per DST norms",
+    "Contingency Fund — 5% of project cost (₹50,00,000 - ₹15,00,000) for unforeseen research expenses and administrative costs",
+    "Publication and Dissemination — ₹10,00,000 - ₹30,00,000 for research publication, open-access fees, seminar organization, and knowledge dissemination",
+    "Mentorship and Training — Support for organizing workshops, training programs, and capacity-building activities for junior researchers and students",
+    "Infrastructure Access — Access to national research facilities, high-performance computing centers, and laboratory infrastructure at partner institutions",
+    "International Collaboration Support — ₹5,00,000 - ₹15,00,000 for international researcher visits, collaborative field studies, and research exchange programs",
+    "Patent and IP Protection — Institutional support for patent filing, intellectual property protection, and technology commercialization assistance",
+    "Extension Opportunity — Possibility of project extension for 1-2 years based on performance and pending milestones",
+    "Networking and Collaboration Platform — Access to national collaborative research network, research data repository, and inter-institutional knowledge-sharing platform",
   ],
   requiredDocuments: [
     {
@@ -190,76 +151,76 @@ export const collaborativeResearchScheme: Scheme = {
   ],
   faqs: [
     {
-      question: "Who is eligible to apply for the Collaborative Research Scheme?",
-      answer: "PhD holders working as postdoctoral researchers, early-career faculty, research scientists, or senior scientists with minimum 3-5 years research experience. Applicants must be affiliated with recognized academic institutions, national laboratories, or CSIR centers. Applications are encouraged as PI or co-PI with collaborative partners from other institutions or industry sectors.",
+      q: "Who is eligible to apply for the Collaborative Research Scheme?",
+      a: "PhD holders working as postdoctoral researchers, early-career faculty, research scientists, or senior scientists with minimum 3-5 years research experience. Applicants must be affiliated with recognized academic institutions, national laboratories, or CSIR centers. Applications are encouraged as PI or co-PI with collaborative partners from other institutions or industry sectors.",
     },
     {
-      question: "What is the maximum funding available under CRS?",
-      answer: "Maximum project cost ranges from ₹10 lakhs to ₹3 crores depending on project scope and duration. Typical 3-year collaborative projects receive ₹15-25 lakhs. Large multi-institutional or multi-disciplinary projects can secure up to ₹1-3 crores. Equipment procurement can go up to 40% of project cost.",
+      q: "What is the maximum funding available under CRS?",
+      a: "Maximum project cost ranges from ₹10 lakhs to ₹3 crores depending on project scope and duration. Typical 3-year collaborative projects receive ₹15-25 lakhs. Large multi-institutional or multi-disciplinary projects can secure up to ₹1-3 crores. Equipment procurement can go up to 40% of project cost.",
     },
     {
-      question: "Is collaboration with industry partners mandatory?",
-      answer: "While collaboration between academic institutions is mandatory, industry participation is optional but highly encouraged. Industry collaboration can enhance project outcomes, scalability, and commercialization potential. At minimum, multi-institutional academic partnerships are required.",
+      q: "Is collaboration with industry partners mandatory?",
+      a: "While collaboration between academic institutions is mandatory, industry participation is optional but highly encouraged. Industry collaboration can enhance project outcomes, scalability, and commercialization potential. At minimum, multi-institutional academic partnerships are required.",
     },
     {
-      question: "What is the project duration under CRS?",
-      answer: "Projects typically run for 2-5 years. Minimum duration is 2 years; maximum standard duration is 5 years. Extensions of 1-2 years are possible based on performance review and pending milestones with justification.",
+      q: "What is the project duration under CRS?",
+      a: "Projects typically run for 2-5 years. Minimum duration is 2 years; maximum standard duration is 5 years. Extensions of 1-2 years are possible based on performance review and pending milestones with justification.",
     },
     {
-      question: "Can I apply for CRS if I'm receiving funding from another government scheme?",
-      answer: "Simultaneous funding for the identical research project from multiple government schemes is not permitted. However, supplementary funding from different schemes for complementary activities can be considered. Full disclosure of all funding sources is mandatory.",
+      q: "Can I apply for CRS if I'm receiving funding from another government scheme?",
+      a: "Simultaneous funding for the identical research project from multiple government schemes is not permitted. However, supplementary funding from different schemes for complementary activities can be considered. Full disclosure of all funding sources is mandatory.",
     },
     {
-      question: "What happens to equipment purchased under the scheme?",
-      answer: "All equipment and materials purchased become permanent assets of the host institution. However, collaborative use across partner institutions as per MOU is encouraged. Equipment cannot be transferred to personal use or sold without department approval.",
+      q: "What happens to equipment purchased under the scheme?",
+      a: "All equipment and materials purchased become permanent assets of the host institution. However, collaborative use across partner institutions as per MOU is encouraged. Equipment cannot be transferred to personal use or sold without department approval.",
     },
     {
-      question: "Are there specific research domains or thrust areas?",
-      answer: "Schemes prioritize research addressing national challenges including climate change, renewable energy, healthcare, agriculture, digital infrastructure, and advanced manufacturing. STEM domains including physical sciences, biological sciences, engineering, and allied disciplines are eligible. Interdisciplinary and applied research is encouraged.",
+      q: "Are there specific research domains or thrust areas?",
+      a: "Schemes prioritize research addressing national challenges including climate change, renewable energy, healthcare, agriculture, digital infrastructure, and advanced manufacturing. STEM domains including physical sciences, biological sciences, engineering, and allied disciplines are eligible. Interdisciplinary and applied research is encouraged.",
     },
     {
-      question: "Can I hire research staff like JRF or SRF under this scheme?",
-      answer: "Yes, up to ₹10-25 lakhs annually can be allocated for hiring 2-3 research fellows (JRF/SRF) as per DST prescribed salary scales. Staff hired become employees of the host institution during the project period. Foreign researchers cannot be hired as JRF/SRF but can be visiting collaborators.",
+      q: "Can I hire research staff like JRF or SRF under this scheme?",
+      a: "Yes, up to ₹10-25 lakhs annually can be allocated for hiring 2-3 research fellows (JRF/SRF) as per DST prescribed salary scales. Staff hired become employees of the host institution during the project period. Foreign researchers cannot be hired as JRF/SRF but can be visiting collaborators.",
     },
     {
-      question: "What is the evaluation process and timeline?",
-      answer: "Applications undergo 2-stage evaluation: (1) Scientific merit review by domain experts, (2) Financial and institutional verification. Evaluation typically takes 3-4 months. Selected projects receive approval and first installment within 6 months of selection.",
+      q: "What is the evaluation process and timeline?",
+      a: "Applications undergo 2-stage evaluation: (1) Scientific merit review by domain experts, (2) Financial and institutional verification. Evaluation typically takes 3-4 months. Selected projects receive approval and first installment within 6 months of selection.",
     },
     {
-      question: "Are international collaborations supported?",
-      answer: "Yes, international collaborations are supported with ₹5-15 lakhs for international researcher visits, collaborative field studies, and research exchange programs. However, the host institution must be India-based, and a majority of work should be conducted in India.",
+      q: "Are international collaborations supported?",
+      a: "Yes, international collaborations are supported with ₹5-15 lakhs for international researcher visits, collaborative field studies, and research exchange programs. However, the host institution must be India-based, and a majority of work should be conducted in India.",
     },
     {
-      question: "What are the reporting and milestone requirements?",
-      answer: "Projects require half-yearly progress reports, annual reports with publications, and end-of-project final report. Milestones include submission of research papers, presentations at conferences, and demonstration of outcomes. Failure to meet milestones may affect funding continuation.",
+      q: "What are the reporting and milestone requirements?",
+      a: "Projects require half-yearly progress reports, annual reports with publications, and end-of-project final report. Milestones include submission of research papers, presentations at conferences, and demonstration of outcomes. Failure to meet milestones may affect funding continuation.",
     },
     {
-      question: "Can I publish research outputs from the scheme?",
-      answer: "Yes, publication is encouraged. All publications must acknowledge DST funding and the scheme. Open-access publishing is preferred. Publication costs including open-access fees (up to ₹30,000 per paper) can be claimed under the scheme.",
+      q: "Can I publish research outputs from the scheme?",
+      a: "Yes, publication is encouraged. All publications must acknowledge DST funding and the scheme. Open-access publishing is preferred. Publication costs including open-access fees (up to ₹30,000 per paper) can be claimed under the scheme.",
     },
     {
-      question: "What if my project requires international equipment?",
-      answer: "Equipment procurement up to 40% of project cost can include imports with department approval. Custom duties are typically waived for research equipment. The procurement process takes additional time (4-8 weeks) and requires specific approval for non-Indian suppliers.",
+      q: "What if my project requires international equipment?",
+      a: "Equipment procurement up to 40% of project cost can include imports with department approval. Custom duties are typically waived for research equipment. The procurement process takes additional time (4-8 weeks) and requires specific approval for non-Indian suppliers.",
     },
     {
-      question: "Can I include a postdoctoral fellowship component for junior researchers?",
-      answer: "Yes, postdoctoral fellowships at ₹35,000-50,000 per month for up to 2-3 researchers can be included as part of project staffing. Fellowships include HRA, conveyance, and medical benefits. Fixed-term employment contracts are provided.",
+      q: "Can I include a postdoctoral fellowship component for junior researchers?",
+      a: "Yes, postdoctoral fellowships at ₹35,000-50,000 per month for up to 2-3 researchers can be included as part of project staffing. Fellowships include HRA, conveyance, and medical benefits. Fixed-term employment contracts are provided.",
     },
     {
-      question: "Is there flexibility in fund utilization across budget heads?",
-      answer: "Limited flexibility is allowed (typically up to 10-15% reallocation) across budget categories with written justification and department approval. Major changes in project scope require formal no-cost extension or amendment request.",
+      q: "Is there flexibility in fund utilization across budget heads?",
+      a: "Limited flexibility is allowed (typically up to 10-15% reallocation) across budget categories with written justification and department approval. Major changes in project scope require formal no-cost extension or amendment request.",
     },
     {
-      question: "What support is available for patent filing and IP protection?",
-      answer: "The scheme supports patent filing costs (typically ₹50,000-100,000 per patent across multiple countries), technology licensing consultancy, and IP management. A portion of commercialization revenue may be shared with researchers per institutional policy.",
+      q: "What support is available for patent filing and IP protection?",
+      a: "The scheme supports patent filing costs (typically ₹50,000-100,000 per patent across multiple countries), technology licensing consultancy, and IP management. A portion of commercialization revenue may be shared with researchers per institutional policy.",
     },
     {
-      question: "Can PhD students or postdoctoral fellows apply as PI?",
-      answer: "PhD students cannot be PI; they can be research team members. Recent PhD holders (within 3-5 years post-PhD) can apply as PI if they hold faculty positions. Postdoctoral researchers can apply as PI only if they have independent research positions.",
+      q: "Can PhD students or postdoctoral fellows apply as PI?",
+      a: "PhD students cannot be PI; they can be research team members. Recent PhD holders (within 3-5 years post-PhD) can apply as PI if they hold faculty positions. Postdoctoral researchers can apply as PI only if they have independent research positions.",
     },
     {
-      question: "What is the funding release schedule during the project period?",
-      answer: "Funding is typically released in installments: 50% at project start, 30% at mid-term review (after 12-18 months), 20% at final stage (after satisfactory progress review). Installment schedule may vary based on project duration and milestones.",
+      q: "What is the funding release schedule during the project period?",
+      a: "Funding is typically released in installments: 50% at project start, 30% at mid-term review (after 12-18 months), 20% at final stage (after satisfactory progress review). Installment schedule may vary based on project duration and milestones.",
     },
   ],
   source: "sample",

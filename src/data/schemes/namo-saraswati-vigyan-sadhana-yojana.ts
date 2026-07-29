@@ -2,8 +2,8 @@ import type { Scheme } from "@/lib/types";
 
 export const namoSaraswatiVigyanSadhanaYojana: Scheme = {
   id: "namo-saraswati-vigyan-sadhana-yojana",
-  slug: "namo-saraswati-vigyan-sadhana-yojana-289",
-  name: "Namo Saraswati Vigyan Sadhana Yojana #289",
+  slug: "namo-saraswati-vigyan-sadhana-yojana",
+  name: "Namo Saraswati Vigyan Sadhana Yojana",
   shortName: "Namo Saraswati Yojana",
   summary:
     "Gujarat Government scholarship of ₹25,000 over two years for Class 11 and 12 science stream students, providing ₹1,000/month for 10 months each year plus ₹5,000 bonus on passing the Class 12 board exam.",

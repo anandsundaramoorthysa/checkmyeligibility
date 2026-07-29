@@ -9,7 +9,7 @@ export const nationalFellowshipForScheduledCasteStudentsNfsc: Scheme =   {
       "Monthly fellowship for SC students pursuing full-time M.Phil. or Ph.D. — JRF ₹37,000 for 2 years, then SRF ₹42,000, plus HRA and contingency.",
     description:
       "The National Fellowship for Scheduled Caste Students (NFSC) is a Central Sector Scheme implemented by the Ministry of Social Justice and Empowerment. It provides financial assistance to Scheduled Caste students pursuing full-time M.Phil. and Ph.D. research programmes in recognized universities, institutions, and colleges in India. The fellowship aims to increase opportunities for higher education and advanced research among Scheduled Caste students and support them in pursuing research careers.",
-    category: "education",
+    category: "fellowship",
     level: "central",
     states: ["all-india"],
     eligibility: [

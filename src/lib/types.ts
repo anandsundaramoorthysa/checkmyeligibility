@@ -46,7 +46,13 @@ export type IndianState =
   | "chhattisgarh"
   | "jammu-and-kashmir"
   | "ladakh"
-  | "meghalaya";
+  | "meghalaya"
+  | "arunachal-pradesh"
+  | "manipur"
+  | "mizoram"
+  | "nagaland"
+  | "sikkim"
+  | "tripura";
 
 /* ----------------------------- schemes ------------------------------------ */
 

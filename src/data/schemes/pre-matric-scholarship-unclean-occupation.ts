@@ -48,58 +48,19 @@ export const prematricScholarshipUncleanOccupation: Scheme = {
     },
   ],
   benefits: [
-    {
-      label: "Monthly Maintenance Allowance",
-      value: "₹100-500 per month depending on class level (Classes 1-5: ₹100-200; Classes 6-10: ₹250-500)",
-    },
-    {
-      label: "Annual Book Allowance",
-      value: "₹500-₹1,200 per annum for purchase of books and stationery items; disbursed once yearly",
-    },
-    {
-      label: "Tuition Fee Reimbursement",
-      value: "Full or partial tuition fees reimbursement for students in private or government-aided schools (₹500-₹3,000 per annum)",
-    },
-    {
-      label: "Examination Fee Coverage",
-      value: "Board examination fees waived or reimbursed for Class 10 students; internal examination fees also covered",
-    },
-    {
-      label: "School Uniform Allowance",
-      value: "₹300-600 per annum for school uniform purchase or two pairs of uniform provision (Classes 1-10)",
-    },
-    {
-      label: "Miscellaneous Supplies",
-      value: "₹200-400 annually for miscellaneous educational supplies including school bag, writing materials, and other essentials",
-    },
-    {
-      label: "Health and Hygiene Support",
-      value: "Health checkup camps, sanitation kits, personal hygiene items, and counseling on health awareness",
-    },
-    {
-      label: "Protective Meals/Mid-Day Meal Support",
-      value: "Priority access to mid-day meal schemes; additional nutritional support for identified malnourished students",
-    },
-    {
-      label: "Residential Support (if applicable)",
-      value: "Free or subsidized hostel accommodation for girls in Classes 6-10; residential facilities in selected areas",
-    },
-    {
-      label: "Transportation and Travel Support",
-      value: "Free school bus travel or monthly travel allowance of ₹100-250 for students traveling more than 1 km",
-    },
-    {
-      label: "Counseling and Mentoring",
-      value: "Educational counseling, career guidance, life skills training, and mentoring from appointed counselors",
-    },
-    {
-      label: "Merit-Based Incentive",
-      value: "Additional bonus/incentive of ₹500-₹2,000 for scoring above 80% in Class 8 or 10 examinations",
-    },
-    {
-      label: "Administrative and Processing Support",
-      value: "Free scholarship processing, no application fees, assistance in document collection, and dedicated scholarship helpline",
-    },
+    "Monthly Maintenance Allowance — ₹100-500 per month depending on class level (Classes 1-5: ₹100-200; Classes 6-10: ₹250-500)",
+    "Annual Book Allowance — ₹500-₹1,200 per annum for purchase of books and stationery items; disbursed once yearly",
+    "Tuition Fee Reimbursement — Full or partial tuition fees reimbursement for students in private or government-aided schools (₹500-₹3,000 per annum)",
+    "Examination Fee Coverage — Board examination fees waived or reimbursed for Class 10 students; internal examination fees also covered",
+    "School Uniform Allowance — ₹300-600 per annum for school uniform purchase or two pairs of uniform provision (Classes 1-10)",
+    "Miscellaneous Supplies — ₹200-400 annually for miscellaneous educational supplies including school bag, writing materials, and other essentials",
+    "Health and Hygiene Support — Health checkup camps, sanitation kits, personal hygiene items, and counseling on health awareness",
+    "Protective Meals/Mid-Day Meal Support — Priority access to mid-day meal schemes; additional nutritional support for identified malnourished students",
+    "Residential Support (if applicable) — Free or subsidized hostel accommodation for girls in Classes 6-10; residential facilities in selected areas",
+    "Transportation and Travel Support — Free school bus travel or monthly travel allowance of ₹100-250 for students traveling more than 1 km",
+    "Counseling and Mentoring — Educational counseling, career guidance, life skills training, and mentoring from appointed counselors",
+    "Merit-Based Incentive — Additional bonus/incentive of ₹500-₹2,000 for scoring above 80% in Class 8 or 10 examinations",
+    "Administrative and Processing Support — Free scholarship processing, no application fees, assistance in document collection, and dedicated scholarship helpline",
   ],
   requiredDocuments: [
     {
@@ -168,7 +129,7 @@ export const prematricScholarshipUncleanOccupation: Scheme = {
       note: "Legal guardianship documentation if student is orphan or separated from parents",
     },
   ],
-  officialPortalUrl: "https://www.mhrd.gov.in/",
+  officialPortalUrl: "https://scholarships.gov.in/",
   ministry: "Ministry of Social Justice and Empowerment / Department of Social Justice, Government of India",
   applicationMode: ["online", "offline"],
   tags: [
@@ -189,76 +150,76 @@ export const prematricScholarshipUncleanOccupation: Scheme = {
   ],
   faqs: [
     {
-      question: "What is considered an 'unclean occupation' under this scheme?",
-      answer: "Unclean occupations include manual scavenging, waste collection, sanitation work, sweeping streets, cleaning public facilities, handling waste materials, and allied low-income occupations involving manual labor in unhygienic conditions. These are historically marginalized occupations. The occupation certificate from municipal authority or gram panchayat confirms eligibility.",
+      q: "What is considered an 'unclean occupation' under this scheme?",
+      a: "Unclean occupations include manual scavenging, waste collection, sanitation work, sweeping streets, cleaning public facilities, handling waste materials, and allied low-income occupations involving manual labor in unhygienic conditions. These are historically marginalized occupations. The occupation certificate from municipal authority or gram panchayat confirms eligibility.",
     },
     {
-      question: "Who is eligible to apply for this scholarship?",
-      answer: "Students in Classes 1-10 whose parents/guardians are engaged in unclean occupations and whose family annual income is below ₹1,50,000 are eligible. Additionally, students must maintain minimum 50% marks in previous examination, be Indian citizens with domicile proof, and not be receiving other government scholarships simultaneously.",
+      q: "Who is eligible to apply for this scholarship?",
+      a: "Students in Classes 1-10 whose parents/guardians are engaged in unclean occupations and whose family annual income is below ₹1,50,000 are eligible. Additionally, students must maintain minimum 50% marks in previous examination, be Indian citizens with domicile proof, and not be receiving other government scholarships simultaneously.",
     },
     {
-      question: "What is the maximum monthly maintenance allowance?",
-      answer: "Monthly maintenance allowances range from ₹100-500 depending on class level. Classes 1-5 receive ₹100-200 per month, while Classes 6-10 receive ₹250-500 per month. Students can also receive annual book allowance of ₹500-₹1,200 and uniform allowance of ₹300-600.",
+      q: "What is the maximum monthly maintenance allowance?",
+      a: "Monthly maintenance allowances range from ₹100-500 depending on class level. Classes 1-5 receive ₹100-200 per month, while Classes 6-10 receive ₹250-500 per month. Students can also receive annual book allowance of ₹500-₹1,200 and uniform allowance of ₹300-600.",
     },
     {
-      question: "How much is the annual book allowance?",
-      answer: "The annual book allowance ranges from ₹500-₹1,200 per annum depending on class level. Lower classes (1-5) typically receive ₹500-800, while higher classes (6-10) receive ₹900-1,200. Allowance is disbursed once per academic year.",
+      q: "How much is the annual book allowance?",
+      a: "The annual book allowance ranges from ₹500-₹1,200 per annum depending on class level. Lower classes (1-5) typically receive ₹500-800, while higher classes (6-10) receive ₹900-1,200. Allowance is disbursed once per academic year.",
     },
     {
-      question: "Are students in private schools eligible?",
-      answer: "Yes, students in recognized private schools and government-aided schools are eligible provided they meet all other criteria including income limit, parental occupation status, and academic performance. Tuition fee reimbursement may be limited to actual school fees within prescribed limits.",
+      q: "Are students in private schools eligible?",
+      a: "Yes, students in recognized private schools and government-aided schools are eligible provided they meet all other criteria including income limit, parental occupation status, and academic performance. Tuition fee reimbursement may be limited to actual school fees within prescribed limits.",
     },
     {
-      question: "What documents are mandatory for application?",
-      answer: "Mandatory documents include: (1) Scholarship application form, (2) Occupation certificate confirming parental unclean occupation, (3) Income certificate below ₹1,50,000, (4) School enrollment certificate, (5) Birth certificate/age proof, (6) Previous year mark sheet (if applicable), (7) Domicile certificate, (8) Bank account details with IFSC code.",
+      q: "What documents are mandatory for application?",
+      a: "Mandatory documents include: (1) Scholarship application form, (2) Occupation certificate confirming parental unclean occupation, (3) Income certificate below ₹1,50,000, (4) School enrollment certificate, (5) Birth certificate/age proof, (6) Previous year mark sheet (if applicable), (7) Domicile certificate, (8) Bank account details with IFSC code.",
     },
     {
-      question: "Is the scholarship renewable every year?",
-      answer: "Yes, the scholarship is renewable annually provided the student continues in school, maintains minimum 50% marks, meets income criteria, and has not received other government scholarships. Fresh application or renewal form submission may be required each academic year depending on state procedures.",
+      q: "Is the scholarship renewable every year?",
+      a: "Yes, the scholarship is renewable annually provided the student continues in school, maintains minimum 50% marks, meets income criteria, and has not received other government scholarships. Fresh application or renewal form submission may be required each academic year depending on state procedures.",
     },
     {
-      question: "Can a student receive scholarship for both Classes 9 and 10?",
-      answer: "Yes, a student can receive the scholarship for each class individually from Class 1 to 10, provided they meet eligibility criteria each year. However, they cannot receive duplicate benefits from other schemes for the same class level.",
+      q: "Can a student receive scholarship for both Classes 9 and 10?",
+      a: "Yes, a student can receive the scholarship for each class individually from Class 1 to 10, provided they meet eligibility criteria each year. However, they cannot receive duplicate benefits from other schemes for the same class level.",
     },
     {
-      question: "How is the scholarship amount disbursed?",
-      answer: "Scholarship amounts are typically disbursed through Direct Benefit Transfer (DBT) to the student's or parent's bank account on a monthly or quarterly basis. Some states may disburse annually. Bank account details linked to Aadhaar ID facilitate faster processing.",
+      q: "How is the scholarship amount disbursed?",
+      a: "Scholarship amounts are typically disbursed through Direct Benefit Transfer (DBT) to the student's or parent's bank account on a monthly or quarterly basis. Some states may disburse annually. Bank account details linked to Aadhaar ID facilitate faster processing.",
     },
     {
-      question: "What is the minimum percentage required to continue the scholarship?",
-      answer: "Students must maintain a minimum of 50% marks in the previous class examination to continue receiving the scholarship. Performance below 50% may result in scholarship discontinuation unless justified by special circumstances. Class 1 students are exempted from this requirement.",
+      q: "What is the minimum percentage required to continue the scholarship?",
+      a: "Students must maintain a minimum of 50% marks in the previous class examination to continue receiving the scholarship. Performance below 50% may result in scholarship discontinuation unless justified by special circumstances. Class 1 students are exempted from this requirement.",
     },
     {
-      question: "Can girls receive additional benefits under this scheme?",
-      answer: "Yes, girls are given priority and may receive additional benefits including free/subsidized hostel accommodation in Classes 6-10, separate health awareness programs, counseling services, and gender-specific support. Some states offer higher allowances specifically for girls.",
+      q: "Can girls receive additional benefits under this scheme?",
+      a: "Yes, girls are given priority and may receive additional benefits including free/subsidized hostel accommodation in Classes 6-10, separate health awareness programs, counseling services, and gender-specific support. Some states offer higher allowances specifically for girls.",
     },
     {
-      question: "Is there a provision for residential/hostel accommodation?",
-      answer: "Yes, free or heavily subsidized hostel accommodation is available for girls in Classes 6-10 in selected locations. Boys may also get hostel support in specific regions. Hostel residents receive additional meal allowances of ₹2,000-4,000 per month.",
+      q: "Is there a provision for residential/hostel accommodation?",
+      a: "Yes, free or heavily subsidized hostel accommodation is available for girls in Classes 6-10 in selected locations. Boys may also get hostel support in specific regions. Hostel residents receive additional meal allowances of ₹2,000-4,000 per month.",
     },
     {
-      question: "Can students from other states apply in their resident state?",
-      answer: "Domicile or residency requirements typically require minimum residence period (usually 3-5 years) in the state. Students from other states may apply if they have established residence. Proof of domicile issued by revenue office or state administration is required.",
+      q: "Can students from other states apply in their resident state?",
+      a: "Domicile or residency requirements typically require minimum residence period (usually 3-5 years) in the state. Students from other states may apply if they have established residence. Proof of domicile issued by revenue office or state administration is required.",
     },
     {
-      question: "What is the examination fee coverage?",
-      answer: "Class 10 board examination fees are fully waived or reimbursed. Internal examination fees and school assessment fees are also covered. This removes a significant financial barrier for students appearing in board examinations.",
+      q: "What is the examination fee coverage?",
+      a: "Class 10 board examination fees are fully waived or reimbursed. Internal examination fees and school assessment fees are also covered. This removes a significant financial barrier for students appearing in board examinations.",
     },
     {
-      question: "Is there a merit-based incentive bonus?",
-      answer: "Yes, students scoring above 80% in Class 8 or 10 examinations receive a merit-based incentive bonus ranging from ₹500 to ₹2,000 as recognition of academic excellence. This incentivizes students to perform better in examinations.",
+      q: "Is there a merit-based incentive bonus?",
+      a: "Yes, students scoring above 80% in Class 8 or 10 examinations receive a merit-based incentive bonus ranging from ₹500 to ₹2,000 as recognition of academic excellence. This incentivizes students to perform better in examinations.",
     },
     {
-      question: "How can I apply online for this scholarship?",
-      answer: "Online application is available through state scholarship portals or the central portal depending on your state. Register with required credentials, fill the application form, upload scanned documents, and submit. You will receive acknowledgment with reference number for tracking application status.",
+      q: "How can I apply online for this scholarship?",
+      a: "Online application is available through state scholarship portals or the central portal depending on your state. Register with required credentials, fill the application form, upload scanned documents, and submit. You will receive acknowledgment with reference number for tracking application status.",
     },
     {
-      question: "What if my occupation certificate is from an informal source?",
-      answer: "Official occupation certificates are issued by municipal authorities, gram panchayats, or employers. If informal, get certified by local administration or employer. The certificate must confirm the nature of unclean occupation and duration of employment for eligibility verification.",
+      q: "What if my occupation certificate is from an informal source?",
+      a: "Official occupation certificates are issued by municipal authorities, gram panchayats, or employers. If informal, get certified by local administration or employer. The certificate must confirm the nature of unclean occupation and duration of employment for eligibility verification.",
     },
     {
-      question: "Can I appeal if my scholarship application is rejected?",
-      answer: "Yes, rejection decisions can be appealed to the state scholarship authorities within 30 days with supporting evidence addressing rejection reasons. Common reasons include income ceiling exceed, incomplete documents, or academic performance below 50%. Appeal procedures are specified by each state.",
+      q: "Can I appeal if my scholarship application is rejected?",
+      a: "Yes, rejection decisions can be appealed to the state scholarship authorities within 30 days with supporting evidence addressing rejection reasons. Common reasons include income ceiling exceed, incomplete documents, or academic performance below 50%. Appeal procedures are specified by each state.",
     },
   ],
   source: "sample",

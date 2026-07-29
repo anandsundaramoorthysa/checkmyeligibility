@@ -8,7 +8,7 @@ export const postGraduateScholarshipsForProfessionalCoursesForScStCandidates: Sc
     "\u20B94,500 per month scholarship for 1,000 SC/ST students pursuing first-year postgraduate professional courses (Engineering, Management, Pharmacy, etc.) at recognised Indian institutions through UGC.",
   description:
     'The scheme "Post Graduate Scholarships for Professional Courses for SC/ST Candidates" has been initiated to provide opportunities to the deprived sections of the society, viz. the Scheduled Caste (SC) and Scheduled Tribe (ST) for undertaking postgraduate level studies in Professional subjects like Engineering & Technology, Management, Pharmacy etc. in recognized Indian Universities/Institutions/Colleges. Objective: The objective of the scheme is to provide financial assistance to 1000 SC/ST candidates to pursue postgraduate level studies in Professional courses.',
-  category: "social-welfare",
+  category: "scholarship",
   level: "central",
   states: ["all-india"],
   eligibility: [

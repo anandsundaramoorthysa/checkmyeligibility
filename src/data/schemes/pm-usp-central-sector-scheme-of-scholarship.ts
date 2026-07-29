@@ -3,7 +3,7 @@ import type { Scheme } from "@/lib/types";
 export const pmUspCentralSectorSchemeOfScholarship: Scheme = {
   id: "pm-usp-central-sector-scheme-of-scholarship",
   slug: "pradhan-mantri-uchchatar-shiksha-protsahan-pm-usp-csss-247",
-  name: "Pradhan Mantri Uchchatar Shiksha Protsahan (PM-USP) Central Sector Scheme of Scholarship for College and University Students #247",
+  name: "Pradhan Mantri Uchchatar Shiksha Protsahan (PM-USP) Central Sector Scheme of Scholarship for College and University Students",
   shortName: "PM-USP CSSS",
   summary:
     "Up to 82,000 fresh scholarships per year for meritorious students from families with income up to ₹4.5 lakh — ₹12,000/year at graduation, ₹20,000/year at post-graduation — awarded by the Ministry of Education based on Class XII board results.",

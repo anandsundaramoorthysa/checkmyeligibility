@@ -2,8 +2,8 @@ import type { Scheme } from "@/lib/types";
 
 export const csirSeniorResearchFellowshipSrfDirect: Scheme = {
   id: "csir-senior-research-fellowship-srf-direct",
-  slug: "csir-senior-research-fellowship-srf-direct-292",
-  name: "CSIR Senior Research Fellowship (SRF-Direct) #292",
+  slug: "csir-senior-research-fellowship-srf-direct",
+  name: "CSIR Senior Research Fellowship (SRF-Direct)",
   shortName: "CSIR SRF-Direct",
   summary:
     "₹42,000/month fellowship for eligible research scholars in Science & Technology and Medical Sciences, awarded directly by CSIR-HRDG to candidates with prior research experience and publications.",

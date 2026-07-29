@@ -48,58 +48,19 @@ export const vidyaLakshmiEducationLoanScheme: Scheme = {
     },
   ],
   benefits: [
-    {
-      label: "Subsidized Loan Amount",
-      value: "₹4,00,000 - ₹1,00,00,000+ depending on course, institution, and location; no upper limit for specialized programs",
-    },
-    {
-      label: "Government Interest Subsidy (EWS)",
-      value: "100% government interest subsidy during moratorium period (typically 6-12 months post-completion) for students with family income below ₹4,50,000",
-    },
-    {
-      label: "Collateral-Free Loan Component",
-      value: "Up to ₹7.5 lakhs available without any collateral requirement; valid for both subsidized and non-subsidized loans",
-    },
-    {
-      label: "Low Interest Rate",
-      value: "Interest rates ranging from 8.5%-10.5% per annum depending on loan amount and category; rates adjusted by RBI/participating banks annually",
-    },
-    {
-      label: "Flexible Moratorium Period",
-      value: "6 months to 1 year grace period after course completion with no EMI payment during this period; ideal for job search and placement",
-    },
-    {
-      label: "Extended Repayment Period",
-      value: "Loan repayment period extends up to 15 years depending on total disbursed amount; maximum tenure flexibility available",
-    },
-    {
-      label: "Income-Contingent Repayment (ICR)",
-      value: "Special provision for lower EMI initially (from 25% of income) that increases with salary growth; bridges employment period",
-    },
-    {
-      label: "Loan to All Recognized Institutions",
-      value: "Loans available for IIT/NIT/Delhi University/DU colleges through Tier-1 institutions to Tier-3 regional colleges and private institutes",
-    },
-    {
-      label: "Foreign Education Support",
-      value: "Loans available for higher education abroad up to ₹1,00,00,000+ for students admitted to recognized universities in USA, UK, Canada, Australia, Singapore, etc.",
-    },
-    {
-      label: "Processing and Documentation Support",
-      value: "Free loan processing, no hidden charges, transparent fee structure; SLBC/district bank coordinates assistance; helpline support available",
-    },
-    {
-      label: "Employment-Linked Concessions",
-      value: "Special provisions for self-employed applicants; government employment guarantee bonds accepted for enhanced loan eligibility",
-    },
-    {
-      label: "Optional Life Insurance",
-      value: "Group life insurance coverage available at subsidized premium (typically ₹0-500 per annum) covering loan amount in case of death/disability",
-    },
-    {
-      label: "Digital Platform Access",
-      value: "Access to centralized Vidya Lakshmi portal for online application, document upload, status tracking, and loan management 24/7",
-    },
+    "Subsidized Loan Amount — ₹4,00,000 - ₹1,00,00,000+ depending on course, institution, and location; no upper limit for specialized programs",
+    "Government Interest Subsidy (EWS) — 100% government interest subsidy during moratorium period (typically 6-12 months post-completion) for students with family income below ₹4,50,000",
+    "Collateral-Free Loan Component — Up to ₹7.5 lakhs available without any collateral requirement; valid for both subsidized and non-subsidized loans",
+    "Low Interest Rate — Interest rates ranging from 8.5%-10.5% per annum depending on loan amount and category; rates adjusted by RBI/participating banks annually",
+    "Flexible Moratorium Period — 6 months to 1 year grace period after course completion with no EMI payment during this period; ideal for job search and placement",
+    "Extended Repayment Period — Loan repayment period extends up to 15 years depending on total disbursed amount; maximum tenure flexibility available",
+    "Income-Contingent Repayment (ICR) — Special provision for lower EMI initially (from 25% of income) that increases with salary growth; bridges employment period",
+    "Loan to All Recognized Institutions — Loans available for IIT/NIT/Delhi University/DU colleges through Tier-1 institutions to Tier-3 regional colleges and private institutes",
+    "Foreign Education Support — Loans available for higher education abroad up to ₹1,00,00,000+ for students admitted to recognized universities in USA, UK, Canada, Australia, Singapore, etc.",
+    "Processing and Documentation Support — Free loan processing, no hidden charges, transparent fee structure; SLBC/district bank coordinates assistance; helpline support available",
+    "Employment-Linked Concessions — Special provisions for self-employed applicants; government employment guarantee bonds accepted for enhanced loan eligibility",
+    "Optional Life Insurance — Group life insurance coverage available at subsidized premium (typically ₹0-500 per annum) covering loan amount in case of death/disability",
+    "Digital Platform Access — Access to centralized Vidya Lakshmi portal for online application, document upload, status tracking, and loan management 24/7",
   ],
   requiredDocuments: [
     {
@@ -190,76 +151,76 @@ export const vidyaLakshmiEducationLoanScheme: Scheme = {
   ],
   faqs: [
     {
-      question: "What is the Vidya Lakshmi Education Loan Scheme?",
-      answer: "Vidya Lakshmi is a centralized digital platform launched by MHRD and Ministry of Education in partnership with participating banks to facilitate education loans for students pursuing higher education. It provides both subsidized loans (with government interest subsidy) for EWS students and non-subsidized loans for all eligible students.",
+      q: "What is the Vidya Lakshmi Education Loan Scheme?",
+      a: "Vidya Lakshmi is a centralized digital platform launched by MHRD and Ministry of Education in partnership with participating banks to facilitate education loans for students pursuing higher education. It provides both subsidized loans (with government interest subsidy) for EWS students and non-subsidized loans for all eligible students.",
     },
     {
-      question: "What is the maximum loan amount available?",
-      answer: "Maximum loan amounts range from ₹1,00,00,000 for domestic education to ₹1,50,00,000+ for foreign education, depending on course type, institution tier, country of study, and duration. No upper limit for specialized/research programs.",
+      q: "What is the maximum loan amount available?",
+      a: "Maximum loan amounts range from ₹1,00,00,000 for domestic education to ₹1,50,00,000+ for foreign education, depending on course type, institution tier, country of study, and duration. No upper limit for specialized/research programs.",
     },
     {
-      question: "What is the minimum loan amount?",
-      answer: "Minimum loan amount typically starts from ₹4,00,000 for UG courses. However, loans below this may be considered for specific cases, skill development programs, or diploma courses on bank discretion.",
+      q: "What is the minimum loan amount?",
+      a: "Minimum loan amount typically starts from ₹4,00,000 for UG courses. However, loans below this may be considered for specific cases, skill development programs, or diploma courses on bank discretion.",
     },
     {
-      question: "Is there a collateral requirement?",
-      answer: "No collateral is required for loans up to ₹7.5 lakhs. Beyond this, tangible collateral such as property, gold, fixed deposits, or government securities with appropriate valuation is mandatory as per bank policy.",
+      q: "Is there a collateral requirement?",
+      a: "No collateral is required for loans up to ₹7.5 lakhs. Beyond this, tangible collateral such as property, gold, fixed deposits, or government securities with appropriate valuation is mandatory as per bank policy.",
     },
     {
-      question: "What is government interest subsidy?",
-      answer: "Government provides 100% interest subsidy during the moratorium period (typically 6-12 months after course completion) for students with family income below ₹4,50,000. Subsidy covers both principal and interest accrual, reducing student burden.",
+      q: "What is government interest subsidy?",
+      a: "Government provides 100% interest subsidy during the moratorium period (typically 6-12 months after course completion) for students with family income below ₹4,50,000. Subsidy covers both principal and interest accrual, reducing student burden.",
     },
     {
-      question: "How long is the moratorium period?",
-      answer: "Moratorium period typically ranges from 6 months to 1 year after course completion, during which no EMI payments are required. This period provides breathing space for job search and initial employment. Exact duration depends on course type and bank policy.",
+      q: "How long is the moratorium period?",
+      a: "Moratorium period typically ranges from 6 months to 1 year after course completion, during which no EMI payments are required. This period provides breathing space for job search and initial employment. Exact duration depends on course type and bank policy.",
     },
     {
-      question: "What is the interest rate?",
-      answer: "Interest rates typically range from 8.5% to 10.5% per annum depending on loan amount, loan type (subsidized/non-subsidized), and prevailing market rates. Rates are variable and reviewed annually by RBI and participating banks.",
+      q: "What is the interest rate?",
+      a: "Interest rates typically range from 8.5% to 10.5% per annum depending on loan amount, loan type (subsidized/non-subsidized), and prevailing market rates. Rates are variable and reviewed annually by RBI and participating banks.",
     },
     {
-      question: "What is the maximum repayment period?",
-      answer: "Maximum repayment tenure extends up to 15 years depending on total disbursed amount. For loans ₹20 lakhs and above, tenure up to 20 years may be available. Longer tenure reduces monthly EMI burden.",
+      q: "What is the maximum repayment period?",
+      a: "Maximum repayment tenure extends up to 15 years depending on total disbursed amount. For loans ₹20 lakhs and above, tenure up to 20 years may be available. Longer tenure reduces monthly EMI burden.",
     },
     {
-      question: "What is income-contingent repayment (ICR)?",
-      answer: "ICR is a special repayment option where EMI is initially set at 25% of gross monthly income. As salary increases, EMI automatically increases up to standard rate. This bridges the employment period when income is lower.",
+      q: "What is income-contingent repayment (ICR)?",
+      a: "ICR is a special repayment option where EMI is initially set at 25% of gross monthly income. As salary increases, EMI automatically increases up to standard rate. This bridges the employment period when income is lower.",
     },
     {
-      question: "Can I apply for a loan for education abroad?",
-      answer: "Yes, education loans are available for higher education in recognized foreign universities (USA, UK, Canada, Australia, etc.). Maximum loan amount is typically higher for foreign education (₹1,50,00,000+). TOEFL/IELTS scores and admission letter from recognized institution mandatory.",
+      q: "Can I apply for a loan for education abroad?",
+      a: "Yes, education loans are available for higher education in recognized foreign universities (USA, UK, Canada, Australia, etc.). Maximum loan amount is typically higher for foreign education (₹1,50,00,000+). TOEFL/IELTS scores and admission letter from recognized institution mandatory.",
     },
     {
-      question: "What courses are covered under the scheme?",
-      answer: "Scheme covers all recognized higher education programs including UG degrees (BA, BSc, BTech), PG degrees (MA, MSc, MTech), professional courses (MBA, CA, Law), research programs (PhD), and specialized certifications from UGC/AICTE/DEC recognized institutions.",
+      q: "What courses are covered under the scheme?",
+      a: "Scheme covers all recognized higher education programs including UG degrees (BA, BSc, BTech), PG degrees (MA, MSc, MTech), professional courses (MBA, CA, Law), research programs (PhD), and specialized certifications from UGC/AICTE/DEC recognized institutions.",
     },
     {
-      question: "Can I include living expenses in the loan amount?",
-      answer: "Yes, loans can cover course fees, hostel charges, books, uniforms, equipment, travel expenses, and other direct educational expenses. Typical education loan covers tuition + hostel + miscellaneous + books allowance.",
+      q: "Can I include living expenses in the loan amount?",
+      a: "Yes, loans can cover course fees, hostel charges, books, uniforms, equipment, travel expenses, and other direct educational expenses. Typical education loan covers tuition + hostel + miscellaneous + books allowance.",
     },
     {
-      question: "Is there an age limit for eligibility?",
-      answer: "Students should generally be above 16 years and below 40 years of age. However, no strict upper age limit for professional development, skill upgrade programs, or research. Age relaxation available for SC/ST/OBC candidates.",
+      q: "Is there an age limit for eligibility?",
+      a: "Students should generally be above 16 years and below 40 years of age. However, no strict upper age limit for professional development, skill upgrade programs, or research. Age relaxation available for SC/ST/OBC candidates.",
     },
     {
-      question: "How do I apply online through Vidya Lakshmi portal?",
-      answer: "Visit www.vidyalakshmi.nsdl.com, register with mobile/email, fill application form with personal/educational/financial details, upload required documents, select preferred banks, and submit. Application status can be tracked in real-time.",
+      q: "How do I apply online through Vidya Lakshmi portal?",
+      a: "Visit www.vidyalakshmi.nsdl.com, register with mobile/email, fill application form with personal/educational/financial details, upload required documents, select preferred banks, and submit. Application status can be tracked in real-time.",
     },
     {
-      question: "Which banks participate in Vidya Lakshmi scheme?",
-      answer: "Major participating banks include State Bank of India, ICICI Bank, HDFC Bank, Axis Bank, Canara Bank, Union Bank, Central Bank, Indian Bank, Bank of Baroda, and others. Students can apply to multiple banks simultaneously through single portal.",
+      q: "Which banks participate in Vidya Lakshmi scheme?",
+      a: "Major participating banks include State Bank of India, ICICI Bank, HDFC Bank, Axis Bank, Canara Bank, Union Bank, Central Bank, Indian Bank, Bank of Baroda, and others. Students can apply to multiple banks simultaneously through single portal.",
     },
     {
-      question: "What is the approval timeline?",
-      answer: "Application approval typically takes 7-15 days once all documents are submitted and verified. Complex cases or foreign education loans may take up to 30 days. Funds are disbursed directly to institution account.",
+      q: "What is the approval timeline?",
+      a: "Application approval typically takes 7-15 days once all documents are submitted and verified. Complex cases or foreign education loans may take up to 30 days. Funds are disbursed directly to institution account.",
     },
     {
-      question: "Can I get a loan if I don't have a collateral or guarantor?",
-      answer: "Yes, collateral-free loans up to ₹7.5 lakhs are available. For loans above this, you need tangible collateral OR a creditworthy guarantor (typically parent). Banks may also accept government employee guarantee bonds.",
+      q: "Can I get a loan if I don't have a collateral or guarantor?",
+      a: "Yes, collateral-free loans up to ₹7.5 lakhs are available. For loans above this, you need tangible collateral OR a creditworthy guarantor (typically parent). Banks may also accept government employee guarantee bonds.",
     },
     {
-      question: "What happens if I can't repay the loan?",
-      answer: "If facing financial difficulty, contact your bank for restructuring options including tenure extension, reduced EMI period, or ICR modification. Group life insurance covers loan amount if applicant dies. Default reporting affects credit score negatively.",
+      q: "What happens if I can't repay the loan?",
+      a: "If facing financial difficulty, contact your bank for restructuring options including tenure extension, reduced EMI period, or ICR modification. Group life insurance covers loan amount if applicant dies. Default reporting affects credit score negatively.",
     },
   ],
   source: "sample",

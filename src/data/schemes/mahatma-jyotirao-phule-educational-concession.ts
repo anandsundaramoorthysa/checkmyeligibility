@@ -48,58 +48,19 @@ export const mahatmaJyotiraoPhuleEducationalConcession: Scheme = {
     },
   ],
   benefits: [
-    {
-      label: "Tuition Fee Waiver",
-      value: "Full or partial tuition fee waiver (up to 100% for identified EWS/SC/ST students); applicable across all educational levels",
-    },
-    {
-      label: "Monthly Stipend/Maintenance Allowance",
-      value: "₹100-500 per month depending on educational level and category; Class 1-5: ₹100-150; Class 6-10: ₹200-300; UG/PG: ₹300-500",
-    },
-    {
-      label: "Annual Book and Stationery Allowance",
-      value: "₹500-₹1,500 per annum for purchasing textbooks, notebooks, pens, and other stationery materials",
-    },
-    {
-      label: "Examination Fee Reimbursement",
-      value: "Full reimbursement of board examination fees (Class 10, 12) and university examination fees for higher education",
-    },
-    {
-      label: "School Uniform Allowance",
-      value: "₹300-600 per annum for two pairs of school uniform or annual uniform provision for school-going children",
-    },
-    {
-      label: "Hostel Accommodation and Meals",
-      value: "Free or heavily subsidized hostel accommodation for girls and SC/ST boys; hostel meals (breakfast + lunch + dinner) provided free or subsidized",
-    },
-    {
-      label: "Travel and Conveyance Support",
-      value: "Monthly travel allowance of ₹100-₹300 or free travel pass for public transport; applicable for students traveling more than 2 km daily",
-    },
-    {
-      label: "Calamity Relief and Contingency",
-      value: "Emergency financial support (₹5,000-20,000) for students facing calamities, illness, or unforeseen circumstances affecting education continuity",
-    },
-    {
-      label: "Professional Course Enhancement",
-      value: "Enhanced support for engineering, medicine, law, management students: ₹500-₹2,000 monthly stipend + hostel support + specialized lab fee reimbursement",
-    },
-    {
-      label: "Girl Child Special Support",
-      value: "Exclusive benefits for girls including free hostel with security, additional ₹50-100 monthly allowance, sanitation products provision, health insurance",
-    },
-    {
-      label: "Merit-Based Incentive",
-      value: "Bonus scholarship of ₹500-₹2,000 for students scoring above 75% in class examinations or board examinations",
-    },
-    {
-      label: "Vocational and Skill Development",
-      value: "Support for vocational courses, ITI training, skill development programs through direct fee coverage and certification support",
-    },
-    {
-      label: "Health and Counseling Services",
-      value: "Free health checkups, counseling services for academic and personal issues, anti-harassment support, and mental health awareness programs",
-    },
+    "Tuition Fee Waiver — Full or partial tuition fee waiver (up to 100% for identified EWS/SC/ST students); applicable across all educational levels",
+    "Monthly Stipend/Maintenance Allowance — ₹100-500 per month depending on educational level and category; Class 1-5: ₹100-150; Class 6-10: ₹200-300; UG/PG: ₹300-500",
+    "Annual Book and Stationery Allowance — ₹500-₹1,500 per annum for purchasing textbooks, notebooks, pens, and other stationery materials",
+    "Examination Fee Reimbursement — Full reimbursement of board examination fees (Class 10, 12) and university examination fees for higher education",
+    "School Uniform Allowance — ₹300-600 per annum for two pairs of school uniform or annual uniform provision for school-going children",
+    "Hostel Accommodation and Meals — Free or heavily subsidized hostel accommodation for girls and SC/ST boys; hostel meals (breakfast + lunch + dinner) provided free or subsidized",
+    "Travel and Conveyance Support — Monthly travel allowance of ₹100-₹300 or free travel pass for public transport; applicable for students traveling more than 2 km daily",
+    "Calamity Relief and Contingency — Emergency financial support (₹5,000-20,000) for students facing calamities, illness, or unforeseen circumstances affecting education continuity",
+    "Professional Course Enhancement — Enhanced support for engineering, medicine, law, management students: ₹500-₹2,000 monthly stipend + hostel support + specialized lab fee reimbursement",
+    "Girl Child Special Support — Exclusive benefits for girls including free hostel with security, additional ₹50-100 monthly allowance, sanitation products provision, health insurance",
+    "Merit-Based Incentive — Bonus scholarship of ₹500-₹2,000 for students scoring above 75% in class examinations or board examinations",
+    "Vocational and Skill Development — Support for vocational courses, ITI training, skill development programs through direct fee coverage and certification support",
+    "Health and Counseling Services — Free health checkups, counseling services for academic and personal issues, anti-harassment support, and mental health awareness programs",
   ],
   requiredDocuments: [
     {
@@ -190,76 +151,76 @@ export const mahatmaJyotiraoPhuleEducationalConcession: Scheme = {
   ],
   faqs: [
     {
-      question: "What is the Mahatma Jyotirao Phule Educational Concession?",
-      answer: "It is a Maharashtra state government scheme honoring the legacy of social reformer Mahatma Jyotirao Phule. It provides comprehensive educational concessions including fee waivers, stipends, book allowances, and hostel support to students from economically weaker and marginalized communities, promoting educational equity and social justice.",
+      q: "What is the Mahatma Jyotirao Phule Educational Concession?",
+      a: "It is a Maharashtra state government scheme honoring the legacy of social reformer Mahatma Jyotirao Phule. It provides comprehensive educational concessions including fee waivers, stipends, book allowances, and hostel support to students from economically weaker and marginalized communities, promoting educational equity and social justice.",
     },
     {
-      question: "Who is eligible for this scheme?",
-      answer: "Students from economically weaker sections (family income <₹2,50,000), SC/ST/OBC/DT category students, permanent Maharashtra residents, studying in Classes 1 through postgraduate/professional courses in recognized institutions, with minimum 40% marks in previous examination.",
+      q: "Who is eligible for this scheme?",
+      a: "Students from economically weaker sections (family income <₹2,50,000), SC/ST/OBC/DT category students, permanent Maharashtra residents, studying in Classes 1 through postgraduate/professional courses in recognized institutions, with minimum 40% marks in previous examination.",
     },
     {
-      question: "Do SC/ST/OBC students need to meet income criteria?",
-      answer: "No, SC/ST/OBC/DT category students are eligible regardless of income if they meet other criteria (residency, academic performance, enrollment status). Only EWS students need to meet the ₹2,50,000 annual family income limit.",
+      q: "Do SC/ST/OBC students need to meet income criteria?",
+      a: "No, SC/ST/OBC/DT category students are eligible regardless of income if they meet other criteria (residency, academic performance, enrollment status). Only EWS students need to meet the ₹2,50,000 annual family income limit.",
     },
     {
-      question: "What is the monthly maintenance allowance?",
-      answer: "Monthly stipend varies by educational level: Classes 1-5 receive ₹100-150, Classes 6-10 receive ₹200-300, undergraduate students receive ₹300-400, and postgraduate students receive ₹400-500. Professional course students may receive higher amounts.",
+      q: "What is the monthly maintenance allowance?",
+      a: "Monthly stipend varies by educational level: Classes 1-5 receive ₹100-150, Classes 6-10 receive ₹200-300, undergraduate students receive ₹300-400, and postgraduate students receive ₹400-500. Professional course students may receive higher amounts.",
     },
     {
-      question: "Is tuition fee waiver applicable to private schools?",
-      answer: "Yes, tuition fee waiver applies to recognized private schools, government schools, and government-aided institutions. The waiver amount depends on school category and student's EWS/SC/ST/OBC status. Private school fee waivers may be capped at state norms.",
+      q: "Is tuition fee waiver applicable to private schools?",
+      a: "Yes, tuition fee waiver applies to recognized private schools, government schools, and government-aided institutions. The waiver amount depends on school category and student's EWS/SC/ST/OBC status. Private school fee waivers may be capped at state norms.",
     },
     {
-      question: "What is the annual book allowance?",
-      answer: "Annual book and stationery allowance ranges from ₹500 to ₹1,500 per annum depending on educational level. Lower classes (1-5) typically receive ₹500-800, while higher classes (9-12) receive ₹1,000-1,500.",
+      q: "What is the annual book allowance?",
+      a: "Annual book and stationery allowance ranges from ₹500 to ₹1,500 per annum depending on educational level. Lower classes (1-5) typically receive ₹500-800, while higher classes (9-12) receive ₹1,000-1,500.",
     },
     {
-      question: "Is hostel accommodation free or subsidized?",
-      answer: "Hostel accommodation is free for SC/ST girls and heavily subsidized for EWS girls. Boys from SC/ST category also get free hostel. Hostel meals (all three meals) are either free or heavily subsidized depending on category.",
+      q: "Is hostel accommodation free or subsidized?",
+      a: "Hostel accommodation is free for SC/ST girls and heavily subsidized for EWS girls. Boys from SC/ST category also get free hostel. Hostel meals (all three meals) are either free or heavily subsidized depending on category.",
     },
     {
-      question: "Can I receive this concession for both primary and higher education?",
-      answer: "Yes, the scheme covers all educational levels from Class 1 through postgraduate and professional courses. A student can receive concessions throughout their educational journey as long as they meet eligibility criteria each year.",
+      q: "Can I receive this concession for both primary and higher education?",
+      a: "Yes, the scheme covers all educational levels from Class 1 through postgraduate and professional courses. A student can receive concessions throughout their educational journey as long as they meet eligibility criteria each year.",
     },
     {
-      question: "What documents are mandatory for application?",
-      answer: "Mandatory documents include: (1) Income certificate, (2) Caste certificate (if claiming category benefit), (3) Maharashtra domicile certificate, (4) Current enrollment certificate, (5) Previous mark sheet, (6) Identity proof, (7) Bank account details with IFSC code.",
+      q: "What documents are mandatory for application?",
+      a: "Mandatory documents include: (1) Income certificate, (2) Caste certificate (if claiming category benefit), (3) Maharashtra domicile certificate, (4) Current enrollment certificate, (5) Previous mark sheet, (6) Identity proof, (7) Bank account details with IFSC code.",
     },
     {
-      question: "How is domicile proof established?",
-      answer: "Maharashtra domicile/residency can be proven through revenue office-issued domicile certificate, school enrollment showing 2+ years in Maharashtra schools, utility bills, rental agreements, or property tax receipts. Minimum 3-5 years residency in state typically required.",
+      q: "How is domicile proof established?",
+      a: "Maharashtra domicile/residency can be proven through revenue office-issued domicile certificate, school enrollment showing 2+ years in Maharashtra schools, utility bills, rental agreements, or property tax receipts. Minimum 3-5 years residency in state typically required.",
     },
     {
-      question: "What are the special benefits for girl students?",
-      answer: "Girls receive exclusive benefits including: free hostel accommodation with security features, additional ₹50-100 monthly allowance, free sanitation products provision, health insurance coverage, and priority processing. Separate helplines and counseling services provided.",
+      q: "What are the special benefits for girl students?",
+      a: "Girls receive exclusive benefits including: free hostel accommodation with security features, additional ₹50-100 monthly allowance, free sanitation products provision, health insurance coverage, and priority processing. Separate helplines and counseling services provided.",
     },
     {
-      question: "Do professional course students get additional support?",
-      answer: "Yes, engineering, medicine, law, and management students get enhanced support: higher monthly stipends (₹500-₹2,000), hostel facility with better provisions, specialized laboratory fee reimbursement, and professional development allowance.",
+      q: "Do professional course students get additional support?",
+      a: "Yes, engineering, medicine, law, and management students get enhanced support: higher monthly stipends (₹500-₹2,000), hostel facility with better provisions, specialized laboratory fee reimbursement, and professional development allowance.",
     },
     {
-      question: "Can I apply if my family income exceeds ₹2,50,000?",
-      answer: "Yes, if you belong to SC/ST/OBC/DT category regardless of income level. EWS students must have family income below ₹2,50,000. Income limits may be revised annually by government.",
+      q: "Can I apply if my family income exceeds ₹2,50,000?",
+      a: "Yes, if you belong to SC/ST/OBC/DT category regardless of income level. EWS students must have family income below ₹2,50,000. Income limits may be revised annually by government.",
     },
     {
-      question: "What is the minimum academic performance requirement?",
-      answer: "Minimum 40% marks in previous examination or satisfactory school performance. SC/ST/OBC students get relaxation where needed. Classes 1-3 students are exempt from minimum marks requirement.",
+      q: "What is the minimum academic performance requirement?",
+      a: "Minimum 40% marks in previous examination or satisfactory school performance. SC/ST/OBC students get relaxation where needed. Classes 1-3 students are exempt from minimum marks requirement.",
     },
     {
-      question: "What happens if my scholarship is discontinued?",
-      answer: "Scholarship can be discontinued if: (1) Performance drops below 40% marks, (2) Attendance falls below 75%, (3) Student changes school/course without permission, (4) Income limit exceeded for EWS students. Reinstatement possible after addressing grounds for discontinuation.",
+      q: "What happens if my scholarship is discontinued?",
+      a: "Scholarship can be discontinued if: (1) Performance drops below 40% marks, (2) Attendance falls below 75%, (3) Student changes school/course without permission, (4) Income limit exceeded for EWS students. Reinstatement possible after addressing grounds for discontinuation.",
     },
     {
-      question: "How is the scholarship amount disbursed?",
-      answer: "Scholarship is disbursed via Direct Benefit Transfer (DBT) to student's or parent's bank account linked to Aadhaar ID. Monthly stipends credited monthly; annual allowances (books, uniforms) typically disbursed in June/July.",
+      q: "How is the scholarship amount disbursed?",
+      a: "Scholarship is disbursed via Direct Benefit Transfer (DBT) to student's or parent's bank account linked to Aadhaar ID. Monthly stipends credited monthly; annual allowances (books, uniforms) typically disbursed in June/July.",
     },
     {
-      question: "Can I apply for this scheme if I'm from outside Maharashtra?",
-      answer: "No, permanent residency in Maharashtra is mandatory. Students must have domicile certificate or proof of residence in Maharashtra for at least 3-5 years, and studied in Maharashtra schools for minimum 2 years.",
+      q: "Can I apply for this scheme if I'm from outside Maharashtra?",
+      a: "No, permanent residency in Maharashtra is mandatory. Students must have domicile certificate or proof of residence in Maharashtra for at least 3-5 years, and studied in Maharashtra schools for minimum 2 years.",
     },
     {
-      question: "How do I apply for this scheme?",
-      answer: "Apply online through Maharashtra scholarship portal (https://scholarships.gov.in/) or offline by collecting forms from school/district office. Fill application with required documents, submit to school/district education office, and track status online.",
+      q: "How do I apply for this scheme?",
+      a: "Apply online through Maharashtra scholarship portal (https://scholarships.gov.in/) or offline by collecting forms from school/district office. Fill application with required documents, submit to school/district education office, and track status online.",
     },
   ],
   source: "sample",

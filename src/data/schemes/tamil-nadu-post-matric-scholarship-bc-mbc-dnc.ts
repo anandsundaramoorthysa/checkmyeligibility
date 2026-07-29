@@ -2,8 +2,8 @@ import type { Scheme } from "@/lib/types";
 
 export const tamilNaduPostMatricScholarshipBcMbcDnc: Scheme = {
   id: "tamil-nadu-post-matric-scholarship-bc-mbc-dnc",
-  slug: "tamil-nadu-post-matric-scholarship-for-bc-mbc-dnc-students-290",
-  name: "Tamil Nadu Post-Matric Scholarship for BC/MBC/DNC Students #290",
+  slug: "tamil-nadu-post-matric-scholarship-for-bc-mbc-dnc-students",
+  name: "Tamil Nadu Post-Matric Scholarship for BC/MBC/DNC Students",
   shortName: "TN BC/MBC/DNC Scholarship",
   summary:
     "Tamil Nadu Government scholarship covering tuition fee, special fee, exam fee, and book money for BC, MBC, and DNC students pursuing ITI, diploma, UG, PG, professional, and Ph.D. courses, with a family income limit of ₹2.5 lakh per annum.",
