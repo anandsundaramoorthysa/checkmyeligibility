@@ -10,7 +10,6 @@ import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-schem
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
 import { bsrFellowshipSchemeForScienceStudentsUgc } from "./bsr-fellowship-scheme-for-science-students-ugc";
 import { deepikaStudentScholarshipProgramme } from "./deepika-student-scholarship-programme";
-import { foreignStudyLoanSchemeGueedc } from "./foreign-study-loan-scheme-gueedc";
 import { inspireScholarshipForHigherEducation } from "./inspire-scholarship-for-higher-education";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
@@ -29,7 +28,6 @@ export const SCHEMES: Scheme[] = [
   aicteYashasviScholarship,
   bsrFellowshipSchemeForScienceStudentsUgc,
   deepikaStudentScholarshipProgramme,
-  foreignStudyLoanSchemeGueedc,
   inspireScholarshipForHigherEducation,
   jaganannaVidyaDeevenaFeeReimbursement,
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
