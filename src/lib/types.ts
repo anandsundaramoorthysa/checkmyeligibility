@@ -44,6 +44,8 @@ export type IndianState =
   | "uttar-pradesh"
   | "west-bengal"
   | "chhattisgarh"
+  | "jammu-and-kashmir"
+  | "ladakh"
   | "meghalaya";
 
 /* ----------------------------- schemes ------------------------------------ */
