@@ -18,6 +18,7 @@ import { nationalOverseasScholarshipForPersonsWithDisabilities } from "./nationa
 import { postMatricScholarshipStudentsWithDisabilities } from "./post-matric-scholarship-students-with-disabilities";
 import { preMatricScholarshipForStudentsWithDisabilities } from "./pre-matric-scholarship-for-students-with-disabilities";
 import { punjabBocwBoardStipendScholarshipScheme } from "./punjab-bocw-board-stipend-scholarship-scheme";
+import { specialScholarshipSchemeForJKAndLadakhSssjkl } from "./special-scholarship-scheme-for-j-k-and-ladakh-sssjkl";
 import { theBabuJagjivanRamHostelSchemeBjrcy } from "./the-babu-jagjivan-ram-hostel-scheme-bjrcy";
 import { vikramadityaScholarshipSchemeMadhyaPradesh } from "./vikramaditya-scholarship-scheme-madhya-pradesh";
 
@@ -39,6 +40,7 @@ export const SCHEMES: Scheme[] = [
   postMatricScholarshipStudentsWithDisabilities,
   preMatricScholarshipForStudentsWithDisabilities,
   punjabBocwBoardStipendScholarshipScheme,
+  specialScholarshipSchemeForJKAndLadakhSssjkl,
   theBabuJagjivanRamHostelSchemeBjrcy,
   vikramadityaScholarshipSchemeMadhyaPradesh,
 ];
