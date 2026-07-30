@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const jaganannaVidyaDeevenaFeeReimbursement: Scheme = {
   id: "jagananna-vidya-deevena-fee-reimbursement",
-  slug: "jagananna-vidya-deevena-fee-reimbursement-mrceflf3",
+  slug: "jagananna-vidya-deevena-fee-reimbursement",
   name: "Jagananna Vidya Deevena Fee Reimbursement",
   shortName: "AP JVD",
   summary:

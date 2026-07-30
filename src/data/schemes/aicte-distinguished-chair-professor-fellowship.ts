@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const aicteDistinguishedChairProfessorFellowship: Scheme = {
   id: "aicte-distinguished-chair-professor-fellowship",
-  slug: "aicte-distinguished-chair-professor-fellowship-mra6i9tv",
+  slug: "aicte-distinguished-chair-professor-fellowship",
   name: "AICTE - Distinguished Chair Professor Fellowship",
   shortName: "AICTE DCPF",
   summary:

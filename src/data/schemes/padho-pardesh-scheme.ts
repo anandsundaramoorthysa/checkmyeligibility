@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const padhoPardeshScheme: Scheme = {
   id: "padho-pardesh-scheme",
-  slug: "padho-pardesh-scheme-interest-subsidy-minority-overseas-studies-mr9q6tuv",
+  slug: "padho-pardesh-scheme-interest-subsidy-minority-overseas-studies",
   name: "Padho Pardesh Scheme",
   shortName: "Padho Pardesh",
   summary:

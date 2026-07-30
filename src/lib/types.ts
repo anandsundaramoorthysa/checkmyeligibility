@@ -47,6 +47,7 @@ export type IndianState =
   | "jammu-and-kashmir"
   | "ladakh"
   | "meghalaya"
+  | "haryana"
   | "arunachal-pradesh"
   | "manipur"
   | "mizoram"

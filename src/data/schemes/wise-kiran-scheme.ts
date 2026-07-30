@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const wiseKiranScheme: Scheme = {
   id: "349",
-  slug: "wise-kiran-scheme-mr9gnqy8",
+  slug: "wise-kiran-scheme",
   name: "Women in Science and Engineering-KIRAN (WISE-KIRAN)",
   shortName: "WISE-KIRAN",
   summary:

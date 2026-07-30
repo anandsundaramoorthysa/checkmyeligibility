@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const inspireScholarshipForHigherEducation: Scheme = {
   id: "inspire-scholarship-for-higher-education",
-  slug: "inspire-scholarship-for-higher-education-mr9gnqsi",
+  slug: "inspire-scholarship-for-higher-education",
   name: "INSPIRE Scholarship for Higher Education",
   shortName: "INSPIRE SHE",
   summary:

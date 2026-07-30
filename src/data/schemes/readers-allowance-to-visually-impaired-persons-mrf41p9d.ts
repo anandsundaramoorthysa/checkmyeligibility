@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const readersAllowanceToVisuallyImpairedPersons: Scheme =   {
     id: "readers-allowance-visually-impaired",
-    slug: "readers-allowance-to-visually-impaired-persons-mrf41p9d",
+    slug: "readers-allowance-to-visually-impaired-persons",
     name: "Readers Allowance to Visually Impaired Persons",
     shortName: "RATVIP",
     summary:

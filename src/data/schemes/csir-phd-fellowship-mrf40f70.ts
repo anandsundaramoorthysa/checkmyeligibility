@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const csirPhdFellowship: Scheme =   {
     id: "csir-phd-fellowship",
-    slug: "csir-phd-fellowship-mrf40f70",
+    slug: "csir-phd-fellowship",
     name: "CSIR (PhD) Fellowship",
     shortName: "CSIR Fellowship",
     summary:

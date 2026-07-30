@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const pudhumaiPennSchemeMoovalurRamamirthamAmmaiyarHigherEducationAssurance: Scheme =   {
     id: "pudhumai-penn",
-    slug: "pudhumai-penn-scheme-moovalur-ramamirtham-ammaiyar-higher-education-assurance-mrccc2gp",
+    slug: "pudhumai-penn-scheme-moovalur-ramamirtham-ammaiyar-higher-education-assurance",
     name: "Pudhumai Penn Scheme (Moovalur Ramamirtham Ammaiyar Higher Education Assurance)",
     shortName: "Pudhumai Penn",
     summary:

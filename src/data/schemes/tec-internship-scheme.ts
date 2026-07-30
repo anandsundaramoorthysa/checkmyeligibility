@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const tecInternshipScheme: Scheme = {
   id: "tec-internship-scheme",
-  slug: "tec-internship-scheme-mrf327n8",
+  slug: "tec-internship-scheme",
   name: "TEC Internship Scheme",
   shortName: "TEC Internship",
   summary:

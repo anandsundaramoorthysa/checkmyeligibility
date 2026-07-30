@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const chiefMinisterHigherEducationPromotionScholars: Scheme =   {
     id: "cm-higher-education-cg",
-    slug: "chief-minister-higher-education-promotion-scholars-yjkieb5v",
+    slug: "chief-minister-higher-education-promotion-scholarship-chhattisgarh",
     name: "Chief Minister Higher Education Promotion Scholarship – Chhattisgarh",
     shortName: "CM Higher Education CG",
     summary:
@@ -11,7 +11,7 @@ export const chiefMinisterHigherEducationPromotionScholars: Scheme =   {
       "The Chief Minister Higher Education Promotion Scholarship is a Chhattisgarh state scheme administered by the Department of Tribal Welfare / SC Development to support SC/ST students pursuing higher education (UG and above). It aims to increase enrolment and completion of degree-level education among Scheduled Caste and Scheduled Tribe students in Chhattisgarh.",
     category: "education",
     level: "state",
-    states: ["all-india"],
+    states: ["chhattisgarh"],
     eligibility: [
       {
         label: "Domicile",

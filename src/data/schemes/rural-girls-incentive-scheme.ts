@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const ruralGirlsIncentiveScheme: Scheme = {
   id: "rural-girls-incentive-scheme",
-  slug: "rural-girls-incentive-scheme-mrf3x2j1",
+  slug: "rural-girls-incentive-scheme",
   name: "Rural Girls' Incentive Scheme",
   shortName: "RGIS",
   summary:

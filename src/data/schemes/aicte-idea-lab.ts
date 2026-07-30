@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const aicteIdeaLab: Scheme = {
   id: "aicte-idea-lab",
-  slug: "aicte-idea-lab-scheme-mrdyebl0",
+  slug: "aicte-idea-lab-scheme",
   name: "AICTE IDEA Lab Scheme",
   shortName: "AICTE IDEA Lab",
   summary:

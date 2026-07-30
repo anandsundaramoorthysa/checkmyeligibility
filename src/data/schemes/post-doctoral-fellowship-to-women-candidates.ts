@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const postDoctoralFellowshipToWomenCandidates: Scheme = {
   id: "post-doctoral-fellowship-to-women-candidates",
-  slug: "post-doctoral-fellowship-to-women-candidates-mrf1zg0h",
+  slug: "post-doctoral-fellowship-to-women-candidates",
   name: "Post Doctoral Fellowship To Women Candidates",
   shortName: "UGC PDFW",
   summary:

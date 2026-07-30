@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const telanganaEpassPostMatricScholarship: Scheme = {
   id: "telangana-epass-post-matric-scholarship",
-  slug: "telangana-epass-post-matric-scholarship-mr8ht3vp",
+  slug: "telangana-epass-post-matric-scholarship",
   name: "Telangana ePASS Post-Matric Scholarship",
   shortName: "TS ePASS PMS",
   summary:

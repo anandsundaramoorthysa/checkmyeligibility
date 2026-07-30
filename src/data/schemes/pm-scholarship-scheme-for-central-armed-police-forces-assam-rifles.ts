@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const pmScholarshipSchemeForCentralArmedPoliceForcesAssamRifles: Scheme = {
   id: "pm-scholarship-scheme-for-central-armed-police-forces-assam-rifles",
-  slug: "pm-scholarship-scheme-for-central-armed-police-forces-assam-rifles-mr9hehai",
+  slug: "pm-scholarship-scheme-for-central-armed-police-forces-assam-rifles",
   name: "Prime Minister's Scholarship Scheme for Central Armed Police Forces & Assam Rifles",
   shortName: "PMSS CAPF & AR",
   summary:

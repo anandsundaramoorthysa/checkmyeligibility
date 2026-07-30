@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const opJindalEngineeringManagementScholarshipOpjems: Scheme = {
   id: "op-jindal-engineering-management-scholarship-opjems",
-  slug: "op-jindal-engineering-management-scholarship-opjems-mri1s97w",
+  slug: "op-jindal-engineering-management-scholarship-opjems",
   name: "OP Jindal Engineering & Management Scholarship (OPJEMS)",
   shortName: "OPJEMS",
   summary:

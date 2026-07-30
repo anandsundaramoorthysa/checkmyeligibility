@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const meghalayaBocwBoard: Scheme = {
   id: "meghalaya-bocw-board",
-  slug: "meghalaya-bocw-board-mrf5mfab",
+  slug: "meghalaya-bocw-board",
   name: "Meghalaya BOCW Board Educational Assistance",
   shortName: "Meghalaya BOCW",
   summary:

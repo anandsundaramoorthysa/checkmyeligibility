@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const tataCapitalPankhScholarship: Scheme = {
   id: "tata-capital-pankh-scholarship",
-  slug: "tata-capital-pankh-scholarship-mres3izq",
+  slug: "tata-capital-pankh-scholarship",
   name: "Tata Capital Pankh Scholarship",
   shortName: "Tata Capital Pankh",
   summary:

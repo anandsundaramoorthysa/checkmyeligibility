@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const bcddOverseasScholarshipKerala: Scheme =   {
     id: "bcdd-overseas-scholarship-kerala",
-    slug: "bcdd-overseas-scholarship-kerala-mrfaocri",
+    slug: "bcdd-overseas-scholarship-kerala",
     name: "BCDD Overseas Scholarship (Kerala)",
     shortName: "BCDD Overseas",
     summary:

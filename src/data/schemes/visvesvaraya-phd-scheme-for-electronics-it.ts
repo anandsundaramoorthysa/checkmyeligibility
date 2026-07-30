@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const visvesvarayaPhdSchemeForElectronicsIt: Scheme = {
   id: "visvesvaraya-phd-scheme-for-electronics-it",
-  slug: "visvesvaraya-phd-scheme-for-electronics-it-mrdwc5u8",
+  slug: "visvesvaraya-phd-scheme-for-electronics-it",
   name: "Visvesvaraya PhD Scheme for Electronics & IT",
   shortName: "MeitY PhD Scheme",
   summary:

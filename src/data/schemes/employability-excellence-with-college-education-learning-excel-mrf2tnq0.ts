@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const employabilityExcellenceWithCollegeEducationLearningExcel: Scheme =   {
     id: "excel-employability-excellence",
-    slug: "employability-excellence-with-college-education-learning-excel-mrf2tnq0",
+    slug: "employability-excellence-with-college-education-learning-excel",
     name: "Employability Excellence with College Education & Learning (EXCEL)",
     shortName: "EXCEL",
     summary:

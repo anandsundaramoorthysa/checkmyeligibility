@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const postGraduateScholarshipsForProfessionalCoursesForScStCandidates: Scheme = {
   id: "post-graduate-scholarships-for-professional-courses-for-sc-st-candidates",
-  slug: "post-graduate-scholarships-for-professional-courses-for-sc-st-candidates-mra5j82f",
+  slug: "post-graduate-scholarships-for-professional-courses-for-sc-st-candidates",
   name: "Post-Graduate Scholarships for Professional Courses for SC/ST Candidates",
   summary:
     "\u20B94,500 per month scholarship for 1,000 SC/ST students pursuing first-year postgraduate professional courses (Engineering, Management, Pharmacy, etc.) at recognised Indian institutions through UGC.",

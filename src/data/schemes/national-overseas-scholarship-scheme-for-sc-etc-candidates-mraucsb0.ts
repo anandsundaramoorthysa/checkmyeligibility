@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const nationalOverseasScholarshipSchemeForScEtcCandidates: Scheme =   {
     id: "national-overseas-scholarship-sc",
-    slug: "national-overseas-scholarship-scheme-for-sc-etc-candidates-mraucsb0",
+    slug: "national-overseas-scholarship-scheme-for-sc-etc-candidates",
     name: "National Overseas Scholarship Scheme for SC etc. Candidates",
     shortName: "NOS",
     summary:

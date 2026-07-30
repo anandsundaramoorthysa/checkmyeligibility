@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const mukhyamantriYuvaSwavalambanYojanaGujarat: Scheme = {
   id: "mukhyamantri-yuva-swavalamban-yojana-gujarat",
-  slug: "mukhyamantri-yuva-swavalamban-yojana-mysy-gujarat-mr9k2abc",
+  slug: "mukhyamantri-yuva-swavalamban-yojana-mysy-gujarat",
   name: "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
   shortName: "MYSY Gujarat",
   summary:

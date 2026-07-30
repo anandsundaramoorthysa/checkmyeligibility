@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const centralVigilanceCommissionInternshipScheme: Scheme = {
   id: "central-vigilance-commission-internship-scheme",
-  slug: "central-vigilance-commission-cvc-internship-scheme-mr9k5def",
+  slug: "central-vigilance-commission-cvc-internship-scheme",
   name: "Central Vigilance Commission (CVC) Internship Scheme",
   shortName: "CVC Internship",
   summary:

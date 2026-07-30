@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const necMeritScholarship: Scheme = {
   id: "nec-merit-scholarship",
-  slug: "nec-merit-scholarship-north-eastern-council-mr9m7ghi",
+  slug: "nec-merit-scholarship-north-eastern-council",
   name: "North Eastern Council (NEC) Merit Scholarship",
   shortName: "NEC Merit Scholarship",
   summary:
@@ -14,6 +14,12 @@ export const necMeritScholarship: Scheme = {
   states: [
     "assam",
     "meghalaya",
+    "arunachal-pradesh",
+    "manipur",
+    "mizoram",
+    "nagaland",
+    "sikkim",
+    "tripura",
   ],
   eligibility: [
     {

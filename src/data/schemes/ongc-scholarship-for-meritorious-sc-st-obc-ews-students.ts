@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const ongcScholarshipForMeritoriousScStObcEwsStudents: Scheme = {
   id: "ongc-scholarship-for-meritorious-sc-st-obc-ews-students",
-  slug: "ongc-scholarship-for-meritorious-sc-st-obc-ews-students-mrcbu88q",
+  slug: "ongc-scholarship-for-meritorious-sc-st-obc-ews-students",
   name: "ONGC Scholarship for Meritorious SC/ST/OBC/EWS Students",
   shortName: "ONGC Merit Scholarship",
   summary:

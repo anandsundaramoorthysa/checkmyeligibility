@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const ietIndiaScholarshipAward: Scheme = {
   id: "iet-india-scholarship-award",
-  slug: "iet-india-scholarship-award-mrrhifsv",
+  slug: "iet-india-scholarship-award",
   name: "IET India Scholarship Award",
   shortName: "IET Scholarship",
   summary:

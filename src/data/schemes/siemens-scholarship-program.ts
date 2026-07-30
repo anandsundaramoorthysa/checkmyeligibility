@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const siemensScholarshipProgram: Scheme = {
   id: "siemens-scholarship-program",
-  slug: "siemens-scholarship-program-mrerwthq",
+  slug: "siemens-scholarship-program",
   name: "Siemens Scholarship Program",
   shortName: "Siemens SSP",
   summary:

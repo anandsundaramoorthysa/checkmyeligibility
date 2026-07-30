@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const bsrFellowshipSchemeForScienceStudentsUgc: Scheme = {
   id: "bsr-fellowship-scheme-for-science-students-ugc",
-  slug: "bsr-fellowship-scheme-for-science-students-ugc-mrdum68w",
+  slug: "bsr-fellowship-scheme-for-science-students-ugc",
   name: "BSR Fellowship Scheme for Science Students (UGC)",
   shortName: "UGC BSR Fellowship",
   summary:

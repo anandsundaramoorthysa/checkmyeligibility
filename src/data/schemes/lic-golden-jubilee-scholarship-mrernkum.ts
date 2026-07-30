@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const licGoldenJubileeScholarship: Scheme =   {
     id: "lic-golden-jubilee-scholarship",
-    slug: "lic-golden-jubilee-scholarship-mrernkum",
+    slug: "lic-golden-jubilee-scholarship",
     name: "LIC Golden Jubilee Scholarship",
     shortName: "LIC GJS",
     summary:

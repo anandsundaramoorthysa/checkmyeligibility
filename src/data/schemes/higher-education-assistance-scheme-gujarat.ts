@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const higherEducationAssistanceSchemeGujarat: Scheme = {
   id: "higher-education-assistance-scheme-gujarat",
-  slug: "higher-education-assistance-scheme-gujarat-mr9hz3kp",
+  slug: "higher-education-assistance-scheme-gujarat",
   name: "Higher Education Assistance Scheme",
   shortName: "HEA Gujarat",
   summary:

@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const nationalFellowshipForScheduledCasteStudentsNfsc: Scheme =   {
     id: "nfsc",
-    slug: "national-fellowship-for-scheduled-caste-students-nfsc-mrf3t0cg",
+    slug: "national-fellowship-for-scheduled-caste-students-nfsc",
     name: "National Fellowship for Scheduled Caste Students (NFSC)",
     shortName: "NFSC",
     summary:

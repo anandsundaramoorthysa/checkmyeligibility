@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const rajarshiShahuMaharajShikshanShulkShishyavruttiYojnaEbc: Scheme = {
   id: "rajarshi-shahu-maharaj-shikshan-shulk-shishyavrutti-yojna-ebc",
-  slug: "rajarshi-shahu-maharaj-shikshan-shulk-shishyavrutti-yojna-ebc-mrdtummf",
+  slug: "rajarshi-shahu-maharaj-shikshan-shulk-shishyavrutti-yojna-ebc",
   name: "Rajarshi Shahu Maharaj Shikshan Shulk Shishyavrutti Yojna (EBC)",
   shortName: "Shahu Maharaj EBC",
   summary:

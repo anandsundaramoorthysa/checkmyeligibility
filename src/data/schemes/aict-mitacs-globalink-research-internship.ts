@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const aictMitacsGlobalinkResearchInternship: Scheme = {
   id: "aict-mitacs-globalink-research-internship",
-  slug: "aict-mitacs-globalink-research-internship-mr9gdr4a",
+  slug: "aict-mitacs-globalink-research-internship",
   name: "AICTE – Mitacs Globalink Research Internship (GRI) Scheme",
   shortName: "AICTE Mitacs GRI",
   summary:

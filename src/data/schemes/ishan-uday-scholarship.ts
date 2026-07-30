@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const ishanUdayScholarship: Scheme = {
   id: "ishan-uday-scholarship",
-  slug: "ishan-uday-scholarship-mrerl328",
+  slug: "ishan-uday-scholarship",
   name: "Ishan Uday Special Scholarship Scheme for North Eastern Region",
   shortName: "Ishan Uday",
   summary:

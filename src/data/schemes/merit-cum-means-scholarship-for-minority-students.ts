@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const meritCumMeansScholarshipForMinorityStudents: Scheme = {
   id: "merit-cum-means-scholarship-for-minority-students",
-  slug: "merit-cum-means-scholarship-for-minority-students-mr9r8wxy",
+  slug: "merit-cum-means-scholarship-for-minority-students",
   name: "Merit-cum-Means Scholarship for Minority Students",
   shortName: "MCM Scholarship (Minority)",
   summary:

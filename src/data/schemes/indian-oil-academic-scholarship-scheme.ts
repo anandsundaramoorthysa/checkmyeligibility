@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const indianOilAcademicScholarshipScheme: Scheme = {
   id: "indian-oil-academic-scholarship-scheme",
-  slug: "indian-oil-iocl-academic-scholarship-scheme-mr9s2abc",
+  slug: "indian-oil-iocl-academic-scholarship-scheme",
   name: "Indian Oil (IOCL) Academic Scholarship Scheme",
   shortName: "IOCL Scholarship",
   summary:

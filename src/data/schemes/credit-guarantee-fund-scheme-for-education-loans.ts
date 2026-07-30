@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const creditGuaranteeFundSchemeForEducationLoans: Scheme = {
   id: "credit-guarantee-fund-scheme-for-education-loans",
-  slug: "credit-guarantee-fund-scheme-for-education-loans-mr9gcqzl",
+  slug: "credit-guarantee-fund-scheme-for-education-loans",
   name: "Credit Guarantee Fund Scheme for Education Loans (CGFSEL)",
   shortName: "CGFSEL",
   summary:

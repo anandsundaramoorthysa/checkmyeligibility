@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const evnarayanPreMatricScholarshipScheme: Scheme = {
   id: "evnarayan-pre-matric-scholarship-scheme",
-  slug: "evnarayan-pre-matric-scholarship-scheme-mrehw3ki",
+  slug: "evnarayan-pre-matric-scholarship-scheme",
   name: "Devnarayan Pre-Matric Scholarship Scheme",
   summary:
     "Monthly scholarship of ₹50–₹120 for students from Extremely Backward Classes in Rajasthan (Classes 6–10), including free education, accommodation, meals, uniforms, and books.",

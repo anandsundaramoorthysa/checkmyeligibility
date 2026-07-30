@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const dstInspireFellowshipForDoctoralResearch: Scheme = {
   id: "dst-inspire-fellowship-for-doctoral-research",
-  slug: "dst-inspire-fellowship-for-doctoral-research-mr5kp2xw",
+  slug: "dst-inspire-fellowship-for-doctoral-research",
   name: "DST INSPIRE Fellowship (for Doctoral Research)",
   shortName: "INSPIRE Fellowship",
   summary:

@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const punjabBocwBoardStipendScholarshipScheme: Scheme = {
   id: "punjab-bocw-board-stipend-scholarship-scheme",
-  slug: "punjab-bocw-board-stipend-scholarship-scheme-mrf9tnjp",
+  slug: "punjab-bocw-board-stipend-scholarship-scheme",
   name: "Punjab BOCW Board Stipend Scholarship Scheme",
   shortName: "Punjab BOCW Stipend",
   summary:
