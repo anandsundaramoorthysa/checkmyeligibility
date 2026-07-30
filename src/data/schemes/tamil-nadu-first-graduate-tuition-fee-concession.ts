@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const tamilNaduFirstGraduateTuitionFeeConcession: Scheme = {
   id: "tamil-nadu-first-graduate-tuition-fee-concession",
-  slug: "tamil-nadu-first-graduate-tuition-fee-concession-4m1p8s3k",
+  slug: "tamil-nadu-first-graduate-tuition-fee-concession",
   name: "Tamil Nadu First Graduate Tuition Fee Concession Scheme",
   shortName: "TN First Graduate Concession",
   summary:

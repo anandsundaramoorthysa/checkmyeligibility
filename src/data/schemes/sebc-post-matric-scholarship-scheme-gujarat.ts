@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const sebcPostMatricScholarshipSchemeGujarat: Scheme = {
   id: "sebc-post-matric-scholarship-scheme-gujarat",
-  slug: "sebc-post-matric-scholarship-scheme-gujarat-5xo4rnab",
+  slug: "sebc-post-matric-scholarship-scheme-gujarat",
   name: "SEBC Post-Matric Scholarship Scheme \u2013 Gujarat",
   shortName: "SEBC Post-Matric",
   summary:

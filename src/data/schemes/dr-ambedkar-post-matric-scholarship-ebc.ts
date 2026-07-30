@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const drAmbedkarPostMatricScholarshipEbc: Scheme = {
   id: "dr-ambedkar-post-matric-scholarship-ebc",
-  slug: "dr-ambedkar-post-matric-scholarship-ebc-mk7ht2xn",
+  slug: "dr-ambedkar-post-matric-scholarship-ebc",
   name: "Dr. Ambedkar Post-Matric Scholarship for Economically Backward Classes (EBC)",
   shortName: "Dr. Ambedkar PMS (EBC)",
   summary:

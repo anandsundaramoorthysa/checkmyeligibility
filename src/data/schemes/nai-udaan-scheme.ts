@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const naiUdaanScheme: Scheme = {
   id: "nai-udaan-scheme",
-  slug: "nai-udaan-scheme-8k2r6v9n",
+  slug: "nai-udaan-scheme",
   name: "Nai Udaan Scheme",
   shortName: "Nai Udaan",
   summary:

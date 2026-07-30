@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const nhfdcScholarshipScheme: Scheme = {
   id: "nhfdc-scholarship-scheme",
-  slug: "nhfdc-scholarship-scheme-for-students-with-disabilities-mk8qz3vp",
+  slug: "nhfdc-scholarship-scheme-for-students-with-disabilities",
   name: "NHFDC Scholarship Scheme for Students with Disabilities",
   shortName: "NHFDC Scholarship",
   summary:

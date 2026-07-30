@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const rajivGandhiNationalFellowshipSc: Scheme = {
   id: "rajiv-gandhi-national-fellowship-sc",
-  slug: "rajiv-gandhi-national-fellowship-for-scheduled-caste-candidates-mn4rz8kq",
+  slug: "rajiv-gandhi-national-fellowship-for-scheduled-caste-candidates",
   name: "Rajiv Gandhi National Fellowship for Scheduled Caste Candidates",
   shortName: "NFSC (RGNF)",
   summary:

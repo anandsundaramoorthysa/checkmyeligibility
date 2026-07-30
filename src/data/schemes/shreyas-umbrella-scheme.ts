@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const shreyasUmbrellaScheme: Scheme = {
   id: "shreyas-umbrella-scheme",
-  slug: "shreyas-umbrella-scheme-mp2qx7rv",
+  slug: "shreyas-umbrella-scheme",
   name: "SHREYAS – Scholarships for Higher Education for Young Achievers Scheme",
   shortName: "SHREYAS",
   summary:

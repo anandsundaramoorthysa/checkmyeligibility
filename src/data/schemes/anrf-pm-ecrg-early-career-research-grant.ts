@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const anrfPmEcrgEarlyCareerResearchGrant: Scheme = {
   id: "anrf-pm-ecrg-early-career-research-grant",
-  slug: "anrf-pm-ecrg-early-career-research-grant-j6m3vx8q",
+  slug: "anrf-pm-ecrg-early-career-research-grant",
   name: "ANRF PM Early Career Research Grant (PM ECRG)",
   shortName: "ANRF PM ECRG",
   summary:

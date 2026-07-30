@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const canaraBankAmbedkarVidyaJyothi: Scheme = {
   id: "canara-bank-ambedkar-vidya-jyothi",
-  slug: "canara-bank-ambedkar-vidya-jyothi-m4x8vk2r",
+  slug: "canara-bank-ambedkar-vidya-jyothi",
   name: "Canara Bank Dr. Ambedkar Vidya Jyothi Scholarship",
   shortName: "Ambedkar Vidya Jyothi",
   summary:

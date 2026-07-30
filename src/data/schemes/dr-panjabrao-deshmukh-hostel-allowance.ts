@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const drPanjabraoDeshmukhHostelAllowance: Scheme = {
   id: "dr-panjabrao-deshmukh-hostel-allowance",
-  slug: "dr-panjabrao-deshmukh-hostel-maintenance-allowance-maharashtra-bx2kf8qn",
+  slug: "dr-panjabrao-deshmukh-hostel-maintenance-allowance-maharashtra",
   name: "Dr. Panjabrao Deshmukh Hostel Maintenance Allowance",
   shortName: "Dr. Punjabrao Deshmukh Hostel Allowance",
   summary:

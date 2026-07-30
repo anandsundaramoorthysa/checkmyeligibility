@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const jkTyreShikshaSarthiScholarship: Scheme = {
   id: "jk-tyre-shiksha-sarthi-scholarship",
-  slug: "jk-tyre-shiksha-sarthi-scholarship-75",
+  slug: "jk-tyre-shiksha-sarthi-scholarship",
   name: "JK Tyre Shiksha Sarthi Scholarship",
   shortName: "JK Tyre Shiksha Sarthi",
   summary:

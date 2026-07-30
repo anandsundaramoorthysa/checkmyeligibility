@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const financialSupportSchemeDelhiUniversity: Scheme = {
   id: "financial-support-scheme-delhi-university",
-  slug: "financial-support-scheme-delhi-university-p3k8mv2x",
+  slug: "financial-support-scheme-delhi-university",
   name: "Financial Support Scheme — University of Delhi",
   shortName: "DU Financial Support",
   summary:

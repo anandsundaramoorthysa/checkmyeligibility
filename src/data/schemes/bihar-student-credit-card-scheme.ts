@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const biharStudentCreditCardScheme: Scheme = {
   id: "bihar-student-credit-card-scheme",
-  slug: "bihar-student-credit-card-scheme-27",
+  slug: "bihar-student-credit-card-scheme",
   name: "Bihar Student Credit Card Scheme",
   shortName: "BSCC",
   summary:

@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const postGraduateScholarshipForUniversityRankHolders: Scheme = {
   id: "post-graduate-scholarship-for-university-rank-holders",
-  slug: "post-graduate-scholarship-for-university-rank-holders-5t7y1w3q",
+  slug: "post-graduate-scholarship-for-university-rank-holders",
   name: "Post Graduate Scholarship for University Rank Holders Scheme",
   shortName: "PG URH",
   summary:

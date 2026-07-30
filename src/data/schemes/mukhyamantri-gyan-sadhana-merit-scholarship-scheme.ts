@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const mukhyamantriGyanSadhanaMeritScholarshipScheme: Scheme = {
   id: "mukhyamantri-gyan-sadhana-merit-scholarship-scheme",
-  slug: "mukhyamantri-gyan-sadhana-merit-scholarship-scheme-d7v4qr5z",
+  slug: "mukhyamantri-gyan-sadhana-merit-scholarship-scheme",
   name: "Mukhyamantri Gyan Sadhana Merit Scholarship Scheme",
   shortName: "Gyan Sadhana Gujarat",
   summary:

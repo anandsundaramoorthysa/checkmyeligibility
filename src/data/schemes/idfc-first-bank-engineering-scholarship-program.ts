@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const idfcFirstBankEngineeringScholarshipProgram: Scheme = {
   id: "idfc-first-bank-engineering-scholarship-program",
-  slug: "idfc-first-bank-engineering-scholarship-program-h4k8nv2p",
+  slug: "idfc-first-bank-engineering-scholarship-program",
   name: "IDFC FIRST Bank Engineering Scholarship Program",
   shortName: "IDFC Engineering",
   summary:

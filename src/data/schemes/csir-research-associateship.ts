@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const csirResearchAssociateship: Scheme = {
   id: "csir-research-associateship",
-  slug: "csir-research-associateship-t5m9vx2q",
+  slug: "csir-research-associateship",
   name: "CSIR Research Associateship (RA)",
   shortName: "CSIR RA",
   summary:

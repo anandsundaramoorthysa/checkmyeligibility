@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const reimbursementOfCollegeFeesForScStudentsInProfessionalColleges: Scheme = {
   id: "reimbursement-of-college-fees-for-sc-students-in-professional-colleges",
-  slug: "reimbursement-of-college-fees-for-sc-students-in-professional-colleges-6h2d9k4n",
+  slug: "reimbursement-of-college-fees-for-sc-students-in-professional-colleges",
   name: "Reimbursement of College Fees for Scheduled Caste Students in Professional Colleges (Top 20)",
   shortName: "RCFSCSPC",
   summary:

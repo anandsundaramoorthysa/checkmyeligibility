@@ -1,8 +1,8 @@
 import type { Scheme } from "@/lib/types";
 
 export const nbfcdEducationLoan: Scheme = {
-  id: "nbfcd-education-loan",
-  slug: "nbfcd-education-loan",
+  id: "nbcfdc-education-loan",
+  slug: "nbcfdc-education-loan",
   name: "NBCFDC Education Loan Scheme",
   shortName: "NBCFDC Education Loan",
   summary:

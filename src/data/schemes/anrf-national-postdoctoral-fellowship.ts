@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const anrfNationalPostdoctoralFellowship: Scheme = {
   id: "anrf-national-postdoctoral-fellowship",
-  slug: "anrf-national-postdoctoral-fellowship-k7m2vx9p",
+  slug: "anrf-national-postdoctoral-fellowship",
   name: "ANRF National Postdoctoral Fellowship (N-PDF)",
   shortName: "ANRF N-PDF",
   summary:

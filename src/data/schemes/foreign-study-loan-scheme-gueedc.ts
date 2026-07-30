@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const foreignStudyLoanSchemeGueedc: Scheme = {
   id: "foreign-study-loan-scheme-gueedc",
-  slug: "foreign-study-loan-scheme-gueedc-62",
+  slug: "foreign-study-loan-scheme-gueedc",
   name: "Foreign Study Loan Scheme (GUEEDC)",
   shortName: "GUEEDC Foreign Loan",
   summary:

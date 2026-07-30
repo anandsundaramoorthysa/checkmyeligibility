@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const swamiVivekanandaMeritCumMeansScholarshipWestBengal: Scheme = {
   id: "swami-vivekananda-merit-cum-means-scholarship-west-bengal",
-  slug: "swami-vivekananda-merit-cum-means-scholarship-west-bengal-368",
+  slug: "swami-vivekananda-merit-cum-means-scholarship-west-bengal",
   name: "Swami Vivekananda Merit-cum-Means Scholarship (West Bengal)",
   shortName: "SVMCM",
   summary:

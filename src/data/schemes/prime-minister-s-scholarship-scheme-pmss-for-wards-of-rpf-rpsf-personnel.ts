@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const primeMinisterSScholarshipSchemePmssForWardsOfRpfRpsfPersonnel: Scheme = {
   id: "prime-minister-s-scholarship-scheme-pmss-for-wards-of-rpf-rpsf-personnel",
-  slug: "prime-minister-s-scholarship-scheme-pmss-for-wards-of-rpf-rpsf-personnel",
+  slug: "prime-ministers-scholarship-scheme-pmss-for-wards-of-rpf-rpsf-personnel",
   name: "Prime Minister's Scholarship Scheme (PMSS) for Wards of RPF/RPSF Personnel",
   shortName: "PMSS RPF/RPSF",
   summary:

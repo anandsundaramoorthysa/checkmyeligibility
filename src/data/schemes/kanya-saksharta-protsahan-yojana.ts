@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const kanyaSakshartaProtsahanYojana: Scheme = {
   id: "kanya-saksharta-protsahan-yojana",
-  slug: "kanya-saksharta-protsahan-yojana-madhya-pradesh-rt5np8wk",
+  slug: "kanya-saksharta-protsahan-yojana-madhya-pradesh",
   name: "Kanya Saksharta Protsahan Yojana",
   shortName: "Kanya Saksharta Protsahan",
   summary:

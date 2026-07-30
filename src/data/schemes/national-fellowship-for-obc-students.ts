@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const nationalFellowshipForObcStudents: Scheme = {
   id: "national-fellowship-for-obc-students",
-  slug: "national-fellowship-for-obc-students-b5m2kx9r",
+  slug: "national-fellowship-for-obc-students",
   name: "National Fellowship for OBC Students",
   shortName: "NF-OBC",
   summary:

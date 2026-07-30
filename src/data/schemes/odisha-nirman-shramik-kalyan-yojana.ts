@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const odishaNirmanShramikKalyanYojana: Scheme = {
   id: "odisha-nirman-shramik-kalyan-yojana",
-  slug: "odisha-nirman-shramik-kalyan-yojana-v5x2mk9r",
+  slug: "odisha-nirman-shramik-kalyan-yojana",
   name: "Odisha Nirman Shramik Kalyan Yojana — Scholarship for Children of Construction Workers",
   shortName: "Odisha BOC Scholarship",
   summary:

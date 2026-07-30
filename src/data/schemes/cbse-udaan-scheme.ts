@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const cbseUdaanScheme: Scheme = {
   id: "cbse-udaan-scheme",
-  slug: "cbse-udaan-scheme-for-girl-students-qw4nr7kl",
+  slug: "cbse-udaan-scheme-for-girl-students",
   name: "CBSE Udaan Scheme for Girl Students",
   shortName: "CBSE Udaan",
   summary:

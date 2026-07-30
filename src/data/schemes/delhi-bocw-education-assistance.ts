@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const delhiBocwEducationAssistance: Scheme = {
   id: "delhi-bocw-education-assistance",
-  slug: "delhi-bocw-education-assistance-r3m8vx5q",
+  slug: "delhi-bocw-education-assistance",
   name: "Delhi BOCW Board Education Assistance Scheme",
   shortName: "Delhi BOCW Education",
   summary:

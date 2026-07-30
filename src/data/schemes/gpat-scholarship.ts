@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const gpatScholarship: Scheme = {
   id: "gpat-scholarship",
-  slug: "gpat-scholarship-n4m7vk2x",
+  slug: "gpat-scholarship",
   name: "GPAT Scholarship — Graduate Pharmacy Aptitude Test",
   shortName: "GPAT Scholarship",
   summary:

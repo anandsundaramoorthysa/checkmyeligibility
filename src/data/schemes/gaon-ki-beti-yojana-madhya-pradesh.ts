@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const gaonKiBetiYojanaMadhyaPradesh: Scheme = {
   id: "gaon-ki-beti-yojana-madhya-pradesh",
-  slug: "gaon-ki-beti-yojana-madhya-pradesh-f3k8n2wp",
+  slug: "gaon-ki-beti-yojana-madhya-pradesh",
   name: "Gaon Ki Beti Yojana",
   shortName: "Gaon Ki Beti",
   summary:

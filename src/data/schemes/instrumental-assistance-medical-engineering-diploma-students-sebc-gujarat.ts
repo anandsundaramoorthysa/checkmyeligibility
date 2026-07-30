@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const instrumentalAssistanceMedicalEngineeringDiplomaStudentsSebcGujarat: Scheme = {
   id: "instrumental-assistance-medical-engineering-diploma-students-sebc-gujarat",
-  slug: "instrumental-assistance-medical-engineering-diploma-students-sebc-gujarat-mq3fn8wp",
+  slug: "instrumental-assistance-medical-engineering-diploma-students-sebc-gujarat",
   name: "Instrumental Assistance for Medical, Engineering, Diploma Students (SEBC), Gujarat",
   shortName: "BCK-80 SEBC Gujarat",
   summary:

@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const postMatricScholarshipScheduledTribeStudents: Scheme = {
   id: "post-matric-scholarship-scheduled-tribe-students",
-  slug: "post-matric-scholarship-scheduled-tribe-students-for-studies-in-india-g7k2m9xz",
+  slug: "post-matric-scholarship-scheduled-tribe-students-for-studies-in-india",
   name: "Post Matric Scholarship Scheme for Scheduled Tribe Students for Studies in India",
   shortName: "PMS ST",
   summary:

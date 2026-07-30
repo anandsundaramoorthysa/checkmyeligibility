@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const oecPreMatricEducationalAssistance: Scheme = {
   id: "oec-pre-matric-educational-assistance",
-  slug: "oec-pre-matric-educational-assistance-2k9h8m4p",
+  slug: "oec-pre-matric-educational-assistance",
   name: "OEC Pre-matric Educational Assistance",
   shortName: "OECP-MEA",
   summary:

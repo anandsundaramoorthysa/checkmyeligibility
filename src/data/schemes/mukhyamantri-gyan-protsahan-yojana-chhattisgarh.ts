@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const mukhyamantriGyanProtsahanYojanaChhattisgarh: Scheme = {
   id: "mukhyamantri-gyan-protsahan-yojana-chhattisgarh",
-  slug: "mukhyamantri-gyan-protsahan-yojana-chhattisgarh-d99g2fuc",
+  slug: "mukhyamantri-gyan-protsahan-yojana-chhattisgarh",
   name: "Mukhyamantri Gyan Protsahan Yojana \u2013 Chhattisgarh",
   shortName: "CG Gyan Protsahan",
   summary:

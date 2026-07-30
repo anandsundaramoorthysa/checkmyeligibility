@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const perarignarAnnaMemorialAward: Scheme = {
   id: "perarignar-anna-memorial-award",
-  slug: "perarignar-anna-memorial-award-353",
+  slug: "perarignar-anna-memorial-award",
   name: "Perarignar Anna Memorial Award",
   shortName: "PAMA",
   summary:

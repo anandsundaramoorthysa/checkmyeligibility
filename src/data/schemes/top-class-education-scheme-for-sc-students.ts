@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const topClassEducationSchemeForScStudents: Scheme = {
   id: "top-class-education-scheme-for-sc-students",
-  slug: "top-class-education-scheme-for-sc-students-a3kf7xbq",
+  slug: "top-class-education-scheme-for-sc-students",
   name: "Top Class Education Scheme for SC Students",
   shortName: "TCE SC",
   summary:

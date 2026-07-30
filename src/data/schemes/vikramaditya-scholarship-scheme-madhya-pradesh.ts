@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const vikramadityaScholarshipSchemeMadhyaPradesh: Scheme = {
   id: "vikramaditya-scholarship-scheme-madhya-pradesh",
-  slug: "vikramaditya-scholarship-scheme-madhya-pradesh-y6fm0c5n",
+  slug: "vikramaditya-scholarship-scheme-madhya-pradesh",
   name: "Vikramaditya Scholarship Scheme \u2013 Madhya Pradesh",
   shortName: "MP Vikramaditya",
   summary:
