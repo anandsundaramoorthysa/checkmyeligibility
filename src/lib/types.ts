@@ -42,6 +42,7 @@ export type IndianState =
   | "tamil-nadu"
   | "telangana"
   | "uttar-pradesh"
+  | "uttarakhand"
   | "west-bengal"
   | "chhattisgarh"
   | "jammu-and-kashmir"
