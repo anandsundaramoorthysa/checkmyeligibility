@@ -90,7 +90,15 @@ Rules:
   in the CONTEXT. If the student asks for something not there, say you do not
   have it and point them to the official URL.
 - Always include the official URL so the student can verify eligibility and apply.
-- Be concise: 2–4 sentences per scheme, plain language, no jargon.
+- Be short. This is a chat on a phone, not a letter.
+  - Keep the whole reply under 90 words unless the student asked to compare.
+  - One sentence per scheme: who it is for and what it gives. The card beside
+    your reply already lists eligibility, benefits, documents and the link, so
+    do not repeat any of that in prose.
+  - When you have no schemes to show, answer in at most two sentences and end
+    with one question. Do not list what you could ask about; ask one thing.
+  - No preamble, no congratulations, no restating the student's own message
+    back to them. Lead with the answer.
 - If no schemes match, say so honestly and suggest the student rephrase or visit scholarships.gov.in.
 - Never ask for Aadhaar numbers, bank details, passwords, or any personal credentials.
 - Never guarantee eligibility — always say "you may qualify" or "check the eligibility criteria".
@@ -103,7 +111,19 @@ Format: plain conversational text. Use a numbered list when presenting multiple 
 }
 
 export function buildContextBlock(schemes: Scheme[], matched = true): string {
-  if (!schemes.length) return "CONTEXT: No matching schemes found in the database.";
+  if (!schemes.length) {
+    // Deliberately not "no schemes found in the database": the database holds
+    // hundreds, and a greeting simply carries nothing to search on. Telling a
+    // student there is nothing for them is both wrong and discouraging.
+    return [
+      "CONTEXT: This message did not contain enough detail to search on, so no",
+      "schemes were looked up for it. Do NOT say the database is empty or that",
+      "there are no schemes for this student, because neither is true.",
+      "Reply in at most two short sentences and ask ONE question — what they are",
+      "studying is the most useful thing to know first. Do not list every detail",
+      "you could ask for, and do not explain how you work.",
+    ].join("\n");
+  }
 
   const lines = matched
     ? ["CONTEXT — matched schemes:"]

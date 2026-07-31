@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ThumbsDown, ThumbsUp, Volume2, VolumeX } from "lucide-react";
+import { Check, Pencil, ThumbsDown, ThumbsUp, Volume2, VolumeX, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Message } from "@/lib/types";
 import { LogoMark } from "@/components/brand/Logo";
-import { SchemeResultCard } from "@/components/chat/SchemeResultCard";
+import { SchemeResultList } from "@/components/chat/SchemeResultList";
 
 function stripMarkdown(text: string): string {
   return text
@@ -25,13 +25,41 @@ interface Props {
   feedbackContext?: string;
   /** Whether this message is currently being streamed (disables feedback until done). */
   streaming?: boolean;
+  /** Re-ask this turn with edited wording. Absent while a reply is in flight. */
+  onEdit?: (messageId: string, next: string) => void;
 }
 
-export function ScreenBubble({ message, feedbackContext, streaming }: Props) {
+export function ScreenBubble({ message, feedbackContext, streaming, onEdit }: Props) {
   const isUser = message.role === "user";
   const [speaking, setSpeaking] = useState(false);
   const [ttsSupported, setTtsSupported] = useState(false);
   const [feedbackVote, setFeedbackVote] = useState<"up" | "down" | null>(null);
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(message.content);
+  const editRef = useRef<HTMLTextAreaElement | null>(null);
+
+  // Focus and put the caret at the end when the editor opens.
+  useEffect(() => {
+    if (!editing) return;
+    const el = editRef.current;
+    if (!el) return;
+    el.focus();
+    el.setSelectionRange(el.value.length, el.value.length);
+    el.style.height = "auto";
+    el.style.height = `${el.scrollHeight}px`;
+  }, [editing]);
+
+  function submitEdit() {
+    const next = draft.trim();
+    setEditing(false);
+    if (!next || next === message.content) return;
+    onEdit?.(message.id, next);
+  }
+
+  function cancelEdit() {
+    setDraft(message.content);
+    setEditing(false);
+  }
 
   useEffect(() => {
     setTtsSupported(typeof window !== "undefined" && "speechSynthesis" in window);
@@ -78,8 +106,74 @@ export function ScreenBubble({ message, feedbackContext, streaming }: Props) {
   }
 
   if (isUser) {
+    if (editing) {
+      return (
+        <div className="flex animate-fade-in justify-end">
+          <div className="w-full max-w-[85%] rounded-2xl rounded-tr-md border border-navy/20 bg-surface-card p-2.5 shadow-card">
+            <label htmlFor={`edit-${message.id}`} className="sr-only">
+              Edit your message
+            </label>
+            <textarea
+              id={`edit-${message.id}`}
+              ref={editRef}
+              value={draft}
+              rows={1}
+              onChange={(e) => {
+                setDraft(e.target.value);
+                e.currentTarget.style.height = "auto";
+                e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  submitEdit();
+                } else if (e.key === "Escape") {
+                  e.preventDefault();
+                  cancelEdit();
+                }
+              }}
+              className="block w-full resize-none bg-transparent px-1 text-sm leading-relaxed text-ink outline-none scrollbar-thin"
+            />
+            <div className="mt-1.5 flex items-center justify-end gap-1.5">
+              <button
+                type="button"
+                onClick={cancelEdit}
+                className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold text-ink-muted transition-colors hover:bg-surface-subtle"
+              >
+                <X size={13} aria-hidden="true" />
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={submitEdit}
+                disabled={!draft.trim()}
+                className="inline-flex items-center gap-1 rounded-full bg-navy px-2.5 py-1 text-xs font-semibold text-white transition-colors hover:bg-navy-light disabled:opacity-40"
+              >
+                <Check size={13} aria-hidden="true" />
+                Send again
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
-      <div className="flex animate-fade-in justify-end">
+      <div className="group flex animate-fade-in items-end justify-end gap-1.5">
+        {onEdit && (
+          <button
+            type="button"
+            onClick={() => {
+              setDraft(message.content);
+              setEditing(true);
+            }}
+            aria-label="Edit this message and ask again"
+            title="Edit and ask again"
+            className="mb-1 grid h-7 w-7 shrink-0 place-items-center rounded-full text-ink-faint opacity-0 transition-opacity hover:bg-surface-subtle hover:text-navy focus-visible:opacity-100 group-hover:opacity-100 touch:opacity-100"
+          >
+            <Pencil size={13} aria-hidden="true" />
+          </button>
+        )}
         <div className="max-w-[85%] rounded-2xl rounded-tr-md bg-navy px-4 py-2.5 text-sm leading-relaxed text-white shadow-card">
           <p className="whitespace-pre-wrap break-words">{message.content}</p>
         </div>
@@ -171,11 +265,7 @@ export function ScreenBubble({ message, feedbackContext, streaming }: Props) {
         </div>
 
         {message.schemeResults && message.schemeResults.length > 0 && (
-          <div className="grid gap-3 sm:grid-cols-2">
-            {message.schemeResults.map((scheme) => (
-              <SchemeResultCard key={scheme.id} scheme={scheme} />
-            ))}
-          </div>
+          <SchemeResultList schemes={message.schemeResults} />
         )}
       </div>
     </div>

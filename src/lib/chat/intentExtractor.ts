@@ -49,6 +49,15 @@ const NAME_STOPWORDS = new Set([
   "state", "government", "govt", "amount", "money", "year", "years", "date",
   "last", "documents", "document", "required", "process", "portal", "online",
   "form", "status", "details", "detail", "information", "info",
+  // Greetings and small talk. Without these a bare "hello" became a name term,
+  // which made the intent look non-empty, so retrieval reported a match, found
+  // nothing, and the assistant told the student there were no schemes in the
+  // database at all.
+  "hello", "hallo", "hey", "heya", "hiya", "namaste", "namaskar", "vanakkam",
+  "greetings", "morning", "afternoon", "evening", "night", "good", "please",
+  "thanks", "thank", "welcome", "okay", "sure", "yes", "no", "maybe",
+  "anyone", "anybody", "someone", "something", "anything", "nothing",
+  "hola", "salam", "assalam", "bonjour", "howdy", "sup", "yo",
 ]);
 
 const MAX_NAME_TERMS = 6;

@@ -75,7 +75,7 @@ export function ChatScreen({ initialQuery }: Props = {}) {
   soundOnRef.current = soundOn;
   const langRef = useRef(lang);
   langRef.current = lang;
-  const sendRef = useRef<(t: string) => void>(() => {});
+  const sendRef = useRef<(t: string, history?: Message[]) => void>(() => {});
   const cancelledRef = useRef<{ cancelled: boolean } | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
   const prefsRestoredRef = useRef(false);
@@ -95,6 +95,23 @@ export function ChatScreen({ initialQuery }: Props = {}) {
     } catch {
       /* ignore corrupt storage */
     }
+
+    // The browser copy is authoritative when present; the server copy is the
+    // fallback for a returning student whose local storage is gone. Fetched
+    // after local restore so it can never overwrite a live local transcript.
+    void (async () => {
+      try {
+        if (localStorage.getItem(STORAGE_KEY)) return;
+        const res = await fetch("/api/history", { cache: "no-store" });
+        if (!res.ok) return;
+        const data = (await res.json()) as { messages?: Message[] };
+        if (Array.isArray(data.messages) && data.messages.length) {
+          setMessages((prev) => (prev.length ? prev : data.messages!));
+        }
+      } catch {
+        /* history is a convenience — never block the chat on it */
+      }
+    })();
 
     // Auto-send ?q= after restoration is scheduled (defer by one task).
     // Read from the URL when no prop was supplied, which is the normal path.
@@ -149,7 +166,7 @@ export function ChatScreen({ initialQuery }: Props = {}) {
     }
   }, [messages, typing, streamingMsgId]);
 
-  const send = useCallback(async (text: string) => {
+  const send = useCallback(async (text: string, historyOverride?: Message[]) => {
     const trimmed = text.trim();
     if (!trimmed || typingRef.current) return;
 
@@ -164,10 +181,18 @@ export function ChatScreen({ initialQuery }: Props = {}) {
       content: trimmed,
       createdAt: Date.now(),
     };
-    // Strip schemeResults before sending — they're large and the server ignores them
-    const history = messagesRef.current.map(({ id, role, content, createdAt }) => ({ id, role, content, createdAt }));
+    // Keep the full messages for the UI; only the network payload is stripped.
+    // Feeding the stripped copy back into state dropped schemeResults from every
+    // earlier turn, so previously shown scheme cards vanished on the next send.
+    const uiHistory = historyOverride ?? messagesRef.current;
+    const history = uiHistory.map(({ id, role, content, createdAt }) => ({
+      id,
+      role,
+      content,
+      createdAt,
+    }));
     atBottomRef.current = true;
-    setMessages([...history, userMsg]);
+    setMessages([...uiHistory, userMsg]);
     setQuickReplies([]);
     setTyping(true);
 
@@ -226,6 +251,26 @@ export function ChatScreen({ initialQuery }: Props = {}) {
 
   sendRef.current = send;
 
+  /**
+   * Re-ask an earlier turn with different wording. Everything from that message
+   * onwards is dropped first: the replies after it were answers to the old
+   * question, so keeping them would leave the transcript contradicting itself.
+   */
+  const editMessage = useCallback(
+    (messageId: string, next: string) => {
+      if (typingRef.current) return;
+      const all = messagesRef.current;
+      const idx = all.findIndex((m) => m.id === messageId);
+      if (idx === -1) return;
+      const truncated = all.slice(0, idx);
+      setMessages(truncated);
+      setQuickReplies([]);
+      // Replay against the history as it stood before the edited turn.
+      setTimeout(() => sendRef.current(next, truncated), 0);
+    },
+    [],
+  );
+
   const stop = useCallback(() => {
     if (cancelledRef.current) cancelledRef.current.cancelled = true;
     abortControllerRef.current?.abort();
@@ -238,6 +283,9 @@ export function ChatScreen({ initialQuery }: Props = {}) {
     setMessages([]);
     setQuickReplies([]);
     try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
+    // Also drop the stored copy, or the next visit would resurrect the
+    // conversation the student just cleared.
+    void fetch("/api/history", { method: "DELETE" }).catch(() => {});
   }, [stop]);
 
   const increaseFont = useCallback(() => {
@@ -370,6 +418,8 @@ export function ChatScreen({ initialQuery }: Props = {}) {
                     message={m}
                     feedbackContext={m.role === "assistant" ? feedbackContextMap.get(m.id) : undefined}
                     streaming={m.id === streamingMsgId}
+                    // Editing mid-stream would race the reply it is replacing.
+                    onEdit={m.role === "user" && !typing && !streamingMsgId ? editMessage : undefined}
                   />
                 </div>
               ))}

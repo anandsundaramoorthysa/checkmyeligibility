@@ -18,7 +18,8 @@
     "eval:multilingual": "tsx scripts/eval-multilingual.ts",
     "check:urls": "tsx scripts/check-scheme-urls.ts",
     "clean:urls": "tsx scripts/clean-scheme-urls.ts",
-    "load:test": "tsx scripts/load-test.ts"
+    "load:test": "tsx scripts/load-test.ts",
+    "eval:coherence": "tsx scripts/eval-coherence.ts"
   },
   "engines": {
     "node": "22.x"

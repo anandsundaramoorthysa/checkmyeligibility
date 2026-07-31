@@ -91,6 +91,15 @@ export function ScreenHeader({
         </span>
       </Link>
 
+      {/* Independence disclaimer. /chat renders neither the site header nor the
+          footer, so without this the one page where a student actually talks to
+          the assistant carried no statement that this is not a government
+          service. Truncates rather than wrapping so the 14-unit bar holds. */}
+      <p className="min-w-0 flex-1 truncate text-[11px] leading-tight text-ink-faint">
+        <span className="hidden sm:inline">Independent guide. </span>
+        Not affiliated with any government.
+      </p>
+
       <div className="ml-auto flex shrink-0 items-center gap-0.5">
         {/* Text size — hidden on the smallest screens to keep the title readable */}
         <div className="hidden items-center gap-0.5 xs:flex">
