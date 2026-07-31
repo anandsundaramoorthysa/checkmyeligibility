@@ -1,6 +1,7 @@
 // AUTO-GENERATED — do not edit. Run `pnpm collect-schemes` to rebuild.
 import type { Scheme } from "@/lib/types";
 
+import { agaKhanFoundationInternationalScholarship } from "./aga-khan-foundation-international-scholarship";
 import { aictMitacsGlobalinkResearchInternship } from "./aict-mitacs-globalink-research-internship";
 import { aicteDistinguishedChairProfessorFellowship } from "./aicte-distinguished-chair-professor-fellowship";
 import { aicteDoctoralFellowshipAdf } from "./aicte-doctoral-fellowship-adf";
@@ -10,6 +11,7 @@ import { aicteLilavatiAward } from "./aicte-lilavati-award";
 import { aictePragatiScholarship } from "./aicte-pragati-scholarship";
 import { aicteSakshamDegree } from "./aicte-saksham-degree";
 import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-scheme";
+import { aicteSpicesScheme } from "./aicte-spices-scheme";
 import { aicteSwanathScholarshipSchemeForStudents } from "./aicte-swanath-scholarship-scheme-for-students";
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
 import { anrfNationalPostdoctoralFellowship } from "./anrf-national-postdoctoral-fellowship";
@@ -40,6 +42,7 @@ import { delhiBocwEducationAssistance } from "./delhi-bocw-education-assistance"
 import { districtMeritScholarship } from "./district-merit-scholarship";
 import { drAmbedkarCentralSectorSchemeOfInterestSubsidyOnEducationalLoansForOverseasStudiesForOtherBackwardClassesObcsAndEconomicallyBackwardClassesEbcs } from "./dr-ambedkar-central-sector-scheme-of-interest-subsidy-on-educational-loans-for-overseas-studies-for-other-backward-classes-obcs-and-economically-backward-classes-ebcs";
 import { drAmbedkarPostMatricScholarshipEbc } from "./dr-ambedkar-post-matric-scholarship-ebc";
+import { drAmbedkarPostMatricScholarshipPunjab } from "./dr-ambedkar-post-matric-scholarship-punjab";
 import { drBabasahebAmbedkarNationalResearchFellowshipBanrf } from "./dr-babasaheb-ambedkar-national-research-fellowship-banrf";
 import { drDSKothariPostdoctoralFellowship } from "./dr-d-s-kothari-postdoctoral-fellowship";
 import { drPanjabraoDeshmukhHostelAllowance } from "./dr-panjabrao-deshmukh-hostel-allowance";
@@ -55,6 +58,7 @@ import { freeCoachingAndAlliedScheme } from "./free-coaching-and-allied-scheme";
 import { gaonKiBetiYojanaMadhyaPradesh } from "./gaon-ki-beti-yojana-madhya-pradesh";
 import { gpatScholarship } from "./gpat-scholarship";
 import { haryanaBocwScholarshipProfessionalTechnicalCourses } from "./haryana-bocw-scholarship-professional-technical-courses";
+import { haryanaPostMatricScholarshipForMinority } from "./haryana-post-matric-scholarship-for-minority";
 import { hdfcBankParivartanEcssScholarship } from "./hdfc-bank-parivartan-ecss-scholarship";
 import { higherEducationAssistanceSchemeGujarat } from "./higher-education-assistance-scheme-gujarat";
 import { icarJuniorSeniorResearchFellowshipForPostGraduateStudiesIcarJrfSrfPgs } from "./icar-junior-senior-research-fellowship-for-post-graduate-studies-icar-jrf-srf-pgs";
@@ -72,6 +76,7 @@ import { isiStipendSchemeUgPgDiploma } from "./isi-stipend-scheme-ug-pg-diploma"
 import { jaganannaVasathiDeevenaHostelMessSupport } from "./jagananna-vasathi-deevena-hostel-mess-support";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
 import { jkTyreShikshaSarthiScholarship } from "./jk-tyre-shiksha-sarthi-scholarship";
+import { juniorResearchFellowshipInSciencesHumanitiesAndSocialSciences } from "./junior-research-fellowship-in-sciences-humanities-and-social-sciences";
 import { kCMahindraScholarshipForPostGraduateStudiesAbroad } from "./k-c-mahindra-scholarship-for-post-graduate-studies-abroad";
 import { kanyaSakshartaProtsahanYojana } from "./kanya-saksharta-protsahan-yojana";
 import { kanyashreePrakalpaK3PostGraduateComponent } from "./kanyashree-prakalpa-k3-post-graduate-component";
@@ -79,6 +84,7 @@ import { kshecHigherEducationScholarshipScheme } from "./kshec-higher-education-
 import { lOrAlIndiaForYoungWomenInScienceScholarship } from "./l-or-al-india-for-young-women-in-science-scholarship";
 import { licGoldenJubileeScholarship } from "./lic-golden-jubilee-scholarship-mrernkum";
 import { ltBuildIndiaScholarship } from "./lt-build-india-scholarship";
+import { mahajyotiPhdResearchFellowship } from "./mahajyoti-phd-research-fellowship";
 import { mahatmaJyotiraoPhuleEducationalConcession } from "./mahatma-jyotirao-phule-educational-concession";
 import { mahindraMailtsScholarship } from "./mahindra-maits-scholarship";
 import { meghalayaBocwBoard } from "./meghalaya-bocw-board";
@@ -135,6 +141,7 @@ import { preMatricScholarshipForStudentsWithDisabilities } from "./pre-matric-sc
 import { preMatricScholarshipSchemeForObcStudents } from "./pre-matric-scholarship-scheme-for-obc-students";
 import { prematricScholarshipUncleanOccupation } from "./pre-matric-scholarship-unclean-occupation";
 import { primeMinisterSScholarshipSchemePmssForWardsOfRpfRpsfPersonnel } from "./prime-minister-s-scholarship-scheme-pmss-for-wards-of-rpf-rpsf-personnel";
+import { primeMinisterVidyalaxmiScheme } from "./prime-minister-vidyalaxmi-scheme";
 import { primeMinistersFellowshipDoctoralResearch } from "./prime-ministers-fellowship-doctoral-research";
 import { primeMinistersResearchFellowship } from "./prime-ministers-research-fellowship";
 import { pudhumaiPennSchemeMoovalurRamamirthamAmmaiyarHigherEducationAssurance } from "./pudhumai-penn-scheme-moovalur-ramamirtham-ammaiyar-higher-education-assurance-mrccc2gp";
@@ -145,6 +152,7 @@ import { rajivGandhiNationalFellowshipSc } from "./rajiv-gandhi-national-fellows
 import { rblBankShikshaScholarship } from "./rbl-bank-shiksha-scholarship";
 import { readersAllowanceToVisuallyImpairedPersons } from "./readers-allowance-to-visually-impaired-persons-mrf41p9d";
 import { reimbursementOfCollegeFeesForScStudentsInProfessionalColleges } from "./reimbursement-of-college-fees-for-sc-students-in-professional-colleges";
+import { relianceFoundationPostgraduateScholarships } from "./reliance-foundation-postgraduate-scholarships";
 import { ruralGirlsIncentiveScheme } from "./rural-girls-incentive-scheme";
 import { savitribaiJyotiraoPhuleFellowshipForSingleGirlChild } from "./savitribai-jyotirao-phule-fellowship-for-single-girl-child";
 import { sbiAshaScholarshipProgramme } from "./sbi-asha-scholarship-programme";
@@ -158,7 +166,9 @@ import { sitaramJindalScholarship } from "./sitaram-jindal-scholarship";
 import { specialScholarshipSchemeForJKAndLadakhSssjkl } from "./special-scholarship-scheme-for-j-k-and-ladakh-sssjkl";
 import { summerInternshipSchemeOfDgft } from "./summer-internship-scheme-of-dgft";
 import { swamiVivekanandaMeritCumMeansScholarshipWestBengal } from "./swami-vivekananda-merit-cum-means-scholarship-west-bengal";
+import { swamiVivekanandaSingleGirlChildFellowshipForResearchInSocialSciences } from "./swami-vivekananda-single-girl-child-fellowship-for-research-in-social-sciences";
 import { tagoreNationalFellowshipCulturalResearch } from "./tagore-national-fellowship-cultural-research";
+import { tamilNaduChiefMinisterSResearchFellowship } from "./tamil-nadu-chief-ministers-research-fellowship";
 import { tamilNaduFirstGraduateTuitionFeeConcession } from "./tamil-nadu-first-graduate-tuition-fee-concession";
 import { tamilNaduPostMatricScholarshipBcMbcDnc } from "./tamil-nadu-post-matric-scholarship-bc-mbc-dnc";
 import { tataCapitalPankhScholarship } from "./tata-capital-pankh-scholarship";
@@ -174,6 +184,7 @@ import { visvesvarayaPhdSchemeForElectronicsIt } from "./visvesvaraya-phd-scheme
 import { wiseKiranScheme } from "./wise-kiran-scheme";
 
 export const SCHEMES: Scheme[] = [
+  agaKhanFoundationInternationalScholarship,
   aictMitacsGlobalinkResearchInternship,
   aicteDistinguishedChairProfessorFellowship,
   aicteDoctoralFellowshipAdf,
@@ -183,6 +194,7 @@ export const SCHEMES: Scheme[] = [
   aictePragatiScholarship,
   aicteSakshamDegree,
   aicteSakshamScholarshipScheme,
+  aicteSpicesScheme,
   aicteSwanathScholarshipSchemeForStudents,
   aicteYashasviScholarship,
   anrfNationalPostdoctoralFellowship,
@@ -213,6 +225,7 @@ export const SCHEMES: Scheme[] = [
   districtMeritScholarship,
   drAmbedkarCentralSectorSchemeOfInterestSubsidyOnEducationalLoansForOverseasStudiesForOtherBackwardClassesObcsAndEconomicallyBackwardClassesEbcs,
   drAmbedkarPostMatricScholarshipEbc,
+  drAmbedkarPostMatricScholarshipPunjab,
   drBabasahebAmbedkarNationalResearchFellowshipBanrf,
   drDSKothariPostdoctoralFellowship,
   drPanjabraoDeshmukhHostelAllowance,
@@ -228,6 +241,7 @@ export const SCHEMES: Scheme[] = [
   gaonKiBetiYojanaMadhyaPradesh,
   gpatScholarship,
   haryanaBocwScholarshipProfessionalTechnicalCourses,
+  haryanaPostMatricScholarshipForMinority,
   hdfcBankParivartanEcssScholarship,
   higherEducationAssistanceSchemeGujarat,
   icarJuniorSeniorResearchFellowshipForPostGraduateStudiesIcarJrfSrfPgs,
@@ -245,6 +259,7 @@ export const SCHEMES: Scheme[] = [
   jaganannaVasathiDeevenaHostelMessSupport,
   jaganannaVidyaDeevenaFeeReimbursement,
   jkTyreShikshaSarthiScholarship,
+  juniorResearchFellowshipInSciencesHumanitiesAndSocialSciences,
   kCMahindraScholarshipForPostGraduateStudiesAbroad,
   kanyaSakshartaProtsahanYojana,
   kanyashreePrakalpaK3PostGraduateComponent,
@@ -252,6 +267,7 @@ export const SCHEMES: Scheme[] = [
   lOrAlIndiaForYoungWomenInScienceScholarship,
   licGoldenJubileeScholarship,
   ltBuildIndiaScholarship,
+  mahajyotiPhdResearchFellowship,
   mahatmaJyotiraoPhuleEducationalConcession,
   mahindraMailtsScholarship,
   meghalayaBocwBoard,
@@ -308,6 +324,7 @@ export const SCHEMES: Scheme[] = [
   preMatricScholarshipSchemeForObcStudents,
   prematricScholarshipUncleanOccupation,
   primeMinisterSScholarshipSchemePmssForWardsOfRpfRpsfPersonnel,
+  primeMinisterVidyalaxmiScheme,
   primeMinistersFellowshipDoctoralResearch,
   primeMinistersResearchFellowship,
   pudhumaiPennSchemeMoovalurRamamirthamAmmaiyarHigherEducationAssurance,
@@ -318,6 +335,7 @@ export const SCHEMES: Scheme[] = [
   rblBankShikshaScholarship,
   readersAllowanceToVisuallyImpairedPersons,
   reimbursementOfCollegeFeesForScStudentsInProfessionalColleges,
+  relianceFoundationPostgraduateScholarships,
   ruralGirlsIncentiveScheme,
   savitribaiJyotiraoPhuleFellowshipForSingleGirlChild,
   sbiAshaScholarshipProgramme,
@@ -331,7 +349,9 @@ export const SCHEMES: Scheme[] = [
   specialScholarshipSchemeForJKAndLadakhSssjkl,
   summerInternshipSchemeOfDgft,
   swamiVivekanandaMeritCumMeansScholarshipWestBengal,
+  swamiVivekanandaSingleGirlChildFellowshipForResearchInSocialSciences,
   tagoreNationalFellowshipCulturalResearch,
+  tamilNaduChiefMinisterSResearchFellowship,
   tamilNaduFirstGraduateTuitionFeeConcession,
   tamilNaduPostMatricScholarshipBcMbcDnc,
   tataCapitalPankhScholarship,
