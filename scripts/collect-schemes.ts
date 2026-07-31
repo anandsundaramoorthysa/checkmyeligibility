@@ -1,4 +1,4 @@
-import { readdirSync, writeFileSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync } from "fs";
 import path from "path";
 
 const schemesDir = path.join(process.cwd(), "src/data/schemes");
@@ -7,19 +7,24 @@ const files = readdirSync(schemesDir)
   .filter((f) => f.endsWith(".ts") && f !== "index.ts")
   .sort();
 
-function toCamelCase(slug: string) {
-  return slug.replace(/-([a-z0-9])/g, (_, c: string) => c.toUpperCase());
+function getExportName(filePath: string): string {
+  const content = readFileSync(filePath, "utf8");
+  const match = content.match(/^export const (\w+)/m);
+  if (!match) throw new Error(`No top-level export const found in ${filePath}`);
+  return match[1];
 }
 
-const imports = files
-  .map((f) => {
-    const base = f.replace(".ts", "");
-    const name = toCamelCase(base);
-    return `import { ${name} } from "./${base}";`;
-  })
+const entries = files.map((f) => {
+  const base = f.replace(".ts", "");
+  const name = getExportName(path.join(schemesDir, f));
+  return { base, name };
+});
+
+const imports = entries
+  .map(({ base, name }) => `import { ${name} } from "./${base}";`)
   .join("\n");
 
-const entries = files.map((f) => toCamelCase(f.replace(".ts", ""))).join(",\n  ");
+const schemeList = entries.map(({ name }) => name).join(",\n  ");
 
 const output = `// AUTO-GENERATED — do not edit. Run \`pnpm collect-schemes\` to rebuild.
 import type { Scheme } from "@/lib/types";
@@ -27,7 +32,7 @@ import type { Scheme } from "@/lib/types";
 ${imports}
 
 export const SCHEMES: Scheme[] = [
-  ${entries},
+  ${schemeList},
 ];
 `;
 
