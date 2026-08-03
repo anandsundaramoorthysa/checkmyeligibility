@@ -84,6 +84,7 @@ import { ishanUdayScholarship } from "./ishan-uday-scholarship";
 import { isiStipendSchemeUgPgDiploma } from "./isi-stipend-scheme-ug-pg-diploma";
 import { jaganannaVasathiDeevenaHostelMessSupport } from "./jagananna-vasathi-deevena-hostel-mess-support";
 import { jaganannaVidyaDeevenaFeeReimbursement } from "./jagananna-vidya-deevena-fee-reimbursement";
+import { jaiBhimMukhyamantriPratibhaVikasYojana } from "./jai-bhim-mukhyamantri-pratibha-vikas-yojana";
 import { jkTyreShikshaSarthiScholarship } from "./jk-tyre-shiksha-sarthi-scholarship";
 import { jnTataEndowmentLoanScholarship } from "./jn-tata-endowment-loan-scholarship";
 import { juniorResearchFellowshipInSciencesHumanitiesAndSocialSciences } from "./junior-research-fellowship-in-sciences-humanities-and-social-sciences";
@@ -96,6 +97,7 @@ import { licGoldenJubileeScholarship } from "./lic-golden-jubilee-scholarship-mr
 import { ltBuildIndiaScholarship } from "./lt-build-india-scholarship";
 import { mahajyotiPhdResearchFellowship } from "./mahajyoti-phd-research-fellowship";
 import { mahatmaJyotiraoPhuleEducationalConcession } from "./mahatma-jyotirao-phule-educational-concession";
+import { maulanaAzadNationalFellowship } from "./maulana-azad-national-fellowship";
 import { mahindraMailtsScholarship } from "./mahindra-maits-scholarship";
 import { meghalayaBocwBoard } from "./meghalaya-bocw-board";
 import { meritCumMeansScholarshipForMinorityStudents } from "./merit-cum-means-scholarship-for-minority-students";
@@ -103,6 +105,7 @@ import { motherTeresaScholarship } from "./mother-teresa-scholarship-mrgin957";
 import { mukhyamantriGyanProtsahanYojanaChhattisgarh } from "./mukhyamantri-gyan-protsahan-yojana-chhattisgarh";
 import { mukhyamantriGyanSadhanaMeritScholarshipScheme } from "./mukhyamantri-gyan-sadhana-merit-scholarship-scheme";
 import { mukhyamantriKanyaUtthanYojanaGraduationIncentive } from "./mukhyamantri-kanya-utthan-yojana-graduation-incentive";
+import { mukhyamantriKanyaUtthanYojanaIntermediate } from "./mukhyamantri-kanya-utthan-yojana-intermediate";
 import { mukhyamantriMedhaviVidyarthiYojana } from "./mukhyamantri-medhavi-vidyarthi-yojana";
 import { mukhyamantriYuvaSwavalambanYojanaGujarat } from "./mukhyamantri-yuva-swavalamban-yojana-gujarat";
 import { naiUdaanScheme } from "./nai-udaan-scheme";
@@ -146,6 +149,7 @@ import { postDoctoralFellowshipToWomenCandidates } from "./post-doctoral-fellows
 import { postGraduateScholarshipForUniversityRankHolders } from "./post-graduate-scholarship-for-university-rank-holders";
 import { postGraduateScholarshipSchemeForGateGpatQualifiedStudentsAicte } from "./post-graduate-scholarship-scheme-for-gate-gpat-qualified-students-aicte";
 import { postGraduateScholarshipsForProfessionalCoursesForScStCandidates } from "./post-graduate-scholarships-for-professional-courses-for-sc-st-candidates";
+import { postMatricScholarshipObcStudents } from "./post-matric-scholarship-obc-students";
 import { postMatricScholarshipScStudents } from "./post-matric-scholarship-sc-students";
 import { postMatricScholarshipScheduledTribeStudents } from "./post-matric-scholarship-scheduled-tribe-students";
 import { postMatricScholarshipStudentsWithDisabilities } from "./post-matric-scholarship-students-with-disabilities";
@@ -282,6 +286,7 @@ export const SCHEMES: Scheme[] = [
   isiStipendSchemeUgPgDiploma,
   jaganannaVasathiDeevenaHostelMessSupport,
   jaganannaVidyaDeevenaFeeReimbursement,
+  jaiBhimMukhyamantriPratibhaVikasYojana,
   jkTyreShikshaSarthiScholarship,
   jnTataEndowmentLoanScholarship,
   juniorResearchFellowshipInSciencesHumanitiesAndSocialSciences,
@@ -294,6 +299,7 @@ export const SCHEMES: Scheme[] = [
   ltBuildIndiaScholarship,
   mahajyotiPhdResearchFellowship,
   mahatmaJyotiraoPhuleEducationalConcession,
+  maulanaAzadNationalFellowship,
   mahindraMailtsScholarship,
   meghalayaBocwBoard,
   meritCumMeansScholarshipForMinorityStudents,
@@ -301,6 +307,7 @@ export const SCHEMES: Scheme[] = [
   mukhyamantriGyanProtsahanYojanaChhattisgarh,
   mukhyamantriGyanSadhanaMeritScholarshipScheme,
   mukhyamantriKanyaUtthanYojanaGraduationIncentive,
+  mukhyamantriKanyaUtthanYojanaIntermediate,
   mukhyamantriMedhaviVidyarthiYojana,
   mukhyamantriYuvaSwavalambanYojanaGujarat,
   naiUdaanScheme,
@@ -344,6 +351,7 @@ export const SCHEMES: Scheme[] = [
   postGraduateScholarshipForUniversityRankHolders,
   postGraduateScholarshipSchemeForGateGpatQualifiedStudentsAicte,
   postGraduateScholarshipsForProfessionalCoursesForScStCandidates,
+  postMatricScholarshipObcStudents,
   postMatricScholarshipScStudents,
   postMatricScholarshipScheduledTribeStudents,
   postMatricScholarshipStudentsWithDisabilities,
