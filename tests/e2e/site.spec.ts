@@ -82,6 +82,7 @@ test.describe("CheckMyEligibility marketing site", () => {
 test.describe("Bot (standalone /chat page)", () => {
   test("a CTA navigates to the standalone chat page", async ({ page }) => {
     await page.goto("/");
+    await page.waitForLoadState("networkidle");
     await page
       .getByRole("link", { name: /check my eligibility/i })
       .first()
@@ -96,7 +97,8 @@ test.describe("Bot (standalone /chat page)", () => {
     await page.goto("/chat");
     const box = page.getByRole("textbox", { name: /message/i });
     await expect(box).toBeVisible();
-    await box.fill("I am a PhD student looking for a fellowship");
+    // pressSequentially fires real keystrokes so React's onChange fires on all browsers
+    await box.pressSequentially("I am a PhD student looking for a fellowship");
     await expect(page.getByRole("button", { name: /send message/i })).toBeEnabled();
   });
 
