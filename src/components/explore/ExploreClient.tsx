@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Search, X } from "lucide-react";
+import { Search, X, SlidersHorizontal, ChevronDown, ChevronUp } from "lucide-react";
 import { SchemeCard } from "@/components/marketing/SchemeCard";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
 import { getCategoryArt } from "@/components/illustrations/registry";
@@ -36,6 +36,7 @@ function matches(scheme: Scheme, query: string): boolean {
 export function ExploreClient({ allGroups, totalCount }: Props) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [showFilters, setShowFilters] = useState(true);
 
   // Counts per category matching only the search query (ignores category filter)
   // so chip badges stay informative when a category is selected.
@@ -74,32 +75,57 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
       <div className="sticky top-16 z-20 border-b border-navy/10 bg-surface/90 backdrop-blur-sm py-3">
         <Container>
           <div className="flex flex-col gap-3 sm:gap-4">
-            {/* Search input */}
-            <div className="relative">
-              <Search
-                className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-faint"
-                aria-hidden="true"
-              />
-              <input
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search schemes by name, ministry, or keyword…"
-                className="w-full rounded-xl border border-navy/15 bg-surface-card py-2.5 pl-10 pr-10 text-sm text-ink placeholder:text-ink-faint focus:border-navy/40 focus:outline-none focus:ring-2 focus:ring-navy/10"
-              />
-              {query && (
-                <button
-                  onClick={() => setQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-faint hover:text-ink"
-                  aria-label="Clear search"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              )}
+            {/* Search input + filter toggle */}
+            <div className="flex items-center gap-2">
+              <div className="relative flex-1">
+                <Search
+                  className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-faint"
+                  aria-hidden="true"
+                />
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search schemes by name, ministry, or keyword…"
+                  className="w-full rounded-xl border border-navy/15 bg-surface-card py-2.5 pl-10 pr-10 text-sm text-ink placeholder:text-ink-faint focus:border-navy/40 focus:outline-none focus:ring-2 focus:ring-navy/10"
+                />
+                {query && (
+                  <button
+                    onClick={() => setQuery("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-faint hover:text-ink"
+                    aria-label="Clear search"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+
+              {/* Filter visibility toggle */}
+              <button
+                onClick={() => setShowFilters((v) => !v)}
+                aria-label={showFilters ? "Hide category filters" : "Show category filters"}
+                className={`relative inline-flex shrink-0 items-center gap-1.5 rounded-xl border px-3.5 py-2.5 text-sm font-semibold transition-colors ${
+                  showFilters
+                    ? "border-navy/40 bg-surface-card text-ink"
+                    : "border-navy/15 bg-surface-card text-ink-faint hover:border-navy/30 hover:text-ink"
+                }`}
+              >
+                <SlidersHorizontal className="h-4 w-4 shrink-0" />
+                <span className="hidden sm:inline">Filters</span>
+                {showFilters ? (
+                  <ChevronUp className="h-3.5 w-3.5 shrink-0" />
+                ) : (
+                  <ChevronDown className="h-3.5 w-3.5 shrink-0" />
+                )}
+                {/* Dot when a filter is active but chips are hidden */}
+                {!showFilters && activeCategory && (
+                  <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-navy ring-2 ring-surface" />
+                )}
+              </button>
             </div>
 
             {/* Category chips */}
-            <div className="flex flex-wrap gap-2">
+            {showFilters && <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveCategory(null)}
                 className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm font-semibold transition-colors ${
@@ -137,10 +163,10 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
                   </button>
                 );
               })}
-            </div>
+            </div>}
 
             {/* Result count + clear */}
-            {isFiltered && (
+            {showFilters && isFiltered && (
               <div className="flex items-center justify-between text-sm text-ink-muted">
                 <span>
                   {visibleCount === 0
