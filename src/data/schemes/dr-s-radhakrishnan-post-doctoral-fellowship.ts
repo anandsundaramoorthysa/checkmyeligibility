@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const drSRadhakrishnanPostDoctoralFellowship: Scheme = {
-  id: "dr-s-radhakrishnan-post-doctoral-fellowship",
+  id: "dr-s-radhakrishnan-post-doctoral-fellowship-mrcgjjb0",
   slug: "dr-s-radhakrishnan-post-doctoral-fellowship-mrcgjjb0",
   name: "Dr. S. Radhakrishnan Post-Doctoral Fellowship",
   shortName: "UGC Post-Doctoral Fellowship",

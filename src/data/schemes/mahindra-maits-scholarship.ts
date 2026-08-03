@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const mahindraMailtsScholarship: Scheme = {
-  id: "mahindra-maits-scholarship",
+  id: "mahindra-all-india-talent-scholarship-maits",
   slug: "mahindra-all-india-talent-scholarship-maits",
   name: "Mahindra ALL India Talent (MAITS) Scholarship",
   shortName: "Mahindra MAITS",

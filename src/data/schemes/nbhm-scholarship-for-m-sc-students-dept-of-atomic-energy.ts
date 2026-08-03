@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const nbhmScholarshipForMScStudentsDeptOfAtomicEnergy: Scheme = {
-  id: "nbhm-scholarship-for-m-sc-students-dept-of-atomic-energy",
+  id: "nbhm-scholarship-for-m-sc-students-dept-of-atomic-energy-mrcbf8aj",
   slug: "nbhm-scholarship-for-m-sc-students-dept-of-atomic-energy-mrcbf8aj",
   name: "NBHM Scholarship for M.Sc. Students (Dept. of Atomic Energy)",
   shortName: "NBHM M.Sc. Scholarship",

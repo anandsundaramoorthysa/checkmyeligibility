@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const drAmbedkarCentralSectorSchemeOfInterestSubsidyOnEducationalLoansForOverseasStudiesForOtherBackwardClassesObcsAndEconomicallyBackwardClassesEbcs: Scheme = {
-  id: "dr-ambedkar-interest-subsidy-obc-ebc-overseas",
+  id: "dr-ambedkar-central-sector-scheme-of-interest-subsidy-on-educational-loans-for-overseas-studies-for-other-backward-classes-obcs-and-economically-backward-classes-ebcs",
   slug: "dr-ambedkar-central-sector-scheme-of-interest-subsidy-on-educational-loans-for-overseas-studies-for-other-backward-classes-obcs-and-economically-backward-classes-ebcs",
   name: "Dr. Ambedkar Central Sector Scheme of Interest Subsidy on Educational Loans for Overseas Studies for Other Backward Classes (OBCs) and Economically Backward Classes (EBCs)",
   shortName: "Dr. Ambedkar Interest Subsidy (OBC/EBC)",

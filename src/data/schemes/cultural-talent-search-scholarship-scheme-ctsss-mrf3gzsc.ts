@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const culturalTalentSearchScholarshipSchemeCtsss: Scheme =   {
-    id: "ctsss",
+    id: "cultural-talent-search-scholarship-scheme-ctsss",
     slug: "cultural-talent-search-scholarship-scheme-ctsss",
     name: "Cultural Talent Search Scholarship Scheme (CTSSS)",
     shortName: "CTSSS",

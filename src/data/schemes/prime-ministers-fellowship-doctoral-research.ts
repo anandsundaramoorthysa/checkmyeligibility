@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const primeMinistersFellowshipDoctoralResearch: Scheme = {
-  id: "357",
+  id: "prime-ministers-fellowship-doctoral-research",
   slug: "prime-ministers-fellowship-doctoral-research",
   name: "Prime Minister\u2019s Fellowship for Doctoral Research",
   shortName: "PMFDR",

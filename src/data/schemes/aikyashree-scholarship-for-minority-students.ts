@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const aikyashreeScholarshipForMinorityStudents: Scheme = {
-  id: "aikyashree-scholarship-for-minority-students",
+  id: "aikyashree-scholarship-for-minority-students-mrce3odf",
   slug: "aikyashree-scholarship-for-minority-students-mrce3odf",
   name: "Aikyashree Scholarship for Minority Students",
   shortName: "Aikyashree Scholarship",

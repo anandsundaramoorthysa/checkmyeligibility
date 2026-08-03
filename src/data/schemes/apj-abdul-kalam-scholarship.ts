@@ -49,7 +49,12 @@ export const apjAbdulKalamScholarship: Scheme = {
       type: "other",
     },
   ],
-  benefits: ["₹6,000 per annum for selected scholars"],
+  benefits: [
+    "₹6,000 per annum for selected scholars",
+    "One-time disbursement directly to student's bank account",
+    "Covers living expenses and study materials",
+    "Renewable annually based on academic performance",
+  ],
   requiredDocuments: [
     { name: "Application printout", mandatory: true },
     { name: "SSLC / Plus Two mark sheets", mandatory: true },

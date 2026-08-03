@@ -85,5 +85,27 @@ export const drBabasahebAmbedkarNationalResearchFellowshipBanrf: Scheme = {
     "stipend",
     "contingency grant",
   ],
+  faqs: [
+    {
+      q: "Who awards the Dr. Babasaheb Ambedkar National Research Fellowship (BANRF)?",
+      a: "BANRF is awarded by the Dr. Babasaheb Ambedkar Research and Training Institute (BARTI), a Government of Maharashtra institution under the Social Justice and Special Assistance Department, to support SC scholars in advanced research.",
+    },
+    {
+      q: "Who is eligible for BANRF?",
+      a: "Scheduled Caste (SC) candidates who are domiciles of Maharashtra, hold a postgraduate degree from a recognised institution, are registered for a regular full-time M.Phil. or Ph.D. programme, have an annual family income not exceeding ₹8,00,000, and are not receiving any other fellowship or in full-time employment.",
+    },
+    {
+      q: "What is the fellowship amount?",
+      a: "JRF (years 1–2): ₹31,000 per month plus an annual contingency grant of ₹20,000. SRF (years 3–5): ₹35,000 per month plus an annual contingency grant of ₹20,000.",
+    },
+    {
+      q: "What is the duration of the fellowship?",
+      a: "The fellowship is available for up to 5 years — 2 years as Junior Research Fellow (JRF) and up to 3 more years as Senior Research Fellow (SRF), subject to satisfactory progress in research.",
+    },
+    {
+      q: "How do I apply for BANRF?",
+      a: "Visit the BARTI fellowship portal (fellowship.barti.in), register, fill the online application form, upload all required documents (caste certificate, caste validity certificate, domicile certificate, PG mark sheets, Ph.D. registration certificate, Aadhaar, research proposal, bank details, and photograph), and submit before the notified deadline.",
+    },
+  ],
   source: "sample",
 };

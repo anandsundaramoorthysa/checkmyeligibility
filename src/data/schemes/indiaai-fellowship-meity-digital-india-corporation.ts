@@ -94,5 +94,27 @@ export const indiaaiFellowshipMeityDigitalIndiaCorporation: Scheme = {
     "all-india",
     "central",
   ],
+  faqs: [
+    {
+      q: "Who is eligible for the IndiaAI Fellowship?",
+      a: "Indian citizens pursuing AI/ML programmes at IndiaAI Mission partner institutions. There are three tracks: PhD scholars (CGPA ≥ 8.0 from graduation entry or ≥ 7.5 from master's entry, full-time enrolment, cannot hold another central government scholarship simultaneously), PG students in AI/ML programmes, and final-year UG students with 80%+ marks who have completed at least 3 AI-related courses.",
+    },
+    {
+      q: "What does the fellowship cover?",
+      a: "PhD track: monthly stipend of ₹70,000 (years 1–2), ₹75,000 (year 3), ₹80,000 (years 4–5), plus ₹2,00,000/year research grant and up to ₹1,00,000 international conference travel grant. PG track: up to ₹2,00,000 total in tranches. UG track: a defined stipend for final-year students.",
+    },
+    {
+      q: "What is the duration of the IndiaAI Fellowship?",
+      a: "The PhD track runs for up to 5 years. The PG track covers the duration of the postgraduate programme. The UG track covers the final year of the undergraduate programme.",
+    },
+    {
+      q: "Which AI domains and research areas are covered?",
+      a: "The fellowship covers a broad range of AI and machine learning domains including deep learning, computer vision, natural language processing, reinforcement learning, AI for healthcare, AI for agriculture, AI for education, responsible AI, and any other AI/ML research areas at IndiaAI Mission partner institutions.",
+    },
+    {
+      q: "How do I apply for the IndiaAI Fellowship?",
+      a: "Visit the official IndiaAI portal (indiaai.gov.in), navigate to the Fellowship section, register with your institutional email, fill the application form for the relevant track (PhD/PG/UG), upload required documents (Aadhaar, admission/enrolment certificate from an IndiaAI partner institution, academic transcripts, research proposal for PhD, and bank account details), and submit before the notified deadline.",
+    },
+  ],
   source: "sample",
 };

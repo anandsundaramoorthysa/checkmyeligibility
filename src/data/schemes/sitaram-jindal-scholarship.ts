@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const sitaramJindalScholarship: Scheme = {
-  id: "344",
+  id: "sitaram-jindal-scholarship",
   slug: "sitaram-jindal-scholarship",
   name: "Sitaram Jindal Foundation Scholarship",
   shortName: "Sitaram Jindal Scholarship",
@@ -67,6 +67,7 @@ export const sitaramJindalScholarship: Scheme = {
     { name: "Ex-servicemen certificate", mandatory: false, note: "Required for wards of ex-servicemen" },
   ],
   officialPortalUrl: "https://www.sitaramjindalfoundation.org/",
+  ministry: "Sitaram Jindal Foundation, Bengaluru",
   applicationMode: ["online", "offline"],
   tags: [
     "scholarship",

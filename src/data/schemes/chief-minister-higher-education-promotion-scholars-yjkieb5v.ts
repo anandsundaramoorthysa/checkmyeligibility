@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const chiefMinisterHigherEducationPromotionScholars: Scheme =   {
-    id: "cm-higher-education-cg",
+    id: "chief-minister-higher-education-promotion-scholarship-chhattisgarh",
     slug: "chief-minister-higher-education-promotion-scholarship-chhattisgarh",
     name: "Chief Minister Higher Education Promotion Scholarship – Chhattisgarh",
     shortName: "CM Higher Education CG",

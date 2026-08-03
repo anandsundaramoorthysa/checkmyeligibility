@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const eMedhabrutiScholarshipSchemeTechnicalAndProfessionalOdisha202627: Scheme =   {
-    id: "e-medhabruti-odisha",
+    id: "e-medhabruti-scholarship-scheme-technical-and-professional-odisha-2026-27",
     slug: "e-medhabruti-scholarship-scheme-technical-and-professional-odisha-2026-27",
     name: "e-Medhabruti Scholarship Scheme (Technical and Professional), Odisha 2026-27",
     shortName: "e-Medhabruti",

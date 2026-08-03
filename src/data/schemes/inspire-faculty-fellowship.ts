@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const inspireFacultyFellowship: Scheme = {
-  id: "inspire-faculty-fellowship",
+  id: "inspire-faculty-fellowship-for-science-researchers",
   slug: "inspire-faculty-fellowship-for-science-researchers",
   name: "INSPIRE Faculty Fellowship",
   shortName: "INSPIRE Faculty Fellowship",

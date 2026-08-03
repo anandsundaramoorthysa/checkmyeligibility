@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const scholarshipsHigherEducationAbroadOpenCategory: Scheme = {
-  id: "scholarships-higher-education-abroad-open-category",
+  id: "scholarships-higher-education-abroad-meritorious-boys-girls-open-category",
   slug: "scholarships-higher-education-abroad-meritorious-boys-girls-open-category",
   name: "Scholarships For Higher Education Abroad To Meritorious Boys And Girls From Open Category",
   shortName: "Higher Education Abroad Scholarship (Open Category)",

@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const freeEducationScholarshipForProfessionalCoursesEngineeringMedicalAgricultureVeterinaryAndLaw: Scheme =
   {
-    id: "free-education-scholarship-for-professional-courses-engineering-medical-agriculture-veterinary-and-law",
+    id: "free-education-scholarship-for-professional-courses-engineering-medical-agriculture-veterinary-and-law-mrf4o3ea",
     slug: "free-education-scholarship-for-professional-courses-engineering-medical-agriculture-veterinary-and-law-mrf4o3ea",
     name: "Free Education Scholarship for Professional Courses (Engineering, Medical, Agriculture, Veterinary, and Law)",
     shortName: "Free Education (Professional Courses)",

@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const nationalOverseasScholarshipSt: Scheme = {
-  id: "358",
+  id: "national-overseas-scholarship-st",
   slug: "national-overseas-scholarship-st",
   name: "National Overseas Scholarship for Scheduled Tribes (ST) Students",
   shortName: "NOS-ST",

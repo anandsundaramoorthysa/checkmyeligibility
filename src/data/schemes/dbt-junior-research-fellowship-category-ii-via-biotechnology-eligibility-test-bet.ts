@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const dbtJuniorResearchFellowshipCategoryIiViaBiotechnologyEligibilityTestBet: Scheme = {
-  id: "dbt-jrf-category-ii-bet",
+  id: "dbt-junior-research-fellowship-category-ii-via-biotechnology-eligibility-test-bet",
   slug: "dbt-junior-research-fellowship-category-ii-via-biotechnology-eligibility-test-bet",
   name: "DBT Junior Research Fellowship — Category-II (via Biotechnology Eligibility Test, BET)",
   shortName: "DBT-JRF (BET)",

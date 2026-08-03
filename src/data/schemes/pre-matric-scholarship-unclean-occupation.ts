@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const prematricScholarshipUncleanOccupation: Scheme = {
-  id: "pre-matric-scholarship-unclean-occupation",
+  id: "pre-matric-scholarship-students-unclean-occupation",
   slug: "pre-matric-scholarship-students-unclean-occupation",
   name: "Award of Pre-matric Scholarship to the Students Whose Parents Are Engaged in Unclean Occupation",
   shortName: "Pre-Matric Scholarship (Unclean Occupation)",

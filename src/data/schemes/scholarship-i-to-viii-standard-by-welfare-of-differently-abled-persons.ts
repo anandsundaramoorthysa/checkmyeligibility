@@ -2,7 +2,7 @@ import type { Scheme } from "@/lib/types";
 
 export const scholarshipIToViiiStandardByWelfareOfDifferentlyAbledPersons: Scheme =
   {
-    id: "scholarship-i-to-viii-standard-by-welfare-of-differently-abled-persons",
+    id: "scholarship-i-to-viii-standard-by-welfare-of-differently-abled-persons-mrf4cya6",
     slug: "scholarship-i-to-viii-standard-by-welfare-of-differently-abled-persons-mrf4cya6",
     name: "Scholarship (I to VIII Standard) by Welfare of Differently Abled Persons",
     shortName: "Scholarship (I–VIII)",
@@ -45,6 +45,12 @@ export const scholarshipIToViiiStandardByWelfareOfDifferentlyAbledPersons: Schem
         mandatory: true,
         note: "Stating that the student is not receiving similar assistance from any other source",
       },
+      { name: "Disability Certificate from competent authority (minimum 40% disability)", mandatory: true },
+      { name: "School enrollment / admission letter for current academic year", mandatory: true },
+      { name: "Income certificate of parents/guardian from revenue authority", mandatory: true },
+      { name: "Aadhaar Card of student and parent/guardian", mandatory: true },
+      { name: "Passport-size photographs", mandatory: true },
+      { name: "Bank passbook copy (in student's or guardian's name)", mandatory: true },
     ],
     officialPortalUrl: "https://www.myscheme.gov.in/schemes/sitviiisbwodap",
     ministry:

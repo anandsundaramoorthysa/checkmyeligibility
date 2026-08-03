@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const nayaSaveraFreeCoachingScheme: Scheme = {
-  id: "naya-savera-free-coaching-scheme",
+  id: "naya-savera-free-coaching-minorities",
   slug: "naya-savera-free-coaching-minorities",
   name: "Naya Savera – Free Coaching Scheme for Minorities",
   shortName: "Naya Savera",

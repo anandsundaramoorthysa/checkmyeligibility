@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const isiStipendSchemeUgPgDiploma: Scheme = {
-  id: "isi-stipend-scheme-ug-pg-diploma",
+  id: "indian-statistical-institute-stipend-scheme-ug-pg-diploma",
   slug: "indian-statistical-institute-stipend-scheme-ug-pg-diploma",
   name: "Stipend Scheme for UG, PG and Diploma Students – Indian Statistical Institute",
   shortName: "ISI Stipend Scheme",

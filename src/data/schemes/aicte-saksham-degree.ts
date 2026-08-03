@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const aicteSakshamDegree: Scheme = {
-  id: "aicte-saksham-degree",
+  id: "aicte-saksham-scholarship-scheme-for-specially-abled-student-degree",
   slug: "aicte-saksham-scholarship-scheme-for-specially-abled-student-degree",
   name: "AICTE – Saksham Scholarship Scheme For Specially-Abled Student (Degree)",
   shortName: "AICTE Saksham (Degree)",

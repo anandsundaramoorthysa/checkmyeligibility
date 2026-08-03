@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const theBabuJagjivanRamHostelSchemeBjrcy: Scheme = {
-  id: "the-babu-jagjivan-ram-hostel-scheme-bjrcy",
+  id: "babu-jagjivan-ram-hostel-scheme-bjrcy",
   slug: "babu-jagjivan-ram-hostel-scheme-bjrcy",
   name: "Babu Jagjivan Ram Hostel Scheme (BJRCY)",
   shortName: "BJRCY Hostel",

@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const cbseMeritScholarshipSchemeForSingleGirlChild: Scheme = {
-  id: "cbse-merit-scholarship-scheme-for-single-girl-child",
+  id: "cbse-merit-scholarship-scheme-for-single-girl-child-mrf4502k",
   slug: "cbse-merit-scholarship-scheme-for-single-girl-child-mrf4502k",
   name: "CBSE Merit Scholarship Scheme for Single Girl Child",
   shortName: "CBSE Single Girl Child Scholarship",

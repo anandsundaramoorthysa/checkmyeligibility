@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const foundationForExcellenceScholarship: Scheme = {
-  id: "foundation-for-excellence-scholarship",
+  id: "foundation-for-excellence-scholarship-mrerysrw",
   slug: "foundation-for-excellence-scholarship-mrerysrw",
   name: "Foundation for Excellence Scholarship",
   shortName: "FFE Scholarship",
@@ -55,6 +55,7 @@ export const foundationForExcellenceScholarship: Scheme = {
     { name: "Bonafide Student Certificate", mandatory: true },
   ],
   officialPortalUrl: "https://ffe.org/",
+  ministry: "Foundation for Excellence (Private NGO, Bengaluru)",
   applicationMode: ["online"],
   tags: [
     "FFE",

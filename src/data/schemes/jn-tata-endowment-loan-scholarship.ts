@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const jnTataEndowmentLoanScholarship: Scheme = {
-  id: "jn-tata-endowment-loan-scholarship",
+  id: "jn-tata-endowment-loan-scholarship-mri76kjm",
   slug: "jn-tata-endowment-loan-scholarship-mri76kjm",
   name: "JN Tata Endowment Loan Scholarship",
   shortName: "JN Tata Endowment",
@@ -65,6 +65,7 @@ export const jnTataEndowmentLoanScholarship: Scheme = {
     },
   ],
   officialPortalUrl: "https://jntataendowment.org/",
+  ministry: "JN Tata Endowment for the Higher Education of Indians",
   applicationMode: ["online"],
   tags: [
     "JN Tata",

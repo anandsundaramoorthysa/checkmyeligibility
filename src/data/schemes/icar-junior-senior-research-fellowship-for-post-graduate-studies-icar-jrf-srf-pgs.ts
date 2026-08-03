@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const icarJuniorSeniorResearchFellowshipForPostGraduateStudiesIcarJrfSrfPgs: Scheme = {
-  id: "icar-jrf-srf-post-graduate-studies",
+  id: "icar-junior-senior-research-fellowship-for-post-graduate-studies-icar-jrf-srf-pgs",
   slug: "icar-junior-senior-research-fellowship-for-post-graduate-studies-icar-jrf-srf-pgs",
   name: "ICAR Junior & Senior Research Fellowship for Post-Graduate Studies",
   shortName: "ICAR JRF/SRF PGS",

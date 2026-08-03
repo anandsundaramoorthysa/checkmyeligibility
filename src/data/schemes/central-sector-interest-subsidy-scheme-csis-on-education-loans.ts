@@ -85,5 +85,27 @@ export const centralSectorInterestSubsidySchemeCsisOnEducationLoans: Scheme = {
     "central",
     "all-india",
   ],
+  faqs: [
+    {
+      q: "Who is eligible for the CSIS interest subsidy on education loans?",
+      a: "Indian citizens from economically weaker sections with an annual family income not exceeding ₹4,50,000 who have taken an education loan under the IBA Model Education Loan Scheme to pursue professional or technical courses at recognised institutions in India.",
+    },
+    {
+      q: "Which banks participate in the CSIS scheme?",
+      a: "All scheduled commercial banks that have adopted the IBA Model Education Loan Scheme participate in CSIS. This includes public sector banks (SBI, PNB, Bank of Baroda, Canara Bank, etc.) and eligible private sector banks.",
+    },
+    {
+      q: "What is the moratorium period and does the subsidy apply during it?",
+      a: "The moratorium period is the course duration plus one year (or six months after getting a job, whichever is earlier). Yes, the full interest subsidy applies during both the course period and the moratorium period, so no interest accrues on the outstanding loan during this time.",
+    },
+    {
+      q: "Which courses are covered under CSIS?",
+      a: "Professional and technical courses pursued at recognised institutions in India — including engineering, medical, dental, pharmacy, MBA, MCA, and other UG/PG technical courses. The subsidy is available once for either the first undergraduate degree or the first postgraduate degree/diploma; integrated courses are also covered.",
+    },
+    {
+      q: "How do I apply for the CSIS subsidy?",
+      a: "You do not apply separately for CSIS. When you take an education loan from a participating bank under the IBA Model scheme, inform the bank branch that you wish to avail CSIS. The bank will submit the claim to the nodal bank (Canara Bank) on your behalf after verifying your income certificate and other eligibility documents.",
+    },
+  ],
   source: "sample",
 };

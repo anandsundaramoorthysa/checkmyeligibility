@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const tamilNaduPostMatricScholarshipBcMbcDnc: Scheme = {
-  id: "tamil-nadu-post-matric-scholarship-bc-mbc-dnc",
+  id: "tamil-nadu-post-matric-scholarship-for-bc-mbc-dnc-students",
   slug: "tamil-nadu-post-matric-scholarship-for-bc-mbc-dnc-students",
   name: "Tamil Nadu Post-Matric Scholarship for BC/MBC/DNC Students",
   shortName: "TN BC/MBC/DNC Scholarship",

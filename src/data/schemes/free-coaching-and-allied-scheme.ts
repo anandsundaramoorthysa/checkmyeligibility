@@ -89,5 +89,27 @@ export const freeCoachingAndAlliedScheme: Scheme = {
     "central",
     "all-india",
   ],
+  faqs: [
+    {
+      q: "Which categories of students are eligible for the Free Coaching and Allied Scheme?",
+      a: "Scheduled Caste (SC) and Other Backward Class (OBC) students with an annual family income not exceeding ₹8,00,000 and at least 50% marks in the qualifying examination. PM CARES for Children Scheme beneficiaries are also eligible. The scheme can be availed not more than twice.",
+    },
+    {
+      q: "Which competitive exams and courses are covered?",
+      a: "Civil Services (IAS/IFS), Group A and B services, State PSC exams, JEE, NEET, CA/CS, GATE, SSC, RRB, and Banking/CAT/CMAT examinations. Coaching fee coverage varies by exam — up to ₹75,000 for Civil Services/JEE/NEET/CA/GATE, up to ₹50,000 for Banking/CAT/CMAT, and up to ₹40,000 for SSC/RRB.",
+    },
+    {
+      q: "How are coaching institutes empanelled under this scheme?",
+      a: "Coaching institutes must apply to the Ministry of Social Justice and Empowerment for empanelment. They are assessed on infrastructure, faculty qualifications, track record of results, and fee structure. Currently the scheme is also implemented through Dr. Ambedkar Centres of Excellence (DACE) set up in empanelled Central Universities.",
+    },
+    {
+      q: "What is the income limit for eligibility?",
+      a: "The annual family income from all sources must not exceed ₹8,00,000. An income certificate issued by a Tehsildar or equivalent revenue officer is required.",
+    },
+    {
+      q: "How do I apply for the Free Coaching and Allied Scheme?",
+      a: "Apply online at the official portal (coaching.dosje.gov.in). Register with your details, select the eligible exam and empanelled coaching institute, upload required documents (Aadhaar, income certificate, caste certificate, academic mark sheets, and proof of admission to the coaching course), and submit the application. Admission to a DACE or empanelled institute is required before applying.",
+    },
+  ],
   source: "sample",
 };

@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const dbtResearchAssociateshipDbtRa: Scheme = {
-  id: "dbt-research-associateship-dbt-ra",
+  id: "dbt-research-associateship-dbt-ra-mrdwwdom",
   slug: "dbt-research-associateship-dbt-ra-mrdwwdom",
   name: "DBT Research Associateship (DBT-RA)",
   shortName: "DBT-RA",

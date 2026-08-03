@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const aicteYashasviScholarship: Scheme = {
-  id: "aicte-yashasvi-scholarship",
+  id: "aicte-yashasvi-scholarship-scheme",
   slug: "aicte-yashasvi-scholarship-scheme",
   name: "AICTE \u2013 Yashasvi Scholarship Scheme",
   shortName: "AICTE Yashasvi",

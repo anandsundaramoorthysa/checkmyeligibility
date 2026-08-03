@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const mukhyamantriMedhaviVidyarthiYojana: Scheme = {
-  id: "mukhyamantri-medhavi-vidyarthi-yojana",
+  id: "mukhyamantri-medhavi-vidyarthi-yojana-mp",
   slug: "mukhyamantri-medhavi-vidyarthi-yojana-mp",
   name: "Mukhyamantri Medhavi Vidyarthi Yojana",
   shortName: "MMVY",

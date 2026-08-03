@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const chiefMinisterMeritAward: Scheme = {
-  id: "chief-minister-merit-award",
+  id: "chief-minister-merit-award-mrf3s9t1",
   slug: "chief-minister-merit-award-mrf3s9t1",
   name: "Chief Minister Merit Award",
   shortName: "CM Merit Award",

@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const begumHazratMahalNationalScholarship: Scheme = {
-  id: "begum-hazrat-mahal-national-scholarship",
+  id: "begum-hazrat-mahal-national-scholarship-for-minority-girls",
   slug: "begum-hazrat-mahal-national-scholarship-for-minority-girls",
   name: "Begum Hazrat Mahal National Scholarship for Minority Girls",
   shortName: "Begum Hazrat Mahal",

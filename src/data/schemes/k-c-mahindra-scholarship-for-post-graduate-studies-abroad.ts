@@ -72,6 +72,7 @@ export const kCMahindraScholarshipForPostGraduateStudiesAbroad: Scheme = {
     },
   ],
   officialPortalUrl: "https://scholarship.kcmet.org/",
+  ministry: "K.C. Mahindra Education Trust",
   applicationMode: ["online"],
   tags: [
     "K.C. Mahindra",

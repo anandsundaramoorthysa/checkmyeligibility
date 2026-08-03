@@ -4,6 +4,7 @@ export const evnarayanPreMatricScholarshipScheme: Scheme = {
   id: "devnarayan-pre-matric-scholarship-scheme",
   slug: "devnarayan-pre-matric-scholarship-scheme",
   name: "Devnarayan Pre-Matric Scholarship Scheme",
+  shortName: "Devnarayan Pre-Matric",
   summary:
     "Monthly scholarship of ₹50–₹120 for students from Extremely Backward Classes in Rajasthan (Classes 6–10), including free education, accommodation, meals, uniforms, and books.",
   description:

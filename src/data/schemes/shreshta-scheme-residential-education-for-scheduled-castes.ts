@@ -86,5 +86,27 @@ export const shreshtaSchemeResidentialEducationForScheduledCastes: Scheme = {
     "central",
     "all-india",
   ],
+  faqs: [
+    {
+      q: "What does SHRESHTA stand for?",
+      a: "SHRESHTA stands for 'Scheme for Residential Education for Students in High Schools in Targeted Areas'. It is a central government scheme launched by the Ministry of Social Justice and Empowerment to provide quality residential education to Scheduled Caste students.",
+    },
+    {
+      q: "Who is eligible for the SHRESHTA scheme?",
+      a: "Indian citizens belonging to the Scheduled Caste (SC) category who are studying in Class VIII (for Class IX entry) or Class X (for Class XI entry), with an annual family income not exceeding ₹2,50,000, who qualify the SHRESHTA Entrance Examination conducted by the National Testing Agency (NTA).",
+    },
+    {
+      q: "Which schools are covered under SHRESHTA?",
+      a: "SHRESHTA places students in empanelled private residential CBSE-affiliated schools across India. These schools are selected and empanelled by the Ministry of Social Justice and Empowerment based on quality of education, infrastructure, and performance track record.",
+    },
+    {
+      q: "What does SHRESHTA provide to selected students?",
+      a: "SHRESHTA is fully funded by the Government of India. It provides free tuition at an empanelled private CBSE residential school, free boarding and lodging, free uniforms, and all other academic expenses. There is no financial contribution required from the student or family.",
+    },
+    {
+      q: "How do I apply for the SHRESHTA scheme?",
+      a: "Visit the National Scholarship Portal (scholarships.gov.in) or the official Ministry of Social Justice and Empowerment portal (socialjustice.gov.in) when the annual notification is released. Register, fill the application form, upload required documents (Aadhaar, SC caste certificate, income certificate, Class 8 mark sheet, birth certificate, photographs, and bank passbook), and appear for the SHRESHTA Entrance Examination conducted by NTA.",
+    },
+  ],
   source: "sample",
 };

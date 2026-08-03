@@ -67,6 +67,7 @@ export const narotamSekhsariaPostgraduateScholarship: Scheme = {
     { name: "Identity proof and passport-size photograph", mandatory: true },
   ],
   officialPortalUrl: "https://pg.nsfoundation.co.in/",
+  ministry: "Narotam Sekhsaria Foundation",
   applicationMode: ["online"],
   tags: [
     "scholarship",

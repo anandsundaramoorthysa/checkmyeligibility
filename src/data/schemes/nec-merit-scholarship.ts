@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const necMeritScholarship: Scheme = {
-  id: "nec-merit-scholarship",
+  id: "nec-merit-scholarship-north-eastern-council",
   slug: "nec-merit-scholarship-north-eastern-council",
   name: "North Eastern Council (NEC) Merit Scholarship",
   shortName: "NEC Merit Scholarship",

@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const haryanaBocwScholarshipProfessionalTechnicalCourses: Scheme = {
-  id: "haryana-bocw-scholarship-professional-technical-courses",
+  id: "haryana-bocw-welfare-board-scholarship-professional-technical-degree-courses",
   slug: "haryana-bocw-welfare-board-scholarship-professional-technical-degree-courses",
   name: "Haryana BOCW Welfare Board – Scholarship for Professional/Technical Degree Courses",
   shortName: "Haryana BOCW Scholarship",

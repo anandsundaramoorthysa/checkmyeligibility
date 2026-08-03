@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const postMatricScholarshipScStudents: Scheme = {
-  id: "post-matric-scholarship-sc-students",
+  id: "post-matric-scholarship-for-sc-students",
   slug: "post-matric-scholarship-for-sc-students",
   name: "Post Matric Scholarship for SC Students",
   shortName: "Post Matric SC Scholarship",

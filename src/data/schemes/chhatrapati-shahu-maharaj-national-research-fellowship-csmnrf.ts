@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf: Scheme = {
-  id: "chhatrapati-shahu-maharaj-national-research-fellowship-csmnrf",
+  id: "chhatrapati-shahu-maharaj-national-research-fellowship-csmnrf-mrdr2k7g",
   slug: "chhatrapati-shahu-maharaj-national-research-fellowship-csmnrf-mrdr2k7g",
   name: "Chhatrapati Shahu Maharaj National Research Fellowship (CSMNRF)",
   shortName: "CSMNRF",

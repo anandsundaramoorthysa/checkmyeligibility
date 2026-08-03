@@ -24,7 +24,11 @@ export const rIMCDehradunScholarshipTamilNadu: Scheme = {
       type: "residence",
     },
   ],
-  benefits: ["₹4,000 per month"],
+  benefits: [
+    "₹4,000 per month",
+    "Covers full tuition and boarding fees at Rashtriya Indian Military College, Dehradun",
+    "Annual scholarship renewed subject to continued enrolment and good standing",
+  ],
   requiredDocuments: [
     { name: "Admission / bonafide certificate from RIMC", mandatory: true },
     { name: "Proof of Tamil Nadu domicile", mandatory: false, note: "If required" },

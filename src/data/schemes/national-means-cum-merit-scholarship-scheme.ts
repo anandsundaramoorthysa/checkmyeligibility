@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const nationalMeansCumMeritScholarshipScheme: Scheme = {
-  id: "national-means-cum-merit-scholarship-scheme",
+  id: "national-means-cum-merit-scholarship-scheme-nmms",
   slug: "national-means-cum-merit-scholarship-scheme-nmms",
   name: "National Means-cum-Merit Scholarship Scheme (NMMS)",
   shortName: "NMMS",

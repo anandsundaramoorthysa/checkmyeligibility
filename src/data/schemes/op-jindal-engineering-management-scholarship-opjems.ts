@@ -59,6 +59,7 @@ export const opJindalEngineeringManagementScholarshipOpjems: Scheme = {
     { name: "Any additional documents requested by the OPJEMS portal during application submission", mandatory: false },
   ],
   officialPortalUrl: "https://jindal.opjems.com/",
+  ministry: "OP Jindal Group / JSW Foundation",
   applicationMode: ["online"],
   tags: [
     "scholarship",

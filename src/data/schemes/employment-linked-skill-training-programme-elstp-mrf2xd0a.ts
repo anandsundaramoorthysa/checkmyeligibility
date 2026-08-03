@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const employmentLinkedSkillTrainingProgrammeElstp: Scheme =   {
-    id: "elstp",
+    id: "employment-linked-skill-training-programme-elstp",
     slug: "employment-linked-skill-training-programme-elstp",
     name: "Employment Linked Skill Training Programme (ELSTP)",
     shortName: "ELSTP",

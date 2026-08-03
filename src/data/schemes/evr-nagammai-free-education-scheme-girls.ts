@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const evrNagammaiFreeEducationSchemeGirls: Scheme = {
-  id: "evr-nagammai-free-education-scheme-girls",
+  id: "evr-nagammai-free-education-scheme-for-girls",
   slug: "evr-nagammai-free-education-scheme-for-girls",
   name: "EVR Nagammai Free Education Scheme for Girls",
   shortName: "EVR Nagammai Scheme",

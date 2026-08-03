@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const drAmbedkarPostMatricScholarshipPunjab: Scheme = {
-  id: "dr-ambedkar-post-matric-scholarship-punjab",
+  id: "dr-ambedkar-post-matric-scholarship-punjab-9xen1hzi",
   slug: "dr-ambedkar-post-matric-scholarship-punjab-9xen1hzi",
   name: "Dr. Ambedkar Post-Matric Scholarship \u2013 Punjab",
   shortName: "Dr. Ambedkar PMS (Punjab)",

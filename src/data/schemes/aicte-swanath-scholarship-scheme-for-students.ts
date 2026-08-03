@@ -34,7 +34,12 @@ export const aicteSwanathScholarshipSchemeForStudents: Scheme = {
       type: "other",
     },
   ],
-  benefits: ["₹50,000 per year"],
+  benefits: [
+    "₹50,000 per year",
+    "Annual renewal subject to satisfactory academic performance",
+    "Covers tuition fees and maintenance for the academic year",
+    "Priority given to students who lost both parents or single parent who was the sole earner",
+  ],
   requiredDocuments: [
     { name: "Aadhaar card", mandatory: true },
     { name: "Income certificate", mandatory: true },

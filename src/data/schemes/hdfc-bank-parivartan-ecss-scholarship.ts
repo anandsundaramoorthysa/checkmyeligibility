@@ -77,6 +77,7 @@ export const hdfcBankParivartanEcssScholarship: Scheme = {
     },
   ],
   officialPortalUrl: "https://www.hdfc.bank.in/",
+  ministry: "HDFC Bank Ltd. – CSR / Parivartan Initiative",
   applicationMode: ["online"],
   tags: [
     "HDFC Bank",

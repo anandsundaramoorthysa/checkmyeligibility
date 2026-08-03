@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const pmYasasviScheme: Scheme = {
-  id: "342",
+  id: "pm-yasasvi-scheme",
   slug: "pm-yasasvi-scheme",
   name: "PM Young Achievers Scholarship Award Scheme for Vibrant India",
   shortName: "PM-YASASVI",

@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const aicteSpicesScheme: Scheme = {
-  id: "aicte-scheme-for-promoting-interests-creativity-and-ethics-among-students-spices",
+  id: "aicte-spices-scheme",
   slug: "aicte-spices-scheme",
   name: "AICTE Scheme for Promoting Interests, Creativity and Ethics among Students (SPICES)",
   shortName: "AICTE SPICES",

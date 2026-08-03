@@ -1,7 +1,7 @@
 import type { Scheme } from "@/lib/types";
 
 export const tamilNaduChiefMinisterSResearchFellowship: Scheme = {
-  id: "tamil-nadu-chief-minister-s-research-fellowship",
+  id: "tamil-nadu-chief-ministers-research-fellowship",
   slug: "tamil-nadu-chief-ministers-research-fellowship",
   name: "Tamil Nadu Chief Minister's Research Fellowship",
   shortName: "TN CMRF",
