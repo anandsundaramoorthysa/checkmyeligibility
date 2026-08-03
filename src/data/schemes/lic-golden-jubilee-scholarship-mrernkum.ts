@@ -9,7 +9,7 @@ export const licGoldenJubileeScholarship: Scheme =   {
       "Merit-cum-means scholarship for economically weaker students pursuing Medicine, Engineering, Graduation, Diploma, or ITI courses.",
     description:
       "The LIC Golden Jubilee Scholarship is a merit-cum-means initiative for students from economically weaker families. It supports students pursuing studies in Medicine, Engineering, Graduation, Diploma, or ITI courses, and offers a special scholarship for girls completing Class 10 to pursue further studies.",
-    category: "finance-credit",
+    category: "scholarship",
     level: "central",
     states: ["all-india"],
     eligibility: [
