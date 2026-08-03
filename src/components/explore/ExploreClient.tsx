@@ -37,6 +37,18 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
+  // Counts per category matching only the search query (ignores category filter)
+  // so chip badges stay informative when a category is selected.
+  const chipCounts = useMemo(() => {
+    const q = query.trim();
+    const map = new Map<string, number>();
+    for (const g of allGroups) {
+      const count = q ? g.schemes.filter((s) => matches(s, q)).length : g.schemes.length;
+      map.set(g.category.key, count);
+    }
+    return map;
+  }, [allGroups, query]);
+
   const filtered = useMemo(() => {
     const q = query.trim();
     return allGroups
@@ -90,17 +102,21 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveCategory(null)}
-                className={`inline-flex items-center rounded-full border px-3.5 py-1.5 text-sm font-semibold transition-colors ${
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm font-semibold transition-colors ${
                   activeCategory === null
                     ? "border-navy bg-navy text-white"
                     : "border-navy/15 bg-surface-card text-ink hover:border-navy/30 hover:bg-surface-subtle"
                 }`}
               >
                 All
+                <span className={`tabular-nums text-xs font-normal ${activeCategory === null ? "text-white/70" : "text-ink-faint"}`}>
+                  {visibleCount || totalCount}
+                </span>
               </button>
               {allGroups.map(({ category }) => {
                 const art = getCategoryArt(category.key);
                 const active = activeCategory === category.key;
+                const count = chipCounts.get(category.key) ?? 0;
                 return (
                   <button
                     key={category.key}
@@ -115,6 +131,9 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
                   >
                     <art.Icon className={`h-4 w-4 ${active ? "text-white" : "text-navy"}`} aria-hidden="true" />
                     {category.title}
+                    <span className={`tabular-nums text-xs font-normal ${active ? "text-white/70" : "text-ink-faint"}`}>
+                      {count}
+                    </span>
                   </button>
                 );
               })}
@@ -173,6 +192,9 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
                     <div className="max-w-2xl">
                       <h2 className="font-display text-3xl font-extrabold tracking-tight text-ink">
                         {category.title}
+                        <span className="ml-3 align-middle font-sans text-lg font-normal text-ink-faint tabular-nums">
+                          {schemes.length}
+                        </span>
                       </h2>
                       <p className="mt-2 text-ink-muted">{category.blurb}</p>
                     </div>
