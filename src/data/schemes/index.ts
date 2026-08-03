@@ -14,6 +14,7 @@ import { aicteSakshamScholarshipScheme } from "./aicte-saksham-scholarship-schem
 import { aicteSpicesScheme } from "./aicte-spices-scheme";
 import { aicteSwanathScholarshipSchemeForStudents } from "./aicte-swanath-scholarship-scheme-for-students";
 import { aicteYashasviScholarship } from "./aicte-yashasvi-scholarship";
+import { aikyashreeScholarshipForMinorityStudents } from "./aikyashree-scholarship-for-minority-students";
 import { anrfNationalPostdoctoralFellowship } from "./anrf-national-postdoctoral-fellowship";
 import { anrfPmEcrgEarlyCareerResearchGrant } from "./anrf-pm-ecrg-early-career-research-grant";
 import { apjAbdulKalamScholarship } from "./apj-abdul-kalam-scholarship";
@@ -30,6 +31,7 @@ import { centralSectorInterestSubsidySchemeCsisOnEducationLoans } from "./centra
 import { centralVigilanceCommissionInternshipScheme } from "./central-vigilance-commission-internship-scheme";
 import { chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf } from "./chhatrapati-shahu-maharaj-national-research-fellowship-csmnrf";
 import { chiefMinisterHigherEducationPromotionScholars } from "./chief-minister-higher-education-promotion-scholars-yjkieb5v";
+import { chiefMinisterMeritAward } from "./chief-minister-merit-award";
 import { collaborativeResearchScheme } from "./collaborative-research-scheme";
 import { creditGuaranteeFundSchemeForEducationLoans } from "./credit-guarantee-fund-scheme-for-education-loans";
 import { csirPhdFellowship } from "./csir-phd-fellowship-mrf40f70";
@@ -49,6 +51,7 @@ import { drAmbedkarPostMatricScholarshipPunjab } from "./dr-ambedkar-post-matric
 import { drBabasahebAmbedkarNationalResearchFellowshipBanrf } from "./dr-babasaheb-ambedkar-national-research-fellowship-banrf";
 import { drDSKothariPostdoctoralFellowship } from "./dr-d-s-kothari-postdoctoral-fellowship";
 import { drPanjabraoDeshmukhHostelAllowance } from "./dr-panjabrao-deshmukh-hostel-allowance";
+import { drSRadhakrishnanPostDoctoralFellowship } from "./dr-s-radhakrishnan-post-doctoral-fellowship";
 import { dstInspireFellowshipForDoctoralResearch } from "./dst-inspire-fellowship-for-doctoral-research";
 import { eMedhabrutiScholarshipSchemeTechnicalAndProfessionalOdisha202627 } from "./e-medhabruti-scholarship-scheme-technical-and-professional-odisha-2026-27-mrf2ho8u";
 import { employabilityExcellenceWithCollegeEducationLearningExcel } from "./employability-excellence-with-college-education-learning-excel-mrf2tnq0";
@@ -68,6 +71,7 @@ import { hdfcBankParivartanEcssScholarship } from "./hdfc-bank-parivartan-ecss-s
 import { higherEducationAssistanceSchemeGujarat } from "./higher-education-assistance-scheme-gujarat";
 import { icarJuniorSeniorResearchFellowshipForPostGraduateStudiesIcarJrfSrfPgs } from "./icar-junior-senior-research-fellowship-for-post-graduate-studies-icar-jrf-srf-pgs";
 import { icssrDoctoralFellowship } from "./icssr-doctoral-fellowship";
+import { icssrPostDoctoralFellowship } from "./icssr-post-doctoral-fellowship";
 import { idfcFirstBankEngineeringScholarshipProgram } from "./idfc-first-bank-engineering-scholarship-program";
 import { ietIndiaScholarshipAward } from "./iet-india-scholarship-award";
 import { indiaaiFellowshipMeityDigitalIndiaCorporation } from "./indiaai-fellowship-meity-digital-india-corporation";
@@ -208,6 +212,7 @@ export const SCHEMES: Scheme[] = [
   aicteSpicesScheme,
   aicteSwanathScholarshipSchemeForStudents,
   aicteYashasviScholarship,
+  aikyashreeScholarshipForMinorityStudents,
   anrfNationalPostdoctoralFellowship,
   anrfPmEcrgEarlyCareerResearchGrant,
   apjAbdulKalamScholarship,
@@ -224,6 +229,7 @@ export const SCHEMES: Scheme[] = [
   centralVigilanceCommissionInternshipScheme,
   chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf,
   chiefMinisterHigherEducationPromotionScholars,
+  chiefMinisterMeritAward,
   collaborativeResearchScheme,
   creditGuaranteeFundSchemeForEducationLoans,
   csirPhdFellowship,
@@ -243,6 +249,7 @@ export const SCHEMES: Scheme[] = [
   drBabasahebAmbedkarNationalResearchFellowshipBanrf,
   drDSKothariPostdoctoralFellowship,
   drPanjabraoDeshmukhHostelAllowance,
+  drSRadhakrishnanPostDoctoralFellowship,
   dstInspireFellowshipForDoctoralResearch,
   eMedhabrutiScholarshipSchemeTechnicalAndProfessionalOdisha202627,
   employabilityExcellenceWithCollegeEducationLearningExcel,
@@ -262,6 +269,7 @@ export const SCHEMES: Scheme[] = [
   higherEducationAssistanceSchemeGujarat,
   icarJuniorSeniorResearchFellowshipForPostGraduateStudiesIcarJrfSrfPgs,
   icssrDoctoralFellowship,
+  icssrPostDoctoralFellowship,
   idfcFirstBankEngineeringScholarshipProgram,
   ietIndiaScholarshipAward,
   indiaaiFellowshipMeityDigitalIndiaCorporation,
