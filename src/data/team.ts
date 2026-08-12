@@ -59,9 +59,9 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Janice Melfina",
-    title: "Team Lead",
+    title: "Developer",
     githubUsername: "J-Melfina",
-    group: "lead",
+    group: "developer",
   },
 
   // Developer Team
