@@ -46,6 +46,7 @@ export const FOOTER_NAV: { title: string; items: NavItem[] }[] = [
     title: "Project",
     items: [
       { label: "About", href: "/about" },
+      { label: "Our Team", href: "/team" },
       { label: "FAQ", href: "/faq" },
       { label: "GitHub", href: "https://github.com/anandsundaramoorthysa/checkmyeligibility" },
     ],
