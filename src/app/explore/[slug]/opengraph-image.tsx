@@ -1,30 +1,10 @@
 import { ImageResponse } from "next/og";
 import { getSchemeBySlug } from "@/lib/data";
 import { SITE } from "@/lib/site";
-import { SCHEMES } from "@/data/schemes";
 
 export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-
-export function generateStaticParams() {
-  return SCHEMES.map((s) => ({ slug: s.slug }));
-}
-
-export async function generateImageMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const scheme = await getSchemeBySlug(slug);
-  return [
-    {
-      id: slug,
-      alt: scheme ? `${scheme.name} — ${SITE.name}` : SITE.name,
-    },
-  ];
-}
 
 const SAFFRON = "#FF9933";
 const GREEN = "#138808";

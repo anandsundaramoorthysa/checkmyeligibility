@@ -145,7 +145,8 @@ function MemberCard({
       }`}
     >
       <div className={`flex items-start gap-4 ${large ? "gap-5" : ""}`}>
-        {/* Avatar */}
+        {/* Avatar — external URL, optimization not applicable here */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`https://github.com/${member.githubUsername}.png?size=${avatarSize * 2}`}
           alt={member.name}
