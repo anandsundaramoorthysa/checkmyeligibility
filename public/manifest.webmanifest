@@ -1,0 +1,17 @@
+{
+  "name": "CheckMyEligibility",
+  "short_name": "CheckMyElig",
+  "description": "Find Indian government scholarships, fellowships, and education loans you qualify for. Free, instant, and linked to official portals.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCFCFA",
+  "theme_color": "#0A3D91",
+  "icons": [
+    {
+      "src": "/brand/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import { ArrowLeft, GitMerge, GitCommitHorizontal, MessageSquare } from "lucide-
 import { Container } from "@/components/layout/Container";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { breadcrumbLd } from "@/lib/seo/jsonld";
+import { breadcrumbLd, personLd } from "@/lib/seo/jsonld";
 import { SITE } from "@/lib/site";
 import { TEAM, GROUP_ACCENT, GROUP_LABEL } from "@/data/team";
 import { LinkedInIcon, StatPill } from "../_components/MemberCard";
@@ -51,11 +51,14 @@ export default async function MemberProfilePage({
   const words = member.name.trim().split(/\s+/);
   const initials = ((words[0]?.[0] ?? "") + (words[1]?.[0] ?? "")).toUpperCase();
 
-  const ld = breadcrumbLd([
-    { name: "Home", path: "/" },
-    { name: "Team", path: "/team" },
-    { name: member.name, path: `/team/${member.githubUsername}` },
-  ]);
+  const ld = [
+    breadcrumbLd([
+      { name: "Home", path: "/" },
+      { name: "Team", path: "/team" },
+      { name: member.name, path: `/team/${member.githubUsername}` },
+    ]),
+    personLd(member),
+  ];
 
   return (
     <>

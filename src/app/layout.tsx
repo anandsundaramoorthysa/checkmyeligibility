@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { organizationLd, websiteLd } from "@/lib/seo/jsonld";
 import { SiteShell } from "@/components/layout/SiteShell";
 
@@ -20,13 +21,22 @@ const sora = Sora({
   display: "swap",
 });
 
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   ...buildMetadata(),
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: "/brand/favicon.svg",
     shortcut: "/brand/favicon.svg",
-    apple: "/brand/favicon.svg",
+    // apple-touch-icon: place a 180×180 PNG at /brand/apple-touch-icon.png
+    apple: "/brand/apple-touch-icon.png",
+  },
+  verification: {
+    // Add GOOGLE_SITE_VERIFICATION to Vercel environment variables once you
+    // get your token from Google Search Console.
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
   },
 };
 
@@ -47,6 +57,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col font-sans">
         <JsonLd data={[organizationLd(), websiteLd()]} />
         <SiteShell>{children}</SiteShell>
+        {gaMeasurementId && <GoogleAnalytics measurementId={gaMeasurementId} />}
       </body>
     </html>
   );

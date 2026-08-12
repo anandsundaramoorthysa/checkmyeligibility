@@ -16,7 +16,7 @@ import type { Scheme, SchemeCategory } from "@/lib/types";
 export const metadata: Metadata = buildMetadata({
   title: "Explore schemes",
   description:
-    "Browse Indian government education schemes by category - scholarships, fellowships, education loans, and research grants for students. Plain-language summaries with direct links to official portals.",
+    "Browse 200+ Indian government scholarships, fellowships, and education loans. Plain-language summaries with direct links to apply on official portals.",
   path: "/explore",
 });
 

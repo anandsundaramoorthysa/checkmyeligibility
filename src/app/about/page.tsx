@@ -22,7 +22,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "Why CheckMyEligibility exists: to make Indian government scholarships, fellowships, and education loans simple and within reach for every student. An independent guide, not a government body.",
+    "Why CheckMyEligibility exists: making India's scholarships and education loans navigable for every student. Independent, free, and student-built.",
   path: "/about",
 });
 

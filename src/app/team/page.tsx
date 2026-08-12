@@ -11,7 +11,7 @@ import type { GitHubStat } from "./_components/MemberCard";
 export const metadata: Metadata = buildMetadata({
   title: "Our Team",
   description:
-    "Meet the 18 students from Loyola College, Chennai who built CheckMyEligibility: researchers, engineers, and QA testers making India's scholarship landscape navigable.",
+    "Meet the 18-person student team behind CheckMyEligibility, built by the Department of Data Science, Loyola College, Chennai.",
   path: "/team",
 });
 

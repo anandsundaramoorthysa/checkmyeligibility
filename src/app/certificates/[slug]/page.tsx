@@ -20,7 +20,7 @@ import { AskBotCta } from "@/components/marketing/AskBotCta";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { breadcrumbLd, faqPageLd } from "@/lib/seo/jsonld";
+import { breadcrumbLd, faqPageLd, certificateServiceLd } from "@/lib/seo/jsonld";
 import { levelLabel } from "@/lib/labels";
 import { getCertificateBySlug } from "@/lib/data";
 import { CERTIFICATES } from "@/data/certificates";
@@ -60,6 +60,7 @@ export default async function CertificateDetailPage({
       { name: "Certificates", path: "/certificates" },
       { name: certificate.name, path: `/certificates/${certificate.slug}` },
     ]),
+    certificateServiceLd(certificate),
   ];
   if (certificate.faqs?.length) ld.push(faqPageLd(certificate.faqs));
 

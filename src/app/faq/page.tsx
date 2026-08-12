@@ -16,7 +16,7 @@ import { FAQS } from "@/data/faq";
 export const metadata: Metadata = buildMetadata({
   title: "FAQ",
   description:
-    "Answers to common questions about CheckMyEligibility: cost, privacy, whether we apply for you, how scheme matching works, and our independence from the government.",
+    "Common questions about CheckMyEligibility: how scheme matching works, our privacy approach, cost, and independence from the government.",
   path: "/faq",
 });
 

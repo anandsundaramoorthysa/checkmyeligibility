@@ -20,17 +20,21 @@ import { Faq } from "@/components/marketing/Faq";
 import { HeroArt } from "@/components/illustrations/HeroArt";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { organizationLd, websiteLd, faqPageLd } from "@/lib/seo/jsonld";
+import { faqPageLd } from "@/lib/seo/jsonld";
 import { FAQS } from "@/data/faq";
 
-export const metadata: Metadata = buildMetadata({ path: "/" });
+export const metadata: Metadata = buildMetadata({
+  path: "/",
+  description:
+    "Find Indian government scholarships, fellowships, and education loans you qualify for. Describe your situation and get matched to official portals.",
+});
 
 const HOME_FAQS = FAQS.slice(0, 4);
 
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={[organizationLd(), websiteLd(), faqPageLd(HOME_FAQS)]} />
+      <JsonLd data={faqPageLd(HOME_FAQS)} />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-hero-glow">

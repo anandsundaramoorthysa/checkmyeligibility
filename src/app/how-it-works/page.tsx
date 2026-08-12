@@ -17,13 +17,13 @@ import { CtaBand } from "@/components/marketing/CtaBand";
 import { SpotIllustration } from "@/components/illustrations/SpotIllustration";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { breadcrumbLd } from "@/lib/seo/jsonld";
+import { breadcrumbLd, howToLd } from "@/lib/seo/jsonld";
 import { chatHref } from "@/lib/chat/openChat";
 
 export const metadata: Metadata = buildMetadata({
   title: "How it works",
   description:
-    "How CheckMyEligibility helps you find Indian government schemes: describe your situation, get matched, and apply on official portals yourself. We never submit applications for you.",
+    "How CheckMyEligibility works: describe your situation, get matched to schemes, and apply on official government portals yourself. We never submit applications.",
   path: "/how-it-works",
 });
 
@@ -46,10 +46,30 @@ export default function HowItWorksPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbLd([
-          { name: "Home", path: "/" },
-          { name: "How it works", path: "/how-it-works" },
-        ])}
+        data={[
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "How it works", path: "/how-it-works" },
+          ]),
+          howToLd([
+            {
+              name: "Tell us about you",
+              text: "Describe your situation in plain language — your course, year of study, state, social category, or simply what you are hoping to find. No forms and no login required.",
+            },
+            {
+              name: "We match the schemes",
+              text: "We compare what you have told us against the eligibility details of scholarships, fellowships, and education loans, and surface the ones most likely to fit along with the documents you will need.",
+            },
+            {
+              name: "You apply, officially",
+              text: "We give you a direct link to the genuine government portal. You apply there yourself. We never ask for your login credentials and never submit applications on your behalf.",
+            },
+            {
+              name: "Verified by humans",
+              text: "Every scheme on CheckMyEligibility is manually reviewed by a trained team against the official government portal before it appears here, so you get accurate and up-to-date information.",
+            },
+          ]),
+        ]}
       />
 
       <PageHero

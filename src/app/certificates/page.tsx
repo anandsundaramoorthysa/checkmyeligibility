@@ -14,7 +14,7 @@ import { getAllCertificates } from "@/lib/data";
 export const metadata: Metadata = buildMetadata({
   title: "Certificates",
   description:
-    "Essential Indian government certificates - income, caste, domicile, birth, death, EWS, disability (UDID), and ration card. Documents needed and how to apply officially.",
+    "Essential Indian government certificates: income, caste, domicile, EWS, disability (UDID), and more. What documents you need and where to apply officially.",
   path: "/certificates",
 });
 

@@ -25,7 +25,7 @@ export function buildMetadata({
     title: fullTitle,
     description,
     alternates: { canonical: url },
-    robots: noindex ? { index: false, follow: false } : undefined,
+    robots: noindex ? { index: false, follow: true } : undefined,
     openGraph: {
       type: "website",
       siteName: SITE.name,

@@ -15,7 +15,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Privacy",
   description:
-    "How CheckMyEligibility handles your data: minimal collection, no application submission, no Aadhaar or bank details stored, written in plain language and DPDP-aware.",
+    "How CheckMyEligibility handles your data: minimal collection, no Aadhaar or bank details stored, written in plain language and DPDP-aware.",
   path: "/privacy",
 });
 

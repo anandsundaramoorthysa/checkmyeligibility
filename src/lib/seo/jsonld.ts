@@ -1,7 +1,6 @@
 import { SITE } from "@/lib/site";
 import type { Scheme } from "@/lib/types";
-
-/** schema.org emitters — kept as plain objects, rendered by <JsonLd>. */
+import type { TeamMember } from "@/data/team";
 
 export function organizationLd() {
   return {
@@ -13,7 +12,7 @@ export function organizationLd() {
     email: SITE.email,
     logo: `${SITE.url}/brand/checkmyeligibility-mark.svg`,
     sameAs: [SITE.github],
-    license: "https://opensource.org/licenses/MIT",
+    license: "https://polyformproject.org/licenses/noncommercial/1.0.0/",
     funder: {
       "@type": "EducationalOrganization",
       name: SITE.institution,
@@ -74,5 +73,62 @@ export function governmentServiceLd(scheme: Scheme) {
       ? { "@type": "Country", name: "India" }
       : scheme.states.map((s) => ({ "@type": "AdministrativeArea", name: s })),
     url: scheme.officialPortalUrl,
+  };
+}
+
+export function certificateServiceLd(certificate: {
+  name: string;
+  summary: string;
+  officialPortalUrl?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "GovernmentService",
+    name: certificate.name,
+    serviceType: "Government Certificate",
+    description: certificate.summary,
+    provider: {
+      "@type": "GovernmentOrganization",
+      name: "Government of India",
+    },
+    areaServed: { "@type": "Country", name: "India" },
+    ...(certificate.officialPortalUrl ? { url: certificate.officialPortalUrl } : {}),
+  };
+}
+
+export function howToLd(steps: { name: string; text: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to find Indian government schemes on CheckMyEligibility",
+    description:
+      "A step-by-step guide to discovering and applying for scholarships, fellowships, and education loans via CheckMyEligibility.",
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function personLd(
+  member: Pick<TeamMember, "name" | "title" | "githubUsername" | "linkedIn" | "skills">,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: member.name,
+    jobTitle: member.title,
+    url: new URL(`/team/${member.githubUsername}`, SITE.url).toString(),
+    sameAs: [
+      `https://github.com/${member.githubUsername}`,
+      ...(member.linkedIn ? [member.linkedIn] : []),
+    ],
+    worksFor: {
+      "@type": "EducationalOrganization",
+      name: SITE.institution,
+    },
+    ...(member.skills?.length ? { knowsAbout: member.skills } : {}),
   };
 }

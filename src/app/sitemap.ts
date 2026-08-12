@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { getAllSchemes, getAllCertificates } from "@/lib/data";
+import { TEAM } from "@/data/team";
 
 /**
  * Dynamic sitemap: static marketing/legal routes plus a detail entry for every
@@ -51,5 +52,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...schemeRoutes, ...certificateRoutes];
+  const teamMemberRoutes: MetadataRoute.Sitemap = TEAM.map((m) => ({
+    url: abs(`/team/${m.githubUsername}`),
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.4,
+  }));
+
+  return [...staticRoutes, ...schemeRoutes, ...certificateRoutes, ...teamMemberRoutes];
 }
