@@ -127,20 +127,6 @@ export function MemberCard({
           </div>
         </div>
 
-        {/* Skill tags */}
-        {member.skills && member.skills.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5 pl-[3.375rem]">
-            {member.skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-md bg-navy/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-ink-muted"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        )}
-
         {/* GitHub stats */}
         {hasStats && (
           <div className="mt-4 flex flex-wrap gap-2 border-t border-navy/5 pt-4">
