@@ -11,7 +11,7 @@ export const TEAM: TeamMember[] = [
   // Project Management & Coordination
   {
     name: "Anand S",
-    title: "Project Manager",
+    title: "Full-Stack Lead & Project Manager",
     githubUsername: "anandsundaramoorthysa",
     linkedIn: "https://www.linkedin.com/in/anandsundaramoorthysa",
     skills: ["Next.js", "TypeScript", "LLM", "PostgreSQL"],
@@ -19,7 +19,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Melvin Joshua",
-    title: "Technical Coordinator",
+    title: "Project Manager & AI Engineer",
     githubUsername: "MelvinJoshua1375",
     linkedIn: "https://www.linkedin.com/in/melvin-joshua",
     skills: ["Project Management", "Research", "Documentation"],
@@ -29,7 +29,7 @@ export const TEAM: TeamMember[] = [
   // Team Leads
   {
     name: "Keerthana B",
-    title: "AI Development Lead",
+    title: "Chatbot Lead, Full-Stack Developer & Tester",
     githubUsername: "keerthana-balasubramaniyan",
     linkedIn: "https://www.linkedin.com/in/keerthana-balasubramaniyan",
     skills: ["LLM", "RAG", "Vercel AI SDK", "Vector Search"],
@@ -37,7 +37,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Buju Saprio J",
-    title: "Engineering Lead",
+    title: "Frontend Development Lead",
     githubUsername: "bujusaprio",
     linkedIn: "https://www.linkedin.com/in/buju-saprio-a090b6342",
     skills: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -45,7 +45,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Kevin Jesu S",
-    title: "Engineering Lead",
+    title: "Frontend Development Lead",
     githubUsername: "kevinjesu11",
     linkedIn: "https://www.linkedin.com/in/kevin-jesu-10a5062a1",
     skills: ["Next.js", "TypeScript", "REST API"],
@@ -53,7 +53,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Ashwin Kumar S",
-    title: "Quality Assurance Lead",
+    title: "QA & Scheme Review Lead",
     githubUsername: "Ashwinth2004",
     linkedIn: "https://www.linkedin.com/in/ashwinkumar2004",
     skills: ["Test Planning", "QA", "Bug Tracking"],
@@ -61,7 +61,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Sherina Bibiana P",
-    title: "Quality Assurance Lead",
+    title: "QA & Scheme Review Lead",
     githubUsername: "sherinabibiana",
     linkedIn: "https://www.linkedin.com/in/sherina1704",
     skills: ["QA", "Test Documentation"],
@@ -69,7 +69,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Florina A",
-    title: "Console Development Lead",
+    title: "Console Lead, Scheme Researcher & QA",
     githubUsername: "marianflorina",
     linkedIn: "https://www.linkedin.com/in/marian-florina",
     skills: ["Next.js", "Drizzle ORM", "PostgreSQL"],
@@ -79,7 +79,7 @@ export const TEAM: TeamMember[] = [
   // Developer Team
   {
     name: "Janice Melfina J",
-    title: "Developer",
+    title: "Frontend Developer & Scheme Researcher",
     githubUsername: "J-Melfina",
     linkedIn: "https://www.linkedin.com/in/janice-melfina-221ba4286",
     skills: ["Next.js", "TypeScript", "UI Development"],
@@ -87,7 +87,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Amos Benson P",
-    title: "Developer",
+    title: "Frontend Developer & Scheme Researcher",
     githubUsername: "bensonamos",
     linkedIn: "https://www.linkedin.com/in/amos-benson-937386373",
     skills: ["Next.js", "TypeScript", "PostgreSQL"],
@@ -95,7 +95,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Maria Magdalene P",
-    title: "Developer",
+    title: "Frontend Developer & Scheme Researcher",
     githubUsername: "MariaMagdalene291",
     linkedIn: "https://www.linkedin.com/in/maria-magdalene-p-1a6971360",
     skills: ["Next.js", "TypeScript"],
@@ -103,7 +103,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Maria Merline P",
-    title: "Developer",
+    title: "Frontend Developer & Scheme Researcher",
     githubUsername: "MariaMerline291",
     linkedIn: "https://www.linkedin.com/in/maria-merline-p-19296b360",
     skills: ["Next.js", "TypeScript"],
@@ -111,7 +111,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Michael Bevan A",
-    title: "Developer",
+    title: "Frontend Developer & Scheme Researcher",
     githubUsername: "Michaelbevan303",
     linkedIn: "https://www.linkedin.com/in/michael-bevan-a-436b11291",
     skills: ["Next.js", "TypeScript", "REST API"],
@@ -119,17 +119,17 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Sharlin Tania A",
-    title: "Developer",
+    title: "Frontend Developer & Scheme Researcher",
     githubUsername: "Sharlin-Tania",
     linkedIn: "https://www.linkedin.com/in/sharlin-tania-2251b4422",
     skills: ["Next.js", "TypeScript"],
     group: "developer",
   },
 
-  // Tester Team
+  // Tester / QA Team
   {
     name: "Allwin Andrews J",
-    title: "Software Tester",
+    title: "Scheme Researcher & QA Engineer",
     githubUsername: "AllwinAndrewsj",
     linkedIn: "https://www.linkedin.com/in/allwin-andrews-j",
     skills: ["Manual Testing", "Bug Reporting"],
@@ -137,7 +137,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Georgia R",
-    title: "Software Tester",
+    title: "QA Engineer & Scheme Reviewer",
     githubUsername: "Georgiaraj30",
     linkedIn: "https://www.linkedin.com/in/georgiaraj",
     skills: ["UI Testing", "Bug Reporting"],
@@ -145,7 +145,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Mark Leander S",
-    title: "Software Tester",
+    title: "QA Engineer & Scheme Reviewer",
     githubUsername: "markleander007",
     linkedIn: "https://www.linkedin.com/in/mark-mark-4a7169333",
     skills: ["Regression Testing", "QA"],
@@ -153,7 +153,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Shahana R",
-    title: "Software Tester",
+    title: "QA Engineer & Scheme Reviewer",
     githubUsername: "ShahanaR06",
     linkedIn: "https://www.linkedin.com/in/shahana-r-05b757328",
     skills: ["Testing", "Documentation"],
@@ -165,10 +165,10 @@ export const TEAM_GROUPS = {
   coordinator: { label: "Project Management & Coordination", members: TEAM.filter((m) => m.group === "coordinator") },
   lead:        { label: "Team Leads",                        members: TEAM.filter((m) => m.group === "lead") },
   developer:   { label: "Developer Team",                    members: TEAM.filter((m) => m.group === "developer") },
-  tester:      { label: "Tester Team",                       members: TEAM.filter((m) => m.group === "tester") },
+  tester:      { label: "QA & Research Team",               members: TEAM.filter((m) => m.group === "tester") },
 } as const;
 
-/** Hex accent per group — used for initials badge background and card border. */
+/** Hex accent per group — used for card tint and chip color. */
 export const GROUP_ACCENT: Record<TeamMember["group"], string> = {
   coordinator: "#FF9933",
   lead:        "#0A3D91",
@@ -180,5 +180,5 @@ export const GROUP_LABEL: Record<TeamMember["group"], string> = {
   coordinator: "Coordination",
   lead:        "Lead",
   developer:   "Developer",
-  tester:      "Tester",
+  tester:      "QA & Research",
 };

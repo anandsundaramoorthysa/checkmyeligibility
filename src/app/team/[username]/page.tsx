@@ -48,8 +48,6 @@ export default async function MemberProfilePage({
 
   const accent = GROUP_ACCENT[member.group];
   const groupLabel = GROUP_LABEL[member.group];
-  const words = member.name.trim().split(/\s+/);
-  const initials = ((words[0]?.[0] ?? "") + (words[1]?.[0] ?? "")).toUpperCase();
 
   const ld = [
     breadcrumbLd([
@@ -76,41 +74,35 @@ export default async function MemberProfilePage({
 
         <div className="mx-auto max-w-2xl">
           {/* Profile card */}
-          <div className="overflow-hidden rounded-2xl border border-navy/5 bg-surface-card shadow-card">
-            {/* Accent bar */}
-            <div className="h-1.5 w-full" style={{ backgroundColor: accent }} />
+          <div
+            className="overflow-hidden rounded-2xl border bg-surface-card shadow-card"
+            style={{ borderColor: `${accent}26` }}
+          >
+            {/* Tinted header */}
+            <div
+              className="px-8 pb-6 pt-8 sm:px-10 sm:pb-8 sm:pt-10"
+              style={{ backgroundColor: `${accent}0f` }}
+            >
+              <span
+                className="inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold uppercase tracking-wider"
+                style={{ backgroundColor: `${accent}26`, color: accent }}
+              >
+                {groupLabel}
+              </span>
+              <h1 className="mt-4 font-display text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
+                {member.name}
+              </h1>
+              <p className="mt-1.5 text-base leading-relaxed text-ink-muted">{member.title}</p>
+            </div>
 
-            <div className="p-8 sm:p-10">
-              {/* Avatar + name row */}
-              <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-start">
-                {/* Large initials badge */}
-                <div
-                  className="flex h-24 w-24 shrink-0 select-none items-center justify-center rounded-full text-4xl font-bold tracking-widest text-white shadow-sm"
-                  style={{ backgroundColor: accent }}
-                  aria-hidden="true"
-                >
-                  {initials}
-                </div>
-
-                <div className="flex-1 text-center sm:text-left">
-                  <h1 className="font-display text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
-                    {member.name}
-                  </h1>
-                  <p className="mt-1 text-base text-ink-muted">{member.title}</p>
-
-                  {/* Group badge */}
-                  <span
-                    className="mt-3 inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold text-white"
-                    style={{ backgroundColor: accent }}
-                  >
-                    {groupLabel}
-                  </span>
-                </div>
-              </div>
-
+            {/* Content sections */}
+            <div
+              className="px-8 pb-8 pt-6 sm:px-10 sm:pb-10"
+              style={{ borderTop: `1px solid ${accent}26` }}
+            >
               {/* Skills */}
               {member.skills && member.skills.length > 0 && (
-                <div className="mt-7 border-t border-navy/5 pt-6">
+                <div>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink-faint">
                     Skills
                   </p>
@@ -129,7 +121,7 @@ export default async function MemberProfilePage({
 
               {/* GitHub stats */}
               {hasStats && (
-                <div className="mt-7 border-t border-navy/5 pt-6">
+                <div className={member.skills?.length ? "mt-7 border-t border-navy/5 pt-6" : ""}>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink-faint">
                     GitHub Contributions
                   </p>
@@ -140,17 +132,15 @@ export default async function MemberProfilePage({
                       value={stat.commits}
                       label="Commits"
                     />
-                    <StatPill
-                      icon={MessageSquare}
-                      value={stat.reviewsDone}
-                      label="Reviews"
-                    />
+                    <StatPill icon={MessageSquare} value={stat.reviewsDone} label="Reviews" />
                   </div>
                 </div>
               )}
 
               {/* Social links */}
-              <div className="mt-7 flex flex-wrap gap-3 border-t border-navy/5 pt-6">
+              <div
+                className={`flex flex-wrap gap-3 ${member.skills?.length || hasStats ? "mt-7 border-t border-navy/5 pt-6" : ""}`}
+              >
                 <a
                   href={`https://github.com/${member.githubUsername}`}
                   target="_blank"
@@ -186,10 +176,7 @@ export default async function MemberProfilePage({
           {/* Institution note */}
           <p className="mt-6 text-center text-sm text-ink-faint">
             Department of Data Science &middot; Loyola College, Chennai &middot;{" "}
-            <a
-              href={SITE.url}
-              className="text-navy hover:underline"
-            >
+            <a href={SITE.url} className="text-navy hover:underline">
               CheckMyEligibility
             </a>
           </p>

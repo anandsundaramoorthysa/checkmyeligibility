@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ExternalLink, GitMerge, GitCommitHorizontal, MessageSquare } from "lucide-react";
-import { GROUP_ACCENT, type TeamMember } from "@/data/team";
+import { GROUP_ACCENT, GROUP_LABEL, type TeamMember } from "@/data/team";
 
 export interface GitHubStat {
   prsMerged: number;
@@ -58,84 +58,79 @@ export function MemberCard({
   linkToProfile?: boolean;
 }) {
   const accent = GROUP_ACCENT[member.group];
-  const words = member.name.trim().split(/\s+/);
-  const initials = ((words[0]?.[0] ?? "") + (words[1]?.[0] ?? "")).toUpperCase();
+  const groupLabel = GROUP_LABEL[member.group];
   const hasStats = stat && (stat.prsMerged > 0 || stat.commits > 0 || stat.reviewsDone > 0);
 
   const cardContent = (
     <>
-      {/* Group accent bar */}
-      <div className="h-[3px] w-full shrink-0" style={{ backgroundColor: accent }} />
-
-      <div className={`flex flex-1 flex-col ${large ? "p-6" : "p-5"}`}>
-        {/* Header row */}
-        <div className="flex items-start gap-3.5">
-          {/* Initials badge */}
-          <div
-            className={`flex shrink-0 select-none items-center justify-center rounded-full font-bold tracking-wider text-white ${
-              large ? "h-14 w-14 text-xl" : "h-11 w-11 text-base"
-            }`}
-            style={{ backgroundColor: accent }}
-            aria-hidden="true"
+      {/* Tinted header zone */}
+      <div
+        className={`flex flex-1 flex-col ${large ? "p-5 sm:p-6" : "p-4 sm:p-5"}`}
+        style={{ backgroundColor: `${accent}0f` }}
+      >
+        {/* Group chip + social icons */}
+        <div className="mb-3 flex items-center justify-between">
+          <span
+            className="rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
+            style={{ backgroundColor: `${accent}26`, color: accent }}
           >
-            {initials}
-          </div>
+            {groupLabel}
+          </span>
 
-          {/* Name + title + social */}
-          <div className="min-w-0 flex-1">
-            <div className="flex items-start justify-between gap-2">
-              <p
-                className={`font-display font-bold leading-snug text-ink ${
-                  large ? "text-lg sm:text-xl" : "text-sm sm:text-base"
-                }`}
+          <div className="flex shrink-0 items-center gap-0.5">
+            <a
+              href={`https://github.com/${member.githubUsername}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex h-7 w-7 items-center justify-center rounded-md text-ink-muted transition-colors hover:bg-navy/10 hover:text-ink"
+              aria-label={`${member.name} on GitHub`}
+              title="GitHub"
+            >
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+            {member.linkedIn && (
+              <a
+                href={member.linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex h-7 w-7 items-center justify-center rounded-md text-ink-muted transition-colors hover:bg-[#0A66C2]/10 hover:text-[#0A66C2]"
+                aria-label={`${member.name} on LinkedIn`}
+                title="LinkedIn"
               >
-                {member.name}
-              </p>
-
-              {/* Social icon buttons */}
-              <div className="flex shrink-0 items-center gap-0.5">
-                <a
-                  href={`https://github.com/${member.githubUsername}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex h-7 w-7 items-center justify-center rounded-md text-ink-muted transition-colors hover:bg-navy/10 hover:text-ink"
-                  aria-label={`${member.name} on GitHub`}
-                  title="GitHub"
-                >
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-                {member.linkedIn && (
-                  <a
-                    href={member.linkedIn}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="flex h-7 w-7 items-center justify-center rounded-md text-ink-muted transition-colors hover:bg-[#0A66C2]/10 hover:text-[#0A66C2]"
-                    aria-label={`${member.name} on LinkedIn`}
-                    title="LinkedIn"
-                  >
-                    <LinkedInIcon className="h-3.5 w-3.5" />
-                  </a>
-                )}
-              </div>
-            </div>
-
-            <p className={`mt-0.5 text-ink-muted ${large ? "text-sm" : "text-xs"}`}>
-              {member.title}
-            </p>
+                <LinkedInIcon className="h-3.5 w-3.5" />
+              </a>
+            )}
           </div>
         </div>
 
-        {/* GitHub stats */}
-        {hasStats && (
-          <div className="mt-4 flex flex-wrap gap-2 border-t border-navy/5 pt-4">
-            <StatPill icon={GitMerge} value={stat.prsMerged} label="PRs merged" />
-            <StatPill icon={GitCommitHorizontal} value={stat.commits} label="Commits" />
-            <StatPill icon={MessageSquare} value={stat.reviewsDone} label="Reviews" />
-          </div>
-        )}
+        {/* Name */}
+        <p
+          className={`font-display font-bold leading-snug text-ink ${
+            large ? "text-xl sm:text-2xl" : "text-base sm:text-lg"
+          }`}
+        >
+          {member.name}
+        </p>
+
+        {/* Title */}
+        <p className={`mt-1 leading-relaxed text-ink-muted ${large ? "text-sm" : "text-xs sm:text-sm"}`}>
+          {member.title}
+        </p>
       </div>
+
+      {/* Stats zone */}
+      {hasStats && (
+        <div
+          className="flex flex-wrap gap-2 px-4 py-3 sm:px-5"
+          style={{ borderTop: `1px solid ${accent}26` }}
+        >
+          <StatPill icon={GitMerge} value={stat.prsMerged} label="PRs merged" />
+          <StatPill icon={GitCommitHorizontal} value={stat.commits} label="Commits" />
+          <StatPill icon={MessageSquare} value={stat.reviewsDone} label="Reviews" />
+        </div>
+      )}
     </>
   );
 
@@ -143,7 +138,8 @@ export function MemberCard({
     return (
       <Link
         href={`/team/${member.githubUsername}`}
-        className="group flex flex-col overflow-hidden rounded-2xl border border-navy/5 bg-surface-card shadow-card transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/40"
+        className="group flex flex-col overflow-hidden rounded-2xl border bg-surface-card shadow-card transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/40"
+        style={{ borderColor: `${accent}26` }}
         aria-label={`View ${member.name}'s profile`}
       >
         {cardContent}
@@ -152,7 +148,10 @@ export function MemberCard({
   }
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-navy/5 bg-surface-card shadow-card">
+    <div
+      className="flex flex-col overflow-hidden rounded-2xl border bg-surface-card shadow-card"
+      style={{ borderColor: `${accent}26` }}
+    >
       {cardContent}
     </div>
   );
@@ -165,7 +164,7 @@ export function SectionHeading({ title, count }: { title: string; count: number 
       <span className="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-navy/10 px-2 text-xs font-semibold text-navy">
         {count}
       </span>
-      <div className="h-px flex-1 bg-navy/8" />
+      <div className="h-px flex-1 bg-navy/10" />
     </div>
   );
 }

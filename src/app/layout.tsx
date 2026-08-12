@@ -30,8 +30,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/brand/favicon.svg",
     shortcut: "/brand/favicon.svg",
-    // apple-touch-icon: place a 180×180 PNG at /brand/apple-touch-icon.png
-    apple: "/brand/apple-touch-icon.png",
   },
   verification: {
     // Add GOOGLE_SITE_VERIFICATION to Vercel environment variables once you
