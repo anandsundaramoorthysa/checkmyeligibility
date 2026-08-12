@@ -11,7 +11,7 @@ import type { GitHubStat } from "./_components/MemberCard";
 export const metadata: Metadata = buildMetadata({
   title: "Our Team",
   description:
-    "Meet the 18 students from Loyola College, Chennai who built CheckMyEligibility — researchers, engineers, and QA testers making India's scholarship landscape navigable.",
+    "Meet the 18 students from Loyola College, Chennai who built CheckMyEligibility: researchers, engineers, and QA testers making India's scholarship landscape navigable.",
   path: "/team",
 });
 
@@ -114,7 +114,7 @@ export default async function TeamPage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Our Team — CheckMyEligibility",
+      name: "Our Team | CheckMyEligibility",
       description:
         "Meet the 18-person student team that built CheckMyEligibility, India's free AI guide to government education schemes.",
       url: new URL("/team", SITE.url).toString(),
@@ -133,8 +133,8 @@ export default async function TeamPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-ink-muted sm:text-lg">
             CheckMyEligibility is built entirely by students. Eighteen members of the
-            Department of Data Science, Loyola College, Chennai — researchers, engineers,
-            and QA testers — designed, developed, and continue to maintain this platform,
+            Department of Data Science, Loyola College, Chennai: researchers, engineers,
+            and QA testers who designed, developed, and continue to maintain this platform
             with the goal of making India&apos;s scholarship landscape navigable for every
             student, regardless of background.
           </p>

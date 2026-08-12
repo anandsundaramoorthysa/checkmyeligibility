@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!member) return {};
 
   return buildMetadata({
-    title: `${member.name} — Team`,
+    title: `${member.name}, Team`,
     description: `${member.name}, ${member.title} at CheckMyEligibility. ${member.skills?.join(", ") ?? ""}`,
     path: `/team/${member.githubUsername}`,
   });
