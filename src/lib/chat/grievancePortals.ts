@@ -127,29 +127,40 @@ export const GRIEVANCE_PORTALS: GrievancePortal[] = [
   },
 ];
 
-/** Build a grievance context block for the given state (or general if none). */
+/** Build a grievance context block.
+ *  - No state known → instruct LLM to ask for state first (one question, no portals yet).
+ *  - State known → give state-specific + national portals with exact steps.
+ */
 export function buildGrievanceContext(mentionedState?: string): string {
+  if (!mentionedState) {
+    return [
+      "GRIEVANCE / REJECTION GUIDANCE — FIRST TURN:",
+      "The student's application was rejected or not processed. Do NOT list portals yet.",
+      "Reply with: \"I'm sorry to hear that. To give you the exact appeal steps and grievance portal for your state, which state did you apply in?\"",
+      "Keep the reply to 1–2 sentences. The student will select their state from chip buttons.",
+    ].join("\n");
+  }
+
   const general = GRIEVANCE_PORTALS.filter((p) => p.state === "all-india");
-  const statePortals = mentionedState
-    ? GRIEVANCE_PORTALS.filter((p) =>
-        p.state.toLowerCase().includes(mentionedState.toLowerCase()),
-      )
-    : [];
+  const statePortals = GRIEVANCE_PORTALS.filter((p) =>
+    p.state.toLowerCase().includes(mentionedState.toLowerCase()),
+  );
 
   const portals = [...statePortals, ...general];
   if (!portals.length) return "";
 
   const lines = [
-    "GRIEVANCE / REJECTION GUIDANCE:",
-    "If a scheme application was rejected or not processed correctly, the student can:",
-    "1. First appeal directly to the scheme authority via the official portal (use the scheme URL).",
-    "2. File a grievance at one of these portals:",
+    `GRIEVANCE / REJECTION GUIDANCE — STATE: ${mentionedState}`,
+    "Guide the student through the appeal process step by step:",
+    "1. First, appeal directly on the scheme's own official portal (use the URL from the CONTEXT block).",
+    "2. If unresolved, file a grievance at one of these portals:",
   ];
   for (const p of portals) {
     let line = `   - ${p.portalName}: ${p.url}`;
     if (p.helpline) line += ` (Helpline: ${p.helpline})`;
     lines.push(line);
   }
-  lines.push("Advise the student to keep their application ID and reference numbers handy when filing a grievance.");
+  lines.push("3. Advise the student to keep their Application ID, rejection letter, and supporting documents handy.");
+  lines.push("Also ask: what reason was given for the rejection? This helps narrow the next step.");
   return lines.join("\n");
 }

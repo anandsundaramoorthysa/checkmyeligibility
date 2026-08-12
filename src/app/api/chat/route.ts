@@ -8,6 +8,9 @@ import {
   MAX_HISTORY,
   isComparisonIntent,
   isGrievanceIntent,
+  isComparisonFollowUp,
+  isGrievanceFollowUp,
+  extractStateFromContext,
   type Prompt,
 } from "@/lib/chat/systemPrompt";
 import { sanitizeInput, checkInput, validateOutput, allowedHostsFor } from "@/lib/chat/guardrail";
@@ -31,7 +34,29 @@ const MAX_MESSAGE_CHARS = 2000;
 const BUSY_MESSAGE =
   "I'm handling a lot of requests right now. Please try again in a moment, or visit scholarships.gov.in directly.";
 
-function buildQuickReplies(schemes: Scheme[], hasResults: boolean): QuickReply[] {
+function buildQuickReplies(
+  schemes: Scheme[],
+  hasResults: boolean,
+  mode?: { isFirstComparisonTurn?: boolean; isGrievanceNoState?: boolean },
+): QuickReply[] {
+  if (mode?.isFirstComparisonTurn) {
+    return [
+      { label: "I'm SC/ST category", send: "I am from SC/ST category" },
+      { label: "I'm OBC", send: "I am from OBC category" },
+      { label: "I'm General / EWS", send: "I am from General or EWS category" },
+      { label: "I'm a woman student", send: "I am a woman student" },
+    ];
+  }
+  if (mode?.isGrievanceNoState) {
+    return [
+      { label: "Tamil Nadu", send: "I applied in Tamil Nadu" },
+      { label: "Maharashtra", send: "I applied in Maharashtra" },
+      { label: "Karnataka", send: "I applied in Karnataka" },
+      { label: "Delhi", send: "I applied in Delhi" },
+      { label: "Uttar Pradesh", send: "I applied in Uttar Pradesh" },
+      { label: "Other state", send: "I applied in another state" },
+    ];
+  }
   if (hasResults && schemes.length > 0) {
     const replies: QuickReply[] = [
       { label: "Documents needed", send: "What documents do I need to apply?" },
@@ -197,8 +222,10 @@ export async function POST(req: Request): Promise<Response> {
 
   // Detect intent modes first: a comparison names several schemes, so it needs
   // a wider result set than the deliberately small default.
-  const comparisonMode = isComparisonIntent(message);
-  const grievanceMode = isGrievanceIntent(message);
+  const isFirstComparisonTurn =
+    isComparisonIntent(message) && !isComparisonFollowUp(history);
+  const comparisonMode = isFirstComparisonTurn || isComparisonFollowUp(history);
+  const grievanceMode = isGrievanceIntent(message) || isGrievanceFollowUp(history);
 
   let schemes: Scheme[] = [];
   let matched = true;
@@ -232,6 +259,10 @@ export async function POST(req: Request): Promise<Response> {
   // reviewed" filler list, not a real answer to show.
   const displaySchemes = matched ? schemes : [];
 
+  // Detect whether grievance turn still lacks a state (for chip selection)
+  const isGrievanceNoState =
+    grievanceMode && !extractStateFromContext(message, history);
+
   // The model sees exactly what the user sees. Feeding it the filler list while
   // the UI rendered nothing made it name schemes with no card, no link and no
   // way to act on them, which measured 3 times in 6 on plain greetings.
@@ -239,8 +270,12 @@ export async function POST(req: Request): Promise<Response> {
     comparisonMode,
     grievanceMode,
     matched,
+    isFirstComparisonTurn,
   });
-  const quickReplies = buildQuickReplies(displaySchemes, displaySchemes.length > 0);
+  const quickReplies = buildQuickReplies(displaySchemes, displaySchemes.length > 0, {
+    isFirstComparisonTurn,
+    isGrievanceNoState,
+  });
   // Portals we are actively citing this turn are trusted for link validation;
   // many legitimate scheme portals sit outside the .gov.in suffix list.
   const allowedHosts = allowedHostsFor(displaySchemes.map((s) => s.officialPortalUrl));

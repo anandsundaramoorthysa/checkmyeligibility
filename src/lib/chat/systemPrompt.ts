@@ -28,6 +28,14 @@ export function isComparisonIntent(message: string): boolean {
   return COMPARISON_PATTERNS.some((p) => p.test(message));
 }
 
+/** True when a comparison question appeared in the last 6 history turns — the
+ * student is answering our clarifying question on the follow-up turn. */
+export function isComparisonFollowUp(history: Message[]): boolean {
+  return history.slice(-6).some(
+    (m) => m.role === "user" && isComparisonIntent(m.content),
+  );
+}
+
 // ─── Grievance / rejection intent detection ────────────────────────────────
 const GRIEVANCE_PATTERNS: RegExp[] = [
   /\b(rejected|rejection)\b/i,
@@ -41,6 +49,28 @@ const GRIEVANCE_PATTERNS: RegExp[] = [
 
 export function isGrievanceIntent(message: string): boolean {
   return GRIEVANCE_PATTERNS.some((p) => p.test(message));
+}
+
+/** True when a grievance question appeared in the last 6 history turns. */
+export function isGrievanceFollowUp(history: Message[]): boolean {
+  return history.slice(-6).some(
+    (m) => m.role === "user" && isGrievanceIntent(m.content),
+  );
+}
+
+/** Try to extract a state name from the message, then from recent history. */
+export function extractStateFromContext(message: string, history: Message[]): string | undefined {
+  const fromMessage = extractState(message);
+  if (fromMessage) return fromMessage;
+  const recentUser = history
+    .filter((m) => m.role === "user")
+    .slice(-4)
+    .reverse();
+  for (const m of recentUser) {
+    const found = extractState(m.content);
+    if (found) return found;
+  }
+  return undefined;
 }
 
 /** Try to extract a state name from the user message for targeted grievance info. */
@@ -160,13 +190,31 @@ export function buildContextBlock(schemes: Scheme[], matched = true): string {
 }
 
 /** Build comparison-specific addon that instructs the LLM to produce a table. */
-export function buildComparisonAddon(schemes: Scheme[]): string {
+/**
+ * First comparison turn: ask one clarifying question about the student's background.
+ * Follow-up turn (isFollowUp=true): the student has answered — give a definitive verdict.
+ */
+export function buildComparisonAddon(schemes: Scheme[], isFollowUp = false): string {
   if (schemes.length < 2) return "";
+  if (!isFollowUp) {
+    return `
+COMPARISON REQUEST — FIRST TURN:
+The student wants to compare these schemes. Do NOT produce a comparison table yet.
+Ask ONE short clarifying question so you can give a personalised recommendation.
+The most useful things to know are: their social category (SC/ST / OBC / General / EWS) or
+whether they are a woman, and approximately how much funding they need.
+Reply in at most 2 sentences. Lead with "To give you the best recommendation," then ask the question.
+Do not list the schemes or their details. The student will answer via a chip button.`;
+  }
   return `
-COMPARISON REQUEST: The user wants to compare schemes. Please respond with:
-1. A clear markdown table comparing the schemes on: Name, Who qualifies, Benefit amount, How to apply (URL).
-2. One or two sentences of recommendation based on the student's situation.
-Keep the table concise — one row per scheme, no more than 4 columns.`;
+COMPARISON REQUEST — VERDICT TURN:
+The student has now answered your clarifying question. Check the conversation history for their background.
+Using that information:
+1. Give ONE clear verdict: "[Scheme X] is the right choice for you because [specific reason tied to their category / amount / situation]."
+2. In one sentence, explain why the other scheme(s) don't fit them specifically.
+3. Include the official apply URL for the recommended scheme.
+Then show a brief comparison table (Name | Who qualifies | Benefit | Apply URL).
+Be direct. Never say "it depends" or leave the decision to the student.`;
 }
 
 type CoreMessage = { role: "user" | "assistant"; content: string };
@@ -184,17 +232,23 @@ export function buildMessages(
   history: Message[],
   schemes: Scheme[],
   lang?: string,
-  options?: { comparisonMode?: boolean; grievanceMode?: boolean; matched?: boolean },
+  options?: {
+    comparisonMode?: boolean;
+    grievanceMode?: boolean;
+    matched?: boolean;
+    isFirstComparisonTurn?: boolean;
+  },
 ): Prompt {
   const contextBlock = buildContextBlock(schemes, options?.matched ?? true);
   let addon = "";
 
   if (options?.comparisonMode) {
-    addon += buildComparisonAddon(schemes);
+    // isFirstComparisonTurn=true → ask clarifying question; false → give verdict
+    addon += buildComparisonAddon(schemes, options.isFirstComparisonTurn === false);
   }
 
   if (options?.grievanceMode) {
-    const state = extractState(userMessage);
+    const state = extractStateFromContext(userMessage, history);
     const grievanceBlock = buildGrievanceContext(state);
     if (grievanceBlock) addon += `\n\n${grievanceBlock}`;
   }
