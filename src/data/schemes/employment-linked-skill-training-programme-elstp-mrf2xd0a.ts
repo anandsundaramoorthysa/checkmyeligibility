@@ -6,7 +6,7 @@ export const employmentLinkedSkillTrainingProgrammeElstp: Scheme =   {
     name: "Employment Linked Skill Training Programme (ELSTP)",
     shortName: "ELSTP",
     summary:
-      "Free industry-relevant skill training with employment opportunities for eligible youth and job seekers.",
+      "Free industry-relevant skill training under sector skill councils with employment placement support for eligible youth and job seekers across India.",
     description:
       "The Employment Linked Skill Training Programme (ELSTP) is a skill development initiative designed to enhance employability by providing industry-relevant training to eligible candidates. The programme focuses on developing job-ready skills, improving vocational competencies, and facilitating employment opportunities through structured training and industry linkage. The scheme aims to bridge the gap between education and employment by equipping beneficiaries with practical skills required by employers.",
     category: "skill-development",

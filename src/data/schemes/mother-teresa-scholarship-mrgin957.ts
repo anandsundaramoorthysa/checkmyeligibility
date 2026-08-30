@@ -6,7 +6,7 @@ export const motherTeresaScholarship: Scheme =   {
     name: "Mother Teresa Scholarship",
     shortName: "MTS Kerala",
     summary:
-      "₹15,000 per annum for minority community students in Kerala pursuing diploma nursing and paramedical courses.",
+      "₹15,000 per annum for students from minority communities in Kerala pursuing diploma nursing and paramedical courses at recognised institutions.",
     description:
       "The Mother Teresa Scholarship (MTS), implemented by the Directorate of Minority Welfare, Government of Kerala, provides financial assistance to students belonging to minority communities pursuing diploma nursing and paramedical courses in Government, Government-aided, and Government-recognised private institutions in Kerala.",
     category: "social-welfare",

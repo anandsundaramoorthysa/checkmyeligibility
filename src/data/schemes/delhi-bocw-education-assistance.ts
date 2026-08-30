@@ -6,7 +6,7 @@ export const delhiBocwEducationAssistance: Scheme = {
   name: "Delhi BOCW Board Education Assistance Scheme",
   shortName: "Delhi BOCW Education",
   summary:
-    "Up to ₹1,20,000 per year for higher and professional education of children of registered construction workers in Delhi.",
+    "Up to ₹1,20,000 per year for professional courses and ₹5,000–₹25,000 for school education of children of registered construction workers in Delhi, paid via DBT.",
   description:
     "The Delhi Building and Other Construction Workers' Welfare Board (BOCW) provides educational assistance to the children of registered construction workers in Delhi for pursuing higher and professional education. The scheme offers financial assistance of up to ₹1,20,000 per year for courses such as B.Tech, MBBS, BBA, BCA, and other professional programmes at recognised institutions. The scheme also covers school education from Class 1 to Class 12 with varying amounts. The objective is to ensure educational upliftment of children belonging to economically weaker sections of construction workers and to reduce dropout rates.",
   category: "education",

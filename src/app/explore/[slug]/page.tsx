@@ -48,9 +48,14 @@ export async function generateMetadata({
     scheme.name.length <= 50
       ? scheme.name
       : (scheme.shortName ?? scheme.name.slice(0, 47) + "…");
+  // Cap meta description at 155 chars so Google shows the full snippet unfragmented.
+  const metaDesc =
+    scheme.summary.length <= 155
+      ? scheme.summary
+      : scheme.summary.slice(0, 154) + "…";
   return buildMetadata({
     title: titleName,
-    description: scheme.summary,
+    description: metaDesc,
     path: `/explore/${scheme.slug}`,
     keywords: scheme.tags,
   });

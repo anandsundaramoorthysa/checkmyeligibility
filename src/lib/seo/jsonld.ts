@@ -24,7 +24,6 @@ export function organizationLd() {
     email: SITE.email,
     logo: `${SITE.url}/brand/checkmyeligibility-mark.svg`,
     sameAs: [SITE.github],
-    license: "https://polyformproject.org/licenses/noncommercial/1.0.0/",
     funder: {
       "@type": "EducationalOrganization",
       name: SITE.institution,
@@ -75,6 +74,7 @@ export function governmentServiceLd(scheme: Scheme) {
   return {
     "@context": "https://schema.org",
     "@type": "GovernmentService",
+    "@id": new URL(`/explore/${scheme.slug}`, SITE.url).toString(),
     name: scheme.name,
     serviceType: CATEGORY_SERVICE_LABELS[scheme.category] ?? scheme.category,
     description: scheme.summary,

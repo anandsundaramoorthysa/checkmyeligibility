@@ -27,7 +27,7 @@ export function buildMetadata({
     title: fullTitle,
     description,
     ...(keywords?.length ? { keywords } : {}),
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: { "en-IN": url } },
     robots: noindex ? { index: false, follow: true } : undefined,
     openGraph: {
       type: "website",
