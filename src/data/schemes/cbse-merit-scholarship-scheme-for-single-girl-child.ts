@@ -8,7 +8,7 @@ export const cbseMeritScholarshipSchemeForSingleGirlChild: Scheme = {
   summary:
     "Scholarship of ₹1,000 per month for two years (₹24,000 total) to support meritorious single girl children studying in Classes 11 and 12 at CBSE-affiliated schools.",
   description:
-    "The CBSE Merit Scholarship Scheme for Single Girl Child is implemented by the Central Board of Secondary Education (CBSE). The scheme aims to recognize and support meritorious single girl children by providing financial assistance for higher secondary education. It encourages parents to promote the education of girls and helps deserving students continue their studies in Classes XI and XII.",
+    "The CBSE Merit Scholarship Scheme for Single Girl Child provides ₹1,000 per month for two years (₹24,000 total) to meritorious girls who are the only girl child of their parents, studying in Classes XI and XII at CBSE-affiliated schools. The scheme is implemented by the Central Board of Secondary Education (CBSE) with the objective of encouraging parents to educate their sole girl child through higher secondary level. Eligibility requires a minimum of 70% marks in Class 10 and family income below ₹8 lakh per annum. School tuition fees must be within the limits prescribed by CBSE. The scholarship is disbursed via Direct Benefit Transfer (DBT) to the student's bank account.",
   category: "scholarship",
   level: "central",
   states: ["all-india"],
@@ -17,7 +17,7 @@ export const cbseMeritScholarshipSchemeForSingleGirlChild: Scheme = {
       label: "Only girl child",
       value:
         "The applicant must be the only girl child of her parents, studying in Class 11 or 12 at a CBSE-affiliated school",
-      type: "other",
+      type: "gender",
     },
     {
       label: "Academic performance",
@@ -84,11 +84,11 @@ export const cbseMeritScholarshipSchemeForSingleGirlChild: Scheme = {
     },
     {
       q: "What documents are required?",
-      a: "CBSE Class X mark sheet/certificate, admission proof for Class XI, single girl child affidavit/declaration, passport-size photograph, bank account details, Aadhaar card or identity proof, school verification certificate, and any other documents prescribed by CBSE.",
+      a: "CBSE Class X mark sheet/certificate, admission proof for Class XI, single girl child affidavit/declaration, passport-size photograph, bank account details, Aadhaar card or identity proof, and school verification certificate.",
     },
     {
-      q: "Who implements this scheme?",
-      a: "The scheme is implemented by the Central Board of Secondary Education (CBSE).",
+      q: "Is the scholarship renewable for Class 12?",
+      a: "Yes. A student awarded the scholarship in Class 11 continues to receive ₹1,000/month in Class 12, provided they remain enrolled in a CBSE-affiliated school and continue to meet eligibility conditions. The scholarship covers both years automatically once awarded.",
     },
   ],
   source: "sample",

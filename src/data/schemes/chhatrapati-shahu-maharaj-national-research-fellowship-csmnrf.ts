@@ -8,7 +8,7 @@ export const chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf: Scheme = {
   summary:
     "Monthly fellowship with HRA and contingency support by SARTHI, Maharashtra for full-time PhD scholars from eligible communities pursuing research in recognized universities and institutions.",
   description:
-    "The Chhatrapati Shahu Maharaj National Research Fellowship (CSMNRF) is implemented by SARTHI, Maharashtra, to support full-time PhD scholars from eligible communities pursuing research in recognized universities and institutions. Thousands of fellowships have been sanctioned under the scheme.",
+    "The Chhatrapati Shahu Maharaj National Research Fellowship (CSMNRF) is implemented by SARTHI (Social Justice and Special Assistance Research and Training Institute), Government of Maharashtra, to provide financial support to full-time PhD scholars from OBC, VJNT (Vimukta Jati and Nomadic Tribes), SBC (Special Backward Category), and other SARTHI-eligible communities.\n\nThe fellowship amount is at par with the UGC NET-JRF/SRF fellowship rates prescribed by the University Grants Commission — ₹37,000/month for the initial two years (JRF period) and ₹42,000/month thereafter (SRF period) — along with House Rent Allowance (HRA) as per government norms and an annual contingency grant for research expenses. Fellows must be registered at a recognized university or institution in Maharashtra and must be pursuing research through regular (not distance) mode.\n\nApplications are invited annually through the SARTHI portal. Selection is based on academic merit, research proposal, and verification of eligibility criteria including domicile, community, and income.",
   category: "fellowship",
   level: "state",
   states: ["maharashtra"],
@@ -50,9 +50,9 @@ export const chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf: Scheme = {
     },
   ],
   benefits: [
-    "Monthly fellowship for eligible PhD scholars",
-    "House Rent Allowance (HRA) support",
-    "Contingency support for research activities",
+    "Monthly fellowship at par with UGC NET-JRF rates: ₹37,000/month for the first 2 years (JRF), ₹42,000/month thereafter (SRF)",
+    "House Rent Allowance (HRA) as per applicable government norms",
+    "Annual contingency grant for research-related expenses",
   ],
   requiredDocuments: [
     { name: "Aadhaar Card", mandatory: true },
@@ -67,7 +67,7 @@ export const chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf: Scheme = {
     { name: "10th & 12th / Graduation Certificates", mandatory: true },
   ],
   officialPortalUrl: "https://sarthi.maharashtra.gov.in/en",
-  ministry: "Ministry of Social Justice & Empowerment",
+  ministry: "Department of Social Justice and Special Assistance, Government of Maharashtra (via SARTHI)",
   applicationMode: ["online"],
   tags: [
     "fellowship",
@@ -89,8 +89,8 @@ export const chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf: Scheme = {
       a: "Residents of Maharashtra belonging to eligible SARTHI target groups (including OBC), registered for a full-time PhD programme, holding a postgraduate degree from a recognized institution, not above 45 years of age as of 1st January of the respective year, and satisfying the fellowship guidelines and income criteria prescribed by SARTHI.",
     },
     {
-      q: "What benefits does the fellowship provide?",
-      a: "Selected PhD scholars receive a monthly fellowship along with House Rent Allowance (HRA) and contingency support for research activities.",
+      q: "What is the fellowship amount?",
+      a: "The fellowship is at par with UGC NET-JRF/SRF rates: ₹37,000/month for the first 2 years (JRF period) and ₹42,000/month for the subsequent years (SRF period), plus HRA as per government norms and an annual contingency grant.",
     },
     {
       q: "Can distance education PhD scholars apply?",

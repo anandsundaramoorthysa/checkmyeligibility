@@ -8,7 +8,7 @@ export const apjAbdulKalamScholarship: Scheme = {
   summary:
     "₹6,000 per annum from the Kerala Directorate of Minority Welfare for minority-community students in the 2nd or 3rd year of a 3-year polytechnic diploma.",
   description:
-    "The APJ Abdul Kalam Scholarship is implemented by the Directorate of Minority Welfare, Government of Kerala, to support students from religious minority communities pursuing a three-year diploma course at a government, aided, or government-approved self-financing polytechnic institution in Kerala.",
+    "The APJ Abdul Kalam Scholarship, implemented by the Directorate of Minority Welfare, Government of Kerala, provides ₹6,000 per annum to students from recognized religious minority communities (Muslim, Christian, Sikh, Buddhist, Jain, and Parsi) who are in the 2nd or 3rd year of a three-year polytechnic diploma. The scheme targets students at government, government-aided, or government-approved self-financing polytechnic institutions in Kerala, admitted on merit seats (not management quota). Students at self-financing polytechnics must have secured a merit-seat admission to qualify. Family income must not exceed ₹8,00,000 per annum (APL category). The scholarship amount is disbursed as a one-time payment directly to the student's bank account.",
   category: "scholarship",
   level: "state",
   states: ["kerala"],
@@ -21,7 +21,7 @@ export const apjAbdulKalamScholarship: Scheme = {
     {
       label: "Community",
       value: "Belongs to a religious minority community: Muslim, Christian, Sikh, Buddhist, Jain, or Parsi",
-      type: "other",
+      type: "caste-category",
     },
     {
       label: "Course",

@@ -18,7 +18,7 @@ export function SchemeCard({ scheme }: { scheme: Scheme }) {
       <h3 className="mt-4 font-display text-lg font-extrabold tracking-tight text-ink">
         {scheme.name}
       </h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-muted">
+      <p className="mt-2 flex-1 line-clamp-3 text-sm leading-relaxed text-ink-muted">
         {scheme.summary}
       </p>
       <div className="mt-5 flex w-full flex-col items-center gap-2 border-t border-navy/10 pt-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">

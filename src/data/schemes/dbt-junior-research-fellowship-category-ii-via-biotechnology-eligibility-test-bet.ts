@@ -22,7 +22,7 @@ export const dbtJuniorResearchFellowshipCategoryIiViaBiotechnologyEligibilityTes
     {
       label: "Minimum marks",
       value: "60% marks (55% for SC/ST/EWS/Differently Abled per current notification)",
-      type: "other",
+      type: "education",
     },
     {
       label: "Final-year candidates",

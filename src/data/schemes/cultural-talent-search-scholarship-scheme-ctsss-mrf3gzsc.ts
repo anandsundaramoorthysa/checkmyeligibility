@@ -9,7 +9,7 @@ export const culturalTalentSearchScholarshipSchemeCtsss: Scheme =   {
       "₹3,600/year plus up to ₹9,000/year tuition reimbursement for talented children aged 10–14 in Music, Dance, Painting, and other arts.",
     description:
       "The Cultural Talent Search Scholarship Scheme (CTSSS), implemented by the Centre for Cultural Resources and Training (CCRT), Ministry of Culture, Government of India, provides scholarships to exceptionally talented children aged 10–14 years in Music, Dance, Drama, Painting, Sculpture, Crafts, and Literary Arts. The scheme supports specialized training under recognized teachers or traditional art practitioners.",
-    category: "education",
+    category: "scholarship",
     level: "central",
     states: ["all-india"],
     eligibility: [

@@ -16,7 +16,7 @@ export const creditGuaranteeFundSchemeForEducationLoans: Scheme = {
     {
       label: "Citizenship",
       value: "Indian national",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Course & Institution",
