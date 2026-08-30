@@ -2,9 +2,6 @@ import { ImageResponse } from "next/og";
 import { getSchemeBySlug } from "@/lib/data";
 import { SITE } from "@/lib/site";
 
-// Edge runtime: @vercel/og's wasm renderer avoids the Node fileURLToPath bug
-// that breaks static OG prerendering on Windows.
-export const runtime = "edge";
 export const alt = "Scheme details on CheckMyEligibility";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
