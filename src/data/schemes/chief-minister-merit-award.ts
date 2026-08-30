@@ -46,7 +46,6 @@ export const chiefMinisterMeritAward: Scheme = {
     { name: "Plus Two (Class XII) mark sheet", mandatory: true },
     { name: "Proof of admission/continuation of higher education", mandatory: true },
     { name: "Bank account details", mandatory: true },
-    { name: "Any other documents required by the authority", mandatory: false },
   ],
   officialPortalUrl: "https://adtw.tn.gov.in/",
   ministry: "Adi Dravidar and Tribal Welfare Department, Government of Tamil Nadu",

@@ -55,7 +55,6 @@ export const ruralGirlsIncentiveScheme: Scheme = {
     { name: "Widow/Destitute Certificate (if applicable)", mandatory: false },
     { name: "Address Proof (Rural Area)", mandatory: true },
     { name: "Income Certificate", mandatory: true },
-    { name: "Any other documents prescribed by the authority", mandatory: false },
   ],
   officialPortalUrl: "https://www.myscheme.gov.in/schemes/rgis",
   ministry:

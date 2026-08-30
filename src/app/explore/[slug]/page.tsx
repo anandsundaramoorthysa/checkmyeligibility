@@ -10,6 +10,7 @@ import {
   MapPin,
   ChevronRight,
   Info,
+  Clock,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/Badge";
@@ -198,37 +199,53 @@ export default async function SchemeDetailPage({
               </section>
 
               {/* Required documents */}
-              <section className="rounded-2xl border border-navy/5 bg-surface-card p-5 shadow-card sm:p-6">
-                <h2 className="font-display text-lg font-bold text-ink sm:text-xl">
-                  Required documents
-                </h2>
-                <ul className="mt-4 space-y-3">
-                  {scheme.requiredDocuments.map((d) => (
-                    <li key={d.name} className="flex items-start gap-3">
-                      <FileText
-                        className="mt-0.5 h-5 w-5 shrink-0 text-navy"
-                        aria-hidden="true"
-                      />
-                      <span className="min-w-0 text-sm text-ink sm:text-base">
-                        {d.name}
-                        {!d.mandatory && (
-                          <span className="ml-2 text-xs text-ink-faint">(optional)</span>
-                        )}
-                        {d.note && (
-                          <span className="block text-xs text-ink-muted sm:text-sm">{d.note}</span>
-                        )}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              {(() => {
+                const mandatoryDocs = scheme.requiredDocuments.filter((d) => d.mandatory !== false);
+                const optionalDocs = scheme.requiredDocuments.filter((d) => d.mandatory === false);
+                const DocItem = ({ d }: { d: (typeof scheme.requiredDocuments)[number] }) => (
+                  <li className="flex items-start gap-3">
+                    <FileText className="mt-0.5 h-5 w-5 shrink-0 text-navy" aria-hidden="true" />
+                    <span className="min-w-0 text-sm text-ink sm:text-base">
+                      {d.name}
+                      {d.note && (
+                        <span className="block text-xs text-ink-muted sm:text-sm">{d.note}</span>
+                      )}
+                    </span>
+                  </li>
+                );
+                return (
+                  <section className="rounded-2xl border border-navy/5 bg-surface-card p-5 shadow-card sm:p-6">
+                    <h2 className="font-display text-lg font-bold text-ink sm:text-xl">
+                      Required documents
+                    </h2>
+                    <ul className="mt-4 space-y-3">
+                      {mandatoryDocs.map((d) => <DocItem key={d.name} d={d} />)}
+                    </ul>
+                    {optionalDocs.length > 0 && (
+                      <>
+                        <p className="mt-5 border-t border-navy/5 pt-4 text-xs font-semibold uppercase tracking-widest text-ink-faint">
+                          Optional
+                        </p>
+                        <ul className="mt-3 space-y-3">
+                          {optionalDocs.map((d) => <DocItem key={d.name} d={d} />)}
+                        </ul>
+                      </>
+                    )}
+                  </section>
+                );
+              })()}
 
               {/* FAQ */}
               {scheme.faqs?.length ? (
                 <section className="rounded-2xl border border-navy/5 bg-surface-card p-5 shadow-card sm:p-6">
-                  <h2 className="font-display text-lg font-bold text-ink sm:text-xl">
-                    Frequently asked
-                  </h2>
+                  <div className="flex items-center gap-3">
+                    <h2 className="font-display text-lg font-bold text-ink sm:text-xl">
+                      Frequently asked
+                    </h2>
+                    <span className="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-navy/10 px-2 text-xs font-semibold text-navy">
+                      {scheme.faqs.length}
+                    </span>
+                  </div>
                   <div className="mt-4">
                     <Faq items={scheme.faqs} />
                   </div>
@@ -271,18 +288,37 @@ export default async function SchemeDetailPage({
                         </dd>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Info
-                        className="mt-0.5 h-5 w-5 shrink-0 text-navy"
-                        aria-hidden="true"
-                      />
-                      <div className="min-w-0">
-                        <dt className="text-ink-faint">Application mode</dt>
-                        <dd className="font-medium capitalize text-ink">
-                          {scheme.applicationMode?.join(", ") ?? "Online"}
-                        </dd>
+                    {scheme.applicationMode && (
+                      <div className="flex items-start gap-3">
+                        <Info
+                          className="mt-0.5 h-5 w-5 shrink-0 text-navy"
+                          aria-hidden="true"
+                        />
+                        <div className="min-w-0">
+                          <dt className="text-ink-faint">Application mode</dt>
+                          <dd className="font-medium capitalize text-ink">
+                            {scheme.applicationMode.join(", ")}
+                          </dd>
+                        </div>
                       </div>
-                    </div>
+                    )}
+                    {scheme.lastVerified && (
+                      <div className="flex items-start gap-3">
+                        <Clock
+                          className="mt-0.5 h-5 w-5 shrink-0 text-navy"
+                          aria-hidden="true"
+                        />
+                        <div className="min-w-0">
+                          <dt className="text-ink-faint">Last verified</dt>
+                          <dd className="font-medium text-ink">
+                            {new Date(scheme.lastVerified).toLocaleDateString("en-IN", {
+                              month: "short",
+                              year: "numeric",
+                            })}
+                          </dd>
+                        </div>
+                      </div>
+                    )}
                   </dl>
                   <a
                     href={scheme.officialPortalUrl}

@@ -40,7 +40,6 @@ export const employabilityExcellenceWithCollegeEducationLearningExcel: Scheme = 
       { name: "Educational qualification certificates/mark sheets", mandatory: true },
       { name: "Recent passport-size photograph", mandatory: true },
       { name: "Identity proof", mandatory: true },
-      { name: "Any other documents required during registration", mandatory: false },
     ],
     officialPortalUrl: "https://jsdm.jharkhand.gov.in/jsdm/cms/en/#",
     ministry: "Ministry of Labour & Employment",

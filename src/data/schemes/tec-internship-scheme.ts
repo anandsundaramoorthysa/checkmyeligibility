@@ -46,7 +46,6 @@ export const tecInternshipScheme: Scheme = {
     { name: "Educational certificates/mark sheets", mandatory: true },
     { name: "Bonafide certificate from institution", mandatory: true },
     { name: "Identity proof", mandatory: true },
-    { name: "Any other documents specified in the internship notification", mandatory: false },
   ],
   officialPortalUrl: "https://www.tec.gov.in/",
   ministry:

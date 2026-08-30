@@ -50,7 +50,6 @@ export const cbseMeritScholarshipSchemeForSingleGirlChild: Scheme = {
     { name: "Bank Account Details", mandatory: true },
     { name: "Aadhaar Card or Identity Proof", mandatory: true },
     { name: "School Verification Certificate", mandatory: true },
-    { name: "Any other documents prescribed by CBSE", mandatory: true },
   ],
   officialPortalUrl: "https://www.cbse.gov.in/cbsenew/cbse.html",
   ministry: "Central Board of Secondary Education (CBSE)",

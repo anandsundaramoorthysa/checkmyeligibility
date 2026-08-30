@@ -41,10 +41,6 @@ export const districtMeritScholarship: Scheme = {
       name: "Bank account details (if required)",
       mandatory: false,
     },
-    {
-      name: "Any other documents prescribed by the Directorate of Collegiate Education",
-      mandatory: false,
-    },
   ],
   officialPortalUrl:
     "https://dcescholarship.kerala.gov.in/",

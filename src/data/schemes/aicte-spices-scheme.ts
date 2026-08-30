@@ -9,7 +9,7 @@ export const aicteSpicesScheme: Scheme = {
     "Financial assistance of ₹1,00,000 (with matching institution contribution) to AICTE-approved institutions for developing model student clubs.",
   description:
     "The AICTE-SPICES (Scheme for Promoting Interests, Creativity and Ethics among Students) provides financial support to AICTE-approved institutions for developing student clubs. The objective is to energize student clubs, chapters, and societies as platforms for pursuing individual interests, creative work, showcasing talent, networking, and developing teamwork, leadership, and ethical values. The funded club serves as a model club to inspire similar activities across other clubs in the institution.",
-  category: "fellowship",
+  category: "education",
   level: "central",
   states: ["all-india"],
   eligibility: [

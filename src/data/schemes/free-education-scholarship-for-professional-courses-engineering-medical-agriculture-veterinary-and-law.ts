@@ -60,7 +60,6 @@ export const freeEducationScholarshipForProfessionalCoursesEngineeringMedicalAgr
         note: "Self-declaration or certificate from a Gazetted Officer",
       },
       { name: "Previous Academic Records", mandatory: true },
-      { name: "Any other documents required by the authority", mandatory: false },
     ],
     officialPortalUrl: "https://bcmbcmw.tn.gov.in",
     ministry:
