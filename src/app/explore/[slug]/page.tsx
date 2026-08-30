@@ -43,10 +43,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const scheme = await getSchemeBySlug(slug);
   if (!scheme) return buildMetadata({ title: "Scheme not found", noindex: true });
+  // Keep the title portion ≤ 50 chars so " · CheckMyEligibility" fits in ~60 chars total.
+  const titleName =
+    scheme.name.length <= 50
+      ? scheme.name
+      : (scheme.shortName ?? scheme.name.slice(0, 47) + "…");
   return buildMetadata({
-    title: scheme.name,
+    title: titleName,
     description: scheme.summary,
     path: `/explore/${scheme.slug}`,
+    keywords: scheme.tags,
   });
 }
 

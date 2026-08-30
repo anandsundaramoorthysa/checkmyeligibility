@@ -6,6 +6,7 @@ interface BuildMetaArgs {
   description?: string;
   path?: string; // e.g. "/explore" - used for canonical + OG url
   noindex?: boolean;
+  keywords?: string[];
 }
 
 /**
@@ -17,6 +18,7 @@ export function buildMetadata({
   description = SITE.description,
   path = "/",
   noindex = false,
+  keywords,
 }: BuildMetaArgs = {}): Metadata {
   const url = new URL(path, SITE.url).toString();
   const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} - ${SITE.tagline}`;
@@ -24,6 +26,7 @@ export function buildMetadata({
   return {
     title: fullTitle,
     description,
+    ...(keywords?.length ? { keywords } : {}),
     alternates: { canonical: url },
     robots: noindex ? { index: false, follow: true } : undefined,
     openGraph: {

@@ -40,8 +40,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const schemeRoutes: MetadataRoute.Sitemap = schemes.map((s) => ({
     url: abs(`/explore/${s.slug}`),
-    lastModified: now,
-    changeFrequency: "weekly",
+    lastModified: s.lastVerified ? new Date(s.lastVerified) : now,
+    changeFrequency: "weekly" as const,
     priority: 0.6,
   }));
 

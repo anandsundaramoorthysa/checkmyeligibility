@@ -41,8 +41,10 @@ export default async function ExplorePage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Explore government schemes",
-    description: SITE.description,
+    description:
+      "Browse 200+ Indian government scholarships, fellowships, and education loans. Plain-language summaries with direct links to apply on official portals.",
     url: new URL("/explore", SITE.url).toString(),
+    numberOfItems: schemes.length,
   };
 
   return (

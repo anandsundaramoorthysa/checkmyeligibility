@@ -1,6 +1,18 @@
 import { SITE } from "@/lib/site";
+import { stateLabel } from "@/lib/labels";
 import type { Scheme } from "@/lib/types";
 import type { TeamMember } from "@/data/team";
+
+const CATEGORY_SERVICE_LABELS: Record<string, string> = {
+  scholarship: "Scholarship",
+  fellowship: "Fellowship",
+  "education-loan": "Education Loan",
+  education: "Technical Education Support",
+  "skill-development": "Skill Development",
+  "social-welfare": "Social Welfare",
+  "women-child": "Women and Child Welfare",
+  disability: "Disability Support",
+};
 
 export function organizationLd() {
   return {
@@ -64,15 +76,16 @@ export function governmentServiceLd(scheme: Scheme) {
     "@context": "https://schema.org",
     "@type": "GovernmentService",
     name: scheme.name,
-    serviceType: scheme.category,
+    serviceType: CATEGORY_SERVICE_LABELS[scheme.category] ?? scheme.category,
     description: scheme.summary,
     provider: scheme.ministry
       ? { "@type": "GovernmentOrganization", name: scheme.ministry }
       : undefined,
     areaServed: scheme.states.includes("all-india")
       ? { "@type": "Country", name: "India" }
-      : scheme.states.map((s) => ({ "@type": "AdministrativeArea", name: s })),
+      : scheme.states.map((s) => ({ "@type": "AdministrativeArea", name: stateLabel(s) })),
     url: scheme.officialPortalUrl,
+    ...(scheme.lastVerified ? { dateModified: scheme.lastVerified } : {}),
   };
 }
 
