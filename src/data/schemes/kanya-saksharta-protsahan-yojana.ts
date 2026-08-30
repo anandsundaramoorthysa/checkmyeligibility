@@ -6,7 +6,7 @@ export const kanyaSakshartaProtsahanYojana: Scheme = {
   name: "Kanya Saksharta Protsahan Yojana",
   shortName: "Kanya Saksharta Protsahan",
   summary:
-    "One-time financial incentive of ₹3,000 for SC, ST, and Vimukt/Nomadic/Semi-Nomadic Tribe girl students in Madhya Pradesh who pass Class 10 and enroll in Class 11 as regular students.",
+    "One-time financial incentive of ₹3,000 for SC, ST, and Vimukt/Nomadic/Semi-Nomadic Tribe girl students in Madhya Pradesh who pass Class 10 and enroll in.",
   description:
     "Kanya Saksharta Protsahan Yojana is an educational assistance scheme implemented by the Government of Madhya Pradesh through the Tribal Welfare Department, SC Welfare Department, and Denotified, Nomadic & Semi-Nomadic Welfare Department. The scheme aims to motivate girls towards education, reduce dropout rates at the higher secondary level, and improve literacy among tribal and marginalized communities. Eligible girl students who pass Class 10th and take admission in Class 11th as regular students in a recognized school receive a one-time financial incentive of ₹3,000 to cover educational expenses such as books, stationery, uniforms, and other study-related requirements.",
   category: "education",

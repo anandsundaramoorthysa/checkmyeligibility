@@ -6,7 +6,7 @@ export const centralSanskritUniversityCsuMeritScholarship202627: Scheme = {
   name: "Central Sanskrit University (CSU) Merit Scholarship 2026\u201327",
   shortName: "CSU Merit Scholarship",
   summary:
-    "Monthly scholarship for students pursuing Sanskrit, Pali, or Prakrit from Class 9 to PhD, with amounts from \u20B9500\u2013\u20B92,500/month and a contingency grant for PhD scholars.",
+    "Monthly scholarship for students pursuing Sanskrit, Pali, or Prakrit from Class 9 to PhD, with amounts from \u20B9500\u2013\u20B92,500/month and a.",
   description:
     "The Central Sanskrit University (CSU) Merit Scholarship is offered under the Ministry of Education, Government of India, to encourage students pursuing Sanskrit, Pali, or Prakrit as a main or optional subject. The scholarship supports students from Class IX to Ph.D. level in recognized institutions through monthly financial assistance and additional benefits for Ph.D. scholars.",
   category: "scholarship",
@@ -45,7 +45,7 @@ export const centralSanskritUniversityCsuMeritScholarship202627: Scheme = {
     {
       label: "Gap year",
       value: "Must not have a gap year",
-      type: "other",
+      type: "education",
     },
   ],
   benefits: [

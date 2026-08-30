@@ -6,7 +6,7 @@ export const sbiAshaScholarshipProgramme: Scheme = {
   name: "SBI Asha Scholarship Programme",
   shortName: "SBI Asha Scholarship",
   summary:
-    "An annual scholarship of \u20B915,000 for meritorious students from economically weaker sections studying in Classes 6 through second-year undergraduate at recognised institutions across India.",
+    "An annual scholarship of \u20B915,000 for meritorious students from economically weaker sections studying in Classes 6 through second-year undergraduate.",
   description:
     "The SBI Asha Scholarship Programme, administered by the SBI Foundation (CSR arm of State Bank of India), provides annual financial support of \u20B915,000 to meritorious students from economically weaker sections studying in Classes 6 through second-year undergraduate. The programme aims to reduce dropout rates by bridging the financial gap for underprivileged students.",
   category: "scholarship",

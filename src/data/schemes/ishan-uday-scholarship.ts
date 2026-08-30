@@ -6,7 +6,7 @@ export const ishanUdayScholarship: Scheme = {
   name: "Ishan Uday Special Scholarship Scheme for North Eastern Region",
   shortName: "Ishan Uday",
   summary:
-    "\u20B95,400\u2013\u20B97,800 per month UGC scholarship for students from North Eastern states pursuing undergraduate education at recognised institutions outside the NE Region.",
+    "\u20B95,400\u2013\u20B97,800 per month UGC scholarship for students from North Eastern states pursuing undergraduate education at recognised institutions.",
   description:
     "The Ishan Uday Scholarship Scheme, launched by the University Grants Commission (UGC), provides financial support to students from North Eastern states pursuing undergraduate education at recognised colleges and universities outside the North Eastern Region. The scheme aims to bridge educational opportunities and encourage NE students to experience education in other parts of India. The scholarship amount ranges from \u20B95,400 to \u20B97,800 per month depending on the course, disbursed through the National Scholarship Portal (NSP) via Direct Benefit Transfer (DBT).",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const postMatricScholarshipScheduledTribeStudents: Scheme = {
   name: "Post Matric Scholarship Scheme for Scheduled Tribe Students for Studies in India",
   shortName: "PMS ST",
   summary:
-    "Centrally sponsored scholarship providing 100% tuition fee reimbursement and ₹230–₹1,200 per month maintenance allowance to Scheduled Tribe students pursuing post-matriculation to postgraduate studies in India.",
+    "Centrally sponsored scholarship providing 100% tuition fee reimbursement and ₹230–₹1,200 per month maintenance allowance to Scheduled Tribe students.",
   description:
     "The Post Matric Scholarship Scheme for Scheduled Tribe (ST) Students is a Centrally Sponsored Scheme implemented by the Ministry of Tribal Affairs, Government of India. Introduced in 1944 and revised periodically (last major revision w.e.f. 01-04-2022), it enables eligible ST students to pursue quality education from Class XI through post-graduation and doctoral studies by providing financial assistance covering tuition fees and a monthly maintenance allowance. The scheme is administered through State/UT Governments, with applications invited via the National Scholarship Portal (NSP) or respective state portals. Scholarship amounts are transferred directly to students' bank accounts through Direct Benefit Transfer (DBT).",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const primeMinisterSScholarshipSchemePmssForWardsOfRpfRpsfPersonnel: Sche
   name: "Prime Minister's Scholarship Scheme (PMSS) for Wards of RPF/RPSF Personnel",
   shortName: "PMSS RPF/RPSF",
   summary:
-    "Scholarship of \u20B92,500/month (male) and \u20B93,000/month (female) for dependent wards and widows of serving/ex-RPF/RPSF personnel pursuing professional degree courses in India.",
+    "Scholarship of \u20B92,500/month (male) and \u20B93,000/month (female) for dependent wards and widows of serving/ex-RPF/RPSF personnel pursuing.",
   description:
     "The Prime Minister's Scholarship Scheme (PMSS) for Wards of RPF/RPSF Personnel provides financial assistance to dependent wards and widows of serving or ex-Railway Protection Force (RPF) and Railway Protection Special Force (RPSF) personnel. The scholarship supports students pursuing recognised professional and technical degree courses in India, with the aim of encouraging higher education among families of railway personnel who serve the nation.",
   category: "scholarship",

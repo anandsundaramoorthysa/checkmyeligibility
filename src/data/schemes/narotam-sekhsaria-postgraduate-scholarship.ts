@@ -6,7 +6,7 @@ export const narotamSekhsariaPostgraduateScholarship: Scheme = {
   name: "Narotam Sekhsaria Postgraduate Scholarship",
   shortName: "Narotam Sekhsaria",
   summary:
-    "A merit-based, interest-free loan scholarship of up to ₹20 lakh for outstanding Indian students pursuing postgraduate studies at prestigious institutions in India and abroad.",
+    "A merit-based, interest-free loan scholarship of up to ₹20 lakh for outstanding Indian students pursuing postgraduate studies at prestigious institutions.",
   description:
     "The Narotam Sekhsaria Postgraduate Scholarship is a merit-based, interest-free loan scholarship offered by the Narotam Sekhsaria Foundation to help outstanding Indian students pursue postgraduate studies at prestigious institutions in India and abroad. Along with financial support, selected scholars also receive mentorship and access to the foundation's scholar network.",
   category: "scholarship",

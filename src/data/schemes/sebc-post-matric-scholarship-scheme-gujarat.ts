@@ -6,7 +6,7 @@ export const sebcPostMatricScholarshipSchemeGujarat: Scheme = {
   name: "SEBC Post-Matric Scholarship Scheme \u2013 Gujarat",
   shortName: "SEBC Post-Matric",
   summary:
-    "Gujarat state scholarship for SEBC/OBC students covering maintenance allowance (\u20B9150\u2013\u20B91,200/month) and tuition fee reimbursement for post-matric education (Class 11 through PG), via Digital Gujarat portal.",
+    "Gujarat state scholarship for SEBC/OBC students covering maintenance allowance (\u20B9150\u2013\u20B91,200/month) and tuition fee reimbursement for.",
   description:
     "The SEBC (Socially and Educationally Backward Classes) Post-Matric Scholarship Scheme is a Gujarat state government initiative providing financial support to OBC/SEBC students from Gujarat for post-matric education. The scheme covers a maintenance allowance that varies by course level and hosteller/day-scholar status, plus tuition fee reimbursement up to state-notified ceilings. Applications are managed through the Digital Gujarat portal.",
   category: "social-welfare",

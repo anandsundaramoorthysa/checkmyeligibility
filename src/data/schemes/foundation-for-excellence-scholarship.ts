@@ -6,7 +6,7 @@ export const foundationForExcellenceScholarship: Scheme = {
   name: "Foundation for Excellence Scholarship",
   shortName: "FFE Scholarship",
   summary:
-    "Merit-cum-means scholarship of ₹50,000 per annum (up to ₹1,00,000 for specific programs) for economically underprivileged students pursuing BE/B.Tech, MBBS, and 5-year Integrated Law degrees.",
+    "Merit-cum-means scholarship of ₹50,000 per annum (up to ₹1,00,000 for specific programs) for economically underprivileged students pursuing BE/B.Tech,.",
   description:
     "FFE provides merit-cum-means scholarships to academically bright, economically underprivileged students in India. The scheme supports students pursuing BE/B.Tech, MBBS, and 5-year Integrated Law degrees, including holistic support through mentorship, skills training, and career guidance. The scholarship covers tuition and essential education expenses until graduation.",
   category: "scholarship",

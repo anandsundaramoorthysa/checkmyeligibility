@@ -6,7 +6,7 @@ export const indianOilAcademicScholarshipScheme: Scheme = {
   name: "Indian Oil (IOCL) Academic Scholarship Scheme",
   shortName: "IOCL Scholarship",
   summary:
-    "Merit-cum-means scholarship of \u20B91,000 to \u20B93,000 per month for 2,600 meritorious students across India pursuing 10+2, ITI, Engineering, MBBS, or MBA courses.",
+    "Merit-cum-means scholarship of \u20B91,000 to \u20B93,000 per month for 2,600 meritorious students across India pursuing 10+2, ITI, Engineering, MBBS, or.",
   description:
     "The Indian Oil Academic Scholarship Scheme is a flagship initiative by Indian Oil Corporation Limited (IOCL), India's largest commercial enterprise, to provide financial assistance to meritorious students from economically weaker sections. The scheme awards 2,600 scholarships every year across five streams — 2,000 for 10+/ITI students, 300 for Engineering students, 200 for MBBS students, and 100 for MBA students. Students are selected on a 'merit-cum-means' basis, with special encouragement for girl students and persons with disabilities. The scholarship amount is \u20B91,000 per month for 10+/ITI students (2-year duration) and \u20B93,000 per month for Engineering, MBBS, and MBA students (4 years for Engineering/MBBS, 2 years for MBA). Applicants must be Indian citizens aged 15-30 years with a minimum of 65% marks (60% for SC/ST/OBC/Girls, 50% for PwD). The annual family income must not exceed \u20B91,00,000. Applications are accepted online through the IOCL scholarship portal.",
   category: "scholarship",

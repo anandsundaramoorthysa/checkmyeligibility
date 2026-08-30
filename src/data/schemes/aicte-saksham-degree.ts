@@ -6,7 +6,7 @@ export const aicteSakshamDegree: Scheme = {
   name: "AICTE – Saksham Scholarship Scheme For Specially-Abled Student (Degree)",
   shortName: "AICTE Saksham (Degree)",
   summary:
-    "₹50,000 per year scholarship for specially-abled students (≥40% disability) enrolled in AICTE-approved degree-level technical programmes, disbursed via DBT through the National Scholarship Portal.",
+    "₹50,000 per year scholarship for specially-abled students (≥40% disability) enrolled in AICTE-approved degree-level technical programmes, disbursed via.",
   description:
     "Saksham is a Scholarship Scheme by the Ministry of Education, implemented by AICTE, aimed at providing encouragement and support to specially-abled children to pursue technical education. It gives every specially-abled young student the opportunity to study further and prepare for a successful future through technical education. The scholarship of ₹50,000 per annum covers college fees, computer, stationery, books, equipment, software, and other study-related expenses. It is available for the first year of degree-level programmes (maximum 4 years) and also for the second year through lateral entry (maximum 3 years). The candidate's family income must not exceed ₹8,00,000 per annum.",
   category: "scholarship",

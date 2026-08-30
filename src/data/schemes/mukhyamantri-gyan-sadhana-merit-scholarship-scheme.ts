@@ -6,7 +6,7 @@ export const mukhyamantriGyanSadhanaMeritScholarshipScheme: Scheme = {
   name: "Mukhyamantri Gyan Sadhana Merit Scholarship Scheme",
   shortName: "Gyan Sadhana Gujarat",
   summary:
-    "Merit-based scholarship of ₹20,000–₹25,000 per year for 25,000 meritorious students in Gujarat who studied Class 1–8 in government or aided schools, to support their education up to Class 12.",
+    "Merit-based scholarship of ₹20,000–₹25,000 per year for 25,000 meritorious students in Gujarat who studied Class 1–8 in government or aided schools, to.",
   description:
     "The Mukhyamantri Gyan Sadhana Merit Scholarship Scheme (CGMS) is a flagship initiative of the Government of Gujarat, administered by the State Examination Board (SEB), Gandhinagar. Launched from the academic year 2023-24, it supports 25,000 bright students who have studied consecutively from Class 1 to Class 8 in government or government-aided primary schools (or self-financed schools under the RTE Act, 2009). Selected students receive financial assistance to continue their education from Class 9 through Class 12, covering tuition fees and other academic expenses. The scheme aligns with the objectives of the National Education Policy (NEP) and the Right to Education Act, 2009, and aims to prevent dropouts among meritorious students from economically weaker sections.",
   category: "social-welfare",

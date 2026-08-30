@@ -6,7 +6,7 @@ export const biharStudentCreditCardScheme: Scheme = {
   name: "Bihar Student Credit Card Scheme",
   shortName: "BSCC",
   summary:
-    "Education loan of up to ₹4 lakh at 0% interest for Class 12 pass students of Bihar to pursue higher education in recognised technical, professional, and general courses.",
+    "Education loan of up to ₹4 lakh at 0% interest for Class 12 pass students of Bihar to pursue higher education in recognised technical, professional, and.",
   description:
     "The Bihar Student Credit Card Scheme (BSCC) is a transformative education financing initiative under the Mukhyamantri Nishchay Swayam Sahayata Bhata Yojana (MNSSBY), launched in October 2016 by the Government of Bihar. The scheme provides education loans of up to ₹4 lakh at zero per cent interest to Class 12 pass students from Bihar for pursuing higher education at recognised institutions across India. The loan covers tuition fees, hostel charges, books, study materials, laptop, and examination fees. No collateral is required as the loan is guaranteed by the Bihar state government. Since September 2025, the interest rate has been universally reduced to 0% for all students. Repayment begins after course completion plus a one-year moratorium period, or six months after securing a job, whichever is earlier. Applications are processed online through the official portal, followed by mandatory document verification at the District Registration and Counselling Centre (DRCC). Over 5 lakh students have benefited from the scheme.",
   category: "education-loan",

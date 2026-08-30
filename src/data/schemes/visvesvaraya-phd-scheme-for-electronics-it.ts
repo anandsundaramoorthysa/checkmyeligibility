@@ -6,7 +6,7 @@ export const visvesvarayaPhdSchemeForElectronicsIt: Scheme = {
   name: "Visvesvaraya PhD Scheme for Electronics & IT",
   shortName: "MeitY PhD Scheme",
   summary:
-    "MeitY-funded PhD fellowship providing \u20B938,750/month (years 1\u20132) and \u20B943,750/month (years 3\u20135) to increase the number of PhDs in Electronics System Design & Manufacturing (ESDM) and IT/ITES sectors.",
+    "MeitY-funded PhD fellowship providing \u20B938,750/month (years 1\u20132) and \u20B943,750/month (years 3\u20135) to increase the number of PhDs in.",
   description:
     "The Visvesvaraya PhD Scheme for Electronics & IT is a MeitY initiative (Cabinet-approved 2014, Phase-II approved 2021) to increase the number of PhDs in Electronics System Design & Manufacturing (ESDM) and IT/ITES sectors. Implemented through 97+ supported institutions and managed by the Digital India Corporation (DIC), the scheme provides comprehensive fellowship support to full-time PhD scholars in these critical technology domains.",
   category: "fellowship",

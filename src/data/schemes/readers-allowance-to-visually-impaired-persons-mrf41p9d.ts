@@ -6,7 +6,7 @@ export const readersAllowanceToVisuallyImpairedPersons: Scheme =   {
     name: "Readers Allowance to Visually Impaired Persons",
     shortName: "RATVIP",
     summary:
-      "Annual readers allowance of ₹3,000–₹6,000 for visually impaired students to hire personal readers, covering Class 9 through postgraduate and professional studies.",
+      "Annual readers allowance of ₹3,000–₹6,000 for visually impaired students to hire personal readers, covering Class 9 through postgraduate and professional.",
     description:
       "The Readers Allowance to Visually Impaired Persons scheme, implemented by the Department for the Welfare of Differently Abled Persons, Government of Tamil Nadu, provides annual financial assistance to visually impaired students studying in recognized institutions. The allowance helps students hire readers to support their education from Class 9 onwards.",
     category: "disability",

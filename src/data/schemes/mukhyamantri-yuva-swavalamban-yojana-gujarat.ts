@@ -6,7 +6,7 @@ export const mukhyamantriYuvaSwavalambanYojanaGujarat: Scheme = {
   name: "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
   shortName: "MYSY Gujarat",
   summary:
-    "Scholarship of up to \u20B92,00,000 per year for meritorious students from economically weaker families in Gujarat pursuing diploma, undergraduate, or professional courses.",
+    "Scholarship of up to \u20B92,00,000 per year for meritorious students from economically weaker families in Gujarat pursuing diploma, undergraduate, or.",
   description:
     "The Mukhyamantri Yuva Swavalamban Yojana (MYSY), also known as the Chief Minister's Youth Self-Reliance Scheme, is a flagship scholarship programme launched by the Government of Gujarat in 2016. It provides financial assistance to deserving students from economically weaker sections (EWS) to pursue higher education without financial burden. The scheme covers tuition fee assistance of up to \u20B92,00,000 per year for medical courses, up to \u20B950,000 per year for engineering and professional degree courses, and up to \u20B925,000 per year for non-professional undergraduate courses. Additionally, eligible students can receive hostel assistance of \u20B91,200 per month (up to \u20B912,000 per year) and a one-time books and equipment grant of up to \u20B910,000. Fresh applicants must have scored at least 80 percentile in their Class 12 (Science or General stream) from a recognised board in Gujarat. The annual family income must not exceed \u20B96,00,000 per annum. Benefits are disbursed directly to the student's Aadhaar-linked bank account through Direct Benefit Transfer (DBT).",
   category: "scholarship",

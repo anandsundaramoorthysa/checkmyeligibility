@@ -6,7 +6,7 @@ export const lOrAlIndiaForYoungWomenInScienceScholarship: Scheme = {
   name: "L'Oréal India For Young Women in Science Scholarship",
   shortName: "L'Oréal Young Women in Science",
   summary:
-    "₹62,500 for undergraduates and up to ₹1,00,000 for postgraduate/PhD students — supporting talented young women from economically disadvantaged backgrounds in STEM fields.",
+    "₹62,500 for undergraduates and up to ₹1,00,000 for postgraduate/PhD students — supporting talented young women from economically disadvantaged backgrounds.",
   description:
     "The L'Oréal India For Young Women in Science Scholarship supports talented young women from economically disadvantaged backgrounds who are pursuing higher education in science and technology fields in India, encouraging more women to build careers in STEM.",
   category: "scholarship",

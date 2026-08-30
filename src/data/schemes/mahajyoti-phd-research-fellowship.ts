@@ -6,7 +6,7 @@ export const mahajyotiPhdResearchFellowship: Scheme = {
   name: "MahaJyoti PhD Research Fellowship",
   shortName: "MahaJyoti PhD Fellowship",
   summary:
-    "A monthly fellowship of \u20B937,000 (JRF) / \u20B942,000 (SRF) for OBC, VJNT, and SBC category scholars pursuing full-time PhD research in Maharashtra, implemented by MAHAJYOTI.",
+    "A monthly fellowship of \u20B937,000 (JRF) / \u20B942,000 (SRF) for OBC, VJNT, and SBC category scholars pursuing full-time PhD research in Maharashtra,.",
   description:
     "The MahaJyoti PhD Research Fellowship is a prestigious program implemented by the Mahatma Jyotiba Phule Research & Training Institute (MAHAJYOTI), Government of Maharashtra, to support full-time PhD research for scholars belonging to OBC (Other Backward Classes), VJNT (Vimukta Jati and Nomadic Tribes), and SBC (Special Backward Category) in Maharashtra. The scheme promotes higher education and research among these communities by providing comprehensive financial assistance including a monthly fellowship and annual contingency grant. Fellows receive Junior Research Fellowship (JRF) for the first two years and Senior Research Fellowship (SRF) for the remaining duration of the PhD programme. The scheme covers all disciplines of study at recognised universities and research institutions in Maharashtra.",
   category: "fellowship",

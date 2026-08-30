@@ -6,7 +6,7 @@ export const specialScholarshipSchemeForJKAndLadakhSssjkl: Scheme = {
   name: "Special Scholarship Scheme for J&K and Ladakh (SSSJKL)",
   shortName: "SSSJKL",
   summary:
-    "\u20B930,000 to \u20B93 lakh per year scholarship for domicile residents of Jammu & Kashmir and Ladakh pursuing general, engineering, or medical undergraduate courses through AICTE.",
+    "\u20B930,000 to \u20B93 lakh per year scholarship for domicile residents of Jammu & Kashmir and Ladakh pursuing general, engineering, or medical.",
   description:
     "The Special Scholarship Scheme for J&K and Ladakh (SSSJKL), commonly known as PMSSS, is a Government of India initiative. Managed by the All India Council for Technical Education (AICTE), it provides 5,000 annual scholarships to help youth from Jammu & Kashmir and Ladakh pursue higher education in colleges across India.",
   category: "scholarship",

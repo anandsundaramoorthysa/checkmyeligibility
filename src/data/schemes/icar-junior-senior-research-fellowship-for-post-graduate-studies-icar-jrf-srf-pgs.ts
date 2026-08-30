@@ -6,7 +6,7 @@ export const icarJuniorSeniorResearchFellowshipForPostGraduateStudiesIcarJrfSrfP
   name: "ICAR Junior & Senior Research Fellowship for Post-Graduate Studies",
   shortName: "ICAR JRF/SRF PGS",
   summary:
-    "₹12,640/month for Master's (JRF) or ₹35,000/month plus contingency grant for PhD (SRF) research fellows selected via the ICAR entrance examination in Agricultural Sciences.",
+    "₹12,640/month for Master's (JRF) or ₹35,000/month plus contingency grant for PhD (SRF) research fellows selected via the ICAR entrance examination in.",
   description:
     "The ICAR Junior & Senior Research Fellowship for Post-Graduate Studies provides research fellowships to merit-selected students in Agricultural Sciences at eligible universities. Indian candidates admitted through the ICAR entrance examination qualify for either a Junior Research Fellowship (JRF, requiring a Bachelor's degree) or a Senior Research Fellowship (SRF, requiring a Master's degree), with government-mandated reservations applicable.",
   category: "fellowship",

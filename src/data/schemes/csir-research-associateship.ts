@@ -6,7 +6,7 @@ export const csirResearchAssociateship: Scheme = {
   name: "CSIR Research Associateship (RA)",
   shortName: "CSIR RA",
   summary:
-    "₹36,000–₹42,000/month plus HRA for Ph.D. holders to conduct full-time research at CSIR national laboratories and recognised institutions across India, for up to 5 years.",
+    "₹36,000–₹42,000/month plus HRA for Ph.D. holders to conduct full-time research at CSIR national laboratories and recognised institutions across India, for.",
   description:
     "The Council of Scientific and Industrial Research (CSIR) offers Research Associateship (RA) to young Ph.D. holders for conducting research in frontier areas of science and technology at CSIR laboratories and recognised institutions. The fellowship provides a monthly stipend of ₹36,000 (for fresh Ph.D. holders), ₹40,000 (with 3+ years post-Ph.D. experience), and ₹42,000 (with 5+ years experience), along with House Rent Allowance (HRA) as per CSIR norms. The associateship is awarded for an initial period of 2 years, extendable up to 5 years based on performance. CSIR RA positions are advertised periodically by individual CSIR laboratories based on their research requirements.",
   category: "fellowship",

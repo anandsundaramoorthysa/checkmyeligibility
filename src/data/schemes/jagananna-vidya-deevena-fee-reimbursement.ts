@@ -6,7 +6,7 @@ export const jaganannaVidyaDeevenaFeeReimbursement: Scheme = {
   name: "Jagananna Vidya Deevena Fee Reimbursement",
   shortName: "AP JVD",
   summary:
-    "100% fee reimbursement for economically underprivileged students in Andhra Pradesh pursuing Diploma, UG, or PG courses, with funds disbursed quarterly to the student\u2019s mother\u2019s bank account.",
+    "100% fee reimbursement for economically underprivileged students in Andhra Pradesh pursuing Diploma, UG, or PG courses, with funds disbursed quarterly to.",
   description:
     "The Jagananna Vidya Deevena (JVD) program is a welfare initiative by the Government of Andhra Pradesh to support economically underprivileged students pursuing higher education. It aims to reduce college dropout rates driven by financial constraints by offering complete financial assistance for academic costs. The state government covers institutional costs so that students can focus entirely on their degrees. Funds are disbursed in quarterly installments to the verified bank account of the student\u2019s mother or natural guardian.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const dbtRamalingaswamiReentryFellowship: Scheme = {
   name: "DBT Ramalingaswami Re-entry Fellowship",
   shortName: "DBT RRF",
   summary:
-    "Prestigious fellowship of ₹1,35,000 per month plus ₹13 lakh annual research grant for Indian scientists working overseas to return and pursue cutting-edge biotechnology and life sciences research at Indian institutions.",
+    "Prestigious fellowship of ₹1,35,000 per month plus ₹13 lakh annual research grant for Indian scientists working overseas to return and pursue cutting-edge.",
   description:
     "The Ramalingaswami Re-entry Fellowship (DBT-RRF) is a flagship scheme of the Department of Biotechnology (DBT), Ministry of Science and Technology, Government of India, initiated in 2006-2007. The programme aims to reverse brain drain by attracting highly skilled Indian researchers working overseas in cutting-edge disciplines of life sciences, biotechnology, bio-engineering, healthcare, agriculture, veterinary biotechnology, and bio-energy back to India. Up to 75 fellowships are awarded every year. Fellows receive a consolidated monthly fellowship of ₹1,35,000, House Rent Allowance of ₹18,500 per month, and an annual research support grant of ₹13,00,000 for consumables, minor equipment, domestic travel, and project staff. The fellowship is for a period of three years, extendable by up to two additional years after performance appraisal. The programme is managed by the DBT-HRD Project Management Unit at the Regional Centre for Biotechnology (RCB), Faridabad.",
   category: "fellowship",
@@ -16,7 +16,7 @@ export const dbtRamalingaswamiReentryFellowship: Scheme = {
     {
       label: "Nationality",
       value: "Must be an Indian citizen — OCI/PIO card holders are not eligible",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Age limit",

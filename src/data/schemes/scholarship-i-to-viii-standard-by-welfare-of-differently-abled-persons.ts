@@ -7,7 +7,7 @@ export const scholarshipIToViiiStandardByWelfareOfDifferentlyAbledPersons: Schem
     name: "Scholarship (I to VIII Standard) by Welfare of Differently Abled Persons",
     shortName: "Scholarship (I–VIII)",
     summary:
-      "Annual financial assistance of ₹1,000 (Class 1–5) or ₹3,000 (Class 6–8) for differently abled students of Tamil Nadu in government-recognized schools to purchase books and notebooks.",
+      "Annual financial assistance of ₹1,000 (Class 1–5) or ₹3,000 (Class 6–8) for differently abled students of Tamil Nadu in government-recognized schools to.",
     description:
       "The Scholarship (I to VIII Standard) by the Department for the Welfare of Differently Abled Persons, Government of Tamil Nadu provides financial assistance to differently abled students studying in government-recognized schools to purchase books and notebooks and support their education.",
     category: "disability",

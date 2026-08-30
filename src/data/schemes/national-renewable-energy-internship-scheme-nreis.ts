@@ -6,7 +6,7 @@ export const nationalRenewableEnergyInternshipSchemeNreis: Scheme = {
   name: "National Renewable Energy Internship Scheme (NREIS)",
   shortName: "NREIS",
   summary:
-    "₹15,000 monthly stipend from the Ministry of New and Renewable Energy for physical, on-site interns gaining exposure to renewable energy technologies and policy.",
+    "₹15,000 monthly stipend from the Ministry of New and Renewable Energy for physical, on-site interns gaining exposure to renewable energy technologies and.",
   description:
     "The National Renewable Energy Internship Scheme (NREIS), operated by the Ministry of New and Renewable Energy (MNRE), offers internship placements to students and young professionals in the renewable energy sector. Interns gain exposure to renewable energy technologies, policies, and implementation strategies while developing workforce capabilities relevant to India's clean-energy transition. The stipend is paid exclusively for physical, on-site internships.",
   category: "skill-development",

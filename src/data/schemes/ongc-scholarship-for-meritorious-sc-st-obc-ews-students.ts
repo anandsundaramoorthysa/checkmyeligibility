@@ -6,7 +6,7 @@ export const ongcScholarshipForMeritoriousScStObcEwsStudents: Scheme = {
   name: "ONGC Scholarship for Meritorious SC/ST/OBC/EWS Students",
   shortName: "ONGC Merit Scholarship",
   summary:
-    "₹4,000 per month scholarship by ONGC Foundation for economically weaker SC/ST/OBC/EWS students pursuing professional courses (Engineering, MBBS, MBA, MSc Geology/Geophysics) with 50% slots reserved for women.",
+    "₹4,000 per month scholarship by ONGC Foundation for economically weaker SC/ST/OBC/EWS students pursuing professional courses (Engineering, MBBS, MBA, MSc.",
   description:
     "The ONGC Merit Scholarship Scheme is a dedicated CSR initiative by the ONGC Foundation designed to financially support economically weaker students from marginalized communities pursuing professional higher education in India. The scholarship offers a substantial cash incentive to ensure that financial constraints do not hinder talented students from completing their degrees. It covers specific professional streams including Engineering, MBBS, MBA, and Master's degrees in Geology or Geophysics. A standout feature of this scheme is its strong focus on women's empowerment, strictly reserving 50% of the total 2,000 available slots for eligible female candidates across all categories.",
   category: "social-welfare",

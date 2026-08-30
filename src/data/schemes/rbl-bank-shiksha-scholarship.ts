@@ -6,7 +6,7 @@ export const rblBankShikshaScholarship: Scheme = {
   name: "RBL Bank Shiksha Scholarship",
   shortName: "RBL Shiksha",
   summary:
-    "Up to \u20B920,000 per year scholarship for first-year undergraduate students from economically weaker families, with a minimum of 60% in Class 10 and Class 12.",
+    "Up to \u20B920,000 per year scholarship for first-year undergraduate students from economically weaker families, with a minimum of 60% in Class 10 and.",
   description:
     "The RBL Bank Shiksha Scholarship is a Corporate Social Responsibility (CSR) initiative by RBL Bank, administered through the Vidyasaarathi platform of Protean (formerly NSDL e-Governance). The scholarship provides financial assistance of up to \u20B920,000 per year to meritorious students from economically weaker backgrounds who are pursuing full-time undergraduate courses. The programme covers tuition fees and other academic expenses, helping students complete their three-year degree without financial stress. In addition to monetary support, selected scholars receive mentorship from RBL Bank employees and industry experts to guide their career development. The scholarship is open to students of all genders enrolled in any discipline of undergraduate study at recognised institutions across India.",
   category: "scholarship",

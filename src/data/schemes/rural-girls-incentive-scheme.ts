@@ -6,7 +6,7 @@ export const ruralGirlsIncentiveScheme: Scheme = {
   name: "Rural Girls' Incentive Scheme",
   shortName: "RGIS",
   summary:
-    "A Tamil Nadu government scheme providing ₹500–₹1,000 per annum to rural girl students from MBC/DNC communities studying in Classes III–VI at government schools.",
+    "A Tamil Nadu government scheme providing ₹500–₹1,000 per annum to rural girl students from MBC/DNC communities studying in Classes III–VI at government.",
   description:
     "The Rural Girls' Incentive Scheme, implemented by the Backward Classes, Most Backward Classes and Minorities Welfare Department, Government of Tamil Nadu, provides financial assistance to rural girl students belonging to Most Backward Classes (MBC) and Denotified Communities (DNC) studying in Government or Government-aided schools. The scheme aims to encourage school education and reduce dropout rates, with priority given to daughters of widows and destitute parents.",
   category: "women-child",

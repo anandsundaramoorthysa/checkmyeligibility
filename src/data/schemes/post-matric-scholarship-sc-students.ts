@@ -6,7 +6,7 @@ export const postMatricScholarshipScStudents: Scheme = {
   name: "Post Matric Scholarship for SC Students",
   shortName: "Post Matric SC Scholarship",
   summary:
-    "Central scholarship scheme for meritorious Scheduled Caste (SC) students pursuing higher education (undergraduate and postgraduate), covering tuition fees, living allowances, and special provisions.",
+    "Central scholarship scheme for meritorious Scheduled Caste (SC) students pursuing higher education (undergraduate and postgraduate), covering tuition.",
   description:
     "The Post Matric Scholarship for SC Students is a flagship welfare and educational empowerment scheme introduced by the Ministry of Education (Department of Higher Education), Government of India, to facilitate access to higher education for students from Scheduled Caste (SC) communities. The scheme aims to encourage SC students, particularly those from economically weaker sections, to pursue studies beyond secondary education (post-matric level) across diverse academic disciplines. By providing comprehensive financial support including tuition fee reimbursement, living allowances, book allowances, and special provisions for differently-abled students, the scheme removes financial barriers to education. The scholarship is available for full-time undergraduate (UG) and postgraduate (PG) programmes at recognized Indian colleges, universities, and technical institutions.",
   category: "scholarship",

@@ -129,7 +129,7 @@ export default async function SchemeDetailPage({
                   <a
                     href={scheme.officialPortalUrl}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noreferrer noopener"
                     className={buttonClasses({ variant: "saffron", size: "lg", className: "w-full sm:w-auto" })}
                   >
                     Apply on official portal
@@ -333,7 +333,7 @@ export default async function SchemeDetailPage({
                   <a
                     href={scheme.officialPortalUrl}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noreferrer noopener"
                     className={buttonClasses({
                       variant: "saffron",
                       size: "md",

@@ -6,7 +6,7 @@ export const ltBuildIndiaScholarship: Scheme = {
   name: "L&T Build India Scholarship",
   shortName: "L&T Build India",
   summary:
-    "CSR scholarship from Larsen & Toubro providing up to ₹60,000/year for engineering or ₹40,000/year for MBA, for meritorious first-year students from economically weaker sections.",
+    "CSR scholarship from Larsen & Toubro providing up to ₹60,000/year for engineering or ₹40,000/year for MBA, for meritorious first-year students from.",
   description:
     "The L&T Build India Scholarship is a Corporate Social Responsibility (CSR) initiative by Larsen & Toubro that supports meritorious students from economically weaker sections pursuing engineering or MBA programmes, with priority given to infrastructure-related branches such as civil, mechanical, and construction engineering.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const begumHazratMahalNationalScholarship: Scheme = {
   name: "Begum Hazrat Mahal National Scholarship for Minority Girls",
   shortName: "Begum Hazrat Mahal",
   summary:
-    "Merit-based scholarship for girls from minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Zoroastrian) pursuing higher education, with annual support up to ₹20,000.",
+    "Merit-based scholarship for girls from minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Zoroastrian) pursuing higher education, with annual.",
   description:
     "The Begum Hazrat Mahal National Scholarship for Minority Girls is a prestigious scholarship scheme introduced by the Ministry of Minority Affairs, Government of India, to promote higher education among girls from minority communities. The scheme aims to encourage and support meritorious girls from economically weaker sections of Muslim, Christian, Sikh, Buddhist, Jain, and Zoroastrian communities to pursue undergraduate and postgraduate education. The scholarship recognizes the importance of empowering girls from minority backgrounds and enabling them to achieve their educational aspirations. Named after the historical figure Begum Hazrat Mahal, the scheme reflects India's commitment to inclusive education and social equity.",
   category: "scholarship",

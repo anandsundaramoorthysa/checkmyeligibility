@@ -16,7 +16,7 @@ export const agaKhanFoundationInternationalScholarship: Scheme = {
     {
       label: "Nationality",
       value: "Must be an Indian citizen with demonstrated financial need and academic excellence",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Age",

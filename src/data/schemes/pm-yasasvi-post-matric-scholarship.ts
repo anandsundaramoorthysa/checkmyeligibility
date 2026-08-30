@@ -6,7 +6,7 @@ export const pmYasasviPostMatricScholarship: Scheme = {
   name: "PM-YASASVI Post-Matric Scholarship",
   shortName: "PM-YASASVI",
   summary:
-    "Centrally sponsored scholarship for OBC, EBC, and DNT students covering tuition fee reimbursement and a maintenance allowance for post-matriculation courses, with a family income limit of ₹2.5 lakh per annum.",
+    "Centrally sponsored scholarship for OBC, EBC, and DNT students covering tuition fee reimbursement and a maintenance allowance for post-matriculation.",
   description:
     "A centrally sponsored initiative by the Ministry of Social Justice & Empowerment for students belonging to OBC, EBC, and DNT categories. It provides financial assistance to cover tuition fees and maintenance expenses for students pursuing recognized post-matriculation courses in government and private institutions. The scholarship is disbursed directly to beneficiaries through the National Scholarship Portal (NSP).",
   category: "scholarship",

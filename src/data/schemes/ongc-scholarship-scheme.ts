@@ -6,9 +6,9 @@ export const ongcScholarshipScheme: Scheme = {
   name: "ONGC Scholarship Scheme",
   shortName: "ONGC Scholarship",
   summary:
-    "₹48,000 per year (₹4,000 per month) scholarship by ONGC Foundation for meritorious students from economically weaker backgrounds pursuing professional courses, renewable each year based on academic performance.",
+    "₹48,000 per year (₹4,000 per month) scholarship by ONGC Foundation for meritorious students from economically weaker backgrounds pursuing professional.",
   description:
-    "The ONGC Scholarship Scheme is offered by the ONGC Foundation to support meritorious students from economically weaker backgrounds pursuing professional courses in India.",
+    "The ONGC Scholarship Scheme is a flagship CSR initiative of the ONGC Foundation that provides ₹48,000 per year (₹4,000 per month) to meritorious students from economically weaker sections pursuing full-time professional courses. Open to Indian citizens in their 1st year of engineering, MBA, MBBS, or other eligible UG/PG programmes, the scholarship targets SC/ST candidates with family income below ₹4.5 lakh and OBC/General/EWS candidates with income below ₹2 lakh. Selection is merit-based with a minimum 60% marks or 6.0 CGPA requirement. The award is renewable annually on satisfactory academic performance. Applications are accepted through the online ONGC Scholar portal.",
   category: "scholarship",
   level: "central",
   states: ["all-india"],

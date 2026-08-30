@@ -31,12 +31,12 @@ export const aicteSpicesScheme: Scheme = {
     {
       label: "Faculty coordinator",
       value: "Coordinator must be a full-time regular faculty with at least 10 years of experience in teaching/industry",
-      type: "other",
+      type: "occupation",
     },
     {
       label: "Co-coordinator",
       value: "Institute must identify a Co-coordinator (faculty) with at least 5 years of experience",
-      type: "other",
+      type: "occupation",
     },
     {
       label: "Single proposal",

@@ -6,7 +6,7 @@ export const pragatiScholarshipSchemeForGirlStudentsTechnicalDiploma: Scheme = {
   name: "Pragati Scholarship Scheme For Girl Students (Technical Diploma)",
   shortName: "Pragati Diploma",
   summary:
-    "₹50,000 per year (up to 3 years for 1st-year entry, 2 years for lateral entry) for girl students in AICTE-approved diploma programmes, for residents of specified Union Territories and North Eastern States.",
+    "₹50,000 per year (up to 3 years for 1st-year entry, 2 years for lateral entry) for girl students in AICTE-approved diploma programmes, for residents of.",
   description:
     "Administered by AICTE, Ministry of Education, this variant of the Pragati Scholarship supports girl students enrolled in the 1st or 2nd year of a diploma course at an AICTE-approved institution. It is restricted to residents of 13 specified Union Territories and North Eastern States: Andaman & Nicobar Islands, Jammu & Kashmir, Ladakh, Dadra & Nagar Haveli and Daman & Diu, Lakshadweep, Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, and Tripura. The scholarship provides ₹50,000 per annum, disbursed via the National Scholarship Portal.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const vikramadityaScholarshipSchemeMadhyaPradesh: Scheme = {
   name: "Vikramaditya Scholarship Scheme \u2013 Madhya Pradesh",
   shortName: "MP Vikramaditya",
   summary:
-    "Financial assistance of up to \u20B92,500 per year for meritorious BPL General Category students pursuing undergraduate education at government or government-aided colleges in Madhya Pradesh.",
+    "Financial assistance of up to \u20B92,500 per year for meritorious BPL General Category students pursuing undergraduate education at government or.",
   description:
     "The Vikramaditya Scholarship Scheme is a Madhya Pradesh government initiative providing financial assistance to meritorious students from Below Poverty Line (BPL) General Category families pursuing undergraduate education at government or government-aided colleges in MP. The scheme aims to support economically weaker students from the General (Open) category who achieve strong academic results, ensuring that financial constraints do not hinder their pursuit of higher education.",
   category: "scholarship",

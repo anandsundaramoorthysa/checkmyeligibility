@@ -6,7 +6,7 @@ export const bsrFellowshipSchemeForScienceStudentsUgc: Scheme = {
   name: "BSR Fellowship Scheme for Science Students (UGC)",
   shortName: "UGC BSR Fellowship",
   summary:
-    "JRF at \u20B924,800/month + SRF at \u20B927,900/month for meritorious candidates pursuing Ph.D. in Sciences at eligible universities, implemented by UGC under the Ministry of Education.",
+    "JRF at \u20B924,800/month + SRF at \u20B927,900/month for meritorious candidates pursuing Ph.D.",
   description:
     "The BSR (Basic Scientific Research) Fellowship Scheme for Science Students is implemented by the University Grants Commission (UGC), Ministry of Education, Government of India. It provides opportunities to meritorious candidates to undertake advanced studies and research leading to Ph.D. degrees in Sciences. The scheme covers all Departments of Sciences, Bio-Sciences, Agricultural Sciences, and Engineering Sciences at eligible universities. Fellows receive a Junior Research Fellowship (JRF) for the first two years and a Senior Research Fellowship (SRF) for the remaining period, along with contingency grants.",
   category: "fellowship",

@@ -6,7 +6,7 @@ export const tagoreNationalFellowshipCulturalResearch: Scheme = {
   name: "Tagore National Fellowship for Cultural Research",
   shortName: "Tagore National Fellowship",
   summary:
-    "Prestigious central fellowship scheme for meritorious researchers pursuing advanced studies in Indian culture, heritage, arts, literature, and humanities, with comprehensive research support and monthly stipends.",
+    "Prestigious central fellowship scheme for meritorious researchers pursuing advanced studies in Indian culture, heritage, arts, literature, and humanities,.",
   description:
     "The Tagore National Fellowship for Cultural Research is a prestigious scheme launched by the Ministry of Education (Department of Higher Education) and the Ministry of Culture, Government of India, to promote advanced research, scholarship, and cultural knowledge creation in the diverse fields of Indian culture, heritage, arts, literature, philosophy, history, archaeology, and performing arts. Named after Rabindranath Tagore, the polymath, Nobel laureate, and cultural icon, the fellowship honors his legacy of cultural renaissance and intellectual excellence. The scheme aims to attract and nurture India's brightest minds to pursue doctoral and postdoctoral research on topics of cultural significance, enabling them to become scholars, researchers, and thought leaders in the field of Indian studies. The fellowship provides comprehensive financial support including monthly research stipends, conference travel grants, publication support, and archival research access to facilitate in-depth investigation into aspects of Indian culture, traditions, arts, literature, history, and heritage. Recipients gain access to premier research institutions, museums, archives, and cultural centers across India and internationally.",
   category: "fellowship",
@@ -45,7 +45,7 @@ export const tagoreNationalFellowshipCulturalResearch: Scheme = {
     {
       label: "Citizenship",
       value: "Indian citizen or NRI (Non-Resident Indian) of Indian origin; preference given to Indian citizens",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Publication Record",

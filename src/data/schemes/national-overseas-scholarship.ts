@@ -6,7 +6,7 @@ export const nationalOverseasScholarship: Scheme = {
   name: "National Overseas Scholarship",
   shortName: "NOS",
   summary:
-    "Financial support for students from SC, DNT, Landless Agricultural Labourer, and Traditional Artisan communities to pursue Master's or PhD studies abroad, covering maintenance, tuition, travel, and medical insurance.",
+    "Financial support for students from SC, DNT, Landless Agricultural Labourer, and Traditional Artisan communities to pursue Master's or PhD studies abroad,.",
   description:
     "The National Overseas Scholarship (NOS) is a scheme by the Ministry of Social Justice and Empowerment providing financial support to eligible students from disadvantaged communities to pursue Master's or PhD studies at recognised foreign universities. Benefits include an annual maintenance allowance of USD 15,400 (USA) or GBP 9,900 (UK), full tuition fee reimbursement, economy-class air travel, visa fees, and medical insurance.",
   category: "social-welfare",

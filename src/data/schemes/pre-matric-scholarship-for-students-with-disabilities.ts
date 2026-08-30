@@ -6,7 +6,7 @@ export const preMatricScholarshipForStudentsWithDisabilities: Scheme = {
   name: "Pre Matric Scholarship For Students With Disabilities",
   shortName: "Pre-Matric SwD",
   summary:
-    "A central government pre-matric scholarship for students with benchmark disabilities in Classes IX and X offering maintenance allowance of ₹500–₹800/month, book grant of ₹1,000/year, and disability allowance of ₹2,000–₹4,000/year.",
+    "A central government pre-matric scholarship for students with benchmark disabilities in Classes IX and X offering maintenance allowance of.",
   description:
     "The Pre Matric Scholarship for Students with Disabilities is a central scheme of the Department of Empowerment of Persons with Disabilities (Divyangjan), Ministry of Social Justice & Empowerment, Government of India. It provides financial assistance to students with benchmark disabilities studying in Classes IX and X to reduce dropout rates and encourage continued education through maintenance allowance, book grant, and disability allowance.",
   category: "disability",

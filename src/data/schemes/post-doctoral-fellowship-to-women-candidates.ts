@@ -6,7 +6,7 @@ export const postDoctoralFellowshipToWomenCandidates: Scheme = {
   name: "Post Doctoral Fellowship To Women Candidates",
   shortName: "UGC PDFW",
   summary:
-    "UGC fellowship of ₹38,800–₹46,500 per month for unemployed women PhD holders to pursue advanced post-doctoral research in Science, Engineering, Humanities, and Social Sciences at Indian universities for up to 5 years.",
+    "UGC fellowship of ₹38,800–₹46,500 per month for unemployed women PhD holders to pursue advanced post-doctoral research in Science, Engineering,.",
   description:
     "The Post Doctoral Fellowship for Women, implemented by the University Grants Commission (UGC) under the Ministry of Education, provides financial assistance to unemployed women holding a Ph.D. degree to pursue advanced research in Science, Engineering & Technology, Humanities, and Social Sciences at eligible Indian universities, colleges, and institutions. The fellowship is awarded for a duration of five years with 100 fellowships available annually.",
   category: "fellowship",

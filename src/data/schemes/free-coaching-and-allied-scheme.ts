@@ -6,7 +6,7 @@ export const freeCoachingAndAlliedScheme: Scheme = {
   name: "Free Coaching and Allied Scheme (for SCs, OBCs, and PM CARES beneficiaries)",
   shortName: "Free Coaching Scheme",
   summary:
-    "Quality coaching for SC, OBC, and PM CARES beneficiaries to prepare for competitive exams and professional courses, with coaching fee coverage up to \u20B975,000 and a monthly stipend of up to \u20B96,000.",
+    "Quality coaching for SC, OBC, and PM CARES beneficiaries to prepare for competitive exams and professional courses, with coaching fee coverage up to.",
   description:
     "Provides quality coaching for economically disadvantaged Scheduled Castes (SCs), Other Backward Classes (OBCs), and beneficiaries of the PM CARES for Children Scheme. The objective is to enable students to appear in competitive examinations for jobs in the Public/Private sector and secure admission to reputed professional institutions. The scheme is currently implemented through Dr. Ambedkar Centres of Excellence (DACE) in empanelled Central Universities and via online partnerships.",
   category: "social-welfare",

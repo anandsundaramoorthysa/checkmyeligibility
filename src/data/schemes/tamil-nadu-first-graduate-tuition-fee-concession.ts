@@ -6,7 +6,7 @@ export const tamilNaduFirstGraduateTuitionFeeConcession: Scheme = {
   name: "Tamil Nadu First Graduate Tuition Fee Concession Scheme",
   shortName: "TN First Graduate Concession",
   summary:
-    "Full tuition fee waiver for the first graduate in a family pursuing professional courses (Engineering, Medical, etc.) through single-window counselling in Tamil Nadu.",
+    "Full tuition fee waiver for the first graduate in a family pursuing professional courses (Engineering, Medical, etc.) through single-window counselling in.",
   description:
     "The Tamil Nadu First Graduate Tuition Fee Concession Scheme is a flagship initiative by the Higher Education Department, Government of Tamil Nadu, to encourage first-generation learners to pursue professional higher education. Students who are the first graduates in their family and secure admission to professional courses such as Engineering, Medical, Agriculture, Nursing, and Law through the single-window counselling system are eligible for a full tuition fee waiver. The scheme applies to government, government-aided, and private institutions across the state. There is no income limit for eligibility. The concession covers the entire duration of the course, provided the student maintains continuous promotion. Over 1.56 lakh students benefit annually, with the state government allocating more than ₹400 crore per year for this scheme.",
   category: "education",

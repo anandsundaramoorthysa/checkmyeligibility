@@ -6,7 +6,7 @@ export const shreshtaSchemeResidentialEducationForScheduledCastes: Scheme = {
   name: "SHRESHTA Scheme (Residential Education for Scheduled Castes)",
   shortName: "SHRESHTA",
   summary:
-    "Fully funded residential education at empanelled private CBSE schools for SC students in Classes 9\u201312, covering tuition, boarding, lodging, and all academic expenses with no cost to the family.",
+    "Fully funded residential education at empanelled private CBSE schools for SC students in Classes 9\u201312, covering tuition, boarding, lodging, and all.",
   description:
     "SHRESHTA provides quality residential education to Scheduled Caste students in Classes IX and XI through selected private residential schools affiliated with CBSE. Students are selected through the National Testing Agency (NTA) entrance examination. The Government bears the educational and residential expenses of the selected students.",
   category: "social-welfare",

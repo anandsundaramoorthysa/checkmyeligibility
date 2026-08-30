@@ -6,7 +6,7 @@ export const anrfNationalPostdoctoralFellowship: Scheme = {
   name: "ANRF National Postdoctoral Fellowship (N-PDF)",
   shortName: "ANRF N-PDF",
   summary:
-    "₹60,000–₹65,000/month for young Ph.D. holders in science and engineering to conduct postdoctoral research at recognised Indian institutions, with ₹3 lakh/year contingency, up to 2 years.",
+    "₹60,000–₹65,000/month for young Ph.D. holders in science and engineering to conduct postdoctoral research at recognised Indian institutions, with ₹3.",
   description:
     "The ANRF National Postdoctoral Fellowship (N-PDF), formerly SERB N-PDF, is designed to identify and support promising young researchers for conducting postdoctoral research in frontier areas of science and engineering at Indian academic institutions and R&D laboratories. The fellowship provides a monthly stipend of ₹60,000 (JRF level) or ₹65,000 (SRF level) along with a contingent grant of ₹3,00,000 per annum for a period of up to 2 years. Fellows work under the guidance of a host mentor at a host institution. The scheme aims to provide research opportunities to young PhD holders and help them develop as independent researchers.",
   category: "fellowship",
@@ -16,7 +16,7 @@ export const anrfNationalPostdoctoralFellowship: Scheme = {
     {
       label: "Citizenship",
       value: "Must be an Indian citizen",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Educational qualification",
@@ -36,7 +36,7 @@ export const anrfNationalPostdoctoralFellowship: Scheme = {
     {
       label: "Employment status",
       value: "Must not be employed or hold any regular position at the time of application",
-      type: "other",
+      type: "occupation",
     },
   ],
   benefits: [

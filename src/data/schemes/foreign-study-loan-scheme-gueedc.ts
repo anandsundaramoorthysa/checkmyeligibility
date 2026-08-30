@@ -6,7 +6,7 @@ export const foreignStudyLoanSchemeGueedc: Scheme = {
   name: "Foreign Study Loan Scheme (GUEEDC)",
   shortName: "GUEEDC Foreign Loan",
   summary:
-    "Education loan of up to ₹15 lakh at 4% simple interest per annum for unreserved category students from Gujarat pursuing MBBS, post-graduation, or PG diploma courses abroad.",
+    "Education loan of up to ₹15 lakh at 4% simple interest per annum for unreserved category students from Gujarat pursuing MBBS, post-graduation, or PG.",
   description:
     "The Foreign Study Loan Scheme is implemented by the Gujarat Unreserved Educational and Economical Development Corporation (GUEEDC) under the Social Justice and Empowerment Department, Government of Gujarat. The scheme provides subsidised education loans to students from unreserved (general) category who have secured admission to MBBS, post-graduation, post-graduation diploma, or equivalent courses at foreign universities. The loan covers tuition fees, accommodation, books, and living expenses up to ₹15 lakh at a highly affordable simple interest rate of 4% per annum. A 1-year moratorium period is provided after course completion before repayment begins. The scheme aims to support meritorious students from economically weaker unreserved families in Gujarat who aspire to pursue higher education abroad but face financial constraints.",
   category: "education-loan",

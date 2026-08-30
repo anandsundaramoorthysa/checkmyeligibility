@@ -6,7 +6,7 @@ export const nationalFellowshipScholarshipStStudents: Scheme = {
   name: "National Fellowship and Scholarship for Higher Education of ST Students",
   shortName: "ST Fellowship & Scholarship",
   summary:
-    "Central scholarship and fellowship programme for meritorious Scheduled Tribe (ST) students pursuing postgraduate and research studies, with monthly stipends and contingency grants.",
+    "Central scholarship and fellowship programme for meritorious Scheduled Tribe (ST) students pursuing postgraduate and research studies, with monthly.",
   description:
     "The National Fellowship and Scholarship for Higher Education of ST Students is a flagship scheme by the Ministry of Education (formerly MHRD), Government of India, designed to identify and support exceptionally meritorious Scheduled Tribe (ST) students pursuing postgraduate studies (Master's and doctoral programmes) at recognized universities and research institutions across India. The scheme aims to facilitate social mobility and promote higher education among ST communities by providing financial support, mentorship, and research opportunities. Under this scheme, qualified ST candidates receive monthly fellowships, research contingency grants, and academic support to pursue advanced studies in diverse disciplines including science, technology, humanities, social sciences, and professional fields. The fellowship enables ST students to focus entirely on their research and academic pursuits without financial constraints.",
   category: "fellowship",

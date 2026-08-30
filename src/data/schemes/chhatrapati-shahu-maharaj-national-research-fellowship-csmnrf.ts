@@ -6,7 +6,7 @@ export const chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf: Scheme = {
   name: "Chhatrapati Shahu Maharaj National Research Fellowship (CSMNRF)",
   shortName: "CSMNRF",
   summary:
-    "Monthly fellowship with HRA and contingency support by SARTHI, Maharashtra for full-time PhD scholars from eligible communities pursuing research in recognized universities and institutions.",
+    "Monthly fellowship with HRA and contingency support by SARTHI, Maharashtra for full-time PhD scholars from eligible communities pursuing research in.",
   description:
     "The Chhatrapati Shahu Maharaj National Research Fellowship (CSMNRF) is implemented by SARTHI (Social Justice and Special Assistance Research and Training Institute), Government of Maharashtra, to provide financial support to full-time PhD scholars from OBC, VJNT (Vimukta Jati and Nomadic Tribes), SBC (Special Backward Category), and other SARTHI-eligible communities.\n\nThe fellowship amount is at par with the UGC NET-JRF/SRF fellowship rates prescribed by the University Grants Commission — ₹37,000/month for the initial two years (JRF period) and ₹42,000/month thereafter (SRF period) — along with House Rent Allowance (HRA) as per government norms and an annual contingency grant for research expenses. Fellows must be registered at a recognized university or institution in Maharashtra and must be pursuing research through regular (not distance) mode.\n\nApplications are invited annually through the SARTHI portal. Selection is based on academic merit, research proposal, and verification of eligibility criteria including domicile, community, and income.",
   category: "fellowship",

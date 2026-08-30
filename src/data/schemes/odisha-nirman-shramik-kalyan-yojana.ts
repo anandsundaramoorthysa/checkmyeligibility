@@ -6,7 +6,7 @@ export const odishaNirmanShramikKalyanYojana: Scheme = {
   name: "Odisha Nirman Shramik Kalyan Yojana — Scholarship for Children of Construction Workers",
   shortName: "Odisha BOC Scholarship",
   summary:
-    "₹2,000 to ₹40,000 per year for children of registered construction workers in Odisha, studying from Class 6 through professional courses including engineering and medicine.",
+    "₹2,000 to ₹40,000 per year for children of registered construction workers in Odisha, studying from Class 6 through professional courses including.",
   description:
     "The Nirman Shramik Kalyan Yojana, administered by the Odisha Building and Other Construction Workers' Welfare Board (BOCW), provides educational scholarships to the children of registered construction workers in the state. The scholarship amount ranges from ₹2,000 per year for students in Class 6 to ₹40,000 per year for students pursuing professional courses like engineering and medical studies. The scheme aims to promote education among the children of construction workers and reduce dropout rates. Both parents must be registered with the BOCW Board, and the family's annual income must not exceed ₹2,00,000.",
   category: "scholarship",

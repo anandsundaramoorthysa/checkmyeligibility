@@ -6,7 +6,7 @@ export const aicteSwanathScholarshipSchemeForStudents: Scheme = {
   name: "AICTE-Swanath Scholarship Scheme",
   shortName: "AICTE Swanath",
   summary:
-    "₹50,000 per year from AICTE for orphan students, wards of parents who died due to COVID-19, and dependents of martyred armed forces personnel, pursuing an approved degree or diploma course.",
+    "₹50,000 per year from AICTE for orphan students, wards of parents who died due to COVID-19, and dependents of martyred armed forces personnel, pursuing an.",
   description:
     "The AICTE-Swanath Scholarship Scheme, administered by the All India Council for Technical Education (AICTE) under the Ministry of Education, provides ₹50,000 per year to three specific student categories: orphan students (both parents deceased), students who lost a parent to COVID-19, and dependents of armed forces or paramilitary personnel who died in service. The scholarship is available for Years 1 through 4 of AICTE-approved degree programmes (B.E./B.Tech./B.Arch. etc.) and diploma programmes. Family income must not exceed ₹8,00,000 per annum. The scholarship is applied for and disbursed through the National Scholarship Portal (scholarships.gov.in) and is renewed annually, subject to satisfactory academic performance. Students already receiving any other AICTE, central, or state scholarship are not eligible. Priority is given to students who lost both parents or whose parent was the sole breadwinner.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const indiaaiFellowshipMeityDigitalIndiaCorporation: Scheme = {
   name: "IndiaAI Fellowship (MeitY \u2013 Digital India Corporation)",
   shortName: "IndiaAI Fellowship",
   summary:
-    "A prestigious fellowship by MeitY for students pursuing AI/ML programmes at IndiaAI partner institutions, offering up to \u20B980,000/month for PhD scholars with research and travel grants.",
+    "A prestigious fellowship by MeitY for students pursuing AI/ML programmes at IndiaAI partner institutions, offering up to \u20B980,000/month for PhD.",
   description:
     "The IndiaAI Fellowship, launched in 2025 under the IndiaAI Mission by MeitY and the Digital India Corporation, is a prestigious fellowship for students pursuing AI and machine learning programmes at IndiaAI partner institutions. It provides one of the highest fellowship amounts for technical education in India and is designed to retain AI talent within India.",
   category: "fellowship",

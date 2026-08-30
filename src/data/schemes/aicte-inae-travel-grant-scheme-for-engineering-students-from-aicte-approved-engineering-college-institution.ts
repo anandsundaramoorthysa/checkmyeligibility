@@ -7,7 +7,7 @@ export const aicteInaeTravelGrantSchemeForEngineeringStudentsFromAicteApprovedEn
     name: "AICTE-INAE Travel Grant Scheme for Engineering Students from AICTE Approved Engineering College/Institution",
     shortName: "AICTE-INAE Travel Grant",
     summary:
-      "Financial assistance of up to \u20B91,00,000 for engineering students from AICTE-approved institutions to present research papers at international scientific events abroad.",
+      "Financial assistance of up to \u20B91,00,000 for engineering students from AICTE-approved institutions to present research papers at international.",
     description:
       "The AICTE-INAE Travel Grant Scheme provides financial support to engineering students from AICTE-approved institutions to present research papers at international scientific events abroad. The objective is to enhance the quality of engineering education, foster a research culture, and provide students with international academic exposure. The grant supports both physical and online participation (as per current specific guidelines).",
     category: "fellowship",

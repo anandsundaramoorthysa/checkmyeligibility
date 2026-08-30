@@ -6,7 +6,7 @@ export const icssrDoctoralFellowship: Scheme = {
   name: "ICSSR Doctoral Fellowship",
   shortName: "ICSSR Doctoral Fellowship",
   summary:
-    "Prestigious national fellowship scheme by the Indian Council of Social Science Research for meritorious doctoral researchers pursuing advanced studies in social sciences disciplines across Indian universities.",
+    "Prestigious national fellowship scheme by the Indian Council of Social Science Research for meritorious doctoral researchers pursuing advanced studies in.",
   description:
     "The ICSSR Doctoral Fellowship is a premier research funding scheme administered by the Indian Council of Social Science Research (ICSSR), an autonomous organization under the Ministry of Education, Government of India. The fellowship is designed to support talented doctoral scholars pursuing full-time doctoral (PhD) research in social sciences disciplines at recognized Indian universities. The scheme aims to strengthen research capacity in social sciences by attracting and nurturing the best minds to contribute to knowledge creation, policy research, and scholarly advancement in fields such as economics, political science, sociology, social anthropology, history, geography, psychology, public administration, management studies, and other allied social sciences. The ICSSR Doctoral Fellowship provides comprehensive financial support including monthly research stipends, conference travel grants, research contingency allowances, and access to research resources and networks. The fellowship recognizes the importance of rigorous doctoral research in addressing contemporary social issues and contributing to evidence-based policy formulation. Fellows become part of a vibrant community of researchers and gain access to ICSSR's extensive library, research infrastructure, and national/international scholarly networks.",
   category: "fellowship",
@@ -39,7 +39,7 @@ export const icssrDoctoralFellowship: Scheme = {
     {
       label: "Citizenship",
       value: "Indian citizen; fellowship is available only for Indian nationals",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Academic Performance",

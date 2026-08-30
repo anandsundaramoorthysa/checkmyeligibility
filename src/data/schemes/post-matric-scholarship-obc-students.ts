@@ -6,7 +6,7 @@ export const postMatricScholarshipObcStudents: Scheme = {
   name: "Post Matric Scholarship for OBC Students",
   shortName: "OBC Post-Matric Scholarship",
   summary:
-    "Central government scholarship for Other Backward Class (OBC) students studying at post-matriculation level, covering maintenance allowance, tuition fees, and other charges.",
+    "Central government scholarship for Other Backward Class (OBC) students studying at post-matriculation level, covering maintenance allowance, tuition fees,.",
   description:
     "The Post Matric Scholarship for Other Backward Classes (OBC) is a centrally-sponsored scheme administered by the Ministry of Social Justice and Empowerment, Government of India. The scheme aims to provide financial assistance to OBC students studying in post-matriculation or post-secondary stage courses so that they can complete their education. The scholarship covers maintenance allowance, reimbursement of non-refundable fees charged by educational institutions, study tour charges, thesis typing/printing charges (for research scholars), and reader charges for blind students. Eligible students can apply through the National Scholarship Portal (NSP), and funds are transferred directly to the student's bank account via the Direct Benefit Transfer (DBT) mechanism. The scheme operates under a 60:40 funding sharing ratio between the Centre and the States/UTs (90:10 for NE states and special category states).",
   category: "scholarship",

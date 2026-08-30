@@ -6,7 +6,7 @@ export const tecInternshipScheme: Scheme = {
   name: "TEC Internship Scheme",
   shortName: "TEC Internship",
   summary:
-    "A stipend-based internship of ₹15,000 per month offered by the Telecommunication Engineering Centre (TEC), providing practical exposure to telecommunications, ICT standards, testing, and policy for UG, PG, and PhD students.",
+    "A stipend-based internship of ₹15,000 per month offered by the Telecommunication Engineering Centre (TEC), providing practical exposure to.",
   description:
     "The TEC Internship Scheme is offered by the Telecommunication Engineering Centre (TEC), Department of Telecommunications, Ministry of Communications. The scheme provides students with an opportunity to gain practical exposure to telecommunications, ICT standards, testing, certification, policy, and related technical areas. Interns work on projects and assignments under the guidance of TEC officers and experts, helping them develop professional and research skills in the telecommunications sector.",
   category: "skill-development",

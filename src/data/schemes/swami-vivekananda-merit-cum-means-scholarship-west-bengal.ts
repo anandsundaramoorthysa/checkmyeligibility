@@ -6,7 +6,7 @@ export const swamiVivekanandaMeritCumMeansScholarshipWestBengal: Scheme = {
   name: "Swami Vivekananda Merit-cum-Means Scholarship (West Bengal)",
   shortName: "SVMCM",
   summary:
-    "Monthly scholarship of \u20B91,000\u2013\u20B98,000 for West Bengal students from Classes 11\u201312 to postgraduate level, with 60% minimum marks and family income below \u20B92.5 lakh per annum.",
+    "Monthly scholarship of \u20B91,000\u2013\u20B98,000 for West Bengal students from Classes 11\u201312 to postgraduate level, with 60% minimum marks and.",
   description:
     "The Swami Vivekananda Merit-cum-Means Scholarship (SVMCM), also known as the Bikash Bhavan Scholarship, is a flagship initiative of the Higher Education Department, Government of West Bengal. The scheme provides financial assistance to meritorious students from economically weaker families across the state, covering Higher Secondary (Classes 11\u201312), Undergraduate (UG), Postgraduate (PG), and professional courses including Engineering, Medical, Polytechnic, and Research levels (M.Phil/Ph.D). Scholarship amounts range from \u20B91,000 to \u20B98,000 per month depending on the course level. Selection is based on merit-cum-means criteria \u2014 students must have secured at least 60% marks in the last qualifying examination (53% for PG) and have a family income not exceeding \u20B92,50,000 per annum. The scheme is renewable each year subject to satisfactory academic performance and is administered through the online portal svmcm.wb.gov.in.",
   category: "scholarship",

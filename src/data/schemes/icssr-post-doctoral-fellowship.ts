@@ -16,7 +16,7 @@ export const icssrPostDoctoralFellowship: Scheme = {
     {
       label: "Nationality",
       value: "Must be an Indian citizen",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Age limit",
@@ -36,7 +36,7 @@ export const icssrPostDoctoralFellowship: Scheme = {
     {
       label: "Institutional affiliation",
       value: "Must be affiliated with a public-funded Indian institution approved for PhD (Ministry of Education or UGC recognized)",
-      type: "other",
+      type: "occupation",
     },
     {
       label: "Supervisor",

@@ -6,7 +6,7 @@ export const evnarayanPreMatricScholarshipScheme: Scheme = {
   name: "Devnarayan Pre-Matric Scholarship Scheme",
   shortName: "Devnarayan Pre-Matric",
   summary:
-    "Monthly scholarship of ₹50–₹120 for students from Extremely Backward Classes in Rajasthan (Classes 6–10), including free education, accommodation, meals, uniforms, and books.",
+    "Monthly scholarship of ₹50–₹120 for students from Extremely Backward Classes in Rajasthan (Classes 6–10), including free education, accommodation, meals,.",
   description:
     "A welfare scheme by the Government of Rajasthan for students from 'Very Backward Classes' (such as Banjara, Gujjar, Raika, Gadaria, etc.) to reduce dropout rates and support education from Class 6 to Class 10.",
   category: "social-welfare",

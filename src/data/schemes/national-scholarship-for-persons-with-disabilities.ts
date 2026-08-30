@@ -6,7 +6,7 @@ export const nationalScholarshipForPersonsWithDisabilities: Scheme = {
   name: "National Scholarship for Persons with Disabilities",
   shortName: "NSPD",
   summary:
-    "Up to ₹50,000 per year scholarship for Indian students with benchmark disabilities (40%+) pursuing UG, PG, or professional courses through the National Scholarship Portal.",
+    "Up to ₹50,000 per year scholarship for Indian students with benchmark disabilities (40%+) pursuing UG, PG, or professional courses through the National.",
   description:
     "Financial assistance for students with benchmark disabilities to pursue school, college, and higher education under the Department of Empowerment of Persons with Disabilities (DEPwD), Ministry of Social Justice and Empowerment.",
   category: "disability",

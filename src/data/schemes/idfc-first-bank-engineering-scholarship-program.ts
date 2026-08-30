@@ -6,7 +6,7 @@ export const idfcFirstBankEngineeringScholarshipProgram: Scheme = {
   name: "IDFC FIRST Bank Engineering Scholarship Program",
   shortName: "IDFC Engineering",
   summary:
-    "₹4,00,000 over four years (₹1 lakh per year) for first-year B.Tech/B.E. students from families with annual income below ₹6 lakh, studying at select eligible engineering colleges across India.",
+    "₹4,00,000 over four years (₹1 lakh per year) for first-year B.Tech/B.E. students from families with annual income below ₹6 lakh, studying at select.",
   description:
     "The IDFC FIRST Bank Engineering Scholarship Program is a need-based scholarship under IDFC FIRST Bank's CSR educational initiatives. It aims to make engineering education accessible to meritorious students from economically weaker backgrounds who are unable to pursue higher studies due to financial constraints. The scholarship provides ₹1,00,000 per year for the full four-year duration of the B.Tech/B.E. programme, totalling ₹4,00,000. It is open to first-year students enrolled in select eligible engineering colleges across India. Approximately 230 scholarships are awarded annually. The scholarship amount is disbursed directly to the institution after verification of fee receipts.",
   category: "education",
@@ -16,7 +16,7 @@ export const idfcFirstBankEngineeringScholarshipProgram: Scheme = {
     {
       label: "Citizenship",
       value: "Must be an Indian citizen",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Education level",

@@ -6,7 +6,7 @@ export const nationalOverseasScholarshipForPersonsWithDisabilities: Scheme = {
   name: "National Overseas Scholarship for Persons with Disabilities",
   shortName: "NOS-SWD",
   summary:
-    "Comprehensive financial support for Indian students with disabilities (40%+) to pursue Masters or PhD at recognised foreign universities, covering maintenance allowance, tuition fees, travel, medical insurance, and assistive equipment.",
+    "Comprehensive financial support for Indian students with disabilities (40%+) to pursue Masters or PhD at recognised foreign universities, covering.",
   description:
     "The National Overseas Scholarship for Students with Disabilities (NOS-SWD) is a scheme by the Department of Empowerment of Persons with Disabilities (DEPwD), Ministry of Social Justice and Empowerment. It provides comprehensive financial support to Indian students with disabilities for pursuing Masters or PhD studies at recognised foreign universities. Benefits include an annual maintenance allowance of USD 15,400 (USA) or \u00A39,900 (UK), full tuition fee reimbursement, economy-class air travel, visa fees, medical insurance, and an assistive equipment allowance.",
   category: "disability",

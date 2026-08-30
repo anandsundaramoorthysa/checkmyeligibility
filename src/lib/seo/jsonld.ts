@@ -84,7 +84,12 @@ export function governmentServiceLd(scheme: Scheme) {
     areaServed: scheme.states.includes("all-india")
       ? { "@type": "Country", name: "India" }
       : scheme.states.map((s) => ({ "@type": "AdministrativeArea", name: stateLabel(s) })),
-    url: scheme.officialPortalUrl,
+    url: new URL(`/explore/${scheme.slug}`, SITE.url).toString(),
+    potentialAction: {
+      "@type": "ApplyAction",
+      target: scheme.officialPortalUrl,
+      name: "Apply on official portal",
+    },
     ...(scheme.lastVerified ? { dateModified: scheme.lastVerified } : {}),
   };
 }

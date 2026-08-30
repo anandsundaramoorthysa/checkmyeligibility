@@ -6,7 +6,7 @@ export const aicteYashasviScholarship: Scheme = {
   name: "AICTE \u2013 Yashasvi Scholarship Scheme",
   shortName: "AICTE Yashasvi",
   summary:
-    "\u20B950,000 per year for Degree (UG) and \u20B930,000 per year for Diploma students pursuing core engineering branches at AICTE-approved institutions, from families with annual income below \u20B98 lakh.",
+    "\u20B950,000 per year for Degree (UG) and \u20B930,000 per year for Diploma students pursuing core engineering branches at AICTE-approved institutions,.",
   description:
     "AICTE Yashasvi is a central merit-cum-means assistance program initiated by the All India Council for Technical Education (AICTE). The scheme supports highly meritorious students from financially weak backgrounds pursuing technical education in core branches of engineering \u2014 Civil, Mechanical, Chemical, Electrical, and Electronics. It covers students enrolled in the first year of a full-time Degree or Diploma programme, as well as second-year students admitted via lateral entry, at any AICTE-approved institution. The scholarship amount is \u20B950,000 per annum for Degree (UG) students and \u20B930,000 per annum for Diploma students, disbursed through the National Scholarship Portal (NSP) via Direct Benefit Transfer (DBT).",
   category: "scholarship",

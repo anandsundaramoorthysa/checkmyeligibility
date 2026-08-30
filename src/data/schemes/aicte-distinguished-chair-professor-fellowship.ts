@@ -6,7 +6,7 @@ export const aicteDistinguishedChairProfessorFellowship: Scheme = {
   name: "AICTE - Distinguished Chair Professor Fellowship",
   shortName: "AICTE DCPF",
   summary:
-    "Fellowship providing an honorarium of ₹10,000/- to highly qualified superannuated professionals with exceptional contributions in their field, to motivate and inspire students and faculty at AICTE-approved institutes.",
+    "Fellowship providing an honorarium of ₹10,000/- to highly qualified superannuated professionals with exceptional contributions in their field, to motivate.",
   description:
     "AICTE - Distinguished Chair Professor Fellowship scheme by the All India Council for Technical Education, Ministry of Education. The fellowship intends to utilize the expertise of highly qualified and experienced superannuated professionals who have made unparalleled, exceptional professional contributions to society in their respective fields/disciplines for motivating and inspiring students/faculty of AICTE-approved institutes.\n\nThe proposals for the fellowship are by nomination only. Nominations with all necessary details can be sent throughout the year to: The Director (Faculty Development Cell), AICTE, Nelson Mandela Marg, Vasant Kunj, New Delhi-110070 (Director.fdc@aicte-india.org).",
   category: "fellowship",
@@ -17,13 +17,13 @@ export const aicteDistinguishedChairProfessorFellowship: Scheme = {
       label: "Professional status",
       value:
         "The awardee must be a highly qualified superannuated Professional in his/her field",
-      type: "other",
+      type: "occupation",
     },
     {
       label: "Expertise",
       value:
         "The awardee should be an acknowledged leader (expert) in that particular field of specialization having actively engaged in research and development",
-      type: "other",
+      type: "occupation",
     },
     {
       label: "Societal contribution",

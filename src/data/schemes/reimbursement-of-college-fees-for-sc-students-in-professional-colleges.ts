@@ -6,7 +6,7 @@ export const reimbursementOfCollegeFeesForScStudentsInProfessionalColleges: Sche
   name: "Reimbursement of College Fees for Scheduled Caste Students in Professional Colleges (Top 20)",
   shortName: "RCFSCSPC",
   summary:
-    "Reimbursement of tuition and examination fees for Scheduled Caste students from Puducherry who score above 75% in HSC and secure a Top 20 rank in professional college admissions.",
+    "Reimbursement of tuition and examination fees for Scheduled Caste students from Puducherry who score above 75% in HSC and secure a Top 20 rank in.",
   description:
     "The Reimbursement of College Fees for Scheduled Caste Students in Professional Colleges (Top 20) scheme is an initiative by the Adi Dravidar Welfare and Scheduled Tribes Welfare Department, Government of Puducherry. It provides full reimbursement of tuition fees and examination fees to deserving Scheduled Caste students who have achieved marks above 75% in the Higher Secondary Course Examination and secured a place in the 'Top 20' rank for admission into professional colleges. Students must be selected through the CENTAC counselling process. The scheme aims to alleviate the financial burden on meritorious SC students pursuing professional education in government or government-recognised private professional colleges.",
   category: "education",

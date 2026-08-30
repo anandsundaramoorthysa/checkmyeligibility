@@ -6,7 +6,7 @@ export const cbseUdaanScheme: Scheme = {
   name: "CBSE Udaan Scheme for Girl Students",
   shortName: "CBSE Udaan",
   summary:
-    "Free coaching and study material for meritorious girl students from economically weaker sections to prepare for engineering entrance examinations (JEE Main/Advanced, NEET) during Class 11 and 12.",
+    "Free coaching and study material for meritorious girl students from economically weaker sections to prepare for engineering entrance examinations (JEE.",
   description:
     "CBSE Udaan is a project launched by the Central Board of Secondary Education under the aegis of the Ministry of Education to address the low enrolment of girl students in prestigious engineering institutions. The scheme provides free offline/online coaching, study material, virtual weekend contact classes, and tablets with pre-loaded content to meritorious girl students enrolled in Class 11 (Science/PCM stream) from economically weaker backgrounds. The objective is to bridge the gap between school education and engineering entrance examinations, empowering girl students to pursue careers in Science, Technology, Engineering, and Mathematics (STEM). Selected students also receive no admission or tuition fees if they secure admission in IITs, NITs, or other prestigious engineering colleges.",
   category: "education",

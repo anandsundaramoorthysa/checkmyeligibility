@@ -6,7 +6,7 @@ export const cbseMeritScholarshipSchemeForSingleGirlChild: Scheme = {
   name: "CBSE Merit Scholarship Scheme for Single Girl Child",
   shortName: "CBSE Single Girl Child Scholarship",
   summary:
-    "Scholarship of ₹1,000 per month for two years (₹24,000 total) to support meritorious single girl children studying in Classes 11 and 12 at CBSE-affiliated schools.",
+    "Scholarship of ₹1,000 per month for two years (₹24,000 total) to support meritorious single girl children studying in Classes 11 and 12 at CBSE-affiliated.",
   description:
     "The CBSE Merit Scholarship Scheme for Single Girl Child provides ₹1,000 per month for two years (₹24,000 total) to meritorious girls who are the only girl child of their parents, studying in Classes XI and XII at CBSE-affiliated schools. The scheme is implemented by the Central Board of Secondary Education (CBSE) with the objective of encouraging parents to educate their sole girl child through higher secondary level. Eligibility requires a minimum of 70% marks in Class 10 and family income below ₹8 lakh per annum. School tuition fees must be within the limits prescribed by CBSE. The scholarship is disbursed via Direct Benefit Transfer (DBT) to the student's bank account.",
   category: "scholarship",

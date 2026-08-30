@@ -6,7 +6,7 @@ export const siemensScholarshipProgram: Scheme = {
   name: "Siemens Scholarship Program",
   shortName: "Siemens SSP",
   summary:
-    "Full tuition fee reimbursement for all 4 years of engineering at government colleges, plus book/hostel allowances, with 50% reservation for girl students. Includes internship at Siemens and partner MNCs.",
+    "Full tuition fee reimbursement for all 4 years of engineering at government colleges, plus book/hostel allowances, with 50% reservation for girl students.",
   description:
     "The Siemens Scholarship Program supports meritorious first-year engineering students from economically weaker backgrounds studying at government engineering colleges. Beyond financial aid, the programme provides internship opportunities at Siemens and partner MNCs, mechatronics training, and mentorship. 50% of scholarships are reserved for girl students. The scholarship covers full tuition fees for all 4 years of the engineering course, along with allowances for books, stationery, hostel, and additional classes.",
   category: "scholarship",

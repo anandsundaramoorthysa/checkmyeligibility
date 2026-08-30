@@ -6,7 +6,7 @@ export const perarignarAnnaMemorialAward: Scheme = {
   name: "Perarignar Anna Memorial Award",
   shortName: "PAMA",
   summary:
-    "\u20B93,000\u2013\u20B95,000 per year for top 2 boys and 2 girls per district in Tamil Nadu from BC/MBC/DNC communities who secure the highest marks in Class 12 and pursue professional courses.",
+    "\u20B93,000\u2013\u20B95,000 per year for top 2 boys and 2 girls per district in Tamil Nadu from BC/MBC/DNC communities who secure the highest marks in.",
   description:
     "The Perarignar Anna Memorial Award is a state government honour instituted by the Department of Backward Classes, Most Backward Classes and Minority Welfare, Government of Tamil Nadu. The award recognises academic excellence among students from Backward Classes (BC), Most Backward Classes (MBC), and Denotified Communities (DNC). Each year, the top two boys and top two girls from every district who score the highest marks in the Class 12 public examination are selected for the award. Recipients must pursue a professional degree course (such as Engineering, Medicine, Veterinary, Law, Agriculture, etc.) at an institution located within Tamil Nadu. The award provides financial assistance of \u20B93,000\u2013\u20B95,000 per year for up to four years or until the normal completion of the course. No application is necessary \u2014 selections are made automatically based on the merit list received from the Directorate of Government Examinations, and the amount is disbursed through the Heads of Educational Institutions. There is no income ceiling.",
   category: "scholarship",

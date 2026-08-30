@@ -6,7 +6,7 @@ export const drAmbedkarPostMatricScholarshipPunjab: Scheme = {
   name: "Dr. Ambedkar Post-Matric Scholarship \u2013 Punjab",
   shortName: "Dr. Ambedkar PMS (Punjab)",
   summary:
-    "Up to \u20B920,000 per year post-matric scholarship for SC/BC/OBC students in Punjab, covering Class 11 through PhD with a \u20B925,000 one-time merit award and disability allowances.",
+    "Up to \u20B920,000 per year post-matric scholarship for SC/BC/OBC students in Punjab, covering Class 11 through PhD with a \u20B925,000 one-time merit.",
   description:
     "The Dr. Ambedkar Post-Matric Scholarship is a Punjab state scheme under the Department of Welfare of Scheduled Castes and Backward Classes. It supports SC students (income \u2264 \u20B92.5 lakh) and BC/OBC students (income \u2264 \u20B910 lakh) for post-matric education from Class 11 through PhD.",
   category: "scholarship",

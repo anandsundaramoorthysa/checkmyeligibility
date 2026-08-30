@@ -6,7 +6,7 @@ export const kanyashreePrakalpaK3PostGraduateComponent: Scheme = {
   name: "Kanyashree Prakalpa – K3 Post-Graduate Component",
   shortName: "Kanyashree K3",
   summary:
-    "West Bengal scholarship of ₹2,500/month (Science) or ₹2,000/month (Arts/Commerce) for former Kanyashree beneficiaries pursuing full-time postgraduate studies, with income restrictions waived.",
+    "West Bengal scholarship of ₹2,500/month (Science) or ₹2,000/month (Arts/Commerce) for former Kanyashree beneficiaries pursuing full-time postgraduate.",
   description:
     "Kanyashree Prakalpa K3 is a specialised sub-component within the Swami Vivekananda Merit-cum-Means Scholarship (SVMCM) framework, targeting women in West Bengal pursuing postgraduate or professional degrees. It relaxes the typical academic score requirements for former Kanyashree (K2) beneficiaries transitioning into postgraduate education, and does not apply an income ceiling.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const postGraduateScholarshipForUniversityRankHolders: Scheme = {
   name: "Post Graduate Scholarship for University Rank Holders Scheme",
   shortName: "PG URH",
   summary:
-    "A monthly scholarship of ₹3,100 for 1st and 2nd rank holders at the undergraduate level pursuing a regular full-time Master's degree in recognised institutions across India.",
+    "A monthly scholarship of ₹3,100 for 1st and 2nd rank holders at the undergraduate level pursuing a regular full-time Master's degree in recognised.",
   description:
     "The Post Graduate Scholarship for University Rank Holders is a merit-based scholarship scheme introduced by the University Grants Commission (UGC), Government of India. It aims to attract young and talented students to pursue postgraduate education by providing financial incentives to the First and Second rank holders at the undergraduate level. The scheme covers students from streams including Life Sciences, Physical Sciences, Chemical Sciences, Earth Sciences, Mathematical Sciences, Social Sciences, Commerce, and Languages who have secured admission in a regular full-time Master's degree programme in any recognised university or postgraduate college. A total of 3,000 slots are available per year. Professional courses are not covered under this scheme. The scholarship is tenable for the full duration of the PG course, typically two years.",
   category: "scholarship",

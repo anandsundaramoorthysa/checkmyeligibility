@@ -6,7 +6,7 @@ export const nationalOverseasScholarshipSchemeForScEtcCandidates: Scheme =   {
     name: "National Overseas Scholarship Scheme for SC etc. Candidates",
     shortName: "NOS",
     summary:
-      "Financial assistance for SC, DNT, Nomadic & Semi-Nomadic Tribes, Landless Agricultural Labourers, and Traditional Artisans to pursue Master's and Ph.D. degrees abroad.",
+      "Financial assistance for SC, DNT, Nomadic & Semi-Nomadic Tribes, Landless Agricultural Labourers, and Traditional Artisans to pursue Master's and Ph.D.",
     description:
       "Central Sector Scheme of the Ministry of Social Justice & Empowerment providing financial assistance to eligible Scheduled Castes (SC), Denotified, Nomadic & Semi-Nomadic Tribes, Landless Agricultural Labourers, and Traditional Artisans to pursue Master's and Ph.D. degrees abroad in accredited foreign universities.",
     category: "education",

@@ -6,7 +6,7 @@ export const inspireFacultyFellowship: Scheme = {
   name: "INSPIRE Faculty Fellowship",
   shortName: "INSPIRE Faculty Fellowship",
   summary:
-    "Prestigious central fellowship scheme by DST for meritorious science researchers and faculty members pursuing cutting-edge research in science, technology, engineering, and mathematics (STEM) fields.",
+    "Prestigious central fellowship scheme by DST for meritorious science researchers and faculty members pursuing cutting-edge research in science,.",
   description:
     "The INSPIRE Faculty Fellowship is a premier research funding scheme administered by the Department of Science and Technology (DST), Government of India, under the Scheme for Early Attraction of Talent for Science (INSPIRE) program. The fellowship is designed to attract India's top scientific talent and support early-career researchers in pursuing high-impact research across all STEM (Science, Technology, Engineering, Mathematics) disciplines. The scheme aims to nurture scientific excellence, foster innovation, and contribute to India's knowledge economy by providing young researchers with financial independence and institutional support. INSPIRE Faculty Fellowship provides comprehensive research funding including annual research grants, laboratory equipment support, travel grants for conference participation, and access to national research infrastructure. The fellowship recognizes the importance of early-career support in establishing independent research careers and contributing to global scientific advancement. Fellows receive institutional support, mentorship from senior scientists, and opportunities for national and international collaborations.",
   category: "fellowship",
@@ -33,8 +33,8 @@ export const inspireFacultyFellowship: Scheme = {
     {
       label: "Institutional Affiliation",
       value:
-        "Must have formal research affiliation with recognized Indian institutions — colleges, universities, research institutes, or deemed universities; opportunity to establish independent research career",
-      type: "other",
+        "Must have formal research affiliation with recognized Indian institutions, colleges, universities, research institutes, or deemed universities; opportunity to establish independent research career",
+      type: "occupation",
     },
     {
       label: "Research Focus",
@@ -46,12 +46,12 @@ export const inspireFacultyFellowship: Scheme = {
       label: "Full-Time Commitment",
       value:
         "Must commit full-time to research; cannot hold other full-time positions during fellowship tenure",
-      type: "other",
+      type: "occupation",
     },
     {
       label: "Citizenship",
       value: "Indian citizen or Person of Indian Origin (PIO/OCI); preference given to Indian citizens",
-      type: "other",
+      type: "residence",
     },
   ],
   benefits: [

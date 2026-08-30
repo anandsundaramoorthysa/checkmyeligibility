@@ -6,7 +6,7 @@ export const topClassEducationForStudentsWithDisabilities: Scheme = {
   name: "Top Class Education for Students with Disabilities",
   shortName: "TCE Disabilities",
   summary:
-    "Full tuition fee coverage plus a living allowance, book grant, and one-time computer and aids/devices grants for disabled students pursuing full-time diploma, UG, or PG courses.",
+    "Full tuition fee coverage plus a living allowance, book grant, and one-time computer and aids/devices grants for disabled students pursuing full-time.",
   description:
     "Administered by the Department of Empowerment of Persons with Disabilities (DEPwD), Ministry of Social Justice and Empowerment, this scheme provides comprehensive financial support to students with disabilities pursuing full-time diploma, undergraduate, or postgraduate studies at approved institutions. It covers tuition fees, a monthly living allowance, an annual book grant, and one-time grants for a computer and assistive aids/devices.",
   category: "disability",

@@ -6,7 +6,7 @@ export const aicteDoctoralFellowshipAdf: Scheme = {
   name: "AICTE Doctoral Fellowship (ADF)",
   shortName: "AICTE ADF",
   summary:
-    "National research fellowship providing ₹37,000/month (JRF) and ₹42,000/month (SRF) to meritorious full-time Ph.D. scholars at AICTE-approved institutions, covering technical fields aligned with AICTE-prescribed thrust areas.",
+    "National research fellowship providing ₹37,000/month (JRF) and ₹42,000/month (SRF) to meritorious full-time Ph.D.",
   description:
     "The AICTE Doctoral Fellowship (ADF) is a flagship national research scheme launched by the All India Council for Technical Education. It provides financial assistance to meritorious, full-time Ph.D. scholars pursuing technical research at AICTE-approved institutions and universities across India.\n\nThe fellowship offers ₹37,000 per month during Years 1 and 2 (Junior Research Fellow / JRF) and ₹42,000 per month during Years 3 to 5 (Senior Research Fellow / SRF), supporting doctoral research in AICTE-prescribed advanced technology thrust areas.",
   category: "fellowship",

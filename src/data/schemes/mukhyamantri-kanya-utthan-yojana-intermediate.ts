@@ -6,7 +6,7 @@ export const mukhyamantriKanyaUtthanYojanaIntermediate: Scheme = {
   name: "Mukhyamantri Kanya Utthan Yojana – Intermediate (Bihar)",
   shortName: "MKUY Intermediate Bihar",
   summary:
-    "Bihar government scheme providing ₹25,000 to unmarried girls who pass the Class 12 (Intermediate) examination from a Bihar board in the first division, to promote girls' education.",
+    "Bihar government scheme providing ₹25,000 to unmarried girls who pass the Class 12 (Intermediate) examination from a Bihar board in the first division, to.",
   description:
     "The Mukhyamantri Kanya Utthan Yojana – Intermediate is a state government scheme launched by the Government of Bihar to encourage girls to pursue and complete secondary education. Under this scheme, a one-time incentive of ₹25,000 is awarded to unmarried girl students who pass the Bihar Board of Secondary Education (BSEB) Intermediate (Class 12) examination with First Division (60% and above). Girls who pass in Second Division receive ₹10,000 (in some notification cycles). The scheme is implemented through the Education Department, Bihar, and payments are made directly to the beneficiary's bank account through the Direct Benefit Transfer (DBT) mechanism using the Medhasoft portal. The scheme is separate from the graduation-level incentive (Mukhyamantri Kanya Utthan Yojana – Graduation) which provides ₹50,000 upon completion of graduation. The intermediate incentive is exclusively for unmarried girls, promoting delayed marriage and continued education.",
   category: "scholarship",
@@ -21,7 +21,7 @@ export const mukhyamantriKanyaUtthanYojanaIntermediate: Scheme = {
     {
       label: "Marital Status",
       value: "Must be unmarried at the time of passing the Intermediate examination",
-      type: "other",
+      type: "gender",
     },
     {
       label: "Academic Qualification",
@@ -32,12 +32,12 @@ export const mukhyamantriKanyaUtthanYojanaIntermediate: Scheme = {
     {
       label: "Domicile",
       value: "Must be a permanent resident of Bihar",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Board",
       value: "Must have appeared through Bihar School Examination Board (BSEB) for the Intermediate examination",
-      type: "other",
+      type: "education",
     },
     {
       label: "Bank Account",

@@ -6,7 +6,7 @@ export const jaganannaVasathiDeevenaHostelMessSupport: Scheme = {
   name: "Jagananna Vasathi Deevena – Hostel & Mess Support",
   shortName: "Vasathi Deevena",
   summary:
-    "Andhra Pradesh Direct Benefit Transfer of ₹10,000–₹20,000 a year for hostel and mess expenses of underprivileged ITI, Polytechnic/Diploma, and degree students.",
+    "Andhra Pradesh Direct Benefit Transfer of ₹10,000–₹20,000 a year for hostel and mess expenses of underprivileged ITI, Polytechnic/Diploma, and degree.",
   description:
     "Jagananna Vasathi Deevena is an Andhra Pradesh state welfare initiative that transfers hostel and mess cost support directly to the Aadhaar-linked bank account of the mother of underprivileged higher-education students. ITI candidates receive ₹10,000 a year, Polytechnic/Diploma students receive ₹15,000, and undergraduates receive ₹20,000. The amount is disbursed in two installments per academic year through Direct Benefit Transfer (DBT).",
   category: "education",

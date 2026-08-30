@@ -6,7 +6,7 @@ export const kshecHigherEducationScholarshipScheme: Scheme = {
   name: "KSHEC Higher Education Scholarship Scheme",
   shortName: "KSHEC HEC",
   summary:
-    "Kerala State Higher Education Council scholarship of ₹12,000–₹60,000 a year for meritorious, economically disadvantaged UG and PG students at Government/Aided colleges.",
+    "Kerala State Higher Education Council scholarship of ₹12,000–₹60,000 a year for meritorious, economically disadvantaged UG and PG students at.",
   description:
     "The Kerala State Higher Education Council (KSHEC) Higher Education Scholarship (HEC) supports meritorious, economically disadvantaged first-year undergraduate students in Kerala, with continued tiered support through postgraduate studies. The scheme provides financial assistance ranging from ₹12,000 to ₹60,000 depending on the year and level of study.",
   category: "scholarship",

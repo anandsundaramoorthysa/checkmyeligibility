@@ -6,7 +6,7 @@ export const districtMeritScholarship: Scheme = {
   name: "District Merit Scholarship",
   shortName: "District Merit",
   summary:
-    "Annual scholarship of \u20B91,250 for Kerala students who secured A+ in all SSLC subjects and are pursuing Higher Secondary, VHSC, ITI, or Polytechnic courses.",
+    "Annual scholarship of \u20B91,250 for Kerala students who secured A+ in all SSLC subjects and are pursuing Higher Secondary, VHSC, ITI, or Polytechnic.",
   description:
     "The District Merit Scholarship, offered by the Directorate of Collegiate Education, Government of Kerala, provides financial assistance to meritorious students who secured A+ in all subjects in the SSLC Examination and are pursuing Higher Secondary, VHSC, ITI, or Polytechnic courses.",
   category: "scholarship",

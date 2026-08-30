@@ -6,7 +6,7 @@ export const csirSeniorResearchFellowshipSrfDirect: Scheme = {
   name: "CSIR Senior Research Fellowship (SRF-Direct)",
   shortName: "CSIR SRF-Direct",
   summary:
-    "₹42,000/month fellowship for eligible research scholars in Science & Technology and Medical Sciences, awarded directly by CSIR-HRDG to candidates with prior research experience and publications.",
+    "₹42,000/month fellowship for eligible research scholars in Science & Technology and Medical Sciences, awarded directly by CSIR-HRDG to candidates with.",
   description:
     "The Council of Scientific and Industrial Research (CSIR), through its Human Resource Development Group (HRDG), awards a limited number of Senior Research Fellowships (SRF-Direct) each year to bright young men and women for training in methods of research under expert guidance at university departments, Institutes of National Importance, CSIR laboratories, government research establishments, and recognized R&D institutions across India.\n\nUnlike the JRF-to-SRF upgrade route, SRF-Direct is awarded directly by CSIR to candidates who already possess the requisite postgraduate qualifications, research experience, and SCI publications. The fellowship is tenable in all universities, deemed universities, IITs, postgraduate colleges, CSIR laboratories, recognized public sector R&D establishments, and industrial R&D labs across India.\n\nSelected fellows receive a stipend of ₹42,000 per month for the entire tenure, along with an annual contingency grant of ₹20,000. The fellowship is initially tenable for two years and is extendable by one year based on a satisfactory assessment by a three-member expert committee.",
   category: "fellowship",

@@ -6,7 +6,7 @@ export const ietIndiaScholarshipAward: Scheme = {
   name: "IET India Scholarship Award",
   shortName: "IET Scholarship",
   summary:
-    "A merit-based scholarship for undergraduate engineering students recognizing academic excellence, leadership, innovation, and technical aptitude. Top prize of ₹6,00,000 plus trophy and IET membership.",
+    "A merit-based scholarship for undergraduate engineering students recognizing academic excellence, leadership, innovation, and technical aptitude.",
   description:
     "The IET India Scholarship Award is a merit-based scholarship and recognition program conducted by The Institution of Engineering and Technology (IET) India. It recognizes outstanding undergraduate engineering students based on academics, leadership, innovation, extracurricular activities, and technical aptitude. Applications are free of cost.",
   category: "scholarship",

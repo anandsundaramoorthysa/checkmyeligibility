@@ -6,7 +6,7 @@ export const mukhyamantriMedhaviVidyarthiYojana: Scheme = {
   name: "Mukhyamantri Medhavi Vidyarthi Yojana",
   shortName: "MMVY",
   summary:
-    "Complete tuition fee coverage for meritorious students from economically weaker families in Madhya Pradesh pursuing undergraduate courses in engineering, medicine, law, and other streams.",
+    "Complete tuition fee coverage for meritorious students from economically weaker families in Madhya Pradesh pursuing undergraduate courses in engineering,.",
   description:
     "Mukhyamantri Medhavi Vidyarthi Yojana (MMVY) is a flagship scholarship scheme launched by the Government of Madhya Pradesh in 2017 under the Department of Technical Education, Skill Development and Employment. The scheme provides full tuition fee reimbursement to meritorious students from Below Poverty Line families who have passed Class 12 with strong academic results. The government directly pays the approved tuition fee to eligible institutions on behalf of the student, covering engineering, medical, law, polytechnic, and other undergraduate programmes at recognised government and private colleges. Over 1.5 lakh students have benefited from the scheme, with the state government disbursing more than ₹500 crore in tuition fee reimbursements. The scheme has contributed to a significant increase in higher education enrollment among economically disadvantaged students in the state.",
   category: "scholarship",

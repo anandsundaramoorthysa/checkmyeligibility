@@ -6,7 +6,7 @@ export const pmSpecialScholarshipJkLadakhStudents: Scheme = {
   name: "PM Special Scholarship Scheme for J&K and Ladakh Students",
   shortName: "PM Special Scholarship J&K/Ladakh",
   summary:
-    "Central scholarship scheme for meritorious students from Jammu & Kashmir and Ladakh pursuing higher education, with comprehensive financial support and special provisions for resident students.",
+    "Central scholarship scheme for meritorious students from Jammu & Kashmir and Ladakh pursuing higher education, with comprehensive financial support and.",
   description:
     "The PM Special Scholarship Scheme for J&K and Ladakh Students is a landmark initiative by the Ministry of Education (Department of Higher Education), Government of India, designed to provide educational opportunities and promote higher education among talented students from the Union Territories of Jammu & Kashmir and Ladakh. Launched as part of Prime Minister's vision to strengthen education infrastructure and talent development in these regions, the scheme offers comprehensive financial support to meritorious students pursuing undergraduate and postgraduate programmes across recognized institutions nationwide. The scholarship aims to attract and nurture talent from these regions, facilitate their access to quality higher education, and enable them to become productive citizens contributing to the socio-economic development of their regions and the nation. The scheme covers tuition fees, monthly stipends, book allowances, travel allowances, and additional provisions for residential students studying outside their home territory.",
   category: "scholarship",

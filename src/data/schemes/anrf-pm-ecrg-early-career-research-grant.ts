@@ -6,7 +6,7 @@ export const anrfPmEcrgEarlyCareerResearchGrant: Scheme = {
   name: "ANRF PM Early Career Research Grant (PM ECRG)",
   shortName: "ANRF PM ECRG",
   summary:
-    "₹60 lakh over 3 years for early-career researchers with a Ph.D., for undertaking independent research in science and engineering. Around 700 grants awarded annually.",
+    "₹60 lakh over 3 years for early-career researchers with a Ph.D., for undertaking independent research in science and engineering.",
   description:
     "The ANRF PM Early Career Research Grant (PM ECRG), earlier known as SERB PM ECRG, is a prestigious research funding scheme that provides ₹60 lakh over 3 years to young, independent researchers who have recently completed their Ph.D. The scheme aims to encourage outstanding researchers in the early stages of their career to pursue promising and innovative research in science and engineering. Approximately 700 grants are awarded annually across Indian academic institutions and research laboratories. The grant covers research manpower, consumables, travel, and equipment costs.",
   category: "fellowship",

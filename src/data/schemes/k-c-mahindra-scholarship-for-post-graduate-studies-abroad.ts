@@ -6,7 +6,7 @@ export const kCMahindraScholarshipForPostGraduateStudiesAbroad: Scheme = {
   name: "K.C. Mahindra Scholarship for Post-Graduate Studies Abroad",
   shortName: "K.C. Mahindra Scholarship",
   summary:
-    "An interest-free loan scholarship of up to \u20B910 lakh for Indian students pursuing full-time postgraduate studies at reputed universities abroad, awarded by the K.C. Mahindra Education Trust.",
+    "An interest-free loan scholarship of up to \u20B910 lakh for Indian students pursuing full-time postgraduate studies at reputed universities abroad,.",
   description:
     "The K.C. Mahindra Scholarship for Post-Graduate Studies Abroad is an interest-free loan scholarship offered by the K.C. Mahindra Education Trust (KCMET) to support Indian students pursuing postgraduate studies at reputed universities abroad. It is one of India's oldest overseas education scholarships, established in 1956.",
   category: "scholarship",

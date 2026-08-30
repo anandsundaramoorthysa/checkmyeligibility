@@ -6,7 +6,7 @@ export const topClassEducationSchemeForScStudents: Scheme = {
   name: "Top Class Education Scheme for SC Students",
   shortName: "TCE SC",
   summary:
-    "Full tuition fee reimbursement and academic allowance up to ₹86,000/year for SC students admitted to premier institutions like IITs, IIMs, NITs, and other notified top-class institutions.",
+    "Full tuition fee reimbursement and academic allowance up to ₹86,000/year for SC students admitted to premier institutions like IITs, IIMs, NITs, and other.",
   description:
     "The Top Class Education Scheme for SC Students is a flagship scholarship of the Ministry of Social Justice and Empowerment, Government of India. It recognises and promotes quality education among students belonging to Scheduled Castes (SC) by providing comprehensive financial support for pursuing studies beyond Class 12 in notified premier institutions across India. The scheme covers tuition fees, non-refundable charges, academic allowance for books, stationery, laptop, and living expenses. Approximately 2,000 scholarships are awarded annually, with 30% of slots reserved for girl students based on merit. Once awarded, the scholarship continues for the full duration of the course, subject to satisfactory academic performance.",
   category: "social-welfare",

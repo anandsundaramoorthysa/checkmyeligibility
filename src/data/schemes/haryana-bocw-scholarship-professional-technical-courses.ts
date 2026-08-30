@@ -6,7 +6,7 @@ export const haryanaBocwScholarshipProfessionalTechnicalCourses: Scheme = {
   name: "Haryana BOCW Welfare Board – Scholarship for Professional/Technical Degree Courses",
   shortName: "Haryana BOCW Scholarship",
   summary:
-    "Full financial support for admission, tuition, and examination fees for children of registered construction workers in Haryana pursuing professional or technical degree courses.",
+    "Full financial support for admission, tuition, and examination fees for children of registered construction workers in Haryana pursuing professional or.",
   description:
     "The Haryana Building and Other Construction Workers Welfare Board (HBOCWWB) under the Labour Department, Government of Haryana, offers a scholarship to support the children of registered construction workers in pursuing higher education in professional and technical fields. Under this scheme, all academic expenses including admission fees, tuition fees, and examination fees are fully covered. The government directly pays the fees to the respective institution, ensuring no financial burden on the student. For private institutions, fees are reimbursed as per government college rates. The scheme applies to both professional and technical courses. The parent (mother or father) must be a registered member of the Construction Workers Board with at least 1 year of active membership. Up to 3 daughters and 2 sons per family can benefit. Applications are accepted online through the Haryana Antyodaya SARAL Portal.",
   category: "scholarship",

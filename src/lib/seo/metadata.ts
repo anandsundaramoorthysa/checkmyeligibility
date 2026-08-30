@@ -28,7 +28,19 @@ export function buildMetadata({
     description,
     ...(keywords?.length ? { keywords } : {}),
     alternates: { canonical: url, languages: { "en-IN": url } },
-    robots: noindex ? { index: false, follow: true } : undefined,
+    robots: noindex
+      ? { index: false, follow: true }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large" as const,
+            "max-video-preview": -1,
+          },
+        },
     openGraph: {
       type: "website",
       siteName: SITE.name,

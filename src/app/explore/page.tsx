@@ -13,12 +13,14 @@ import { getAllSchemes } from "@/lib/data";
 import { CATEGORIES } from "@/data/categories";
 import type { Scheme, SchemeCategory } from "@/lib/types";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Explore schemes",
-  description:
-    "Browse 200+ Indian government scholarships, fellowships, and education loans. Plain-language summaries with direct links to apply on official portals.",
-  path: "/explore",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  const schemes = await getAllSchemes();
+  return buildMetadata({
+    title: "Explore schemes",
+    description: `Browse ${schemes.length} Indian government scholarships, fellowships, and education loans. Plain-language summaries with direct links to apply on official portals.`,
+    path: "/explore",
+  });
+}
 
 function groupByCategory(schemes: Scheme[]) {
   const byMember = new Map<SchemeCategory, Scheme[]>();
@@ -41,8 +43,7 @@ export default async function ExplorePage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Explore government schemes",
-    description:
-      "Browse 200+ Indian government scholarships, fellowships, and education loans. Plain-language summaries with direct links to apply on official portals.",
+    description: `Browse ${schemes.length} Indian government scholarships, fellowships, and education loans. Plain-language summaries with direct links to apply on official portals.`,
     url: new URL("/explore", SITE.url).toString(),
     numberOfItems: schemes.length,
   };

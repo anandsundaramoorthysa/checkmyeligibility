@@ -6,7 +6,7 @@ export const tamilNaduChiefMinisterSResearchFellowship: Scheme = {
   name: "Tamil Nadu Chief Minister's Research Fellowship",
   shortName: "TN CMRF",
   summary:
-    "₹25,000 per month state fellowship for meritorious TN students pursuing full-time PhD at recognised state universities, with a three-year tenure and phased progression review.",
+    "₹25,000 per month state fellowship for meritorious TN students pursuing full-time PhD at recognised state universities, with a three-year tenure and.",
   description:
     "The Tamil Nadu Chief Minister's Research Fellowship (CMRF) is a state-sponsored scheme designed to cultivate a robust academic research ecosystem by financially supporting meritorious students pursuing full-time Ph.D. programs in recognized state universities and government colleges. Running under a structured three-year tenure framework, the initiative enables scholars to focus on advanced academic research across diverse fields, including Science, Arts, Humanities, and Social Sciences. Selected research fellows go through a phased progression overseen by the Tamil Nadu Directorate of Collegiate Education (TNDCE). This progression includes a performance review at the end of the first year (Phase I), an evaluation at the end of the second year (Phase II) to transition to senior fellowship status, and a final thesis and report submission along with a formal Utilization Certificate at the completion of the third year (Phase III).",
   category: "fellowship",

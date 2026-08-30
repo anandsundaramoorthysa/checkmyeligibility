@@ -6,7 +6,7 @@ export const financialSupportSchemeDelhiUniversity: Scheme = {
   name: "Financial Support Scheme — University of Delhi",
   shortName: "DU Financial Support",
   summary:
-    "Full or partial tuition fee waiver (up to ₹15,000) for undergraduate and postgraduate students of the University of Delhi with annual family income below ₹8 lakh.",
+    "Full or partial tuition fee waiver (up to ₹15,000) for undergraduate and postgraduate students of the University of Delhi with annual family income below.",
   description:
     "The Financial Support Scheme of the University of Delhi provides need-based financial assistance to meritorious students enrolled in full-time programmes at Delhi University colleges. The scheme offers a tuition fee waiver of up to 100% of the tuition fee, capped at ₹15,000 per year, for students whose annual family income does not exceed ₹8,00,000. The objective is to ensure that no student is denied quality education due to financial constraints. Students enrolled in regular undergraduate and postgraduate programmes at DU colleges can apply through the university's online portal during the notified application window.",
   category: "education",

@@ -6,7 +6,7 @@ export const nayaSaveraFreeCoachingScheme: Scheme = {
   name: "Naya Savera – Free Coaching Scheme for Minorities",
   shortName: "Naya Savera",
   summary:
-    "Free coaching for students from 6 notified minority communities for competitive examinations including UPSC, SSC, Banking, NEET, JEE, CLAT, and State PSC, with stipend and study material support.",
+    "Free coaching for students from 6 notified minority communities for competitive examinations including UPSC, SSC, Banking, NEET, JEE, CLAT, and State PSC,.",
   description:
     "Naya Savera (New Dawn) is a Ministry of Minority Affairs scheme providing free coaching to students from 6 notified minority communities for competitive examinations. The scheme covers coaching for UPSC Civil Services, SSC, Banking (IBPS/SBI PO), Railway (RRB), State PSC, entrance exams for professional courses (NEET, JEE, CLAT), and language proficiency tests. Coaching is provided through empanelled coaching institutes with course fees paid directly to institutes by the Ministry. Students receive a monthly stipend of ₹3,000 (day scholar) or ₹6,000 (residential) plus free study material. Target beneficiaries: 1,00,000 students per year.",
   category: "education",
@@ -17,7 +17,7 @@ export const nayaSaveraFreeCoachingScheme: Scheme = {
       label: "Minority Community",
       value:
         "Must belong to one of 6 notified minority communities: Muslim, Christian, Sikh, Buddhist, Zoroastrian (Parsi), or Jain",
-      type: "other",
+      type: "caste-category",
     },
     {
       label: "Annual family income",
@@ -35,7 +35,7 @@ export const nayaSaveraFreeCoachingScheme: Scheme = {
       label: "Age limit",
       value:
         "As per the examination being prepared for (e.g., UPSC maximum 32 years for General, 37 for SC/ST/Minority candidates)",
-      type: "other",
+      type: "age",
     },
     {
       label: "Other coaching schemes",

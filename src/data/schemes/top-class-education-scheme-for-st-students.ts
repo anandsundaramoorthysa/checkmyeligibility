@@ -6,7 +6,7 @@ export const topClassEducationSchemeForStStudents: Scheme = {
   name: "Top Class Education Scheme for ST Students",
   shortName: "TCE ST",
   summary:
-    "Full tuition fee coverage plus a living allowance, book grant, and computer grant for meritorious Scheduled Tribe students admitted to premier institutions such as IITs, IIMs, NITs, and AIIMS.",
+    "Full tuition fee coverage plus a living allowance, book grant, and computer grant for meritorious Scheduled Tribe students admitted to premier.",
   description:
     "The Top Class Education Scheme for ST Students supports meritorious Scheduled Tribe (ST) applicants pursuing undergraduate, postgraduate, and professional courses (Medical, Law, CA) at notified 'Top Class' institutions of national importance. It covers full tuition fees and non-refundable charges, and provides a monthly living expense allowance, an annual book grant, and a one-time grant for the purchase of a computer/laptop and accessories, easing the financial burden of studying at premier institutions.",
   category: "social-welfare",

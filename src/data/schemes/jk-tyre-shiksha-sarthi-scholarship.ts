@@ -6,7 +6,7 @@ export const jkTyreShikshaSarthiScholarship: Scheme = {
   name: "JK Tyre Shiksha Sarthi Scholarship",
   shortName: "JK Tyre Shiksha Sarthi",
   summary:
-    "One-time financial grant of up to ₹25,000 for daughters of Heavy Motor Vehicle (HMV) drivers pursuing undergraduate or diploma courses in select states, offered by JK Tyre & Industries Ltd. under its CSR initiative.",
+    "One-time financial grant of up to ₹25,000 for daughters of Heavy Motor Vehicle (HMV) drivers pursuing undergraduate or diploma courses in select states,.",
   description:
     "The JK Tyre Shiksha Sarthi Scholarship Program is a Corporate Social Responsibility (CSR) initiative by JK Tyre & Industries Ltd. aimed at empowering daughters of Heavy Motor Vehicle (HMV) drivers by providing financial support for higher education. The scholarship covers tuition fees, examination fees, books, and other academic expenses for female students pursuing general or professional undergraduate courses or diploma programmes. It is available to residents of Rajasthan, Madhya Pradesh, Uttarakhand, Karnataka, and Tamil Nadu. In deserving cases, the scholarship may be renewed for the entire duration of the graduation programme, provided the student maintains the required academic performance. Since its launch, the programme has supported hundreds of young women from the transport community in pursuing their educational aspirations.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const higherEducationAssistanceSchemeGujarat: Scheme = {
   name: "Higher Education Assistance Scheme",
   shortName: "HEA Gujarat",
   summary:
-    "Financial assistance of up to \u20B920,000 for children of registered workers in Gujarat who have passed 12th Standard with 70% or above and secured admission in graduate-level or MBBS courses.",
+    "Financial assistance of up to \u20B920,000 for children of registered workers in Gujarat who have passed 12th Standard with 70% or above and secured.",
   description:
     "The Higher Education Assistance Scheme is a state-level initiative by the Gujarat Labour Welfare Board under the Labour & Employment Department, Government of Gujarat. It aims to reduce the financial burden of higher education for children of workers registered with the Labour Welfare Fund. Students who have passed the 12th Standard board examination with 70% or above percentile and secured admission in a Bachelor of Medicine and Bachelor of Surgery (MBBS) course or any other graduate-level programme are eligible. The scheme provides a one-time Direct Benefit Transfer of \u20B920,000 for MBBS students and \u20B910,000 for students admitted to other graduate courses. The parent must be employed in a factory or institution in Gujarat and must have been contributing to the Labour Welfare Fund for at least one continuous year. Applications are accepted online through the Sanman Portal, and the deadline is the last date of February of the respective year.",
   category: "scholarship",

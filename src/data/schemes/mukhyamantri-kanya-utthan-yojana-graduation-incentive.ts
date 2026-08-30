@@ -6,7 +6,7 @@ export const mukhyamantriKanyaUtthanYojanaGraduationIncentive: Scheme = {
   name: "Mukhyamantri Kanya Utthan Yojana \u2013 Graduation Incentive",
   shortName: "MKUY Graduation Incentive",
   summary:
-    "A one-time incentive of \u20B950,000 for unmarried female graduates of Bihar to promote higher education retention, prevent early marriage, and foster financial independence.",
+    "A one-time incentive of \u20B950,000 for unmarried female graduates of Bihar to promote higher education retention, prevent early marriage, and foster.",
   description:
     "The Mukhyamantri Kanya Utthan Yojana (Graduation Milestone) is a women empowerment initiative launched by the Bihar state government to support female student retention in higher education. It addresses socioeconomic challenges like early marriage and female feticide by providing financial security directly to young female scholars. Successful applicants receive a substantial financial incentive meant to promote self-reliance, giving them the choice to seek advanced career placements or invest in post-graduate programs.",
   category: "women-child",

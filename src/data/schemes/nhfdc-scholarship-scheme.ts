@@ -6,7 +6,7 @@ export const nhfdcScholarshipScheme: Scheme = {
   name: "NHFDC Scholarship Scheme for Students with Disabilities",
   shortName: "NHFDC Scholarship",
   summary:
-    "Up to 2,500 scholarships per year providing maintenance allowance of ₹2,500–₹3,000/month, fee reimbursement, and assistive device grants for students with 40%+ disability pursuing professional or technical graduation and post-graduation courses, with a family income ceiling of ₹3 lakh per annum.",
+    "Up to 2,500 scholarships per year providing maintenance allowance of ₹2,500–₹3,000/month, fee reimbursement, and assistive device grants for students with.",
   description:
     "The National Handicapped Finance and Development Corporation (NHFDC) Scholarship Scheme is implemented by the National Handicapped Finance and Development Corporation under the Ministry of Social Justice & Empowerment, Government of India. NHFDC operates two sub-schemes: the Trust Fund Scholarship (2,500 new scholarships per year) and the Scholarship Fund / National Fund (500 scholarships per year), together providing comprehensive financial support to students with disabilities pursuing higher education.\n\nThe scheme covers professional and technical graduation and post-graduation courses — including Engineering, Medical, Management, Law, Agriculture, Pharmacy, Nursing, and other recognised professional programmes — as well as M.Phil and Ph.D. programmes at recognised institutions across India. Beneficiaries receive reimbursement of non-refundable institutional fees as per AICTE/UGC norms or actuals, whichever is less, along with a monthly maintenance allowance.\n\nIn addition to the core scholarship, NHFDC provides specialised grants for aids and appliances tailored to different disability types: visually handicapped students can receive Braille equipment and laptops with screen reading software; hearing handicapped students can receive digital hearing aids and laptops with WiFi/Bluetooth; and orthopaedically handicapped students can receive laptops for academic use. These assistive device grants ensure students have the tools necessary for academic success.\n\nSelection is primarily based on academic merit and the level of disability, with a significant number of slots reserved for female candidates to ensure gender-inclusive educational growth. The scholarship is renewable annually subject to satisfactory academic performance. Applications are processed through the NHFDC portal (nhfdc.nic.in) and disbursement is made directly into the student's Aadhaar-linked bank account.",
   category: "disability",
@@ -22,7 +22,7 @@ export const nhfdcScholarshipScheme: Scheme = {
     {
       label: "Nationality",
       value: "Must be an Indian national",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Course level",

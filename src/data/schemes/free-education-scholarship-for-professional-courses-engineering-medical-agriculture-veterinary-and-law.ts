@@ -7,7 +7,7 @@ export const freeEducationScholarshipForProfessionalCoursesEngineeringMedicalAgr
     name: "Free Education Scholarship for Professional Courses (Engineering, Medical, Agriculture, Veterinary, and Law)",
     shortName: "Free Education (Professional Courses)",
     summary:
-      "Full fee waiver for BC, MBC, and DNC students of Tamil Nadu pursuing professional courses like Engineering, Medical, Agriculture, Veterinary, and Law in Government, Government-aided, and Self-financing colleges.",
+      "Full fee waiver for BC, MBC, and DNC students of Tamil Nadu pursuing professional courses like Engineering, Medical, Agriculture, Veterinary, and Law in.",
     description:
       "The Free Education Scholarship for Professional Courses, implemented by the Backward Classes, Most Backward Classes and Minorities Welfare Department, Government of Tamil Nadu, provides full fee support to eligible BC, MBC and DNC students pursuing professional courses such as Engineering, Medical, Agriculture, Veterinary and Law in Government, Government-aided and Self-financing colleges. The scheme covers the full tuition fee, special fees, other non-refundable compulsory fees, and the full examination fee as prescribed by the Government, enabling eligible students from backward communities to pursue higher professional education without financial barriers.",
     category: "scholarship",

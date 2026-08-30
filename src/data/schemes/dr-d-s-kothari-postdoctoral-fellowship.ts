@@ -6,7 +6,7 @@ export const drDSKothariPostdoctoralFellowship: Scheme = {
   name: "Dr. D.S. Kothari Postdoctoral Fellowship",
   shortName: "DSKPDF",
   summary:
-    "UGC-funded postdoctoral fellowship offering ₹43,400–₹46,500 per month plus an annual ₹1,00,000 contingency grant to PhD graduates in Sciences, Engineering, and Medicine.",
+    "UGC-funded postdoctoral fellowship offering ₹43,400–₹46,500 per month plus an annual ₹1,00,000 contingency grant to PhD graduates in Sciences,.",
   description:
     "The Dr. D.S. Kothari Postdoctoral Fellowship is a UGC-funded programme for PhD graduates in the Sciences, Engineering, and Medicine, supporting independent research under the guidance of a mentor at a recognised institution.",
   category: "fellowship",

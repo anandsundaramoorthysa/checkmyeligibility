@@ -6,7 +6,7 @@ export const centralVigilanceCommissionInternshipScheme: Scheme = {
   name: "Central Vigilance Commission (CVC) Internship Scheme",
   shortName: "CVC Internship",
   summary:
-    "Short-term unpaid internship opportunity at CVC Headquarters, New Delhi for graduates, postgraduates, and research students to gain exposure to India's anti-corruption and vigilance framework.",
+    "Short-term unpaid internship opportunity at CVC Headquarters, New Delhi for graduates, postgraduates, and research students to gain exposure to India's.",
   description:
     "The Central Vigilance Commission (CVC) Internship Scheme is a short-term academic engagement programme offered by the Central Vigilance Commission, the apex integrity institution of the Government of India. The programme is designed to introduce students to the preventive vigilance mechanism and anti-corruption framework of the country. Interns work under the supervision of senior officers at CVC Headquarters in New Delhi, contributing to research, policy evaluation, and case study analysis. The internship is open to Indian nationals who are final-year undergraduate students, postgraduates, or research scholars (PhD) from recognised universities in India or abroad, preferably in fields such as Law, Public Administration, Political Science, Public Policy, or related disciplines. The programme runs for 6 to 8 weeks and is unpaid, but interns receive a Certificate of Completion and gain valuable exposure to top-level governance and vigilance systems. Applications are accepted on a rolling basis, and candidates must apply at least 30 days before their intended start date.",
   category: "skill-development",

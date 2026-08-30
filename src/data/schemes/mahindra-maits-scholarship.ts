@@ -6,7 +6,7 @@ export const mahindraMailtsScholarship: Scheme = {
   name: "Mahindra ALL India Talent (MAITS) Scholarship",
   shortName: "Mahindra MAITS",
   summary:
-    "Merit-based scholarship for meritorious students across India pursuing undergraduate and postgraduate studies, with financial assistance of up to ₹5 lakh annually.",
+    "Merit-based scholarship for meritorious students across India pursuing undergraduate and postgraduate studies, with financial assistance of up to ₹5 lakh.",
   description:
     "The Mahindra ALL India Talent (MAITS) Scholarship is a prestigious scholarship programme launched by the Mahindra Group to identify and support exceptionally meritorious students across India. The scheme aims to recognize and nurture talented young minds regardless of their socioeconomic background, enabling them to pursue higher education without financial constraints. Students from diverse academic streams — engineering, commerce, science, management, and humanities — are encouraged to apply. The scholarship considers both academic merit (70%+ in Class 12 or equivalent) and financial need, with preference given to first-generation learners and students from underprivileged backgrounds. Awards range from partial support to full tuition coverage depending on financial eligibility.",
   category: "scholarship",

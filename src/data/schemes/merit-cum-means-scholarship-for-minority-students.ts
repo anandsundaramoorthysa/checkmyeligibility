@@ -6,7 +6,7 @@ export const meritCumMeansScholarshipForMinorityStudents: Scheme = {
   name: "Merit-cum-Means Scholarship for Minority Students",
   shortName: "MCM Scholarship (Minority)",
   summary:
-    "Financial assistance of up to \u20B920,000 per year for meritorious students from minority communities pursuing professional and technical courses at the graduate and postgraduate level in India.",
+    "Financial assistance of up to \u20B920,000 per year for meritorious students from minority communities pursuing professional and technical courses at the.",
   description:
     "The Merit-cum-Means Scholarship for Minority Students is a flagship Central Sector Scheme of the Ministry of Minority Affairs, Government of India. It provides financial assistance to poor and meritorious students belonging to notified minority communities (Muslims, Sikhs, Christians, Buddhists, Parsis, and Jains) to enable them to pursue professional and technical courses at the graduate and postgraduate level. The scholarship covers course fees of up to \u20B920,000 per annum (subject to actuals, whichever is less) and a maintenance allowance of \u20B91,000 per month for hostellers and \u20B9500 per month for day scholars (for 10 months in an academic year). For students enrolled in 85 listed premier institutes, full course fee reimbursement is provided. A total of 60,000 fresh scholarships are awarded each year. The scholarship is awarded for studies in India in government or private institutions selected by the concerned State Government/UT Administration. Applications are accepted online through the National Scholarship Portal (NSP).",
   category: "scholarship",

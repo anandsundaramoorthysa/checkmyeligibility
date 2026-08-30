@@ -6,7 +6,7 @@ export const sitaramJindalScholarship: Scheme = {
   name: "Sitaram Jindal Foundation Scholarship",
   shortName: "Sitaram Jindal Scholarship",
   summary:
-    "A merit-cum-means private scholarship by Sitaram Jindal Foundation offering \u20B9500 to \u20B93,200 per month for students from Class 11 to postgraduate and professional courses across India.",
+    "A merit-cum-means private scholarship by Sitaram Jindal Foundation offering \u20B9500 to \u20B93,200 per month for students from Class 11 to postgraduate.",
   description:
     "The Sitaram Jindal Foundation Scholarship is a prestigious merit-cum-means private scholarship provided by the Sitaram Jindal Foundation, Bengaluru. It is designed to support financially disadvantaged yet academically meritorious students from Class 11 through postgraduate and professional courses including Engineering and Medical. The scholarship covers students across all Indian states and is open year-round with no fixed last date. Monthly financial assistance ranges from \u20B9500 to \u20B93,200 depending on the course level and gender, with girls receiving higher amounts to encourage female education. Additional hostel allowance of \u20B9800 to \u20B91,800 per month is available for hostellers. The foundation supports over 12,000 students annually and has benefited lakhs of students since its inception. Selection is based on academic merit and family income, with applications accepted both online and offline through the foundation\u2019s regional offices.",
   category: "scholarship",

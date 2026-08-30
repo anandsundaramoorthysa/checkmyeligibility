@@ -6,7 +6,7 @@ export const meghalayaBocwBoard: Scheme = {
   name: "Meghalaya BOCW Board Educational Assistance",
   shortName: "Meghalaya BOCW",
   summary:
-    "Monthly stipends of \u20B9400 to \u20B9800 plus one-time grants for books and uniforms for children of registered construction workers in Meghalaya, covering post-matric degree and PG courses.",
+    "Monthly stipends of \u20B9400 to \u20B9800 plus one-time grants for books and uniforms for children of registered construction workers in Meghalaya,.",
   description:
     "The Meghalaya Building and Other Construction Workers Welfare Board (MBOCWWB) provides Educational Assistance via Pre-Matric and Post-Matric Scholarships to the children of registered construction workers. This financial support ensures eligible students can pursue and complete Degree/Post-Graduate (PG) programmes within India without financial hardship. Monthly stipends range from \u20B9400 to \u20B9800, along with one-time grants for books and uniforms.",
   category: "social-welfare",

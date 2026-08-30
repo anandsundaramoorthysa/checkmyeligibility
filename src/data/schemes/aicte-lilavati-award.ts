@@ -6,7 +6,7 @@ export const aicteLilavatiAward: Scheme = {
   name: "AICTE Lilavati Award",
   shortName: "Lilavati Award",
   summary:
-    "Annual AICTE grant of up to ₹1,00,000 per theme for student teams from AICTE-approved institutions implementing documented, impactful interventions in women's empowerment.",
+    "Annual AICTE grant of up to ₹1,00,000 per theme for student teams from AICTE-approved institutions implementing documented, impactful interventions in.",
   description:
     "The AICTE Lilavati Award recognises student teams from AICTE-approved institutions for implementing documented, impactful interventions in areas of women's empowerment — including sanitation, legal awareness, literacy, entrepreneurship, and self-defence. Teams submit an intervention implemented within the last two years, demonstrating measurable social impact on women, and are recognised with a cash award per theme.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const padhoPardeshScheme: Scheme = {
   name: "Padho Pardesh Scheme",
   shortName: "Padho Pardesh",
   summary:
-    "100% interest subsidy on education loans for overseas studies during the moratorium period for students from minority communities pursuing Masters, M.Phil., or Ph.D. abroad.",
+    "100% interest subsidy on education loans for overseas studies during the moratorium period for students from minority communities pursuing Masters,.",
   description:
     "The Padho Pardesh Scheme was launched by the Ministry of Minority Affairs in 2006 under the Prime Minister's New 15-Point Programme for the Welfare of Minorities. The scheme provides 100% interest subsidy on education loans taken from IBA-member banks for overseas studies at the postgraduate, M.Phil., or Ph.D. level. The interest subsidy covers the moratorium period, which is the course duration plus one year after completion (or six months after getting a job, whichever is earlier). After the moratorium period, the student repays the loan with interest as per standard loan terms. The scheme is available to students belonging to minority communities — Muslims, Christians, Sikhs, Buddhists, Jains, and Parsis — with an annual family income not exceeding \u20B96,00,000. Students must apply during the first year of the course through their lending bank. 35% of seats are reserved for girl students. The scheme was discontinued from 2022-23 but remains available for students who availed it before discontinuation.",
   category: "education-loan",

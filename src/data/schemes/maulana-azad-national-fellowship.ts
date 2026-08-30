@@ -6,7 +6,7 @@ export const maulanaAzadNationalFellowship: Scheme = {
   name: "Maulana Azad National Fellowship (MANF)",
   shortName: "MANF",
   summary:
-    "UGC doctoral fellowship for students from six notified minority communities pursuing M.Phil./Ph.D. research at recognized Indian universities, with a monthly stipend and contingency grant.",
+    "UGC doctoral fellowship for students from six notified minority communities pursuing M.Phil./Ph.D.",
   description:
     "The Maulana Azad National Fellowship (MANF) is a Government of India initiative administered by the University Grants Commission (UGC) on behalf of the Ministry of Minority Affairs. It provides five-year integrated fellowships to students belonging to the six notified minority communities — Muslim, Christian, Sikh, Buddhist, Jain, and Zoroastrian (Parsi) — to pursue full-time M.Phil. and Ph.D. programmes at universities and research institutions recognized by UGC. The scheme aims to promote higher education and research among educationally and socially backward minority communities and supports scholars across all disciplines: sciences, social sciences, humanities, engineering, and technology. Fellows receive a monthly Junior Research Fellowship (JRF) for the first two years and Senior Research Fellowship (SRF) from the third year onwards, along with an annual contingency grant to cover books, lab materials, field trips, and academic conferences. The fellowship is administered through the National Fellowship Portal at ugc.ac.in and the National Scholarship Portal.",
   category: "fellowship",

@@ -6,7 +6,7 @@ export const drBabasahebAmbedkarNationalResearchFellowshipBanrf: Scheme = {
   name: "Dr. Babasaheb Ambedkar National Research Fellowship (BANRF)",
   shortName: "BANRF",
   summary:
-    "A Maharashtra Government fellowship by BARTI supporting Scheduled Caste (SC) scholars pursuing full-time M.Phil./Ph.D. research with JRF/SRF stipends and annual contingency grants.",
+    "A Maharashtra Government fellowship by BARTI supporting Scheduled Caste (SC) scholars pursuing full-time M.Phil./Ph.D.",
   description:
     "The BANRF is a Maharashtra Government fellowship implemented by BARTI to support Scheduled Caste (SC) scholars pursuing full-time M.Phil. or Ph.D. research. The scheme provides financial assistance to promote advanced research among SC candidates domiciled in Maharashtra.",
   category: "social-welfare",

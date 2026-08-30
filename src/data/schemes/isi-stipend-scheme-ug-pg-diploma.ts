@@ -6,7 +6,7 @@ export const isiStipendSchemeUgPgDiploma: Scheme = {
   name: "Stipend Scheme for UG, PG and Diploma Students – Indian Statistical Institute",
   shortName: "ISI Stipend Scheme",
   summary:
-    "Monthly stipend of \u20B93,000 to \u20B912,400 and annual contingency grants for students enrolled in B.Stat, B.Math, M.Stat, M.Math, M.Tech, and PG Diploma programmes at the Indian Statistical Institute.",
+    "Monthly stipend of \u20B93,000 to \u20B912,400 and annual contingency grants for students enrolled in B.Stat, B.Math, M.Stat, M.Math, M.Tech, and PG.",
   description:
     "The Indian Statistical Institute (ISI), an Institute of National Importance established in 1931 and recognised by the UGC, provides generous financial assistance to all non-sponsored students enrolled in its undergraduate, postgraduate, and diploma programmes. The Stipend Scheme covers B.Stat (Hons.), B.Math (Hons.), M.Stat, M.Math, MS (QE), MS (LIS), MS (QMS), M.Tech (CS/CrS/QROR), and PG Diploma in Statistical Methods and Analytics. Students receive a monthly stipend ranging from \u20B93,000 for UG programmes to \u20B912,400 for M.Tech programmes, along with an annual contingency grant for academic expenses. There are no tuition fees for non-sponsored students. PG Diploma stipend is primarily available for students domiciled in North-Eastern States. The stipend continuation is subject to maintaining minimum 75% attendance, satisfactory academic performance, and good conduct. The scheme is administered through the National Scholarship Portal (NSP).",
   category: "fellowship",

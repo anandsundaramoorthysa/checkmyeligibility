@@ -6,7 +6,7 @@ export const gaonKiBetiYojanaMadhyaPradesh: Scheme = {
   name: "Gaon Ki Beti Yojana",
   shortName: "Gaon Ki Beti",
   summary:
-    "Madhya Pradesh government scholarship providing ₹500 per month (₹5,000 per year) to meritorious girl students from rural areas who have secured 60% or more in Class 12 and are pursuing undergraduate studies.",
+    "Madhya Pradesh government scholarship providing ₹500 per month (₹5,000 per year) to meritorious girl students from rural areas who have secured 60% or.",
   description:
     "The Gaon Ki Beti Yojana (Daughter of the Village Scheme) is a Madhya Pradesh government initiative launched in 2005 to encourage higher education among talented girls from rural areas. Under this scheme, girl students who have passed Class 12 with 60% or more marks and are enrolled in undergraduate courses at government or private colleges/universities receive financial assistance of ₹500 per month for 10 academic months, totaling ₹5,000 per year. For students pursuing technical or medical education, the amount is ₹750 per month (₹7,500 per year). The scheme covers all categories (General, SC, ST, OBC, EWS) and is an incentive scheme, meaning beneficiaries can also avail other scholarships simultaneously.",
   category: "scholarship",

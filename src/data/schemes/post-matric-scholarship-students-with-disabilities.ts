@@ -6,7 +6,7 @@ export const postMatricScholarshipStudentsWithDisabilities: Scheme = {
   name: "Post Matric Scholarship Students With Disabilities",
   shortName: "PMS-SwD",
   summary:
-    "A central government scholarship for students with benchmark disabilities offering maintenance allowance of ₹550–₹1,600/month, disability allowance of ₹2,000–₹4,000/year, and book allowance of ₹1,500/year.",
+    "A central government scholarship for students with benchmark disabilities offering maintenance allowance of ₹550–₹1,600/month, disability allowance of.",
   description:
     "The Post Matric Scholarship Students With Disabilities is a Central Government scholarship implemented by the Department of Empowerment of Persons with Disabilities (DoEPwD), Ministry of Social Justice and Empowerment. It provides financial assistance to students with benchmark disabilities pursuing post-matric education such as Class XI, Class XII, Diploma, Polytechnic, Undergraduate, Postgraduate, and other recognized professional or technical courses in India. The scheme aims to promote inclusive education and reduce the financial burden on students with disabilities.",
   category: "disability",

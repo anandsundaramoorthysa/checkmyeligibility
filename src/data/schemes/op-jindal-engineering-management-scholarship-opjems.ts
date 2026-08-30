@@ -6,7 +6,7 @@ export const opJindalEngineeringManagementScholarshipOpjems: Scheme = {
   name: "OP Jindal Engineering & Management Scholarship (OPJEMS)",
   shortName: "OPJEMS",
   summary:
-    "A merit-based scholarship by the O.P. Jindal Group offering ₹80,000/year for engineering students and ₹1,50,000/year for management students at premier Indian institutes.",
+    "A merit-based scholarship by the O.P. Jindal Group offering ₹80,000/year for engineering students and ₹1,50,000/year for management students at premier.",
   description:
     "The OPJEMS is a merit-based scholarship started by the O.P. Jindal Group in 2007 to recognize outstanding students from selected premier engineering and management institutions in India. Around 100 students are awarded every year.",
   category: "scholarship",

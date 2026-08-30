@@ -6,7 +6,7 @@ export const tataCapitalPankhScholarship: Scheme = {
   name: "Tata Capital Pankh Scholarship",
   shortName: "Tata Capital Pankh",
   summary:
-    "Up to 80% of tuition fees (₹10,000–₹1,00,000 depending on course level and marks) for meritorious students from economically weaker families studying in Class 11–12, ITI, Diploma, UG, or professional degree programmes, administered via Buddy4Study.",
+    "Up to 80% of tuition fees (₹10,000–₹1,00,000 depending on course level and marks) for meritorious students from economically weaker families studying in.",
   description:
     "The Tata Capital Pankh Scholarship Programme is a CSR initiative by Tata Capital Ltd. to support meritorious students from economically weaker backgrounds in pursuing their education. It covers Class 11, Class 12, ITI, Diploma, undergraduate, and professional degree courses, providing financial assistance of up to 80% of tuition fees, with the amount varying based on academic performance and level of study. The programme is managed through Buddy4Study and gives additional weightage to girl students, SC/ST students, and students with disabilities.",
   category: "scholarship",

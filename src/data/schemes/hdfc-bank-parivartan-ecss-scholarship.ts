@@ -6,7 +6,7 @@ export const hdfcBankParivartanEcssScholarship: Scheme = {
   name: "HDFC Bank Parivartan ECSS Scholarship",
   shortName: "Parivartan ECSS",
   summary:
-    "Annual scholarship of \u20B915,000\u2013\u20B975,000 for underprivileged Indian students from Class 1 through postgraduate level, priority given to those facing a recent family or financial crisis.",
+    "Annual scholarship of \u20B915,000\u2013\u20B975,000 for underprivileged Indian students from Class 1 through postgraduate level, priority given to those.",
   description:
     "The HDFC Bank Parivartan ECSS (Education, Career & Skill Support) Programme is a CSR initiative providing annual financial aid between \u20B915,000 and \u20B975,000 to help underprivileged Indian students continue their education despite facing severe family or financial crises. It covers students from Class 1 through postgraduate level, with amounts varying by education level. Priority is given to students who have faced a recent personal or family crisis.",
   category: "scholarship",

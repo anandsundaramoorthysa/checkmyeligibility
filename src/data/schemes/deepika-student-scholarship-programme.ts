@@ -6,7 +6,7 @@ export const deepikaStudentScholarshipProgramme: Scheme = {
   name: "Deepika Student Scholarship Programme",
   shortName: "Karnataka Deepika",
   summary:
-    "A scholarship of \u20B930,000 per year for girl students who completed Class 12 / II PUC from a government or government-aided institution in Karnataka and are pursuing degree or diploma programmes.",
+    "A scholarship of \u20B930,000 per year for girl students who completed Class 12 / II PUC from a government or government-aided institution in Karnataka.",
   description:
     "The Deepika Student Scholarship Programme is a Karnataka government initiative supporting girl students who completed their Class 12 / II PUC from a government or government-aided institution. It provides \u20B930,000 per year to encourage meritorious girls to continue into degree or diploma programmes. The scheme aims to reduce dropout rates among girl students from government institutions by providing financial support for their higher education.",
   category: "women-child",

@@ -6,7 +6,7 @@ export const pmScholarshipSchemeForCentralArmedPoliceForcesAssamRifles: Scheme =
   name: "Prime Minister's Scholarship Scheme for Central Armed Police Forces & Assam Rifles",
   shortName: "PMSS CAPF & AR",
   summary:
-    "A monthly scholarship of \u20B92,500 (boys) / \u20B93,000 (girls) for wards and widows of CAPFs & Assam Rifles personnel pursuing professional degree courses, implemented by the Ministry of Home Affairs.",
+    "A monthly scholarship of \u20B92,500 (boys) / \u20B93,000 (girls) for wards and widows of CAPFs & Assam Rifles personnel pursuing professional degree.",
   description:
     "The Prime Minister's Scholarship Scheme (PMSS) for Central Armed Police Forces (CAPFs) and Assam Rifles is a flagship initiative of the Ministry of Home Affairs (MHA), introduced in 2006-07 to support the higher education of dependent wards and widows of CAPF and Assam Rifles personnel. The scheme covers personnel from BSF, CRPF, CISF, ITBP, SSB, NSG, and Assam Rifles. It provides financial assistance to students pursuing first professional degree courses in fields such as Engineering, Medicine, Dental, Veterinary, Law, Management, Pharmacy, Nursing, and other approved professional programmes at recognised institutions across India. The scholarship is awarded annually through an online merit-based selection process on the National Scholarship Portal (NSP), with preference given to categories based on the parent's service status, including those killed in action, disabled in service, Gallantry Award recipients, and serving or retired personnel below officer rank. The scheme aims to honour the sacrifices of CAPF and Assam Rifles personnel by ensuring their families have access to quality professional education.",
   category: "scholarship",

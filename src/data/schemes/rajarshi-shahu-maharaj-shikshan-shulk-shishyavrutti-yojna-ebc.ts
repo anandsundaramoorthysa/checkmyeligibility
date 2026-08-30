@@ -6,7 +6,7 @@ export const rajarshiShahuMaharajShikshanShulkShishyavruttiYojnaEbc: Scheme = {
   name: "Rajarshi Shahu Maharaj Shikshan Shulk Shishyavrutti Yojna (EBC)",
   shortName: "Shahu Maharaj EBC",
   summary:
-    "Maharashtra government scheme providing 50%–100% tuition and exam fee reimbursement to economically backward students (EBC) pursuing professional and non-professional PG courses, with family income up to ₹8 lakh.",
+    "Maharashtra government scheme providing 50%–100% tuition and exam fee reimbursement to economically backward students (EBC) pursuing professional and.",
   description:
     "The Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulk Shishyavrutti Yojna (EBC) is a Maharashtra government initiative. It provides financial assistance for tuition and exam fees to economically backward students pursuing higher education. Eligible students must have a family income under ₹8 lakhs and secure admission through the Centralized Admission Process (CAP).",
   category: "scholarship",

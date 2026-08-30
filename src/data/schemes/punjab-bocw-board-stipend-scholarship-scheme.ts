@@ -6,7 +6,7 @@ export const punjabBocwBoardStipendScholarshipScheme: Scheme = {
   name: "Punjab BOCW Board Stipend Scholarship Scheme",
   shortName: "Punjab BOCW Stipend",
   summary:
-    "Annual financial assistance of \u20B93,000 to \u20B970,000 for children of registered construction workers in Punjab, from primary to degree courses, offered by the Punjab Building and Other Construction Workers Welfare Board.",
+    "Annual financial assistance of \u20B93,000 to \u20B970,000 for children of registered construction workers in Punjab, from primary to degree courses,.",
   description:
     "The Punjab Building and Other Construction Workers Welfare Board (PBOCWWB) offers a Stipend Scheme that provides annual financial assistance ranging from \u20B93,000 to \u20B970,000 for the education of registered construction workers\u2019 children, covering classes from 1st standard through degree courses. The mandatory two-year service condition to qualify for this benefit has been abolished, making it accessible to more workers\u2019 families. Registered workers themselves are also eligible if pursuing studies in evening classes at approved institutes.",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const preMatricScholarshipSchemeForObcStudents: Scheme = {
   name: "Pre-Matric Scholarship Scheme for OBC Students",
   shortName: "PM OBC",
   summary:
-    "Financial assistance of ₹100–₹500/month for OBC students studying in Class 1 to Class 10 in government or recognised private schools, with annual family income limit of ₹2.5 lakh.",
+    "Financial assistance of ₹100–₹500/month for OBC students studying in Class 1 to Class 10 in government or recognised private schools, with annual family.",
   description:
     "The Pre-Matric Scholarship Scheme for OBC Students is a Central Sector Scheme of the Ministry of Social Justice and Empowerment, Government of India. It provides financial assistance to OBC students from economically weaker sections studying in Class 1 to Class 10 in government or government-recognised private schools. The scheme aims to support school education of OBC children, prevent dropouts, and encourage continued education at the primary and secondary levels. The scholarship is administered through the National Scholarship Portal (NSP) and disbursed via Direct Benefit Transfer (DBT) to the student's Aadhaar-linked bank account. Applications are typically open from September to November each academic year.",
   category: "social-welfare",

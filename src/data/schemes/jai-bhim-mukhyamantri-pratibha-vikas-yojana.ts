@@ -6,7 +6,7 @@ export const jaiBhimMukhyamantriPratibhaVikasYojana: Scheme = {
   name: "Jai Bhim Mukhyamantri Pratibha Vikas Yojana",
   shortName: "Jai Bhim Coaching Delhi",
   summary:
-    "Delhi government scheme offering free coaching to SC/ST/OBC/EWS students for competitive examinations including UPSC Civil Services, SSC, banking, railways, and entrance tests like NEET and JEE.",
+    "Delhi government scheme offering free coaching to SC/ST/OBC/EWS students for competitive examinations including UPSC Civil Services, SSC, banking,.",
   description:
     "The Jai Bhim Mukhyamantri Pratibha Vikas Yojana (JBMPVY) is a flagship scheme of the Government of National Capital Territory of Delhi implemented by the Delhi Scheduled Castes and Scheduled Tribes Finance and Development Corporation (DSCSTFDC). The scheme provides free coaching to economically weaker students from SC, ST, OBC, and EWS (Economically Weaker Sections) categories at empanelled private coaching institutes in Delhi. The objective is to bridge the gap between meritorious but financially disadvantaged students and high-quality coaching needed to clear competitive examinations. Under the scheme, eligible students can choose from empanelled coaching institutes and receive professional coaching for Group A & B (Central) Services exams (including UPSC Civil Services IAS/IPS/IFS), Group C & D Services, SSC, banking and insurance exams, railways, Delhi Judicial Services, CLAT/law entrance, engineering entrance (JEE), medical entrance (NEET), and other national and state-level competitive examinations. The coaching fees are paid directly to the empanelled institutes by the Delhi government on behalf of students.",
   category: "scholarship",
@@ -31,7 +31,7 @@ export const jaiBhimMukhyamantriPratibhaVikasYojana: Scheme = {
     {
       label: "Domicile",
       value: "Must be a permanent resident of Delhi and possess a valid Delhi domicile certificate",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Qualification",
@@ -41,7 +41,7 @@ export const jaiBhimMukhyamantriPratibhaVikasYojana: Scheme = {
     {
       label: "Citizenship",
       value: "Indian citizen",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Repetition",

@@ -6,7 +6,7 @@ export const theBabuJagjivanRamHostelSchemeBjrcy: Scheme = {
   name: "Babu Jagjivan Ram Hostel Scheme (BJRCY)",
   shortName: "BJRCY Hostel",
   summary:
-    "A centrally sponsored scheme providing 100% central funding for constructing and expanding hostel facilities for Scheduled Caste (SC) students, with construction grants up to \u20B93.50 lakh per inmate and maintenance funds between \u20B95\u201315 lakh every five years.",
+    "A centrally sponsored scheme providing 100% central funding for constructing and expanding hostel facilities for Scheduled Caste (SC) students, with.",
   description:
     "The Babu Jagjivan Ram Hostel Scheme (BJRCY) is a centrally sponsored scheme under the PM-AJAY framework aimed at constructing and expanding hostel facilities for Scheduled Caste (SC) students. Its primary goal is to promote educational opportunities and reduce dropout rates by providing safe, affordable accommodation to students pursuing higher and post-matric studies. The scheme provides 100% central funding for hostel construction, capped at \u20B93.50 lakh per inmate in Himalayan/North-East states and \u20B93.00 lakh elsewhere, along with a one-time furnishing grant of \u20B92,500 per student and maintenance funds between \u20B95 lakh and \u20B915 lakh every five years.",
   category: "social-welfare",

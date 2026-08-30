@@ -6,7 +6,7 @@ export const nbhmScholarshipForMScStudentsDeptOfAtomicEnergy: Scheme = {
   name: "NBHM Scholarship for M.Sc. Students (Dept. of Atomic Energy)",
   shortName: "NBHM M.Sc. Scholarship",
   summary:
-    "Monthly stipend of ₹8,000 for up to two years for meritorious Mathematics and Statistics students pursuing M.Sc. programs, funded by the Department of Atomic Energy (DAE).",
+    "Monthly stipend of ₹8,000 for up to two years for meritorious Mathematics and Statistics students pursuing M.Sc.",
   description:
     "The National Board for Higher Mathematics (NBHM) Master's Scholarship Scheme is a highly prestigious, merit-based financial aid program funded by the Department of Atomic Energy (DAE), Government of India. It is specifically designed to identify young mathematical talent across the country, encouraging them to pursue advanced education and future research careers in the field of Mathematics or Statistics. The scholarship provides a financial safety net for a maximum duration of two years, helping scholars focus completely on their academic curriculum without financial constraints. Shortlisted awardees are selected through a standardized national screening structure consisting of a competitive written examination followed by an interactive oral evaluation.",
   category: "scholarship",

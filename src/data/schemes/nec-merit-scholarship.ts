@@ -6,7 +6,7 @@ export const necMeritScholarship: Scheme = {
   name: "North Eastern Council (NEC) Merit Scholarship",
   shortName: "NEC Merit Scholarship",
   summary:
-    "Merit-based scholarship of \u20B920,000 to \u20B930,000 per year for students from North Eastern States pursuing Diploma, Degree, Postgraduate, M.Phil., or Ph.D. courses at recognised institutions across India.",
+    "Merit-based scholarship of \u20B920,000 to \u20B930,000 per year for students from North Eastern States pursuing Diploma, Degree, Postgraduate, M.Phil.,.",
   description:
     "The North Eastern Council (NEC) Merit Scholarship is a 100% centrally funded scheme operated by the Ministry of Development of North Eastern Region (DoNER), Government of India. The scheme aims to promote higher education and provide financial assistance to meritorious students from the eight North Eastern States (Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, and Tripura). It covers Diploma, Degree, Postgraduate, and M.Phil./Ph.D. courses at recognised institutions across India. There are 1,600 scholarship seats available per year, and selection is purely on merit basis. The scholarship amount ranges from \u20B920,000 per year for Diploma courses to \u20B930,000 per year for M.Phil./Ph.D. courses. The scholarship is valid for the entire duration of the course, subject to renewal conditions. Applications are accepted online through the National Scholarship Portal (NSP).",
   category: "scholarship",

@@ -6,7 +6,7 @@ export const aicteIdeaLab: Scheme = {
   name: "AICTE IDEA Lab Scheme",
   shortName: "AICTE IDEA Lab",
   summary:
-    "Grant of up to 50% (approx. \u20B955 lakh) per institution to establish state-of-the-art innovation labs in AICTE-approved technical institutions, fostering hands-on prototyping, creativity, and interdisciplinary problem-solving aligned with NEP 2020.",
+    "Grant of up to 50% (approx. \u20B955 lakh) per institution to establish state-of-the-art innovation labs in AICTE-approved technical institutions,.",
   description:
     "The AICTE IDEA (Idea Development, Evaluation & Application) Lab scheme aims to establish state-of-the-art innovation labs in AICTE-approved technical institutions. It provides students with hands-on, 24\u00D77 access to advanced prototyping equipment and training, fostering a culture of innovation, creativity, and interdisciplinary problem-solving in alignment with NEP 2020.\n\nThe total project outlay is up to \u20B91.1 crore per institution. AICTE provides a grant of up to 50% (approx. \u20B955 lakh), covering \u20B980 lakh for non-recurring equipment and part of the \u20B930 lakh recurring expenses for two years. The remaining 50%+ must be contributed by the institution or its industry partner.",
   category: "fellowship",

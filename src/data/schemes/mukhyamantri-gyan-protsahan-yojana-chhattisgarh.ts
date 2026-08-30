@@ -6,7 +6,7 @@ export const mukhyamantriGyanProtsahanYojanaChhattisgarh: Scheme = {
   name: "Mukhyamantri Gyan Protsahan Yojana \u2013 Chhattisgarh",
   shortName: "CG Gyan Protsahan",
   summary:
-    "A one-time financial incentive of \u20B915,000 for SC/ST students who perform meritoriously in the CGBSE Class 10 and Class 12 board examinations in Chhattisgarh.",
+    "A one-time financial incentive of \u20B915,000 for SC/ST students who perform meritoriously in the CGBSE Class 10 and Class 12 board examinations in.",
   description:
     "The Mukhyamantri Gyan Protsahan Yojana is a Chhattisgarh government scheme awarding a one-time financial incentive of \u20B915,000 to SC/ST students who perform meritoriously in the Chhattisgarh Board of Secondary Education (CGBSE) Class 10 and Class 12 examinations. The scheme aims to encourage academic excellence among students from Scheduled Caste and Scheduled Tribe communities by recognising and rewarding their performance in board examinations.",
   category: "social-welfare",

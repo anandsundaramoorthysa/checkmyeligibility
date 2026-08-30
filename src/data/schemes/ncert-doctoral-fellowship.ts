@@ -6,7 +6,7 @@ export const ncertDoctoralFellowship: Scheme = {
   name: "NCERT Doctoral Fellowship",
   shortName: "NCERT PhD Fellowship",
   summary:
-    "Monthly stipend of up to ₹25,000 with an annual contingency grant of ₹10,000 for full-time PhD students conducting research in education and related disciplines at recognized Indian universities.",
+    "Monthly stipend of up to ₹25,000 with an annual contingency grant of ₹10,000 for full-time PhD students conducting research in education and related.",
   description:
     "The NCERT Doctoral Fellowship is a prestigious program that supports full-time PhD students conducting research in education and related disciplines. The fellowship aims to promote high-quality research in areas such as curriculum design, teaching-learning methodologies, educational psychology, and inclusive education at recognized Indian universities.",
   category: "fellowship",

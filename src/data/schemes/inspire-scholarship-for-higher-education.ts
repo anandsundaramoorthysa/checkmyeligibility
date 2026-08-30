@@ -6,7 +6,7 @@ export const inspireScholarshipForHigherEducation: Scheme = {
   name: "INSPIRE Scholarship for Higher Education",
   shortName: "INSPIRE SHE",
   summary:
-    "A scholarship of \u20B980,000 per year for top 1% Class 12 students pursuing B.Sc., B.S., or Integrated M.Sc. in Natural and Basic Sciences at recognized institutions across India.",
+    "A scholarship of \u20B980,000 per year for top 1% Class 12 students pursuing B.Sc., B.S., or Integrated M.Sc.",
   description:
     "The INSPIRE (Innovation in Science Pursuit for Inspired Research) Scholarship for Higher Education (SHE) is a flagship programme of the Department of Science and Technology (DST), Government of India. It encourages talented students to pursue Natural and Basic Sciences by providing a scholarship of \u20B980,000 per year during the undergraduate and postgraduate levels. The programme targets students who rank in the top 1% of their Class 12 board examinations and are enrolled in B.Sc., B.S., or Integrated M.Sc. programmes at recognised institutions. The scholarship aims to strengthen the pipeline of scientific talent in India by removing financial barriers for meritorious students.",
   category: "scholarship",

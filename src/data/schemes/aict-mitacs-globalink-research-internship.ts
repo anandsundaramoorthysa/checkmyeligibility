@@ -6,7 +6,7 @@ export const aictMitacsGlobalinkResearchInternship: Scheme = {
   name: "AICTE – Mitacs Globalink Research Internship (GRI) Scheme",
   shortName: "AICTE Mitacs GRI",
   summary:
-    "Fully funded 12-week international research internship sending Indian undergraduate engineering/technology students to Canadian universities, with CAD $12,000 in combined funding from Mitacs and AICTE covering airfare, housing, stipend, and medical insurance.",
+    "Fully funded 12-week international research internship sending Indian undergraduate engineering/technology students to Canadian universities, with CAD.",
   description:
     "The AICTE – Mitacs Globalink Research Internship (GRI) Scheme is a bilateral collaboration between AICTE (India) and Mitacs (Canada), established via a Memorandum of Understanding signed in 2018 and renewed in March 2026. The programme sends Indian undergraduate engineering and technology students to Canadian universities for a fully funded 12-week research internship.\n\nEach year, up to 300 Indian students are selected on a competitive, merit-based basis. Students apply through the Mitacs online portal, selecting a minimum of 3 and maximum of 10 research projects from at least 3 different Canadian provinces. Matching is based on CGPA, research interests, statement of interest, and reference letters.\n\nThe total funding per student is CAD $12,000 — CAD $9,000 contributed by Mitacs Canada and CAD $3,000 by AICTE. This covers round-trip airfare, airport transportation, a monthly housing stipend, a weekly food and incidentals allowance, visa/immigration fee reimbursement, comprehensive medical insurance for the full duration, up to CAD $300 toward university enrolment fees, and up to CAD $200 for conferences or workshops.\n\nThe internship must take place for 12 consecutive weeks between May 1 and October 31, with start dates between May 1 and July 31. Students work full-time (40 hours/week) under a faculty supervisor at a Canadian university, gaining hands-on research experience and professional development.\n\nPriority sectors under the renewed 2026 MoU include quantum computing, artificial intelligence, advanced manufacturing, cleantech, cybersecurity, health and life sciences, information technology, and commercialisation and digital transformation.\n\nStudents must be enrolled in a full-time B.E. or B.Tech programme at an AICTE-approved institution, have completed at least 2 years of undergraduate study, have 1 to 3 semesters remaining, and hold a minimum of 70% cumulative grade. No language proficiency test is required for Indian applicants. Applications are made entirely through the Mitacs Globalink portal; no separate application to AICTE is needed.",
   category: "fellowship",
@@ -16,7 +16,7 @@ export const aictMitacsGlobalinkResearchInternship: Scheme = {
     {
       label: "Citizenship",
       value: "Indian national",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Programme & Institution",

@@ -6,7 +6,7 @@ export const aictePragatiScholarship: Scheme = {
   name: "AICTE – Pragati Scholarship for Girl Students",
   shortName: "AICTE Pragati",
   summary:
-    "₹50,000 per year scholarship for meritorious girl students in their first year of AICTE-approved Degree or Diploma technical programmes, from families with income below ₹8 lakh per annum.",
+    "₹50,000 per year scholarship for meritorious girl students in their first year of AICTE-approved Degree or Diploma technical programmes, from families.",
   description:
     "The AICTE Pragati Scholarship is a flagship scheme by the All India Council for Technical Education (AICTE) under the Ministry of Education, designed to empower girl students by providing financial support to pursue technical education. The scholarship covers tuition fees and other academic expenses. It is awarded to meritorious girl students admitted to the first year of AICTE-approved Degree-level or Diploma-level programmes (including lateral entry in the second year). Only two students per family are eligible. The scholarship amount of ₹50,000 per annum is disbursed through the National Scholarship Portal (NSP) via Direct Benefit Transfer (DBT).",
   category: "scholarship",

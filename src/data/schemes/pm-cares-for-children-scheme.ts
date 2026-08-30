@@ -6,7 +6,7 @@ export const pmCaresForChildrenScheme: Scheme = {
   name: "PM CARES for Children Scheme",
   shortName: "PM CARES Children",
   summary:
-    "Comprehensive support for children who lost both parents or legal guardians to COVID-19, including free education, monthly stipend, health insurance, and a lump sum corpus of \u20B910 lakh.",
+    "Comprehensive support for children who lost both parents or legal guardians to COVID-19, including free education, monthly stipend, health insurance, and.",
   description:
     "Launched to support children who lost both parents or legal guardians to the COVID-19 pandemic. The scheme provides a convergent approach to ensure comprehensive care, including financial corpus creation, educational support, monthly stipends, and health insurance to empower them for a self-sufficient future.",
   category: "social-welfare",
