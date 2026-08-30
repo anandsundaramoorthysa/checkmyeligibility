@@ -12,7 +12,6 @@ export const ishanUdayScholarship: Scheme = {
   category: "scholarship",
   level: "central",
   states: [
-    "all-india",
     "assam",
     "arunachal-pradesh",
     "manipur",
@@ -52,7 +51,6 @@ export const ishanUdayScholarship: Scheme = {
     "\u20B95,400\u2013\u20B97,800 per month depending on the course level",
     "Available for the full duration of the undergraduate programme",
     "Disbursed via Direct Benefit Transfer (DBT) through the National Scholarship Portal",
-    "Encourages NE students to pursue education outside the North Eastern Region",
   ],
   requiredDocuments: [
     {

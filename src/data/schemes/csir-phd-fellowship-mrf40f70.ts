@@ -23,19 +23,13 @@ export const csirPhdFellowship: Scheme =   {
         label: "Qualification",
         value:
           "Must have qualified the CSIR-UGC NET examination under the JRF category",
-        type: "other",
+        type: "education",
       },
       {
         label: "Institution",
         value:
           "Must be enrolled in a recognized university, institution, or research laboratory in India",
-        type: "other",
-      },
-      {
-        label: "Requirements",
-        value:
-          "Should meet all academic and research requirements specified under the fellowship guidelines",
-        type: "other",
+        type: "education",
       },
     ],
     benefits: [
@@ -56,7 +50,7 @@ export const csirPhdFellowship: Scheme =   {
       { name: "Bank account details", mandatory: true },
       { name: "Identity proof", mandatory: false },
     ],
-    officialPortalUrl: "https://www.ugc.gov.in",
+    officialPortalUrl: "https://hrdg.csircentral.net/",
     ministry: "Council of Scientific & Industrial Research (CSIR)",
     applicationMode: ["online"],
     tags: [

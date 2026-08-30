@@ -8,7 +8,7 @@ export const centralSectorInterestSubsidySchemeCsisOnEducationLoans: Scheme = {
   summary:
     "Full interest subsidy on education loans during the course and moratorium period for economically weaker students (family income \u2264 \u20B94.5 lakh) pursuing professional and technical courses in India.",
   description:
-    "Provides interest subsidy on education loans for economically weaker students pursuing professional and technical courses in India.",
+    "The Central Sector Interest Subsidy Scheme (CSIS) provides full interest subsidy on education loans sanctioned under the IBA Model Education Loan Scheme for students from economically weaker sections (annual family income up to ₹4,50,000). The subsidy covers the entire course period plus the moratorium period (course duration plus one year, or six months after employment, whichever is earlier), so no interest accumulates on the outstanding loan during this time. The scheme is administered by the Ministry of Education and channelled through participating scheduled commercial banks. The subsidy is available once — for either the first undergraduate or the first postgraduate degree or diploma; integrated programmes are also covered. Eligible courses include professional and technical programmes (engineering, medical, dental, pharmacy, MBA, MCA, and similar) at NAAC A-accredited or NBA-accredited or National Importance / Centrally-funded Technical Institution-level colleges in India.",
   category: "education-loan",
   level: "central",
   states: ["all-india"],

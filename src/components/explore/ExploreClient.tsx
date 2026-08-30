@@ -28,8 +28,10 @@ function matches(scheme: Scheme, query: string): boolean {
   return (
     normalize(scheme.name).includes(q) ||
     normalize(scheme.summary).includes(q) ||
+    normalize(scheme.description).includes(q) ||
     (scheme.ministry ? normalize(scheme.ministry).includes(q) : false) ||
-    (scheme.tags ?? []).some((t) => normalize(t).includes(q))
+    (scheme.tags ?? []).some((t) => normalize(t).includes(q)) ||
+    scheme.states.some((s) => normalize(s).includes(q))
   );
 }
 
@@ -136,7 +138,7 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
               >
                 All
                 <span className={`tabular-nums text-xs font-normal ${activeCategory === null ? "text-white/70" : "text-ink-faint"}`}>
-                  {visibleCount || totalCount}
+                  {totalCount}
                 </span>
               </button>
               {allGroups.map(({ category }) => {
@@ -166,7 +168,7 @@ export function ExploreClient({ allGroups, totalCount }: Props) {
             </div>}
 
             {/* Result count + clear */}
-            {showFilters && isFiltered && (
+            {isFiltered && (
               <div className="flex items-center justify-between text-sm text-ink-muted">
                 <span>
                   {visibleCount === 0

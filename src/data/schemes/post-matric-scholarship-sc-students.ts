@@ -8,7 +8,7 @@ export const postMatricScholarshipScStudents: Scheme = {
   summary:
     "Central scholarship scheme for meritorious Scheduled Caste (SC) students pursuing higher education (undergraduate and postgraduate), covering tuition fees, living allowances, and special provisions.",
   description:
-    "The Post Matric Scholarship for SC Students is a flagship welfare and educational empowerment scheme introduced by the Ministry of Education (Department of Higher Education), Government of India, to facilitate access to higher education for students from Scheduled Caste (SC) communities. The scheme aims to encourage SC students, particularly those from economically weaker sections, to pursue studies beyond secondary education (post-matric level) across diverse academic disciplines. By providing comprehensive financial support including tuition fee reimbursement, living allowances, book allowances, and special provisions for differently-abled students, the scheme removes financial barriers to education. The scholarship is available for full-time undergraduate (UG) and postgraduate (PG) programmes at recognized Indian colleges, universities, and technical institutions. Named as a continuation and extension of educational empowerment, the scheme reflects India's constitutional commitment to social justice and inclusive development of all sections of society.",
+    "The Post Matric Scholarship for SC Students is a flagship welfare and educational empowerment scheme introduced by the Ministry of Education (Department of Higher Education), Government of India, to facilitate access to higher education for students from Scheduled Caste (SC) communities. The scheme aims to encourage SC students, particularly those from economically weaker sections, to pursue studies beyond secondary education (post-matric level) across diverse academic disciplines. By providing comprehensive financial support including tuition fee reimbursement, living allowances, book allowances, and special provisions for differently-abled students, the scheme removes financial barriers to education. The scholarship is available for full-time undergraduate (UG) and postgraduate (PG) programmes at recognized Indian colleges, universities, and technical institutions.",
   category: "scholarship",
   level: "central",
   states: ["all-india"],
@@ -50,7 +50,7 @@ export const postMatricScholarshipScStudents: Scheme = {
     {
       label: "Citizenship",
       value: "Indian citizen",
-      type: "other",
+      type: "residence",
     },
   ],
   benefits: [
@@ -60,9 +60,7 @@ export const postMatricScholarshipScStudents: Scheme = {
     "Special Contingency Grant: ₹2,000-₹5,000 per annum for academic-related expenses (lab fees, project materials, etc.)",
     "Special Provisions for PwD (Persons with Disabilities): Additional allowance of ₹2,000 per month if applicable",
     "Maintenance Allowance for Hostellers: Additional ₹1,000-₹1,500 per month for students residing in institution hostels",
-    "Medical Allowance: Special provision for medical emergencies",
     "No employment bond or payback requirement",
-    "Transportation Allowance: For students commuting from home",
   ],
   requiredDocuments: [
     { name: "Completed application form (prescribed format)", mandatory: true },
@@ -97,7 +95,7 @@ export const postMatricScholarshipScStudents: Scheme = {
     },
   ],
   officialPortalUrl: "https://scholarships.gov.in/",
-  ministry: "Ministry of Education (Department of Higher Education), Government of India",
+  ministry: "Ministry of Social Justice and Empowerment, Government of India",
   applicationMode: ["online"],
   tags: [
     "scholarship",

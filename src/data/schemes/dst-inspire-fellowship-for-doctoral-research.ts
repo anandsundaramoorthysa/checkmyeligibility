@@ -39,7 +39,7 @@ export const dstInspireFellowshipForDoctoralResearch: Scheme = {
     {
       label: "Citizenship",
       value: "Must be an Indian Citizen",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Exclusions",

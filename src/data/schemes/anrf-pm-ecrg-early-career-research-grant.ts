@@ -16,7 +16,7 @@ export const anrfPmEcrgEarlyCareerResearchGrant: Scheme = {
     {
       label: "Citizenship",
       value: "Must be an Indian citizen",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Educational qualification",

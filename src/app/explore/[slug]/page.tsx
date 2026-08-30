@@ -105,7 +105,6 @@ export default async function SchemeDetailPage({
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                   <Badge tone="navy">{levelLabel(scheme.level)}</Badge>
                   {category && <Badge tone="saffron">{category.title}</Badge>}
-                  {scheme.shortName && <Badge tone="neutral">{scheme.shortName}</Badge>}
                 </div>
 
                 <h1 className="mt-4 max-w-2xl text-balance font-display text-2xl font-extrabold leading-[1.12] tracking-tight text-ink sm:text-4xl lg:text-5xl">
