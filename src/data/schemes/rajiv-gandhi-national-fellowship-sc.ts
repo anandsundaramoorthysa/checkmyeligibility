@@ -142,5 +142,6 @@ export const rajivGandhiNationalFellowshipSc: Scheme = {
       a: "Yes, subject to satisfactory research progress. A three-member review committee (Head of Department, Supervisor, and external expert) assesses progress before recommending continuation or upgradation from JRF to SRF.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

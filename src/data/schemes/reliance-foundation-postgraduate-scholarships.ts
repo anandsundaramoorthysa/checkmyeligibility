@@ -99,5 +99,6 @@ export const relianceFoundationPostgraduateScholarships: Scheme = {
       a: "Applications are reviewed based on academic scores, GATE rankings, and essay strength. Shortlisted candidates attend virtual interviews, and the top 100 scholars are selected purely on merit.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

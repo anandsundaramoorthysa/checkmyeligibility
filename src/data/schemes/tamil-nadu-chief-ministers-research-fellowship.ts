@@ -94,5 +94,6 @@ export const tamilNaduChiefMinisterSResearchFellowship: Scheme = {
       a: "The fellowship supports advanced academic research across Science, Arts, Humanities, and Social Sciences at recognized state universities and government colleges in Tamil Nadu.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

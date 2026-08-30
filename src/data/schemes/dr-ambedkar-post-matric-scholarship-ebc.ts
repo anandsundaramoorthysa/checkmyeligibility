@@ -146,5 +146,6 @@ export const drAmbedkarPostMatricScholarshipEbc: Scheme = {
       a: "No. Students receiving any other scholarship or stipend from any source are not eligible for this scholarship during the same period.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

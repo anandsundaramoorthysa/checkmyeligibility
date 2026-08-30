@@ -84,5 +84,6 @@ export const chiefMinisterMeritAward: Scheme = {
       a: "Obtain the application form from the concerned educational institution, complete it, attach the required documents, and submit it to the institution. Collect the acknowledgement after submission.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

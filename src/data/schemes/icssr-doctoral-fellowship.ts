@@ -179,5 +179,6 @@ export const icssrDoctoralFellowship: Scheme = {
       a: "No, the ICSSR Doctoral Fellowship is exclusively for full-time, regular doctoral programmes in recognized universities. Part-time, distance learning, or online-only doctoral programmes are not eligible.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

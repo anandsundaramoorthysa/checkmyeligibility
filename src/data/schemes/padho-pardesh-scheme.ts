@@ -107,5 +107,6 @@ export const padhoPardeshScheme: Scheme = {
       a: "The scheme was discontinued from 2022-23 by the Ministry of Minority Affairs. However, students who availed it before discontinuation continue to receive benefits. The NMDFC also provides educational loans at low interest rates for minority students.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

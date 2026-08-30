@@ -114,5 +114,6 @@ export const postMatricScholarshipStudentsWithDisabilities: Scheme = {
       a: "The scheme is implemented by the Department of Empowerment of Persons with Disabilities (DoEPwD), under the Ministry of Social Justice and Empowerment, Government of India.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

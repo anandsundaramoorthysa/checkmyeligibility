@@ -121,5 +121,6 @@ export const indianOilAcademicScholarshipScheme: Scheme = {
       a: "No. Scholarship holders under this scheme cannot avail scholarship under any other scheme. Also, children of IOCL employees, its Joint Venture and Subsidiary companies are not eligible.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

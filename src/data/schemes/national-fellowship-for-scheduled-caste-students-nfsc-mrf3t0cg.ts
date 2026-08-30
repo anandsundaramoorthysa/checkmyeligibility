@@ -87,5 +87,6 @@ export const nationalFellowshipForScheduledCasteStudentsNfsc: Scheme =   {
         a: "Through the National Scholarship Portal (NSP) at scholarships.gov.in during the open application window.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

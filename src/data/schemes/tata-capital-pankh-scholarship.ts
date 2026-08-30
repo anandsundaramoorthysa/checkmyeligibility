@@ -127,5 +127,6 @@ export const tataCapitalPankhScholarship: Scheme = {
       a: "Email pankh@buddy4study.com or call 011-430-92248 (Ext-225), Monday–Friday, 10 AM–6 PM.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

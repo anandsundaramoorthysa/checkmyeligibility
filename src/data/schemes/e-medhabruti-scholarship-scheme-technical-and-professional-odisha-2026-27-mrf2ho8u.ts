@@ -89,5 +89,6 @@ export const eMedhabrutiScholarshipSchemeTechnicalAndProfessionalOdisha202627: S
         a: "Apply online through the Odisha State Scholarship Portal at scholarship.odisha.gov.in.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

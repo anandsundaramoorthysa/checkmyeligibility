@@ -197,5 +197,6 @@ export const evrNagammaiFreeEducationSchemeGirls: Scheme = {
       a: "No, the EVR Nagammai Scheme is purely an educational support and welfare programme with no employment bond or service obligation. After completing education, you are free to pursue any career path.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

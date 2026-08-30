@@ -117,5 +117,6 @@ export const instrumentalAssistanceMedicalEngineeringDiplomaStudentsSebcGujarat:
       a: "Aadhaar Card, SEBC Caste Certificate, Income Certificate, current year fee receipt, previous year marksheet, bank passbook or cancelled cheque, and a passport-size photograph.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

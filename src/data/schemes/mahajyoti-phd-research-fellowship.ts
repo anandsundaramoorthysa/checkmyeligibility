@@ -129,5 +129,6 @@ export const mahajyotiPhdResearchFellowship: Scheme = {
       a: "No, only full-time PhD programmes at recognised universities or research institutions are eligible. Distance education, part-time, or correspondence PhD programmes are not covered.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

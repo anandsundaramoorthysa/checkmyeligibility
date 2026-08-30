@@ -105,5 +105,6 @@ export const chhatrapatiShahuMaharajNationalResearchFellowshipCsmnrf: Scheme = {
       a: "Aadhaar card, domicile certificate, PG mark sheets, PhD registration certificate, research proposal, income certificate, bank account details, passport-size photograph, caste certificate, and 10th & 12th / graduation certificates.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -97,5 +97,6 @@ export const agaKhanFoundationInternationalScholarship: Scheme = {
       a: "Yes, the 50% loan portion is interest-free and repayable after the scholar completes their studies.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -170,5 +170,6 @@ export const swamiVivekanandaMeritCumMeansScholarshipWestBengal: Scheme = {
       a: "No. The scholarship is only for students enrolled in educational institutions based within the state of West Bengal.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

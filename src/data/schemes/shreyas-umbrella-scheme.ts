@@ -148,5 +148,6 @@ export const shreyasUmbrellaScheme: Scheme = {
       a: "SHREYAS is operational from 2021-22 to 2025-26 as per the current sanction period of the Ministry of Social Justice & Empowerment.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

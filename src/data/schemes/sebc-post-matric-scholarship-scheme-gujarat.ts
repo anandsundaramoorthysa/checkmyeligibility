@@ -109,6 +109,7 @@ export const sebcPostMatricScholarshipSchemeGujarat: Scheme = {
       a: "Gujarat domicile certificate, SEBC/OBC caste certificate, income certificate, previous year mark sheets, Aadhaar card, admission/bonafide certificate, and bank passbook.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };
 

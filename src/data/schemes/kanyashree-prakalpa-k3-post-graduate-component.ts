@@ -78,5 +78,6 @@ export const kanyashreePrakalpaK3PostGraduateComponent: Scheme = {
       a: "Register on the SVMCM Portal under 'Kanyashree K3' using your prior K2 ID, complete your profile, upload documents, and submit for verification by your Head of Institution before state approval and disbursement.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

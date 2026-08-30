@@ -91,5 +91,6 @@ export const cbseMeritScholarshipSchemeForSingleGirlChild: Scheme = {
       a: "Yes. A student awarded the scholarship in Class 11 continues to receive ₹1,000/month in Class 12, provided they remain enrolled in a CBSE-affiliated school and continue to meet eligibility conditions. The scholarship covers both years automatically once awarded.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

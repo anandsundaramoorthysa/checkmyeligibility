@@ -74,5 +74,6 @@ export const employmentLinkedSkillTrainingProgrammeElstp: Scheme =   {
         a: "Yes, the programme provides free skill training with industry-aligned courses.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

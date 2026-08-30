@@ -85,5 +85,6 @@ export const mukhyamantriGyanProtsahanYojanaChhattisgarh: Scheme = {
       a: "Yes, the scheme is open to meritorious SC/ST students who have appeared in either the CGBSE Class 10 or Class 12 board examination.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

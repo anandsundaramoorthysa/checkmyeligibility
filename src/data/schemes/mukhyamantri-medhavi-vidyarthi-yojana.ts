@@ -155,5 +155,6 @@ export const mukhyamantriMedhaviVidyarthiYojana: Scheme = {
       a: "The scholarship amount is paid directly to the institution's bank account via Direct Benefit Transfer (DBT) through the PFMS system. In some cases, it is credited to the student's Aadhaar-linked bank account.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

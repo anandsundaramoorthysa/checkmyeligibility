@@ -136,5 +136,6 @@ export const necMeritScholarship: Scheme = {
       a: "No. Students already receiving scholarship or financial assistance from any other source are not eligible.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

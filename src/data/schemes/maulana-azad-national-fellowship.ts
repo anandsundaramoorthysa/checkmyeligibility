@@ -139,5 +139,6 @@ export const maulanaAzadNationalFellowship: Scheme = {
       a: "Yes, annual renewal is required based on a satisfactory progress report submitted by the research supervisor and forwarded by the Head of the Department.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

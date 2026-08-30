@@ -110,5 +110,6 @@ export const nationalOverseasScholarship: Scheme = {
       a: "Applications are typically open from January to March each year. Check the official portal for exact dates.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

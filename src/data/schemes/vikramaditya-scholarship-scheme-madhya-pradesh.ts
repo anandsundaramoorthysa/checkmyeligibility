@@ -104,5 +104,6 @@ export const vikramadityaScholarshipSchemeMadhyaPradesh: Scheme = {
       a: "After institutional verification, the scholarship amount is credited directly to the student\u2019s bank account.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

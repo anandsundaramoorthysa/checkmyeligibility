@@ -95,5 +95,6 @@ export const postGraduateScholarshipForUniversityRankHolders: Scheme = {
       a: "No. The scheme is applicable only for students who have taken admission in a regular, full-time Master's degree course.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

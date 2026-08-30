@@ -101,5 +101,6 @@ export const drSRadhakrishnanPostDoctoralFellowship: Scheme = {
       a: "Applications are invited online once a year. Register on frg.ugc.ac.in as a New User, login with emailed credentials, complete the eligibility form, PG and PhD details, and submit the declaration.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

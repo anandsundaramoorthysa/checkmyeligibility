@@ -111,5 +111,6 @@ export const sitaramJindalScholarship: Scheme = {
       a: "Yes, the scholarship is renewable annually. Students must submit updated mark sheets, fee receipts, and maintain satisfactory academic performance for renewal. A 5% relaxation in minimum marks is given for renewal applicants.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -79,5 +79,6 @@ export const chiefMinisterHigherEducationPromotionScholars: Scheme =   {
         a: "Through the Chhattisgarh Tribal Department portal at tribal.cg.gov.in during the annual notification window.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

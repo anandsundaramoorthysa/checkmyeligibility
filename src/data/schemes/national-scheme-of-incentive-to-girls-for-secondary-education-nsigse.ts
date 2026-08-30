@@ -155,5 +155,6 @@ export const nationalSchemeOfIncentiveToGirlsForSecondaryEducationNsigse: Scheme
       a: "Applications are submitted online through the National Scholarship Portal (scholarships.gov.in). The school head verifies the application at the school level, followed by district and state-level verification.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

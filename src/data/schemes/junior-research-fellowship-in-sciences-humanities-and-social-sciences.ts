@@ -90,5 +90,6 @@ export const juniorResearchFellowshipInSciencesHumanitiesAndSocialSciences: Sche
       a: "Yes, after 2 years of JRF, a three-member assessment committee evaluates progress. Upon satisfactory assessment, the fellowship is upgraded to SRF at ₹42,000/month.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

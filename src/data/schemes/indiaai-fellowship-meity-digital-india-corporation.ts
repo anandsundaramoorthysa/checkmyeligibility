@@ -116,5 +116,6 @@ export const indiaaiFellowshipMeityDigitalIndiaCorporation: Scheme = {
       a: "Visit the official IndiaAI portal (indiaai.gov.in), navigate to the Fellowship section, register with your institutional email, fill the application form for the relevant track (PhD/PG/UG), upload required documents (Aadhaar, admission/enrolment certificate from an IndiaAI partner institution, academic transcripts, research proposal for PhD, and bank account details), and submit before the notified deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

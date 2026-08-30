@@ -130,5 +130,6 @@ export const aictMitacsGlobalinkResearchInternship: Scheme = {
       a: "No. Applicants must not have been awarded a Globalink Research Internship in the past.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

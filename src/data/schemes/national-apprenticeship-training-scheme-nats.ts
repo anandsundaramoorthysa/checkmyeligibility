@@ -90,5 +90,6 @@ export const nationalApprenticeshipTrainingSchemeNats: Scheme = {
       a: "The stipend is disbursed directly to the apprentice's Aadhaar-linked bank account through DBT (Direct Benefit Transfer).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

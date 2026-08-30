@@ -100,5 +100,6 @@ export const ruralGirlsIncentiveScheme: Scheme = {
       a: "The scheme is applicable to rural areas in Tamil Nadu, excluding Chennai District.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

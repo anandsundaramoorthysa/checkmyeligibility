@@ -122,5 +122,6 @@ export const mahindraMailtsScholarship: Scheme = {
       a: "No, Mahindra MAITS Scholarship is exclusively for Indian citizens studying in recognized Indian institutions.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

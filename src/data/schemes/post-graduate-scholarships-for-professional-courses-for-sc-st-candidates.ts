@@ -93,5 +93,6 @@ export const postGraduateScholarshipsForProfessionalCoursesForScStCandidates: Sc
       a: "Apply online on the National Scholarship Portal (scholarships.gov.in) after UGC publishes the annual advertisement. Register, fill the application form, submit documents, and get it verified by your host institution.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

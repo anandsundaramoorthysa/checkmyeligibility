@@ -107,5 +107,6 @@ export const centralSectorInterestSubsidySchemeCsisOnEducationLoans: Scheme = {
       a: "You do not apply separately for CSIS. When you take an education loan from a participating bank under the IBA Model scheme, inform the bank branch that you wish to avail CSIS. The bank will submit the claim to the nodal bank (Canara Bank) on your behalf after verifying your income certificate and other eligibility documents.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

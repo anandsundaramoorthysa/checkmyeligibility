@@ -104,5 +104,6 @@ export const deepikaStudentScholarshipProgramme: Scheme = {
       a: "The scholarship is credited directly to the student\u2019s bank account via Direct Benefit Transfer (DBT).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

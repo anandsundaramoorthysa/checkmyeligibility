@@ -119,5 +119,6 @@ export const hdfcBankParivartanEcssScholarship: Scheme = {
       a: "The scholarship is for first-year students only. Continuing students are not eligible to apply again.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

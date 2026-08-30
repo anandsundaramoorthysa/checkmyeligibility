@@ -109,5 +109,6 @@ export const ongcScholarshipScheme: Scheme = {
       a: "No. Applicants must be studying in the 1st year of an eligible full-time professional course to qualify for this scholarship.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

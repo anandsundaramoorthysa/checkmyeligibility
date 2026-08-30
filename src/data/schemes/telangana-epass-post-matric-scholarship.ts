@@ -186,5 +186,6 @@ export const telanganaEpassPostMatricScholarship: Scheme = {
       a: "Yes, renewal applications are accepted annually. Renewal students must maintain minimum 75% attendance at the end of each quarter and be promoted to the next academic year.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

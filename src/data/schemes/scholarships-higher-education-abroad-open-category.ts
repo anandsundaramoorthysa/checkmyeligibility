@@ -223,5 +223,6 @@ export const scholarshipsHigherEducationAbroadOpenCategory: Scheme = {
       a: "Settling-in allowance of ₹2,00,000-3,00,000 is provided upon return. Career placement assistance, mentorship from successful returnees, networking with Indian industry and government agencies, and preferential consideration for government positions are available.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

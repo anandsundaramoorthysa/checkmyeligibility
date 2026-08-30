@@ -114,5 +114,6 @@ export const nationalOverseasScholarshipForPersonsWithDisabilities: Scheme = {
       a: "No. Applicants cannot hold any other scholarship simultaneously or have previously studied abroad on another government scholarship.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

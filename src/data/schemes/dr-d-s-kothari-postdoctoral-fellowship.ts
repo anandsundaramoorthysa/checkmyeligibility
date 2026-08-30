@@ -78,5 +78,6 @@ export const drDSKothariPostdoctoralFellowship: Scheme = {
       a: "Apply online through the DSKPDF portal (dskpdf.unipune.ac.in), submitting your thesis summary, research proposal, mentor's consent, and supporting documents. Applications are screened by a selection committee.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

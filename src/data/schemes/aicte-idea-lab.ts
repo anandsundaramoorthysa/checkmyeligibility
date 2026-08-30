@@ -89,5 +89,6 @@ export const aicteIdeaLab: Scheme = {
       a: "Applications must be submitted online via the official AICTE IDEA Lab portal (idealnet.aicte.gov.in). The process includes expert panel screening, an online interaction round for shortlisted institutions, and final provisional selection followed by grant release.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

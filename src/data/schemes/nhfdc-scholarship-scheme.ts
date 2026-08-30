@@ -144,5 +144,6 @@ export const nhfdcScholarshipScheme: Scheme = {
       a: "No. A scholarship holder under this scheme cannot avail any other scholarship or stipend for pursuing the same course. However, a student awarded a scholarship for one course may be eligible for a new scholarship after completing it.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

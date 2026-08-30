@@ -100,5 +100,6 @@ export const ongcScholarshipForMeritoriousScStObcEwsStudents: Scheme = {
       a: "Applications are accepted online through the ONGC Foundation portal or designated national scholarship portals during the active registration window. Register, upload scanned copies of required documents, and submit the digital form before the deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

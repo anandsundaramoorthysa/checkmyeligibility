@@ -118,5 +118,6 @@ export const opJindalEngineeringManagementScholarshipOpjems: Scheme = {
       a: "Yes, a student holding any other scholarship can still apply for OPJEMS, provided they meet the eligibility criteria.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -104,5 +104,6 @@ export const aicteSakshamDegree: Scheme = {
       a: "The National Scholarship Portal publishes the opening and closing dates each academic year. Check scholarships.gov.in for current timelines.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -119,5 +119,6 @@ export const isiStipendSchemeUgPgDiploma: Scheme = {
       a: "On admission to ISI, eligible non-sponsored students automatically receive the stipend as per the institute's general brochure. Applications are also processed through the National Scholarship Portal (NSP).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

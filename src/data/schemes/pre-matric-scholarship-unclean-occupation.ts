@@ -222,5 +222,6 @@ export const prematricScholarshipUncleanOccupation: Scheme = {
       a: "Yes, rejection decisions can be appealed to the state scholarship authorities within 30 days with supporting evidence addressing rejection reasons. Common reasons include income ceiling exceed, incomplete documents, or academic performance below 50%. Appeal procedures are specified by each state.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

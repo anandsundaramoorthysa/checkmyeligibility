@@ -85,5 +85,6 @@ export const dbtJuniorResearchFellowshipCategoryIiViaBiotechnologyEligibilityTes
       a: "Yes, final-year/result-awaited candidates are also eligible to appear for the BET examination.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

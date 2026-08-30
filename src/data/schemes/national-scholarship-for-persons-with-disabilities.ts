@@ -93,5 +93,6 @@ export const nationalScholarshipForPersonsWithDisabilities: Scheme = {
       a: "The scholarship amount is credited directly to the student's bank account via Direct Benefit Transfer (DBT) after institution verification.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

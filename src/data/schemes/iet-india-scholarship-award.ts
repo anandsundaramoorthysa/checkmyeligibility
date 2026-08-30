@@ -92,5 +92,6 @@ export const ietIndiaScholarshipAward: Scheme = {
       a: "No, applications are completely free of cost.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

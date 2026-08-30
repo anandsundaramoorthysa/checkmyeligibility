@@ -92,5 +92,6 @@ export const motherTeresaScholarship: Scheme =   {
         a: "Through the Directorate of Minority Welfare portal at mwdscholarship.kerala.gov.in.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

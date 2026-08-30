@@ -77,5 +77,6 @@ export const lOrAlIndiaForYoungWomenInScienceScholarship: Scheme = {
       a: "Visit the official portal, register with your email or mobile number, complete the online application form, upload the required documents, and submit. Selection is merit-based.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

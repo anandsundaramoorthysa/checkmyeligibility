@@ -113,5 +113,6 @@ export const freeEducationScholarshipForProfessionalCoursesEngineeringMedicalAgr
         a: "The application process is offline. Collect the application form from your educational institution, fill in the application form and attach the required documents, submit the completed application to the institution, and obtain an acknowledgement/receipt after submission.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

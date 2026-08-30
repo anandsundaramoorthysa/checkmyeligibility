@@ -100,5 +100,6 @@ export const pmYasasviPostMatricScholarship: Scheme = {
       a: "Caste/Community Certificate (OBC/EBC/DNT), Income Certificate issued by the competent Revenue Authority, mark sheets of the last qualifying examination, fee receipt and bonafide student certificate from the institution, and Aadhaar-linked bank account details.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

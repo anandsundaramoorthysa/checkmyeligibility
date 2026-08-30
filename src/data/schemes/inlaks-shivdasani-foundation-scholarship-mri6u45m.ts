@@ -75,5 +75,6 @@ export const inlaksShivdasaniFoundationScholarship: Scheme =   {
         a: "Top universities in the USA, UK, and Europe offering Master's, M.Phil., or Doctoral programs.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

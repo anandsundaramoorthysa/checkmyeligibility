@@ -108,5 +108,6 @@ export const shreshtaSchemeResidentialEducationForScheduledCastes: Scheme = {
       a: "Visit the National Scholarship Portal (scholarships.gov.in) or the official Ministry of Social Justice and Empowerment portal (socialjustice.gov.in) when the annual notification is released. Register, fill the application form, upload required documents (Aadhaar, SC caste certificate, income certificate, Class 8 mark sheet, birth certificate, photographs, and bank passbook), and appear for the SHRESHTA Entrance Examination conducted by NTA.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -94,5 +94,6 @@ export const dDKosambiResearchFellowshipScheme: Scheme = {
       a: "Up to three fellowships are awarded every year—one junior, one senior, and one post-doctoral.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

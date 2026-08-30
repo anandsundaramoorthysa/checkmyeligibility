@@ -83,5 +83,6 @@ export const topClassEducationForStudentsWithDisabilities: Scheme = {
       a: "Register on scholarships.gov.in, verify via OTP, set a password, log in to your applicant dashboard, complete the application form with the required document uploads, and submit.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

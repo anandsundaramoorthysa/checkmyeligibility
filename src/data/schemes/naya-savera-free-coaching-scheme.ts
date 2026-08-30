@@ -105,5 +105,6 @@ export const nayaSaveraFreeCoachingScheme: Scheme = {
       a: "No. Students who are already availing any other coaching scheme from central or state government are not eligible for Naya Savera.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

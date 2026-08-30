@@ -104,5 +104,6 @@ export const oasisScholarshipForScStStudents: Scheme =   {
         a: "First register on NSP for an OTR ID, then visit the West Bengal Oasis Portal (oasis.gov.in) to complete your application.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

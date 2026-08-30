@@ -121,5 +121,6 @@ export const rblBankShikshaScholarship: Scheme = {
       a: "No. Applicants or their parents/guardians who are currently employed by RBL Bank are not eligible for this scholarship.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

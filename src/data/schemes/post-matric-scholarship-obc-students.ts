@@ -133,5 +133,6 @@ export const postMatricScholarshipObcStudents: Scheme = {
       a: "Yes. Aadhaar seeding with the bank account is mandatory for DBT transfer of the scholarship amount. Ensure your bank account is linked to your Aadhaar before applying.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

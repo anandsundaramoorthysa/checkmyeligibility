@@ -108,5 +108,6 @@ export const kCMahindraScholarshipForPostGraduateStudiesAbroad: Scheme = {
       a: "Yes, final-year students may apply if they can provide their final results at a later stage.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

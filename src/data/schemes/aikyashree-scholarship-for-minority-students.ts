@@ -103,5 +103,6 @@ export const aikyashreeScholarshipForMinorityStudents: Scheme = {
       a: "Apply online via the WBMDFC Aikyashree Portal. Register fresh, receive User ID and password via SMS, fill personal/academic/banking details, select eligible scheme tier, upload documents, and Verify and Lock the application.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

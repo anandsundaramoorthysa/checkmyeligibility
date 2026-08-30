@@ -89,5 +89,6 @@ export const evnarayanPreMatricScholarshipScheme: Scheme = {
       a: "Domicile certificate, caste certificate issued by Tehsildar or higher, income certificate, academic marksheet/certificate, Jan Aadhar card, and Aadhar card.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

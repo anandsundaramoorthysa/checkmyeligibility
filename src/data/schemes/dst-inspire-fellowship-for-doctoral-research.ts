@@ -168,5 +168,6 @@ export const dstInspireFellowshipForDoctoralResearch: Scheme = {
       a: "Normally after completion of 2 years of INSPIRE Fellowship. However, it can be considered after 1 year if the fellow has at least one accepted research paper (as 1st author) in an international peer-reviewed journal.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

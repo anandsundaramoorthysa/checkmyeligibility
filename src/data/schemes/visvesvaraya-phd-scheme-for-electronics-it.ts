@@ -87,5 +87,6 @@ export const visvesvarayaPhdSchemeForElectronicsIt: Scheme = {
       a: "The scheme is implemented through 97+ MeitY-supported institutions across India. Check the official portal for the complete list.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

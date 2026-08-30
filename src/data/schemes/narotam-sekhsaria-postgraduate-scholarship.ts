@@ -115,5 +115,6 @@ export const narotamSekhsariaPostgraduateScholarship: Scheme = {
       a: "Final selection is based on academic merit, profile strength, and interview performance. Shortlisted candidates attend online interviews.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

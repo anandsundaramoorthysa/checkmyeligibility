@@ -124,5 +124,6 @@ export const mukhyamantriYuvaSwavalambanYojanaGujarat: Scheme = {
       a: "In the case of a property sale or receipt of claims (arrears, retirement benefits, etc.), if the income exceeds \u20B96 lakh but does not exceed \u20B911 lakh, the candidate will be considered with relaxation for one year only.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

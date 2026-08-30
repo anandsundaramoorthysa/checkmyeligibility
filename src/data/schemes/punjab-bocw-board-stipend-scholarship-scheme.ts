@@ -112,5 +112,6 @@ export const punjabBocwBoardStipendScholarshipScheme: Scheme = {
       a: "Stipends are not granted if the student has failed in the last class. Regular attendance and satisfactory academic performance are expected.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

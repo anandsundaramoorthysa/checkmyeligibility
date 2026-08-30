@@ -76,5 +76,6 @@ export const aicteLilavatiAward: Scheme = {
       a: "Register on the Lilavati Award portal using your Institute PID, complete Forms I and II, and upload the intervention report, geotagged photographs, and a 4–5 minute impact video before the annual deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

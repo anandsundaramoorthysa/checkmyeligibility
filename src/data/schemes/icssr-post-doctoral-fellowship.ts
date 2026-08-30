@@ -103,5 +103,6 @@ export const icssrPostDoctoralFellowship: Scheme = {
       a: "Visit icssr.org, navigate to the Fellowships section, click Post-Doctoral Fellowship Scheme, register/login on the ICSSR portal, fill the online application, upload documents, and submit.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

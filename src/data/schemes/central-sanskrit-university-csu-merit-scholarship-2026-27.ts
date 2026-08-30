@@ -116,5 +116,6 @@ export const centralSanskritUniversityCsuMeritScholarship202627: Scheme = {
       a: "No, applicants must not be receiving any other government scholarship for the same course.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

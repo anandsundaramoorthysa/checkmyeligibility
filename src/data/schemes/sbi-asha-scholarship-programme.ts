@@ -118,5 +118,6 @@ export const sbiAshaScholarshipProgramme: Scheme = {
       a: "Visit the SBI Foundation scholarship portal (scholarships.sbi.co.in) or the Buddy4Study platform, register with your email ID, fill in the application form, upload required documents (mark sheets, income proof, Aadhaar, fee receipt, bank passbook), and submit before the deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

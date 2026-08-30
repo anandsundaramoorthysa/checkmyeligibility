@@ -106,5 +106,6 @@ export const meghalayaBocwBoard: Scheme = {
       a: "No. The student must not be receiving any other financial assistance or scholarship from any other source.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

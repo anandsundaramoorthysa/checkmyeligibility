@@ -72,5 +72,6 @@ export const balikaSamridhiYojana: Scheme = {
       a: "No, Balika Samridhi Yojana is currently inactive for new enrolments. It was historically submitted offline through ICDS/Anganwadi centres or municipal offices.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

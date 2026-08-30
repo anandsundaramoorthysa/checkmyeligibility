@@ -96,5 +96,6 @@ export const ncertDoctoralFellowship: Scheme = {
       a: "Research proposal, PhD registration certificate, academic transcripts, Aadhaar card, photograph, bank account details, and category certificate (if applicable).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -123,5 +123,6 @@ export const drPanjabraoDeshmukhHostelAllowance: Scheme = {
       a: "No. Students who have taken admission under management or institute-level quota are not eligible for this scheme. Only students admitted under General (Open/EBC/EWS) or SEBC category are eligible.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

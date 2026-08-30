@@ -115,5 +115,6 @@ export const primeMinistersFellowshipDoctoralResearch: Scheme = {
       a: "No. Selected fellows must not receive any other fellowship or salary concurrently. However, applicants may be receiving other fellowships at the time of application; upon selection, the PMFDR replaces all other fellowship support.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

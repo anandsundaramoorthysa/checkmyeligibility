@@ -87,5 +87,6 @@ export const tecInternshipScheme: Scheme = {
       a: "Visit the TEC website (tec.gov.in) or the scheme page when applications are announced. Download and read the internship notification, complete the application form, attach the required documents, and submit before the deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

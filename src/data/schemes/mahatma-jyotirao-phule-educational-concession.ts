@@ -223,5 +223,6 @@ export const mahatmaJyotiraoPhuleEducationalConcession: Scheme = {
       a: "Apply online through Maharashtra scholarship portal (https://scholarships.gov.in/) or offline by collecting forms from school/district office. Fill application with required documents, submit to school/district education office, and track status online.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

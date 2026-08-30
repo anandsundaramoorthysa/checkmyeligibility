@@ -127,5 +127,6 @@ export const aicteInaeTravelGrantSchemeForEngineeringStudentsFromAicteApprovedEn
         a: "Obtain the prescribed application form, secure paper acceptance, complete the application with required documents, get institutional endorsement, and submit to INAE for evaluation by subject experts.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

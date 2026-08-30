@@ -107,5 +107,6 @@ export const aicteSakshamScholarshipScheme: Scheme = {
       a: "Step 1: Register on the NSP website (scholarships.gov.in) with face eKYC to get a 14-digit OTR ID. Step 2: Log in, select AICTE Saksham Scholarship, fill details, upload documents, and submit. Step 3: College verifies (Level 1), then AICTE approves for direct payment (Level 2).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -65,5 +65,6 @@ export const readersAllowanceToVisuallyImpairedPersons: Scheme =   {
         a: "Yes, the Readers Allowance is specifically for the cost of hiring a reader and is separate from general educational scholarships. Students who are receiving other scholarships for tuition or maintenance can still apply for this allowance, as it serves a distinct purpose. However, if the student is already receiving similar reader-specific assistance from another source, they would not be eligible.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

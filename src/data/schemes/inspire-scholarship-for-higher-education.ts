@@ -86,5 +86,6 @@ export const inspireScholarshipForHigherEducation: Scheme = {
       a: "Yes. Students must renew their scholarship each academic year by maintaining satisfactory academic performance and submitting updated documents.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

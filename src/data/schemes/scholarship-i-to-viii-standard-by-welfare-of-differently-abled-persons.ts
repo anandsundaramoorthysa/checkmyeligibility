@@ -88,5 +88,6 @@ export const scholarshipIToViiiStandardByWelfareOfDifferentlyAbledPersons: Schem
         a: "A certificate from the Headmaster stating that the student is not receiving similar assistance from any other source.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

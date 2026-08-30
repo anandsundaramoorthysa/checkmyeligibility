@@ -128,5 +128,6 @@ export const jaganannaVidyaDeevenaFeeReimbursement: Scheme = {
       a: "Students must maintain a minimum of 75% aggregate attendance to keep the scholarship active.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

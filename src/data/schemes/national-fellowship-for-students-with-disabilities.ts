@@ -169,5 +169,6 @@ export const nationalFellowshipForStudentsWithDisabilities: Scheme = {
       a: "Applications are invited through the DEPwD / NDFDC portal (ndfdc.nic.in/Scholarship). Candidates must have a valid UGC-NET or CSIR-NET score. Selection is based on merit from NTA's all-India results among candidates with benchmark disability.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

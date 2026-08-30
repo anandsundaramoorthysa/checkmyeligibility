@@ -98,5 +98,6 @@ export const higherEducationAssistanceSchemeGujarat: Scheme = {
       a: "No. Students pursuing education abroad are not eligible under this scheme.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

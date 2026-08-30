@@ -103,5 +103,6 @@ export const centralVigilanceCommissionInternshipScheme: Scheme = {
       a: "Visit the official CVC website (cvc.gov.in), check the Careers/Internship section, download the application form, and email your application with all required documents to the designated email address at least 30 days before your intended start date.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

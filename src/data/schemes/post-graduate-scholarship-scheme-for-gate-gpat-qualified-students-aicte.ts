@@ -100,5 +100,6 @@ export const postGraduateScholarshipSchemeForGateGpatQualifiedStudentsAicte: Sch
       a: "Yes, AICTE provides PG scholarships to an additional 10% of candidates over the approved intake from the EWS category.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

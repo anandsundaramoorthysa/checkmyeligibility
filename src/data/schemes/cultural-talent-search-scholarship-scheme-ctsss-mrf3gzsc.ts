@@ -84,5 +84,6 @@ export const culturalTalentSearchScholarshipSchemeCtsss: Scheme =   {
         a: "Applications are invited annually through advertisements in Employment News, newspapers, and the CCRT website at ccrtindia.gov.in.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

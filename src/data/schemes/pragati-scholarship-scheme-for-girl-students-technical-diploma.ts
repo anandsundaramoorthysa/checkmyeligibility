@@ -88,5 +88,6 @@ export const pragatiScholarshipSchemeForGirlStudentsTechnicalDiploma: Scheme = {
       a: "Register on the National Scholarship Portal, complete the application form, upload documents via DigiLocker, and track disbursement through the PFMS portal.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

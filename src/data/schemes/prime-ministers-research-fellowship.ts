@@ -170,6 +170,7 @@ export const primeMinistersResearchFellowship: Scheme = {
       a: "All STEM disciplines — science, technology, engineering, and mathematics — are covered. There is no restriction to specific priority topics, though research must be conducted at an eligible institution.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };
 

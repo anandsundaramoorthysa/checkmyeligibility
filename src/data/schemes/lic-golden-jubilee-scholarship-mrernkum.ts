@@ -65,5 +65,6 @@ export const licGoldenJubileeScholarship: Scheme =   {
         a: "₹40,000/year (Medical), ₹30,000/year (Engineering), ₹20,000/year (General Graduation/Diploma/ITI), ₹15,000/year (Special Girl Child).",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

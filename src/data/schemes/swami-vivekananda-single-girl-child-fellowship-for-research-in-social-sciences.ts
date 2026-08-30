@@ -104,5 +104,6 @@ export const swamiVivekanandaSingleGirlChildFellowshipForResearchInSocialScience
       a: "No, admission to PhD through distance education mode is not covered under this scheme.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

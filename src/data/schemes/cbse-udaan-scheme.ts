@@ -117,5 +117,6 @@ export const cbseUdaanScheme: Scheme = {
       a: "Yes, reservation is as per JEE (Advanced) norms: OBC (NCL) 27%, SC 15%, ST 7.5%, and PwD 3% of seats in every category.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

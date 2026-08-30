@@ -120,5 +120,6 @@ export const perarignarAnnaMemorialAward: Scheme = {
       a: "Students belonging to BC, MBC, or DNC communities who are residents of Tamil Nadu and secure the top 2 positions (boys and girls separately) in their district in the Class 12 public examination, and join a professional college in Tamil Nadu.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

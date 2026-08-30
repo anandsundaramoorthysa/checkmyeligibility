@@ -83,5 +83,6 @@ export const dbtResearchAssociateshipDbtRa: Scheme = {
       a: "The programme is managed by the DBT-HRD Project & Management Unit at the Regional Centre for Biotechnology (RCB), Faridabad. For queries, you can write to ra.dbt@rcb.res.in.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -223,5 +223,6 @@ export const vidyaLakshmiEducationLoanScheme: Scheme = {
       a: "If facing financial difficulty, contact your bank for restructuring options including tenure extension, reduced EMI period, or ICR modification. Group life insurance covers loan amount if applicant dies. Default reporting affects credit score negatively.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

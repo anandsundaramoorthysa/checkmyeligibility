@@ -83,5 +83,6 @@ export const drAmbedkarCentralSectorSchemeOfInterestSubsidyOnEducationalLoansFor
       a: "After securing admission and an education loan, submit the required certificates to your bank for verification, which forwards the claim to the Nodal Bank for processing and Government interest payment during the moratorium.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -92,5 +92,6 @@ export const pgIndiraGandhiScholarshipForSingleGirlChild: Scheme = {
       a: "Register on the National Scholarship Portal (scholarships.gov.in) using One-Time Registration (OTR) with biometric authentication, then log in, select the scheme, complete the form, and upload the required documents.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

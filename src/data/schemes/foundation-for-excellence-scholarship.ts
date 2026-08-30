@@ -96,5 +96,6 @@ export const foundationForExcellenceScholarship: Scheme = {
       a: "12th grade mark sheet, entrance exam rank certificate, college admission/allotment letter, income certificate (or ITR/salary certificate), Aadhaar card, and bonafide student certificate.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

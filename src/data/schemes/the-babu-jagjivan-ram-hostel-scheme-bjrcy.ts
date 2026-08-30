@@ -96,5 +96,6 @@ export const theBabuJagjivanRamHostelSchemeBjrcy: Scheme = {
       a: "Yes. The scheme is specifically designed for Scheduled Caste (SC) students to promote educational equity and reduce dropout rates.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

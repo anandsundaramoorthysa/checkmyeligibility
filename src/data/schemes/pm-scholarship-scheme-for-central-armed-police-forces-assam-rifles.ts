@@ -124,6 +124,7 @@ export const pmScholarshipSchemeForCentralArmedPoliceForcesAssamRifles: Scheme =
       a: "A total of 2,000 scholarships are allocated annually for CAPF & Assam Rifles categories, with equal reservation for boys (1,000) and girls (1,000). An additional 500 scholarships are available for States/UTs Police martyr families.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };
 

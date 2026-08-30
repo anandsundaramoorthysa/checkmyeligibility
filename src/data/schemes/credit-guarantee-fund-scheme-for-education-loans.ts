@@ -120,5 +120,6 @@ export const creditGuaranteeFundSchemeForEducationLoans: Scheme = {
       a: "Apply for an education loan at any participating bank (public sector, private, RRB, or foreign bank). You can also use the Vidya Lakshmi Portal (vidyalakshmi.co.in) or PM-Vidyalaxmi Portal (pmvidyalaxmi.co.in) to apply to multiple banks at once.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

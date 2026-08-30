@@ -100,5 +100,6 @@ export const jnTataEndowmentLoanScholarship: Scheme = {
       a: "Passport-size photograph, Aadhaar card, passport copy, academic transcripts and mark sheets, Statement of Purpose (SOP), resume/CV, admission letter (if available), work experience certificate (if applicable), appointment letter and salary slips for working professionals, and GRE/GMAT/IELTS/TOEFL scores (if applicable).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

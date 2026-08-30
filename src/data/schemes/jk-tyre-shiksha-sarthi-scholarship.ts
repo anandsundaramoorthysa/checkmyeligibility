@@ -145,5 +145,6 @@ export const jkTyreShikshaSarthiScholarship: Scheme = {
       a: "No. Only students who are residents of Rajasthan, Madhya Pradesh, Uttarakhand, Karnataka, or Tamil Nadu are eligible to apply.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -111,5 +111,6 @@ export const freeCoachingAndAlliedScheme: Scheme = {
       a: "Apply online at the official portal (coaching.dosje.gov.in). Register with your details, select the eligible exam and empanelled coaching institute, upload required documents (Aadhaar, income certificate, caste certificate, academic mark sheets, and proof of admission to the coaching course), and submit the application. Admission to a DACE or empanelled institute is required before applying.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

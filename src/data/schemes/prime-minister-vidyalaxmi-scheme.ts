@@ -89,5 +89,6 @@ export const primeMinisterVidyalaxmiScheme: Scheme = {
       a: "Yes, the scheme covers both undergraduate and postgraduate degree/diploma programmes at designated QHEIs.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

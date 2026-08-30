@@ -86,5 +86,6 @@ export const summerInternshipSchemeOfDgft: Scheme = {
       a: "A scanned application in the prescribed proforma, CV, permission letter from supervisor (if applicable), and a report/paper at the completion of the internship.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

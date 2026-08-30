@@ -139,5 +139,6 @@ export const specialScholarshipSchemeForJKAndLadakhSssjkl: Scheme = {
       a: "Register on the official AICTE JK Scholarship Portal during the application cycle (spring/summer), submit the initial application with required documents, visit a designated Facilitation Center for document verification, participate in online AICTE counseling, and finally report to your allotted college.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

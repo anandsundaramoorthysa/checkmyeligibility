@@ -189,5 +189,6 @@ export const pmSpecialScholarshipJkLadakhStudents: Scheme = {
       a: "Post-2019, J&K and Ladakh are separate UTs. If your certificate pre-dates this, get a new domicile certificate from the current UT administration (J&K or Ladakh) confirming your residency status under the new structure.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

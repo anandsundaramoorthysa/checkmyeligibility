@@ -121,5 +121,6 @@ export const postDoctoralFellowshipToWomenCandidates: Scheme = {
       a: "The fellowship amount is disbursed through Canara Bank directly to the awardee's bank account. The awardee must submit a Continuation Certificate every three months, an annual Progress Report, and accounts of contingency grants as per UGC proformas.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

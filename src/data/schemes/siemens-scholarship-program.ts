@@ -119,5 +119,6 @@ export const siemensScholarshipProgram: Scheme = {
       a: "Internship opportunities at Siemens and partner MNCs, mechatronics training, and mentorship from industry professionals.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

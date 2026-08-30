@@ -98,5 +98,6 @@ export const aicteSpicesScheme: Scheme = {
       a: "Institutions prepare a proposal with objectives, activities, and budget, submit it through the AICTE portal as per notification, and selected institutions receive grant support to develop a model club.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

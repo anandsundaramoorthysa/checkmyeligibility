@@ -156,5 +156,6 @@ export const pmUspCentralSectorSchemeOfScholarship: Scheme = {
       a: "The scholarship is disbursed directly into the student's own savings bank account via Direct Benefit Transfer (DBT). Students can track payment status on the PFMS portal.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -83,5 +83,6 @@ export const primeMinisterSScholarshipSchemePmssForWardsOfRpfRpsfPersonnel: Sche
       a: "No. The benefit is restricted to a maximum of two wards per family.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -78,5 +78,6 @@ export const aicteSwanathScholarshipSchemeForStudents: Scheme = {
       a: "Register on the AICTE Scholarship portal or the National Scholarship Portal, complete the application form, upload the required documents, and track your status online.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

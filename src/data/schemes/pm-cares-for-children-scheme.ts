@@ -88,5 +88,6 @@ export const pmCaresForChildrenScheme: Scheme = {
       a: "Death certificate of parent(s) mentioning COVID-19, child's birth certificate, Aadhaar card of child and guardian, bank account details of the child, and a statement from the Child Welfare Committee (CWC) or District Magistrate (DM).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

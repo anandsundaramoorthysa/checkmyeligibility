@@ -110,5 +110,6 @@ export const aicteDoctoralFellowshipAdf: Scheme = {
       a: "Secure Ph.D. admission at an AICTE-approved institution, coordinate with your university's ADF Nodal Officer to generate a Unique Student ID, then register on the AICTE Fellowship Portal, fill the application form, upload documents, and submit before the session deadline (Session 1: April 20th, Session 2: October 20th).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

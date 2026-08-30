@@ -216,5 +216,6 @@ export const nationalMeansCumMeritScholarshipScheme: Scheme = {
       a: "Yes, rejected applications can be appealed within specified time period (typically 30 days) to district education office with supporting evidence. Common rejection reasons include income exceeding limit or marks below minimum threshold.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -151,5 +151,6 @@ export const foreignStudyLoanSchemeGueedc: Scheme = {
       a: "Visit the e-Samaj Kalyan portal at esamajkalyan.gujarat.gov.in, register or log in, select the 'Foreign Study Loan' scheme, fill in the application form, upload the required documents, and submit. After online submission, print the form and submit the signed hard copy along with original documents at the GUEEDC office.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

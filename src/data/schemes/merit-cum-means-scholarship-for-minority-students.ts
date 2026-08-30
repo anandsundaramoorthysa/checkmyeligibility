@@ -117,5 +117,6 @@ export const meritCumMeansScholarshipForMinorityStudents: Scheme = {
       a: "60,000 fresh scholarships are awarded each year, distributed among States/UTs based on the minority population as per Census data.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

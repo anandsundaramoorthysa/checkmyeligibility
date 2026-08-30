@@ -110,5 +110,6 @@ export const wiseKiranScheme: Scheme = {
       a: "Proposals are submitted online through DST\u2019s e-PMS portal (onlinedst.gov.in) or the WISE online portal (online-wosa.gov.in). Calls for proposals are announced periodically on the DST website (dst.gov.in).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

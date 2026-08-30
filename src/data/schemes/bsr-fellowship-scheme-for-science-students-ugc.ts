@@ -102,5 +102,6 @@ export const bsrFellowshipSchemeForScienceStudentsUgc: Scheme = {
       a: "Yes. At least 4 research papers (2 National + 2 International) must be submitted, with 2 at the Departmental Review stage and 2 by the end of tenure, in the UGC-INFLIBNET repository.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

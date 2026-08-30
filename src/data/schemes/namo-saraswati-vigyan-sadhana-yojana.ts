@@ -126,5 +126,6 @@ export const namoSaraswatiVigyanSadhanaYojana: Scheme = {
       a: "No. There is no application fee for this scholarship.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

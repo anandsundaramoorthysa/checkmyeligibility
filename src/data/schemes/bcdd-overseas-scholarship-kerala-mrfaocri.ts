@@ -114,5 +114,6 @@ export const bcddOverseasScholarshipKerala: Scheme =   {
         a: "Visit the official BCDD Portal or the E-Grantz portal when the notification is released (usually July–September).",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

@@ -128,5 +128,6 @@ export const drAmbedkarPostMatricScholarshipPunjab: Scheme = {
       a: "No. Students must not be holding any other scholarship simultaneously to be eligible for this scheme.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

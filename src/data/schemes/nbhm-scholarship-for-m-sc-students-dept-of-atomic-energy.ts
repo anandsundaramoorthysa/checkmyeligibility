@@ -119,5 +119,6 @@ export const nbhmScholarshipForMScStudentsDeptOfAtomicEnergy: Scheme = {
       a: "The application process is conducted online through the IMSc NBHM Portal when the application window opens annually. Create an account with a valid email ID and mobile number, fill in personal, academic, and test center details, upload the required scanned documents, pay the application fee online, and submit. The portal locks the data permanently after submission, and the final confirmation page must be printed for verification during the written exam and interview.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

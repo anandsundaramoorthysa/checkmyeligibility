@@ -82,5 +82,6 @@ export const aicteDistinguishedChairProfessorFellowship: Scheme = {
       a: "Letter of Acceptance, bank account details with IFSC code, detailed CV/Biodata, proof of retirement/superannuation (if required), nomination letter/recommendation, and proposed lecture/activity schedule.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

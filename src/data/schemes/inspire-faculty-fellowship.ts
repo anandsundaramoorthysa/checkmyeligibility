@@ -183,5 +183,6 @@ export const inspireFacultyFellowship: Scheme = {
       a: "After fellowship completion, there is no employment obligation or service requirement. You are free to pursue independent academic positions, continue research at other institutions, take up industry positions, or any other career path. INSPIRE alumni remain part of the INSPIRE scientific network.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

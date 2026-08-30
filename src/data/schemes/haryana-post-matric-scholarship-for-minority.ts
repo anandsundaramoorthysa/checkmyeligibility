@@ -99,5 +99,6 @@ export const haryanaPostMatricScholarshipForMinority: Scheme = {
       a: "Yes, priority is given to BPL families and 30% of scholarships are earmarked for girl students.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

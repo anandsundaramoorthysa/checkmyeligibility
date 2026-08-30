@@ -84,5 +84,6 @@ export const kshecHigherEducationScholarshipScheme: Scheme = {
       a: "Register on the KSHEC scholarship portal, create your profile, apply for the scholarship, and submit the printed hardcopy with supporting documents to your college.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

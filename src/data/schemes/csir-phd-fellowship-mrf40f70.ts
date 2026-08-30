@@ -78,5 +78,6 @@ export const csirPhdFellowship: Scheme =   {
         a: "Through the prescribed process after qualifying CSIR-UGC NET JRF and securing Ph.D. admission. Check ugc.gov.in for details.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

@@ -105,5 +105,6 @@ export const jaganannaVasathiDeevenaHostelMessSupport: Scheme = {
       a: "Enrol digitally via the JnanaBhumi Portal. Your college submits your admission data, you confirm via SMS, complete biometric e-KYC at your college or Village/Ward Secretariat, and NPCI mapping enables DBT release.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

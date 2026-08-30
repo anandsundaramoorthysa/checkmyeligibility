@@ -91,5 +91,6 @@ export const reimbursementOfCollegeFeesForScStudentsInProfessionalColleges: Sche
       a: "Applications can be submitted online through the e-District portal (edistrict.py.gov.in) or offline at the Office of the Adi Dravidar Welfare Department.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

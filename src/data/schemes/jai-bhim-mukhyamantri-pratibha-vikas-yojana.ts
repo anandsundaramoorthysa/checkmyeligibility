@@ -134,5 +134,6 @@ export const jaiBhimMukhyamantriPratibhaVikasYojana: Scheme = {
       a: "Yes. You must be a permanent resident of Delhi with a valid domicile certificate. Students studying in Delhi from other states are not eligible.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

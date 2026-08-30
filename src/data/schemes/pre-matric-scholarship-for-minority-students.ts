@@ -89,5 +89,6 @@ export const preMatricScholarshipForMinorityStudents: Scheme = {
       a: "Register on the National Scholarship Portal (scholarships.gov.in), select this scheme, complete the form, upload documents, and submit for school verification before Direct Benefit Transfer disbursement.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -97,5 +97,6 @@ export const apjAbdulKalamScholarship: Scheme = {
       a: "Register online on the Directorate of Minority Welfare website, navigate to Scholarship > APJ Abdul Kalam, complete the Examination, Personal, and Scholarship tabs, upload the required documents (photo, signature, certificates as JPEG under 100 KB), and print the finalized application.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

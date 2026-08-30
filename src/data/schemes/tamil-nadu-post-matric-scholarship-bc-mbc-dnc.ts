@@ -148,5 +148,6 @@ export const tamilNaduPostMatricScholarshipBcMbcDnc: Scheme = {
       a: "The scholarship amount is disbursed via Direct Benefit Transfer (DBT) directly to the student's Aadhaar-seeded bank account after institutional and departmental verification.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

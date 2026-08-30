@@ -105,5 +105,6 @@ export const mukhyamantriKanyaUtthanYojanaGraduationIncentive: Scheme = {
       a: "Final Graduation Marksheet, University Registration Certificate, Bihar Domicile Certificate, Aadhaar Card linked to your bank account, Bank Passbook (single name, Bihar branch), Unmarried Declaration, passport-size photograph, and scanned signature.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

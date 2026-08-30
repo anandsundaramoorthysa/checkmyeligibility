@@ -113,5 +113,6 @@ export const nationalOverseasScholarshipSt: Scheme = {
       a: "Yes. Selected candidates are given up to 2 years to secure admission in a recognised foreign university (Top 1000 QS World Ranking). However, having an admission offer strengthens the application.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -65,5 +65,6 @@ export const rIMCDehradunScholarshipTamilNadu: Scheme = {
       a: "This is an offline scheme. Obtain the prescribed application form from the Directorate of Collegiate Education, Government of Tamil Nadu, complete it with the required documents, and submit it to the Directorate for verification and processing.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -105,5 +105,6 @@ export const rajarshiShahuMaharajShikshanShulkShishyavruttiYojnaEbc: Scheme = {
       a: "Maharashtra domicile certificate, current year income certificate from Tehsildar, CAP allotment letter, SSC/HSC and previous year mark sheets, current year fee receipt, and a family undertaking declaring the number of children benefitting from the scheme.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -81,5 +81,6 @@ export const naiUdaanScheme: Scheme = {
       a: "A total of 5,100 candidates are selected every year under the Nai Udaan Scheme.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

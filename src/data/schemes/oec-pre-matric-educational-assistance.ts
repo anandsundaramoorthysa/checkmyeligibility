@@ -92,5 +92,6 @@ export const oecPreMatricEducationalAssistance: Scheme = {
       a: "Government schools, Aided schools, Recognised Unaided schools, CBSE/ICSE-affiliated schools, and Kendriya Vidyalayas in Kerala are covered.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

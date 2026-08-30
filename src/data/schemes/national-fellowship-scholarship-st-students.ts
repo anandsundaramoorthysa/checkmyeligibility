@@ -160,5 +160,6 @@ export const nationalFellowshipScholarshipStStudents: Scheme = {
       a: "The fellowship is provided for the entire duration of your postgraduate programme (typically 2 years for Master's and 3-5 years for PhD), subject to maintaining satisfactory academic progress and annual renewal.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

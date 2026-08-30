@@ -107,5 +107,6 @@ export const drBabasahebAmbedkarNationalResearchFellowshipBanrf: Scheme = {
       a: "Visit the BARTI fellowship portal (fellowship.barti.in), register, fill the online application form, upload all required documents (caste certificate, caste validity certificate, domicile certificate, PG mark sheets, Ph.D. registration certificate, Aadhaar, research proposal, bank details, and photograph), and submit before the notified deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -103,5 +103,6 @@ export const pmYasasviScheme: Scheme = {
       a: "Yes. Students must renew their scholarship each academic year through the NSP portal by maintaining satisfactory academic performance and submitting updated attendance and progress reports verified by the institution.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

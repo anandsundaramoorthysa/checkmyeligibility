@@ -81,5 +81,6 @@ export const nationalRenewableEnergyInternshipSchemeNreis: Scheme = {
       a: "Through the MNRE Human Resource Development portal at hrd.mnre.gov.in, submitting your application form, resume, transcripts, and other required documents.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

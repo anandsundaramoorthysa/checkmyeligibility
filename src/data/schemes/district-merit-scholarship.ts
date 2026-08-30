@@ -81,5 +81,6 @@ export const districtMeritScholarship: Scheme = {
       a: "Higher Secondary (Plus One/Plus Two), VHSC, ITI, and Polytechnic courses are covered under this scholarship.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

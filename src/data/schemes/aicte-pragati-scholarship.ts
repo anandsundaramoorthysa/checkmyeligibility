@@ -104,5 +104,6 @@ export const aictePragatiScholarship: Scheme = {
       a: "Yes. Students must submit a renewal application on the National Scholarship Portal each academic year along with updated documents and a passing certificate.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

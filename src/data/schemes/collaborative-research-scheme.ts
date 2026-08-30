@@ -223,5 +223,6 @@ export const collaborativeResearchScheme: Scheme = {
       a: "Funding is typically released in installments: 50% at project start, 30% at mid-term review (after 12-18 months), 20% at final stage (after satisfactory progress review). Installment schedule may vary based on project duration and milestones.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

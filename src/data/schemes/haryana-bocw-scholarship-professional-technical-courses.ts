@@ -111,5 +111,6 @@ export const haryanaBocwScholarshipProfessionalTechnicalCourses: Scheme = {
       a: "If a student fails in a class, they will not receive benefits for that academic year.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

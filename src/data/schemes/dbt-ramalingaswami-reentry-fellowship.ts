@@ -158,5 +158,6 @@ export const dbtRamalingaswamiReentryFellowship: Scheme = {
       a: "Applications are submitted online through the common fellowship portal at fellowships.gov.in. You need to register, fill in the application form with personal, academic, and research details, upload the required documents including a research proposal and host institute certificate, and submit before the deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

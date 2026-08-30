@@ -121,5 +121,6 @@ export const mukhyamantriKanyaUtthanYojanaIntermediate: Scheme = {
       a: "After successful application and verification, the amount is transferred to your bank account via DBT within 60-90 days. Processing times may vary based on departmental workload.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

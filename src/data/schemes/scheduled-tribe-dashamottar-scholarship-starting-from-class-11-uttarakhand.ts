@@ -78,5 +78,6 @@ export const scheduledTribeDashamottarScholarshipStartingFromClass11Uttarakhand:
       a: "Apply through the National Scholarship Portal (scholarships.gov.in). The application passes through institutional verification, physical verification by the Social Welfare Department, and online verification before disbursement via PFMS.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

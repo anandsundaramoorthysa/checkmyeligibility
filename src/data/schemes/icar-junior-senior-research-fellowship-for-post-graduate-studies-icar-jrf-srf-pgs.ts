@@ -75,5 +75,6 @@ export const icarJuniorSeniorResearchFellowshipForPostGraduateStudiesIcarJrfSrfP
       a: "Apply through the ICAR entrance examination process at icar.org.in; selection is based on your entrance exam rank and category reservations as applicable.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

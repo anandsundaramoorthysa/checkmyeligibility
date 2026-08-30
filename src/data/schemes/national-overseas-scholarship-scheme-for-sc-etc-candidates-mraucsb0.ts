@@ -83,5 +83,6 @@ export const nationalOverseasScholarshipSchemeForScEtcCandidates: Scheme =   {
         a: "No, only Master's and Ph.D. degree courses at accredited foreign universities are covered.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

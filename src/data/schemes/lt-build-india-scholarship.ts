@@ -84,5 +84,6 @@ export const ltBuildIndiaScholarship: Scheme = {
       a: "Visit the L&T Build India Scholarship page on Buddy4Study, register or log in, complete the eligibility check, fill out the application form, upload the required documents, and submit before the deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

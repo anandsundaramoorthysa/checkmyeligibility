@@ -92,5 +92,6 @@ export const tamilNaduFirstGraduateTuitionFeeConcession: Scheme = {
       a: "Apply online through the Tamil Nadu e-Sevai portal (tnesevai.tn.gov.in) under Revenue Department service REV-104. The fee is ₹60 and the certificate is valid for up to 3 years.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

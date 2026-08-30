@@ -158,5 +158,6 @@ export const biharStudentCreditCardScheme: Scheme = {
       a: "No. The application and processing are completely free. Do not pay any agent — the scheme is processed directly by the government.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

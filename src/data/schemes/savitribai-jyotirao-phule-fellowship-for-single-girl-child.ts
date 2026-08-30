@@ -86,5 +86,6 @@ export const savitribaiJyotiraoPhuleFellowshipForSingleGirlChild: Scheme = {
       a: "Register on the UGC Scholarships and Fellowships portal, select this fellowship, complete the form, upload the required documents, and obtain your university's forwarding before the deadline.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

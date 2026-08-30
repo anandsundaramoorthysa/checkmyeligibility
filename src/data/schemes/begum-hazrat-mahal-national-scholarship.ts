@@ -152,5 +152,6 @@ export const begumHazratMahalNationalScholarship: Scheme = {
       a: "Generally, you cannot receive financial support from multiple government scholarship schemes simultaneously. Declare all ongoing financial assistance in your application.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

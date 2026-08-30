@@ -112,5 +112,6 @@ export const nbfcdEducationLoan: Scheme = {
       a: "The loan covers admission and tuition fees, books, stationery and instruments, examination fees, laboratory and library fees, boarding and lodging, insurance premium during the loan period, and travel expenses (for studies abroad only).",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

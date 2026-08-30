@@ -91,5 +91,6 @@ export const topClassEducationSchemeForStStudents: Scheme = {
       a: "Register on the National Scholarship Portal (scholarships.gov.in), complete the application form, upload the required documents, and submit for institutional verification and Ministry approval. The amount is disbursed via Direct Benefit Transfer.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

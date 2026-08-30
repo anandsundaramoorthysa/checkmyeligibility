@@ -176,5 +176,6 @@ export const postMatricScholarshipScStudents: Scheme = {
       a: "Generally, you cannot receive simultaneous financial support from multiple central scholarship schemes. You must declare all ongoing financial assistance and scholarships in your application.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -59,5 +59,6 @@ export const employabilityExcellenceWithCollegeEducationLearningExcel: Scheme = 
         a: "No, the EXCEL programme provides free employability and skill development training.",
       },
     ],
-    source: "sample",
+    lastVerified: "2026-08-30",
+  source: "sample",
   };

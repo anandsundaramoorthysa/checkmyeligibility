@@ -189,5 +189,6 @@ export const tagoreNationalFellowshipCulturalResearch: Scheme = {
       a: "No, the Tagore National Fellowship is exclusively for full-time, dedicated research. Part-time or parallel employment positions are not compatible with the fellowship terms.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };

@@ -107,5 +107,6 @@ export const kanyaSakshartaProtsahanYojana: Scheme = {
       a: "No. The scheme is available only for students who have been admitted to Class 11th as regular students in a recognized school. Private candidates are not eligible.",
     },
   ],
+  lastVerified: "2026-08-30",
   source: "sample",
 };
