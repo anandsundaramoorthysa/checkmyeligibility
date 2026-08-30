@@ -5,7 +5,7 @@ export const collaborativeResearchScheme: Scheme = {
   slug: "collaborative-research-scheme",
   name: "Collaborative Research Scheme (CRS)",
   shortName: "CRS",
-  summary: "A central research funding initiative promoting collaborative research between academic institutions, government laboratories, and industry partners to address critical national challenges and accelerate innovation in science, technology, and engineering domains.",
+  summary: "Central government research funding (₹10 lakh to ₹3 crore per project) supporting collaborative STEM research between academic institutions, government laboratories, and industry partners on 2-5 year interdisciplinary projects with practical applications.",
   description: "The Collaborative Research Scheme (CRS) is a flagship program designed to foster collaborative research partnerships and strengthen the research ecosystem in India. The scheme encourages researchers from different institutions and sectors to work together on interdisciplinary research projects that have practical applications and address societal challenges. It provides substantial financial support ranging from ₹10 lakhs to ₹3 crores depending on project scope, duration, and complexity. The scheme emphasizes outcome-oriented research with tangible deliverables, capacity building, and technology transfer. It supports research in STEM domains including physical sciences, biological sciences, engineering, and allied disciplines. The scheme facilitates knowledge exchange, infrastructure sharing, and mentor-mentee relationships between experienced and early-career researchers. Projects can span 2-5 years with flexible implementation timelines.",
   category: "fellowship",
   level: "central",

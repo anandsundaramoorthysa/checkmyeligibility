@@ -8,7 +8,7 @@ export const bcddOverseasScholarshipKerala: Scheme =   {
     summary:
       "Up to ₹10 lakh financial assistance for OBC students from Kerala pursuing postgraduate or doctoral studies at international universities.",
     description:
-      "The BCDD Overseas Scholarship, administered by the Kerala Backward Classes Development Department, is a financial aid scheme for Other Backward Class (OBC) students. It supports postgraduate and doctoral studies in international universities, providing a maximum financial assistance of up to ₹10,00,000 to eligible students.",
+      "The BCDD Overseas Scholarship is administered by the Backward Classes Development Department (BCDD), Government of Kerala, through the E-Grantz portal. It provides up to ₹10,00,000 in financial assistance to OBC students from Kerala pursuing postgraduate or doctoral studies at internationally recognised universities. Applicants must be under 40 years of age, hold a Bachelor's degree with at least 60% marks, and have already secured a conditional or unconditional admission letter from the foreign institution. Annual family income must not exceed ₹6,00,000. The scholarship covers tuition fees and related academic expenses. Applications are accepted online when the department releases the annual notification, typically between July and September. Candidates with relevant work experience are given priority, and the award is disbursed directly to the student's bank account.",
     category: "education",
     level: "state",
     states: ["kerala"],

@@ -16,7 +16,7 @@ export const centralVigilanceCommissionInternshipScheme: Scheme = {
     {
       label: "Nationality",
       value: "Must be an Indian national",
-      type: "other",
+      type: "residence",
     },
     {
       label: "Academic qualification",

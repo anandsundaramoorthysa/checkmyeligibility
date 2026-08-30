@@ -8,7 +8,7 @@ export const aicteSakshamScholarshipScheme: Scheme = {
   summary:
     "\u20B950,000 per year scholarship for differently-abled students (\u226540% disability) pursuing technical education at AICTE-approved institutions, disbursed via DBT through the National Scholarship Portal.",
   description:
-    "Scholarship for differently-abled students pursuing technical education. The AICTE Saksham Scholarship Scheme supports students with disabilities enrolled in AICTE-approved institutions across India, covering tuition and study-related expenses to ensure equal access to technical education.",
+    "The AICTE Saksham Scholarship Scheme provides ₹50,000 per year to students with disabilities (minimum 40% disability certification from a government-recognised medical authority) pursuing technical education at AICTE-approved institutions. The scholarship covers college fees, computer, books, stationery, equipment, and software for up to 4 years (degree programmes) or 3 years (lateral-entry students). Annual family income must be below ₹8,00,000. Applications are submitted and disbursed through the National Scholarship Portal (scholarships.gov.in) via Direct Benefit Transfer. The scheme aims to remove financial barriers for differently-abled students pursuing engineering, technology, pharmacy, architecture, and allied technical disciplines, ensuring equal access to quality technical education.",
   category: "scholarship",
   level: "central",
   states: ["all-india"],

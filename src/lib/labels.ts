@@ -25,5 +25,6 @@ export function stateLabel(state: IndianState): string {
 export function statesHint(states: IndianState[]): string {
   if (states.includes("all-india")) return "Available across India";
   if (states.length === 1) return stateLabel(states[0]);
+  if (states.length <= 3) return states.map(stateLabel).join(", ");
   return `${states.length} states`;
 }
