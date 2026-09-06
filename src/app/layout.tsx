@@ -21,7 +21,7 @@ const sora = Sora({
   display: "swap",
 });
 
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-YE5JKM9EKJ";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -55,7 +55,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col font-sans">
         <JsonLd data={[organizationLd(), websiteLd()]} />
         <SiteShell>{children}</SiteShell>
-        {gaMeasurementId && <GoogleAnalytics measurementId={gaMeasurementId} />}
+        <GoogleAnalytics measurementId={gaMeasurementId} />
       </body>
     </html>
   );
