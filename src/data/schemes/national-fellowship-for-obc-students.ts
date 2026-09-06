@@ -74,7 +74,7 @@ export const nationalFellowshipForObcStudents: Scheme = {
       mandatory: false,
     },
   ],
-  officialPortalUrl: "https://www.ugc.gov.in/",
+  officialPortalUrl: "https://ugc.ac.in/",
   ministry:
     "Ministry of Social Justice and Empowerment / University Grants Commission (UGC)",
   applicationMode: ["online"],

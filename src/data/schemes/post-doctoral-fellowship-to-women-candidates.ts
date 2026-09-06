@@ -70,7 +70,7 @@ export const postDoctoralFellowshipToWomenCandidates: Scheme = {
     { name: "No Objection Certificate (NOC) / Undertaking", mandatory: true },
     { name: "Any other document specified during application", mandatory: false },
   ],
-  officialPortalUrl: "https://www.ugc.gov.in/",
+  officialPortalUrl: "https://ugc.ac.in/",
   ministry:
     "University Grants Commission (UGC) / Ministry of Education",
   applicationMode: ["online"],

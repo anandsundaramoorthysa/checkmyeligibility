@@ -58,7 +58,7 @@ export const swamiVivekanandaSingleGirlChildFellowshipForResearchInSocialScience
     { name: "Transgender ID Card (if applicable)", mandatory: false },
     { name: "Affidavit on ₹50 stamp paper proving single girl child status, duly attested by SDM/First Class Magistrate/Gazetted Officer (not below Tahsildar)", mandatory: true },
   ],
-  officialPortalUrl: "https://www.ugc.gov.in/",
+  officialPortalUrl: "https://ugc.ac.in/",
   ministry: "University Grants Commission (UGC), Ministry of Education",
   applicationMode: ["online"],
   tags: [

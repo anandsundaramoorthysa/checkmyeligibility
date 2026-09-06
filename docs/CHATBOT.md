@@ -6,11 +6,16 @@
 
 ## Overview
 
-The CheckMyEligibility chatbot helps **Indian students** (UG, PG, PhD, Diploma, Professional courses) discover government schemes — scholarships, fellowships, education loans, and grants — they are eligible for.
+The CheckMyEligibility chatbot helps **Indian students** (UG, PG, PhD, Diploma, professional
+courses) discover government schemes — scholarships, fellowships, education loans, and grants
+— they are eligible for.
 
-The user describes their situation in plain language and the bot replies with matching schemes, eligibility details, required documents, and a direct link to apply on the official government portal.
+The user describes their situation in plain language and the bot replies with matching schemes,
+eligibility details, required documents, and a direct link to apply on the official government
+portal.
 
-The bot **never submits applications** — it only points users to the official government portal. This is intentional for trust, consent, and legal safety.
+The bot **never submits applications** — it only points users to the official government
+portal. This is intentional for trust, consent, and legal safety.
 
 ---
 
@@ -18,16 +23,17 @@ The bot **never submits applications** — it only points users to the official 
 
 | Layer | Status |
 |-------|--------|
-| Chat UI (`/chat`) | Done |
-| API route (`POST /api/chat`) | Done — mock only |
-| Mock engine (keyword matching, student intents) | Done |
-| FastAPI backend (Python, Railway) | Not started — Phase 1 |
-| PostgreSQL + pgvector | Not started — Phase 1 |
-| LiteLLM + OpenRouter integration | Not started — Phase 1 |
-| Student eligibility structured queries | Not started — Phase 1 |
-| RAG pipeline | Not started — Phase 1 |
-| Scheme comparison feature | Planned — Phase 1 |
-| Multilingual (Tamil, Hindi) | Planned — Phase 1 |
+| Chat UI (`/chat`) | Live |
+| API route (`POST /api/chat`) | Live — Groq + Qdrant + Gemini |
+| Input guardrail | Live |
+| Rate limiting (per-IP, Neon) | Live |
+| Qdrant semantic retrieval | Live |
+| Groq LLM streaming (Vercel AI SDK) | Live |
+| Gemini embeddings pipeline | Live |
+| Thread persistence (Neon) | Live |
+| Scheme comparison flow | Live |
+| Grievance guidance flow | Live |
+| Multilingual (Tamil, Hindi) | Planned — Phase 3 |
 
 ---
 
@@ -35,19 +41,20 @@ The bot **never submits applications** — it only points users to the official 
 
 ```
 Browser (/chat page)
-  │
-  └─ ChatScreen (React client component)
-       │
-       └─ fetch  POST /api/chat  (Next.js proxy on Vercel)
-                    │
-                    └─ FastAPI backend (Railway)
-                           ├─ PostgreSQL structured eligibility query
-                           ├─ LiteLLM → OpenRouter (LLM response generation)
-                           └─ pgvector RAG (follow-up / nuanced queries only)
+  |
+  +-- ChatScreen (React client component)
+       |
+       +-- fetch  POST /api/chat  (Next.js route on Vercel)
+                    |
+                    +-- Guardrail (input sanitise + check)
+                    +-- Rate limiter (Neon PostgreSQL, per-IP)
+                    +-- Retrieval (Qdrant, Gemini embeddings)
+                    +-- Intent detection (comparison / grievance / standard)
+                    +-- streamText (Vercel AI SDK) --> Groq
+                    +-- Guardrail (output validate)
+                    +-- Thread store (Neon, cookie-based)
+                    +-- Chat logger (Neon, anonymised IP hash)
 ```
-
-**Now (Phase 1 mock):** `/api/chat` calls `mockEngine` locally — no FastAPI, no DB, no LLM.
-**Phase 1 real:** `/api/chat` proxies to FastAPI on Railway.
 
 ---
 
@@ -60,8 +67,9 @@ Browser (/chat page)
 - Diploma students
 - Professional course students (engineering, medical, law, etc.)
 
-**Why students first?**
-Students frequently search for scholarships, fellowships, and grants scattered across multiple government portals. They are comfortable using AI chatbots, and a student-focused MVP is easier to validate before expanding to other beneficiary groups.
+**Why students first?** Students frequently search for scholarships, fellowships, and grants
+scattered across multiple government portals. They are comfortable using AI assistants, and
+a student-focused implementation is easier to validate before expanding to other groups.
 
 ---
 
@@ -69,228 +77,159 @@ Students frequently search for scholarships, fellowships, and grants scattered a
 
 ```
 src/
-├── app/
-│   ├── api/chat/route.ts          ← POST /api/chat (proxy to FastAPI in Phase 1)
-│   └── chat/page.tsx              ← /chat full-screen page
-│
-├── components/chat/
-│   ├── ChatScreen.tsx             ← main orchestrator (100dvh client island)
-│   ├── SchemeResultCard.tsx       ← scheme result cards with "Apply" link
-│   └── screen/                   ← UI sub-components (bubbles, composer, chips…)
-│
-└── lib/chat/
-    ├── engine.ts                  ← ChatEngine interface (the swap seam)
-    ├── mockEngine.ts              ← current — keyword intent matching (student intents)
-    ├── client.ts                  ← browser-side fetch wrapper
-    ├── openChat.ts                ← chatHref() helper, ?q= deep-link
-    ├── transcript.ts              ← localStorage persistence
-    └── translations.ts            ← multilingual strings (LangCode ready)
++-- app/
+|   +-- api/chat/route.ts          <- POST /api/chat (full AI pipeline)
+|   +-- chat/page.tsx              <- /chat full-screen page
+|
++-- components/chat/
+|   +-- ChatScreen.tsx             <- main orchestrator (100dvh client island)
+|   +-- SchemeResultCard.tsx       <- scheme result cards with "Apply" link
+|   +-- screen/                   <- UI sub-components (bubbles, composer, chips...)
+|
++-- lib/chat/
+    +-- client.ts                  <- fetch wrapper for POST /api/chat
+    +-- systemPrompt.ts            <- prompt templates, intent detection utilities
+    +-- retrieval.ts               <- Qdrant vector search + result formatting
+    +-- guardrail.ts               <- input sanitise/check + output validation
+    +-- rateLimiter.ts             <- per-IP sliding window (Neon)
+    +-- threadStore.ts             <- JWT cookie + Neon thread persistence
+    +-- embedder.ts                <- Gemini text embedding
+    +-- qdrant.ts                  <- Qdrant client wrapper
+    +-- chatLogger.ts              <- anonymised turn logging (Neon)
+    +-- adminAuth.ts               <- X-Admin-Key guard for /api/embed routes
 ```
 
 ---
 
-## Current Mock Engine
+## Intent Detection
 
-`src/lib/chat/mockEngine.ts` — deterministic, no network, no LLM. Covers student-focused intents:
+The system prompt module detects three intent types before the LLM call:
 
-| Intent | Keywords |
-|--------|---------|
-| Scholarship seeker | scholarship, merit, financial aid, award |
-| SC/ST student | sc, st, dalit, tribal, scheduled caste/tribe |
-| Minority student | minority, muslim, christian, sikh, obc |
-| Girl / women in education | girl, women, female student |
-| Education loan | education loan, study loan, vidya lakshmi |
-| Fellowship / PhD | fellowship, phd, mphil, jrf, srf, research, ugc |
-| Differently-abled student | disability, disabled, divyang, saksham |
-| Technical education | engineering, medical, aicte, polytechnic, diploma |
-| NE / Hill region | northeast, assam, manipur, ishan, hill area |
-| Postgraduate | postgraduate, pg, masters, mtech, mba, msc |
+### Standard query
+Default. The assistant retrieves relevant schemes from Qdrant and generates a plain-language
+eligibility explanation with scheme result cards.
 
----
+### Comparison intent
+Triggered by `isComparisonIntent()` — checks for keywords like "compare", "difference
+between", "which is better", "vs". The system prompt switches to a structured comparison
+template that produces a verdict table showing eligibility, benefits, and documents side by
+side for two or more schemes.
 
-## Tech Stack
-
-### Frontend (Vercel)
-- Next.js 14 + TypeScript
-- Tailwind CSS + shadcn/ui
-- `ChatEngine` interface as the abstraction seam
-
-### Backend (Railway)
-- FastAPI (Python)
-- LiteLLM + OpenRouter (free model providers)
-
-### Database (Railway)
-- PostgreSQL (structured eligibility data)
-- pgvector (vector embeddings for RAG)
-
-### Eligibility Logic
-Eligibility checking uses **structured PostgreSQL queries first**, RAG only for nuanced follow-ups.
-
-```
-User describes situation → FastAPI extracts entities
-  (course_level, state, category, income, gender, disability)
-  │
-  ▼
-PostgreSQL: WHERE conditions match → returns eligible schemes
-  │
-  ▼
-LiteLLM → OpenRouter: formats plain-language response with citations
-```
+### Grievance intent
+Triggered by `isGrievanceIntent()` — checks for keywords like "rejected", "complaint",
+"appeal", "grievance", "not received". The assistant identifies the responsible ministry or
+state portal and provides the correct grievance redressal URL and the step-by-step process
+to raise a complaint.
 
 ---
 
-## Phase 1 — FastAPI Backend Plan
-
-### API endpoints (FastAPI)
+## Retrieval Pipeline
 
 ```
-POST /chat
-  body: { message: str, history: list[dict] }
-  returns: { messages, schemeResults, quickReplies }
-
-GET /schemes?category=&state=&income=&course_level=
-  returns: list of matching schemes
-
-GET /schemes/{id}
-  returns: full scheme detail
+User message
+  |
+  v
+Gemini embed (text-embedding-004)
+  |
+  v
+Qdrant vector search (top-k, cosine similarity, scheme_embeddings collection)
+  |
+  v
+{ scheme, chunk, score }[] injected into system prompt as grounding context
 ```
 
-### Database schema (PostgreSQL)
-
-This is the schema as it actually exists in the Neon database. Read the column
-types carefully before writing a query against them.
-
-```sql
-CREATE TABLE schemes (
-  id                  UUID PRIMARY KEY,
-  slug                TEXT,
-  name                TEXT NOT NULL,
-  category            TEXT,   -- JSON array as TEXT, e.g. '["sc_st","obc"]'
-  education_level     TEXT,   -- JSON array as TEXT, e.g. '["ug","pg"]'
-  benefit_type        TEXT,   -- JSON array as TEXT, e.g. '["scholarship"]'
-  states              TEXT,   -- JSON array as TEXT, e.g. '["tamil-nadu"]'
-  beneficiary_gender  TEXT,   -- plain scalar: 'all' | 'female' | 'male'
-  level               TEXT,   -- plain scalar: 'central' | 'state' | 'central-state'
-  amount              TEXT,
-  description         TEXT,
-  eligibility         TEXT,
-  documents           TEXT,   -- newline-separated list
-  application_process TEXT,
-  official_url        TEXT,
-  status              TEXT,   -- only 'approved' rows are ever served
-  reviewed_at         TIMESTAMP
-);
-```
-
-> **`category`, `education_level`, `benefit_type` and `states` are TEXT, not
-> `TEXT[]`.** They hold a JSON array serialised into a string. Postgres array
-> operators do not work on them — `'ug' = ANY(education_level)` raises
-> `op ANY/ALL (array) requires array on right side`, and because that error
-> propagates out of the retrieval call the assistant silently answers "no
-> matching schemes". Use the `jsonContains()` helper in `src/lib/chat/db.ts`,
-> which expands the JSON array with `jsonb_array_elements_text` and still
-> tolerates a bare scalar.
-
-Vocabulary actually present in the data (keep `intentExtractor.ts` in sync):
-
-| Column | Tokens |
-| --- | --- |
-| `benefit_type` | `scholarship`, `stipend`, `grant`, `loan`, `fee_waiver`, `hostel` |
-| `category` | `fellowship`, `scholarship`, `sc_st`, `obc`, `bc_mbc`, `ews`, `minority`, `girl_women`, `differently_abled`, `general_merit` |
-| `education_level` | `primary`, `upper_primary`, `secondary`, `higher_secondary`, `diploma`, `ug`, `pg`, `phd`, `professional`, `all` |
-| `states` | `all-india`, `tamil-nadu`, `kerala`, … |
-
-Embeddings live in Qdrant (`scheme_embeddings`, 768-dim, cosine), not in a
-pgvector column — the vector search is a separate service, see `qdrant.ts`.
-
-### LiteLLM + OpenRouter
-
-```python
-from litellm import completion
-
-response = completion(
-    model="openrouter/meta-llama/llama-3-8b-instruct:free",
-    messages=[
-        {"role": "system", "content": SYSTEM_PROMPT},
-        *history,
-        {"role": "user", "content": user_message}
-    ]
-)
-```
-
-Free models via OpenRouter — auto-fallback if one is rate-limited.
-
-### RAG (pgvector)
-
-Used only for follow-up questions and nuanced queries that go beyond structured filters:
-
-```python
-embedding = embed(user_message)
-results = db.execute(
-    "SELECT * FROM schemes ORDER BY embedding <-> $1 LIMIT 5",
-    [embedding]
-)
-```
+Scheme chunks are pre-embedded and stored in Qdrant by `pnpm embed:schemes`. The collection
+name is `scheme_embeddings` by default (configurable via `QDRANT_COLLECTION`).
 
 ---
 
-## Data Sources
+## System Prompt Design
 
-Collect data only from official government websites:
+`src/lib/chat/systemPrompt.ts` assembles the messages array sent to Groq:
 
-| Source | URL | Type |
-|--------|-----|------|
-| National Scholarship Portal | scholarships.gov.in | Central scholarships |
-| University Grants Commission | ugc.gov.in | Higher education fellowships |
-| AICTE | aicte-india.org | Technical education scholarships |
-| Ministry of Education | education.gov.in | Education policy schemes |
-| State scholarship portals | (state-specific) | State-level scholarships |
-| MyScheme | myscheme.gov.in | Discovery only — verify on source |
+1. **System message** — role definition, grounding instructions, safety rules (never claim
+   to submit, never guarantee eligibility, always cite official portal URL).
+2. **Grounding context** — retrieved scheme chunks injected as assistant context.
+3. **History** — last N turns from the thread store (capped at `MAX_HISTORY`).
+4. **User message** — sanitised user input.
 
 ---
 
-## MVP Scope
+## Guardrails
 
-Phase 1 release:
-- 100–300 validated student education schemes
-- Student eligibility chatbot (scholarship, fellowship, loan, grant)
-- Multilingual text (English + Tamil + Hindi)
-- Simplified explanations with official citations
-- Scheme comparison (interactive chips → eligibility-aware verdict)
-- Search and recommendations
+### Input guardrail (`checkInput`)
+Blocks requests matching any of:
+- Prompt injection patterns (`ignore previous instructions`, `you are now`, etc.)
+- Political content (party names, electoral topics)
+- Medical advice requests
+- Requests for personal data or credentials
+- Off-topic requests (not related to Indian government schemes or certificates)
+
+### Output guardrail (`validateOutput`)
+Scans the completed response for:
+- Claims of application submission on the user's behalf
+- Eligibility guarantees ("you are guaranteed to receive")
+- Disallowed external URLs
 
 ---
 
-## Running Locally (Phase 1 Mock)
+## Rate Limiting
 
+`src/lib/chat/rateLimiter.ts` uses Neon as the backing store. Per-IP requests are counted
+in a sliding window. The limit and window are defined as constants at the top of the file.
+Returns HTTP 429 with a retry-after message when exceeded.
+
+Requires `DATABASE_URL` to be set. Without it, rate limiting is disabled (suitable for
+local development).
+
+---
+
+## Thread Persistence
+
+`src/lib/chat/threadStore.ts` maintains multi-turn context across page refreshes:
+
+- **Cookie issued:** on the first message, a signed JWT (`cme-thread`) is set in the
+  response. The signing secret is `SESSION_SECRET` or falls back to `CHATBOT_ADMIN_KEY`.
+- **Cookie read:** on subsequent messages, the cookie is verified and the thread ID
+  extracted to fetch prior turns from Neon.
+- **Fallback:** if the cookie is absent, expired, or `DATABASE_URL` is not set, the request
+  is processed statelessly (no prior context).
+- **TTL:** thread rows are expired automatically.
+
+---
+
+## Local Development
+
+**Explore pages only (no API keys):**
 ```bash
-pnpm install
-pnpm dev
-# http://localhost:3000/chat
+pnpm dev   # http://localhost:3000/explore
 ```
 
-The mock engine runs entirely locally — no API keys or external services needed.
-
----
-
-## Running FastAPI Backend (Phase 2)
-
+**Full assistant with live LLM:**
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-# http://localhost:8000
-```
-
-Set environment variables:
-```
-DATABASE_URL=postgresql://...
-OPENROUTER_API_KEY=sk-...
+cp .env.example .env.local
+# Fill in: GROQ_API_KEY, GEMINI_API_KEY, QDRANT_URL, QDRANT_API_KEY, DATABASE_URL
+pnpm dev   # http://localhost:3000/chat
 ```
 
 ---
 
-## Related Documentation
+## Eval Scripts
 
-- [Architecture](./ARCHITECTURE.md) — full stack diagram and swap seams
-- [Roadmap](./ROADMAP.md) — phased plan (Phase 1 → Phase 4)
+| Command | What it checks |
+|---|---|
+| `pnpm eval:guardrail` | Known safe inputs pass; known unsafe inputs are blocked |
+| `pnpm eval:retrieval` | Precision and recall of Qdrant retrieval over test queries |
+| `pnpm eval:groundedness` | LLM answers cite schemes from the retrieved context |
+| `pnpm eval:coherence` | Multi-turn follow-up responses stay coherent and relevant |
+| `pnpm eval:multilingual` | (Planned) Responses in Tamil/Hindi are factually consistent |
+
+---
+
+## Adding a New Intent Flow
+
+1. Add a detection function in `systemPrompt.ts` (e.g. `isNewIntent()`).
+2. Add a new prompt template function that returns the `Prompt` array for that intent.
+3. In `route.ts`, call the detection function and switch the prompt builder before the
+   `streamText` call.
+4. Add eval cases to `eval-coherence.ts` for the new flow.

@@ -56,7 +56,7 @@ export const csirResearchAssociateship: Scheme = {
     { name: "Category certificate (if applicable)", mandatory: false },
     { name: "Recommendation letters from referees", mandatory: false },
   ],
-  officialPortalUrl: "https://www.csir.res.in",
+  officialPortalUrl: "https://csirhrdg.res.in/",
   ministry: "Council of Scientific and Industrial Research (CSIR)",
   applicationMode: ["online"],
   tags: [
