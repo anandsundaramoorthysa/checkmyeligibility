@@ -32,9 +32,7 @@ export const metadata: Metadata = {
     shortcut: "/brand/favicon.svg",
   },
   verification: {
-    // Add GOOGLE_SITE_VERIFICATION to Vercel environment variables once you
-    // get your token from Google Search Console.
-    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    google: "29KJqPzqCdToXgAdNQ_GIyST7I3cPLljbhbmOFwA-wc",
   },
 };
 
